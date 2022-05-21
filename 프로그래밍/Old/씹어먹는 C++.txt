@@ -1,0 +1,139 @@
+씹어먹는 C++ 
+	<3. C++ 의 세계로 오신 것을 환영합니다. (new, delete)> - https://modoocode.com/169
+		-new
+		-delete
+
+	
+	<4-4. 스타크래프트를 만들자2> - https://modoocode.com/197
+		생성자의 초기화 리스트 , static, reference , this
+		
+		static function
+		
+		reference를 return 하는 함수
+			함수의 return type이 reference일 경우 return value가 reference value라는 것
+			reference vale는 변수 자체임으로, 변수 자체를 return 하는 것과 같다.
+			만약에 함수의 return type이 int일 경우 return value가 int형 value 라는 것
+			int value는 변수의 값 임으로, 변수의 값을 임시객체에 부여한다음 임시객체를 return 한다. 그리고 임시객체는 바로 소멸한다.
+		
+	
+	<4 - 6. 클래스의 explicit 과 mutable 키워드> - https://modoocode.com/253
+		 mutable : const 함수에서 변수 바꾸기
+		 
+	
+	<5 - 1. 내가 만든 연산자 - 연산자 오버로딩> - https://modoocode.com/202
+		연산자 오버로딩
+		
+		
+	<5 - 2. 입출력, 첨자, 타입변환, 증감 연산자 오버로딩>	- https://modoocode.com/203
+		Friend
+	
+		
+	<5 - 3. 연산자 오버로딩 프로젝트 - N 차원 배열> - https://modoocode.com/204
+		C++ 스타일의 캐스팅 ( static_cast, const_cast, reinterpret_cast , dynamic_cast)
+		
+	<6 - 2. 가상(virtual) 함수와 다형성> - https://modoocode.com/210
+		virtual키워드와 override키워드 
+		 
+	<6 - 3. 가상함수와 상속에 관련한 잡다한 내용들>	 - https://modoocode.com/211
+		virtual 소멸자 
+		순수 가상함수와 객체
+		추상클래스 : 순수 가상 함수를 최소 한개 포함하고 있는 , 반드시 상속 되어야 하는 클래스
+		-> protected로 생성자를 설정하는것이 바람직함 https://stackoverflow.com/questions/1057221/what-are-practical-uses-of-a-protected-constructor
+		
+		다이아몬드 상속 : virtual 상속으로 해결!
+		
+		상속받은 클래스는 생성을 위해 base class의 객체를 하나 생성한다.
+
+
+
+		
+	<7 - 1. C++ 에서의 입출력 (istream, ostream)> - https://modoocode.com/213
+		flush
+
+
+
+	
+	<7 - 2. C++ 에서 파일 입출력 - std::ifstream. std::ofstream, std::stringstream> - https://modoocode.com/215
+	
+		기준 주소 : project.vcxproj 등이 있는 폴더
+	
+	
+		ifstream operator >>는 단어를 읽고 string의 getline은 문장을 읽고
+			- std::getline : https://jhnyang.tistory.com/107
+			- std::getline의 경우 streampos의 위치는 다음줄의 시작지점
+			
+			
+			- ifstream operator >>의 경우 streampos의 위치는 읽은 단어의 끝지점
+			- ifstream operator >>을 줄의 맨 마지막에서 사용할 경우 다음줄의 단어를 읽음
+		
+		ifstream에는 자기 자신을 bool로 캐스팅 할 수 있는 캐스팅 연산자가 오버로딩 되어있다.
+		따라서 while문 안에 ifstream 객체를 전달하면 bool로 캐스팅 하는 연산자 함수가 호출된다.
+		이 때 ifstream 객체가 true이기 위해서는 다음 입력 작업이 성공적이어야만 하고 현재 스트림에 오류 플래그가 켜져 있지 않아야만 한다.
+		ifstream 객체가 파일의 끝에 도달할경우 문자 추출이 멈추며 다음 입력 작업 또한 멈추게 된다.
+			
+		std::stringstream ostringstream isstringstream
+	
+
+	
+	<9 - 1. 코드를 찍어내는 틀 - C++ 템플릿(template)> - https://modoocode.com/219
+		클래스 템플릿의 인스턴스화 : 클래스 템플릿에 인자를 전달해서 실제 코드를 생성하는 것.
+		함수 객체 (Functor) : 
+	
+	
+	
+	<9 - 2. 가변 길이 템플릿 (Variadic template)> - https://modoocode.com/290
+		-템플릿 파라미터 팩 : 타입 앞에 ...
+		-함수 파라미터 팩 : 타입 뒤에 ...
+		
+	
+	
+	<10 - 1. C++ STL - 벡터(std::vector), 리스트(list), 데크(deque)> - https://modoocode.com/223#page-heading-4			
+		반복자 (iterator) - 컨테이너 원소에 접근할 수 있는 포인터와 같은 객체			
+		범위 기반 for 문 :
+		 
+		 
+		 
+	<10 - 2. C++ STL - 셋(set), 맵(map), unordered_set, unordered_map> - https://modoocode.com/224		
+		map
+		
+		
+		
+	<12 - 2. Move 문법 (std::move semantics) 과 완벽한 전달 (perfect forwarding)> - https://modoocode.com/228#page-heading-3			
+		Universal reference - http://sweeper.egloos.com/3149089
+		
+		
+		
+	<13 - 1. 객체의 유일한 소유권 - unique_ptr>	-	https://modoocode.com/229	
+			
+		포인터 객체와 자원 관리 (RAII)			
+		emplace_back
+			타입 T의 생성자가 무엇인지 신중히 고민하고 결정!
+
+
+
+		
+	<13 - 2. 자원을 공유할 때 - shared_ptr 와 weak_ptr>	-	https://modoocode.com/252
+			
+		shared_ptr를 make_shared로 생성하는 이유 : 동적 할당을 여러번 하지 않기 위해서.
+		
+		shared_ptr의 순환참조
+		
+		
+		
+	<14. 함수를 객체로! (C++ std::function, std::mem_fn, std::bind)>	-	https://modoocode.com/135#page-heading-38
+	
+	
+	
+		
+	
+	<16 - 2. constexpr 와 함께라면 컴파일 타임 상수는 문제없어> - https://modoocode.com/293		
+		[Perfect forwarding]
+	
+	
+	
+	
+	
+	<17 - 4. C++ 파일 시스템(<filesystem>) 라이브러리 소개> - https://modoocode.com/306
+	
+	
+	
