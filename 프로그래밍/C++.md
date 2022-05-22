@@ -81,7 +81,6 @@
 	- [inline constexpr vs constexpr](#inline-constexpr-vs-constexpr)
 	- [constexpr function](#constexpr-function)
 - [copy list initialization](#copy-list-initialization)
-- [ODR](#odr)
 - [filesystem](#filesystem)
 - [Chrono](#chrono)
 - [Header only magic](#header-only-magic)
@@ -89,6 +88,8 @@
 - [auto return](#auto-return)
 - [User-Define Conversion function](#user-define-conversion-function)
 - [Mixin](#mixin)
+- [명시적으로 삭제된 함수](#명시적으로-삭제된-함수)
+	- [참고](#참고-1)
 - [코드](#코드)
 
 * [comparing double](https://stackoverflow.com/questions/12278523/comparing-double-values-in-c/35252979)
@@ -1045,12 +1046,6 @@ A = a,b,c;
 A d = {a,b,c}; // A(A a, A b, A c) copy is occur here
 ```
 
-
-
-
-# ODR
-one definition rule
-
 # filesystem
 ```cpp
 #include <iostream>
@@ -1176,6 +1171,35 @@ https://en.cppreference.com/w/cpp/language/cast_operator
 
 # Mixin
 https://stackoverflow.com/questions/18773367/what-are-mixins-as-a-concept
+
+
+# 명시적으로 삭제된 함수
+
+delete 키워드는 명시적으로 사용을 원치 않는 함수를 삭제시키는 방법으로 C++ 11에 추가된 기능이다. 아래와 예제 코드를 살펴보자.
+
+```cpp
+#include <iostream>
+
+class A 
+{
+public:
+A(int a){};
+A(const A& a) = delete;
+};
+
+int main() 
+{
+A a = 3; // 가능
+A b = a; // 불가능 (복사 생성자는 삭제됨)
+}
+```
+
+컴파일 하게 된다면 복사 생성자를 호출하는 부분에서 오류가 발생한다. 왜냐하면, `A(const A& a) = delete;`와 같이 복사 생성자를 명시적으로 삭제하였기 때문이다. 따라서, 클래스 A 의 복사 생성자는 존재하지 않는다. 위와 같이 = delete; 를 사용하게 되면, 프로그래머가 명시적으로 ’이 함수는 쓰지 마!’ 라고 표현할 수 있다. 혹시나 사용하더라도 컴파일 오류가 발생한다.
+
+std의 unique_ptr도 마찬가지로 unique_ptr의 복사 생성자가 명시적으로 삭제되었다. 그 이유는 unique_ptr는 어떠한 객체를 유일하게 소유해야 하기 때문이다. 만일 unique_ptr를 복사 생성할 수 있게 된다면, 특정 객체를 여러 개의 unique_ptr들이 소유하게 되는 문제가 발생한다. 만약 그럴 경우 각각의 unique_ptr 들이 소멸될 때 전부 객체를 delete하려 해 double free 버그가 발생하게 된다.
+
+## 참고
+[book] (이재범) 씹어먹는 C++
 
 
 # 코드
