@@ -21,4 +21,8 @@
 
 
 
+# Git LFS
+기본적으로 git은 여러개의 작은 소스코드 파일들을 위한 `버전 컨트롤 시스템(VCS)`이다. 따라서 Github의 경우 50Mb부터 Warning이 표시되고, 100Mb부터는 push시 Error가 발생한다. 그럼에도 불구하고 경우에 따라서 반드시 대용량 파일을 git repo에 포함시켜야하는 상황이 존재할 수 있다. 이러한 경우에 사용할 수 있는 해결책인 `Git LFS(Large File Storage)`을 소개한다.
 
+## 참고
+[New sight 블로그](https://newsight.tistory.com/330)
