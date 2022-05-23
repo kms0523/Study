@@ -12,17 +12,12 @@
   리모트 저장소의 URL을 확인하는 옵션
 * `git remote add [remote name] [url]`   
 기존 워킹 디렉토리에 remote name이라는 이름을 갖는 새 리모트 저장소 추가
-* git fetch [remote name]  
+* `git fetch [remote name]`  
 [ref] (Scott Cahcon et al) Pro Git 리모트 브랜치 부분 참고  
 로컬에는 없지만, 리모트 저장소에는 있는 데이터를 모두 가져오며 과정은 다음과 같다.  
   1. 리모트 저장소에 로컬의 저장소가 갖고 있지 않은 새로운 정보(커밋, 브랜치)를 모두 내려받는다.
   2. 리모트 저장소의 새로운 브랜치를 받았다면 레퍼런스인 리모트 브랜치를 "remote name/branch name"이라는 이름으로 만든다.
   3. 기존에 리모트 브랜치가 있었던 경우 리모트 브랜치가 최신 커밋을 가르키게 한다.  
-
-
-
-# Git LFS
-기본적으로 git은 여러개의 작은 소스코드 파일들을 위한 `버전 컨트롤 시스템(VCS)`이다. 따라서 Github의 경우 50Mb부터 Warning이 표시되고, 100Mb부터는 push시 Error가 발생한다. 그럼에도 불구하고 경우에 따라서 반드시 대용량 파일을 git repo에 포함시켜야하는 상황이 존재할 수 있다. 이러한 경우에 사용할 수 있는 해결책인 `Git LFS(Large File Storage)`을 소개한다.
-
-## 참고
-[New sight 블로그](https://newsight.tistory.com/330)
+* `git remote [old name] [new name]`  
+리모트 저장소의 이름을 변경
+* `git merge [remote-name]/[branch-name]`
