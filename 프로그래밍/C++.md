@@ -90,6 +90,7 @@
 - [Mixin](#mixin)
 - [명시적으로 삭제된 함수](#명시적으로-삭제된-함수)
 	- [참고](#참고-1)
+- [정의, 선언, 초기화, 할당](#정의-선언-초기화-할당)
 - [코드](#코드)
 
 * [comparing double](https://stackoverflow.com/questions/12278523/comparing-double-values-in-c/35252979)
@@ -1200,6 +1201,20 @@ std의 unique_ptr도 마찬가지로 unique_ptr의 복사 생성자가 명시적
 
 ## 참고
 [book] (이재범) 씹어먹는 C++
+
+# 정의, 선언, 초기화, 할당
+
+
+
+초기화와 할당
+
+[여러가지 변수 초기화 방법 - 소년코딩 블로그](https://boycoding.tistory.com/181)  
+[초기화와 할당의 차이 - woo-dev 블로그](https://woo-dev.tistory.com/78)  
+[direct initialization vs copy initializaition - stackoverflow](https://stackoverflow.com/questions/1051379/is-there-a-difference-between-copy-initialization-and-direct-initialization)  
+[initialization - cppreference](https://en.cppreference.com/w/cpp/language/initialization)   
+[list initialization - cppreference](https://en.cppreference.com/w/cpp/language/list_initialization)  
+[copy initialization - cppreference](https://en.cppreference.com/w/cpp/language/copy_initialization)
+
 
 
 # 코드
