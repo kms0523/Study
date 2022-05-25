@@ -21,3 +21,15 @@
 * `git remote [old name] [new name]`  
 리모트 저장소의 이름을 변경
 * `git merge [remote-name]/[branch-name]`
+
+# 커밋 되돌리기
+
+## 명령어
+
+* `git revert [커밋해시코드]`  
+해당 커밋 버전으로 돌아간 상태를 새로 커밋
+* `git reset --hard [커밋해시코드]`  
+해당 커밋 버전으로 돌아가고 이후의 커밋들을 전부 삭제
+* 
+
+
