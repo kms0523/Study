@@ -92,6 +92,14 @@
 	- [참고](#참고-1)
 - [초기화, 할당](#초기화-할당)
 - [코드](#코드)
+- [미리 정의된 매크로](#미리-정의된-매크로)
+	- [C++ 표준에서 지원하는 매크로](#c-표준에서-지원하는-매크로)
+	- [MSVC에서 지원하는 매크로](#msvc에서-지원하는-매크로)
+	- [참고](#참고-2)
+- [컴파일러 옵션](#컴파일러-옵션)
+	- [/MTd](#mtd)
+	- [/MDd](#mdd)
+	- [참고](#참고-3)
 
 * [comparing double](https://stackoverflow.com/questions/12278523/comparing-double-values-in-c/35252979)
 * [ULP](https://en.wikipedia.org/wiki/Unit_in_the_last_place)
@@ -1224,3 +1232,28 @@ std의 unique_ptr도 마찬가지로 unique_ptr의 복사 생성자가 명시적
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\crt\src 에 코드가 들어있다.
 
 new 는 new_scalar.cpp에 있다.
+
+# 미리 정의된 매크로
+
+## C++ 표준에서 지원하는 매크로 
+* `__FILE__` 현재 소스파일의 이름  
+* `__LINE__` Defined as the integer line number in the current source file.
+
+
+## MSVC에서 지원하는 매크로
+* `_DEBUG` Defined as 1 when the /LDd, /MDd, or /MTd compiler option is set. Otherwise, undefined.
+
+## 참고
+[Predefined macros - MSVC](https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?redirectedfrom=MSDN&view=msvc-170)
+
+
+# 컴파일러 옵션
+
+## /MTd
+`_DEBUG` 및 `_MT`를 정의합니다. 또한, 이 옵션은 컴파일러가 .obj 파일에 라이브러리 이름 LIBCMTD.lib를 배치하여 링커가 LIBCMTD.lib를 사용하여 외부 기호를 확인하도록 만듭니다.
+
+## /MDd	
+`_DEBUG`, `_MT` 및 `_DLL`을 정의하고 애플리케이션에서 런타임 라이브러리의 디버그 다중 스레드 DLL별 버전을 사용하게 됩니다. 또한 컴파일러가 라이브러리 이름 MSVCRTD.lib를 .obj 파일에 배치하게 만듭니다.
+
+## 참고
+[/MD, /MT, /LD](https://docs.microsoft.com/ko-kr/cpp/build/reference/md-mt-ld-use-run-time-library?view=msvc-170)
