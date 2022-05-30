@@ -1,0 +1,108 @@
+#include <assert.h>
+#include <iostream>
+#include <string>
+#include <string_view>
+#include <vector>
+
+using ushort = unsigned short;
+
+enum class Quadrant_Index
+{
+  one,
+  two,
+  three,
+  four
+};
+
+class Hierarchical_Quadrant
+{
+public:
+  Hierarchical_Quadrant(const int level)
+  {
+    assert(level >= 0 && "level should be greater than 0");
+    this->level_ = level;
+    
+  }
+
+public:
+  std::string compute_quadrant_index(const std::string_view& start_index, const int num_horizontal_move, const int num_vertical_move) const
+  {
+    const auto num_index = this->level_;
+    assert(num_index == start_index.size());
+
+    std::vector<Quadrant_Index> qi = { Quadrant_Index::three, Quadrant_Index::four, Quadrant_Index::one };
+    
+    for (size_t i = 0; i < 2; ++i)
+    {
+      this->move_right(qi, 2);
+    }      
+    for (size_t i = 0; i < 3; ++i)
+    {
+      this->move_left(qi, 2);
+    }
+    
+
+    return {};
+  }
+
+private:
+  void move_right(std::vector<Quadrant_Index>& hierarchical_quadrant_index, const int current_pos) const
+  {
+    assert(current_pos >= 0 && "pos should be positive");
+
+    const auto quadrant_index = hierarchical_quadrant_index[current_pos];
+    switch (quadrant_index)
+    {
+    case Quadrant_Index::one:
+      hierarchical_quadrant_index[current_pos] = Quadrant_Index::two;
+      move_right(hierarchical_quadrant_index, current_pos - 1);
+      break;
+    case Quadrant_Index::two:
+      hierarchical_quadrant_index[current_pos] = Quadrant_Index::one;
+      break;
+    case Quadrant_Index::three:
+      hierarchical_quadrant_index[current_pos] = Quadrant_Index::four;
+      break;
+    case Quadrant_Index::four:
+      hierarchical_quadrant_index[current_pos] = Quadrant_Index::three;
+      move_right(hierarchical_quadrant_index, current_pos - 1);
+      break;
+    default:
+      assert(true && "Error");
+    }
+  }
+  void move_left(std::vector<Quadrant_Index>& hierarchical_quadrant_index, const int current_pos) const
+  {
+    assert(current_pos >= 0 && "pos should be positive");
+
+    const auto quadrant_index = hierarchical_quadrant_index[current_pos];
+    switch (quadrant_index)
+    {
+    case Quadrant_Index::one:
+      hierarchical_quadrant_index[current_pos] = Quadrant_Index::two;
+      break;
+    case Quadrant_Index::two:
+      hierarchical_quadrant_index[current_pos] = Quadrant_Index::one;
+      move_left(hierarchical_quadrant_index, current_pos - 1);
+      break;
+    case Quadrant_Index::three:
+      hierarchical_quadrant_index[current_pos] = Quadrant_Index::four;
+      move_left(hierarchical_quadrant_index, current_pos - 1);
+      break;
+    case Quadrant_Index::four:
+      hierarchical_quadrant_index[current_pos] = Quadrant_Index::three;
+      break;
+    default:
+      assert(true && "Error");
+    }
+  }
+
+ private:
+  ushort level_ = 0;  
+};
+
+int main(void)
+{
+  Hierarchical_Quadrant hq(3);
+  hq.compute_quadrant_index("341", 0, 0);
+}
