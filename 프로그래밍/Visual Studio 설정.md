@@ -61,9 +61,38 @@ https://github.com/google/googletest/blob/master/docs/advanced.md
 *	개요 전체 삭제 		ctrl M P
 	
 
-[Intellisense 오류시 해결방법]
+[Intellisense 오류시 해결방법]  
 	.vs >> codename >> v15 v16 >> ipch 삭제
 	
 	
 [폰트 설치]
 	https://wonjjong.tistory.com/27
+
+# SDK 
+
+`소프트웨어 개발 도구(Software Development Kit; SDK)`은 주로 코드를 프로그램으로 빌드하는 과정에서 사용되는 보조 도구이다.
+
+SDK 버전 오류는 크게 두가지 방법으로 해결 할 수 있다.
+
+1. 현재 개발 환경에 설치된 SDK 버전에 맞게 해당 프로젝트의 SDK 버전을 바꿔서 설정해준다.
+2. 현재 개발 환경의 SDK 버전을 해당 프로젝트의 SDK 버전에 맞게 업데이트해준다.
+
+
+## 2번 해결 방법
+[MSVC의 아카이브](https://developer.microsoft.com/ko-kr/windows/downloads/sdk-archive/)에서 필요한 SDK 버전을 찾고 Install SDK를 클릭한다.
+
+다운로드 된 파일을 실행시키고 현재 컴퓨터의 common installation path에 SDK버전을 설치한다.
+
+<p align= "center">
+<img src = "./image/SDK1.png" width = 600>
+</p>
+
+설치 후 컴퓨터를 재시작하고 visual studio에서 프로젝트를 연다음에 아래와 같은 과정을 거쳐 필요한 SDK 버전으로 바꾼다.
+
+    솔루션 탐색기 >> 솔루션 오른쪽 마우스 >> 솔루션 대상 변경 >> Windows SDK 버전 >> 다운로드 받은 버전 선택
+
+Q. installation path에서 지우면 지워질까?  
+
+## 참고
+[매화 블로그](https://mewha.tistory.com/12)  
+[Windows SDK and emulator archive - MSVC](https://developer.microsoft.com/ko-kr/windows/downloads/sdk-archive/)
