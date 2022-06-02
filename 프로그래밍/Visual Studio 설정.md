@@ -1,7 +1,12 @@
-# Windows C++ 프로젝트 속성 페이지 참조
-* https://docs.microsoft.com/ko-kr/cpp/build/reference/property-pages-visual-cpp?view=msvc-160
+# 프로젝트 속성
+프로젝트 속성에 대한 상세한 내용은 [Windows C++ 프로젝트 속성 페이지 참조 - MSVC](https://docs.microsoft.com/ko-kr/cpp/build/reference/property-pages-visual-cpp?view=msvc-160)에 잘 정리되어 있다.
 
-# 프로젝트 속성 상속하는 법
+visual studio에서 프로젝트 속성 탭은 다음 과정으로 열 수 있다.
+
+    보기 >> 다른창 >> 속성 관리자
+
+
+## 프로젝트 속성 상속하는 법
 * http://wanochoi.com/?p=5240
 
 # 외부 DLL 경로 추가하기
@@ -52,13 +57,21 @@ https://github.com/google/googletest/blob/master/docs/advanced.md
 *	도구 >> 옵션 >> 환경 >> 글꼴 및 색 >> 글꼴 : (JetBrains Mono) >> 색 : 채도를 낮게 해야 보기 편함
 *	도구 >> 옵션 >> 텍스트 편집기 >> C/C++ >> 서식 >> 일반 >> ClangFormat 지원 사용 
 *	도구 >> 옵션 >> 환경 >> 국가별 설정 >> 언어
-*	도구 >> 옵션 >> 환경 >> 키보드 >> 단축키
+*	
   
-# 단축키
+## 단축키
+단축키는 아래 경로를 통해 설정할 수 있다.
+
+    도구 >> 옵션 >> 환경 >> 키보드 >> 단축키
+
 * 정렬 단축키 : ctrl+k+d
 * 개요 확장 축소 : ctrl M M
-*	개요 전체 확장 축소 	ctrl M L
-*	개요 전체 삭제 		ctrl M P
+*	개요 전체 확장 축소: ctrl M L
+*	개요 전체 삭제 : ctrl M P
+* 현재 단어 선택 : ctrl w
+* 편집.선택영역을주석으로처리
+* 편집.선택영역의주석처리제거
+
 	
 
 [Intellisense 오류시 해결방법]  
@@ -69,7 +82,6 @@ https://github.com/google/googletest/blob/master/docs/advanced.md
 	https://wonjjong.tistory.com/27
 
 # SDK 
-
 `소프트웨어 개발 도구(Software Development Kit; SDK)`은 주로 코드를 프로그램으로 빌드하는 과정에서 사용되는 보조 도구이다.
 
 SDK 버전 오류는 크게 두가지 방법으로 해결 할 수 있다.
@@ -93,6 +105,48 @@ SDK 버전 오류는 크게 두가지 방법으로 해결 할 수 있다.
 
 Q. installation path에서 지우면 지워질까?  
 
+### 설치 후에도 인식되지 않을 때
+Design time folder가 있는지 확인하기
+
+[stackoverflow](https://stackoverflow.com/questions/43704734/how-to-fix-the-error-windows-sdk-version-8-1-was-not-found)  
+[MSDN](https://social.msdn.microsoft.com/Forums/office/en-US/5287c51b-46d0-4a79-baad-ddde36af4885/visual-studio-cant-find-windows-81-sdk-when-trying-to-build-vs2015?forum=visualstudiogeneral)  
+
 ## 참고
 [매화 블로그](https://mewha.tistory.com/12)  
 [Windows SDK and emulator archive - MSVC](https://developer.microsoft.com/ko-kr/windows/downloads/sdk-archive/)
+
+# 플랫폼도구집합
+    프로젝트 >> 속성 >> 일반 >> 플랫폼 도구 집합
+
+## 참고
+[HwanShell 블로그](https://hwan-shell.tistory.com/137)
+
+# visual studio 2015
+## 설치 경로
+
+    C:\Program Files (x86)\Microsoft Visual Studio 14.0
+
+# 에러
+#### SDK 8.1 문제
+SDK 관련 문제가 발생하여 [MSVC의 아카이브](https://developer.microsoft.com/ko-kr/windows/downloads/sdk-archive/)에서 필요한 SDK 버전을 다운로드 받아서 설치를 하였지만 계속 인식하지 못하는 문제가 발생하였다. 이는 경로 설정등에 문제가 아니라 설치가 잘못 되어 필요한 파일이 없어서 발생한 오류였다. 
+
+SDK 8.1을 설치하기 위해 visual studio 2015를 설치하였고 정상적으로 설치된 SDK는 개발환경구축 폴더에 저장해두었다.
+
+아래는 정상적으로 다운로드된 8.1 폴더의 구성이다.
+
+<p align = "center">
+<img src = "./image/issue1.png" width = 600>
+</p>
+
+`C:\Program Files (x86)\Windows Kits` 경로에 8.1 폴더가 있는지, 8.1 폴더안이 위의 구성과 같은지 확인해보면 SDK 설치가 제대로 되었는지 알 수 있다.
+
+#### C1083 corecrt.h 관련 문제
+visual studio 2015를 제거를 강제로 중지하였더니 특정 파일이 제대로 지워지지 않았거나, 아직 작업중인 상태였는데 바로 재설치를 진행하였더니 필요한 특정 파일들이 설치가 제대로 되지 않아 문제가 발생하였다.
+
+visual sutdio 2015 제거중에 강제로 중지하지 않고 기다리고, 제거 후에 재부팅 하고 재설치를 진행하니 문제가 해결되었다.
+
+
+
+### include
+[include 안될 때 stackoverflow](https://stackoverflow.com/questions/39149424/visual-studio-2015-cant-compile-even-hello-world-program)
+
