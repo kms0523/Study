@@ -31,10 +31,17 @@ visual studio에서 프로젝트 속성 탭은 다음 과정으로 열 수 있�
 
 # Google Test
 ## Initial Setting
-1. 기본 속성
+1. 테스트 프로젝트 구성  
+테스트할 프로젝트 선택하고 나머지는 아래와 같이 설정한다.
+
+<p align = "center">
+<img src = "./image/GTEST1.png" width = 500>
+</p>
+
 2. Test 프로젝트 속성 >> C/C++ >> 미리 컴파일된 헤더 >> 사용안함
 3. Main 프로젝트 속성 >> 일반 >> 구성 형식 >> 정적 라이브러리
    1. Main 프로젝트에 main 함수가 포함되어 있어야 정적 라이브러리 생성이 가능
+4. Solution 속성 >> 공용 속성 >> 시작 프로젝트 >> 현재 선택 영역
 
 ## Document
 https://github.com/google/googletest/blob/master/docs/primer.md
