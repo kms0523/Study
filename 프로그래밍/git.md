@@ -30,6 +30,8 @@ Staging Area에 있는 모든 파일을 다시 unstage
 
 # 커밋 되돌리기
 ### 명령어
+* `git commit --amend`  
+완료한 커밋을 수정해야 될 때
 * `git revert [커밋해시코드]`  
 해당 커밋 버전으로 돌아간 상태를 새로 커밋
 * `git reset --hard [커밋해시코드]`  
