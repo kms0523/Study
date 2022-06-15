@@ -1257,3 +1257,4 @@ new 는 new_scalar.cpp에 있다.
 
 ## 참고
 [/MD, /MT, /LD](https://docs.microsoft.com/ko-kr/cpp/build/reference/md-mt-ld-use-run-time-library?view=msvc-170)
+
