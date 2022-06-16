@@ -1,5 +1,4 @@
 ## 1
-
 $$ A_{ij} = A_{ji} \land \frac{\partial f}{\partial x_i} = A_{ij}x_j \Rightarrow f = \frac{1}{2} A_{ij} x_j x_i$$
 
 **Proof**
@@ -12,7 +11,6 @@ $$ f = \frac{1}{2} \left( A_{11}(x_1)^2 + \cdots + A_{nn}(x_n)^2 \right) + (A_{1
 
 
 ## 2
-
 $$ C_{ijkl} = C_{klij} \land C_{ijkl}\epsilon_{kl} = \frac{\partial f}{\partial \epsilon_{ij}} \Rightarrow f = \frac{1}{2} C_{ijkl}\epsilon_{kl} \epsilon_{ij} $$
 
 **Proof**
