@@ -17,8 +17,11 @@
 		- [operator>>](#operator)
 		- [std::getline](#stdgetline)
 	- [iomanip](#iomanip)
-- [Inheritance](#inheritance)
-	- [operator=](#operator-1)
+- [클래스](#클래스)
+	- [상속](#상속)
+		- [부모클래스 매서드 숨김 문제](#부모클래스-매서드-숨김-문제)
+			- [참고](#참고)
+		- [Derive 클래스의 복사](#derive-클래스의-복사)
 - [Constructor](#constructor)
 	- [Precautions](#precautions)
 		- [Virtual Functions](#virtual-functions)
@@ -65,7 +68,7 @@
 	- [Immediate context](#immediate-context)
 		- [Example1](#example1-4)
 		- [Example2](#example2)
-		- [참고](#참고)
+		- [참고](#참고-1)
 - [std::enable_if](#stdenable_if)
 	- [구현](#구현)
 	- [Example 1](#example-1)
@@ -89,17 +92,17 @@
 - [User-Define Conversion function](#user-define-conversion-function)
 - [Mixin](#mixin)
 - [명시적으로 삭제된 함수](#명시적으로-삭제된-함수)
-	- [참고](#참고-1)
+	- [참고](#참고-2)
 - [초기화, 할당](#초기화-할당)
 - [코드](#코드)
 - [미리 정의된 매크로](#미리-정의된-매크로)
 	- [C++ 표준에서 지원하는 매크로](#c-표준에서-지원하는-매크로)
 	- [MSVC에서 지원하는 매크로](#msvc에서-지원하는-매크로)
-	- [참고](#참고-2)
+	- [참고](#참고-3)
 - [컴파일러 옵션](#컴파일러-옵션)
 	- [/MTd](#mtd)
 	- [/MDd](#mdd)
-	- [참고](#참고-3)
+	- [참고](#참고-4)
 
 * [comparing double](https://stackoverflow.com/questions/12278523/comparing-double-values-in-c/35252979)
 * [ULP](https://en.wikipedia.org/wiki/Unit_in_the_last_place)
@@ -303,51 +306,133 @@ int main(){
 ```
 
 
+# 클래스
 
+## 상속
 
+### 부모클래스 매서드 숨김 문제
+먼저 아래 예제코드를 보자.
 
+``` cpp
+#include <iostream>
 
-
-
-# Inheritance
-## operator=
-1. derive class에 copy constructor가 정의 되어 있고 base class의 생성자를 별도로 호출하지 않을 경우 base class의 default constructor가 call 된다.
-2. derive class에 operator=이 override 되어 있으면 base class의 operator=는 call 되지 않는다.
-
-```cpp
 class A
 {
 public:
-	A(void) { std::cout << "A constructor\n"; };
-	A(const A& a) { std::cout << "A copy constructor\n"; };
-	A(A&& a) { std::cout << "move constructor\n"; };
-
-	A& operator=(const A& a) { std::cout << "A copy operator\n"; return *this; };
-	A& operator=(A&& a) noexcept { std::cout << "move operator\n"; return *this; };
+	int test(void) const
+	{
+		return 1;
+	}
 };
 
 class B : public A
 {
 public:
-	B(void) { std::cout << "B constructor\n"; };
-	B(const B& b) { std::cout << "B copy constructor\n"; };
-
-	B& operator=(const B& a) { std::cout << "B copy operator\n"; return *this; };
+	int test(int a) const
+	{
+		return 2;
+	}
 };
 
 int main(void)
 {
-    //case1
-    B b1;
-	B b2 = b1;
+	const B b;
+	std::cout << b.test(); //Error!
 
-    //case2
-	B b1;
-	B b2;
-
-	b1 = b2;
+	return 0;
 }
 ```
+
+B클래스는 A클래스를 상속하였음으로 인자를 받지 않는 test함수가 클래스 B에 존재하고 int를 인자로 받는 또 다른 test함수가 overloading 될 것으로 기대한다.
+
+하지만 예제코드에서 알 수 있듯이, int를 인자로 받는 test함수가 정의가 되면 A 클래스에 있는 test 함수가 숨겨지고 에러가 발생한다.
+
+기대와 다르게 클래스 A와 B사이에는 어떠한 overloading도 발생하지 않는다. 그 이유는 overloading은 개념적으로 하나의 범위(scope)만을 살펴보기 때문이다. 예제 코드를 보면 객체 b가 test 함수를 호출할 때 컴파일러는 B 클래스의 범위를 살펴본 뒤 int 타입을 인자로 받는 함수만을 찾게된다. A 클래스에 정의된 test함수는 A 클래스의 범위에 속하기 때문에 컴파일러가 overloading을 위해 하나의 범위만을 살펴본다는 기본 규칙에 의해 살펴보는 범위가 아니게 된다. 따라서 컴파일러는 인자를 받지 않는 함수를 찾지 못해 에러를 발생시킨다. 
+
+C++에서는 범위를 넘어서는 overloading을 지원하지 않으며 이 기본규칙은 상속관계에 있는 Base - Derived 클래스의 경우일지라도 일관되게 적용된다.
+
+이 문제는 다음 방법으로 해결할 수 있다.
+``` cpp
+#include <iostream>
+
+class A
+{
+public:
+	int test(void) const
+	{
+		return 1;
+	}
+};
+
+class B : public A
+{
+public:
+	using A::test;
+	int test(int a) const
+	{
+		return 2;
+	}
+};
+
+int main(void)
+{
+	const B b;
+	std::cout << b.test();
+
+	return 0;
+}
+```
+
+숨겨진 함수를 using을 사용한 선언(declaration)을 통해 드러낼 수 있다.
+
+
+#### 참고
+[Why should I use the "using" keyword to access my base class method? - stackoverflow](https://stackoverflow.com/questions/1896830/why-should-i-use-the-using-keyword-to-access-my-base-class-method)  
+[What’s the meaning of, Warning: Derived::f(char) hides Base::f(double)? - CppFAQ](https://isocpp.org/wiki/faq/strange-inheritance#hiding-rule)
+
+### Derive 클래스의 복사
+다음 예제 코드를 보자
+```cpp
+
+#include <iostream>
+
+class A
+{
+public:
+	A(void) = default;
+	A(const A& a) { std::cout << "A copy constructor\n"; };
+	
+	A& operator=(const A& a) { std::cout << "A copy operator\n"; return *this; };
+};
+
+class B : public A
+{
+public:
+	B(void) = default;
+	B(const B& b) { std::cout << "B copy constructor\n"; };
+	//B(const B& b) : A(b) { std::cout << "B copy constructor\n"; };
+
+	B& operator=(const B& other) { std::cout << "B copy operator\n"; return *this; };
+	//B& operator=(const B& other) { A::operator=(other); std::cout << "B copy operator\n"; return *this; };
+};
+
+int main(void)
+{
+	B b1, b2;
+	
+	B b3 = b1;
+
+	b2 = b1;
+
+	return 0;
+}
+
+```
+
+코드를 실행시킬경우 Parent 클래스와 관련된 복사는 발생하지 않는다. 
+
+이런 문제를 해결하기 위해서 Derive 클래스의 복사생성자를 작성할 때는 initializer list를 사용해서 Parent 클래스의 복사생성자가 먼저 호출되게 해줘야 한다. 또한 Derive 클래스의 복사 연산자를 구현할 때도 가장 먼저 Parent class의 복사 연산자가 먼저 호출되게 해줘야 한다. 이러한 과정이 주석처리된 코드에 나타나있다.
+
 
 
 

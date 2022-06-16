@@ -58,6 +58,21 @@ https://github.com/google/googletest/blob/master/docs/advanced.md
   * https://docs.microsoft.com/ko-kr/cpp/build/reference/ltcg-link-time-code-generation?view=msvc-160  
   * https://yonjh.tistory.com/116  
 
+### MKL Library 사용
+
+#### mkl_sequential.1.dll이 없어 코드 실행을 진행할 수 없습니다.
+Test 프로젝트 >> 속성 >> Intel Libraries for oneAPI >> Use one MKL >> Sequential
+
+#### warning LNK4006
+Test 프로젝트 >> 속성 >> 링커 >> 명령줄 >> /IGNORE:4006 
+
+Q1. 프로젝트에 DLL을 연결한다는 것이 어떤 의미인지  
+Q2. DLL을 사용하는 프로젝트를 테스트하려면 어떻게 해야하는지?
+
+##### 참고
+[Link libraries with dependencies in Visual C++ without getting LNK4006 - StackOverFlow](https://stackoverflow.com/questions/564872/link-libraries-with-dependencies-in-visual-c-without-getting-lnk4006)  
+[How to test an EXE with Google Test? - StackOverFlow](https://stackoverflow.com/questions/23088252/how-to-test-an-exe-with-google-test)  
+
 # 기본 설정
 * 프로젝트 >> 속성 >> 링커 >> 시스템 >> (하위 시스템 , 콘솔 , 콘솔창이 꺼지지 않음)	
 *	도구 >> 옵션 >> 텍스트 편집기 >> 모든 언어 >> 스크롤 막대 >> 동작 >> 세로 스크롤 막대에 지도 모드 사용

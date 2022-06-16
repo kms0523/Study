@@ -27,9 +27,12 @@ Staging Area에 있는 모든 파일을 다시 unstage
 * `git remote [old name] [new name]`  
 리모트 저장소의 이름을 변경
 * `git merge [remote-name]/[branch-name]`
+
+# 브랜치
 * `git branch -u [remote-name]/[branch-name]`  
 현재 로컬 브랜치가 리모트 저장소의 특정 브랜치를 추적하게 한다.
-* 
+
+
 # 커밋 되돌리기
 ### 명령어
 * `git commit --amend`  
