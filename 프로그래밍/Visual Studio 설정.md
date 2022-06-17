@@ -151,9 +151,3 @@ SDK 8.1을 설치하기 위해 visual studio 2015를 설치하였고 정상적�
 visual studio 2015를 제거를 강제로 중지하였더니 특정 파일이 제대로 지워지지 않았거나, 아직 작업중인 상태였는데 바로 재설치를 진행하였더니 필요한 특정 파일들이 설치가 제대로 되지 않아 문제가 발생하였다.
 
 visual sutdio 2015 제거중에 강제로 중지하지 않고 기다리고, 제거 후에 재부팅 하고 재설치를 진행하니 문제가 해결되었다.
-
-
-
-### include
-[include 안될 때 stackoverflow](https://stackoverflow.com/questions/39149424/visual-studio-2015-cant-compile-even-hello-world-program)
-

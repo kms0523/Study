@@ -1,6 +1,8 @@
 # Tensor
 
 ## 참고
+[Tensor - Wiki](https://en.wikipedia.org/wiki/Tensor)  
+[텐서 - 나무위키](https://namu.wiki/w/%ED%85%90%EC%84%9C)  
 [What are the Differences Between a Matrix and a Tensor? - StackExchange](https://math.stackexchange.com/questions/412423/what-are-the-differences-between-a-matrix-and-a-tensor)  
 
 # Dyad
