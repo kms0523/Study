@@ -43,6 +43,9 @@ visual studio에서 프로젝트 속성 탭은 다음 과정으로 열 수 있�
    1. Main 프로젝트에 main 함수가 포함되어 있어야 정적 라이브러리 생성이 가능
 4. Solution 속성 >> 공용 속성 >> 시작 프로젝트 >> 현재 선택 영역
 
+### 참고
+[블로그](https://two-parks.tistory.com/36)  
+
 ## Document
 https://github.com/google/googletest/blob/master/docs/primer.md
 https://github.com/google/googletest/blob/master/docs/advanced.md

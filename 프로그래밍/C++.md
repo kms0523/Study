@@ -103,6 +103,8 @@
 	- [/MTd](#mtd)
 	- [/MDd](#mdd)
 	- [참고](#참고-4)
+- [Namespace](#namespace)
+- [Cmake](#cmake)
 
 * [comparing double](https://stackoverflow.com/questions/12278523/comparing-double-values-in-c/35252979)
 * [ULP](https://en.wikipedia.org/wiki/Unit_in_the_last_place)
@@ -1333,7 +1335,6 @@ new 는 new_scalar.cpp에 있다.
 
 
 # 컴파일러 옵션
-
 ## /MTd
 `_DEBUG` 및 `_MT`를 정의합니다. 또한, 이 옵션은 컴파일러가 .obj 파일에 라이브러리 이름 LIBCMTD.lib를 배치하여 링커가 LIBCMTD.lib를 사용하여 외부 기호를 확인하도록 만듭니다.
 
@@ -1343,3 +1344,29 @@ new 는 new_scalar.cpp에 있다.
 ## 참고
 [/MD, /MT, /LD](https://docs.microsoft.com/ko-kr/cpp/build/reference/md-mt-ld-use-run-time-library?view=msvc-170)
 
+
+# Namespace
+:: 연산자 앞에 namespace를 선언하지 않으면 전역 namespace에 있는 함수를 호출하도록 한다.
+
+standard library를 활용한 표준 함수를 사용할 때 매번 네이밍을 붙이는 것이 귀찮을 수 있다. 이때는 using이라는 keyword를 사용하면 된다. using 선언 같은 경우 해당 이름의 함수를 현재 scope로 가져온다라는 의미이다.
+
+```
+void my_code (vector<int>& x, vector<int>& y) {
+	using std::swap;
+
+	swap(x,y);
+}
+```
+위의 코드를 보면 standard library의 swap 함수를 using과 함께 사용한 것을 볼 수 있다. using을 사용할 경우 현재 scope로 변환되기 때문에 std:: namespace를 붙일 필요가 없다.
+
+만약, 특정함수 뿐만아니라 library 내 모든 함수를 해당 scope로 변경하고 싶다면 아래의 코드를 추가하자.
+
+```
+using namespace std;
+```
+해당 코드를 코드 선언부에 작성해준다면 scope를 해당 코드 scope로 변경함으로 namespace를 추가해 줄 필요가 없어진다. 하지만, 위와 같은 방법을 한다면 언제 name 충돌이 발생할지 모르고 또 프로그램이 커지면 버그도 찾기 어려워 진다. 따라서, 간단한 코드가 아니라면 namespace를 다 적어주는 습관을 기르도록 하자.
+
+[참고 블로그](https://nerdooit.github.io/2020/09/08/cpp_book_2.html)
+
+# Cmake
+[참고 블로그](https://gist.github.com/luncliff/6e2d4eb7ca29a0afd5b592f72b80cb5c)
