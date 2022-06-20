@@ -1,4 +1,6 @@
 # Tensor
+As multilinear maps  
+using tnesor products
 
 ## 참고
 [Tensor - Wiki](https://en.wikipedia.org/wiki/Tensor)  
@@ -56,3 +58,9 @@ $\bf A$가 Cartesian Tensor, $\bf x$가 벡터라고 할 때 다음을 증명하
 $$ \frac{\partial \mathbf x^T \bf Ax}{\partial \mathbf x} = (\mathbf A^T + \bf A )x  $$
 
 **Proof**  
+
+
+# Isotropic Tensor
+[Isotropic Tensor](https://farside.ph.utexas.edu/teaching/336L/Fluid/node252.html)  
+[2nd order isotropic tensor](https://www.weizmann.ac.il/chembiophys/bouchbinder/sites/chemphys.bouchbinder/files/uploads/Courses/2019/TA2-IndexGymnastics.pdf)  
+[4th order isotropic tensor](https://math.stackexchange.com/questions/3589647/general-form-of-an-isotropic-fourth-rank-tensor)  
