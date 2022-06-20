@@ -67,7 +67,7 @@ https://github.com/google/googletest/blob/master/docs/advanced.md
 Test 프로젝트 >> 속성 >> Intel Libraries for oneAPI >> Use one MKL >> Sequential
 
 #### warning LNK4006
-Test 프로젝트 >> 속성 >> 링커 >> 명령줄 >> /IGNORE:4006 
+기존 프로젝트 >> 속성 >> 라이브러리관리자 >> 명령줄 >> /IGNORE:4006 
 
 Q1. 프로젝트에 DLL을 연결한다는 것이 어떤 의미인지  
 Q2. DLL을 사용하는 프로젝트를 테스트하려면 어떻게 해야하는지?
