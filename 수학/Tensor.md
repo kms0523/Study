@@ -2,10 +2,13 @@
 As multilinear maps  
 using tnesor products
 
-## 참고
+
+
+> 참고  
 [Tensor - Wiki](https://en.wikipedia.org/wiki/Tensor)  
 [텐서 - 나무위키](https://namu.wiki/w/%ED%85%90%EC%84%9C)  
 [What are the Differences Between a Matrix and a Tensor? - StackExchange](https://math.stackexchange.com/questions/412423/what-are-the-differences-between-a-matrix-and-a-tensor)  
+[텐서 - 전파거북이 블로그](https://ghebook.blogspot.com/2011/06/tensor.html)
 
 # Dyad
 $\bf u,v,w$를 벡터라고 하자.
