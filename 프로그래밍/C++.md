@@ -46,6 +46,7 @@
 - [decltype](#decltype)
 	- [auto와의 차이점](#auto와의-차이점)
 - [Template](#template)
+	- [User define deduction guide](#user-define-deduction-guide)
 	- [default template type](#default-template-type)
 	- [Sepcialization](#sepcialization)
 	- [Nested template call](#nested-template-call)
@@ -61,24 +62,19 @@
 		- [non type template parameter pack](#non-type-template-parameter-pack)
 		- [Locaton of template parameter pack](#locaton-of-template-parameter-pack)
 		- [Issue1 - resolved](#issue1---resolved)
+	- [SFINAE](#sfinae)
+		- [std::enable_if](#stdenable_if)
+		- [Immediate context](#immediate-context)
+			- [Example2](#example2)
+		- [사용 예제](#사용-예제)
+		- [common mistake](#common-mistake)
+		- [Issue](#issue)
+	- [static assert](#static-assert)
+		- [예시](#예시)
+		- [static assert vs SFINAE](#static-assert-vs-sfinae)
+			- [static assert](#static-assert-1)
+			- [SFINAE](#sfinae-1)
 - [Comma operator](#comma-operator)
-- [SFINAE](#sfinae)
-	- [Constructor](#constructor-1)
-		- [Example1](#example1-3)
-	- [Immediate context](#immediate-context)
-		- [Example1](#example1-4)
-		- [Example2](#example2)
-		- [참고](#참고-1)
-- [std::enable_if](#stdenable_if)
-	- [구현](#구현)
-	- [Example 1](#example-1)
-	- [Example 2](#example-2)
-	- [common mistake](#common-mistake)
-	- [Wrapping 구현하기](#wrapping-구현하기)
-	- [static assert vs SFINAE](#static-assert-vs-sfinae)
-		- [static assert](#static-assert)
-		- [SFINAE](#sfinae-1)
-	- [Issue2](#issue2)
 - [inline](#inline)
 	- [static constexpr member function](#static-constexpr-member-function)
 	- [inline constexpr vs constexpr](#inline-constexpr-vs-constexpr)
@@ -92,17 +88,17 @@
 - [User-Define Conversion function](#user-define-conversion-function)
 - [Mixin](#mixin)
 - [명시적으로 삭제된 함수](#명시적으로-삭제된-함수)
-	- [참고](#참고-2)
+	- [참고](#참고-1)
 - [초기화, 할당](#초기화-할당)
 - [코드](#코드)
 - [미리 정의된 매크로](#미리-정의된-매크로)
 	- [C++ 표준에서 지원하는 매크로](#c-표준에서-지원하는-매크로)
 	- [MSVC에서 지원하는 매크로](#msvc에서-지원하는-매크로)
-	- [참고](#참고-3)
+	- [참고](#참고-2)
 - [컴파일러 옵션](#컴파일러-옵션)
 	- [/MTd](#mtd)
 	- [/MDd](#mdd)
-	- [참고](#참고-4)
+	- [참고](#참고-3)
 - [Namespace](#namespace)
 - [Cmake](#cmake)
 
@@ -614,6 +610,14 @@ auto는 엄밀하게 정확한 타입을 표현하지 않지만 decltype은 타�
 <br><br>
 
 # Template
+## User define deduction guide
+```cpp
+//user-defined deduction guides
+template <typename... Args>
+EuclideanVector(Args... args)->EuclideanVector<sizeof...(Args)>;
+EuclideanVector(const std::vector<double>& vec)->EuclideanVector<0>;
+```
+
 ## default template type
 ```cpp
 template <typename T1, typename T2>
@@ -801,33 +805,10 @@ void invalid(Ts..., U);  // Error: cna not deduce U
 
     // resolve issue when use c++ language standard c++latest 
 
-<br><br>
+## SFINAE
+만일 템플릿 인자 치환이 올바르지 않는 타입이나 구문을 생성한다면 인자 치환에 실패한다. 올바르지 않는 타입이나 구문이라 하면, 치환된 인자로 썼을 때 문법상 틀린 것을 의미한다. 이 때, `즉각적인 맥락(immediate context)`의 타입이나 구문만이 고려되고, 여기에서 발생한 오류 만이 인자 치환을 실패시킬 수 있다. 만약 인자 치환에 실패하게 되면 이를 오버로딩 목록에서 제외한다.
 
-# Comma operator
-```cpp
-//콤마 연산자는 첫 번째 표현식을 먼저 평가한 후, 그 다음 표현식을 평가한다.
-i = 20, j = 2 * i;  //i에 20이 대입된채로, j에 대한 연산을 수행한다.
-
-// 최종적으로 평가된 표현식이 그 표현식 전체의 값이 된다.
-cats = (17, 240);   //17이라는 표현식을 평가한 뒤 240이라는 표현식이 최종적으로 평가되고 240을 변수 cats에 대입시킨다.
-                    //cats = 240;
-
-//콤마 연산자는 연산자들중 우선순위가 가장 낮다.
-cats = 17, 240;     //(cats = 17), 240;
-                    //cast = 17;
-
-// comma는 operator와 인접한 변수 이름을 분리하는 seperator로 사용된다.
-++j, --i                        //comma operator
-int j, i;                       //comma seperator 
-int j = 0, i = word.size() - 1; //comma seperator
-```
-<br><br>
-
-# SFINAE
-만일 템플릿 인자 치환이 올바르지 않는 타입이나 구문을 생성한다면 인자 치환에 실패합니다.  
-올바르지 않는 타입이나 구문이라 하면, 치환된 인자로 썼을 때 문법상 틀린 것을 의미 합니다.  
-이 때, 함수의 즉각적인 맥락(immediate context)의 타입이나 구문만이 고려되고, 여기에서 발생한 오류 만이 인자 치환을 실패시킬 수 있습니다.  
-만약 인자 치환에 실패하게 되면 이를 오버로딩 목록에서 제외합니다.
+아래 예재 코드를 보자.
 ```cpp
 template <typename T>
 typename T::value_type func(const T& t) {
@@ -845,33 +826,34 @@ int main(void){
     //따라서 int >> unsigned int로 implicit casting되고 밑에 func가 실행된다.
 }
 ```
-https://modoocode.com/255  
-## Constructor
-### Example1
+
+SFINAE를 이용해서 템플릿 인자에 따라 오버로딩 목록에 들어갈지 빠질지 결정하는 컴파일 타임 스위치를 만들 수 있다. SFINAE로 컴파일 타임 스위치를 만들 때 자주 사용하는 도구로 std::enable_if가 있다.
+
+### std::enable_if
+std::enable_if는 아래처럼 구현되어 있다.
 ```cpp
-template <typename T1>
-class A {
-public:
-	template<typename T2 = T1, std::enable_if_t<std::is_same_v<T2, int>,bool> = true>
-	A() {
-		std::cout << "int!\n";
-	}
+template <bool B, class T = void>
+struct enable_if {};
 
-	template<typename T2 = T1, std::enable_if_t<std::is_same_v<T2, void>, bool> = true>
-	A() {
-		std::cout << "void!\n";
-	}
+template <class T>
+struct enable_if<true, T> {
+typedef T type;
 };
-
-int main(void) {
-	A<int> a1;
-	A<void> a2;
-}
 ```
 
+enable_if 구조체의 type에 접근하는 코드를 단순화하기 위해 enable_if_t를 제공한다.
+```cpp
+template <bool B, typename T = void>
+using enable_if_t = typename enable_if<B, T>::type;
+```
 
-## Immediate context
-### Example1
+>참고  
+[씹어먹는 C ++ 토막글 3 - SFINAE 와 enable_if - 모두의 코드](https://modoocode.com/255)  
+
+
+
+### Immediate context
+즉각 적인 맥락이 무엇인지 아래 예제 코드들을 살펴보자.
 ```cpp
 template <typename T>
 void func(const T& t) {
@@ -888,8 +870,8 @@ int main(void){
     //그로인해 오버로딩 목록에서 제외되지 않고 compile time error를 발생시킨다.
 }
 ```
-https://stackoverflow.com/questions/15260685/what-exactly-is-the-immediate-context-mentioned-in-the-c11-standard-for-whic
-### Example2
+
+#### Example2
 ```cpp
 template <typename... Args>
 struct Test1 {        
@@ -918,40 +900,42 @@ Test2<int, int> t1;
 //Args are an immediate context in constructor because of adding new template parameter i
 }
 ```
-https://stackoverflow.com/questions/59895810/problem-with-sizeof-of-parameter-pack-in-enable-if  
-### 참고
-https://stackoverflow.com/questions/57449491/correct-way-to-use-stdenable-if  
-https://stackoverflow.com/questions/28985936/c-template-instantations-using-enable-if-directly-or-with-an-auxiliary-class
+>참고  
+[what-exactly-is-the-immediate-context... - StackoverFlow](https://stackoverflow.com/questions/15260685/what-exactly-is-the-immediate-context-mentioned-in-the-c11-standard-for-whic)  
+[problem-with-sizeof-of-parameter-pack... - StackoverFlow](https://stackoverflow.com/questions/59895810/problem-with-sizeof-of-parameter-pack-in-enable-if)  
+[correct way to use ... - StackoverFlow](https://stackoverflow.com/questions/57449491/correct-way-to-use-stdenable-if)  
+[c-template-instantations-using-enable-if... - StackoverFlow](https://stackoverflow.com/questions/28985936/c-template-instantations-using-enable-if-directly-or-with-an-auxiliary-class)
 
-<br><br>
 
-# std::enable_if
-## 구현
+### 사용 예제
 ```cpp
-template <bool B, class T = void>
-struct enable_if {};
-
-template <class T>
-struct enable_if<true, T> {
-typedef T type;
-};
-```
-
-## Example 1
-```cpp
-// check template class argument type 
 template <typename T>
-using is_A = std::enable_if_t<std::is_base_of_v<A, T>>;
-
-template<typename T, typename = void>
-class D;
+using is_int = std::enable_if_t<std::is_same_v<int, T>, bool>;
 
 template <typename T>
-class D<T, is_A<T>> {
+using is_void = std::enable_if_t<std::is_same_v<void, T>, bool>;
+
+template <typename T1>
+class A {
+public:
+	template<typename T2 = T1, std::enable_if_t<std::is_same_v<T2, int>, bool> = true>
+	A() {
+		std::cout << "int!\n";
+	}
+
+	template<typename T2 = T1, std::enable_if_t<std::is_same_v<T2, void>, bool> = true>
+	A() {
+		std::cout << "void!\n";
+	}
 };
+
+int main(void) {
+	A<int> a1;
+	A<void> a2;
+	//A<double> a3; //적절한 생성자를 찾지 못해 Error 발생
+}
 ```
 
-## Example 2
 ``` cpp
 // check template parameter pack arguments type 
 
@@ -978,10 +962,11 @@ template <typename... Args, std::enable_if<are_ints_v<Args...>,bool> = true>
 void func(const Args&... args) {std::cout << "only int\n";};
 
 ```
-https://stackoverflow.com/questions/29671643/checking-type-of-parameter-pack-using-enable-if  
-https://stackoverflow.com/questions/29603364/type-trait-to-check-that-all-types-in-a-parameter-pack-are-copy-constructible 
+>참고  
+[checking type of parameter pack ... - StackoverFlow](https://stackoverflow.com/questions/29671643/checking-type-of-parameter-pack-using-enable-if)  
+[type trait to check that all types ... - stackoverFlow](https://stackoverflow.com/questions/29603364/type-trait-to-check-that-all-types-in-a-parameter-pack-are-copy-constructible)
 
-## common mistake
+### common mistake
 ```cpp
 // Declare two function templates that differ only in their default template arguments.
 // This does not work because the declarations are treated as redeclarations of the same function template.
@@ -1009,33 +994,7 @@ struct T {
 ```
 https://en.cppreference.com/w/cpp/types/enable_if
 
-## Wrapping 구현하기
-```cpp
-// enable_if 까지 wrapping 하기
-template <size_t Size1, size_t Size2, std::enable_if_t<Size1 == Size2, bool> = true> struct check_same_size {
-using type = bool;
-}; 
-template <size_t Size1, size_t Size2> using check_same_size_t = typename check_same_size<Size1, Size2>::type;
-
-//상속 이용
-template <size_t Size1, size_t Size2> struct check_same_size : std::enable_if_t<Size1 == Size2>{};
-
-```
-std::vector class의 _Is_iterator_v 구현
-
-## static assert vs SFINAE
-### static assert
-* compile해서 구문에 걸려야 error가 발생한다.
-* compile error시 조금 더 명확한 compiler error message를 얻을 수 있으며, 사용자 지정 error message도 출력된다.
-* 가독성이 좋다.
-### SFINAE
-* compile전에 오버로딩 목록에서 제외되어 intellisense에 의해 빨간줄이 뜬다.
-
-
-https://stackoverflow.com/questions/16976819/sfinae-static-assert-vs-stdenable-if  
-https://stackoverflow.com/questions/63668997/what-is-the-advantage-of-stdenable-if-over-static-assert-for-class-templates
-
-## Issue2
+### Issue
 ``` cpp
 // case 1 Fail! but I don't know why
 template <size_t Va, size_t Vb, size_t Max = std::max(Va,Vb)> 
@@ -1087,6 +1046,52 @@ int main (void){
 }
 
 ```
+
+## static assert
+
+
+
+### 예시
+```cpp
+template <int dimension>
+class Point
+{
+	static_assert(0 <= dimension, "dimension shold be positive");
+};
+
+int main(void) {
+	Point<2> p1;
+	//Point<-2> p2; // Error message와 함께 compile error 발생	
+}
+```
+
+### static assert vs SFINAE
+#### static assert
+static assert는 위의 예시처럼 컴파일 타임에 제약조건을 서술할 때 적절하다. static assert는 compile 해서 static assert 구문에 걸려야 error가 발생한다. error 발생시 SFINAE로 인해 오버로딩 목록에서 제외되서 적절한 대상을 못찾을 때보다 더 명확한 compiler error message를 얻을 수 있으며, 사용자 지정 error message도 출력할 수 있어 가독성이 좋다.
+
+#### SFINAE
+SFINAE 문법은 오버로딩 목록에서 제외하기 위해 사용하는 것이 옳바른 사용법이다. SFINAE 문법을 사용할 경우 compile전에 오버로딩 목록에서 제외되어 intellisense에 의해 빨간줄이 뜬다.
+
+
+# Comma operator
+```cpp
+//콤마 연산자는 첫 번째 표현식을 먼저 평가한 후, 그 다음 표현식을 평가한다.
+i = 20, j = 2 * i;  //i에 20이 대입된채로, j에 대한 연산을 수행한다.
+
+// 최종적으로 평가된 표현식이 그 표현식 전체의 값이 된다.
+cats = (17, 240);   //17이라는 표현식을 평가한 뒤 240이라는 표현식이 최종적으로 평가되고 240을 변수 cats에 대입시킨다.
+                    //cats = 240;
+
+//콤마 연산자는 연산자들중 우선순위가 가장 낮다.
+cats = 17, 240;     //(cats = 17), 240;
+                    //cast = 17;
+
+// comma는 operator와 인접한 변수 이름을 분리하는 seperator로 사용된다.
+++j, --i                        //comma operator
+int j, i;                       //comma seperator 
+int j = 0, i = word.size() - 1; //comma seperator
+```
+<br><br>
 
 
 <br><br>
