@@ -2,7 +2,7 @@
 3차원 Euclidean 공간의 원점을 보존하는 모든 회전변환의 집합에 연산으로 `합성(composition)`을 주면 군구조를 만족하며 이를 $SO(3)$라 한다.
 $$ SO(3) := \{ \mathbf P : \R^3 \rightarrow \R^3 | \mathbf P^{-1} = \mathbf P^T \land \det(\mathbf P) = 1 \} $$
 
-$SO(3)$는 다음 성질을 같는다.
+$SO(3)$의 원소는 다음 성질을 만족한다.
 $$ \mathbf P \in SO(3) \Rightarrow \exist \mathbf v \in \R^3 \quad s.t. \quad \mathbf {Pv = v} $$
 
 > 왜 eigenvector를 갖는가?  
@@ -15,7 +15,7 @@ $$ so(3) = \{ \mathbf Q : \R^3 \rightarrow \R^3 | \mathbf Q + \mathbf Q^T = 0  \
 > tangent space가 무엇인가?  
 왜 SO(3)의 tangent space가 저렇게 정의되는가?  
 
-$so(3)$는 다음 성질을 같는다.
+$so(3)$의 원소는 다음 성질을 만족한다.
 $$ \mathbf Q \in so(3) \Rightarrow \exist \mathbf v \in \R^3 \quad s.t. \quad \mathbf Q \mathbf v = 0 $$ 
 
 > 왜 eigenvector를 갖는가?  
