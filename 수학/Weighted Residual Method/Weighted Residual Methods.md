@@ -143,3 +143,56 @@ $$ $$
 이 때, $w_i$의 정의에 의해 residual 제곱의 합이 최소가 되는 값을 찾기 때문에 least square method라고 한다.
 
 # Weak formulation
+Weak formulation은 integration part 혹은 divergence theorem을 통해 solution function $u$에 있는 미분항을 test function $w$으로 옮겨 solution space의 regularity를 약화시키고, 문제의 natural BC를 부분적분으로 생기는 boundary 항으로 대체함으로써 solution space가 더이상 natural BC를 만족시킬 필요 없게 만든다.
+
+Weak formulation을 다음 예제를 통해 구체적으로 알아보자.
+$$ \begin{equation} \text{find } u \in \mathcal U_s \quad s.t. \quad  -\frac{d}{dx}(a\frac{du}{dx}) + cu = f \quad \text{in } \Omega := (0,L) \in \R \end{equation} $$
+
+BC는 다음과 같이 주어진다.
+$$ \begin{aligned} u(0) &= u_0 \\ \left( a\frac{du}{dx} \right)_{x=L} &= Q_L \end{aligned}  $$
+
+따라서 solution space는 다음과 같다.
+$$ \mathcal U_s := \left\{ u \in C^2(\Omega) \enspace \bigg| \enspace u(0) = u_0, \left( a\frac{du}{dx} \right)_{x=L} = Q_L \right\} $$
+
+식(6)의 weighted residual form은 다음과 같다.
+$$ \text{find } u \in \mathcal U_s \quad s.t. \quad \forall w \in C^\infty_c(\Omega), \quad \int_\Omega w \left( -\frac{d}{dx}(a\frac{du}{dx}) + cu - f \right) \thinspace dx = 0  $$
+
+부분적분법을 적용하면 다음과 같다.
+$$ \begin{equation} \begin{gathered} \text{find } u \in \mathcal U_s \quad s.t. \quad \forall w \in C^\infty_c(\Omega)\\ \int_\Omega  \left( -\frac{dw}{dx}(a\frac{du}{dx}) + w(cu - f) \right) \thinspace dx - wa\frac{du}{dx} \bigg]_0^L = 0 \end{gathered} \end{equation}  $$
+
+BC를 적용하면 다음과 같다.
+$$ \begin{gathered} \text{find } u \in \mathcal U_s \quad s.t. \quad \forall w \in C^\infty_c(\Omega)\\ \int_\Omega  \left( -\frac{dw}{dx}(a\frac{du}{dx}) + w(cu - f) \right) \thinspace dx + wa\frac{du}{dx} \bigg]_0 - w(L)Q_L = 0 \end{gathered} $$
+
+이 때, test function space가 $C^\infty_c(\Omega)$임으로 $\partial\Omega$에서 $w=0$이다. 이로인해 natural BC를 식에 적용하는것이 불가능하다. 따라서 test function space를 essential BC가 적용되는 $\partial\Omega_E$에서만 0이 되는 함수공간 $\mathcal W$로 확장한다. $C^\infty_c(\Omega) < \mathcal W$임으로 strong formulation과 동치관계를 유지하며 $\mathcal W$는 vector space다.
+$$ \mathcal W := \{ w \in C^\infty(\Omega) \enspace | \enspace w(0) = 0 \} $$
+
+결론적으로 weak formulation은 다음과 같다.
+$$ \begin{equation} \begin{gathered} \text{find } u \in \mathcal U_w \quad s.t. \quad \forall w \in \mathcal W \\ \int_\Omega  \left( -\frac{dw}{dx}(a\frac{du}{dx}) + w(cu - f) \right) \thinspace dx - w(L)Q_L = 0 \end{gathered} \end{equation} $$
+$$ \text{Where, } \mathcal U_w := \left\{ u \in C^2(\Omega) \enspace \bigg| \enspace u(0) = u_0 \right\} $$
+
+weak formulation이 natural BC를 반영하고 있기 때문에 solution space를 더이상 natural BC를 만족하는 공간으로 제한할 필요가 없으며 $\mathcal U_s \subset \mathcal U_w$이다.
+
+현재까지 충분한 regularity를 solution function space와 test function space에 부여한채로 strong form에서부터 weighted residual form, weak form을 유도하였기 때문에 현재 정규성 조건에서는 strong, weighted residual, weak formulation이 전부 동치이다.
+
+하지만 식(8)을 보면 알 수 있듯이, weak formulation에서는 이러한 regularity를 약화시킬 수 있다. 즉, solution을 $C^2(\Omega)$가 아닌 $C^1(\Omega)$에서 찾을 수 있다는 것이다. 이렇게 regularity가 약화된 weak formulation은 다음과 같다.
+$$ \begin{equation} \begin{gathered} \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in \mathcal W \\ \int_\Omega  \left( -\frac{dw}{dx}(a\frac{du}{dx}) + w(cu - f) \right) \thinspace dx - w(L)Q_L = 0 \end{gathered} \end{equation} $$
+$$ \text{Where, } \mathcal U_W := \left\{ u \in C^1(\Omega) \enspace \bigg| \enspace u(0) = u_0 \right\} $$
+
+식(9)는 식(8)보다 더 약한 regularity를 요구하기 때문에 더 일반적인 형태이며 weak formulation이라고 불리는 이유가 바로 solution space의 regularity 요구사항을 약화시켰기 때문이다. $u \notin C^2(\Omega)$이면 strong formulation이 정의조차 되지 않기 때문에 식(9)는 더이상 strong formulation과 동치가 아니다.
+
+일반적으로 weak formulation은 functional $B,l$을 이용해 다음과 같이 간단하게 나타낼 수 있다.
+$$ \begin{equation} B(w,u) = l(w) \end{equation}  $$
+$$ \begin{gathered} \text{Where, } B: \mathcal W \times \mathcal U_W \rightarrow \R, \quad l: \mathcal W \rightarrow \R \\ \mathcal U_W := \left\{ u \in C^r(\Omega) \enspace \big| \enspace u \text{ satisfies essential BCs on } \partial\Omega_E\right\} \\ \mathcal W := \{ w \in C^\infty(\Omega) \enspace | \enspace w(\mathbf x) = 0 \text{ for } \mathbf x \in \partial\Omega_E \} \end{gathered} $$
+
+이 떄, $\mathcal U_w$는 affine space이고 $\mathcal W$는 vector space이다.
+
+linear PDE의 경우 식(10)을 bilinear form for linear PDEs라고 하며 식(9)를 bilinear form으로 나타내면 다음과 같다.
+$$ B(w,u) := \int_\Omega  \left( -\frac{dw}{dx}(a\frac{du}{dx}) + wcu \right) \thinspace dx, \quad l(w) := \int_\Omega  wf \thinspace dx + w(L)Q_L  $$
+
+# Ritz method
+Ritz method는 weak formulation을 기반으로한 수치기법이다.
+
+weight residual method에서 했던 방법과 동일하게 무한차원 test function space와 solution function space를 유한차원으로 축소한다.
+
+먼저, $\mathcal U_W$는 affine space이기 때문에 
+$$ $$
