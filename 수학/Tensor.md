@@ -2,13 +2,22 @@
 As multilinear maps  
 using tnesor products
 
-
-
 > 참고  
 [Tensor - Wiki](https://en.wikipedia.org/wiki/Tensor)  
 [텐서 - 나무위키](https://namu.wiki/w/%ED%85%90%EC%84%9C)  
 [What are the Differences Between a Matrix and a Tensor? - StackExchange](https://math.stackexchange.com/questions/412423/what-are-the-differences-between-a-matrix-and-a-tensor)  
 [텐서 - 전파거북이 블로그](https://ghebook.blogspot.com/2011/06/tensor.html)
+
+
+## Tensor Product
+벡터 공간 $V,W/\mathbb{F}$가 있을 때, 두 벡터공간의 tensor product $V \otimes W$는 모든 bilinear map $h : V \times W \rightarrow Z$에 대해 $h = \tilde{h} \circ \otimes$를 만족하는 유일한 선형변환 $\tilde{h} : V \otimes W \rightarrow Z$이 존재하도록 하는 bilinear map $\otimes:V \times W \rightarrow V \otimes W$이 주어진 벡터공간이다.
+
+> 참고  
+> [Universal property - Wiki](https://en.wikipedia.org/wiki/Universal_property)  
+> [Tensor Proudct - Wiki](https://en.wikipedia.org/wiki/Tensor_product#Universal_property)  
+> [Mathematics](https://math.stackexchange.com/questions/2674549/tensor-products-universal-property-and-a-particular-identification)  
+> [Mathematics2](https://math.stackexchange.com/questions/2713003/proof-of-universal-mapping-property-for-tensor-product-of-vector-spaces)
+
 
 # Dyad
 $\bf u,v,w$를 벡터라고 하자.
