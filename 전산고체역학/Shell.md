@@ -74,7 +74,7 @@ spatial isotropy란 triangular element의 stiffness matrices가 node numbering�
 ## 2
 Mixed Interpolation of Tensorial Components(MITC)
 
-MITC의 핵심 아이디어는 displacement와 변위를 각각 interpolation하고 tying points에서 두 interpolation을 연결시켜주는 방법이다.
+MITC의 핵심 아이디어는 변위와 변형률을 각각 interpolation하고 tying points에서 두 interpolation을 연결시켜주는 방법이다.
 
 따라서 displacement와 strain의 interpolation을 각각 ellipticity와 consistency를 만족하고 inf-sup condition을 최대한 만족하게끔 결정한다.
 
@@ -91,3 +91,14 @@ $$ \mathbf d(\mathbf r) = n_i\mathbf d(\mathbf x_i) + \frac{1}{2} a_in_i(-\mathb
 
 이 때, $\mathbf v^i_{1,2}$는 각 각 $\mathbf v^i_n$에 수직한 단위 벡터이고, $\alpha_i, \beta_i$는 rotation of the director vector $\mathbf v^i_n$ about $\mathbf v^i_{1,2}$.
 
+covariant strain component는 다음과 같다.
+$$ e_{ij} = \frac{1}{2} \left( \frac{\partial \bf x}{\partial r_i}\frac{\partial \bf u}{\partial r_j} + \frac{\partial \bf x}{\partial r_j}\frac{\partial \bf u}{\partial r_i} \right)$$ 
+
+$n_{ij}$개의 tying points에서 assumed covariant strain component는 다음과 같다.
+$$ \tilde{e}_{ij}(\mathbf r,t) = \tilde{n}_k(\mathbf r)e_{ij}|_{(\mathbf r_k,t)} $$
+
+$\tilde{n}_{k}$는 assumed interpolation function으로 다음을 만족한다.
+$$ \tilde n_i(\mathbf r_j) = \delta_{ij} $$
+
+Displacement-based covariant strain component는 다음과 같이 주어진다.
+$$ e_{ij} = B_{ij} $$
