@@ -3,9 +3,9 @@
 
 # Strong formulation
 `계수(order)`가 $m$인 `편미분방정식(partial differential equation; PDE)`이 다음과 같이 주어졌다고 하자.
-$$ \begin{equation} \text{find } u \in \mathcal U  \quad s.t. \quad \mathcal P(u) + f(\mathbf x) = 0 \quad \text{in }  \Omega \end{equation} $$
+$$ \begin{equation} \text{find } u \in \mathcal U  \quad s.t. \quad \mathcal P(u) + f(\mathbf x) = 0 \quad \text{in }  \Omega \subset \R^d \end{equation} $$
 
-$\Omega \subset \R^d$이고 $\mathcal P : C^m(\Omega) \rightarrow C^0(\Omega)$는 계수가 $m$인 `미분 연산자(differential operator)`이며 $\mathcal U$는 `solution funtion space`이며 다음과 같이 정의된다.
+$\mathcal P : C^m(\Omega) \rightarrow C^0(\Omega)$는 계수가 $m$인 `미분 연산자(differential operator)`이며 $\mathcal U$는 `solution funtion space`이며 다음과 같이 정의된다.
 $$ \mathcal U := \{ u \in C^m(\Omega) \enspace | \enspace u \text{ satisfies boundary condition on } \partial\Omega \} $$
 
 
@@ -52,7 +52,7 @@ Weighted residual method는 weighted residual formulation의 test function space
 $\mathcal W_h$의 기저 함수를 $\{ w_1, \cdots, w_n \}$이라 하면 식(2)는 다음과 같이 간단해 진다.
 $$ \begin{equation} \text{find } u \in \mathcal U \ \quad s.t. \quad \int_\Omega w_i r \thinspace dV = 0 \quad \forall i \in  (1, \cdots, n) \end{equation} $$
 
-test function space가 $\mathcal W_h$로 축소됨에 따라 축소된 residual formulation은 더이상 strong formulation과 동치가 아니다. 즉, $\mathcal W_h$공간 안에서 residual formulation을 만족하는 해는 실제 해가 아니며 실제 해의 근사가 되게 된다.
+test function space가 $\mathcal W_h$로 축소됨에 따라 축소된 residual formulation은 더이상 strong formulation과 동치가 아니다. 즉, $\mathcal W_h$공간 안에서 residual formulation을 만족하는 해도 $r=0$을 만족시키는 실제 해가 아니며 실제 해의 근사가 되게 된다.
 
 test function space을 $n$차원 함수공간으로 축소함으로써 $n$개의 `기저함수(basis function)`에 대해서만 확인하면 되는 문제로 단순화 하였지만 아직 무한차원 함수공간인 $\cal U$를 탐색해야 되는 어려움이 남아있다. 이 어려움을 해결하기 위해 이번에는 solution function space를 유한차원 함수공간인 $\cal U_h < U$로 축소하자.
 
@@ -82,7 +82,8 @@ $$ \text{Where, } r = \mathcal P(\phi + a_ju_j) + f(x)$$
 위의 식(4)가 test function space와 solution function space를 축소하여 얻은 단순화된 residual formulation이다. 식(4)는 $k$개의 미지수가 있음으로 이를 대수적으로 풀기 위해서는 $k$개의 독립적인 방정식이 필요하고  $k \le n$이여야한다.
 
 만약, $\mathcal P$가 선형 연산자 즉, 선형 PDE라면 식(4)는 다음과 같이 단순해 진다.
-$$ \begin{equation} \begin{gathered} \text{find } \mathbf a \in \R^k \quad s.t. \quad  a_j \int_\Omega w_i \mathcal P(u_j) \thinspace dV = -\int_\Omega w_i (\mathcal P(\phi) + f(x)) \quad \forall i \in  (1, \cdots, n) \\ \Leftrightarrow \enspace \bf K a = f \\ \text{Where, } K_{ij} = \int_\Omega w_i \mathcal P(u_j) \thinspace dV , \quad f_i = -\int_\Omega w_i (\mathcal P(\phi) + f(x)) \end{gathered} \end{equation} $$
+$$ \begin{equation} \text{find } \mathbf a \in \R^k \quad s.t. \quad  \bf K a = f  \end{equation} $$
+$$ \text{Where, } K_{ij} = \int_\Omega w_i \mathcal P(u_j) \thinspace dV , \quad f_i = -\int_\Omega w_i (\mathcal P(\phi) + f(x)) $$
 
 임의의 solution function space의 기저함수 $u_j$가 0이 아닌 $m$계 도함수을 갖는다면 $\{ w_1, \cdots, w_n \}, \{ u_1, \cdots, u_k \}$가 선형독립임으로 $\bf K$는 가역행렬이다.
 
@@ -91,7 +92,7 @@ $$ \begin{equation} \begin{gathered} \text{find } \mathbf a \in \R^k \quad s.t. 
 ## Petrov-Galerkin method
 축소된 선형공간 $\mathcal W_h, \mathcal U_h$의 기저함수 $\{ w_1, \cdots, w_n \}, \{ u_1, \cdots, u_k \}$를 독립적으로 정의하는 방법을 `Petrov-Galerkin method`라고 한다.
 
-결론적으로 Petrov-Galerkin method는 독립적으로 정의된 $\mathcal W_h$공간으로 축소된 weighted residual method를 만족하는 $u$중에 $\mathcal U_h$ 공간안에 있는 해를 찾는 방법이다.
+결론적으로 Petrov-Galerkin method는 독립적으로 정의된 $\mathcal W_h$공간에서 weighted residual method를 만족하는 $u$를 $\mathcal U_h$ 공간에서 찾는 방법이다.
 
 ## Bubnov-Galerkin method
 축소된 선형공간 $\mathcal W_h, \mathcal U_h$의 기저함수 $\{ w_1, \cdots, w_n \}, \{ u_1, \cdots, u_k \}$를 동일하게 정의하는 방법을 `Bubnov-Galerkin method`라고 한다.
@@ -104,7 +105,7 @@ $$ \text{find } \mathbf a \in \R^k \quad s.t. \quad \int_\Omega u_i r \thinspace
 $$ \text{find } \mathbf a \in \R^k \quad s.t. \quad \bf K a = f $$
 $$ \text{Where, } K_{ij} = \int_\Omega u_i \mathcal P(u_j) \thinspace dV , \quad f_i = -\int_\Omega w_i (\mathcal P(\phi) + f(x)) $$
 
-결론적으로 Bubnov-Galerkin method는 $\mathcal U_h$공간에서 weighted residual method를 만족하는 $u$중에 $\mathcal U_h$ 공간안에 있는 해를 찾는 방법이다.
+결론적으로 Bubnov-Galerkin method는 $\mathcal U_h$공간에서 weighted residual method를 만족하는 $u$를 $\mathcal U_h$ 공간에서 찾는 방법이다.
 
 $r$은 orthogonal하다.
 
@@ -115,7 +116,7 @@ $$ w_i = \delta(\mathbf x - \mathbf x_i) $$
 단순화된 residual formulation에 Point Collocation method을 적용하면 다음과 같다.
 $$ \text{find } \mathbf a \in \R^k \quad s.t. \quad \mathcal r(\mathbf x_i) = 0 \quad \forall i \in  (1, \cdots, n)$$
 
-결론적으로 point collocation method는 Dirac-delta 함수를 기저로 갖는 $\mathcal W_h$공간에서 weighted residual formulation을 만족하는 $u$중에 $\mathcal U_h$공간안에 있는 해를 찾는 방법이다. 
+결론적으로 point collocation method는 Dirac-delta 함수를 기저로 갖는 $\mathcal W_h$공간에서 weighted residual formulation을 만족하는 $u$를 $\mathcal U_h$에서 찾는 방법이다. 
 
 이 때, Dirac-delta 함수의 성질에 의해 $\mathcal W_h$공간에서 weighted residual formulation을 만족하는 solution은 collocation node로 불리는 $\mathbf x_i$점에서 residual을 0으로 만드는 즉, strong formulation을 만족시키는 solution이다.
 
@@ -126,7 +127,7 @@ $$ w_i = \begin{cases} 1 & \text{if } \mathbf x_i \in \Omega_i \\ 0 & \text{else
 단순화된 residual formulation에 subdomain collocation method을 적용하면 다음과 같다.
 $$ \text{find } \mathbf a \in \R^k \quad s.t. \int_{\Omega_i} r \thinspace dV = 0 \quad \forall i \in  (1, \cdots, n)$$
 
-결론적으로 subdomain collocation method는 계단 함수를 기저로 갖는 $\mathcal W_h$공간에서 weighted residual formulation을 만족하는 $u$중에 $\mathcal U_h$공간안에 있는 해를 찾는 방법이다. 
+결론적으로 subdomain collocation method는 계단 함수를 기저로 갖는 $\mathcal W_h$공간에서 weighted residual formulation을 만족하는 $u$를 $\mathcal U_h$에서 찾는 방법이다. 
 
 이 때, 계단 함수의 성질에 의해 $\mathcal W_h$공간에서 weighted residual formulation을 만족하는 solution은 $\Omega_i$에서 residaul의 평균을 0으로 만드는 solution이다.
 
@@ -143,16 +144,16 @@ $$ $$
 이 때, $w_i$의 정의에 의해 residual 제곱의 합이 최소가 되는 값을 찾기 때문에 least square method라고 한다.
 
 # Weak formulation
-Weak formulation은 integration part 혹은 divergence theorem을 통해 solution function $u$에 있는 미분항을 test function $w$으로 옮겨 solution space의 regularity를 약화시키고, 문제의 natural BC를 부분적분으로 생기는 boundary 항으로 대체함으로써 solution space가 더이상 natural BC를 만족시킬 필요 없게 만든다.
+Weak formulation은 integration part 혹은 divergence theorem을 통해 solution function $u$에 있는 미분항을 test function $w$으로 옮겨 solution space의 regularity를 약화시키고, 문제에 주어진 natural BC를 식에 포함시킴으로 써 solution space가 더이상 natural BC를 만족시킬 필요 없게 만든다.
 
 Weak formulation을 다음 예제를 통해 구체적으로 알아보자.
-$$ \begin{equation} \text{find } u \in \mathcal U_s \quad s.t. \quad  -\frac{d}{dx}(a\frac{du}{dx}) + cu = f \quad \text{in } \Omega := (0,L) \in \R \end{equation} $$
+$$ \begin{equation} \text{find } u \in \mathcal U_s \quad s.t. \quad  -\frac{d}{dx}(a\frac{du}{dx}) + cu = f \quad \text{in } \Omega := (0,L) \subset \R \end{equation} $$
 
 BC는 다음과 같이 주어진다.
 $$ \begin{aligned} u(0) &= u_0 \\ \left( a\frac{du}{dx} \right)_{x=L} &= Q_L \end{aligned}  $$
 
 따라서 solution space는 다음과 같다.
-$$ \mathcal U_s := \left\{ u \in C^2(\Omega) \enspace \bigg| \enspace u(0) = u_0, \left( a\frac{du}{dx} \right)_{x=L} = Q_L \right\} $$
+$$ \mathcal U_s := \left\{ u \in C^2(\Omega) \enspace \bigg| \enspace u(0) = u_0 \land \left( a\frac{du}{dx} \right)_{x=L} = Q_L \right\} $$
 
 식(6)의 weighted residual form은 다음과 같다.
 $$ \text{find } u \in \mathcal U_s \quad s.t. \quad \forall w \in C^\infty_c(\Omega), \quad \int_\Omega w \left( -\frac{d}{dx}(a\frac{du}{dx}) + cu - f \right) \thinspace dx = 0  $$
@@ -163,14 +164,17 @@ $$ \begin{equation} \begin{gathered} \text{find } u \in \mathcal U_s \quad s.t. 
 BC를 적용하면 다음과 같다.
 $$ \begin{gathered} \text{find } u \in \mathcal U_s \quad s.t. \quad \forall w \in C^\infty_c(\Omega)\\ \int_\Omega  \left( -\frac{dw}{dx}(a\frac{du}{dx}) + w(cu - f) \right) \thinspace dx + wa\frac{du}{dx} \bigg]_0 - w(L)Q_L = 0 \end{gathered} $$
 
-이 때, test function space가 $C^\infty_c(\Omega)$임으로 $\partial\Omega$에서 $w=0$이다. 이로인해 natural BC를 식에 적용하는것이 불가능하다. 따라서 test function space를 essential BC가 적용되는 $\partial\Omega_E$에서만 0이 되는 함수공간 $\mathcal W$로 확장한다. $C^\infty_c(\Omega) < \mathcal W$임으로 strong formulation과 동치관계를 유지하며 $\mathcal W$는 vector space다.
+이 때, test function space가 $C^\infty_c(\Omega)$임으로 $\partial\Omega$에서 $w=0$이다. 이로인해 natural BC를 식에 적용하는것이 불가능하다. 따라서 test function space를 essential BC가 적용되는 $\partial\Omega_E$에서만 0이 되는 함수공간 $\mathcal W$로 확장한다.
+$$ \mathcal W := \{ w \in C^\infty(\Omega) \enspace | \enspace \forall \mathbf x \in \partial\Omega_E, \quad w(\mathbf x) = 0 \} $$
+
+$C^\infty_c(\Omega) < \mathcal W$임으로 strong formulation과 동치관계를 유지하며 $\mathcal W$는 vector space다. $\mathcal W$는 현재 문제에서 다음과 같다.
 $$ \mathcal W := \{ w \in C^\infty(\Omega) \enspace | \enspace w(0) = 0 \} $$
 
 결론적으로 weak formulation은 다음과 같다.
 $$ \begin{equation} \begin{gathered} \text{find } u \in \mathcal U_w \quad s.t. \quad \forall w \in \mathcal W \\ \int_\Omega  \left( -\frac{dw}{dx}(a\frac{du}{dx}) + w(cu - f) \right) \thinspace dx - w(L)Q_L = 0 \end{gathered} \end{equation} $$
 $$ \text{Where, } \mathcal U_w := \left\{ u \in C^2(\Omega) \enspace \bigg| \enspace u(0) = u_0 \right\} $$
 
-weak formulation이 natural BC를 반영하고 있기 때문에 solution space를 더이상 natural BC를 만족하는 공간으로 제한할 필요가 없으며 $\mathcal U_s \subset \mathcal U_w$이다.
+weak formulation에 natural BC가 포함되어 있기 때문에 solution space를 더이상 natural BC를 만족하는 공간으로 제한할 필요가 없으며 $\mathcal U_s \subset \mathcal U_w$이다.
 
 현재까지 충분한 regularity를 solution function space와 test function space에 부여한채로 strong form에서부터 weighted residual form, weak form을 유도하였기 때문에 현재 정규성 조건에서는 strong, weighted residual, weak formulation이 전부 동치이다.
 
@@ -178,21 +182,36 @@ weak formulation이 natural BC를 반영하고 있기 때문에 solution space�
 $$ \begin{equation} \begin{gathered} \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in \mathcal W \\ \int_\Omega  \left( -\frac{dw}{dx}(a\frac{du}{dx}) + w(cu - f) \right) \thinspace dx - w(L)Q_L = 0 \end{gathered} \end{equation} $$
 $$ \text{Where, } \mathcal U_W := \left\{ u \in C^1(\Omega) \enspace \bigg| \enspace u(0) = u_0 \right\} $$
 
-식(9)는 식(8)보다 더 약한 regularity를 요구하기 때문에 더 일반적인 형태이며 weak formulation이라고 불리는 이유가 바로 solution space의 regularity 요구사항을 약화시켰기 때문이다. $u \notin C^2(\Omega)$이면 strong formulation이 정의조차 되지 않기 때문에 식(9)는 더이상 strong formulation과 동치가 아니다.
+식(9)는 식(8)보다 더 약한 regularity를 요구하기 때문에 더 일반적인 형태이다. weak formulation이라고 불리는 이유는 바로 solution space의 regularity 요구사항을 약화시켰기 때문이다. $u \notin C^2(\Omega)$이면 strong formulation이 정의조차 되지 않기 때문에 식(9)는 더이상 strong formulation과 동치가 아니다.
 
 일반적으로 weak formulation은 functional $B,l$을 이용해 다음과 같이 간단하게 나타낼 수 있다.
-$$ \begin{equation} B(w,u) = l(w) \end{equation}  $$
+
+$$ \begin{equation} \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in \mathcal W, \quad B(w,u) = l(w) \end{equation}  $$
 $$ \begin{gathered} \text{Where, } B: \mathcal W \times \mathcal U_W \rightarrow \R, \quad l: \mathcal W \rightarrow \R \\ \mathcal U_W := \left\{ u \in C^r(\Omega) \enspace \big| \enspace u \text{ satisfies essential BCs on } \partial\Omega_E\right\} \\ \mathcal W := \{ w \in C^\infty(\Omega) \enspace | \enspace w(\mathbf x) = 0 \text{ for } \mathbf x \in \partial\Omega_E \} \end{gathered} $$
 
-이 떄, $\mathcal U_w$는 affine space이고 $\mathcal W$는 vector space이다.
+이 떄, $\mathcal U_W$는 affine space이고 $\mathcal W$는 vector space이다.
 
 linear PDE의 경우 식(10)을 bilinear form for linear PDEs라고 하며 식(9)를 bilinear form으로 나타내면 다음과 같다.
 $$ B(w,u) := \int_\Omega  \left( -\frac{dw}{dx}(a\frac{du}{dx}) + wcu \right) \thinspace dx, \quad l(w) := \int_\Omega  wf \thinspace dx + w(L)Q_L  $$
 
 # Ritz method
-Ritz method는 weak formulation을 기반으로한 수치기법이다.
+Ritz method는 weak formulation을 기반으로한 수치기법이다. Ritz method에서도 weight residual method에서 했던 방법과 동일하게 무한차원 test function space와 solution function space를 유한차원으로 축소한다.
 
-weight residual method에서 했던 방법과 동일하게 무한차원 test function space와 solution function space를 유한차원으로 축소한다.
+먼저, test function space는 다음과 같이 축소한다.
+$$\mathcal W_h < \mathcal W$$
 
-먼저, $\mathcal U_W$는 affine space이기 때문에 
-$$ $$
+다음으로, solution function space 다음과 같이 축소한다.
+$$ \mathcal{U}_h = \varphi + \mathcal{U}_{L_h} $$
+$$ \begin{gathered} \text{Where, } \varphi \in \mathcal{U}_W, \quad  \mathcal{U}_{L_h} < \mathcal{U}_L \\ \mathcal{U}_L := \{ u \in C^r(\Omega) \enspace | \enspace u \text { satisfies homogeneous BC on } \partial\Omega_E \} \end{gathered} $$
+
+이 때, 유한차원 function space $\mathcal{W}_h, \mathcal{U}_{L_h}$의 기저함수를 각각 $\{ w_1, \cdots, w_n \}, \{ u_1, \cdots, u_k \}$라 하자.
+
+Ritz method에서는 Bubnov-Galerkin method를 사용한다.
+$$ w_i = u_i $$
+
+식(10)에 Ritz method를 적용하면 다음과 같다.
+$$ \text{find } \mathbf a \in \R^n \quad s.t. \quad B(u_i,\varphi + a_ju_j) = l(u_i) \quad \forall i \in \{ 1, \cdots, n \} $$
+
+$B$가 bilinear이고 $l$이 linear인 경우 다음과 같이 간단해진다.
+$$ \text{find } \mathbf a \in \R^n \quad s.t. \quad \mathbf {Ka = f} $$
+$$ \text{Where, } K_{ij} = B(u_i,u_j), \quad f_i = l(u_i) - B(u_i, \varphi) \quad \forall i \in \{ 1, \cdots, n \} $$

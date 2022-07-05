@@ -1,3 +1,6 @@
+# Geometric definition of a shell
+
+
 # $SO(3)$
 3차원 Euclidean 공간의 원점을 보존하는 모든 회전변환의 집합에 연산으로 `합성(composition)`을 주면 군구조를 만족하며 이를 $SO(3)$라 한다.
 $$ SO(3) := \{ \mathbf P : \R^3 \rightarrow \R^3 | \mathbf P^{-1} = \mathbf P^T \land \det(\mathbf P) = 1 \} $$
@@ -80,7 +83,8 @@ MITC의 핵심 아이디어는 변위와 변형률을 각각 interpolation하고
 
 displacement-based shell element의 geometry는 다음과 같다.
 $$ \mathbf x( \mathbf r) = n_i(\mathbf r) \mathbf x_i + \frac{t}{2} a_i n_i(\mathbf r) \mathbf v^i $$
-> geometry가 왜 이렇게 표현되지?
+> geometry가 왜 이렇게 표현되지?  
+> (Bathe) The finite element sehll element Eq(6.30) 
 
 이 때, $n_i$는 $i$점의 standard 2D shape function이고 $\mathbf x_i$는 $i$점의 직교 좌표이며 $a_i$는 $i$점의 shell thickness, $\mathbf v_i$는 $i$점의 director vector이다.
 >director vector가 뭐지?
@@ -95,10 +99,37 @@ covariant strain component는 다음과 같다.
 $$ e_{ij} = \frac{1}{2} \left( \frac{\partial \bf x}{\partial r_i}\frac{\partial \bf u}{\partial r_j} + \frac{\partial \bf x}{\partial r_j}\frac{\partial \bf u}{\partial r_i} \right)$$ 
 
 $n_{ij}$개의 tying points에서 assumed covariant strain component는 다음과 같다.
-$$ \tilde{e}_{ij}(\mathbf r,t) = \tilde{n}_k(\mathbf r)e_{ij}|_{(\mathbf r_k,t)} $$
+$$ \begin{equation} \tilde{e}_{ij}(\mathbf r,t) = \tilde{n}_k(\mathbf r)e_{ij}|_{(\mathbf r_k,t)} \end{equation}  $$
 
 $\tilde{n}_{k}$는 assumed interpolation function으로 다음을 만족한다.
 $$ \tilde n_i(\mathbf r_j) = \delta_{ij} $$
 
 Displacement-based covariant strain component는 다음과 같이 주어진다.
-$$ e_{ij} = B_{ij} $$
+$$ EQ(7) ?? $$
+
+## 3
+MITC 기법을 성공적으로 적용하기 위해서는 적절한 assumed strain interpolations(EQ.(1))을 사용해야 하며, tying points를 잘 정해야 한다.
+
+### 3.1
+
+#### Method i
+선형 근사후 대입
+
+#### Method ii
+shape function으로 근사
+
+#### New Method
+2차로 근사후 ...?
+
+### 3.2
+isotropic한 tranverse shear strain fields를 얻기 위해서는 삼각형의 세 edge에서 동일한 strain variation을 얻어야 한다.
+
+New Method를 사용해서 .... 하면 isotropic transverse shear strain field를 얻는다.
+
+### 3.3
+istropic한 in-plane strain fields를 얻기 위해서 빗변의 $e_{qq}$항을 고려한다.
+
+## 4
+bending dominated shell problem에서 좋은 성능을 보이는 element는 membrane dominated shell problem에서 좋지 못한 성능을 보인다. 또는 반대로 작동한다. 따라서 적절한 trade-off를 통해 strain interpolation을 사용해야 한다.
+
+bending dominated shell problem에서 shear and membrane locking현상을 제거하고 membrane dominated shell problem에서는 consistency를 유지하는것이 목표이다.
