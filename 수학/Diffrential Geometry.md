@@ -3,20 +3,49 @@
 $$ + : A \times V \rightarrow A $$
 
 $+$가 다음 성질들을 만족한다고 하자.
-$$ \begin{aligned} 1) \quad & \forall a \in A \Rightarrow a + 0_V = a \\ 2) \quad & v_1, v_2 \in V \land a \in A \Rightarrow (a + v_1) + v_2 = a + (v_1 + v_2) \\ 3) \quad & a \in A, \quad \exist f:V \rightarrow A \quad s.t. \quad v \mapsto a + v \quad \land \quad f \text{ is bijective} \end{aligned} $$
+$$ \begin{aligned} 1) \quad & \forall a \in A \Rightarrow a + 0_V = a \\ 2) \quad & v_1, v_2 \in V \land a \in A \Rightarrow (a + v_1) + v_2 = a + (v_1 + v_2) \\ 3) \quad & a \in A \quad \land \quad f_a:V \rightarrow A \quad s.t. \quad v \mapsto a + v \Rightarrow f_a \text{ is bijective} \end{aligned} $$
 
 `Affine space`란 집합 $A$에 벡터 공간 $V$와 $+$가 주어진 구조이다.
 
 $+$의 1), 2) 성질은 right group action을 정의하고 있다.
 
 ### 명제1
+$v \in V$가 있을 때, 다음과 같이 정의된 함수를 $f_v$라 하자.
+$$f_v : A \rightarrow A \quad s.t. \quad a \mapsto a+v$$
+이 때, $f$가 전단사 함수임을 증명하여라.
+
+**Proof**
+
+[injective]  
+$a,b \in A$라 하자.  
+$$ \begin{aligned} & f_v(a) = f_v(b) \\ \Rightarrow \enspace & a+v = b+v \\ \Rightarrow \enspace & a + v + v^{-1} = b + v + v^{-1} \\ \Rightarrow \enspace & a + 0_V = b + 0_V \\ \Rightarrow \enspace & a = b \quad {_\blacksquare}\end{aligned} $$
+
+[surjective]  
+$a \in A$라 하자.
+$$ \begin{aligned} & a + (-v) \in A \\ \Rightarrow \enspace & f(a+ (-v)) = a + (-v) + v = a \quad {_\blacksquare}\end{aligned} $$
+
+### 명제2
 $+$의 3번 성질이 다음과 동치임을 증명하여라.
-$$ (a,b) \in A^2, \quad \exist! v \in V \quad s.t. \quad b = a+v$$
+$$ a,b \in A \Rightarrow \exist! v \in V \quad s.t. \quad b = a+v$$
+
+**Proof**
+
+[$\Rightarrow$]  
+$f_a$가 전단사함수임으로, $f_a(v) = b$가 되는 $v$가 유일하게 존재한다. 즉, $b = a + v$인 $v$가 유일하게 존재한다. $\quad {_\blacksquare}$
+
+[$\Leftarrow$]  
+[injective]  
+$v_1,v_2 \in V$라 하자.  
+$$ \begin{aligned} & f_a(v_1) = f_a(v_2) \\ \Rightarrow \enspace & a + v_1 = a+ v_2 \\ \Rightarrow \enspace & v_1 = v_2 (\because \text{uniquness of } v) \quad {_\blacksquare}\end{aligned} $$
+
+[surjective]  
+$b \in A$면 $b = a + v$를 만족하는 $v$가 존재함으로 $f_a(v) = b$를 만족하는 $v$도 존재한다. 따라서 $f_a$는 전사함수이다. $\quad {_\blacksquare}$
 
 ### 명제2
 
 
 > 참고  
+> [Affine space - wiki](https://en.wikipedia.org/wiki/Affine_space)  
 > [what-are-differences-between-affine-space-and-vector-space - mathematics](https://math.stackexchange.com/questions/884666/what-are-differences-between-affine-space-and-vector-space)  
 
 
@@ -35,7 +64,7 @@ $(\R^n, \lang \cdot , \cdot \rang)$을 통해 공간을 일반화한것이 `다�
 
 ## chart
 다음을 가정하자.
-$$\forall p \in M, \quad \exist\varphi_p : V_p \rightarrow B(0,r), \quad \exist \varphi^{-1}, \quad \varphi, \varPhi^{-1} \in C^\infty $$
+$$\forall p \in M, \quad \exist\varphi_p : V_p \rightarrow B(0,r) \land \varphi \text{ is bijective} \land \varphi, \varphi^{-1} \in C^\infty $$
 
 이 떄, $V_p$는 P점을 포함하는 주변의 집합이며 $B(0,r)$은 원점이 0이고 반지름이 $r$인 원 내부에 있는 점의 집합이다.
 
@@ -57,8 +86,11 @@ $T_x\R^n$의 basis가 $\frac{\partial}{\partial x_i}$임을 보여라.
 
 
 > 참고  
-> [relationship-between-covariant-contravariant-basis-vectors - Mathematics](https://math.stackexchange.com/questions/393316/relationship-between-covariant-contravariant-basis-vectors)
-> [why-are-the-partial-derivatives-a-basis-of-the-tangent-space](https://math.stackexchange.com/questions/3330025/why-are-the-partial-derivatives-a-basis-of-the-tangent-space)  
+> [relationship-between-covariant-contravariant-basis-vectors - Mathematics](https://math.stackexchange.com/questions/393316/relationship-between-covariant-contravariant-basis-vectors)  
+> [why-are-the-partial-derivatives-a-basis-of-the-tangent-space - Mathematics](https://math.stackexchange.com/questions/3330025/why-are-the-partial-derivatives-a-basis-of-the-tangent-space)  
+> [what-is-the-affine-space-and-what-is-it-for - Mathematics](https://math.stackexchange.com/questions/1545889/what-is-the-affine-space-and-what-is-it-for)  
+> [basis-for-the-tangent-space-and-derivations-at-a-point - Mathematics](https://math.stackexchange.com/questions/3350081/basis-for-the-tangent-space-and-derivations-at-a-point)  
+> [coordinate-basis-of-tangent-space - Mathematics](https://math.stackexchange.com/questions/3294659/coordinate-basis-of-tangent-space)  
 
 ---
 

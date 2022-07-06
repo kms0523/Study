@@ -45,8 +45,8 @@ Cosserat surface란 3차원 Euclidean 공간에서 director라고 불리는 변�
 shell을 inextensible한 one-director Cosserat surface로 본 뒤, 수치해석과 FE에 알맞은 국소적인(local) 평형 방정식, 구성 방정식, 운동 방정식의 weak form을 구성한다.
 
 # 2004 [Lee & Bathe]  
+## 1
 > displacement-based shell structure는 shell이 얇아질 때 왜 shear and membrane locking이 발생할까?  
-shear and membrane locking이 발생하면 왜 stiff해질까?  
 
 quadrilateral element의 경우에는 MITC technique을 사용한 quadrilateral shell finite elements가 optimal에 가깝다.
 하지만 triangular element에는 "uniformly optimal" element뿐만 아니라 close to optimal인 element도 없다.
@@ -74,7 +74,7 @@ spatial isotropy란 triangular element의 stiffness matrices가 node numbering�
 * 실용적으로 많이 쓰이는 얇은 두께에서 optimal result for bending dominated shell problem 
 * 비선형 해석으로 확장성
 
-## 2
+## 2 MITC formulation
 Mixed Interpolation of Tensorial Components(MITC)
 
 MITC의 핵심 아이디어는 변위와 변형률을 각각 interpolation하고 tying points에서 두 interpolation을 연결시켜주는 방법이다.
@@ -82,49 +82,57 @@ MITC의 핵심 아이디어는 변위와 변형률을 각각 interpolation하고
 따라서 displacement와 strain의 interpolation을 각각 ellipticity와 consistency를 만족하고 inf-sup condition을 최대한 만족하게끔 결정한다.
 
 displacement-based shell element의 geometry는 다음과 같다.
-$$ \mathbf x( \mathbf r) = n_i(\mathbf r) \mathbf x_i + \frac{t}{2} a_i n_i(\mathbf r) \mathbf v^i $$
+$$ \mathbf x( r_1,r_2,r_3) = n_i(r_1,r_2) \mathbf x_i + \frac{r_3}{2} n_i(r_1,r_2) a_i \mathbf v^i $$
 > geometry가 왜 이렇게 표현되지?  
-> (Bathe) The finite element sehll element Eq(6.30) 
+> (Bathe) The finite element shell element Eq(6.30) 
 
-이 때, $n_i$는 $i$점의 standard 2D shape function이고 $\mathbf x_i$는 $i$점의 직교 좌표이며 $a_i$는 $i$점의 shell thickness, $\mathbf v_i$는 $i$점의 director vector이다.
+이 때, $n_i$는 $i$점의 standard 2D shape function이고 $\mathbf x_i$는 $i$점의 직교 좌표이며 $a_i$는 $i$점의 shell thickness, $\mathbf v^i$는 $i$점의 director vector이다. 이 때, $\mathbf v^i$는 shell midsurface에 수직일 필요는 없다.
 >director vector가 뭐지?
 
 Element의 displacement는 다음과 같이 주어진다.
-$$ \mathbf d(\mathbf r) = n_i\mathbf d(\mathbf x_i) + \frac{1}{2} a_in_i(-\mathbf v_2^i \alpha_i + \mathbf v_1^i \beta_i) $$
+$$ \mathbf d(r_1,r_2,r_3) = n_i(r_1,r_2)\mathbf d(\mathbf x_i) + \frac{r_3}{2} a_in_i(-\mathbf v_2^i \alpha_i + \mathbf v_1^i \beta_i) $$
 > 왜 displacement가 이렇게 표현되지?
 
-이 때, $\mathbf v^i_{1,2}$는 각 각 $\mathbf v^i_n$에 수직한 단위 벡터이고, $\alpha_i, \beta_i$는 rotation of the director vector $\mathbf v^i_n$ about $\mathbf v^i_{1,2}$.
+이 때, $\mathbf v^i_{1,2}$는 각 각 $\mathbf v^i$에 수직한 단위 벡터이고, $\alpha_i, \beta_i$는 rotation of the director vector $\mathbf v^i$ about $\mathbf v^i_{1,2}$.
 
 covariant strain component는 다음과 같다.
-$$ e_{ij} = \frac{1}{2} \left( \frac{\partial \bf x}{\partial r_i}\frac{\partial \bf u}{\partial r_j} + \frac{\partial \bf x}{\partial r_j}\frac{\partial \bf u}{\partial r_i} \right)$$ 
+$$ e_{ij} = \frac{1}{2} \left( \frac{\partial \bf x}{\partial r_i} \cdot \frac{\partial \bf d}{\partial r_j} + \frac{\partial \bf x}{\partial r_j} \cdot \frac{\partial \bf d}{\partial r_i} \right)$$ 
 
-$n_{ij}$개의 tying points에서 assumed covariant strain component는 다음과 같다.
-$$ \begin{equation} \tilde{e}_{ij}(\mathbf r,t) = \tilde{n}_k(\mathbf r)e_{ij}|_{(\mathbf r_k,t)} \end{equation}  $$
+$n_{ij}$개의 tying points $\{(r_1)_k, (r_2)_k\} \quad k=1,\cdots,n_{ij}$에서 assumed covariant strain component를 다음과 같이 정의하자.
+$$ \begin{equation} \tilde{e}_{ij}(r_1,r_2,r_3) = \tilde{n}_k(r_1,r_2)e_{ij}|_{((r_1)_k,(r_2)_k,r_3)} \end{equation}  $$
 
 $\tilde{n}_{k}$는 assumed interpolation function으로 다음을 만족한다.
-$$ \tilde n_i(\mathbf r_j) = \delta_{ij} $$
+$$ \tilde n_i((r_1)_j , (r_2)_j) = \delta_{ij} $$
 
 Displacement-based covariant strain component는 다음과 같이 주어진다.
 $$ EQ(7) ?? $$
 
-## 3
+## 3 Strain interpolation
 MITC 기법을 성공적으로 적용하기 위해서는 적절한 assumed strain interpolations(EQ.(1))을 사용해야 하며, tying points를 잘 정해야 한다.
 
-### 3.1
+### 3.1 Strain interpolation methods
+$f(x)$는 2차 다항식이고 $f(x_1),f(x_2)$가 주어졌을 때
 
 #### Method i
-선형 근사후 대입
+$f_h(x) = a_1x + a_0$로 근사하고 다음 두개의 선형방정식을 풀어 $a_i$를 구한다.
+$$ f_h(x_1) = f(x_1), \quad f_h(x_2) = f(x_2) $$
 
 #### Method ii
-shape function으로 근사
+$f_h(x) = n_i(x)f(x_i)$로 근사한다. 이 때, $n_i$는 다음을 만족한다.
+$$ n_1 = a_1x + a_0, \quad n_2 = b_1x + b_0, \quad n_i(x_j) = \delta_{ij} $$
+
+다음 4개의 선형방정식을 풀어 $a_i,b_i$를 구한다.
+$$ n_1(x_1) = 1, \quad n_1(x_2) = 0, \quad  n_2(x_1) = 0, \quad n_2(x_1) = 1 $$
 
 #### New Method
-2차로 근사후 ...?
+$f_h(x) =  a_0 + a_1x + a_2 x^2$로 근사하고
 
-### 3.2
+### 3.2 Interpolation of transverse shear strain field
 isotropic한 tranverse shear strain fields를 얻기 위해서는 삼각형의 세 edge에서 동일한 strain variation을 얻어야 한다.
 
 New Method를 사용해서 .... 하면 isotropic transverse shear strain field를 얻는다.
+
+각 edge에서 isotropic transverse shear strain field를 구한다.
 
 ### 3.3
 istropic한 in-plane strain fields를 얻기 위해서 빗변의 $e_{qq}$항을 고려한다.

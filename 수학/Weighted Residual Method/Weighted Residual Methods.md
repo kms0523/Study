@@ -120,6 +120,11 @@ $$ \text{find } \mathbf a \in \R^k \quad s.t. \quad \mathcal r(\mathbf x_i) = 0 
 
 이 때, Dirac-delta 함수의 성질에 의해 $\mathcal W_h$공간에서 weighted residual formulation을 만족하는 solution은 collocation node로 불리는 $\mathbf x_i$점에서 residual을 0으로 만드는 즉, strong formulation을 만족시키는 solution이다.
 
+### 참고
+Dirac delta function은 $L^2$인가?  
+$L^2$공간과 $C^\infty$의 포함관계는 어떻게 되는가?  
+[note] (M. J. zahr) 5.Variational formulation of elliptic PDEs 공부
+
 ## Subdomain collocation nmethod
 축소된 선형공간 $\mathcal W_h, \mathcal U_h$의 기저함수 $\{ w_1, \cdots, w_n \}, \{ u_1, \cdots, u_k \}$를 독립적으로 정의하되 $\mathcal W_h$의 기저함수로 계단 함수를 사용하는 방법을 `subdomain collocation method`라고 한다.
 $$ w_i = \begin{cases} 1 & \text{if } \mathbf x_i \in \Omega_i \\ 0 & \text{else} \end{cases}$$
