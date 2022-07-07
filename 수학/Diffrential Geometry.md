@@ -41,9 +41,6 @@ $$ \begin{aligned} & f_a(v_1) = f_a(v_2) \\ \Rightarrow \enspace & a + v_1 = a+ 
 [surjective]  
 $b \in A$면 $b = a + v$를 만족하는 $v$가 존재함으로 $f_a(v) = b$를 만족하는 $v$도 존재한다. 따라서 $f_a$는 전사함수이다. $\quad {_\blacksquare}$
 
-### 명제2
-
-
 > 참고  
 > [Affine space - wiki](https://en.wikipedia.org/wiki/Affine_space)  
 > [what-are-differences-between-affine-space-and-vector-space - mathematics](https://math.stackexchange.com/questions/884666/what-are-differences-between-affine-space-and-vector-space)  
@@ -63,12 +60,18 @@ $(\R^n, \lang \cdot , \cdot \rang)$을 통해 공간을 일반화한것이 `다�
 
 
 ## chart
-다음을 가정하자.
-$$\forall p \in M, \quad \exist\varphi_p : V_p \rightarrow B(0,r) \land \varphi \text{ is bijective} \land \varphi, \varphi^{-1} \in C^\infty $$
+$M$을 smooth manifold라고 하자. 
 
-이 떄, $V_p$는 P점을 포함하는 주변의 집합이며 $B(0,r)$은 원점이 0이고 반지름이 $r$인 원 내부에 있는 점의 집합이다.
+$M$위의 임의의 원소 $p \in M$가 있을 때, $V_p \subset M$는 P를 포함하는 $M$의 부분집합이며 $B(0,r)$은 $\R^n$ 집합에서 원점이 0이고 반지름이 $r$인 원 내부에 있는 점의 집합이라고 하자.
 
-가정에 의해 존재성이 보장된 $\varphi_p$를 `chart`라고 하며 $\varphi_p$는 각 $p$점마다 존재한다. 따라서 $\varphi_p$는 $p$에 의존하는 함수이며 $\varphi_p$에 의해 Manifold의 국소적인 부분($V_p$)을 $\R^n$으로 볼 수 있다.
+이 때, 다음과 같은 함수가 존재한다고 가정하자.
+$$\varphi_p : V_p \rightarrow B(0,r) \land  \varphi_p \text { is homeomorphism} $$
+
+여기서 `homeomorphism`이란 두개의 topological space를 정의역과 공역으로 갖고 역함수가 smooth function$(\in C^\infty)$인 함수이다. (역함수가 존재하기 때문에 homeomorphism 함수는 전단사함수이고, 역함수가 smooth function이기 때문에 homeomorphism함수 또한 smooth function이다)
+
+가정에 의해 존재성이 보장된 $\varphi_p$를 `chart`라고 하며 $\varphi_p$는 모든 $p \in M$마다 존재한다. 따라서 $\varphi_p$는 $p$에 의존하는 함수이며 각 $p$마다 $\varphi_p$에 의해 Manifold의 부분집합 $V_p$를 $\R^n$집합으로 볼 수 있다.
+
+
 
 점 $p$에서 $\varphi_p$의 존재성은 강제하지만 유일성은 강제하지 않는다. 따라서 다양한 chart가 존재할 수 있고 그 chart에 따라서 계산값이 바뀔 수 있다. 따라서 수학적으로 chart에 따라서 값이 변하지 않는것들을 유의미하다고 본다.
 

@@ -134,6 +134,15 @@ New Method를 사용해서 .... 하면 isotropic transverse shear strain field�
 
 각 edge에서 isotropic transverse shear strain field를 구한다.
 
+---
+
+먼저 $e_{rt},e_{st}$를 다항식으로 근사한다.
+$$ e_{rt} = a_0 + a_1 r + a_2 s + \cdots \\ e_{st} = b_0 + b_1 r + b_2 s + \cdots $$
+
+관계식으로 부터 $e_{qt}$가 결정된다.
+$$ e_{qt} = (a_0-b_0) + (a_1-b_1) r + (a_2-b_2) s + \cdots $$
+
+
 ### 3.3
 istropic한 in-plane strain fields를 얻기 위해서 빗변의 $e_{qq}$항을 고려한다.
 
