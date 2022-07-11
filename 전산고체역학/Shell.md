@@ -79,6 +79,9 @@ Mixed Interpolation of Tensorial Components(MITC)
 
 MITC의 핵심 아이디어는 변위와 변형률을 각각 interpolation하고 tying points에서 두 interpolation을 연결시켜주는 방법이다.
 
+> 변위와 변형률을 각각 interpolation 하는 이유가 뭐지 ?  
+> displacement로부터 transverse shear strain을 representation하는데 문제가 있기 때문에, transverse shear strain을 따로 interpolation 한다. 이 떄, 중요한점은 element displacements와 rotations가 적절하게 들어가야 되고 spurious zero energy mode가 들어가면 안된다. (1984 Bathe)
+
 따라서 displacement와 strain의 interpolation을 각각 ellipticity와 consistency를 만족하고 inf-sup condition을 최대한 만족하게끔 결정한다.
 
 displacement-based shell element의 geometry는 다음과 같다.
@@ -128,22 +131,49 @@ $$ n_1(x_1) = 1, \quad n_1(x_2) = 0, \quad  n_2(x_1) = 0, \quad n_2(x_1) = 1 $$
 $f_h(x) =  a_0 + a_1x + a_2 x^2$로 근사하고
 
 ### 3.2 Interpolation of transverse shear strain field
-isotropic한 tranverse shear strain fields를 얻기 위해서는 삼각형의 세 edge에서 동일한 strain variation을 얻어야 한다.
+isotropic한 tranverse shear strain fields를 얻기 위해서는 strain variations corresponding to the three edge directions of the element가 동일해야 한다.
 
-New Method를 사용해서 .... 하면 isotropic transverse shear strain field를 얻는다.
+> Q1. isotropic한 tranverse shear strain이 뭐지??  
+> Q2. strain variations corresponding to the three edge directions of the element가 동일는게 무슨말이지?
 
-각 edge에서 isotropic transverse shear strain field를 구한다.
+<p align = "center">
+<img src = "./image/shell1.png">
+</p>
 
----
+따라서 두 independent covariant transverse shear strains $e_{rt}, e_{st}$를 interpolation할 때, $e_{qt}$도 고려해야 한다. 위 그림을 통해 삼각형 내부의 한점의 $e_{rt}$와 $e_{st}$로부터 $e_{qt}$를 어떻게 얻는지 알 수 있다. tensor transformation에 의해 $e_{qt}$는 다음과 같다.
+$$ \begin{equation} e_{qt} = \frac{1}{\sqrt{2}}(e_{st} - e_{rt}) \end{equation} $$
 
-먼저 $e_{rt},e_{st}$를 다항식으로 근사한다.
-$$ e_{rt} = a_0 + a_1 r + a_2 s + \cdots \\ e_{st} = b_0 + b_1 r + b_2 s + \cdots $$
+> Q1. 그림으로부터 뭘 알 수 있지?  
+> Q2. tensor transformation이 무엇이지?  
 
-관계식으로 부터 $e_{qt}$가 결정된다.
-$$ e_{qt} = (a_0-b_0) + (a_1-b_1) r + (a_2-b_2) s + \cdots $$
+예를 들어, constant transverse shear strain along its edge이고, tying points가 center of the edges로 결정된 경우를 생각해보자.
+
+<p align = "center">
+<img src = "./image/shell2.png">
+</p>
+
+첫번째로, assumed transverse shear strain $\tilde e_{rt}, \tilde e_{st}$를 다항식으로 근사한다.
+$$ \tilde e_{rt} = a_0 + a_1 r + a_2 s \\ \tilde e_{st} = b_0 + b_1 r + b_2 s $$
+
+식(1)으로 부터 $\tilde e_{qt}$ 또한 근사된다.
+$$ \tilde e_{qt} = (a_0-b_0) + (a_1-b_1) r + (a_2-b_2) s $$
+
+두번째로 strain tying positions을 결정한다. tying positions는 isotropically 위치해야 하며 displacement-based strain과 assumed strain이 이 점에서 tied 된다. 
+
+new method를 이용한 tying은 judiciously chosen points에서 assumed strain을 displacement-based strain으로부터 evaluating 함으로써 얻어지며 이 points들은 tying points일 필요가 없다.
+
+> Q1. judicously chosen points는 어떻게 정하는거야 도대체
+
+이를 식으로 나타내면 다음과 같다.
+$$ \begin{equation} \begin{aligned} \tilde{e}_{rt}(0,0) = e^{(1)}_{rt}, \quad \tilde{e}_{rt}(1,0) = e^{(1)}_{rt} \\ \tilde{e}_{st}(0,0) = e^{(2)}_{st}, \quad \tilde{e}_{st}(0,1) = e^{(2)}_{st} \\ \tilde{e}_{qt}(1,0) = e^{(3)}_{qt}, \quad \tilde{e}_{qt}(0,1) = e^{(3)}_{qt} \end{aligned} \end{equation} $$
 
 
-### 3.3
+주의할 점은 assumed strain variations가 displacement-based strain보다 lower order여야 한다.
+
+세번째로, 식(3)에 나타난 6개의 선형방정식을 풀어 6개의 미지수를 구한다.
+$$ \begin{array}{l l l} a_0 = e^{(1)}_{rt}, & a_1 = 0, & a_2 = e^{(2)}_{st} - e^{(1)}_{rt} -\sqrt{2}e^{(3)}_{qt} \\ b_0 = e^{(2)}_{st}, & b_1 = -a_2, & b_2 = 0 \end{array} $$
+
+### 3.3 Interpolation of in-plane strain field
 istropic한 in-plane strain fields를 얻기 위해서 빗변의 $e_{qq}$항을 고려한다.
 
 ## 4

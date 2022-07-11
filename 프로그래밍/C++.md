@@ -12,6 +12,8 @@
 		- [작동방식2 with join](#작동방식2-with-join)
 	- [STL Container](#stl-container-1)
 		- [std::vector](#stdvector)
+	- [Performance](#performance)
+		- [False Sharing](#false-sharing)
 - [I/O](#io)
 	- [std::cin](#stdcin)
 		- [operator>>](#operator)
@@ -246,6 +248,12 @@ int main(void)
 	}
 }
 ```
+
+## Performance
+
+### False Sharing
+> 참고  
+> [C++ false sharing이란? - HwanShell](https://hwan-shell.tistory.com/230)
 
 
 # I/O

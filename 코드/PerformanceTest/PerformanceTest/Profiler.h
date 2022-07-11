@@ -4,9 +4,21 @@
 #include <iostream>
 #include <vector>
 
+using time_point = std::chrono::steady_clock::time_point;
+
 class Profiler
 {
 public:
+	static inline time_point get_time_point(void)
+	{
+		return std::chrono::steady_clock::now();
+	}
+	static inline double calculate_duration(const time_point& tp1, const time_point& tp2)
+	{
+		std::chrono::duration<double> time_duration = tp2 - tp1;
+		return time_duration.count();
+	}
+
 	static void set_time_point(void);
 	static double get_time_duration(void);
 
