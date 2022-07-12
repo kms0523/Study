@@ -195,13 +195,14 @@ int main()
 		const auto end_tp = Profiler::get_time_point();
 		std::cout << "test0_using_single_thread_time_duration : " << Profiler::calculate_duration(begin_tp, end_tp) << "\n\n";
 	}
-	{
-		std::cout << "test0_using_multi_thread start \n";
-		const auto begin_tp = Profiler::get_time_point();
-		test0_using_multi_thread(v_g);
-		const auto end_tp = Profiler::get_time_point();
-		std::cout << "test0_using_multi_thread_time_duration : " << Profiler::calculate_duration(begin_tp, end_tp) << "\n\n";
-	}
+	//{
+	//	std::cout << "test0_using_multi_thread start \n";
+	//	const auto begin_tp = Profiler::get_time_point();
+	//	test0_using_multi_thread(v_g);
+	//	const auto end_tp = Profiler::get_time_point();
+	//	std::cout << "test0_using_multi_thread_time_duration : " << Profiler::calculate_duration(begin_tp, end_tp) << "\n\n";
+	//}
+	
 	{
 		std::cout << "test1 start \n";
 		const auto begin_tp = Profiler::get_time_point();
@@ -216,34 +217,36 @@ int main()
 		const auto end_tp = Profiler::get_time_point();
 		std::cout << "test1_using_single_thread_time_duration : " << Profiler::calculate_duration(begin_tp, end_tp) << "\n\n";
 	}
-	{
-		std::cout << "test1_using_multi_thread start \n";
-		const auto begin_tp = Profiler::get_time_point();
-		test1_using_multi_thread(v_g);
-		const auto end_tp = Profiler::get_time_point();
-		std::cout << "test1_using_multi_thread_time_duration : " << Profiler::calculate_duration(begin_tp, end_tp) << "\n\n";
-	}
-	{
-		std::cout << "test2 start \n";
-		const auto begin_tp = Profiler::get_time_point();
-		test2(v_g);
-		const auto end_tp = Profiler::get_time_point();
-		std::cout << "test2_time_duration : " << Profiler::calculate_duration(begin_tp, end_tp) << "\n\n";
-	}
-	{
-		std::cout << "test2_using_single_thread start \n";
-		const auto begin_tp = Profiler::get_time_point();
-		test2_using_single_thread(v_g);
-		const auto end_tp = Profiler::get_time_point();
-		std::cout << "test2_using_single_thread_time_duration : " << Profiler::calculate_duration(begin_tp, end_tp) << "\n\n";
-	}
-	{
-		std::cout << "test2_using_multi_thread start \n";
-		const auto begin_tp = Profiler::get_time_point();
-		test2_using_multi_thread(v_g);
-		const auto end_tp = Profiler::get_time_point();
-		std::cout << "test2_using_multi_thread_time_duration : " << Profiler::calculate_duration(begin_tp, end_tp) << "\n\n";
-	}
+
+
+	//{
+	//	std::cout << "test1_using_multi_thread start \n";
+	//	const auto begin_tp = Profiler::get_time_point();
+	//	test1_using_multi_thread(v_g);
+	//	const auto end_tp = Profiler::get_time_point();
+	//	std::cout << "test1_using_multi_thread_time_duration : " << Profiler::calculate_duration(begin_tp, end_tp) << "\n\n";
+	//}
+	//{
+	//	std::cout << "test2 start \n";
+	//	const auto begin_tp = Profiler::get_time_point();
+	//	test2(v_g);
+	//	const auto end_tp = Profiler::get_time_point();
+	//	std::cout << "test2_time_duration : " << Profiler::calculate_duration(begin_tp, end_tp) << "\n\n";
+	//}
+	//{
+	//	std::cout << "test2_using_single_thread start \n";
+	//	const auto begin_tp = Profiler::get_time_point();
+	//	test2_using_single_thread(v_g);
+	//	const auto end_tp = Profiler::get_time_point();
+	//	std::cout << "test2_using_single_thread_time_duration : " << Profiler::calculate_duration(begin_tp, end_tp) << "\n\n";
+	//}
+	//{
+	//	std::cout << "test2_using_multi_thread start \n";
+	//	const auto begin_tp = Profiler::get_time_point();
+	//	test2_using_multi_thread(v_g);
+	//	const auto end_tp = Profiler::get_time_point();
+	//	std::cout << "test2_using_multi_thread_time_duration : " << Profiler::calculate_duration(begin_tp, end_tp) << "\n\n";
+	//}
 
 	//{
 	//	std::cout << "test0_using_thread_with_clock start \n";
