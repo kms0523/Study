@@ -45,52 +45,93 @@ MITC의 핵심 아이디어는 변위와 변형률을 각각 interpolation하고
 
 continuum mechanics displacement-based shell element의 geometry는 다음과 같다.
 $$ \mathbf x( r_1,r_2,r_3) = n_i(r_1,r_2) \mathbf x_i + \frac{r_3}{2} n_i(r_1,r_2) a_i \mathbf v^i $$
-> geometry가 왜 이렇게 표현되지?  
+> Q. geometry가 왜 이렇게 표현되지?  
 > (see [book] (Bathe) The finite element shell element chap 6.3)
 
 이 때, $n_i$는 $i$점의 standard 2D shape function이고 $\mathbf x_i$는 $i$점의 직교 좌표이며 $a_i$는 $i$점의 shell thickness, $\mathbf v^i$는 $i$점의 director vector이다. 이 때, $\mathbf v^i$는 shell midsurface에 수직일 필요는 없다.
->director vector가 뭐지?
+> Q.director vector가 뭐지?
 
 Element의 displacement는 다음과 같이 주어진다.
 $$ \mathbf d(r_1,r_2,r_3) = n_i(r_1,r_2)\mathbf d(\mathbf x_i) + \frac{r_3}{2} a_in_i(-\mathbf v_2^i \alpha_i + \mathbf v_1^i \beta_i) $$
-> 왜 displacement가 이렇게 표현되지?
+> Q. 왜 displacement가 이렇게 표현되지?  
+> (see [book] (Bathe) The finite element shell element chap 6.3)
 
 이 때, $\mathbf v^i_{1,2}$는 각 각 $\mathbf v^i$에 수직한 단위 벡터이고, $\alpha_i, \beta_i$는 rotation of the director vector $\mathbf v^i$ about $\mathbf v^i_{1,2}$.
 
 covariant strain component는 다음과 같다.
 $$ e_{ij} = \frac{1}{2} \left( \frac{\partial \bf x}{\partial r_i} \cdot \frac{\partial \bf d}{\partial r_j} + \frac{\partial \bf x}{\partial r_j} \cdot \frac{\partial \bf d}{\partial r_i} \right)$$ 
-> covariant strain component가 왜 이렇게 표현되지?
+> Q. covariant strain component가 왜 이렇게 표현되지?  
+> (see [book] (Bathe) The finite element shell element chap 4.1)
 
-$n_{ij}$개의 tying points $\{(r_1)_k, (r_2)_k\} \enspace k=1,\cdots,n_{ij}$에서 assumed covariant strain component를 다음과 같이 정의하자.
+shell midsurface위에 있는 $n_{ij}$개의 tying points를 정의하자.
+$$\{(r_1)_k, (r_2)_k\} \enspace k=1,\cdots,n_{ij}$$
+
+assumed covariant strain component를 다음과 같이 정의하자.
 $$ \begin{equation} \tilde{e}_{ij}(r_1,r_2,r_3) = \tilde{n}_k(r_1,r_2)e_{ij}|_{((r_1)_k,(r_2)_k,r_3)} \end{equation}  $$
 
 $\tilde{n}_{k}$는 assumed interpolation function으로 다음을 만족한다.
 $$ \tilde n_i((r_1)_j , (r_2)_j) = \delta_{ij} $$
 
 Displacement-based covariant strain component는 다음과 같이 주어진다.
-$$ EQ(7) ?? $$
+$$ \boldsymbol \epsilon = \mathbf B \mathbf d $$
 
-## 3 Strain interpolation
-MITC 기법을 성공적으로 적용하기 위해서는 적절한 assumed strain interpolations(EQ.(1))을 사용해야 하며, tying points를 잘 정해야 한다.
+따라서 Displacement-based assumed strain component는 다음과 같이 주어진다.
+$$ \tilde{\boldsymbol \epsilon} = \tilde{\mathbf B} \mathbf d$$
+$$ \text{Where, } \tilde{\mathbf B} = \tilde{n}_k(r_1,r_2) \mathbf B |_{((r_1)_k,(r_2)_k,r_3)} $$
 
-### 3.1 Strain interpolation methods
-$f(x)$는 2차 다항식이고 $f(x_1),f(x_2)$가 주어졌을 때
+> Q. $\tilde{\mathbf B}$를 어떻게 구하는거지..?
+
+# 3 Strain interpolation
+MITC 기법을 성공적으로 적용하기 위해서는 assumed strain interpolations(EQ.(1))을 잘 정해야 하며 또한 tying points를 잘 정해야 한다.
+
+## 3.1 Strain interpolation methods
+3 node isoparametric beam element를 고려하자.
+
+quadratic variation of transverse shear strain $e_{rt}$을 가지고 있기 때문에 shear locking을 제거하기 위해서는 transverse shear strain을 linearly interpolate해야 한다. linearly interpolate하기 위해서는 서로 다른 두 tying points에서의 transverse shear strains을 알면 된다.
+> Q. 왜 3node 일 때 transverse shear strain이 quadratic이지?  
+> Q. 왜 linearly interpolate해야 shear locking을 제거할 수 있지?  
+
+assumed transverse shear strain를 $\tilde e_{rt}$라 하고 서로 다른 두 tying points을 $r_1,r_2$라 하자. 이 때 $r_1,r_2$가 중심점 0을 기준으로 대칭으로 주어졌다고 하자.
+
+<p align = "center">
+<img src = "./image/2004(Lee & Bathe)_1.png">
+</p>
 
 #### Method i
-$f_h(x) = a_1x + a_0$로 근사하고 다음 두개의 선형방정식을 풀어 $a_i$를 구한다.
-$$ f_h(x_1) = f(x_1), \quad f_h(x_2) = f(x_2) $$
+$\tilde e_{rt}$가 선형임을 알고 있음으로 다음과 같이 가정한다.
+$$ \tilde e_{rt}(r) = a_0 + a_1 r$$
+
+$r_1, r_2$에서 $\tilde e_{rt} =e_{rt}$여야 함으로 다음 2개의 선형방정식이 유도된다.
+$$ \tilde e_{rt}(r_1) = e_{rt}(r_1), \enspace \tilde e_{rt}(r_2) = e_{rt}(r_2)  $$
+
+두개의 선형방정식을 연릭하여 풀어 미지수 $a_0, a_1$을 결정한다. 
 
 #### Method ii
-$f_h(x) = n_i(x)f(x_i)$로 근사한다. 이 때, $n_i$는 다음을 만족한다.
-$$ n_1 = a_1x + a_0, \quad n_2 = b_1x + b_0, \quad n_i(x_j) = \delta_{ij} $$
+$r_1, r_2$에서 $\tilde e_{rt} =e_{rt}$여야 함으로 shape functions of the standard isoparametric procedure을 이용하여 다음과 같이 가정한다.
+$$ \tilde e_{rt}(r) = e_{rt}(r_i)n_i(r) $$
+
+이 때, $n_i$는 linear shape function 임으로 다음을 만족한다.
+$$ n_1 = a_0 + a_1r, \quad n_2 = b_0 + b_1r, \quad n_i(r_j) = \delta_{ij} $$
 
 다음 4개의 선형방정식을 풀어 $a_i,b_i$를 구한다.
-$$ n_1(x_1) = 1, \quad n_1(x_2) = 0, \quad  n_2(x_1) = 0, \quad n_2(x_1) = 1 $$
+$$ n_1(r_1) = 1, \quad n_1(r_2) = 0, \quad  n_2(r_1) = 0, \quad n_2(r_1) = 1 $$
 
 #### New Method
-$f_h(x) =  a_0 + a_1x + a_2 x^2$로 근사하고
+displacement-based three node isoparametric beam element의 transverse shear strain의 order가 quadratic임으로 $\tilde e_{rt}$를 다음과 같이 가정한다.
+$$ \tilde e_{rt}(r) =  a_0 + a_1r + a_2 r^2 $$
 
-### 3.2 Interpolation of transverse shear strain field
+다음 세가지 조건이 주어졌다고 하자.
+$$ \begin{aligned} \tilde e_{rt}(-1) &= m_{rt} - l_{rt} \\ \tilde e_{rt}(0) &= m_{rt} \\ \tilde e_{rt}(1) &= m_{rt} + l_{rt} \end{aligned} $$
+$$ \text{Where, } m_{rt} = \frac{1}{2}(e_{rt}(r_1) + e_{rt}(r_2)), \enspace l_{rt} = \frac{e_{rt}(r_2) - e_{rt}(r_1)}{r_2 - r_1} $$
+
+이 때, $m_{rt}$는 두 tying strain의 중간값이며, $l_{rt}$는 중간과 edge에서의 값의 차이이다.
+
+주어진 조건을 통해 미지수 $a_0, a_1, a_2$를 구한다.
+
+method i과 method ii는 linear polynomials로 시작한것과는 다르게 new method에서는 quadratic polynomial로 시작하고 linear variation을 imposition하여 자연스럽게 quadratic term이 없어지게 하였다. 이러한 점 때문에 정확한 space of function을 알지 못하는 2D,3D element에서도 new method를 사용할 수 있다.
+> Q. 이게 무슨말이지??
+
+## 3.2 Interpolation of transverse shear strain field
 isotropic한 tranverse shear strain fields를 얻기 위해서는 strain variations corresponding to the three edge directions of the element가 동일해야 한다.
 
 > Q1. isotropic한 tranverse shear strain이 뭐지??  
@@ -119,7 +160,7 @@ $$ \tilde e_{rt} = a_0 + a_1 r + a_2 s \\ \tilde e_{st} = b_0 + b_1 r + b_2 s $$
 식(1)으로 부터 $\tilde e_{qt}$ 또한 근사된다.
 $$ \tilde e_{qt} = (a_0-b_0) + (a_1-b_1) r + (a_2-b_2) s $$
 
-두번째로 strain tying positions을 결정한다. tying positions는 isotropically 위치해야 하며 displacement-based strain과 assumed strain이 이 점에서 tied 된다. 현재 예시에서는 center of the edges로 결정되어있다.
+두번째로 strain tying points을 결정한다. tying points는 isotropically 위치해야 하며 displacement-based strain과 assumed strain이 이 점에서 tied 된다. 현재 예시에서는 center of the edges로 결정되어있다.
 
 new method를 이용한 tying은 judiciously chosen points에서 assumed strain을 displacement-based strain으로부터 evaluating 함으로써 얻어지며 이 points들은 tying points일 필요가 없다.
 

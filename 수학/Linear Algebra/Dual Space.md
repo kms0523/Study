@@ -113,18 +113,52 @@ $$ T : V \times W \rightarrow X $$
 
 만약 $X = \mathbb F$일 경우에는 `vectorspace bilinear form`이라고 한다.
 
-이 때, $V,W$의 원소를 인자로 받아 $X$의 원소로 mapping 시키는 모든 bilinear map의 집합을 $B(V,W,X)$라 한다.
+이 때, $V,W$의 원소를 인자로 받아 $X$의 원소로 mapping 시키는 모든 bilinear map의 집합을 $L^2(V,W,X)$라 한다.
+
+
 
 > 참고  
 > [Bilinear map - Wiki](https://en.wikipedia.org/wiki/Bilinear_map)
 
 
 ### 명제1
-벡터공간 $V,W,X / \mathbb F$이 있을 때, $B(V,W,X)$는 다음과 같이 정의된 연산이 있을 때, $\mathbb F$위의 벡터공간임을 보여라.
-$$ \begin{aligned} + := & B(V,W,X) \times B(V,W,X) \rightarrow B(V,W,X) \quad s.t. \quad \varphi + \psi \mapsto (\varphi + \psi) \\ & \text{satisfying } (\varphi + \psi)(v,w) = \varphi(v,w) + \psi(v,w) \\ \cdot := & \mathbb F \times B(V,W,X) \rightarrow B(V,W,X) \quad s.t. \quad a \cdot \psi \mapsto (a\psi) \\ & \text{satisfying } (a\psi)(v,w) = a\psi(v,w) \end{aligned}  $$
+벡터공간 $V,W,X / \mathbb F$이 있을 때, $L^2(V,W,X)$는 다음과 같이 정의된 연산이 있을 때, $\mathbb F$위의 벡터공간임을 보여라.
+$$ \begin{aligned} + := & L^2(V,W,X) \times L^2(V,W,X) \rightarrow L^2(V,W,X) \quad s.t. \quad (\varphi, \psi) \mapsto \varphi + \psi \\ & \text{satisfying } (\varphi + \psi)(v,w) = \varphi(v,w) + \psi(v,w) \\ \cdot := & \mathbb F \times L^2(V,W,X) \rightarrow L^2(V,W,X) \quad s.t. \quad (a, \psi) \mapsto a \psi \\ & \text{satisfying } (a\psi)(v,w) = a\psi(v,w) \end{aligned}  $$
+
+### 명제2
+$n$차원 벡터공간 $V/ \mathbb F$과 bilinear form $T \in L^2(V,V,\mathbb F)$가 있고 $v \in V$가 있을 때, 다음 함수를 정의하자.
+$$ T(v, \cdot) : V \rightarrow \mathbb F \quad s.t. \quad w \mapsto T(v,w) $$
+
+$\beta$를 $V$의 기저라 할 때, 다음을 증명하여라.
+$$ v = a^i \beta_i \Rightarrow T(v,\cdot) = a_j\beta^j $$
+$$ \text{where, } a_j = a^iT(\beta_i,\beta_j) $$
+
+**Proof**
+
+$w = b^k \beta_k \in V$라 하면 다음이 성립한다.
+$$ \begin{equation} T(v,\cdot)(w) = T(v,w) = a^ib^kT(\beta_i,\beta_k) \end{equation} $$
+
+식(1)의 dummy index $k$를 $j$로 바꿔주면 다음과 같다.
+$$ \begin{equation} T(v,\cdot)(w) = T(v,w) = a^ib^jT(\beta_i,\beta_j) \end{equation} $$
+
+$T(v,\cdot) \in V^*$임으로 $T(v, \cdot) = a_j \beta^j$이고 다음이 성립한다.
+$$ \begin{equation} T(v,\cdot)(w) = a_jb^k \beta^j(\beta_k) = a_j b^k \delta^j_k = a_jb^j \end{equation} $$
+
+식(2)와 식(3)을 비교함으로써 다음 관계식을 얻을 수 있다.
+$$ a_j = a^iT(\beta_i,\beta_j) $$
+
+> 참고  
+> [피그티 기초 물리 네이버](https://m.blog.naver.com/PostView.naver?blogId=defxgenh&logNo=50191387615)  
+> [피그티 기초 물리 tistory](https://elementary-physics.tistory.com/155)  
+
+#### 따름명제
+$$ T(\beta_i, \cdot) = T(\beta_i,\beta_j)\beta^j $$
+
+
+
 
 ## Non-degeneracy
-벡터공간 $V,W,X / \mathbb F$과 $T \in B(V,W,X)$가 있을 때, 다음 성질을 만족하는 경우를 `Non-degenerate` bilinear map이라고 한다.
+벡터공간 $V,W,X / \mathbb F$과 $T \in L^2(V,W,X)$가 있을 때, 다음 성질을 만족하는 경우를 `Non-degenerate` bilinear map이라고 한다.
 $$ \begin{aligned} & v \in V - \{ 0_V \} \Rightarrow \exist w \in W \quad s.t. \quad T(v,w) \neq 0_X \\ \land \enspace & w \in W - \{ 0_w \} \Rightarrow \exist v \in W \quad s.t. \quad T(v,w) \neq 0_X \end{aligned} $$
 
 혹은
@@ -134,32 +168,6 @@ $$ \begin{aligned} & \forall w \in W, \quad  T(v,w) = 0_X \Leftrightarrow v = 0_
 > [note] (Garrett) Duals, naturality, bilinear forms
 
 ### 명제1
-$n$차원 벡터공간 $V/ \mathbb F$과 non-degenerate bilinear form $T \in B(V,V,\mathbb F)$가 있고 $v \in V$가 있을 때, 다음 함수를 정의하자.
-$$ T(v, \cdot) : V \rightarrow \mathbb F \quad s.t. \quad w \mapsto T(v,w) $$
-
-이 때, $\beta$를 $V$의 기저라 할 때, 다음을 증명하여라.
-$$ v = a^i \beta_i \Rightarrow T(v,\cdot) = a_j\beta^j $$
-$$ \text{where, } a_j = a^iT(\beta_i,\beta_j) $$
-
-**Proof**
-
-$w = b^k \beta_k \in V$라 하면 다음이 성립한다.
-$$ T(v,\cdot)(w) = T(v,w) = a^ib^kT(\beta_i,\beta_k) $$
-
-$T(v,\cdot) \in V^*$임으로 $T(v, \cdot) = a_i \beta^i$이고 다음이 성립한다.
-$$ T(v,\cdot)(w) = a_ib^k \beta^i(\beta_k) = a_i b^k \delta^i_k = a_kb^k $$
-
-두 식을 비교함으로써 다음 관계식을 얻을 수 있다.
-$$ a_k = a^iT(\beta_i,\beta_k) $$
-
-free index를 바꾸면 다음을 얻는다.
-$$ a_j = a^iT(\beta_i,\beta_j) $$
-
-> 참고  
-> [피그티 기초 물리 네이버](https://m.blog.naver.com/PostView.naver?blogId=defxgenh&logNo=50191387615&)  
-> [피그티 기초 물리 tistory](https://elementary-physics.tistory.com/155)  
-
-### 명제2
 벡터공간 $V/ \mathbb F$과 non-degenerate bilinear form $T \in B(V,V,\mathbb F)$가 있고 $v \in V$가 있을 때, 다음과 같은 함수를 정의하자.
 $$ T(v, \cdot) : V \rightarrow \mathbb F \quad s.t. \quad w \mapsto T(v,w) $$
 
@@ -180,14 +188,29 @@ $\ker(\varphi) = \{ 0_V \}$이고 $\dim(V) = \dim(V^*)$임으로 선형대수 Di
 > 참고  
 > [note] (Garrett) Duals, naturality, bilinear forms
 
+#### 따름명제
+$V$의 기저를 $\beta$라 했을 때 다음을 증명하여라.
+$$ [\varphi]^{\beta^*}_{\beta} = T_{ij} $$
+$$ \text{Where, } T_{ij} = T(\beta_i, \beta_j) $$
 
----
+
+### 명제2
+벡터공간 $V/ \mathbb F$과 non-degenerate bilinear form $T \in B(V,V,\mathbb F)$가 있고 $v \in V$가 있을 때, 다음과 같은 함수를 정의하자.
+$$ T(v, \cdot) : V \rightarrow \mathbb F \quad s.t. \quad w \mapsto T(v,w) $$
+$$ \varphi : V \rightarrow V^* \quad s.t. \quad v \mapsto T(v, \cdot) $$
+$$ H : V^* \times V^* \rightarrow \mathbb F \quad s.t. \quad (v^1,v^2) \mapsto B(\varphi^{-1}(v^1), \varphi^{-1}(v^2)) $$
+
+다음을 증명하여라.
+$$ H \in B(V^*,V^*, \mathbb F) $$
 
 > 참고  
 > [inner-product-in-dual-space - Mathematics](https://math.stackexchange.com/questions/3486532/inner-product-in-dual-space)  
+---
+
+
 > [what-is-the-difference-between-a-dual-vector-and-a-reciprocal-vector - Pysics](https://physics.stackexchange.com/questions/509334/what-is-the-difference-between-a-dual-vector-and-a-reciprocal-vector)  
 > reciprocal vector, covariant components, metric tensor in euclidean space  
-navType=by)  
+
 
 
 
