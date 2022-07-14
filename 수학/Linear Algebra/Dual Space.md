@@ -35,6 +35,20 @@ $$ 0^V : V \rightarrow \mathbb F \quad s.t. \quad v \mapsto 0_F $$
 벡터공간 $V/\Bbb F$와 기저 $\beta$가 있을 때, 다음과 같이 정의된 집합을 $\beta$의 `쌍대 집합(dual set)` $\beta^*$이라 한다.
 $$ \beta^i : V \rightarrow \Bbb F \quad s.t. \quad v \mapsto ([v]_\beta)_i \quad \text{by} \quad \beta^i(\beta_j) = \delta^i_j $$
 
+### 명제0
+벡터공간 $V/\Bbb F$와 기저 $\beta$가 있을 때, $\beta$의 dual set $\beta^*$가 유일하게 존재함을 증명하여라.
+
+**Proof**
+
+$v \in V$일 때, $\beta^i : V \rightarrow \mathbb F$가 다음을 만족하는 함수들이라 하자.
+$$ v = \beta^i(v)\beta_i $$
+
+$\beta_i$가 $V$의 기저임으로, 계수인 $\beta^i(v)$가 모든 $v$에 대해서 유일하게 존재한다는 것을 알고 있다.
+
+정의역의 모든 원소에 대해 유일하게 값이 정의되어 있음으로 함수 $\beta^i$는 존재하고 잘 정의된다.
+
+
+
 ### 명제1
 벡터공간 $V/\Bbb F$와 기저 $\beta$가 있을 때, $\beta$의 dual set $\beta^*$이 선형 독립임을 증명하여라.
 

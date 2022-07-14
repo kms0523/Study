@@ -145,10 +145,13 @@ isotropic한 tranverse shear strain fields를 얻기 위해서는 strain variati
 따라서 두 independent covariant transverse shear strains $e_{rt}, e_{st}$를 interpolation할 때, $e_{qt}$도 고려해야 한다. 위 그림을 통해 삼각형 내부의 한점의 $e_{rt}$와 $e_{st}$로부터 $e_{qt}$를 어떻게 얻는지 알 수 있다. tensor transformation에 의해 $e_{qt}$는 다음과 같다.
 $$ \begin{equation} e_{qt} = \frac{1}{\sqrt{2}}(e_{st} - e_{rt}) \end{equation} $$
 
-> Q1. 그림으로부터 뭘 알 수 있지?  
-> Q2. tensor transformation이 무엇이지?  
+> Q1. tensor transformation이 무엇이지?    
+> Q2. tensor transformation을 하면 왜 저렇게 되지?
 
-예를 들어, constant transverse shear strain along its edge이고, tying points가 center of the edges로 결정된 경우를 생각해보자.
+예를 들어, constant transverse shear strain along its edge이고, tying points가 center of the edges로 결정된 3 node triangular shell elemnt 경우를 생각해보자.
+
+여기서 주의할 점은 assumed strain variations가 displacement-based strain보다 lower order여야 한다.
+> Q1. 왜 assumed strain variation이 displacement based strain보다 lower order여야 하는가?
 
 <p align = "center">
 <img src = "./image/shell2.png">
@@ -162,16 +165,12 @@ $$ \tilde e_{qt} = (a_0-b_0) + (a_1-b_1) r + (a_2-b_2) s $$
 
 두번째로 strain tying points을 결정한다. tying points는 isotropically 위치해야 하며 displacement-based strain과 assumed strain이 이 점에서 tied 된다. 현재 예시에서는 center of the edges로 결정되어있다.
 
-new method를 이용한 tying은 judiciously chosen points에서 assumed strain을 displacement-based strain으로부터 evaluating 함으로써 얻어지며 이 points들은 tying points일 필요가 없다.
+new method를 이용한 tying은 judiciously chosen points에서 assumed strain을 displacement-based strain으로부터 evaluating 함으로써 얻어지며 new method를 이용하여 interpolation을하기 때문에 points들은 tying points일 필요가 없다.
 
 > Q1. judicously chosen points는 어떻게 정하는거야 도대체
 
 이를 식으로 나타내면 다음과 같다.
 $$ \begin{equation} \begin{aligned} \tilde{e}_{rt}(0,0) = e^{(1)}_{rt}, \quad \tilde{e}_{rt}(1,0) = e^{(1)}_{rt} \\ \tilde{e}_{st}(0,0) = e^{(2)}_{st}, \quad \tilde{e}_{st}(0,1) = e^{(2)}_{st} \\ \tilde{e}_{qt}(1,0) = e^{(3)}_{qt}, \quad \tilde{e}_{qt}(0,1) = e^{(3)}_{qt} \end{aligned} \end{equation} $$
-
-
-주의할 점은 assumed strain variations가 displacement-based strain보다 lower order여야 한다.
-> Q1. 왜 assumed strain variation이 displacement based strain보다 lower order여야 하는가?
 
 세번째로, 식(3)에 나타난 6개의 선형방정식을 풀어 6개의 미지수를 구한다.
 $$ \begin{array}{l l l} a_0 = e^{(1)}_{rt}, & a_1 = 0, & a_2 = e^{(2)}_{st} - e^{(1)}_{rt} -\sqrt{2}e^{(3)}_{qt} \\ b_0 = e^{(2)}_{st}, & b_1 = -a_2, & b_2 = 0 \end{array} $$
@@ -189,10 +188,10 @@ $$ \begin{equation} e_{qq} = \frac{e_{rr}+e_{ss}}{2} + \frac{e_{rr} - e_{ss}}{2}
 식(4)에 $\theta = 135\degree$를 대입하고 $e_{rs}$에 대해 정리하면 다음과 같다.
 $$ \begin{equation} e_{rs} = \frac{1}{2}(e_{rr} + e_{ss}) - e_{qq} \end{equation}  $$
 
-> Q1. 그림으로부터 뭘 알 수 있지?  
-> Q2. tensor transformation이 무엇이지?  
+> Q1. tensor transformation이 무엇이지?    
+> Q2. tensor transformation을 하면 왜 저렇게 되지?
 
-예를 들어, 6-node triangular shell element with linear normal strain along its edge이고, 각각의 normal strain에 대해 tying points가 다음과 같이 결정된 경우를 보자.
+예를 들어, linear normal strain along its edge이고, 각각의 normal strain에 대해 tying points가 아래 그림과 같이 결정된 6-node triangular shell element를 보자.
 
 <p align = "center">
 <img src = "./image/shell4.png">
@@ -210,6 +209,10 @@ $$ \begin{aligned} \tilde e_{rr} &= a_0 + a_1 r + a_2 s \\ \tilde e_{ss} &= b_0 
 두번째로 new method를 이용해 judiciously chosen points에서 tying한다.
 $$ \begin{equation} \begin{array}{lll} \tilde{e}_{rr}(0,0) = m^{(1)}_{rr} - l^{(1)}_{rr} & \tilde{e}_{ss}(0,0) = m^{(2)}_{ss} - l^{(2)}_{ss} & \tilde{e}_{qq}(0,0) = m^{(3)}_{qq} - l^{(3)}_{qq} \\ \tilde{e}_{rr}(1/2,0) = m^{(1)}_{rr} & \tilde{e}_{ss}(0, 1/2) = m^{(2)}_{ss} & \tilde{e}_{qq}(0, 1/2) = m^{(3)}_{qq} \\ \tilde{e}_{rr}(1,0) = m^{(1)}_{rr} + l^{(1)}_{rr} & \tilde{e}_{ss}(0, 1) = m^{(2)}_{ss} + l^{(2)}_{ss} & \tilde{e}_{qq}(0, 1) = m^{(3)}_{qq} + l^{(3)}_{qq} \\ \tilde{e}_{rr}(r_1,1 / \sqrt3) = e^{(1)}_{crr} & \tilde{e}_{ss}(1 / \sqrt3 , s_1) = e^{(2)}_{css} & \tilde{e}_{qq}(r_1 , s_1) = e^{(3)}_{cqq} \end{array} \end{equation} $$
 $$ \text{Where, } m_{jj}^{(i)} = \frac{1}{2}(e_{1jj}^{(i)} + e_{2jj}^{(i)}), \quad l_{jj}^{(i)} = \sqrt{3}(e_{2jj}^{(i)} - e_{1jj}^{(i)}) \\ j= r,s,q, \enspace i = 1,2,3$$
+
+> Q1. judicously chosen points는 어떻게 정하는거야 도대체  
+> Q2. 왜 미지수보다 많은 tying points를 잡았지???  
+> not invertible
 
 세번째로, 식(6)에 나타난 12개의 선형방정식을 풀어 9개의 미지수를 결정한다.
 $$ \begin{array}{l l l} a_0 = m^{(1)}_{rr} - l^{(1)}_{rr}, & a_1 = 2l^{(1)}_{rr}, & a_2 = \sqrt{3}(e^{(1)}_{crr} - a_0 - a_1r_1) \\ b_0 = m^{(2)}_{ss} - l^{(2)}_{ss}, & b_1 = \sqrt{3}(e^{(2)}_{css} - b_0 - b_2s_1), & b_2 = 2l^{(3)}_{ss} \\ c_0 = m^{(3)}_{qq} + l^{(3)}_{qq}, & c_1 = -2l^{(3)}_{qq}, & c_2 = \sqrt{3}(e^{(3)}_{cqq} - c_0 - c_1r_1) \end{array} $$
