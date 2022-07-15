@@ -79,7 +79,7 @@ $$ \boldsymbol \epsilon = \mathbf B \mathbf d $$
 $$ \tilde{\boldsymbol \epsilon} = \tilde{\mathbf B} \mathbf d$$
 $$ \text{Where, } \tilde{\mathbf B} = \tilde{n}_k(r_1,r_2) \mathbf B |_{((r_1)_k,(r_2)_k,r_3)} $$
 
-> Q. $\tilde{\mathbf B}$를 어떻게 구하는거지..?
+> Q. $\tilde{\mathbf n}$를 어떻게 구하는거지..?
 
 # 3 Strain interpolation
 MITC 기법을 성공적으로 적용하기 위해서는 assumed strain interpolations(EQ.(1))을 잘 정해야 하며 또한 tying points를 잘 정해야 한다.

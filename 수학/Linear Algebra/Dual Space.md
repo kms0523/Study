@@ -109,6 +109,11 @@ $$ \begin{aligned} & ([v^*]_\beta)^T = ([v^*]_\gamma)^T [Id_V]^\gamma_\beta \\ \
 이를 통해 기저가 $\beta^*$ 에서 $\gamma^*$로 변할 때 좌표변환행렬과 기저가 $\beta$에서 $\gamma$로 변할 때 나타나는 기저변환행렬이 동일함을 알 수 있다. 즉, 기저가 $\beta$에서 $\gamma$로 바뀔 때 기저가 변하는 방식과 dual basis에서
 좌표가 변하는 방식이 동일하다. 따라서 $v^* \in V^*$를 `covector`라고 한다. 
 
+
+## covector의 사용
+> 참고
+> [Book] (Dullemond & Peeters) Introudction to Tensor Calculus chap 2.1
+
 ### 명제1
 유한차원 벡터공간 $V/\Bbb F$가 있을 때, 기저를 $\beta, \gamma$, dual basis를 $\beta^*, \gamma^*$라 하자. $v \in V, v^* \in V^*$에 대해서 다음이 성립한다.
 

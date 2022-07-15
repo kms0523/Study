@@ -1,8 +1,8 @@
 # Tensor Products
-두 벡터공간 $V,W / \mathbb F$이 있을 때, $V$와 $W$의 `텐서 곱(tensor product)` $V \otimes W$는 아래와 같은 보편 성질을 갖는 bilinear map  $B \in L^2(V,W, V \otimes W)$가 정의된 벡터공간이다. 
+두 벡터공간 $V,W / \mathbb F$이 있을 때, $V$와 $W$의 `텐서 곱(tensor product)` $V \otimes W$는 아래와 같은 보편 성질을 갖는 bilinear map  $B \in L^2(V,W; V \otimes W)$과 함께 정의된 벡터공간이다. 
 
-임의의 벡터공간 $X / \mathbb F$가 있을 때, 모든 $H \in L^2(V,W,X)$에 
-$$ H \in L^2(V,W,X) \Rightarrow \exist! T \in L(V \otimes W,X) \quad s.t. \quad H = T \circ B  $$
+임의의 벡터공간 $X / \mathbb F$가 있을 때, 
+$$ H \in L^2(V,W;X) \Rightarrow \exist! T \in L(V \otimes W;X) \quad s.t. \quad H = T \circ B  $$
 
 
 # Tensor
