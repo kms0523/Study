@@ -50,7 +50,7 @@ Weighted residual method는 weighted residual formulation의 test function space
 자명하게 무한차원 함수공간인 $C^\infty(\Omega)$에 있는 모든 함수에 대해 식(2)를 적용하는 것은 불가능하다. 따라서 test function space을 $n$차 부분 함수공간인 $\mathcal{W}_h < C^\infty(\Omega)$으로 축소하여 문제를 단순화하자.
 
 $\mathcal W_h$의 기저 함수를 $\{ w_1, \cdots, w_n \}$이라 하면 식(2)는 다음과 같이 간단해 진다.
-$$ \begin{equation} \text{find } u \in \mathcal U \ \quad s.t. \quad \int_\Omega w_i r \thinspace dV = 0 \quad \forall i \in  (1, \cdots, n) \end{equation} $$
+$$ \begin{equation} \begin{aligned} & \text{find } u \in \mathcal U \quad s.t. \quad \forall w \in \mathcal W_h, \quad \int_\Omega w r \thinspace dV = 0 \\ \Leftrightarrow \enspace & \text{find } u \in \mathcal U \quad s.t. \quad \forall c_i \in \R, \quad \int_\Omega c_iw_i r \thinspace dV = 0, \enspace i \in (1, \cdots, n) \\ \Leftrightarrow \enspace & \text{find } u \in \mathcal U \quad s.t. \quad  \int_\Omega w_i r \thinspace dV = 0, \enspace i \in (1, \cdots, n)  \end{aligned} \end{equation} $$
 
 test function space가 $\mathcal W_h$로 축소됨에 따라 축소된 residual formulation은 더이상 strong formulation과 동치가 아니다. 즉, $\mathcal W_h$공간 안에서 residual formulation을 만족하는 해도 $r=0$을 만족시키는 실제 해가 아니며 실제 해의 근사가 되게 된다.
 
