@@ -1,0 +1,79 @@
+// Solver 이해
+
+[book] (Cook et al) Concepts and Applications of Finite Element Analysis
+[book] (MacNeal) FEs Their Design and Performance
+[book] (Kelly) An Introduction to the FEM
+[book] (Lai et al) Introduction to Continuum Mechanics
+[book] (Mase et al) Continuum Mechanics for Engineers
+[book] (kelly) Foundations of Continuum Mechanics
+[book] (kelly) An Introduction to Solid Mechanics
+[book] (Kelly) Engineering Solid Mechanics – small strain
+
+[note] (Harvard) principle of virtual work and fem
+[note] (Brown univ) Principle of virtual work
+[note] (Bathe) The Principle of Virtual Work
+[note] (Abaqus) Equilibrium and virtual work
+[note] (Wiki) Elastic energy
+[note] (MIT) Constitutive Equations
+[note] (Erik Thompson) Energy Methods
+[note] (Whitaker) NEWTON'S LAWS, EULER'S LAWS, AND speed of lights
+[note] (Lagace) General Stress-Strain Behavior
+[note] (A. Salih) Weighted Residual Methods
+[note] (ETH Zurich) Variational Formulation & the Galerkin Method
+[note] (Lars-Erik Lindgren) From Weighted REsidual Methods to Finite Element Methods
+[note] (M. J. Zahr) 2.Mathematical preliminaries
+[note] (M. J. Zahr) 3.Weighted residual methods
+[note] (M. J. zahr) 5.Variational formulation of elliptic PDEs
+
+전산고체역학.md
+연속체 역학 정리.md
+운동 법칙.md
+고체역학.md
+Weighted Residual Methods.md
+
+
+// shell element 
+[book] (Cook et al) Concepts and Applications of Finite Element Analysis
+[book] (Bathe) FE Procedures
+[Book] (Bathe) The FEA of shells
+
+[note] (anu) Thin Plates
+[note] (Chennamsetti) Theory of Plates
+[note] (eFunda) Equilibrium equation of plates
+[note] (Harvard) Linear and Nonlinear plate theory
+[note] (Haukaas) Kirchhoff-and-Mindlin-Plates
+[note] (Ruggiero) Look at Membrane and Thin Plate Theory
+[note] (Rusten) Plates
+[note] (Benson) Zero Energy Modes in 1D
+
+[paper] (Nwoji) Theory of elasticity formulation of the Mindlin plate equations
+[paper] 1986 (Huang & Hinton) A new nin node degenerated shell element with enhanced membrane and shear interpolation
+[paper] 1984 (Bathe & Dvorkin) A continumm mechanics based four-node shell elemnt for general non-linear analysis
+[paper] 1986 (Bathe & Dvorkin) A formulation of general shell elemnts
+[Paper] 2004 (Lee & Bathe) Development of MITC isotropic triangular shell finite elements
+[paper] 1989 (Simo & Fox) On a stress resultant gemoetrically exact shell model. Part I Formulation and Optimal Parametrization
+
+판 이론.md
+[paper] 2004 (Lee & Bathe).md
+[paper] 1984 (Bathe & Dvorkin).md
+
+//수학
+[Book] (Dullemond & Peeters) Introudction to Tensor Calculus
+[Book] (Friedberg) Linear Algebra 
+[Book] (Hung & Schmidt) Tensor Analysis and Elementary Differential Geometry for Physicists and Engineers
+[book] (J. Stewart) Calculus
+
+[note] (Anna Vainchtein) Change of basis, reciprocal basis vectors, covariant and contravariant components of a vector and metric tensor
+[note] (Canez) Notes on dual spaces
+[note] (Garrett) Duals, naturality, bilinear forms
+[note] (Gathmann) Tensor Products
+[note] (Kamnitzer) Tensor products
+[note] (upenn) The Dual Space
+[note] (MAT1231) Duality of finite-dimensional vector spaces
+[note] (Schwartz) Notes on Tensor Products
+
+Dual Space.md
+Tensor.md
+선형대수.md
+Differential Geometry.md
+
