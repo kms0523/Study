@@ -160,8 +160,8 @@ $$ \begin{equation} e_{qt} = \frac{1}{\sqrt{2}}(e_{st} - e_{rt}) \end{equation} 
 첫번째로, assumed transverse shear strain $\tilde e_{rt}, \tilde e_{st}$를 다항식으로 근사한다.
 $$ \tilde e_{rt} = a_0 + a_1 r + a_2 s \\ \tilde e_{st} = b_0 + b_1 r + b_2 s $$
 
-식(1)으로 부터 $\tilde e_{qt}$ 또한 근사된다.
-$$ \tilde e_{qt} = (a_0-b_0) + (a_1-b_1) r + (a_2-b_2) s $$
+식(2)으로 부터 $\tilde e_{qt}$ 또한 근사된다.
+$$ \tilde e_{qt} = \frac{1}{\sqrt{2}} \Big( (b_0-a_0) + (b_1-a_1) r + (b_2-a_2) s \Big) $$
 
 두번째로 strain tying points을 결정한다. tying points는 isotropically 위치해야 하며 displacement-based strain과 assumed strain이 이 점에서 tied 된다. 현재 예시에서는 center of the edges로 결정되어있다.
 
@@ -242,8 +242,20 @@ constant transverse shear strain을 가정하고 tying points는 각 edge의 cen
 
 $$ \text{where, } r_1 = s_1 = \frac{1}{2} - \frac{1}{2 \sqrt{3}}, \quad r_2 = s_2 = \frac{1}{2} + \frac{1}{2 \sqrt{3}}, \quad r_3=s_3 = \frac{1}{3} $$
 
+monomial vector function을 다음과 같이 정의하자.
+$$ \mathbf m = \begin{bmatrix} 1 & r & s &  r^2 & rs & s^2 \end{bmatrix}^T $$
+
 assumed transverse shear strain을 2차 다항식으로 근사한다.
-$$ \tilde e_{rt} = a_0 + a_1 r + a_2 s + a_3 r^2 + a_4 rs + a_5 s^2 \\ \tilde e_{st} = b_0 + b_1 r + b_2 s + b_3 r^2 + b_4 rs + b_5 s^2  $$
+$$ \tilde e_{rt} = a_im_i, \enspace \tilde e_{st} = b_im_i $$
+
+식(2)으로 부터 $\tilde e_{qt}$는 다음과 같다.
+$$ \tilde e_{qt} = \frac{1}{\sqrt{2}} (b_i - a_i)m_i $$
+
+new interpolation method를 적용하여 tying point에서 tying하면 다음 관계식들을 얻을 수 있다.
+$$ \begin{array}{lll} \tilde{e}_{rt}(0,0) = m_{rt} - l_{rt} & \tilde{e}_{st}(0,0) = m_{st} - l_{st} & \tilde{e}_{qt}(1,0) = m_{qt} - l_{qt} \\ \tilde{e}_{rt}(1/2,0) = m_{rt} & \tilde{e}_{st}(0, 1/2) = m_{st} & \tilde{e}_{qt}(1/2, 1/2) = m_{qt} \\ \tilde{e}_{rt}(1,0) = m_{rt} + l_{rt} & \tilde{e}_{st}(0, 1) = m_{st} + l_{st} & \tilde{e}_{qt}(0, 1) = m_{qt} + l_{qt} \\ \tilde{e}_{rt}(1/3, 1/3) = e_{crr} & \tilde{e}_{st}(1/3, 1/3) = e_{css} & \tilde{e}_{qt}(1/3, 1/3) = e_{cqq} \end{array} $$
+$$ \text{Where, } m_{jj}^{(i)} = \frac{1}{2}(e_{1jj}^{(i)} + e_{2jj}^{(i)}), \quad l_{jj}^{(i)} = \sqrt{3}(e_{2jj}^{(i)} - e_{1jj}^{(i)}) \\ j= r,s,q, \enspace i = 1,2,3$$
+
+
 
 chapter 3.2와 동일한 과정을 거치면 미지수를 전부 결정할 수 있다.
 

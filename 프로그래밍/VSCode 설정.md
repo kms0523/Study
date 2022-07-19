@@ -5,6 +5,7 @@ Markdown All in One
 # 단축키
 ## VSCode 단축키
 * ctrl , : 설정
+* alt 화살표 : 탭 바꾸기
 
 ## Markdown All in One 단축키
 * ctrl k, ctrl v : 마크다운 미리보기
