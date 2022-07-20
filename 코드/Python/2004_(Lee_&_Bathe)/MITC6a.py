@@ -18,6 +18,10 @@ ert = a.dot(monomials)
 est = b.dot(monomials)
 eqt = sqrt(0.5)*(est-ert)
 
+# print(a)
+# print(monomials)
+# print(ert)
+
 num_equation = 12
 eq_array = sympy.symarray("temp", num_equation)
 eq_array[0] = ert.subs([(r,0), (s,0)])
@@ -63,7 +67,6 @@ for i in range (0,num_equation) :
         target_variable = x[j]
         A[i, j] = eq.coeff(target_variable)
 
-print(A)
 print(det(A))
 
 # mrt, lrt, ecr, mst, lst, ecs, mqt, lqt, ecq = sympy.symbols("mrt, lrt, ecr, mst, lst, ecs, mqt, lqt, ecq")

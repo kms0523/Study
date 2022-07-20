@@ -29,23 +29,30 @@ eq_array[3] = est.subs([(r,0), (s,1)])
 eq_array[4] = eqt.subs([(r,1), (s,0)])
 eq_array[5] = eqt.subs([(r,0), (s,1)])
 
+
 num_variable = a.size + b.size
+
+x = sympy.symarray("temp", num_variable)
+for i in range(0, a.size):
+    x[i] = a[i]
+for i in range(0, b.size):
+    x[i + a.size] = b[i]
+
 A = mat(zeros((num_equation,num_variable)))
+for i in range (0,num_equation) :     
+    eq = eq_array[i]   
+    for j in range (0, num_variable) :
+        target_variable = x[j]
+        A[i, j] = eq.coeff(target_variable)
 
-for i in range (0,num_equation) :        
-    for j in range (0, a.size) :
-        target_variable = a[j]
-        A[i, j] = eq_array[i].coeff(target_variable)
-    for j in range (0, b.size) :
-        target_variable = b[j]
-        A[i, j + a.size] = eq_array[i].coeff(target_variable)
+print(det(A))
 
-mrt, mst, mqt = sympy.symbols("mrt, mst, mqt")
-b = array([mrt, mrt, mst, mst, mqt, mqt])
-b = mat(b).T
+# mrt, mst, mqt = sympy.symbols("mrt, mst, mqt")
+# b = array([mrt, mrt, mst, mst, mqt, mqt])
+# b = mat(b).T
 
-x = A.I * b
-print(x)
+# x = A.I * b
+# print(x)
 
 
 
