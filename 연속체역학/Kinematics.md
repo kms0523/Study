@@ -96,28 +96,34 @@ Example 3.6.2
 [book] (Lai et al) Introduction to Continuum Mechanics Chapter3.6
 
 # Deformation
-시간 $t_0$에서 두 점 $\bm X, \bm X + \Delta \bm X$으로 이루어진 요소 $l(t_0)$을 다음과 같이 표현하자.
+함수 $\mathbf p$가 운동으로 인해 변형된 연속체 내부 점의 공간좌표를 나타냄으로 $\mathbf p$를 점의 `변형(deformation)`이라고 하자.
+
+시간 $t_0$에서 두 점 $\bm X, \bm X + \Delta \bm X$으로 이루어진 선 $l(t_0)$을 다음과 같이 표현하자.
 $$ l(t_0) = \Delta \bm X $$
 
-시간이 $t$가 되고 변위 $\mathbf d(\bm X, t)$가 주어졌을 때, 변형된 $l$을 이루는 두 점의 공간좌표는 다음과 같다.
+시간이 $t$가 되고 변위 $\mathbf d(\bm X, t)$가 주어졌을 때, 두 점의 변형은 다음과 같다.
 $$ \mathbf p(\bm X,t) = \bm X + \mathbf d (\mathbf X, t) \\ \mathbf p(\bm X + \Delta \bm X, t) = \bm X + \Delta \bm X + \mathbf d (\bm X + \Delta \bm X, t) $$
 
-변형된 요소 $l(t)$를 다음과 같이 표현하자.
+변형된 점으로 이루어진 선 $l(t)$를 다음과 같이 표현하자.
 $$ l(t) = \mathbf p(\bm X + \Delta \bm X, t) - \mathbf p(\bm X,t) = \Delta \mathbf x(t) $$
 
-그러면 요소의 `변형(deformation)` $\Delta l$은 다음과 같이 표현된다.
+그러면 선의 변형 $\Delta l$은 다음과 같이 표현된다.
 $$ \begin{aligned} \Delta l &= \Delta \mathbf x - \Delta \bm X \\ &= \mathbf d (\bm X + \Delta \bm X, t) - \mathbf d (\mathbf X, t) \end{aligned} $$
 
-$\Delta \bm X$가 충분히 작아 $\mathbf d (\bm X + \Delta \bm X, t)$를 선형으로 근사할 수 있다면 $\Delta l$은 다음과 같다.
-$$ \begin{equation} \begin{aligned} \Delta l &= \frac{\partial d_i}{\partial X_j} \Delta X_j \\ & = \nabla \mathbf d \Delta \bm X \end{aligned} \end{equation} $$
+## 선형근사
+$\Delta \bm X$가 충분히 작아 $\mathbf d (\bm X + \Delta \bm X, t)$를 선형으로 근사할 수 있다고 가정하자.
 
-이 때, $\Delta \mathbf d$를 `displacement gradient`라 한다.
+그러면 $\Delta \mathbf x$는 다음과 같이 간단하게 나타낼 수 있다.
+$$ \begin{aligned} \Delta \mathbf x & \approx \frac{\partial p_i}{\partial X_j} \Delta X_j \\ & = \nabla \mathbf p \Delta \bm X \\ & = \mathbf F \Delta \bm X \end{aligned} $$
 
-식(3)을 통해, 변형 전 후의 요소가 다음과 같은 관계를 갖는것을 알 수 있다.
-$$ \begin{equation} \Delta \mathbf x = \mathbf F \Delta \bm X \end{equation} $$
-$$ \text{Where, } \mathbf F = \mathbf I + \nabla \mathbf d $$
+$$ \text{Where, } \mathbf F = \nabla \mathbf p = \mathbf I + \nabla \mathbf d $$
 
-이 때, $\mathbf F$를 `deformation gradient`라고 한다. $\bf F$를 deformation gradient라고 하는 이유는 $\mathbf F = \nabla \mathbf p$이기 때문이다.
+이 때, $\mathbf F$를 `deformation gradient`라 한다.
+
+또한, $\Delta l$도 다음과 같이 간단하게 나타낼 수 있다.
+$$ \begin{equation} \begin{aligned} \Delta l & \approx \frac{\partial d_i}{\partial X_j} \Delta X_j \\ & = \nabla \mathbf d \Delta \bm X \end{aligned} \end{equation} $$
+
+이 때, $\nabla \mathbf d$를 `displacement gradient`라 한다.
 
 ## 길이 변화
 시간 $t_0$에서 두 점 $\bm X, \bm X + \Delta \bm X$으로 이루어진 요소를 $\Delta \bm X$라하고 시간 $t$일 때, 변형된 요소를 $\Delta \mathbf x$라하자.
@@ -125,7 +131,7 @@ $$ \text{Where, } \mathbf F = \mathbf I + \nabla \mathbf d $$
 $\Delta \bm X, \Delta \mathbf x$를 길이와 단위방향벡터으로 표현하면 다음과 같다.
 $$ \Delta X = \Delta S \mathbf n, \enspace \Delta \mathbf x = \Delta S' \mathbf n' $$
 
-식(4)에 위 표현식을 대입하면 다음과 같다.
+길이를 구하기 위해 내적을 이용하면  다음과 같다.
 $$ \begin{equation} \begin{aligned} \Delta \mathbf x \cdot \Delta \mathbf x &= \Delta \bm X ^T \mathbf F^T \mathbf F \Delta \bm X \\ (\Delta S')^2 &= \Delta \bm X ^T \mathbf C \Delta \bm X \end{aligned} \end{equation} $$
 $$ \text{Where, } \mathbf C = \mathbf F^T \mathbf F $$
 
@@ -137,10 +143,10 @@ $$ \begin{aligned} \mathbf C &= \mathbf {(I + \nabla d)}^T \mathbf {(I + \nabla 
 만약 $\bf d$가 모든 점에서 동일한 강체 운동일 경우 $\nabla \bf d = 0$이고 $\mathbf E_L = 0$임으로 $\bf C = I$가 된다. 즉, $\mathbf E_L$은 변위의 변화율로 구성되어 있으며 변형률을 표현하는 값이 된다. 
 
 식(5)을 다시 정리하면 다음과 같다.
-$$ \begin{equation} \begin{aligned} (\Delta S')^2 &= \Delta \bm X^T \Delta \bm X + 2\mathbf \Delta \bm X^T \mathbf E_L \Delta \bm X \\ &= (\Delta S)^2 + 2 (\Delta S)^2 (\mathbf n^T \mathbf E_L  \mathbf n) \end{aligned} \end{equation}  $$
+$$ \begin{aligned} (\Delta S')^2 &= \Delta \bm X^T \Delta \bm X + 2\mathbf \Delta \bm X^T \mathbf E_L \Delta \bm X \\ &= (\Delta S)^2 + 2 (\Delta S)^2 (\mathbf n^T \mathbf E_L  \mathbf n) \end{aligned} $$
 
 따라서 길이의 변화는 다음과 같다.
-$$ (\Delta S')^2 - (\Delta S)^2 = 2 (\Delta S)^2 (\mathbf n^T \mathbf E_L  \mathbf n) $$
+$$ \begin{equation} (\Delta S')^2 - (\Delta S)^2 = 2 (\Delta S)^2 (\mathbf n^T \mathbf E_L  \mathbf n) \end{equation} $$
 
 ## 각도 변화
 시간 $t_0$에서 두 점 $\bm X, \bm X + \Delta \bm X$으로 이루어진 요소를 $\Delta \bm X$, 두 점 $\bm X, \bm X + \Delta \bm Y$로 이루어진 요소 $\Delta \bm Y$라
@@ -153,28 +159,18 @@ $$ \Delta \mathbf x = \Delta S_1' \mathbf n', \enspace \Delta \mathbf y = \Delta
 $\Delta \mathbf x$와 $\Delta \mathbf y$가 이루는 각도는 내적을 통해 다음과 같이 알 수 있다.
 $$ \begin{equation} \begin{aligned} & \Delta \mathbf x \cdot \Delta \mathbf y = \Delta \bm X^T \Delta \bm Y + 2\mathbf \Delta \bm X^T \mathbf E_L \Delta \bm Y \\ \Leftrightarrow \enspace & \Delta S_1' \Delta S_2' \cos \theta = \Delta S_1 \Delta S_2 (\mathbf n^T \mathbf E_L \mathbf m)  \\ \Leftrightarrow \enspace & \cos \theta = \frac{\Delta S_1 \Delta S_2}{\Delta S'_1 \Delta S'_2 } (\mathbf n^T \mathbf E_L \mathbf m) \end{aligned} \end{equation} $$
 
-
 # Infinitesimal Deformation
-변형률이 매우 작다고 가정하면 변형률을 나타내는 $\nabla \mathbf d$가 매우 작은 값을 갖는다. $\nabla \mathbf d$가 충분히 작아 고차항인 $(\nabla \mathbf d)^T \nabla \mathbf d$를 무시할 수 있다면 $\bf C$는 다음과 같이 간단해진다.
+변형률이 매우 작다고 가정하면 변형률을 나타내는 $\nabla \mathbf d$가 매우 작은 값을 갖는다. 이러한 가정을 통해 다음과 같은 간략화가 가능하다.
+
+## Cauchy-Green deformation tensor
+$\nabla \mathbf d$가 충분히 작다면 고차항인 $(\nabla \mathbf d)^T \nabla \mathbf d$를 무시할 수 있고 $\bf C$는 다음과 같이 간단해진다.
 $$ \mathbf C = \mathbf I + 2 \mathbf E $$
 $$ \text{Where, } \mathbf E = \frac{1}{2}(\nabla \mathbf d + \nabla \mathbf d^T ) $$
 
-이 때, $\bf E$를 `infinitesimal strain tensor`라고 하고 $\nabla \bf d$의 symmetric part이다.
+### infinitesimal strain tensor
+$\nabla \bf d$의 symmetric part $\bf E$를 `infinitesimal strain tensor`라고 한다.
 
-#### 길이 변화
-변형률이 매우 작기 때문에 $\Delta s \approx \Delta S$라 하고 식(4)를 변형하면 다음과 같다.
-$$ \begin{aligned} & (\Delta s)^2 = (\Delta S)^2 + 2 (\Delta S)^2 (\mathbf n^T \mathbf E  \mathbf n) \\ \Leftrightarrow \enspace & \frac{(\Delta s)^2 - (\Delta S)^2}{2 (\Delta S)^2} = \mathbf n^T \mathbf E  \mathbf n \\ \Leftrightarrow \enspace & \frac{\Delta s - \Delta S}{\Delta S} = \mathbf n^T \mathbf E  \mathbf n \end{aligned} $$
-
-$\bf n$방향에 있던 요소의 단위 길이당 변화율은 $\mathbf n^T \mathbf E  \mathbf n$으로 나타나며 $\bf e_1,e_2,e_3$방향의 단위 길이당 변화율은 각 각 $E_{11},E_{22},E_{33}$로 나타난다. 따라서 $\bf E$의 대각성분에 있는 값들을 `normal strain`이라고 한다.
-
-#### 각도 변화
-변형률이 매우 작기 때문에 $\Delta s_i \approx \Delta S_i, \enspace \theta = \frac{\pi}{2} - \gamma, \enspace \gamma \approx 0$로 두고 식(5)를 변형하면 다음과 같다.
-$$ \begin{aligned} & \cos \left( \frac{\pi}{2} - \gamma \right) = 2 (\mathbf n^T \mathbf E \mathbf m) \\ \Leftrightarrow \enspace & \sin\gamma = 2 (\mathbf n^T \mathbf E \mathbf m) \\ \Leftrightarrow \enspace & \gamma = 2 (\mathbf n^T \mathbf E \mathbf m) \end{aligned}  $$
-
-$\bf n, m$이 기본 기저일 경우 $\gamma = 2E_{ij}$가 되며 이는 기존에 $x_i, x_j$방향에 있던 두요소가 이루던 각도의 변화량이다.
-
-#### 주변형률
-$\bf E$가 symmetric이기 때문에 diagonalizable하며 서로 수직인 고유벡터들을 갖는다. 각각의 고유벡터들을 principal directions라고 하며 고유값들을 `주변형률(principal strain)`이라 한다. 기하학적으로, 고유벡터 방향에 있는 요소들은 변형 후에도 방향은 변하지 않으며 고유값만큼 크기만 달라진다.
+$\bf E$가 symmetric이기 때문에 diagonalizable하며 서로 수직인 고유벡터들을 갖는다. 각각의 고유벡터들을 principal directions라고 하며 고유값들을 `주변형률(principal strain)`이라 한다. 기하학적으로, 고유벡터 방향에 있는 요소들은 변형 후에도 방향은 변하지 않으며 크기가 고유값만큼 상수배 된다.
 
 주변형률은 모든 방향중에 최대 최소 normal strain값을 갖으며 다음의 특성 방정식으로 주변형률을 구할 수 있다.
 $$ \lambda^3 - I_1 \lambda^2 + I_2 \lambda - I_3 = 0 $$
@@ -191,13 +187,8 @@ $$ \frac{\Delta V}{V} = E_{11} + E_{22} + E_{33} $$
 > 참고  
 > [book] (Lai et al) Introduction to Continuum Mechanics Chapter 3.7-10
 
-### The infinitesimal rotation tensor
-$\nabla \mathbf d$를 symmetric part $\mathbf E$와 antisymmetric part $\boldsymbol{\Omega}$로 나누면 $\Delta \mathbf x$는 다음과 같다.
-$$ \Delta \mathbf x = \Delta \bm X + (\mathbf E + \boldsymbol{\Omega})\Delta \bm X $$
-
-이 때, $\boldsymbol{\Omega} = (\nabla \mathbf d)^A$는 `infinitesimal rotation tensor`라고 한다.
-
-위의 식으로 부터 $(\mathbf E + \boldsymbol{\Omega})\Delta \bm X$항만큼 $\Delta \bm X$가 바뀌는것을 알 수 있다.
+### infinitesimal rotation tensor
+$\nabla \mathbf d$의 antisymmetric part  $\boldsymbol{\Omega} = (\nabla \mathbf d)^A$를 `infinitesimal rotation tensor`라고 한다.
 
 $\mathbf t^A$가 $\boldsymbol{\Omega}$의 dual vector라고하면 다음이 성립한다.
 $$ \mathbf t^A \times \Delta \bm X = \boldsymbol{\Omega} \Delta \bm X $$
@@ -205,13 +196,26 @@ $$ \text{Where, } \mathbf t^A = \Omega_{32} \mathbf e_1 + \Omega_{13} \mathbf e_
 
 > 참고  
 > [book] (Lai et al) Introduction to Continuum Mechanics Chapter 3.11
+## 길이 변화
+$\nabla \mathbf d$가 충분히 작다면 $\Delta S' \approx \Delta S$라 할 수 있다. 그러면 식(6)은 다음과 같이 간단해진다.
+$$ \begin{aligned} & (\Delta S')^2 - (\Delta S)^2 = 2 (\Delta S)^2 (\mathbf n^T \mathbf E  \mathbf n) \\ \Leftrightarrow \enspace & \frac{(\Delta S')^2 - (\Delta S)^2}{2 (\Delta S)^2} = \mathbf n^T \mathbf E  \mathbf n \\ \Leftrightarrow \enspace & \frac{\Delta S' - \Delta S}{\Delta S} = \mathbf n^T \mathbf E  \mathbf n \end{aligned} $$
 
-### Time rate of change of a material element
+즉, $\bf n$방향에 있던 요소의 단위 길이당 변화율은 $\mathbf n^T \mathbf E  \mathbf n$으로 나타난다.
+
+만약 $\bf e_1,e_2,e_3$방향일 경우, 단위 길이당 변화율은 각 각 $E_{11},E_{22},E_{33}$로 나타난다. 따라서 $\bf E$의 대각성분에 있는 값들을 `normal strain`이라고 한다.
+
+## 각도 변화
+$\nabla \mathbf d$가 충분히 작다면 $\Delta S'_i \approx \Delta S_i, \enspace \theta = \frac{\pi}{2} - \gamma, \enspace \gamma \approx 0$라 할 수 있다. 그러면 식(7)은 다음과 같이 간단해진다.
+$$ \begin{aligned} & \cos \left( \frac{\pi}{2} - \gamma \right) = 2 (\mathbf n^T \mathbf E \mathbf m) \\ \Leftrightarrow \enspace & \sin\gamma = 2 (\mathbf n^T \mathbf E \mathbf m) \\ \Leftrightarrow \enspace & \gamma = 2 (\mathbf n^T \mathbf E \mathbf m) \end{aligned}  $$
+
+$\bf n, m$이 기본 기저일 경우 $\gamma = 2E_{ij}$가 되며 이는 기존에 $x_i, x_j$방향에 있던 두요소가 이루던 각도의 변화량이다.
+
+# Time rate of change of a material element
 두 점 $\bm X, \bm X + \Delta \bm X$으로 이루어진 요소를 생각해보자. 시간 $t$일 때, 요소는 다음과 같이 표현된다.
-$$ \begin{equation} \Delta \mathbf x = \mathbf x(\bm X + \Delta \bm X, t) - \mathbf x(\bm X, t) \end{equation}  $$
+$$ \begin{equation} \Delta \mathbf x = \mathbf p(\bm X + \Delta \bm X, t) - \mathbf p(\bm X, t) \end{equation}  $$
 
-식(6)을 물질미분하여 얻는 속도가 Lagrangian관점에서는 함수 $\mathbf u$로 Eulerian관점에서는 함수 $\mathbf v$로 표현된다고 하자.
-$$ \begin{aligned} \frac{D}{Dt} \Delta \mathbf x &= \frac{D}{Dt} \mathbf x(\bm X + \Delta \bm X, t) - \frac{D}{Dt} \mathbf x(\bm X, t) \\ &= \mathbf u(\bm X + \Delta \bm X,t) - \mathbf u(\bm X,t) \\ &= \mathbf v(\mathbf x + \Delta \mathbf x,t) - \mathbf v(\mathbf x,t) \end{aligned} $$
+식(8)을 물질미분하여 얻는 속도가 Lagrangian관점에서는 함수 $\mathbf u$로 Eulerian관점에서는 함수 $\mathbf v$로 표현된다고 하자.
+$$ \begin{aligned} \frac{D}{Dt} \Delta \mathbf x &= \frac{D}{Dt} \mathbf p(\bm X + \Delta \bm X, t) - \frac{D}{Dt} \mathbf p(\bm X, t) \\ &= \mathbf u(\bm X + \Delta \bm X,t) - \mathbf u(\bm X,t) \\ &= \mathbf v(\mathbf x + \Delta \mathbf x,t) - \mathbf v(\mathbf x,t) \end{aligned} $$
 
 $\Delta \bm X, \Delta \mathbf x$가 충분히 작아 $\mathbf u(\bm X + \Delta \bm X,t), \mathbf v(\mathbf x + \Delta \mathbf x,t)$를 선형으로 근사할 수 있다고 가정하면 다음과 같다.
 $$ \begin{equation} \frac{D}{Dt} \Delta \mathbf x = (\nabla_{\bm X} \mathbf u) \Delta \bm X = (\nabla_{\mathbf x} \mathbf v) \Delta \mathbf x \end{equation} $$
@@ -221,7 +225,7 @@ $$ \begin{equation} \frac{D}{Dt} \Delta \mathbf x = (\nabla_{\bm X} \mathbf u) \
 > 참고  
 > [book] (Lai et al) Introduction to Continuum Mechanics Chapter 3.12
 
-#### The rate of deformation tensor
+## The rate of deformation tensor
 $\nabla \mathbf v$를 다음과 같이 symmetric part와 antisymmetric part로 나눠보자.
 $$ \nabla \mathbf v = \mathbf D + \mathbf W $$
 $$ \text{Where, } \mathbf D = \frac{1}{2} \left( \nabla \mathbf v + (\nabla \mathbf v)^T \right), \quad \mathbf W = \frac{1}{2} \left( \nabla \mathbf v - (\nabla \mathbf v)^T \right)  $$
@@ -231,7 +235,7 @@ $$ \text{Where, } \mathbf D = \frac{1}{2} \left( \nabla \mathbf v + (\nabla \mat
 $\mathbf W$는 antisymmetric tensor임으로 dual vector를 $\boldsymbol \omega$라 할 때, 다음을 만족한다.
 $$ \begin{equation} \mathbf W \Delta \mathbf x = \boldsymbol \omega \times \Delta \mathbf x \end{equation}  $$
 
-식(8)을 보면 $\mathbf W$의 단위가 $/s$임으로, $\mathbf W$은 $\Delta \mathbf x$를 각속도 $\boldsymbol{\omega}$로 회전 시킨다는것을 알 수 있다.
+식(10)을 보면 $\mathbf W$의 단위가 $/s$임으로, $\mathbf W$은 $\Delta \mathbf x$를 각속도 $\boldsymbol{\omega}$로 회전 시킨다는것을 알 수 있다.
 
 요소의 시간변화율을 $\mathbf D, \mathbf W$로 나타내면 다음과 같다.
 $$ \frac{D}{Dt} \Delta \mathbf x = \mathbf D \Delta \mathbf x + \mathbf W \Delta \mathbf x = \mathbf D \Delta \mathbf x + \boldsymbol \omega \times \Delta \mathbf x$$
@@ -239,7 +243,7 @@ $$ \frac{D}{Dt} \Delta \mathbf x = \mathbf D \Delta \mathbf x + \mathbf W \Delta
 > 참고  
 > [book] (Lai et al) Introduction to Continuum Mechanics Chapter 3.14 + Prob. 3.48
 
-#### 길이의 시간 변화율
+## 길이의 시간 변화율
 두 점 $\bm X, \bm X + \Delta \bm X$으로 이루어진 요소가 시간 $t$에서 다음과 같이 표현된다고 하자.
 $$ \Delta \mathbf x = \Delta S \mathbf n $$
 
@@ -256,7 +260,7 @@ $\mathbf n$방향에 있는 요소의 단위 길이당 길이의 시간변화율
 
 식(10)에서 알 수 있듯이, $\mathbf W$는 $\Delta \mathbf x$로 표현되는 요소의 길이 변화에 영향을 주지 않는다.
 
-#### 각도의 시간 변화율
+## 각도의 시간 변화율
 이번에는 두 요소가 이루는 각도가 시간에 따라 어떻게 변화하는지 알아보자.
 
 시간 $t$에서 요소가 다음과 같이 표현된다고 하자.
@@ -276,5 +280,5 @@ $$ 2 \mathbf n \cdot \mathbf D \mathbf m =  \left( \frac{1}{\Delta S_1} \frac{D}
 
 만약 $\mathbf {n = e_i,m = e_j}$이었다면, $2D_{ij}$는 $\mathbf e_i$방향과 $\mathbf e_j$방향에 있는 요소사이의 각도의 감소율을 나타낸다.
 
-#### 부피의 시간 변화율
+## 부피의 시간 변화율
 $$ \frac{1}{\Delta V} \frac{D}{Dt} \Delta V = \text{div} (\mathbf v) $$
