@@ -1,8 +1,8 @@
 # Material coordinates
-연속체의 내부 한 점의 공간좌표가 시간 $t$에 대한 벡터 함수로 나타난다고 해보자.
+운동하는 연속체 내부 한 점의 공간좌표가 시간 $t$에 대한 벡터 함수로 나타난다고 해보자.
 $$ \mathbf x = \mathbf p(t) $$
 
-연속체 내부 점의 시간에 대한 공간좌표의 변화 즉, 연속체의 운동을 표현하기 위해 연속체 내부의 모든점의 공간좌표를 시간에 대한 벡터 함수로 나타내면 다음과 같다.
+연속체의 운동을 표현하기 위해 연속체 내부의 모든점의 공간좌표를 시간에 대한 벡터 함수로 나타내면 다음과 같다.
 $$ \mathbf x_i = \mathbf p_i(t), \quad i=1, \cdots, N, \cdots $$
 
 하지만 연속체 내부에는 무한한 점이 포함되어 있기 때문에 점마다 번호를 부여하여 모든점을 표현하는 방법은 한계가 있다. 이러한 한계를 극복하기 위해 기준 시간 $t_0$때 위치를 가지고 점을 표현하는 `물질좌표(material coordinates)` $\bm X$를 도입한다.
@@ -11,7 +11,7 @@ $$ X_i = p_i(\bm X,t_0) $$
 물질좌표는 연속체의 한점을 표현하는 방법이며, 물질좌표를 이용해서 각 점의 공간좌표를 벡터 함수로 나타내면 다음과 같다.
 $$ \begin{equation} \mathbf x = \mathbf p(\bm X,t) \quad \text{with} \quad \bm X = \mathbf p(\bm X, t_0) \end{equation}  $$
 
-$\bm X = \mathbf p(\bm X, t_0)$은 초기조건과 같다.
+$\bm X = \mathbf p(\bm X, t_0)$은 점의 초기 공간좌표이다.
 
 > 참고  
 [book] (Lai et al) Introduction to Continuum Mechanics Chapter3.1
@@ -96,42 +96,36 @@ Example 3.6.2
 [book] (Lai et al) Introduction to Continuum Mechanics Chapter3.6
 
 # Deformation
-함수 $\mathbf p$가 운동으로 인해 변형된 연속체 내부 점의 공간좌표를 나타냄으로 $\mathbf p$를 점의 `변형(deformation)`이라고 하자.
+함수 $\mathbf p$가 운동으로 인해 변형된 연속체 내부 점의 공간좌표를 나타냄으로  $\mathbf p$를 변형된 점, 간단하게 `변형(deformation)`이라고 하자.
 
-시간 $t_0$에서 두 점 $\bm X, \bm X + \Delta \bm X$으로 이루어진 선 $l(t_0)$을 다음과 같이 표현하자.
-$$ l(t_0) = \Delta \bm X $$
+두 점 $\bm X, \bm X + \Delta \bm X$이 있을 때, 벡터 $\Delta \mathbf x$를 다음과 같이 정의하자.
+$$ \Delta \mathbf x(t) := \mathbf p(\bm X + \Delta \bm X, t) - \mathbf p(\bm X,t) $$
 
-시간이 $t$가 되고 변위 $\mathbf d(\bm X, t)$가 주어졌을 때, 두 점의 변형은 다음과 같다.
-$$ \mathbf p(\bm X,t) = \bm X + \mathbf d (\mathbf X, t) \\ \mathbf p(\bm X + \Delta \bm X, t) = \bm X + \Delta \bm X + \mathbf d (\bm X + \Delta \bm X, t) $$
+그러면 정의에 의해 $\Delta \mathbf x(t_0) = \Delta \bm X$이다.
 
-변형된 점으로 이루어진 선 $l(t)$를 다음과 같이 표현하자.
-$$ l(t) = \mathbf p(\bm X + \Delta \bm X, t) - \mathbf p(\bm X,t) = \Delta \mathbf x(t) $$
-
-그러면 선의 변형 $\Delta l$은 다음과 같이 표현된다.
-$$ \begin{aligned} \Delta l &= \Delta \mathbf x - \Delta \bm X \\ &= \mathbf d (\bm X + \Delta \bm X, t) - \mathbf d (\mathbf X, t) \end{aligned} $$
+변위 $\mathbf d(\bm X, t)$가 주어진 경우, $\Delta \mathbf x$는 다음과 같이 표현할 수 있다.
+$$ \Delta \mathbf x = \Delta \bm X + \mathbf d (\bm X + \Delta \bm X, t) - \mathbf d (\mathbf X, t) $$
 
 ## 선형근사
-$\Delta \bm X$가 충분히 작아 $\mathbf d (\bm X + \Delta \bm X, t)$를 선형으로 근사할 수 있다고 가정하자.
-
-그러면 $\Delta \mathbf x$는 다음과 같이 간단하게 나타낼 수 있다.
+$\Delta \bm X$가 충분히 작아 $\mathbf p (\bm X + \Delta \bm X, t)$를 선형으로 근사할 수 있다고 가정하자. 그러면 $\Delta \mathbf x$는 다음과 같이 간단하게 나타낼 수 있다.
 $$ \begin{aligned} \Delta \mathbf x & \approx \frac{\partial p_i}{\partial X_j} \Delta X_j \\ & = \nabla \mathbf p \Delta \bm X \\ & = \mathbf F \Delta \bm X \end{aligned} $$
 
 $$ \text{Where, } \mathbf F = \nabla \mathbf p = \mathbf I + \nabla \mathbf d $$
 
 이 때, $\mathbf F$를 `deformation gradient`라 한다.
 
-또한, $\Delta l$도 다음과 같이 간단하게 나타낼 수 있다.
-$$ \begin{equation} \begin{aligned} \Delta l & \approx \frac{\partial d_i}{\partial X_j} \Delta X_j \\ & = \nabla \mathbf d \Delta \bm X \end{aligned} \end{equation} $$
+$\Delta \bm X$가 충분히 작아 $\mathbf d (\bm X + \Delta \bm X, t)$를 선형으로 근사할 수 있다고 가정하자. 그러면 $t_0$에서 $t$까지의 벡터의 변화도 다음과 같이 간단하게 나타낼 수 있다.
+$$ \begin{equation} \begin{aligned} \Delta \mathbf x - \Delta \bm X &= \mathbf d (\bm X + \Delta \bm X, t) - \mathbf d (\mathbf X, t) \\ & \approx \frac{\partial d_i}{\partial X_j} \Delta X_j \\ & = \nabla \mathbf d \Delta \bm X \end{aligned} \end{equation} $$
 
 이 때, $\nabla \mathbf d$를 `displacement gradient`라 한다.
 
 ## 길이 변화
-시간 $t_0$에서 두 점 $\bm X, \bm X + \Delta \bm X$으로 이루어진 요소를 $\Delta \bm X$라하고 시간 $t$일 때, 변형된 요소를 $\Delta \mathbf x$라하자.
+두 점 $\bm X, \bm X + \Delta \bm X$으로 이루어진 벡터를 $\Delta \mathbf x$라하자.
 
-$\Delta \bm X, \Delta \mathbf x$를 길이와 단위방향벡터으로 표현하면 다음과 같다.
+$\Delta \bm X, \Delta \mathbf x$를 길이와 단위방향벡터로 표현하면 다음과 같다.
 $$ \Delta X = \Delta S \mathbf n, \enspace \Delta \mathbf x = \Delta S' \mathbf n' $$
 
-길이를 구하기 위해 내적을 이용하면  다음과 같다.
+길이를 구하기 위해 내적을 이용하고 선형근사하면 다음 관계식을 얻을 수 있다.
 $$ \begin{equation} \begin{aligned} \Delta \mathbf x \cdot \Delta \mathbf x &= \Delta \bm X ^T \mathbf F^T \mathbf F \Delta \bm X \\ (\Delta S')^2 &= \Delta \bm X ^T \mathbf C \Delta \bm X \end{aligned} \end{equation} $$
 $$ \text{Where, } \mathbf C = \mathbf F^T \mathbf F $$
 
@@ -142,18 +136,18 @@ $$ \begin{aligned} \mathbf C &= \mathbf {(I + \nabla d)}^T \mathbf {(I + \nabla 
 
 만약 $\bf d$가 모든 점에서 동일한 강체 운동일 경우 $\nabla \bf d = 0$이고 $\mathbf E_L = 0$임으로 $\bf C = I$가 된다. 즉, $\mathbf E_L$은 변위의 변화율로 구성되어 있으며 변형률을 표현하는 값이 된다. 
 
-식(5)을 다시 정리하면 다음과 같다.
+식(4)를 다시 정리하면 다음과 같다.
 $$ \begin{aligned} (\Delta S')^2 &= \Delta \bm X^T \Delta \bm X + 2\mathbf \Delta \bm X^T \mathbf E_L \Delta \bm X \\ &= (\Delta S)^2 + 2 (\Delta S)^2 (\mathbf n^T \mathbf E_L  \mathbf n) \end{aligned} $$
 
 따라서 길이의 변화는 다음과 같다.
 $$ \begin{equation} (\Delta S')^2 - (\Delta S)^2 = 2 (\Delta S)^2 (\mathbf n^T \mathbf E_L  \mathbf n) \end{equation} $$
 
 ## 각도 변화
-시간 $t_0$에서 두 점 $\bm X, \bm X + \Delta \bm X$으로 이루어진 요소를 $\Delta \bm X$, 두 점 $\bm X, \bm X + \Delta \bm Y$로 이루어진 요소 $\Delta \bm Y$라
+시간 $t_0$에서 두 점 $\bm X, \bm X + \Delta \bm X$으로 이루어진 선을 $\Delta \bm X$, 두 점 $\bm X, \bm X + \Delta \bm Y$로 이루어진 선을 $\Delta \bm Y$라
 할 때, 다음을 만족한다고 하자.
 $$ \Delta \bm X = \Delta S_1 \mathbf n \\ \Delta \bm Y = \Delta S_2 \mathbf m \\ \mathbf n \cdot \mathbf m = 0  $$
 
-시간 $t$일 때, 변형된 요소를 각 각 $\Delta \mathbf x, \Delta \mathbf y$라 할 때, 변형된 두 요소를 길이와 단위벡터로 다음과 같이 표현하자.
+시간 $t$일 때, $\Delta \bm X, \Delta \bm Y$가 변형된 선을 각 각 $\Delta \mathbf x, \Delta \mathbf y$라 할 때, 변형된 두 선을 길이와 단위벡터로 다음과 같이 표현하자.
 $$ \Delta \mathbf x = \Delta S_1' \mathbf n', \enspace \Delta \mathbf y = \Delta S_2' \mathbf m' $$
 
 $\Delta \mathbf x$와 $\Delta \mathbf y$가 이루는 각도는 내적을 통해 다음과 같이 알 수 있다.
@@ -167,10 +161,12 @@ $\nabla \mathbf d$가 충분히 작다면 고차항인 $(\nabla \mathbf d)^T \na
 $$ \mathbf C = \mathbf I + 2 \mathbf E $$
 $$ \text{Where, } \mathbf E = \frac{1}{2}(\nabla \mathbf d + \nabla \mathbf d^T ) $$
 
-### infinitesimal strain tensor
-$\nabla \bf d$의 symmetric part $\bf E$를 `infinitesimal strain tensor`라고 한다.
+이 때, $\mathbf E$는 $\mathbf E_L$에 미소변형 가정을 통해 간략화 하여 얻은 strain tensor임으로 `infinitesimal strain tensor`라고 한다. 
 
-$\bf E$가 symmetric이기 때문에 diagonalizable하며 서로 수직인 고유벡터들을 갖는다. 각각의 고유벡터들을 principal directions라고 하며 고유값들을 `주변형률(principal strain)`이라 한다. 기하학적으로, 고유벡터 방향에 있는 요소들은 변형 후에도 방향은 변하지 않으며 크기가 고유값만큼 상수배 된다.
+### infinitesimal strain tensor
+$\bf E$는 $\nabla \bf d$의 symmetric part다. 따라서 $\bf E$가 symmetric이기 때문에 diagonalizable하며 서로 수직인 고유벡터들을 갖는다. 
+
+각각의 고유벡터들을 principal directions라고 하며 고유값들을 `주변형률(principal strain)`이라 한다. 기하학적으로, 고유벡터 방향에 있는 요소들은 변형 후에도 방향은 변하지 않으며 크기가 고유값만큼 상수배 된다.
 
 주변형률은 모든 방향중에 최대 최소 normal strain값을 갖으며 다음의 특성 방정식으로 주변형률을 구할 수 있다.
 $$ \lambda^3 - I_1 \lambda^2 + I_2 \lambda - I_3 = 0 $$
@@ -187,15 +183,7 @@ $$ \frac{\Delta V}{V} = E_{11} + E_{22} + E_{33} $$
 > 참고  
 > [book] (Lai et al) Introduction to Continuum Mechanics Chapter 3.7-10
 
-### infinitesimal rotation tensor
-$\nabla \mathbf d$의 antisymmetric part  $\boldsymbol{\Omega} = (\nabla \mathbf d)^A$를 `infinitesimal rotation tensor`라고 한다.
 
-$\mathbf t^A$가 $\boldsymbol{\Omega}$의 dual vector라고하면 다음이 성립한다.
-$$ \mathbf t^A \times \Delta \bm X = \boldsymbol{\Omega} \Delta \bm X $$
-$$ \text{Where, } \mathbf t^A = \Omega_{32} \mathbf e_1 + \Omega_{13} \mathbf e_2 + \Omega_{21} \mathbf e_3 $$
-
-> 참고  
-> [book] (Lai et al) Introduction to Continuum Mechanics Chapter 3.11
 ## 길이 변화
 $\nabla \mathbf d$가 충분히 작다면 $\Delta S' \approx \Delta S$라 할 수 있다. 그러면 식(6)은 다음과 같이 간단해진다.
 $$ \begin{aligned} & (\Delta S')^2 - (\Delta S)^2 = 2 (\Delta S)^2 (\mathbf n^T \mathbf E  \mathbf n) \\ \Leftrightarrow \enspace & \frac{(\Delta S')^2 - (\Delta S)^2}{2 (\Delta S)^2} = \mathbf n^T \mathbf E  \mathbf n \\ \Leftrightarrow \enspace & \frac{\Delta S' - \Delta S}{\Delta S} = \mathbf n^T \mathbf E  \mathbf n \end{aligned} $$
@@ -282,3 +270,13 @@ $$ 2 \mathbf n \cdot \mathbf D \mathbf m =  \left( \frac{1}{\Delta S_1} \frac{D}
 
 ## 부피의 시간 변화율
 $$ \frac{1}{\Delta V} \frac{D}{Dt} \Delta V = \text{div} (\mathbf v) $$
+
+# infinitesimal rotation tensor
+$\nabla \mathbf d$의 antisymmetric part  $\boldsymbol{\Omega} = (\nabla \mathbf d)^A$를 `infinitesimal rotation tensor`라고 한다.
+
+$\mathbf t^A$가 $\boldsymbol{\Omega}$의 dual vector라고하면 다음이 성립한다.
+$$ \mathbf t^A \times \Delta \bm X = \boldsymbol{\Omega} \Delta \bm X $$
+$$ \text{Where, } \mathbf t^A = \Omega_{32} \mathbf e_1 + \Omega_{13} \mathbf e_2 + \Omega_{21} \mathbf e_3 $$
+
+> 참고  
+> [book] (Lai et al) Introduction to Continuum Mechanics Chapter 3.11

@@ -1,21 +1,34 @@
 # $C^0$ interpolation
-## $\phi : \R \rightarrow \R$
-함수 $\phi : \R \rightarrow \R$를 $n$개의 `단항식(monomial)`을 갖는 `다항식(polynomial)`으로 근사하면 다음과 같이 표현할 수 있다.
-$$ \phi(x) \approx \mathbf a \cdot \mathbf m(x) $$
+## $\phi : \R^d \rightarrow \R$
+함수 $\phi : \R^d \rightarrow \R$가 있을 때, 서로 다른 $n$개의 $\mathbf x_i$에서 $\phi(\mathbf x_i)$값을 알고 있다고 하자.
 
-이 떄, 서로 다른 $n$개의 $x_i$에서 $\phi(x_i)$값을 알고 있다면 $\phi(x_i) = \mathbf a \cdot \mathbf m(x_i)$를 만족하도록 $\mathbf a$를 결정할 수 있다.
+이 때, $\phi$를 `다항식(polynomial)`으로 근사해보자.
 
-위의 조건을 행렬 형태로 나타내면 다음과 같다.
-$$ \boldsymbol{\hat{\phi}} = \mathbf M^T \mathbf a \\ \text{where,} \quad \mathbf M =  \begin{bmatrix} \mathbf m(x_1) & \cdots & \mathbf m(x_n) \end{bmatrix}, \quad \hat{\phi}_i = \phi(x_i) $$
+$\phi$를 $n$개의 `단항식(monomial)` $m_i$으로 이루어진 다항식으로 근사하면 다음과 같이 표현할 수 있다.
+$$ \phi(x) \approx \phi_h(x) = a_i m_i(\mathbf x) $$
+
+이를 행렬 형태로 표현하면 다음과 같다.
+$$ \phi_h = \mathbf a \cdot \mathbf m $$
+
+이 때, 벡터함수 $\mathbf m : \R \rightarrow \R^n$을 `monomial vector function`이라 한다. 
+
+위 다항식이 서로 다른 n개의 점에서 $\phi(\mathbf x_i) = \phi_h(\mathbf x_i)$을 만족해야하며 이를 성분으로 나타내면 다음과 같다.
+$$ \phi_h(\mathbf x_i) = a_j m_j(\mathbf x_i) $$
+
+이를 다시 행렬 형태로 나타내면 다음과 같다.
+$$ \boldsymbol{\hat{\phi}} = \mathbf M^T \mathbf a \\ \text{where,} \quad \mathbf M =  \begin{bmatrix} \mathbf m(x_1) & \cdots & \mathbf m(x_n) \end{bmatrix}, \quad \hat{\phi}_i = \phi(\mathbf x_i) $$
 
 따라서 $\bf a = (M^T)^{-1} \boldsymbol{\hat{\phi}}$이고 이를 원래 식에 대입하면 다음과 같다. 
-$$ \begin{aligned} \phi &= \mathbf {a \cdot m} \\ &= \mathbf {m \cdot a} \\ &= \mathbf m^T (\mathbf M^T)^{-1} \boldsymbol{\hat{\phi}} \\ &= \mathbf n \cdot \boldsymbol{\hat{\phi}} \quad  \end{aligned} $$
+$$ \begin{aligned} \phi_h &= \mathbf {a \cdot m} \\ &= \mathbf {m \cdot a} \\ &= \mathbf m^T (\mathbf M^T)^{-1} \boldsymbol{\hat{\phi}} \\ &= \mathbf n \cdot \boldsymbol{\hat{\phi}} \quad  \end{aligned} $$
+
+만약, $d = 1$이고 $\mathbf m$이 다음과 같이 주어졌다고 하자.
+$$ m_i = x^{i-1} $$
 
 이 때, $\mathbf n = \mathbf M^{-1} \mathbf m$은 형상함수 벡터이고 $n_i$는 다음과 같은 Lagrange 다항식 형태로 주어진다.
 
 $$ n_i = \prod_{\substack{j = 1 \\ j \neq i}}^n \frac{x_j - x}{x_j - x_i} $$
 
-이와 같이 각 점에서 값을 만족하게 보간하는 방법을 `라그랑지 보간(Lagrangian interpolation)`이라고 한다.
+따라서 이를 `라그랑지 보간(Lagrangian interpolation)`이라고 한다.
 
 ## $\boldsymbol{\phi} : \R^d \rightarrow \R^r$
 벡터 함수 $\boldsymbol{\phi} : \R^d \rightarrow \R^r$를 $n$개의 단항식을 갖는 다항식으로 근사하면 다음과 같이 표현할 수 있다.
