@@ -6,7 +6,7 @@ $$ \mathbf x = \mathbf p(t) $$
 $$ \mathbf x_i = \mathbf p_i(t), \quad i=1, \cdots, N, \cdots $$
 
 하지만 연속체 내부에는 무한한 점이 포함되어 있기 때문에 점마다 번호를 부여하여 모든점을 표현하는 방법은 한계가 있다. 이러한 한계를 극복하기 위해 기준 시간 $t_0$때 위치를 가지고 점을 표현하는 `물질좌표(material coordinates)` $\bm X$를 도입한다.
-$$ X_i = p_i(\bm X,t_0) $$
+$$ X^i = p^i(\bm X,t_0) $$
 
 물질좌표는 연속체의 한점을 표현하는 방법이며, 물질좌표를 이용해서 각 점의 공간좌표를 벡터 함수로 나타내면 다음과 같다.
 $$ \begin{equation} \mathbf x = \mathbf p(\bm X,t) \quad \text{with} \quad \bm X = \mathbf p(\bm X, t_0) \end{equation}  $$
@@ -38,6 +38,9 @@ $$ \begin{equation} \mathbf Q = \mathbf G(\mathbf x, t) \end{equation}  $$
 하지만 식(1)에 의해서 공간 관점으로 서술된 표현을 물질 관점으로 서술된 표현으로 바꿀 수 있다. 식(1)을 식(2)에 대입하면 다음과 같다.
 $$ \mathbf Q = \mathbf G( \mathbf p({\bm X}, t), t) = \mathbf F(\bm X, t)$$
 
+> 참고  
+[book] (Lai et al) Introduction to Continuum Mechanics Chapter3.2
+
 # Material Derivative
 연속체 한 점의 물리량이 시간에 따라 변하는 정도를 `물질미분(material derivative)`이라고 하며, $D/Dt$로 표현한다.
 
@@ -53,7 +56,10 @@ $$ \begin{aligned} \frac{D\phi}{Dt} = \frac{\partial\phi}{\partial t}\bigg\vert_
 $$ \boldsymbol \phi = \mathbf f(\bm X, t) = \mathbf g(\mathbf x, t) $$
 
 $\phi$의 물질미분은 다음과 같다.
-$$ \begin{aligned} \frac{D \boldsymbol \phi}{Dt} = \frac{\partial \boldsymbol \phi}{\partial t}\bigg\vert_{\bm X = const} & = \frac{\partial \mathbf f}{\partial t} \\ & = \frac{\partial g_i}{\partial x_j} \frac{\partial x_j}{\partial t} + \frac{\partial g_i}{\partial t} = \nabla \mathbf g \cdot \mathbf u + \frac{\partial \mathbf g}{\partial t} \end{aligned} $$
+$$ \begin{aligned} \frac{D \boldsymbol \phi}{Dt} = \frac{\partial \boldsymbol \phi}{\partial t}\bigg\vert_{\bm X = const} & = \frac{\partial \mathbf f}{\partial t} \\ & = \frac{\partial g^i}{\partial x^j} \frac{\partial x^j}{\partial t} + \frac{\partial g^i}{\partial t} = \nabla \mathbf g \cdot \mathbf u + \frac{\partial \mathbf g}{\partial t} \end{aligned} $$
+
+> 참고  
+[book] (Lai et al) Introduction to Continuum Mechanics Chapter3.3
 
 # Displacement 
 연속체 한 점의 변위 $\bf d$는 식(1)에 의해 다음과 같다.
