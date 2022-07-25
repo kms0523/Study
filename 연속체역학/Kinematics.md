@@ -1,17 +1,17 @@
 # Material coordinates
-운동하는 연속체 내부 한 점의 공간좌표가 시간 $t$에 대한 벡터 함수로 나타난다고 해보자.
+운동하는 연속체의 한 점이 차지하는 공간상의 한 점이 시간 $t$에 대한 벡터 함수로 주어진다고 하자.
 $$ \mathbf x = \mathbf p(t) $$
 
-연속체의 운동을 표현하기 위해 연속체 내부의 모든점의 공간좌표를 시간에 대한 벡터 함수로 나타내면 다음과 같다.
+연속체의 운동을 표현하기 위해 위의 표현법을 사용해서 연속체를 이루는 모든 점들이 차지하는 공간상의 점들을 나타내면 다음과 같다.
 $$ \mathbf x_i = \mathbf p_i(t), \quad i=1, \cdots, N, \cdots $$
 
-하지만 연속체 내부에는 무한한 점이 포함되어 있기 때문에 점마다 번호를 부여하여 모든점을 표현하는 방법은 한계가 있다. 이러한 한계를 극복하기 위해 기준 시간 $t_0$때 위치를 가지고 점을 표현하는 `물질좌표(material coordinates)` $\bm X$를 도입한다.
+하지만 연속체 내부에는 무한한 점이 포함되어 있기 때문에 점마다 번호를 부여하는 방법은 한계가 있다. 따라서 이러한 한계를 극복하기 위해 기준 시간 $t_0$때 위치를 가지고 연속체의 한 점을 표현하는 `물질좌표(material coordinates)` $\bm X$를 도입한다.
 $$ X^i = p^i(\bm X,t_0) $$
 
-물질좌표는 연속체의 한점을 표현하는 방법이며, 물질좌표를 이용해서 각 점의 공간좌표를 벡터 함수로 나타내면 다음과 같다.
-$$ \begin{equation} \mathbf x = \mathbf p(\bm X,t) \quad \text{with} \quad \bm X = \mathbf p(\bm X, t_0) \end{equation}  $$
+물질좌표는 연속체의 특정 한 점을 표현하는 방법이며, 물질좌표를 이용해서 연속체를 이루는 모든 점들이 차지하는 공간상의 점들을 나타내면 다음과 같다.
+$$ \begin{equation} \mathbf x = \mathbf p(\bm X,t) \quad \text{with} \quad \bm X = \mathbf p(\bm X, t_0) \in \Omega_0 \end{equation}  $$
 
-$\bm X = \mathbf p(\bm X, t_0)$은 점의 초기 공간좌표이다.
+$\Omega_0$은 $t_0$일 때 연속체를 이루는 점의 집합이다.
 
 > 참고  
 [book] (Lai et al) Introduction to Continuum Mechanics Chapter3.1
@@ -20,20 +20,20 @@ $\bm X = \mathbf p(\bm X, t_0)$은 점의 초기 공간좌표이다.
 운동하는 연속체의 어떤 물리량을 나타내는 텐서 $\bf Q$가 있다고 하자. $\bf Q$가 시간에 따라 변한다고 할 때, $\bf Q$를 다음 두가지 관점으로 서술할 수 있다.
 
 ## Material description
-연속체의 한점을 따라가면서 $\bf Q$의 시간에 대한 변화를 함수로 나타내면 다음과 같다.
+연속체의 한 점을 따라가면서 $\bf Q$의 시간에 대한 변화를 함수로 나타내면 다음과 같다.
 $$ \mathbf Q = \mathbf F(\bm X,t) $$
 
 이러한 서술 방법을 물질 관점 혹은 Lagrangian관점이라고 한다.
 
-물질 관점에서 서술하는것은 $\bm X$로 표현되는 연속체의 한 점에 $\bf Q$가 $t$에 따라 변화하는 정도다. 이 때 주목할만한 점은, $t$가 변하면 $\bm X$로 표현되는 점의 위치도 변한다는 점이다. 따라서 물질 관점에서 서술할 경우, 공간상의 특정 위치에서 연속체의 물리량이 어떻게 변하는지에 대한 정보를 직접적으로 제공하지는 않는다.
+물질 관점에서 서술하는것은 $\bm X$로 표현되는 연속체의 한 점에 $\bf Q$가 $t$에 따라 변화하는 정도다. 이 때 주목할만한 점은, $t$가 변하면 $\bm X$로 표현되는 연속체의 점이 차지하는 공간상의 점도 변한다는 것이다. 따라서 물질 관점에서 서술할 경우, 공간상의 한 점에서 연속체의 물리량이 어떻게 변하는지에 대한 정보를 직접적으로 제공하지는 않는다.
 
 ## Spatial description
-공간상의 한 위치를 기준으로 $\bf Q$의 시간에 대한 변화를 함수로 나타내면 다음과 같다.
+공간상의 한 점을 기준으로 $\bf Q$의 시간에 대한 변화를 함수로 나타내면 다음과 같다.
 $$ \begin{equation} \mathbf Q = \mathbf G(\mathbf x, t) \end{equation}  $$
 
 이러한 서술 관점을 공간 관점 혹은 Eulerian관점이라고 한다.
 
-공간 관점에서 서술하는것은 $\bf x$에서 $\bf Q$의 $t$에 대한 변화다. 이 때 주목할만한 점은, $t$가 변하면 $\bf x$에 있는 연속체도 변한다는 점이다. 따라서 공간 관점에서 서술할 경우, 연속체의 한점에 물리량이 어떻게 변하는지에 대한 정보를 직접적으로 제공하지는 않는다.
+공간 관점에서 서술하는것은 $\bf x$에서 $\bf Q$의 $t$에 대한 변화다. 이 때 주목할만한 점은, $t$가 변하면 $\bf x$를 차지하고 있는 연속체의 한 점도 변한다는 점이다. 따라서 공간 관점에서 서술할 경우, 연속체의 한 점에 물리량이 어떻게 변하는지에 대한 정보를 직접적으로 제공하지는 않는다.
 
 하지만 식(1)에 의해서 공간 관점으로 서술된 표현을 물질 관점으로 서술된 표현으로 바꿀 수 있다. 식(1)을 식(2)에 대입하면 다음과 같다.
 $$ \mathbf Q = \mathbf G( \mathbf p({\bm X}, t), t) = \mathbf F(\bm X, t)$$
@@ -102,7 +102,7 @@ Example 3.6.2
 [book] (Lai et al) Introduction to Continuum Mechanics Chapter3.6
 
 # Deformation
-함수 $\mathbf p$가 운동으로 인해 변형된 연속체 내부 점의 공간좌표를 나타냄으로  $\mathbf p$를 변형된 점, 간단하게 `변형(deformation)`이라고 하자.
+운동하는 연속체를 생각해보자. 운동 하고 있는 연속체의 한 점이 차지하는 공간상의 한 점은 시간에 따라 바뀌게 된다. 이를 벡터함수 $\mathbf p$로 나타낸다고 할 때, $\mathbf p$를 `변형(deformation)`이라고 한다.
 
 두 점 $\bm X, \bm X + \Delta \bm X$이 있을 때, 벡터 $\Delta \mathbf x$를 다음과 같이 정의하자.
 $$ \Delta \mathbf x(t) := \mathbf p(\bm X + \Delta \bm X, t) - \mathbf p(\bm X,t) $$
@@ -205,10 +205,15 @@ $$ \begin{aligned} & \cos \left( \frac{\pi}{2} - \gamma \right) = 2 (\mathbf n^T
 $\bf n, m$이 기본 기저일 경우 $\gamma = 2E_{ij}$가 되며 이는 기존에 $x_i, x_j$방향에 있던 두요소가 이루던 각도의 변화량이다.
 
 # Time rate of change of a material element
-두 점 $\bm X, \bm X + \Delta \bm X$으로 이루어진 요소를 생각해보자. 시간 $t$일 때, 요소는 다음과 같이 표현된다.
+$\mathbf p$를 물질미분하면 연속체의 한 점을 고정한 채 연속체의 한 점이 공간상의 차지하는 한 점(위치)의 시간에 따른 변화량, 즉 속도를 얻게 된다.
+
+이 때, $\mathbf p$가 Lagrangian관점으로 서술되었을 경우 $\mathbf p$의 물질미분이 함수 $\mathbf u$로, $\mathbf p$가 Eulerian관점으로 서술 되었을 경우 $\mathbf p$의 물질미분이 함수 $\mathbf v$로 표현된다고 하자.
+
+
+연속체의 두 점 $\bm X, \bm X + \Delta \bm X$으로 이루어진 벡터를 다음과 같이 정의하자.
 $$ \begin{equation} \Delta \mathbf x = \mathbf p(\bm X + \Delta \bm X, t) - \mathbf p(\bm X, t) \end{equation}  $$
 
-식(8)을 물질미분하여 얻는 속도가 Lagrangian관점에서는 함수 $\mathbf u$로 Eulerian관점에서는 함수 $\mathbf v$로 표현된다고 하자.
+식(7)을 물질미분 하면 다음과 같다.
 $$ \begin{aligned} \frac{D}{Dt} \Delta \mathbf x &= \frac{D}{Dt} \mathbf p(\bm X + \Delta \bm X, t) - \frac{D}{Dt} \mathbf p(\bm X, t) \\ &= \mathbf u(\bm X + \Delta \bm X,t) - \mathbf u(\bm X,t) \\ &= \mathbf v(\mathbf x + \Delta \mathbf x,t) - \mathbf v(\mathbf x,t) \end{aligned} $$
 
 $\Delta \bm X, \Delta \mathbf x$가 충분히 작아 $\mathbf u(\bm X + \Delta \bm X,t), \mathbf v(\mathbf x + \Delta \mathbf x,t)$를 선형으로 근사할 수 있다고 가정하면 다음과 같다.
@@ -231,7 +236,7 @@ $$ \begin{equation} \mathbf W \Delta \mathbf x = \boldsymbol \omega \times \Delt
 
 식(10)을 보면 $\mathbf W$의 단위가 $/s$임으로, $\mathbf W$은 $\Delta \mathbf x$를 각속도 $\boldsymbol{\omega}$로 회전 시킨다는것을 알 수 있다.
 
-요소의 시간변화율을 $\mathbf D, \mathbf W$로 나타내면 다음과 같다.
+벡터의 시간변화율을 $\mathbf D, \mathbf W$로 나타내면 다음과 같다.
 $$ \frac{D}{Dt} \Delta \mathbf x = \mathbf D \Delta \mathbf x + \mathbf W \Delta \mathbf x = \mathbf D \Delta \mathbf x + \boldsymbol \omega \times \Delta \mathbf x$$
 
 > 참고  
