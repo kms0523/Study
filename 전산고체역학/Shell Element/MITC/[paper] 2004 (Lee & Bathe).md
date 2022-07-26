@@ -129,7 +129,8 @@ $$ \text{Where, } m_{rt} = \frac{1}{2}(e_{rt}(r_1) + e_{rt}(r_2)), \enspace l_{r
 주어진 조건을 통해 미지수 $a_0, a_1, a_2$를 구한다.
 
 method i과 method ii는 linear polynomials로 시작한것과는 다르게 new method에서는 quadratic polynomial로 시작하고 linear variation을 imposition하여 자연스럽게 quadratic term이 없어지게 하였다. 이러한 점 때문에 정확한 space of function을 알지 못하는 2D,3D element에서도 new method를 사용할 수 있다.
-> Q. 이게 무슨말이지??
+> Q. 이게 무슨말이지??  
+> 만약 2차원 reference 삼각형에서 $s=0$인 edge에서 constant transverse shear strain이라고 하자. 그러면 method i와 method ii에서는 $\tilde e_{rt}(r) =  a_0$로 근사하였을 것이다. 하지만 $s=0$에서 constant transverse shear strain이기 때문에 $\tilde e_{rt}(r) =  a_0 + a_1s$로 근사해도 edge에서는 constant transverse shear strain을 갖게되면서 element 내부에서 linear distribution을 갖게 된다. 이처럼 정확한 space of function을 알지 못할 때, new method를 사용할 경우 일단 linear인 $\tilde e_{rt}(r) =  a_0 + a_1r + a_2s$로 근사하고  edge에서 constant variation을 imposition하면 자연스럽게 $a_1 = 0$이 되어 edge에서 linear term이 사라지게끔 적용할 수 있다.
 
 ## 3.2 Interpolation of transverse shear strain field
 isotropic한 tranverse shear strain fields를 얻기 위해서는 strain variations corresponding to the three edge directions of the element가 동일해야 한다.
