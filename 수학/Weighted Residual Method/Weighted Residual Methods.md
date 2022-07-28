@@ -19,6 +19,7 @@ $$ \mathcal U := \{ u \in C^m(\Omega) \enspace | \enspace u \text{ satisfies bou
 # Weighted residual formulation
 식(1)의 weighted residual formulation은 다음과 같이 주어진다.
 $$ \begin{equation} \text{find } u \in \mathcal U \quad s.t. \quad \forall w \in C^\infty_c(\Omega), \quad \int_\Omega w r \thinspace dV = 0  \end{equation} $$
+
 $$ \text{Where, } r(\mathbf x) = \mathcal P(u) + f(\mathbf x) $$
 
 이 떄, $w$는 `테스트 함수(test function)`, $r$은 `residual` 이라한다.
@@ -50,7 +51,7 @@ Weighted residual method는 weighted residual formulation의 test function space
 자명하게 무한차원 함수공간인 $C^\infty(\Omega)$에 있는 모든 함수에 대해 식(2)를 적용하는 것은 불가능하다. 따라서 test function space을 $n$차 부분 함수공간인 $\mathcal{W}_h < C^\infty(\Omega)$으로 축소하여 문제를 단순화하자.
 
 $\mathcal W_h$의 기저 함수를 $\{ w_1, \cdots, w_n \}$이라 하면 식(2)는 다음과 같이 간단해 진다.
-$$ \begin{equation} \begin{aligned} & \text{find } u \in \mathcal U \quad s.t. \quad \forall w \in \mathcal W_h, \quad \int_\Omega w r \thinspace dV = 0 \\ \Leftrightarrow \enspace & \text{find } u \in \mathcal U \quad s.t. \quad \forall c_i \in \R, \quad \int_\Omega c_iw_i r \thinspace dV = 0, \enspace i \in (1, \cdots, n) \\ \Leftrightarrow \enspace & \text{find } u \in \mathcal U \quad s.t. \quad  \int_\Omega w_i r \thinspace dV = 0, \enspace i \in (1, \cdots, n)  \end{aligned} \end{equation} $$
+$$ \begin{equation} \begin{aligned} & \text{find } u \in \mathcal U \quad s.t. \quad \forall w \in \mathcal W_h, \quad \int_\Omega w r \thinspace dV = 0 \\ \Leftrightarrow \enspace & \text{find } u \in \mathcal U \quad s.t. \quad \forall c_i \in \R, \quad \int_\Omega c_iw_i r \thinspace dV = 0, \enspace i = 1, \cdots, n \\ \Leftrightarrow \enspace & \text{find } u \in \mathcal U \quad s.t. \quad  \int_\Omega w_i r \thinspace dV = 0, \enspace i = 1, \cdots, n  \end{aligned} \end{equation} $$
 
 test function space가 $\mathcal W_h$로 축소됨에 따라 축소된 residual formulation은 더이상 strong formulation과 동치가 아니다. 즉, $\mathcal W_h$공간 안에서 residual formulation을 만족하는 해도 $r=0$을 만족시키는 실제 해가 아니며 실제 해의 근사가 되게 된다.
 
@@ -65,24 +66,29 @@ $$ (u_1 + u_2)(\mathbf x) = u_1(\mathbf x) + u_2(\mathbf x) = 2g(\mathbf x) \Rig
 
 즉 $\mathcal{U}$는 덧셈에 대해 닫혀있지 않기 때문에 vector space가 될 수 없다. 따라서 $\mathcal{U}$는 다음과 같은 affine space가 된다.
 $$ \mathcal{U} = \phi + \mathcal{U}_L $$
+
 $$ \text{Where, } \phi \in \mathcal U \text{ and} \\ \mathcal{U}_L:= \{ u \in C^m(\Omega) \thinspace | \thinspace u \text{ satisfies homogeneous BCs on } \partial\Omega \} $$
 
 따라서 affine space인 solution function space를 축소한 $\mathcal U_h$는 다음과 같다.
 $$ \mathcal U_h := \phi + \mathcal U_{L_h} $$
+
 $$ \text{Where, } \mathcal U_{L_h} < \mathcal U_L \quad \land \quad \dim(\mathcal U_{L_h}) = k $$
 
 $\mathcal{U}_{L_h}$의 기저함수를 $\{ u_1, \cdots, u_k \}$이라 하면 다음이 성립한다.
 $$ u \in \mathcal{U}_{h} \Rightarrow u = \phi + a_iu_i $$
+
 $$ \text{Where, } a_i \in \R $$
 
 따라서, 식(3)은 다음과 같이 더욱 간단해진다.
-$$ \begin{equation} \begin{aligned} & \text{find } u \in \mathcal U_h \ \quad s.t. \quad \int_\Omega w_i r \thinspace dV = 0 \quad \forall i \in  (1, \cdots, n) \\ \Leftrightarrow \enspace & \text{find } \mathbf a \in \R^k \quad s.t. \quad \int_\Omega w_i r \thinspace dV = 0 \quad \forall i \in  (1, \cdots, n) \end{aligned} \end{equation} $$
-$$ \text{Where, } r = \mathcal P(\phi + a_ju_j) + f(x)$$
+$$ \begin{equation} \begin{aligned} & \text{find } u \in \mathcal U_h \ \quad s.t. \quad \int_\Omega w_i r \thinspace dV = 0 \quad i = 1, \cdots, n \\ \Leftrightarrow \enspace & \text{find } \mathbf a \in \R^k \quad s.t. \quad \int_\Omega w_i r \thinspace dV = 0 \quad i = 1, \cdots, n \end{aligned} \end{equation} $$
+
+$$ \text{Where, } r = \mathcal P(\phi + a_ju_j) + f(\mathbf x)$$
 
 위의 식(4)가 test function space와 solution function space를 축소하여 얻은 단순화된 residual formulation이다. 식(4)는 $k$개의 미지수가 있음으로 이를 대수적으로 풀기 위해서는 $k$개의 독립적인 방정식이 필요하고  $k \le n$이여야한다.
 
 만약, $\mathcal P$가 선형 연산자 즉, 선형 PDE라면 식(4)는 다음과 같이 단순해 진다.
 $$ \begin{equation} \text{find } \mathbf a \in \R^k \quad s.t. \quad  \bf K a = f  \end{equation} $$
+
 $$ \text{Where, } K_{ij} = \int_\Omega w_i \mathcal P(u_j) \thinspace dV , \quad f_i = -\int_\Omega w_i (\mathcal P(\phi) + f(x)) $$
 
 임의의 solution function space의 기저함수 $u_j$가 0이 아닌 $m$계 도함수을 갖는다면 $\{ w_1, \cdots, w_n \}, \{ u_1, \cdots, u_k \}$가 선형독립임으로 $\bf K$는 가역행렬이다.
@@ -103,6 +109,7 @@ $$ \text{find } \mathbf a \in \R^k \quad s.t. \quad \int_\Omega u_i r \thinspace
 
 만약 선형 PDE일 경우 다음과 같이 간단해 진다.
 $$ \text{find } \mathbf a \in \R^k \quad s.t. \quad \bf K a = f $$
+
 $$ \text{Where, } K_{ij} = \int_\Omega u_i \mathcal P(u_j) \thinspace dV , \quad f_i = -\int_\Omega w_i (\mathcal P(\phi) + f(x)) $$
 
 결론적으로 Bubnov-Galerkin method는 $\mathcal U_h$공간에서 weighted residual method를 만족하는 $u$를 $\mathcal U_h$ 공간에서 찾는 방법이다.
@@ -142,6 +149,7 @@ $$ w_i = \frac{\partial r}{\partial a_i}, \quad (i = 1, \cdots, n)$$
 
 단순화된 residual formulation에 least square method을 적용하면 다음과 같다.
 $$ \begin{aligned} & \text{find } \mathbf a \in \R^k \quad s.t. \quad \int_{\Omega_i} \frac{\partial r}{\partial a_i} r \thinspace dV = 0 \quad \forall i \in  (1, \cdots, n) \\ \Leftrightarrow \enspace & \text{find } \mathbf a \in \R^k \quad s.t. \quad \frac{\partial}{\partial a_i} \int_{\Omega_i} r^2 \thinspace dV = 0 \quad \forall i \in  (1, \cdots, n)\end{aligned} $$
+
 $$ $$
 
 결론적으로 least square method는 residual의 계수에 대한 미분을 기저로 갖는 $\mathcal W_h$공간에서 weighted residual formulation을 만족하는 $u$중에 $\mathcal U_h$공간안에 있는 해를 찾는 방법이다. 
@@ -177,6 +185,7 @@ $$ \mathcal W := \{ w \in C^\infty(\Omega) \enspace | \enspace w(0) = 0 \} $$
 
 결론적으로 weak formulation은 다음과 같다.
 $$ \begin{equation} \begin{gathered} \text{find } u \in \mathcal U_w \quad s.t. \quad \forall w \in \mathcal W \\ \int_\Omega  \left( -\frac{dw}{dx}(a\frac{du}{dx}) + w(cu - f) \right) \thinspace dx - w(L)Q_L = 0 \end{gathered} \end{equation} $$
+
 $$ \text{Where, } \mathcal U_w := \left\{ u \in C^2(\Omega) \enspace \bigg| \enspace u(0) = u_0 \right\} $$
 
 weak formulation에 natural BC가 포함되어 있기 때문에 solution space를 더이상 natural BC를 만족하는 공간으로 제한할 필요가 없으며 $\mathcal U_s \subset \mathcal U_w$이다.
@@ -185,6 +194,7 @@ weak formulation에 natural BC가 포함되어 있기 때문에 solution space�
 
 하지만 식(8)을 보면 알 수 있듯이, weak formulation에서는 이러한 regularity를 약화시킬 수 있다. 즉, solution을 $C^2(\Omega)$가 아닌 $C^1(\Omega)$에서 찾을 수 있다는 것이다. 이렇게 regularity가 약화된 weak formulation은 다음과 같다.
 $$ \begin{equation} \begin{gathered} \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in \mathcal W \\ \int_\Omega  \left( -\frac{dw}{dx}(a\frac{du}{dx}) + w(cu - f) \right) \thinspace dx - w(L)Q_L = 0 \end{gathered} \end{equation} $$
+
 $$ \text{Where, } \mathcal U_W := \left\{ u \in C^1(\Omega) \enspace \bigg| \enspace u(0) = u_0 \right\} $$
 
 식(9)는 식(8)보다 더 약한 regularity를 요구하기 때문에 더 일반적인 형태이다. weak formulation이라고 불리는 이유는 바로 solution space의 regularity 요구사항을 약화시켰기 때문이다. $u \notin C^2(\Omega)$이면 strong formulation이 정의조차 되지 않기 때문에 식(9)는 더이상 strong formulation과 동치가 아니다.
@@ -192,6 +202,7 @@ $$ \text{Where, } \mathcal U_W := \left\{ u \in C^1(\Omega) \enspace \bigg| \ens
 일반적으로 weak formulation은 functional $B,l$을 이용해 다음과 같이 간단하게 나타낼 수 있다.
 
 $$ \begin{equation} \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in \mathcal W, \quad B(w,u) = l(w) \end{equation}  $$
+
 $$ \begin{gathered} \text{Where, } B: \mathcal W \times \mathcal U_W \rightarrow \R, \quad l: \mathcal W \rightarrow \R \\ \mathcal U_W := \left\{ u \in C^r(\Omega) \enspace \big| \enspace u \text{ satisfies essential BCs on } \partial\Omega_E\right\} \\ \mathcal W := \{ w \in C^\infty(\Omega) \enspace | \enspace w(\mathbf x) = 0 \text{ for } \mathbf x \in \partial\Omega_E \} \end{gathered} $$
 
 이 떄, $\mathcal U_W$는 affine space이고 $\mathcal W$는 vector space이다.
@@ -207,6 +218,7 @@ $$\mathcal W_h < \mathcal W$$
 
 다음으로, solution function space 다음과 같이 축소한다.
 $$ \mathcal{U}_h = \varphi + \mathcal{U}_{L_h} $$
+
 $$ \begin{gathered} \text{Where, } \varphi \in \mathcal{U}_W, \quad  \mathcal{U}_{L_h} < \mathcal{U}_L \\ \mathcal{U}_L := \{ u \in C^r(\Omega) \enspace | \enspace u \text { satisfies homogeneous BC on } \partial\Omega_E \} \end{gathered} $$
 
 이 때, 유한차원 function space $\mathcal{W}_h, \mathcal{U}_{L_h}$의 기저함수를 각각 $\{ w_1, \cdots, w_n \}, \{ u_1, \cdots, u_k \}$라 하자.
@@ -219,4 +231,5 @@ $$ \text{find } \mathbf a \in \R^n \quad s.t. \quad B(u_i,\varphi + a_ju_j) = l(
 
 $B$가 bilinear이고 $l$이 linear인 경우 다음과 같이 간단해진다.
 $$ \text{find } \mathbf a \in \R^n \quad s.t. \quad \mathbf {Ka = f} $$
+
 $$ \text{Where, } K_{ij} = B(u_i,u_j), \quad f_i = l(u_i) - B(u_i, \varphi) \quad \forall i \in \{ 1, \cdots, n \} $$

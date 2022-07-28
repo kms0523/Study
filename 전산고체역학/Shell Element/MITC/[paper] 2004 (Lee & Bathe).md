@@ -79,8 +79,6 @@ $$ \boldsymbol \epsilon = \mathbf B \mathbf d $$
 $$ \tilde{\boldsymbol \epsilon} = \tilde{\mathbf B} \mathbf d$$
 $$ \text{Where, } \tilde{\mathbf B} = \tilde{n}_k(r_1,r_2) \mathbf B |_{((r_1)_k,(r_2)_k,r_3)} $$
 
-> Q. $\tilde{\mathbf n}$를 어떻게 구하는거지..?
-
 # 3 Strain interpolation
 MITC 기법을 성공적으로 적용하기 위해서는 assumed strain interpolations(EQ.(1))을 잘 정해야 하며 또한 tying points를 잘 정해야 한다.
 
@@ -149,32 +147,13 @@ $$ \begin{equation} e_{qt} = \frac{1}{\sqrt{2}}(e_{st} - e_{rt}) \end{equation} 
 > Q1. tensor transformation이 무엇이지?    
 > Q2. tensor transformation을 하면 왜 저렇게 되지?
 
-예를 들어, constant transverse shear strain along its edge이고, tying points가 center of the edges로 결정된 3 node triangular shell elemnt 경우를 생각해보자.
-
 여기서 주의할 점은 assumed strain variations가 displacement-based strain보다 lower order여야 한다.
 > Q1. 왜 assumed strain variation이 displacement based strain보다 lower order여야 하는가?
-
-<p align = "center">
-<img src = "./image/shell2.png">
-</p>
-
-첫번째로, assumed transverse shear strain $\tilde e_{rt}, \tilde e_{st}$를 다항식으로 근사한다.
-$$ \tilde e_{rt} = a_0 + a_1 r + a_2 s \\ \tilde e_{st} = b_0 + b_1 r + b_2 s $$
-
-식(2)으로 부터 $\tilde e_{qt}$ 또한 근사된다.
-$$ \tilde e_{qt} = \frac{1}{\sqrt{2}} \Big( (b_0-a_0) + (b_1-a_1) r + (b_2-a_2) s \Big) $$
 
 두번째로 strain tying points을 결정한다. tying points는 isotropically 위치해야 하며 displacement-based strain과 assumed strain이 이 점에서 tied 된다. 현재 예시에서는 center of the edges로 결정되어있다.
 
 new method를 이용한 tying은 judiciously chosen points에서 assumed strain을 displacement-based strain으로부터 evaluating 함으로써 얻어지며 new method를 이용하여 interpolation을하기 때문에 points들은 tying points일 필요가 없다.
-
 > Q1. judicously chosen points는 어떻게 정하는거야 도대체
-
-이를 식으로 나타내면 다음과 같다.
-$$ \begin{equation} \begin{aligned} \tilde{e}_{rt}(0,0) = e^{(1)}_{rt}, \quad \tilde{e}_{rt}(1,0) = e^{(1)}_{rt} \\ \tilde{e}_{st}(0,0) = e^{(2)}_{st}, \quad \tilde{e}_{st}(0,1) = e^{(2)}_{st} \\ \tilde{e}_{qt}(1,0) = e^{(3)}_{qt}, \quad \tilde{e}_{qt}(0,1) = e^{(3)}_{qt} \end{aligned} \end{equation} $$
-
-세번째로, 식(3)에 나타난 6개의 선형방정식을 풀어 6개의 미지수를 구한다.
-$$ \begin{array}{l l l} a_0 = e^{(1)}_{rt}, & a_1 = 0, & a_2 = e^{(2)}_{st} - e^{(1)}_{rt} -\sqrt{2}e^{(3)}_{qt} \\ b_0 = e^{(2)}_{st}, & b_1 = -a_2, & b_2 = 0 \end{array} $$
 
 ### 3.3 Interpolation of in-plane strain field
 istropic한 in-plane strain fields를 얻기 위해서 빗변의 $e_{qq}$항도 고려해야 한다.
@@ -279,3 +258,62 @@ $$ \tilde e_{rt} = a_0 + a_1 r + a_2 s \\ \tilde e_{st} = b_0 + b_1 r + b_2 s $$
 chapter 3.2와 동일한 과정을 거치면 미지수를 전부 결정할 수 있다.
 
 inplane strain field는 chpater 3.3과 동일하게 한다.
+
+# MITC3 Algorithm
+MITC3 element는 아래 그림과 같이 constant transverse shear strain along its edge이고,  결정된 3 node triangular shell elemnt이다.
+<p align = "center">
+<img src = "./image/shell2.png">
+</p>
+
+tying points는 center of the edges로 다음과 같이 주어진다.
+
+<p align = "center">
+<img src = "./image/2004 (Lee & Bathe)_1.png">
+</p>
+
+## 1
+첫번째로, assumed transverse shear strain $\tilde e_{rt}, \tilde e_{st}$를 1차 다항식으로 근사한다.
+$$ \tilde e_{rt} = a_0 + a_1 r + a_2 s \\ \tilde e_{st} = b_0 + b_1 r + b_2 s $$
+
+식(2)으로 부터 $\tilde e_{qt}$ 또한 근사된다.
+$$ \tilde e_{qt} = \frac{1}{\sqrt{2}} \Big( (b_0-a_0) + (b_1-a_1) r + (b_2-a_2) s \Big) $$
+
+## 2
+tying point에서 displacement-based strain와 같은 값을 갖게 하기 위해서 new method를 사용하자. 이때, new method에서 사용되는 points들을 sampling points라고 하자. 
+
+MITC3에서 sampling points는 다음과 같은 점들을 사용한다.
+
+<p align = "center">
+<img src = "./image/2004 (Lee & Bathe)_2.png">
+</p>
+
+new method를 이용해서 $\mathbf t_1$에서 $\tilde e_{rt}$와 $e_{rt}$가 일치하도록 하면 다음과 같은 식을 얻을 수 있다.
+$$ \tilde{e}_{rt}(\mathbf s_1) = e_{rt}(\mathbf s_1) = e_{rt}, \quad \tilde{e}_{rt}(\mathbf s_2) = e_{rt}(\mathbf s_2) = e_{rt} $$
+
+이러한 과정을 tying이라고 한다.
+
+new method를 이용해서 $\mathbf t_2, \mathbf t_3$에서 tying하면 다음과 같은 식들을 얻을 수 있다.
+$$ \tilde{e}_{st}(\mathbf s_1) = e_{st}(\mathbf s_1) = e_{st}, \quad \tilde{e}_{st}(\mathbf s_3) = e_{st}(\mathbf s_3) = e_{st} \\ \tilde{e}_{qt}(\mathbf s_2) = e_{qt}(\mathbf s_2) = e_{qt}, \quad \tilde{e}_{qt}(\mathbf s_3) = e_{qt}(\mathbf s_3) = e_{qt} $$
+
+6개의 미지수와 6개의 식이 주어졌음으로 선형방정식을 풀면 다음과 같이 미지수를 결정할 수 있다.
+
+세번째로, 식(3)에 나타난 6개의 선형방정식을 풀어 6개의 미지수를 구한다.
+$$ \begin{array}{l l l} a_0 = e_{rt}, & a_1 = 0, & a_2 = e_{st} - e_{rt} -\sqrt{2}e_{qt} \\ b_0 = e_{st}, & b_1 = -a_2, & b_2 = 0 \end{array} $$
+
+이 때, $e_{qt}$는 다음과 같이 적을 수 있다.
+$$ e_{qt} =  e_{st}(\mathbf t_3) - e_{rt}(\mathbf t_3)  $$
+
+결론적으로 assumed transverse shear strain은 다음과 같다.
+$$ \begin{equation} \tilde e_{rt} = e_{rt} + cs, \quad \tilde e_{st} = e_{st} - cr \end{equation} $$
+
+$$ \text {Where, } c = e_{st} - e_{rt} - e_{st} + e_{rt} $$
+
+이 때, $\tilde{\mathbf B}$를 구하기 위해 식(1)에 나와있는 $\tilde n_i$를 구할 필요는 없다. 식(4)을 $\mathbf B$의 특정열과 $\hat d$이 내적된 형태로 보면 다음과 같이 정리할 수 있다.
+$$ \tilde B_{rt} = B_{rt} + \mathbf cs, \quad \tilde B_{st} = B_{st} - \mathbf cr $$
+
+$$ \text {Where, } \mathbf c = B_{st} - B_{rt} - B^{(3)}_{st} + B^{(3)}_{rt} $$
+
+이 때, $B_{rt}$나 $B_{st}$는 $\mathbf B$행렬에서 $rt$나 $st$방향으로의 transverse shear strain과 관련된 행이다.
+
+
+$$ \begin{equation} \begin{aligned} \tilde{e}_{rt}(0,0) = e_{rt}(\mathbf s_1) = e_{rt}, \quad \tilde{e}_{rt}(1,0) = e_{rt}(\mathbf s_2) = e_{rt} \\ \tilde{e}_{st}(0,0) = e_{st}(\mathbf s_1) = e_{st}, \quad \tilde{e}_{st}(0,1) = e_{st}(\mathbf s_3) = e_{st} \\ \tilde{e}_{qt}(1,0) = e_{qt}(\mathbf s_2) = e_{qt}, \quad \tilde{e}_{qt}(0,1) = e_{qt}(\mathbf s_3) = e_{qt} \end{aligned} \end{equation} $$

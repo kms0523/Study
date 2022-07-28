@@ -11,7 +11,7 @@ $$ X^i = p^i(\bm X,t_0) $$
 물질좌표는 연속체의 특정 한 점을 표현하는 방법이며, 물질좌표를 이용해서 연속체를 이루는 모든 점들의 위치를 나타내면 다음과 같다.
 $$ \begin{equation} \mathbf x = \mathbf p(\bm X,t) \quad \text{with} \quad \bm X = \mathbf p(\bm X, t_0) \in \Omega_0 \end{equation}  $$
 
-$\Omega_0$은 $t_0$일 때 연속체를 이루는 모든 점들의 위치의 집합이다.
+$\Omega_0$은 $t_0$일 때 연속체를 이루는 모든 점들이 차지하는 위치의 집합이다.
 
 > 참고  
 [book] (Lai et al) Introduction to Continuum Mechanics Chapter3.1
@@ -25,7 +25,7 @@ $$ \mathbf Q = \mathbf F(\bm X,t) $$
 
 이러한 서술 방법을 물질 관점 혹은 Lagrangian관점이라고 한다.
 
-물질 관점에서 서술하는것은 $\bm X$로 표현되는 연속체의 한 점에 $\bf Q$가 $t$에 따라 변화하는 정도다. 이 때 주목할만한 점은, $t$가 변하면 $\bm X$로 표현되는 연속체의 점의 위치도 변한다는 것이다. 따라서 물질 관점에서 서술할 경우, 한 위치에서 연속체의 물리량이 어떻게 변하는지에 대한 정보를 직접적으로 제공하지는 않는다.
+물질 관점에서 서술하는것은 $\bm X$로 표현되는 연속체의 한 점에 $\bf Q$가 $t$에 따라 변화하는 정도다. 이 때 주목할만한 점은, $t$가 변하면 $\bm X$로 표현되는 연속체의 한 점에 위치도 변한다는 것이다. 따라서 물질 관점에서 서술할 경우, 한 위치에서 연속체의 물리량이 어떻게 변하는지에 대한 정보를 직접적으로 제공하지는 않는다.
 
 ## Spatial description
 위치를 기준으로 $\bf Q$의 시간에 대한 변화를 함수로 나타내면 다음과 같다.
@@ -80,10 +80,10 @@ $$ \mathbf d(\bm X,t) = \mathbf c(t) $$
 $$ \mathbf p(\bm X,t) - \mathbf b = \mathbf R(t)(\bm X - \mathbf b) $$
 $$ \text{Where, } \mathbf b \text{ is rotational center and } \\ \mathbf R \text { is a proper orthogonal tensor} $$
 
-따라서, 변위 벡터는 다음과 같다.
-$$ \mathbf d(\bm X,t) = (\mathbf R - \mathbf I)(\bm X - \mathbf b) $$
+$\mathbf p - \mathbf b$는 회전중심에서 현재 위치까지의 벡터를 나타내고, $\bm X - \mathbf b$는 회정중심에서 초기 위치까지의 벡터를 나타낸다. 따라서 운동방정식이 말하는 바는, 회전중심에서 초기 위치까지의 벡터가 회전하여 회전 중심에서 현재 위치까지의 벡터가 되었다는것을 의미한다.
 
-$\mathbf x - \mathbf b$는 회전중심에서 현재 위치까지의 벡터를 나타내고, $\bm X - \mathbf b$는 회정중심에서 초기 위치까지의 벡터를 나타낸다. 따라서 운동방정식이 말하는 바는, 회전중심에서 초기 위치까지의 벡터가 회전하여 회전 중심에서 현재 위치까지의 벡터가 되었다는것을 의미한다.
+변위 벡터는 다음과 같다.
+$$ \mathbf d(\bm X,t) = (\mathbf R - \mathbf I)(\bm X - \mathbf b) $$
 
 ## General motion
 강체의 운동방정식은 다음과 같다.
@@ -102,7 +102,7 @@ Example 3.6.2
 [book] (Lai et al) Introduction to Continuum Mechanics Chapter3.6
 
 # Deformation
-운동하는 연속체를 생각해보자. 운동 하고 있는 연속체의 한 점의 위치는 시간에 따라 바뀌게 된다. 이를 벡터함수 $\mathbf p$로 나타낸다고 할 때 $\mathbf p$에 의해서 연속체 내부에 있는 모든점의 변형된 위치가 서술된다. 따라서 $\mathbf p$를 `변형(deformation)`이라고 한다.
+운동하는 연속체를 생각해보자. 운동하고 있는 연속체의 한 점에 위치는 시간에 따라 바뀌게 된다. 이를 벡터함수 $\mathbf p$로 나타낸다고 할 때 $\mathbf p$에 의해서 연속체 내부에 있는 모든점의 변형된 위치가 서술된다. 따라서 $\mathbf p$를 `변형(deformation)`이라고 한다.
 
 두 점 $\bm X, \bm X + \Delta \bm X$이 있을 때, 벡터 $\Delta \mathbf x$를 다음과 같이 정의하자.
 $$ \Delta \mathbf x(t) := \mathbf p(\bm X + \Delta \bm X, t) - \mathbf p(\bm X,t) $$
@@ -123,10 +123,13 @@ $$ \Delta X = \Delta S \mathbf n, \enspace \Delta \mathbf x = \Delta S' \mathbf 
 
 변형 후 길이를 구하기 위해 내적을 이용하고 선형근사하면 다음 관계식을 얻을 수 있다.
 $$ \begin{equation} \begin{aligned} \Delta \mathbf x \cdot \Delta \mathbf x &= \Delta \bm X ^T \mathbf F^T \mathbf F \Delta \bm X \\ (\Delta S')^2 &=  (\Delta S)^2 \mathbf n ^T \mathbf C \mathbf n \end{aligned} \end{equation} $$
+
 $$ \text{Where, } \mathbf C = \mathbf F^T \mathbf F $$
 
 이 떄, $\bf C$를 `Chauchy-Green deformation tensor`라고 하며 $\bf C$를 풀어쓰면 다음과 같다.
-$$ \begin{aligned} \mathbf C &= \mathbf {(I + \nabla d)}^T \mathbf {(I + \nabla d)} \\ &= \mathbf {I + (\nabla d)}^T + \nabla \mathbf d + (\nabla \mathbf d)^T \nabla \mathbf d \\ &= \mathbf I + 2 \mathbf E_f  \end{aligned} \\  \text{Where, } \mathbf E_f =\frac{1}{2} \left(\nabla \mathbf d + \nabla \mathbf d^T + \nabla \mathbf d^T \nabla \mathbf d \right)$$
+$$ \begin{aligned} \mathbf C &= \mathbf {(I + \nabla d)}^T \mathbf {(I + \nabla d)} \\ &= \mathbf {I + (\nabla d)}^T + \nabla \mathbf d + (\nabla \mathbf d)^T \nabla \mathbf d \\ &= \mathbf I + 2 \mathbf E_f  \end{aligned} $$
+
+$$ \text{Where, } \mathbf E_f =\frac{1}{2} \left(\nabla \mathbf d + \nabla \mathbf d^T + \nabla \mathbf d^T \nabla \mathbf d \right)$$
 
 이 때, $\mathbf E_f$을 `finite strain tensor`라고 한다. 
 
@@ -137,7 +140,7 @@ $$ \begin{aligned} (\Delta S')^2 &=  (\Delta S)^2 \mathbf n ^T \mathbf C \mathbf
 
 ### 단위 길이당 변화율
 위 식을 아래 과정으로 정리하면 단위 길이당 변화율을 얻을 수 있다.
-$$ \begin{aligned} & (\Delta S')^2 = (\Delta S)^2 + 2 (\Delta S)^2 (\mathbf n^T \mathbf E_f  \mathbf n) \\ \Leftrightarrow \enspace & \frac{(\Delta S')^2 - (\Delta S)^2}{2 (\Delta S)^2} =  (\mathbf n^T \mathbf E_f  \mathbf n) \\ \Leftrightarrow \enspace & \frac{\Delta S' - \Delta S}{\Delta S} = \frac{2 \Delta S}{\Delta S' + \Delta S} (\mathbf n^T \mathbf E_f  \mathbf n) \end{aligned} $$
+$$ \begin{aligned} & (\Delta S')^2 = (\Delta S)^2 + 2 (\Delta S)^2 (\mathbf n^T \mathbf E_f  \mathbf n) \\ \Leftrightarrow \enspace & (\Delta S' - \Delta S)({\Delta S' + \Delta S}) = 2 (\Delta S)^2 (\mathbf n^T \mathbf E_f  \mathbf n) \\ \Leftrightarrow \enspace & \frac{\Delta S' - \Delta S}{\Delta S} = \frac{2 \Delta S}{\Delta S' + \Delta S} (\mathbf n^T \mathbf E_f  \mathbf n) \end{aligned} $$
 
 ## 변형 후 각도
 또 다른 점 $\bm X + \Delta \bm Y$이 있을 때, 벡터 $\Delta \mathbf y$를 다음과 같이 정의하자.
