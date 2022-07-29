@@ -1,4 +1,4 @@
-# 파일 상태
+ㅋ# 파일 상태
 unstage - stage - commit 공부
 
 ### 명령어
@@ -41,6 +41,8 @@ Staging Area에 있는 모든 파일을 다시 unstage
 해당 커밋 버전으로 돌아간 상태를 새로 커밋
 * `git reset --hard [커밋해시코드]`  
 해당 커밋 버전으로 돌아가고 이후의 커밋들을 전부 삭제
+> 참고  
+> Progit >> Git 도구 >> Reset 명확히 알고 가기
 * 
 
 

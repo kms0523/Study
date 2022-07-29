@@ -105,13 +105,13 @@ $$\begin{array}{c|l}
 \hline 
 \\
 6-2 & \text{Mecsolver}  \\ 
-6-3 & \text{ - Shell의 Element stiffness matrix 계산 코드 이해}  \\ 
-6-4 & \sout{\text{ \;- Shell의 Elasticity Tensor 계산 코드 이해}}\\
-    & \text{ \;- Shell의 B matrix 계산 코드 이해} \\ 
+6-3 & \text{ - Shell의 Element stiffness matrix 계산 코드 이해}     \\ 
+6-4 & \sout{\text{ \;- Shell의 Elasticity Tensor 계산 코드 이해}}   \\
+    & \text{ \;- Shell의 B matrix 계산 코드 이해}                   \\ 
     & \sout{\text{ \;\;- Shell의 B membrane matrix 계산 코드 이해}} \\ 
-    & \sout{\text{ \;\;- Shell의 B bending matrix 계산 코드 이해}} \\ 
-    & \sout{\text{ \;\;- Shell의 B shear matrix 계산 코드 이해}} \\     
-    & \sout{\text{ \;\;- Simo \& Fox 논문 이해}} \\     
+    & \sout{\text{ \;\;- Shell의 B bending matrix 계산 코드 이해}}  \\ 
+    & \sout{\text{ \;\;- Shell의 B shear matrix 계산 코드 이해}}    \\     
+    & \sout{\text{ \;\;- Simo \& Fox 논문 이해}}                    \\     
 \\
 \hline
 \\ 
