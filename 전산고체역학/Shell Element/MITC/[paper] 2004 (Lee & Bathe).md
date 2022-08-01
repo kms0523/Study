@@ -271,14 +271,14 @@ tying points는 center of the edges로 다음과 같이 주어진다.
 <img src = "./image/2004 (Lee & Bathe)_1.png">
 </p>
 
-## 1
+## 1 interpolation
 첫번째로, assumed transverse shear strain $\tilde e_{rt}, \tilde e_{st}$를 1차 다항식으로 근사한다.
 $$ \tilde e_{rt} = a_0 + a_1 r + a_2 s \\ \tilde e_{st} = b_0 + b_1 r + b_2 s $$
 
 식(2)으로 부터 $\tilde e_{qt}$ 또한 근사된다.
 $$ \tilde e_{qt} = \frac{1}{\sqrt{2}} \Big( (b_0-a_0) + (b_1-a_1) r + (b_2-a_2) s \Big) $$
 
-## 2
+## 2 tying
 tying point에서 displacement-based strain와 같은 값을 갖게 하기 위해서 new method를 사용하자. 이때, new method에서 사용되는 points들을 sampling points라고 하자. 
 
 MITC3에서 sampling points는 다음과 같은 점들을 사용한다.
@@ -306,7 +306,9 @@ $$ e_{qt} =  e_{st}(\mathbf t_3) - e_{rt}(\mathbf t_3)  $$
 결론적으로 assumed transverse shear strain은 다음과 같다.
 $$ \begin{equation} \tilde e_{rt} = e_{rt} + cs, \quad \tilde e_{st} = e_{st} - cr \end{equation} $$
 
-$$ \text {Where, } c = e_{st} - e_{rt} - e_{st} + e_{rt} $$
+$$ \text {Where, } c = e_{st} - e_{rt} - e_{st}(\mathbf t_3) + e_{rt}(\mathbf t_3) $$
+
+## 3 $\tilde{\mathbf B}$
 
 이 때, $\tilde{\mathbf B}$를 구하기 위해 식(1)에 나와있는 $\tilde n_i$를 구할 필요는 없다. 식(4)을 $\mathbf B$의 특정열과 $\hat d$이 내적된 형태로 보면 다음과 같이 정리할 수 있다.
 $$ \tilde B_{rt} = B_{rt} + \mathbf cs, \quad \tilde B_{st} = B_{st} - \mathbf cr $$

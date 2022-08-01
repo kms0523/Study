@@ -8,13 +8,17 @@ MITC3 element는 useful 하지만 opimal convergence behaviors을 보여주지�
 일반적으로 3-node triangular elements는 lack of displacement modes때문에 성능이 떨어진다[2,9,10]. 이런 내제적인 한계점을 극복하기 위해 displacment field를 enrich 시키는 방법이 효과적이다[22-25]. 
 > Q. 3-node triangular elements는 왜 lack of displacement modes인가?  
 > [2] [book] (Bathe) FE procedures 참고  
-> [9] [Paper] 2007 (Lee et al) Insight into 3-node triangular shell finite elements the effects of element isotropy and mesh patterns 참고
+> [9] [Paper] 2007 (Lee et al) Insight into 3-node triangular shell finite elements the effects of element isotropy and mesh patterns 참고  
+> [10] [Paper] 2012 (Lee et al) Improving the MITC3 shell finite element by using the Hellinger–Reissner principle 참고  
+> [22] [Paper] 2014 (Jeon et al) The MITC3 shell finite element enriched by interpolation covers 참고  
+> [25] [Paper] 2013 (Kim & Bathe) The finite element method enriched by interpolation covers 참고  
 
 3-node triangular element을 위한 cubic bubble function은 요소 내부에서는 higher-order interpolation이 가능하게 하면서 element edge에서는 linear interpolation을 유지하기 때문에 element간의 compatibility를 제공하여 유용하다.
 > Q. edge에서 linear interpolation을 유지하면 왜 compatibility between elements를 제공하나?  
-> [Paper] 2014 (Jeon et al) The MITC3 shell finite element enriched by interpolation covers 참고
 
 MITC3+에서는 bending displacements를 enrich하기 위해 cubic bubble function을 사용해서 rotation을 interpolation한다. 이를 위해 standard 3-node shell element의 dof에 2개의 internal rotation dof가 추가 된다.
+
+그래서 bubble function은 shell element의 mid-surface displacement에 영향을 주지 않는다.
 
 shear locking 현상을 완화하기 위해 new assumed transverse shear strain field가 designed 되었다.
 
@@ -49,7 +53,7 @@ $$ \tilde{e}^{MITC3}_{rt} = e_{rt}^{(1)} + cs, \enspace \tilde{e}^{MITC3}_{st} =
 $$ \text{Where, } c = (e^{(3)}_{rt} - e^{(1)}_{rt}) - (e^{(3)}_{st} - e^{(2)}_{st}) $$
 
 ## 2.2 MITC3+
-additional bubble node를 포함한 continuum mechanics displacement-based MITC3+ element의 geometry는 다음과 같다.
+`질량중심(barycenter)`에 bubble node를 포함한 continuum mechanics displacement-based MITC3+ element의 geometry는 다음과 같다.
 <p align = "center">
 <img src = "./image/2014 (Lee et al)_1.png">
 </p>
@@ -57,12 +61,14 @@ additional bubble node를 포함한 continuum mechanics displacement-based MITC3
 $$ \mathbf x(r_1, r_2, r_3) = \sum_{i = 1}^3 n_i(r_1, r_2) \mathbf x_i + \sum_{i = 1}^4 \frac{r_3}{2} m_i(r_1,r_2) a_i \mathbf v^i $$
 $$ \text{Where, } n_1 = 1 - r_1 - r_2, \enspace n_2 = r_1, \enspace n_3 = r_2 \\ m_1 = n_1 - \frac{1}{3}m_4, \enspace m_2 = n_2 - \frac{1}{3}m_4, \enspace m_3 = n_3 - \frac{1}{3}m_4, \enspace m_4 = 27r_1r_2(1-r_1-r_2) \\ a_4 \mathbf v^4 = \frac{1}{3} \sum_{i = 1}^3 a_i \mathbf v^i $$
 
+$m_i$는 2차원 interpolation functions으로 bubble node에 대한 interpolation function인 cubic bubble function $m_4$를 포함하고 있다.
+
 이에 따른, displacement는 다음과 같다.
 $$ \mathbf d(r_1,r_2,r_3) = \sum_{i = 1}^3 n_i(r_1,r_2)\mathbf d(\mathbf x_i) + \frac{r_3}{2} \sum_{i = 1}^4 a_i m_i(-\mathbf v_2^i \alpha_i + \mathbf v_1^i \beta_i) $$
 
-이 때, $\alpha_4,\beta_4$는 bubble node의 rotation dof이다.
+이 때, $\alpha_4,\beta_4$는 bubble node를 추가함으로써 추가적으로 생긴 rotation dof이다.
 
-bubble node는 중간면의 세 절점으로 이루어진 평평한 면에 존재하며, bending 과 transverse shear strain fields만 enriched 시키고 element의 gemoetry는 flat하게 유지한다.
+rotation dof만 가지고 있는 bubble node는 중간면의 barycenter에 존재하며, bending과 transverse shear strain fields만 enriched 시키고 element의 gemoetry는 flat하게 유지한다.
 > Q. 왜?
 
 MITC3 요소에서는 transverse shear strain components에 mixed interpolation을 적용하였지만 bubble function의 효과를 포함하기 위해서는 새로운 assumed transverse shear strain이 필요하다.
@@ -70,17 +76,16 @@ MITC3 요소에서는 transverse shear strain components에 mixed interpolation�
 새로운 assumed transverse shear strain을 디자인하기 위해서는 두가지를 고려해야 한다.
 * bubble function이 element edge에서 0이 되기 때문에 bubble function을 고려하기 위해서는 tying points가 element edge가 아니라 element 내부에 있어야 한다.
 * in-plane twisting mode의 stiffness가 줄어들어야 한다[10].
-
 > Q.왜 in-plane twisting mode의 stiffness를 줄여야 하는가?  
 > [Paper] 2012 (Lee et al) Improving the MITC3 shell finite element by using the Hellinger–Reissner principle
 
-3-node triangular shell element를 고려해보자. transverse shear strains는 two transverse shearing modes와 in-plane twisting mode에서 일어난다.
+bubble node가 포함되지 않은 3-node triangular shell element를 고려해보자. transverse shear strains는 two transverse shearing modes와 in-plane twisting mode에서 일어난다. 이 때, in-plane twisting mode는 barycenter를 축으로 twisting이 발생하여 barycenter에서는 tranverse shear strain이 0인 경우이다.
 
-MITC3 shell element의 transverse shear strain은 transverse shearing modes와 관련된 constant part와 in-plane twisting mode와 관련된 linear part로 나눌 수 있다.
+이를 이용해서 MITC3 shell element의 transverse shear strain을 in-plane twisting mode와 관련없는 constant part와 in-plane twisting mode와 관련된 linear part로 나눌 수 있다.
 $$ \tilde{e}^{MITC3}_{rt} = e_{rt}^{const} + e_{rt}^{linear}, \enspace \tilde{e}^{MITC3}_{st} = e_{st}^{const} + e_{st}^{linear} $$
 
-constant part는 barycenter에서의 transverse shear strains을 평가함으로써 쉽게 얻을 수 있다. 
-$$ \begin{gathered} e_{rt}^{const} = e_{rt}^{MITC3}|_{s = 1/3} = \frac{2}{3} \Big(e^{(1)}_{rt} + \frac{1}{2}e_{st}^{(2)} \Big) - \frac{1}{3} \Big(e^{(3)}_{st} - e_{rt}^{(3)} \Big) \\ e_{st}^{const} = e_{st}^{MITC3}|_{r = 1/3} = \frac{2}{3} \Big(e^{(2)}_{st} + \frac{1}{2}e_{rt}^{(1)} \Big) + \frac{1}{3} \Big(e^{(3)}_{st} - e_{rt}^{(3)} \Big) \end{gathered} $$
+barycenter에서 in-plane twisting mode에 의한 transverse shear strain이 0이기 때문에 constant part는 barycenter에서 transverse shear strain이 된다.
+$$ \begin{gathered} e_{rt}^{const} = e_{rt}^{MITC3}|_{s = 1/3} = e^{(1)}_{rt} + \frac{1}{3}c = \frac{2}{3} \Big(e^{(1)}_{rt} + \frac{1}{2}e_{st}^{(2)} \Big) - \frac{1}{3} \Big(e^{(3)}_{st} - e_{rt}^{(3)} \Big) \\ e_{st}^{const} = e_{st}^{MITC3}|_{r = 1/3} = e^{(1)}_{st} - \frac{1}{3}c =  \frac{2}{3} \Big(e^{(2)}_{st} + \frac{1}{2}e_{rt}^{(1)} \Big) + \frac{1}{3} \Big(e^{(3)}_{st} - e_{rt}^{(3)} \Big) \end{gathered} $$
 
 linear part는 다음과 같다.
 $$ \begin{gathered} \tilde{e}^{linear}_{rt} = \tilde{e}^{MITC3}_{rt} - e_{rt}^{const} = \frac{1}{3}c(3s-1) \\ \tilde{e}^{linear}_{st} = \tilde{e}^{MITC3}_{st} - e_{st}^{const} = \frac{1}{3}c(1-3r) \end{gathered} $$
@@ -97,6 +102,10 @@ $$ \begin{aligned} e_{1t} &= \frac{1}{\sqrt 5}(2e_{st} - e_{rt}) \\ e_{2t} &= \f
 
 이를 $e_{rt},e_{st},e_{qt}$에 대해서 정리하면 다음과 같다.
 $$ \begin{aligned} e_{rt} &= \frac{\sqrt 5}{3}e_{2t} - \frac{\sqrt 2}{3}e_{3t} \\ e_{st} &= \frac{\sqrt 5}{3}e_{1t} - \frac{\sqrt 2}{3}e_{3t} \\ e_{qt} &= -\frac{1}{\sqrt 2}(e_{st} - e_{rt}) = \frac{\sqrt 10}{6}(e_{1t} - e_{2t}) \end{aligned} $$
+
+# 알고리즘
+MITC3+ 요소에서는 기존의 shell 요소의 barycenter에 bubble node를 추가함으로써, 2개의 rotation dof를 추가하여 mid-surface displacement에는 영향을 주지 않으면서, dispaclement field를 enrich 시킨다.
+
 
 
 # 계획

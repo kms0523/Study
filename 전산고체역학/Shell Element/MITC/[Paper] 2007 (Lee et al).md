@@ -14,3 +14,7 @@ superimposing plate bending and membrane actions 방법은 general shell problem
 formulations based on 3D continuum mechanics의 경우 그대로 사용할 경우 locking 현상이 발생한다. 특히 displacement-based 3-node triangular shell finite element (QUAD3)는 locking 현상이 매우 심하다.
 
 # 4. Simple bending test problems
+
+
+# Appendix
+s-norm procedure

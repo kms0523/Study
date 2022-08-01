@@ -20,12 +20,21 @@ $$ \Delta \mathbf R = \mathbf e_\theta \Delta \theta \times \mathbf R $$
 $$ \frac{d\mathbf R}{dt} = \boldsymbol{\omega} \times \mathbf R  $$
 
 # 스프링
-
 <p align = "center">
 <img src = "./image/스프링.png">
 </p>
 
 위 그림과 같이 외력 $f_1,f_2$를 받아 변위 $d_1,d_2$가 생긴 탄성 스프링(elastic spring)이 평형상태에 있다고 하자.
 
-이 떄, 평형 방정식(equilibrium equation)은 다음과 같다.
+이 떄, `평형 방정식(equilibrium equation)`은 다음과 같다.
 $$ \begin{aligned} k(d_1 - d_2) = f_1 \\ k(d_2 - d_1) = f_2 \end{aligned} $$
+
+# 열전도
+<p align = "center">
+<img src = "./image/열전도.png">
+</p>
+
+위 그림과 같이 heat  flux $q_1,q_2$를 받아 끝단의 온도가 $T_1,T_2$인 평형상태에 도달한 물체가 있다고 하자.
+
+이 떄, 평형 방정식은 다음과 같다.
+$$ \begin{aligned} q_1 = k(T_1-T_2) \\ q_2 = k(T_1-T_2) \end{aligned} $$

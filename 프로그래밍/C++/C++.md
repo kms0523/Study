@@ -1,3 +1,4 @@
+- [Extern](#extern)
 - [Test Class](#test-class)
 - [STL Container](#stl-container)
 	- [Queue](#queue)
@@ -74,6 +75,23 @@
   * measur of accuracy in numeric calculations
 
 <br><br>
+
+# Extern
+C++에서 C 함수를 호출하려면, extern "C"로 감싸줘야 한다.
+
+```cpp
+
+extern "C" 
+{
+    void func1(void);
+    uint8_t func2(void); 
+}
+
+func1(); // C++ 에서 C 함수 호출.
+```
+
+> 참고  
+> [C++에서 C함수 호출 - i.got.it 블로그](https://igotit.tistory.com/2452)
 
 # Test Class
 ```cpp
