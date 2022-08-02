@@ -174,11 +174,9 @@ Weak formulation을 다음 예제를 통해 구체적으로 알아보자.
 PDE가 다음과 같이 주어졌다고 해보자.  
 $$ \begin{equation} \text{find } u \in \mathcal U_s \quad s.t. \quad -\frac{d}{dx}(a\frac{du}{dx}) + cu = f \quad \text{in } \Omega := (0,L) \subset \R \end{equation} $$
 
-BC는 다음과 같이 주어진다.  
-$$ \begin{aligned} u(0) &= u_0 \ \left( a\frac{du}{dx} \right)_{x=L} &= Q_L \end{aligned} $$
+$$ \text{Where, } \mathcal U_s := \left\{ u \in C^2(\Omega) \enspace \bigg| \enspace u(0) = u_0 \land \left( a\frac{du}{dx} \right)_{x=L} = Q_L \right\} $$
 
-따라서 solution space는 다음과 같다.  
-$$ \mathcal U_s := \left\{ u \in C^2(\Omega) \enspace \bigg| \enspace u(0) = u_0 \land \left( a\frac{du}{dx} \right)_{x=L} = Q_L \right\} $$
+이 때, 함수 $a,c,f : \Omega \rightarrow \R$와 $u_0, Q_L \in \R$은 주어졌다고 하자.
 
 식(7)의 weighted residual form은 다음과 같다.  
 $$ \text{find } u \in \mathcal U_s \quad s.t. \quad \forall w \in C^\infty_c(\Omega), \quad \int_\Omega w \left( -\frac{d}{dx}(a\frac{du}{dx}) + cu - f \right) \thinspace dx = 0 $$
@@ -215,15 +213,13 @@ $$ \text{Where, } \mathcal U_W := \left\{ u \in C^1(\Omega) \enspace \bigg| \ens
 
 $$ \begin{equation} \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in \mathcal W, \quad B(w,u) = l(w) \end{equation} $$
 
-$$ \begin{gathered} \text{Where, } B: \mathcal W \times \mathcal U_W \rightarrow \R, \quad l: \mathcal W \rightarrow \R \ \mathcal U_W := \left\{ u \in C^r(\Omega) \enspace \big| \enspace u \text{ satisfies essential BCs on } \partial\Omega_E\right\} \ \mathcal W := \{ w \in C^\infty(\Omega) \enspace | \enspace w(\mathbf x) = 0 \text{ for } \mathbf x \in \partial\Omega_E \} \end{gathered} $$
+$$ \begin{gathered} \text{Where, } B: \mathcal W \times \mathcal U_W \rightarrow \R \quad s.t. \quad (w,u) \mapsto  \int_\Omega -\frac{dw}{dx} \Big( a\frac{du}{dx} \Big) + wcu  \thinspace dx \\ \quad l: \mathcal W \rightarrow \R \quad s.t. \quad w \mapsto \int_\Omega wf \thinspace dx + w(L)Q_L \\ \mathcal U_W := \left\{ u \in C^r(\Omega) \enspace \big| \enspace u \text{ satisfies essential BCs on } \partial\Omega_E\right\} \\ \mathcal W := \{ w \in C^\infty(\Omega) \enspace | \enspace w(\mathbf x) = 0 \text{ for } \mathbf x \in \partial\Omega_E \} \end{gathered} $$
 
 이 떄, $\mathcal U_W$는 affine space이고 $\mathcal W$는 vector space이다.
 
-linear PDE의 경우 식(11)을 bilinear form for linear PDEs라고 하며 식(10)을 bilinear form으로 나타내면 다음과 같다.  
-$$ B(w,u) := \int_\Omega \left( -\frac{dw}{dx}(a\frac{du}{dx}) + wcu \right) \thinspace dx, \quad l(w) := \int_\Omega wf \thinspace dx + w(L)Q_L $$
+linear PDE의 경우 식(11)을 bilinear form for linear PDEs라고 한다.
 
 # Ritz method
-
 Ritz method는 weak formulation을 기반으로한 수치기법이다. Ritz method에서도 weight residual method에서 했던 방법과 동일하게 무한차원 test function space와 solution function space를 유한차원으로 축소한다.
 
 먼저, test function space는 다음과 같이 축소한다.  
@@ -246,3 +242,36 @@ $B$가 bilinear이고 $l$이 linear인 경우 다음과 같이 간단해진다.
 $$ \text{find } \mathbf a \in \R^n \quad s.t. \quad \mathbf {Ka = f} $$
 
 $$ \text{Where, } K_{ij} = B(u_i,u_j), \quad f_i = l(u_i) - B(u_i, \varphi) \quad \forall i \in \{ 1, \cdots, n \} $$
+
+# Model Problem
+$$ \text{find } u \in \mathcal U_s \quad s.t. \quad \frac{d^2u}{dx^2} = 0 \quad \text{in} \enspace \Omega := [0,2] \subset \R $$
+
+$$ \text{Where, } \mathcal U_s := \{ u \in C^2(\Omega) \enspace | \enspace u'(0) = 1 \enspace \land \enspace u(2) = 1 \} $$
+
+## Weak formulation
+$$ \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in \mathcal W, \quad \int_\Omega \frac{du}{dx}\frac{dw}{dx} \thinspace dV - w \frac{du}{dx} \bigg|_0^2 = 0 $$
+
+$$ \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in \mathcal W, \quad \int_\Omega \frac{du}{dx}\frac{dw}{dx} \thinspace dV + w(0) = 0 $$
+
+$$ \begin{aligned} \text{Where, } \mathcal U_W &:= \{ u \in C^1(\Omega) \enspace | \enspace u(2) = 1 \} \\ \mathcal W &:= \{ w \in C^\infty(\Omega) \enspace | \enspace w(2) = 0 \} \end{aligned} $$
+
+$\mathcal U_W$는 $\mathcal U_s$에서 regularity를 약화시키고, natural BC가 equation에 impose 되어 있음으로 natural BC 조건을 배제한 공간이다.
+
+$\mathcal W$는 $C^\infty_c(\Omega)$에서 natural BC를 식에 impose 시키기 위해서 natural BC에서는 0이 되지 않게 조건을 완화한 공간이다.
+
+## Ritz method
+$$ \mathcal U_W = \phi + \mathcal U_L $$
+
+$$ \mathcal U_{W_h} = \phi + \mathcal U_{L_h} $$
+
+$\phi = 1$, $\mathcal U_{L_h}$의 기저 $u_1 = x-2$
+
+$$ u \in \mathcal U_{W_h} \Rightarrow u = \phi + a_1u_1 $$
+
+$$ \text{find } a \in \R \quad s.t. \quad \int_\Omega \frac{d}{dx}(\phi + a_1u_1)\frac{du_1}{dx} \thinspace dV + u_1(0) = 0 $$
+
+
+$$ \text{find } a \in \R \quad s.t. \quad a_1\int_\Omega \frac{du_1}{dx}\frac{du_1}{dx} \thinspace dV = - u_1(0) - \frac{d\phi}{dx} $$
+
+## FEM method
+$$ u \in \mathcal U_{W_h} \Rightarrow u = b_1n_1 + b_2n_2 $$

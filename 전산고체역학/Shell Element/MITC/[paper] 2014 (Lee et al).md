@@ -53,6 +53,8 @@ $$ \tilde{e}^{MITC3}_{rt} = e_{rt}^{(1)} + cs, \enspace \tilde{e}^{MITC3}_{st} =
 $$ \text{Where, } c = (e^{(3)}_{rt} - e^{(1)}_{rt}) - (e^{(3)}_{st} - e^{(2)}_{st}) $$
 
 ## 2.2 MITC3+
+
+### Geometry
 `질량중심(barycenter)`에 bubble node를 포함한 continuum mechanics displacement-based MITC3+ element의 geometry는 다음과 같다.
 <p align = "center">
 <img src = "./image/2014 (Lee et al)_1.png">
@@ -63,6 +65,7 @@ $$ \text{Where, } n_1 = 1 - r_1 - r_2, \enspace n_2 = r_1, \enspace n_3 = r_2 \\
 
 $m_i$는 2차원 interpolation functions으로 bubble node에 대한 interpolation function인 cubic bubble function $m_4$를 포함하고 있다.
 
+### Displacement
 이에 따른, displacement는 다음과 같다.
 $$ \mathbf d(r_1,r_2,r_3) = \sum_{i = 1}^3 n_i(r_1,r_2)\mathbf d(\mathbf x_i) + \frac{r_3}{2} \sum_{i = 1}^4 a_i m_i(-\mathbf v_2^i \alpha_i + \mathbf v_1^i \beta_i) $$
 
@@ -71,15 +74,18 @@ $$ \mathbf d(r_1,r_2,r_3) = \sum_{i = 1}^3 n_i(r_1,r_2)\mathbf d(\mathbf x_i) + 
 rotation dof만 가지고 있는 bubble node는 중간면의 barycenter에 존재하며, bending과 transverse shear strain fields만 enriched 시키고 element의 gemoetry는 flat하게 유지한다.
 > Q. 왜?
 
-MITC3 요소에서는 transverse shear strain components에 mixed interpolation을 적용하였지만 bubble function의 효과를 포함하기 위해서는 새로운 assumed transverse shear strain이 필요하다.
+MITC3 요소와 같이 transverse shear strain components에 mixed interpolation을 적용한다. 하지만 bubble function의 효과를 포함하기 위해서는 새로운 assumed transverse shear strain이 필요하다.
 
+### New assumed transverse shear strain
 새로운 assumed transverse shear strain을 디자인하기 위해서는 두가지를 고려해야 한다.
 * bubble function이 element edge에서 0이 되기 때문에 bubble function을 고려하기 위해서는 tying points가 element edge가 아니라 element 내부에 있어야 한다.
 * in-plane twisting mode의 stiffness가 줄어들어야 한다[10].
 > Q.왜 in-plane twisting mode의 stiffness를 줄여야 하는가?  
 > [Paper] 2012 (Lee et al) Improving the MITC3 shell finite element by using the Hellinger–Reissner principle
 
-bubble node가 포함되지 않은 3-node triangular shell element를 고려해보자. transverse shear strains는 two transverse shearing modes와 in-plane twisting mode에서 일어난다. 이 때, in-plane twisting mode는 barycenter를 축으로 twisting이 발생하여 barycenter에서는 tranverse shear strain이 0인 경우이다.
+bubble node가 포함되지 않은 3-node triangular shell element를 고려해보자. 
+
+transverse shear strains는 two transverse shearing modes와 in-plane twisting mode에서 일어난다. 이 때, in-plane twisting mode는 barycenter를 축으로 twisting이 발생하여 barycenter에서는 tranverse shear strain이 0인 경우이다.
 
 이를 이용해서 MITC3 shell element의 transverse shear strain을 in-plane twisting mode와 관련없는 constant part와 in-plane twisting mode와 관련된 linear part로 나눌 수 있다.
 $$ \tilde{e}^{MITC3}_{rt} = e_{rt}^{const} + e_{rt}^{linear}, \enspace \tilde{e}^{MITC3}_{st} = e_{st}^{const} + e_{st}^{linear} $$
@@ -90,7 +96,9 @@ $$ \begin{gathered} e_{rt}^{const} = e_{rt}^{MITC3}|_{s = 1/3} = e^{(1)}_{rt} + 
 linear part는 다음과 같다.
 $$ \begin{gathered} \tilde{e}^{linear}_{rt} = \tilde{e}^{MITC3}_{rt} - e_{rt}^{const} = \frac{1}{3}c(3s-1) \\ \tilde{e}^{linear}_{st} = \tilde{e}^{MITC3}_{st} - e_{st}^{const} = \frac{1}{3}c(1-3r) \end{gathered} $$
 
-만약 this scheme을 new element에 사용한다면, bubble function이 element edge에서 0이기 때문에 constant part는 bubble function의 effect를 포함하지 않게된다. 따라서 constant part에 bubble function의 effect를 포함하기 위해 element internal point를 사용하는 new tying scheme을 디자인한다.
+이 때, 주목할 점은 bubble function이 element edge에서 0이라는 점이다. 따라서, 
+
+때문에 constant part는 bubble function의 effect를 포함하지 않게된다. 따라서 constant part에 bubble function의 effect를 포함하기 위해 element internal point를 사용하는 new tying scheme을 디자인한다.
 
 먼저, 아래 그림과 같이 barycenter에서 각각의 corner 방향으로 가는 세게의 covariant transverse shear strain $e_{1t},e_{2t},e_{3t}$를 정의한다.
 <p align = "center">

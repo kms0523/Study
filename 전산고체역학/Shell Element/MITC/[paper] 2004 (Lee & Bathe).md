@@ -260,13 +260,7 @@ chapter 3.2와 동일한 과정을 거치면 미지수를 전부 결정할 수 �
 inplane strain field는 chpater 3.3과 동일하게 한다.
 
 # MITC3 Algorithm
-MITC3 element는 아래 그림과 같이 constant transverse shear strain along its edge이고,  결정된 3 node triangular shell elemnt이다.
-<p align = "center">
-<img src = "./image/shell2.png">
-</p>
-
-tying points는 center of the edges로 다음과 같이 주어진다.
-
+MITC3 element는 아래 그림과 같이 constant transverse shear strain along its edge이고 다음과 같은 tying points를 갖는 3 node triangular shell element이다.
 <p align = "center">
 <img src = "./image/2004 (Lee & Bathe)_1.png">
 </p>
@@ -279,34 +273,37 @@ $$ \tilde e_{rt} = a_0 + a_1 r + a_2 s \\ \tilde e_{st} = b_0 + b_1 r + b_2 s $$
 $$ \tilde e_{qt} = \frac{1}{\sqrt{2}} \Big( (b_0-a_0) + (b_1-a_1) r + (b_2-a_2) s \Big) $$
 
 ## 2 tying
-tying point에서 displacement-based strain와 같은 값을 갖게 하기 위해서 new method를 사용하자. 이때, new method에서 사용되는 points들을 sampling points라고 하자. 
+tying point에서 displacement-based strain와 같은 값을 갖게 하기 위해서 new method를 사용하자. 
 
-MITC3에서 sampling points는 다음과 같은 점들을 사용한다.
+이 때, new method에서 사용되는 points들을 sampling points라고 하며 MITC3에서 sampling points는 다음과 같은 점들을 사용한다.
 
 <p align = "center">
 <img src = "./image/2004 (Lee & Bathe)_2.png">
 </p>
 
 new method를 이용해서 $\mathbf t_1$에서 $\tilde e_{rt}$와 $e_{rt}$가 일치하도록 하면 다음과 같은 식을 얻을 수 있다.
-$$ \tilde{e}_{rt}(\mathbf s_1) = e_{rt}(\mathbf s_1) = e_{rt}, \quad \tilde{e}_{rt}(\mathbf s_2) = e_{rt}(\mathbf s_2) = e_{rt} $$
+$$ \tilde{e}_{rt}(\mathbf s_1) = e_{rt}(\mathbf t_1), \quad \tilde{e}_{rt}(\mathbf s_2) = e_{rt}(\mathbf t_1) $$
 
 이러한 과정을 tying이라고 한다.
 
 new method를 이용해서 $\mathbf t_2, \mathbf t_3$에서 tying하면 다음과 같은 식들을 얻을 수 있다.
-$$ \tilde{e}_{st}(\mathbf s_1) = e_{st}(\mathbf s_1) = e_{st}, \quad \tilde{e}_{st}(\mathbf s_3) = e_{st}(\mathbf s_3) = e_{st} \\ \tilde{e}_{qt}(\mathbf s_2) = e_{qt}(\mathbf s_2) = e_{qt}, \quad \tilde{e}_{qt}(\mathbf s_3) = e_{qt}(\mathbf s_3) = e_{qt} $$
+$$ \tilde{e}_{st}(\mathbf s_1) = e_{st}(\mathbf t_1), \quad \tilde{e}_{st}(\mathbf s_3) = e_{st}(\mathbf t_2) \\ \tilde{e}_{qt}(\mathbf s_2) = e_{qt}(\mathbf t_3), \quad \tilde{e}_{qt}(\mathbf s_3) = e_{qt}(\mathbf t_3) $$
+
+이 때, $e_{qt}(\mathbf t_3)$는 식(2)에 의해 다음과 같다.
+$$ e_{qt}(\mathbf t_3) = \frac{1}{\sqrt 2} \big( e_{st}(\mathbf t_3) - e_{rt}(\mathbf t_3) \big) $$
+
 
 6개의 미지수와 6개의 식이 주어졌음으로 선형방정식을 풀면 다음과 같이 미지수를 결정할 수 있다.
 
 세번째로, 식(3)에 나타난 6개의 선형방정식을 풀어 6개의 미지수를 구한다.
-$$ \begin{array}{l l l} a_0 = e_{rt}, & a_1 = 0, & a_2 = e_{st} - e_{rt} -\sqrt{2}e_{qt} \\ b_0 = e_{st}, & b_1 = -a_2, & b_2 = 0 \end{array} $$
+$$ \begin{array}{l l l} a_0 = e_{rt}(\mathbf t_1), & a_1 = 0, & a_2 = c \\ b_0 = e_{st}(\mathbf t_2), & b_1 = -c, & b_2 = 0 \end{array} $$
 
-이 때, $e_{qt}$는 다음과 같이 적을 수 있다.
-$$ e_{qt} =  e_{st}(\mathbf t_3) - e_{rt}(\mathbf t_3)  $$
+$$ \text {Where, } c = e_{st}(\mathbf t_2) - e_{rt}(\mathbf t_1) - e_{st}(\mathbf t_3) + e_{rt}(\mathbf t_3) $$
 
 결론적으로 assumed transverse shear strain은 다음과 같다.
-$$ \begin{equation} \tilde e_{rt} = e_{rt} + cs, \quad \tilde e_{st} = e_{st} - cr \end{equation} $$
+$$ \tilde e_{rt} = e_{rt}(\mathbf t_1) + cs, \quad \tilde e_{st} = e_{st}(\mathbf t_2) - cr $$
 
-$$ \text {Where, } c = e_{st} - e_{rt} - e_{st}(\mathbf t_3) + e_{rt}(\mathbf t_3) $$
+
 
 ## 3 $\tilde{\mathbf B}$
 
@@ -319,3 +316,10 @@ $$ \text {Where, } \mathbf c = B_{st} - B_{rt} - B^{(3)}_{st} + B^{(3)}_{rt} $$
 
 
 $$ \begin{equation} \begin{aligned} \tilde{e}_{rt}(0,0) = e_{rt}(\mathbf s_1) = e_{rt}, \quad \tilde{e}_{rt}(1,0) = e_{rt}(\mathbf s_2) = e_{rt} \\ \tilde{e}_{st}(0,0) = e_{st}(\mathbf s_1) = e_{st}, \quad \tilde{e}_{st}(0,1) = e_{st}(\mathbf s_3) = e_{st} \\ \tilde{e}_{qt}(1,0) = e_{qt}(\mathbf s_2) = e_{qt}, \quad \tilde{e}_{qt}(0,1) = e_{qt}(\mathbf s_3) = e_{qt} \end{aligned} \end{equation} $$
+
+
+<p align = "center">
+<img src = "./image/shell2.png">
+</p>
+
+tying points는 center of the edges로 다음과 같이 주어진다.

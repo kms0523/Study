@@ -17,4 +17,4 @@ formulations based on 3D continuum mechanics의 경우 그대로 사용할 경�
 
 
 # Appendix
-s-norm procedure
+numerical calculation of the s-norm
