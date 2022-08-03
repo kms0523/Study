@@ -314,6 +314,7 @@ $$ \text {Where, } \mathbf c = B_{st} - B_{rt} - B^{(3)}_{st} + B^{(3)}_{rt} $$
 
 이 때, $B_{rt}$나 $B_{st}$는 $\mathbf B$행렬에서 $rt$나 $st$방향으로의 transverse shear strain과 관련된 행이다.
 
+---
 
 $$ \begin{equation} \begin{aligned} \tilde{e}_{rt}(0,0) = e_{rt}(\mathbf s_1) = e_{rt}, \quad \tilde{e}_{rt}(1,0) = e_{rt}(\mathbf s_2) = e_{rt} \\ \tilde{e}_{st}(0,0) = e_{st}(\mathbf s_1) = e_{st}, \quad \tilde{e}_{st}(0,1) = e_{st}(\mathbf s_3) = e_{st} \\ \tilde{e}_{qt}(1,0) = e_{qt}(\mathbf s_2) = e_{qt}, \quad \tilde{e}_{qt}(0,1) = e_{qt}(\mathbf s_3) = e_{qt} \end{aligned} \end{equation} $$
 

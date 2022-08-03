@@ -96,9 +96,7 @@ $$ \begin{gathered} e_{rt}^{const} = e_{rt}^{MITC3}|_{s = 1/3} = e^{(1)}_{rt} + 
 linear part는 다음과 같다.
 $$ \begin{gathered} \tilde{e}^{linear}_{rt} = \tilde{e}^{MITC3}_{rt} - e_{rt}^{const} = \frac{1}{3}c(3s-1) \\ \tilde{e}^{linear}_{st} = \tilde{e}^{MITC3}_{st} - e_{st}^{const} = \frac{1}{3}c(1-3r) \end{gathered} $$
 
-이 때, 주목할 점은 bubble function이 element edge에서 0이라는 점이다. 따라서, 
-
-때문에 constant part는 bubble function의 effect를 포함하지 않게된다. 따라서 constant part에 bubble function의 effect를 포함하기 위해 element internal point를 사용하는 new tying scheme을 디자인한다.
+이 때, 주목할 점은 bubble function이 element edge에서 0이라는 점이다. 따라서, $e_{rt}^{(1)}$등 edge에서 평가한 displacement-based strain은 MITC3+요소에서 평가하더라도 기존의 요소에서 평가한 값과 동일하다. 즉, bubble function의 effect를 포함하지 않게된다. 따라서 bubble function의 effect를 포함하기 위해 element internal point를 사용하는 new tying scheme을 디자인한다.
 
 먼저, 아래 그림과 같이 barycenter에서 각각의 corner 방향으로 가는 세게의 covariant transverse shear strain $e_{1t},e_{2t},e_{3t}$를 정의한다.
 <p align = "center">

@@ -46,6 +46,9 @@ $$ \lim_{n \rightarrow \infty} \int_\Omega G(x)G_n(x) \thinspace dx = \int_\Omeg
 
 $\int_\Omega | G(x) |^2 \thinspace dx = 0$임으로 $G=0 \quad \text{on } \Omega$이다. $\quad {_\blacksquare}$
 
+> 참고  
+> [alternative-proof-of-fundamental-lemma-of-variational-calculus - Mathematics](https://math.stackexchange.com/questions/1792102/alternative-proof-of-fundamental-lemma-of-variational-calculus)
+
 # Weighted residual method
 
 Weighted residual method는 weighted residual formulation의 test function space를 유한차원 함수공간 $\mathcal W_h$로 축소하여 $\mathcal W_h$에서 Weighted residual formulation을 만족하는 해 중에서 solution function space를 유한 차원 함수공간으로 축소한 $\mathcal U_h$안에 들어 있는 해를 찾는 방법이다.
@@ -243,12 +246,55 @@ $$ \text{find } \mathbf a \in \R^n \quad s.t. \quad \mathbf {Ka = f} $$
 
 $$ \text{Where, } K_{ij} = B(u_i,u_j), \quad f_i = l(u_i) - B(u_i, \varphi) \quad \forall i \in \{ 1, \cdots, n \} $$
 
-# Model Problem
+# Model Problem1
 $$ \text{find } u \in \mathcal U_s \quad s.t. \quad \frac{d^2u}{dx^2} = 0 \quad \text{in} \enspace \Omega := [0,2] \subset \R $$
 
 $$ \text{Where, } \mathcal U_s := \{ u \in C^2(\Omega) \enspace | \enspace u'(0) = 1 \enspace \land \enspace u(2) = 1 \} $$
 
-## Weak formulation
+exact solution은 $u=x-1$이다.
+
+## Weighted residual formulation
+$$ \text{find } u \in \mathcal U_s \quad s.t. \quad \forall w \in C^\infty(\Omega), \quad \int_\Omega w\frac{d^2u}{dx^2} \thinspace dV = 0 $$
+
+$$ \text{Where, } \mathcal U_s := \{ u \in C^2(\Omega) \enspace | \enspace u'(0) = 1 \enspace \land \enspace u(2) = 1 \} $$
+
+## Weak formulation1
+$$ \begin{equation} \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in C^\infty(\Omega), \quad B(w,u) = l(w) \end{equation} $$
+
+$$ \begin{gathered} \text{Where, } B : C^\infty \times \mathcal U_W \rightarrow \R \quad s.t. \quad (w,u) \mapsto \int_\Omega \frac{du}{dx}\frac{dw}{dx} \thinspace dV - w\frac{du}{dx} \bigg |_{x=2} \\ l : C^\infty \rightarrow \R \quad s.t. \quad w \mapsto -w(0) \\ \mathcal U_W := \{ u \in C^1(\Omega) \enspace | \enspace u(2) = 1 \} \end{gathered} $$
+
+$\mathcal U_W$는 $\mathcal U_s$에서 regularity를 약화시키고, natural BC가 equation에 impose 되어 있음으로 natural BC 조건을 배제한 공간이다.
+
+### Ritz method
+$u \approx a_i\mu_i$이고 Bodunov-Galerkin method를 적용하면 
+$$ \text{find } \mathbf a \in \R^n \quad s.t. \quad B(\mu_i, a_j \mu_j) = l(\mu_i) \quad i = 1, \cdots, n $$
+
+$B$가 bilinear 임으로
+$$ \text{find } \mathbf a \in \R^n \quad s.t. \quad B(\mu_i,  \mu_j) a_j = l(\mu_i) \quad i = 1, \cdots, n $$
+
+행렬식으로 나타내면
+$$ \begin{bmatrix} B(\mu_1,\mu_1) & \cdots & B(\mu_1,\mu_n) \\ \vdots & \ddots & \vdots \\ B(\mu_n,\mu_1) & \cdots & B(\mu_n,\mu_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \begin{bmatrix} l(\mu_1) \\ \vdots \\ l(\mu_n) \end{bmatrix} $$
+
+
+#### approx1
+$\mu_1 = 1, \mu_2 = x$라 하자.
+
+essential BC를 적용하면 다음과 같다.
+$$ a_1 + 2a_2 = 1 $$
+
+행렬식은 다음과 같다.
+$$ \begin{bmatrix} 0 & -1 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} -1 \\ 0 \end{bmatrix} $$
+
+#### approx2
+$\mu_1 = 1, \mu_2 = x + 3$라 하자.
+
+essential BC를 적용하면 다음과 같다.
+$$ a_1 + 5a_2 = 1 $$
+
+행렬식은 다음과 같다.
+$$ \begin{bmatrix} 0 & -1 \\ 0 & -3 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} -1 \\ -3 \end{bmatrix} $$
+
+## Weak formulation2
 $$ \begin{equation} \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in \mathcal W, \quad B(w,v) = l(w) \end{equation} $$
 
 $$ \begin{gathered} \text{Where, } B : \mathcal W \times \mathcal U_W \rightarrow \R \quad s.t. \quad (w,u) \mapsto \int_\Omega \frac{du}{dx}\frac{dw}{dx} \thinspace dV \\ l : \mathcal W \rightarrow \R \quad s.t. \quad w \mapsto -w(0) \\ \mathcal U_W := \{ u \in C^1(\Omega) \enspace | \enspace u(2) = 1 \} \\ \mathcal W := \{ w \in C^\infty(\Omega) \enspace | \enspace w(2) = 0 \} \end{gathered} $$
@@ -257,21 +303,138 @@ $\mathcal U_W$는 $\mathcal U_s$에서 regularity를 약화시키고, natural BC
 
 $\mathcal W$는 $C^\infty_c(\Omega)$에서 natural BC를 식에 impose 시키기 위해서 natural BC에서는 0이 되지 않게 조건을 완화한 공간이다.
 
-## Ritz method
-test function space $\mathcal W$는 $n$차원 vector space $\mathcal W_h$로 축소하고 solution function space $\mathcal U_W$는 $n$차원 affine space $\mathcal U_{W_h}$로 축소한다.
+### Ritz method
+$u \approx a_i\mu_i$이고 Bodunov-Galerkin method를 적용하면 
+$$ \text{find } \mathbf a \in \R^n \quad s.t. \quad B(\mu_i, a_j \mu_j) = l(\mu_i) \quad i = 1, \cdots, n $$
 
-$\mathcal U_{W_h}$의 associated vector space $\mathcal U_{L_h}$의 기저는 $\mu = \{ \mu_1, \cdots, \mu_n \}$이고 $\phi \in \mathcal U_W$ 일 때, Bodunov-Galerkin method를 적용하면 식(12)는 다음과 같이 간단해진다.
-$$ \text{find } \mathbf a \in \R^n \quad s.t. \quad B(\mu_i, \phi + a_j \mu_j) = l(\mu_i) \quad i = 1, \cdots, n $$
+$B$가 bilinear 임으로
+$$ \text{find } \mathbf a \in \R^n \quad s.t. \quad B(\mu_i,  \mu_j) a_j = l(\mu_i) \quad i = 1, \cdots, n $$
 
-이 때, $n=1, \phi = 1$로 두고 $\mu_1 = x - 2$이라하면 다음이 성립한다.
-$$ u \in \mathcal U_{W_h} \Rightarrow u = \phi + a_1u_1 $$
-
-$$ \text{find } a \in \R \quad s.t. \quad \int_\Omega \frac{d}{dx}(\phi + a_1u_1)\frac{du_1}{dx} \thinspace dV + u_1(0) = 0 $$
+행렬식으로 나타내면
+$$ \begin{bmatrix} B(\mu_1,\mu_1) & \cdots & B(\mu_1,\mu_n) \\ \vdots & \ddots & \vdots \\ B(\mu_n,\mu_1) & \cdots & B(\mu_n,\mu_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \begin{bmatrix} l(\mu_1) \\ \vdots \\ l(\mu_n) \end{bmatrix} $$
 
 
-$$ \text{find } a \in \R \quad s.t. \quad a_1\int_\Omega \frac{du_1}{dx}\frac{du_1}{dx} \thinspace dV = - u_1(0) - \frac{d\phi}{dx} $$
+#### approx1
+$\mu_1 = 1, \mu_2 = x$라 하자.
 
-이 때, 주의할 점은 $\mathcal U_{L_h}$는 $\partial\Omega_E$에서 homogeneous인 함수를 모아 놓은 vector space이다. 즉, 이 문제에서는 $u(2) = 1$을 만족하는 함수를 모아 놓은 vector space임으로 
+essential BC를 적용하면 다음과 같다.
+$$ a_1 + 2a_2 = 1 $$
 
-## FEM method
-$$ u \in \mathcal U_{W_h} \Rightarrow u = b_1n_1 + b_2n_2 $$
+행렬식은 다음과 같다.
+$$ \begin{bmatrix} 0 & 0 \\ 0 & 2 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} -1 \\ 0 \end{bmatrix} $$
+
+이게 뭔가 이상하다!
+
+#### approx2
+$\mu_1 = 1, \mu_2 = x + 3$라 하자.
+
+essential BC를 적용하면 다음과 같다.
+$$ a_1 + 5a_2 = 1 $$
+
+행렬식은 다음과 같다.
+$$ \begin{bmatrix} 0 & -1 \\ 0 & -3 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} -1 \\ -3 \end{bmatrix} $$
+
+# Model Problem2
+$$ \text{find } u \in \mathcal U_s \quad s.t. \quad \frac{d^2u}{dx^2} = 0 \quad \text{in} \enspace \Omega := [0,2] \subset \R $$
+
+$$ \text{Where, } \mathcal U_s := \{ u \in C^2(\Omega) \enspace | \enspace u(0) = 0\enspace \land \enspace u(2) = 1 \} $$
+
+exact solution은 $u=\frac{1}{2}x$이다.
+
+## Weighted residual formulation
+$$ \text{find } u \in \mathcal U_s \quad s.t. \quad \forall w \in C^\infty(\Omega), \quad \int_\Omega w\frac{d^2u}{dx^2} \thinspace dV = 0 $$
+
+$$ \text{Where, } \mathcal U_s := \{ u \in C^2(\Omega) \enspace | \enspace u(0) = 0 \enspace \land \enspace u(2) = 1 \} $$
+
+## Weak formulation1
+$$ \begin{equation} \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in C^\infty(\Omega), \quad B(w,u) = 0 \end{equation} $$
+
+$$ \begin{gathered} \text{Where, } B : C^\infty \times \mathcal U_W \rightarrow \R \quad s.t. \quad (w,u) \mapsto \int_\Omega \frac{du}{dx}\frac{dw}{dx} \thinspace dV - w\frac{du}{dx} \bigg |^{2}_{x=1}  \\ \mathcal U_W := \{ u \in C^1(\Omega) \enspace | \enspace u(0) = 0 \enspace \land \enspace u(2) = 1 \} \end{gathered} $$
+
+$\mathcal U_W$는 $\mathcal U_s$에서 regularity를 약화시키고, natural BC가 equation에 impose 되어 있음으로 natural BC 조건을 배제한 공간이다.
+
+### Ritz method
+$u \approx a_i\mu_i$이고 Bodunov-Galerkin method를 적용하면 
+$$ \text{find } \mathbf a \in \R^n \quad s.t. \quad B(\mu_i, a_j \mu_j) = l(\mu_i) \quad i = 1, \cdots, n $$
+
+$B$가 bilinear 임으로
+$$ \text{find } \mathbf a \in \R^n \quad s.t. \quad B(\mu_i,  \mu_j) a_j = l(\mu_i) \quad i = 1, \cdots, n $$
+
+행렬식으로 나타내면
+$$ \begin{bmatrix} B(\mu_1,\mu_1) & \cdots & B(\mu_1,\mu_n) \\ \vdots & \ddots & \vdots \\ B(\mu_n,\mu_1) & \cdots & B(\mu_n,\mu_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \begin{bmatrix} l(\mu_1) \\ \vdots \\ l(\mu_n) \end{bmatrix} $$
+
+
+#### approx1
+$\mu_1 = 1, \mu_2 = x$라 하자.
+
+essential BC를 적용하면 다음과 같다.
+$$ a_1 + 2a_2 = 1 $$
+
+행렬식은 다음과 같다.
+$$ \begin{bmatrix} 0 & -1 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} -1 \\ 0 \end{bmatrix} $$
+
+#### approx2
+$\mu_1 = 1, \mu_2 = x + 3$라 하자.
+
+essential BC를 적용하면 다음과 같다.
+$$ a_1 + 5a_2 = 1 $$
+
+행렬식은 다음과 같다.
+$$ \begin{bmatrix} 0 & -1 \\ 0 & -3 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} -1 \\ -3 \end{bmatrix} $$
+
+
+# Model Problem3
+$$ \text{find } u \in \mathcal U_s \quad s.t. \quad \frac{d^2u}{dx^2} + u - x = 0 \quad \text{in} \enspace \Omega := [0,2] \subset \R $$
+
+$$ \text{Where, } \mathcal U_s := \{ u \in C^2(\Omega) \enspace | \enspace u(0) = 0 \enspace \land \enspace u(2) = 5 \} $$
+
+exact solution은 $u = \frac{3}{\sin 2}\sin  x + x$이다.
+
+## Weighted residual formulation
+$$ \text{find } u \in \mathcal U_s \quad s.t. \quad \forall w \in C^\infty(\Omega), \quad \int_\Omega w \bigg( \frac{d^2u}{dx^2} + u - x \bigg) \thinspace dV = 0 $$
+
+## Weak formulation1
+$$ \begin{equation} \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in C^\infty(\Omega), \quad B(w,u) = l(w) \end{equation} $$
+
+$$ \begin{gathered} \text{Where, } B : C^\infty \times \mathcal U_W \rightarrow \R \quad s.t. \quad (w,u) \mapsto \int_\Omega wu -\frac{dw}{dx}\frac{du}{dx} \thinspace dV + w\frac{du}{dx} \bigg |^{2}_{x=0} \\ l : \mathcal W \rightarrow \R \quad s.t. \quad w \mapsto \int wx \thinspace dV \\ \mathcal U_W := \{ u \in C^1(\Omega) \enspace | \enspace u(0) = 0 \enspace \land \enspace u(2) = 5 \} \end{gathered} $$
+
+$\mathcal U_W$는 $\mathcal U_s$에서 regularity를 약화시킨 공간이다.
+
+### Ritz method
+$u \approx a_i\mu_i$이고 Bodunov-Galerkin method를 적용한걸 행렬식으로 나타내면
+$$ \begin{bmatrix} B(\mu_1,\mu_1) & \cdots & B(\mu_1,\mu_n) \\ \vdots & \ddots & \vdots \\ B(\mu_n,\mu_1) & \cdots & B(\mu_n,\mu_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \begin{bmatrix} l(\mu_1) \\ \vdots \\ l(\mu_n) \end{bmatrix} $$
+
+#### approx1
+$\mu_1 = x, \mu_2 = x^2$라 하자.
+
+essential BC를 적용하면 다음과 같다.
+$$ 2a_1 + 4a_2 = 5 $$
+
+행렬식은 다음과 같다.
+$$ \begin{bmatrix} -4/3 & -8 \\ -4 & -104/15 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} 8/3 \\ 4 \end{bmatrix} $$
+
+## Weak formulation2
+$$ \begin{equation} \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in \mathcal W, \quad B(w,u) = 0 \end{equation} $$
+
+$$ \begin{gathered} \text{Where, } B : C^\infty \times \mathcal U_W \rightarrow \R \quad s.t. \quad (w,u) \mapsto \int_\Omega \frac{du}{dx}\frac{dw}{dx} + w(u-x) \thinspace dV  \\ \mathcal U_W := \{ u \in C^1(\Omega) \enspace | \enspace u(0) = 0 \enspace \land \enspace u(2) = 5 \} \\ \mathcal W := \{ w \in C^\infty(\Omega) \enspace | \enspace w(0) = 0 \enspace \land \enspace w(2) = 0 \} \end{gathered} $$
+
+$\mathcal U_W$는 $\mathcal U_s$에서 regularity를 약화시킨 공간이다.
+
+### Ritz method
+$u \approx a_i\mu_i$이고 Bodunov-Galerkin method를 적용하면 
+$$ \text{find } \mathbf a \in \R^n \quad s.t. \quad B(\mu_i, a_j \mu_j) = l(\mu_i) \quad i = 1, \cdots, n $$
+
+$B$가 bilinear 임으로
+$$ \text{find } \mathbf a \in \R^n \quad s.t. \quad B(\mu_i,  \mu_j) a_j = l(\mu_i) \quad i = 1, \cdots, n $$
+
+행렬식으로 나타내면
+$$ \begin{bmatrix} B(\mu_1,\mu_1) & \cdots & B(\mu_1,\mu_n) \\ \vdots & \ddots & \vdots \\ B(\mu_n,\mu_1) & \cdots & B(\mu_n,\mu_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \begin{bmatrix} l(\mu_1) \\ \vdots \\ l(\mu_n) \end{bmatrix} $$
+
+#### approx1
+$\mu_1 = x, \mu_2 = x^2$라 하자.
+
+essential BC를 적용하면 다음과 같다.
+$$ 2a_1 + 4a_2 = 5 $$
+
+행렬식은 다음과 같다.
+$$ \begin{bmatrix} 2 &  16/3 \\ 4 & 196/15 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix} $$
