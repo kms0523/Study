@@ -8,7 +8,7 @@ $$ V^* := L(V; \mathbb F) $$
 
 # Dual set
 벡터공간 $V/\Bbb F$와 기저 $\beta$가 있을 때, 다음과 같이 정의된 함수 $\beta^i$의 집합을 $\beta$의 `쌍대 집합(dual set)` $\beta^*$이라 한다.
-$$ \beta^i :V \rightarrow \mathbb F \quad s.t. \quad v \mapsto ([v]_\beta)_i \quad \text{by} \quad \beta^i(\beta_j) = \delta^i_j $$
+$$ \beta^i :V \rightarrow \mathbb F \quad s.t. \quad \beta_j \mapsto \delta^i_j $$
 
 Dual set은 $V^*$의 기저임으로 `dual basis`라고도 하며 이는 명제2에서 증명한다.
 
@@ -24,7 +24,7 @@ $\beta_i$가 $V$의 기저임으로, 계수 $\beta^i(v)$는 모든 $v \in V$마�
 
 즉, 함수 $\beta^i$는 정의역의 모든 원소에 대해 유일하게 값이 정의되어 있음으로 잘 정의되고 따라서 존재한다. 
 
-다음으로 $\gamma_i \in V^*$가 다음을 만족한다고 하자.
+다음으로 $\gamma^i \in V^*$가 다음을 만족한다고 하자.
 $$ v = \gamma^i(v)\beta_i $$
 
 모든 $v \in V$에 대해서 $\beta^i(v) = \gamma^i(v)$임으로, $\beta^i = \gamma^i$이다. 따라서 함수 $\beta^i$는 유일하다.
@@ -134,7 +134,7 @@ $$ T : V \times W \rightarrow X $$
 
 만약 $X = \mathbb F$일 경우에는 `vectorspace bilinear form`이라고 한다.
 
-이 때, $V,W$의 원소를 인자로 받아 $X$의 원소로 mapping 시키는 모든 bilinear map의 집합을 $L^2(V,W,X)$라 한다.
+이 때, $V,W$의 원소를 인자로 받아 $X$의 원소로 mapping 시키는 모든 bilinear map의 집합을 $L^2(V,W; X)$라 한다.
 
 
 
@@ -143,12 +143,12 @@ $$ T : V \times W \rightarrow X $$
 
 
 ### 명제1
-벡터공간 $V,W,X / \mathbb F$이 있을 때, $L^2(V,W;X)$는 다음과 같이 정의된 연산이 있을 때, $\mathbb F$위의 벡터공간임을 보여라.
+벡터공간 $V,W,X / \mathbb F$이 있을 때, $L^2(V,W; X)$는 다음과 같이 정의된 연산이 있을 때, $\mathbb F$위의 벡터공간임을 보여라.
 $$ \begin{aligned} + := & L^2(V,W;X) \times L^2(V,W;X) \rightarrow L^2(V,W;X) \quad s.t. \quad (\varphi, \psi) \mapsto \varphi + \psi \\ & \text{satisfying } (\varphi + \psi)(v,w) = \varphi(v,w) + \psi(v,w) \\ \cdot := & \mathbb F \times L^2(V,W;X) \rightarrow L^2(V,W;X) \quad s.t. \quad (a, \psi) \mapsto a \psi \\ & \text{satisfying } (a\psi)(v,w) = a\psi(v,w) \end{aligned}  $$
 
 ### 명제2
-벡터공간 $V,W / \mathbb F$과 bilinear form $B \in L^2(V, W; \mathbb F)$가 있을 때, $v \in V$에 대해 함수 $B(v, \cdot)$를 다음과 같이 정의하자.
-$$ B(v, \cdot) \in W^* \quad s.t. \quad w \mapsto T(v,w) $$
+벡터공간 $V,W / \mathbb F$과 bilinear form $T \in L^2(V, W; \mathbb F)$가 있을 때, $v \in V$에 대해 함수 $T(v, \cdot)$를 다음과 같이 정의하자.
+$$ T(v, \cdot) \in W^* \quad s.t. \quad w \mapsto T(v,w) $$
 
 $\beta, \gamma$를 각 각 $V,W$의 기저라 할 때, 다음을 증명하여라.
 $$ v = a^i \beta_i \Rightarrow T(v,\cdot) = c_i\gamma^i $$
@@ -223,8 +223,19 @@ $$ H \in L^2(V^*,V^*; \mathbb F) $$
 
 > 참고  
 > [inner-product-in-dual-space - Mathematics](https://math.stackexchange.com/questions/3486532/inner-product-in-dual-space)  
----
 
+
+# Metric tensor
+
+벡터공간 $V / \mathbb F$와 $T \in L^2(V,V; \mathbb R)$가 있다고 하자.
+
+$T$가 symmetric하고 nondegenerate하면 $T$를 `metric tensor`라고 한다.
+
+
+> 참고  
+> [Metric tensor - Wiki](https://en.wikipedia.org/wiki/Metric_tensor)  
+
+---
 
 > [what-is-the-difference-between-a-dual-vector-and-a-reciprocal-vector - Pysics](https://physics.stackexchange.com/questions/509334/what-is-the-difference-between-a-dual-vector-and-a-reciprocal-vector)  
 > reciprocal vector, covariant components, metric tensor in euclidean space  
