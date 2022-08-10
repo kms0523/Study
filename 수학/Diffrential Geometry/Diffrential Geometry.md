@@ -11,7 +11,7 @@ $$ a,b \in \R^n, \quad \lang a,b \rang = a^ib_i$$
 $(\R^n, \lang \cdot , \cdot \rang)$을 통해 공간을 일반화한것이 `다양체(Manifold)`이다.
 
 
-## chart
+# chart
 $M$을 smooth manifold라고 하자. 
 
 $M$위의 임의의 원소 $p \in M$가 있을 때, $V_p \subset M$는 P를 포함하는 $M$의 부분집합이며 $B(0,r)$은 $\R^n$ 집합에서 원점이 0이고 반지름이 $r$인 원 내부에 있는 점의 집합이라고 하자.
@@ -30,7 +30,7 @@ $$\varphi_p : V_p \rightarrow B(0,r) \land  \varphi_p \text { is homeomorphism} 
 > 참고  
 > [relationship-between-covariant-contravariant-basis-vectors - Mathematics](https://math.stackexchange.com/questions/393316/relationship-between-covariant-contravariant-basis-vectors)
 
-## Tangent space
+# Tangent space
 점 $p \in M$에서 `tangent space`를 $T_pM$이라고 한다. $T_pM$은 점 $p$에서 $M$에 접하는 모든 벡터들의 집합이며, 벡터공간이 된다. $T_pM$이 벡터공간임으로 dual space를 갖으며 $T_pM^*$을 `cotangent space`라고 한다.
 
 

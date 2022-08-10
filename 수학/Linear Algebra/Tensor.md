@@ -105,6 +105,7 @@ $S,T$는 모두 linear map임으로 $S \circ T$는 linear map이고 따라서 $S
 $T$와 $S$는 역함수 관계임으로 $T$는 vector space isomorphism이다. 그리고 $T$는 Tensor product의 정의에 의해 유일하게 존재한다. $\quad {_\blacksquare}$
 
 > 참고  
+> [Tensor - Wiki](https://en.wikipedia.org/wiki/Tensor)  
 > [note] (Kamnitzer) Tensor products
 
 # Tensor
@@ -112,7 +113,6 @@ As multilinear maps
 using tnesor products
 
 > 참고  
-> [Tensor - Wiki](https://en.wikipedia.org/wiki/Tensor)  
 > [피그티 기초 물리 tistory](https://elementary-physics.tistory.com/155)  
 [텐서 - 나무위키](https://namu.wiki/w/%ED%85%90%EC%84%9C)  
 [What are the Differences Between a Matrix and a Tensor? - StackExchange](https://math.stackexchange.com/questions/412423/what-are-the-differences-between-a-matrix-and-a-tensor)  
