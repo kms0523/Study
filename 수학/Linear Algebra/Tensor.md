@@ -84,7 +84,7 @@ $$ \begin{aligned} & c_{ij}\phi(\beta_i,\gamma_j) = 0_Z \\ \Rightarrow \enspace 
 
 ### 명제3
 두 벡터공간 $V,W / \mathbb F$이 있을 때, $(V \otimes W, \phi)_1, (V \otimes W, \phi)_2$를 두개의 $V \otimes W$라고 하자. 이 때, 다음과 같이 정의된 vector space isomorphism $T$가 유일하게 존재함을 증명하여라
-$$ T \in L( (V \otimes W)_1, (V \otimes W)_2) \quad s.t. \quad \phi_2 = T \circ \phi_1  $$
+$$ T \in L( (V \otimes W)_1; (V \otimes W)_2) \quad s.t. \quad \phi_2 = T \circ \phi_1  $$
 
 **Proof**
 
@@ -105,30 +105,18 @@ $S,T$는 모두 linear map임으로 $S \circ T$는 linear map이고 따라서 $S
 $T$와 $S$는 역함수 관계임으로 $T$는 vector space isomorphism이다. 그리고 $T$는 Tensor product의 정의에 의해 유일하게 존재한다. $\quad {_\blacksquare}$
 
 > 참고  
-> [Tensor - Wiki](https://en.wikipedia.org/wiki/Tensor)  
-> [note] (Kamnitzer) Tensor products
+> [note] (Kamnitzer) Tensor products  
+> [tensor product - wiki](https://en.wikipedia.org/wiki/Tensor_product)
 
 # Tensor
-As multilinear maps  
-using tnesor products
+vector space $V / \mathbb F$가 있을 때, $(p,q)$ tensor $T$는 multi-linear form이다.
+$$ T : \underbrace{V^* \times \cdots \times V^*}_{p} \times \underbrace{V \times \cdots \times V}_{q} \rightarrow \mathbb F $$
+
+$(p,q)$ tensor들이 모여 있는 공간은 tensor product에 의해 정의된 vector space이며 다음과 같다.
+$$ T \in \underbrace{V \otimes \cdots \otimes V}_{p} \otimes \underbrace{V^* \otimes \cdots \otimes V^*}_{q} $$
 
 > 참고  
-> [피그티 기초 물리 tistory](https://elementary-physics.tistory.com/155)  
-[텐서 - 나무위키](https://namu.wiki/w/%ED%85%90%EC%84%9C)  
-[What are the Differences Between a Matrix and a Tensor? - StackExchange](https://math.stackexchange.com/questions/412423/what-are-the-differences-between-a-matrix-and-a-tensor)  
-[텐서 - 전파거북이 블로그](https://ghebook.blogspot.com/2011/06/tensor.html)
-
-
-## Tensor Product
-벡터 공간 $V,W/\mathbb{F}$가 있을 때, 두 벡터공간의 tensor product $V \otimes W$는 모든 bilinear map $h : V \times W \rightarrow Z$에 대해 $h = \tilde{h} \circ \otimes$를 만족하는 유일한 선형변환 $\tilde{h} : V \otimes W \rightarrow Z$이 존재하도록 하는 bilinear map $\otimes:V \times W \rightarrow V \otimes W$이 주어진 벡터공간이다.
-
-> 참고  
-> [Universal property - Wiki](https://en.wikipedia.org/wiki/Universal_property)  
-> [Tensor Proudct - Wiki](https://en.wikipedia.org/wiki/Tensor_product#Universal_property)  
-> [tensor-products-universal-property-and-a-particular-identification - Mathematics](https://math.stackexchange.com/questions/2674549/tensor-products-universal-property-and-a-particular-identification)  
-> [proof-of-universal-mapping-property-for-tensor-product-of-vector-spaces - Mathematics](https://math.stackexchange.com/questions/2713003/proof-of-universal-mapping-property-for-tensor-product-of-vector-spaces)  
-> [change-of-basis-of-tensors - Mathmatics](https://math.stackexchange.com/questions/3451369/change-of-basis-of-tensors)
-
+> [Tensor - Wiki](https://en.wikipedia.org/wiki/Tensor)  
 
 # Dyad
 $\bf u,v,w$를 벡터라고 하자.
@@ -154,6 +142,12 @@ $$ \bf (u \otimes v)\cdot(w \otimes x) = (v \cdot w)(u \otimes x) $$
 $\bf u,v,w$를 벡터라고 할 때 다음을 증명하여라.
 $$ \bf u \cdot (v \otimes w) = (u \cdot v) w $$
 
+# Tensor Contraction
+
+> 참고  
+> [Tensor contraction - Wiki](https://en.wikipedia.org/wiki/Tensor_contraction#cite_note-natural_iso-1)  
+> [텐서란 무엇인가? 텐서의 이해, 표기법, 연산 완전 정리 - 피그티의 기초물리 tistory](https://elementary-physics.tistory.com/155)   
+> 
 
 # Cartesian Tensor
 
@@ -187,3 +181,18 @@ $$ \frac{\partial \mathbf x^T \bf Ax}{\partial \mathbf x} = (\mathbf A^T + \bf A
 [Isotropic Tensor](https://farside.ph.utexas.edu/teaching/336L/Fluid/node252.html)  
 [2nd order isotropic tensor](https://www.weizmann.ac.il/chembiophys/bouchbinder/sites/chemphys.bouchbinder/files/uploads/Courses/2019/TA2-IndexGymnastics.pdf)  
 [4th order isotropic tensor](https://math.stackexchange.com/questions/3589647/general-form-of-an-isotropic-fourth-rank-tensor)  
+
+---
+> 참고  
+ 
+[텐서 - 나무위키](https://namu.wiki/w/%ED%85%90%EC%84%9C)  
+[What are the Differences Between a Matrix and a Tensor? - StackExchange](https://math.stackexchange.com/questions/412423/what-are-the-differences-between-a-matrix-and-a-tensor)  
+[텐서 - 전파거북이 블로그](https://ghebook.blogspot.com/2011/06/tensor.html)
+
+
+> 참고  
+> [Universal property - Wiki](https://en.wikipedia.org/wiki/Universal_property)  
+> [Tensor Proudct - Wiki](https://en.wikipedia.org/wiki/Tensor_product#Universal_property)  
+> [tensor-products-universal-property-and-a-particular-identification - Mathematics](https://math.stackexchange.com/questions/2674549/tensor-products-universal-property-and-a-particular-identification)  
+> [proof-of-universal-mapping-property-for-tensor-product-of-vector-spaces - Mathematics](https://math.stackexchange.com/questions/2713003/proof-of-universal-mapping-property-for-tensor-product-of-vector-spaces)  
+> [change-of-basis-of-tensors - Mathmatics](https://math.stackexchange.com/questions/3451369/change-of-basis-of-tensors)

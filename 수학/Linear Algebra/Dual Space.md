@@ -4,7 +4,7 @@ $$ V^* := L(V; \mathbb F) $$
 
 즉, dual space는 linear form의 집합이다. 
 
-함수 $f : V/\mathbb F \rightarrow \mathbb F$를 `범함수(functional)`라고 하며, linear form은 선형인 functional임으로 `linear functional`이라고도 한다.
+linear form은 $V$와 $F$사이의 `homomorphism`임으로, $\hom(V;F)$이라고도 한다. 또한 함수 $f : V/\mathbb F \rightarrow \mathbb F$를 `범함수(functional)`라고 하며, linear form은 선형인 functional임으로 `linear functional`이라고도 한다.
 
 # Dual set
 벡터공간 $V/\Bbb F$와 기저 $\beta$가 있을 때, 다음과 같이 정의된 함수 $\beta^i$의 집합을 $\beta$의 `쌍대 집합(dual set)` $\beta^*$이라 한다.
