@@ -7,25 +7,13 @@ $$ + : A \times V \rightarrow A $$
 $+$는 $V$의 $A$로의 작용으로써, 다음 성질들을 만족한다.
 $$ \begin{aligned} 1) \quad & P \in A \Rightarrow P + 0_V = P \\ 2) \quad & v_1, v_2 \in V \land P \in A \Rightarrow (P + v_1) + v_2 = P + (v_1 + v_2) \\ 3) \quad & P \in A \enspace \land \enspace f_P : V \rightarrow A \quad s.t. \quad v \mapsto P + v = P_v \Rightarrow f_P \text{ is bijective} \end{aligned} $$
 
-1), 2) 성질은 right group action을 정의하고 있으며, 3) 성질은 임의의 point $P$가 주어졌을 때, 함수 $f_P$를 통해 $v$와 $P_v$를 동일시 할 수 있다는 것을 보여준다. 
+1), 2)은 right group action을 정의하고 있다.
 
-이 때, $P$를 `원점(origin)`이라고 한다면, 1) 성질에 의해 $0_V$는 항상 origin과 동일시 된다.
+3)으로 인해 $V$ 또한 affine space로 볼 수 있다. $v \in V$가 있을 때, $v$는 vector이면서 $f_P$에 의해 동시에 $f_P(v) = P_v$임으로 $P_v$라는 point로 볼 수 있다. 따라서 $V$는 affine space이기도 하다.
 
-따라서, $A$의 모든 points들을 시각화 할 수 있고, origin을 $P_0$로 결정한다면, $v \in V$는 $P_0$점에서 시작해서 $P_v = P_0 + v$점으로 가는 선으로 시각화 할 수 있다. 만약 origin을 $P_0$에서 $P_1$으로 옮긴 다음 $v$를 다시 시각화하면, 시각화된 $v$의 원점만 $P_1$으로 옮긴 모습이 된다.
+이 때, $P$를 `원점(origin)`이라고 한다면 1)에 의해 $0_V$는 항상 origin과 동일시 된다. 
 
-## Substraction and Weyl's axioms
-위의 주어진 $+$의 성질을 활용하여 다음같은 이항연산을 정의할 수 있다.
-$$ - := A \times A \rightarrow V \quad s.t. \quad (P_1,P_2) \mapsto P_2 - P_1 $$
-
-$$ \text{Where, }  P_1 + (P_2 - P_1) = P_2 $$
-
-이 때, $-$는 다음 성질들을 만족한다.
-
-$$ \begin{aligned} 1) \quad & P \in A \enspace \land \enspace v \in V \Rightarrow \exist! P_v \in A \quad s.t. \quad P_v - P = v \\ 2) \quad & P_1,P_2,P_3 \in A \Rightarrow (P_3 - P_2) + (P_2 - P_1) = P_3 - P_1 \end{aligned} $$
-
-다음 두 명제를 Weyl's axioms라고 하며, 2)을 일반적으로 `평행사변형 법칙(parallelogram rule)`이라고 한다.
-
-Affine space는 집합 A에 벡터 공간 $V / \mathbb F$와 $-$를 주어도 동일하게 정의 할 수 있으며, 이 경우에는 $+$ 연산은 Weyl's axioms을 활용하여 정의할 수 있다.
+만약 origin $P_0$와 $V$의 기저 $\beta$가 결정되면, bijective function $\phi : A \rightarrow \R^n$가 존재한다. 이 때, $v \in V$에 의해 $P_0$점이 $P_v$로 translation 됨으로, $v$를 $P_0$점에서 시작해서 $P_v$로 가는 화살표로 표현할 수 있다.
 
 ### 명제1
 vector space $V / \mathbb F$가 주어진 affine space $A$와 $v \in V$가 있을 때, 다음과 같이 정의된 함수를 $f_v$라 하자.
@@ -59,8 +47,22 @@ $$ \begin{aligned} & f_{P_1}(v_1) = f_{P_1}(v_2) \\ \Rightarrow \enspace & P_1 +
 [surjective]  
 $P_2 \in A$면 $P_2 = P_1 + v$를 만족하는 $v$가 존재함으로 $f_{P_1}(v) = P_2$를 만족하는 $v$도 존재한다. 따라서 $f_{P_1}$는 전사함수이다. $\quad {_\blacksquare}$
 
-### 명제3
-vector space $V / \mathbb F$가 주어진 affine space $A$가 있을 때, $P_0 \in A$와  $V$의 기저 $\beta$를 결정하면 isomorphism $\phi : A \rightarrow \R^n$이 존재함을 증명하여라.
+# Substraction and Weyl's axioms
+위의 주어진 $+$의 성질을 활용하여 다음같은 이항연산을 정의할 수 있다.
+$$ - := A \times A \rightarrow V \quad s.t. \quad (P_1,P_2) \mapsto P_2 - P_1 $$
+
+$$ \text{Where, }  P_1 + (P_2 - P_1) = P_2 $$
+
+이 때, $-$는 다음 성질들을 만족한다.
+
+$$ \begin{aligned} 1) \quad & P \in A \enspace \land \enspace v \in V \Rightarrow \exist! P_v \in A \quad s.t. \quad P_v - P = v \\ 2) \quad & P_1,P_2,P_3 \in A \Rightarrow (P_3 - P_2) + (P_2 - P_1) = P_3 - P_1 \end{aligned} $$
+
+다음 두 명제를 Weyl's axioms라고 하며, 2)을 일반적으로 `평행사변형 법칙(parallelogram rule)`이라고 한다.
+
+Affine space는 집합 A에 벡터 공간 $V / \mathbb F$와 $-$를 주어도 동일하게 정의 할 수 있으며, 이 경우에는 $+$ 연산은 Weyl's axioms을 활용하여 정의할 수 있다.
+
+### 명제1
+vector space $V / \mathbb F$가 주어진 affine space $A$가 있을 때, $P_0 \in A$와  $V$의 기저 $\beta$를 결정하면 bijective function $\phi : A \rightarrow \R^n$이 존재함을 증명하여라.
 
 **Proof**
 
@@ -78,3 +80,14 @@ $$ \phi : A \rightarrow \R^n \quad s.t. \quad P \mapsto [P-P_0]_\beta $$
 > [when-is-a-vector-glued-to-the-origin - mathmatics](https://math.stackexchange.com/questions/2392479/when-is-a-vector-glued-to-the-origin)  
 > [must-vectors-in-mathbbrn-have-their-tail-at-origin - mathematics](https://math.stackexchange.com/questions/627616/must-vectors-in-mathbbrn-have-their-tail-at-origin)
 > [Euclidean space - wiki](https://en.wikipedia.org/wiki/Euclidean_space) 
+
+# Affine subspace
+vector space $V / \mathbb F$가 주어진 affine space $A$가 있을 때, linear subspace를 $S \le V$, $S$의 기저를 $\beta$라 하자. 
+
+$v \in V - \beta$가 있을 때, $S$를 affine space라 보고 $S' = \{s + v | s \in S \}$라 하면, $S'$은 affine subspace이다.
+
+이를, $S$를 $v$만큼 translate 시켜 $S'$을 얻었다고 볼 수 있다.
+
+
+> 참고  
+> [Affine space - wiki](https://en.wikipedia.org/wiki/Affine_space)  
