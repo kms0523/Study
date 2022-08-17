@@ -10,13 +10,13 @@ $$ H \in L^2(V,W;X) \Rightarrow \exist! T \in L(V \otimes W;X) \quad s.t. \quad 
 **Proof**
 
 집합 $Z$에 대해서 함수 $B$를 다음과 같이 정의하자.
-$$ B:V \times W \rightarrow Z \quad s.t. \quad (v,w) \mapsto \phi(v,w)  $$
-$$ \text{satsifying } \phi(v,w) \in L^2(V^*,W^*; \mathbb F) \quad s.t. \quad (v^*,w^*) \mapsto v^*(v)w^*(w) $$
+$$ B:V \times W \rightarrow Z \quad s.t. \quad (v,w) \mapsto v \otimes w $$
+$$ \text{Where, } \quad v \otimes w \in L^2(V^*,W^*; \mathbb F) \quad s.t. \quad (v^*,w^*) \mapsto v^*(v)w^*(w) $$
 
 임의의 벡터공간 $X / \mathbb F$와 $H \in L^2(V,W;X)$가 있을 때, $V,W$의 기저 $\beta,\gamma$에 대해 다음과 같이 동작하는 linear map $T$를 정의하자.
-$$T \in L(Z;X) \quad s.t. \quad \phi(\beta_i,\gamma_j) \mapsto H(\beta_i,\gamma_j)$$
+$$T \in L(Z;X) \quad s.t. \quad \phi_{\beta_i,\gamma_j} \mapsto H(\beta_i,\gamma_j)$$
 
-위의 정의에 의해 $T$는 유일하게 존재하며, $\phi(\beta_i,\gamma_j)$에서 $H = T \circ B$임을 알 수 있다. 또한 보조명제2에 의해 $Z = L^2(V^*, W^*, \mathbb F)$임으로 벡터공간이며 보조명제3에 의해 $\phi(\beta_i,\gamma_j)$가 $Z$의 기저임으로 결론적으로 모든 $Z$에서 $H = T \circ B$이다.
+위의 정의에 의해 $T$는 유일하게 존재하며, $\phi_{\beta_i,\gamma_j}$에서 $H = T \circ B$임을 알 수 있다. 또한 보조명제2에 의해 $Z = L^2(V^*, W^*, \mathbb F)$임으로 벡터공간이며 보조명제3에 의해 $\phi(\beta_i,\gamma_j)$가 $Z$의 기저임으로 결론적으로 모든 $Z$에서 $H = T \circ B$이다.
 
 여기서 $Z = V \otimes W$로 두면, 위의 정의한 $B$는 $B\in L^2(V,W; V\otimes W)$이고, $V \otimes W = L^2(V^*,W^*,\mathbb F)$임으로 벡터공간이며 위와 같이 정의된 $T$에 의해서 보편성질을 만족한다. 따라서 $V \otimes W$는 최소한 한개 이상 존재한다. $\quad {_\blacksquare}$
 
@@ -109,14 +109,18 @@ $T$와 $S$는 역함수 관계임으로 $T$는 vector space isomorphism이다. �
 > [tensor product - wiki](https://en.wikipedia.org/wiki/Tensor_product)
 
 # Tensor
-vector space $V / \mathbb F$가 있을 때, $(p,q)$ tensor $T$는 multi-linear form이다.
+vector space $V / \mathbb F$가 있을 때, $(p,q)$ tensor $T$는 다음과 같이 정의된 multi-linear form이다.
 $$ T : \underbrace{V^* \times \cdots \times V^*}_{p} \times \underbrace{V \times \cdots \times V}_{q} \rightarrow \mathbb F $$
 
+이를  $p-$contravariant, $q-$covariant tensor라고도 한다. 
+
 $(p,q)$ tensor들이 모여 있는 공간은 tensor product에 의해 정의된 vector space이며 다음과 같다.
-$$ T \in \underbrace{V \otimes \cdots \otimes V}_{p} \otimes \underbrace{V^* \otimes \cdots \otimes V^*}_{q} $$
+$$ T \in \underbrace{V \otimes \cdots \otimes V}_{p} \otimes \underbrace{V^* \otimes \cdots \otimes V^*}_{q} = T^q_p(V) $$
 
 > 참고  
 > [Tensor - Wiki](https://en.wikipedia.org/wiki/Tensor)  
+> [Book] (John M Lee) Riemannian Manifolds_ An Introduction to Curvature chap2  
+> 
 
 # Dyad
 $\bf u,v,w$를 벡터라고 하자.
