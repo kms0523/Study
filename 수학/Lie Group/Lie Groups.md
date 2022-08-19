@@ -14,3 +14,7 @@ $$ SL(2;\R) := \{ m \in M_{2 \times 2}(\R) \enspace | \enspace \det(m) = 1 \} $$
 > 참고  
 > [Wiki - 음함수 정리](https://ko.wikipedia.org/wiki/%EC%9D%8C%ED%95%A8%EC%88%98_%EC%A0%95%EB%A6%AC)  
 > [Wiki - implicit function theorem](https://en.wikipedia.org/wiki/Implicit_function_theorem)  
+> [Wiki - Lie group](https://en.wikipedia.org/wiki/Lie_group#Matrix_Lie_groups)
+> [Wiki - general linear group](https://en.wikipedia.org/wiki/General_linear_group)  
+> [Wiki - closed-subgroup theorem](https://en.wikipedia.org/wiki/Closed-subgroup_theorem)  
+> 

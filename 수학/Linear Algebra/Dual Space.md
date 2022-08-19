@@ -6,6 +6,9 @@ $$ V^* := L(V; \mathbb F) $$
 
 linear form은 $V$와 $F$사이의 `homomorphism`임으로, $\hom(V;F)$이라고도 한다. 또한 함수 $f : V/\mathbb F \rightarrow \mathbb F$를 `범함수(functional)`라고 하며, linear form은 선형인 functional임으로 `linear functional`이라고도 한다.
 
+> Reference  
+> [Dual Space - Wiki](https://en.wikipedia.org/wiki/Dual_space) 
+
 # Dual set
 벡터공간 $V/\Bbb F$와 기저 $\beta$가 있을 때, 다음과 같이 정의된 함수 $\beta^i$의 집합을 $\beta$의 `쌍대 집합(dual set)` $\beta^*$이라 한다.
 $$ \beta^i :V \rightarrow \mathbb F \quad s.t. \quad \beta_j \mapsto \delta^i_j $$
@@ -74,7 +77,7 @@ $\beta^i$은 linear form임으로  $\beta^i \in V^*$이다. 따라서 linear for
 #### 따름명제
 $$ \dim(V) = \dim(V^*) $$
 
-> 참고  
+> Reference  
 > [Dual Space - Wiki](https://en.wikipedia.org/wiki/Dual_space)  
 
 
@@ -99,17 +102,24 @@ $$ \begin{aligned} \phi (v_1 + av_2)(v^*) &= v^*(v_1 + av_2) \\ &= v^*(v_1) + av
 [bijective]  
 정의에 의해 $\ker(\phi) = \{ 0_V \}$이고 $\dim(V) = \dim(V^*) = \dim(V^{**})$임으로 dimension theorem의 명제에 의해 $\phi$는 bijective이다. $\quad {_\blacksquare}$
 
-#### 참고
+#### 참고1
 $\phi$는 basis의 선택에 의존하지 않는다.
 
-> 참고  
-> [Mathmatics - natural-isomorphism-in-linear-algebra](https://math.stackexchange.com/questions/234127/natural-isomorphism-in-linear-algebra)
+> [Mathmatics - natural-isomorphism-in-linear-algebra](https://math.stackexchange.com/questions/234127/natural-isomorphism-in-linear-algebra)  
+
+#### 참고2
+$v \in V, \enspace v^{*} \in V^{*}$라 하면 다음이 성립한다.
+$$ (\phi(v))(v^*) = v^{*}(v) $$
+
+$v^* \in V^*, \enspace v^{**} \in V^{**}$라 하면 다음이 성립한다.
+$$ v^*(\phi^{-1}(v^{**})) = v^{**}(v^*) $$
+
+> Reference  
 > [note] (Garrett) Duals, naturality, bilinear forms
-> 
 
 ---
 
-> 참고  
+> Reference  
 > [Dual Space - Wiki](https://en.wikipedia.org/wiki/Dual_space)  
 > [note] (upenn) The Dual Space   
 > [note] (Canez) Notes on dual spaces  
