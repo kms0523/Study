@@ -69,9 +69,10 @@ h6
 
 blockquote 
 {
-    margin-bottom: 20px;
+    padding-left: 10px;
+    /* margin-bottom: 20px; */
     border-style: hidden;    
-    padding: 6px 20px 1px 20Px;
+    /* padding: 6px 20px 1px 20Px; */
     background: #292929;
     font-family: sans-serif;
 

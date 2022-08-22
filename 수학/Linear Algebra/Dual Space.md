@@ -4,7 +4,10 @@ $$ V^* := L(V; \mathbb F) $$
 
 즉, dual space는 linear form의 집합이다. 
 
-함수 $f : V/\mathbb F \rightarrow \mathbb F$를 `범함수(functional)`라고 하며, linear form은 선형인 functional임으로 `linear functional`이라고도 한다.
+linear form은 $V$와 $F$사이의 `homomorphism`임으로, $\hom(V;F)$이라고도 한다. 또한 함수 $f : V/\mathbb F \rightarrow \mathbb F$를 `범함수(functional)`라고 하며, linear form은 선형인 functional임으로 `linear functional`이라고도 한다.
+
+> Reference  
+> [Dual Space - Wiki](https://en.wikipedia.org/wiki/Dual_space) 
 
 # Dual set
 벡터공간 $V/\Bbb F$와 기저 $\beta$가 있을 때, 다음과 같이 정의된 함수 $\beta^i$의 집합을 $\beta$의 `쌍대 집합(dual set)` $\beta^*$이라 한다.
@@ -13,42 +16,19 @@ $$ \beta^i :V \rightarrow \mathbb F \quad s.t. \quad \beta_j \mapsto \delta^i_j 
 Dual set은 유한차원일 때, $V^*$의 기저임으로 `dual basis`라고도 하며 이는 명제2에서 증명한다.
 
 ### 명제1
-벡터공간 $V/\Bbb F$와 기저 $\beta$가 있을 때, $\beta$의 dual set $\beta^*$가 유일하게 존재함을 증명하여라.
+벡터공간 $V/\Bbb F$와 기저 $\beta$가 있을 때, 다음을 증명하여라.
+$$ \exist!\beta^* $$
 
 **Proof**
 
 $v \in V$일 때, dual set의 정의에 의해 다음이 성립한다.
 $$ v = \beta^i(v)\beta_i $$
 
-$\beta_i$가 $V$의 기저임으로, 계수 $\beta^i(v)$는 모든 $v \in V$마다 유일하게 존재한다.
-
-즉, 함수 $\beta^i$는 정의역의 모든 원소에 대해 유일하게 값이 정의되어 있음으로 잘 정의되고 따라서 존재한다. 
-
-다음으로 $\gamma^i \in V^*$가 다음을 만족한다고 하자.
-$$ v = \gamma^i(v)\beta_i $$
-
-모든 $v \in V$에 대해서 $\beta^i(v) = \gamma^i(v)$임으로, $\beta^i = \gamma^i$이다. 따라서 함수 $\beta^i$는 유일하다.
+$\beta_i$가 $V$의 기저임으로, $\beta^i(v), \enspace i=1, \cdots, n$는 모든 $v \in V$마다 유일한 값을 갖음으로 모두 well-defined 함수이다. 따라서, $\beta^i, \enspace i=1, \cdots, n$의 집합인 $\beta^*$은 유일하게 존재한다.
 
 ### 명제2
-$n$차원 벡터공간 $V/\Bbb F$와 기저 $\beta$가 있을 때, $\beta$의 dual set $\beta^*$이 $V^*$의 기저임을 증명하여라.
-
-**Proof**
-
-보조명제1에의해 선형독립임이 증명되었음으로, $\text{span}(\beta^*) = V^*$만 확인하면 된다.
-
-[$\text{span}(\beta^*) \subseteq V^*$]  
-
-보조명제2에 의해서 $\beta^* \subset V^*$이고 선형대수 생성의 명제1번에 의해 $\text{span}(\beta^*) \subseteq V^*$이다. $\quad {_\blacksquare}$
-
-[$V^* \subseteq \text{span}(\beta^*)$]  
-$v = a^i\beta_i \in V, \enspace v^* = b_i\beta^i \in V^*$라 할 때, 다음이 성립한다.
-
-$$ \begin{aligned} v^*(v) & = a^j b_i \beta^i(\beta_j) \\ &= b_i\beta^i(v) \end{aligned} $$
-
-따라서 $v^* \in \text{span}(\beta^*)$이다. $\quad {_\blacksquare}$
-
-#### 보조명제1
-벡터공간 $V/\Bbb F$와 기저 $\beta$가 있을 때, $\beta$의 dual set $\beta^*$이 선형 독립임을 증명하여라.
+벡터공간 $V/\Bbb F$와 기저 $\beta$가 있을 때, 다음을 증명하여라.
+$$ \beta^* \text{ is linearly independent} $$
 
 **Proof**
 
@@ -57,12 +37,33 @@ $\beta^*$의 원소중 임의로 $n$개의 원소를 선택해 $\beta^i \enspace
 $a_i \in \mathbb F \enspace i=1, \cdots, n$가 있을 때, $a_i \beta^i  = 0_{V^*}$라 하자. 
 
 따라서, $\beta_j \enspace j = 1, \cdots, n$에 대해 다음이 성립한다.
-$$ a_i \beta^i(\beta_j) = a_j = 0 $$
+$$ a_i \beta^i(\beta_j) = a_j = 0_\mathbb F $$
 
-결론적으로, $a_i = 0 \enspace \forall i$일 때만 $a_i \beta^i = 0_F$을 만족함으로 $\beta^i \enspace i=1, \cdots, n$는 선형독립이다. 그리고 $\beta^i$는 $\beta^*$에서 유한개를 임의로 선택한 것이므로 $\beta^*$는 성형독립이다.  $\quad {_\blacksquare}$
+결론적으로, $a_i = 0 \enspace \forall i$일 때만 $a_i \beta^i = 0_\mathbb F$을 만족함으로 $\beta^i \enspace i=1, \cdots, n$는 선형독립이다. 그리고 $\beta^i$는 $\beta^*$에서 유한개를 임의로 선택한 것이므로 $\beta^*$는 성형독립이다.  $\quad {_\blacksquare}$
 
-#### 보조명제2
-벡터공간 $V/\Bbb F$와 기저 $\beta$가 있을 때, 다음을 증명하여라.
+
+### 명제3
+$n$차원 벡터공간 $V/\Bbb F$와 기저 $\beta$가 있을 때, 다음을 증명하여라.
+$$ \beta^i \text { is a basis of } V^* $$
+
+**Proof**
+
+명제2에의해 선형독립임이 증명되었음으로, $\text{span}(\beta^*) = V^*$만 확인하면 된다.
+
+[$\text{span}(\beta^*) \subseteq V^*$]  
+보조명제에 의해서 $\beta^* \subset V^*$임으로 $\text{span}(\beta^*) \subseteq V^*$이다. 
+
+[$V^* \subseteq \text{span}(\beta^*)$]  
+$v^* \in V^*$에 대해 다음이 성립한다고 하자.
+$$ v^*(\beta_i) = a_i $$
+
+$w^* = a_i\beta^i \in \text{span}(\beta^*)$는 다음을 만족한다.
+$$ w^*(\beta_i) = a_j\beta^j(\beta_i) = a_i $$
+
+즉, $v^* = w^*$임으로 $v^* \in \text{span}(\beta^*)$이다. $\quad {_\blacksquare}$
+
+#### 보조명제
+다음을 증명하여라.
 $$ \beta^* \subset V^*  $$
 
 **Proof**
@@ -73,75 +74,53 @@ $$ \begin{aligned} \beta^i(av_1 + v_2) &= \beta^i(ab_j\beta_j + c_k\beta_k) \\ &
 
 $\beta^i$은 linear form임으로  $\beta^i \in V^*$이다. 따라서 linear form의 집합인 $\beta^*$는 $V^*$의 부분집합이다. $\quad {_\blacksquare}$
 
-# Covector
+#### 따름명제
+$$ \dim(V) = \dim(V^*) $$
 
-### 명제1
-유한차원 벡터공간 $V/\Bbb F$와 기저 $\beta, \gamma$가 있을 때, $\beta$에서 $\gamma$로 변할 때 기저변환행렬을 $P$라 하자.
-
-$v^* = a_i\beta^i = b_i\gamma^i$가 있을 때, 다음을 증명하여라.
-$$ b_i = a_jP^i_j $$
-
-**Proof1**
-
-$$ \begin{aligned} & v^*(\gamma_i) = b_j\gamma^j(\gamma_i) = a_j\beta^j(\gamma_i) \\ \Rightarrow \enspace & b_i = a_j P^i_k \beta^j(\beta_k) = a_j P^i_k \delta ^j_k = a_jP^i_j \quad {_\blacksquare} \end{aligned} $$
-
-**Proof2**
-
-$v^* \in V^*$면 $v^* : V \rightarrow \Bbb F$임으로 $v^* = v^* \circ Id_V$이다. 따라서 다음이 성립한다.
-$$ [v^*]^1_\beta = [v^*]^1_\gamma[Id_V]^\gamma_\beta $$
-
-Dual space의 명제 2번에 의해 다음과 같이 정리할 수 있다.
-$$ \begin{aligned} & ([v^*]_\beta)^T = ([v^*]_\gamma)^T [Id_V]^\gamma_\beta \\ \Rightarrow \enspace & [v^*]_\beta = ([Id_V]^\gamma_\beta)^T [v^*]_\gamma \\ \Rightarrow \enspace & [v^*]_{\gamma^*} = ([Id_V]_\gamma^\beta)^T[v^*]_{\beta^*} \end{aligned} $$
-
-이를 통해 기저가 $\beta^*$ 에서 $\gamma^*$로 변할 때 좌표변환행렬과 기저가 $\beta$에서 $\gamma$로 변할 때 나타나는 기저변환행렬이 동일함을 알 수 있다. 즉, 기저가 $\beta$에서 $\gamma$로 바뀔 때 기저가 변하는 방식과 dual basis에서
-좌표가 변하는 방식이 동일하다. 따라서 $v^* \in V^*$를 `covector`라고 한다. 
+> Reference  
+> [Dual Space - Wiki](https://en.wikipedia.org/wiki/Dual_space)  
 
 
-### 명제4
-$n$차원 벡터공간 $V/\Bbb F$와 기저 $\beta$, dual space $V^*$와 $\beta$의 dual basis $\beta^*$가 있을 때 다음을 증명하여라.
+# Double dual
+vector space $V/\Bbb F$가 있을 때, $V^*$ 또한 vector space임으로 $V^*$의 dual space인 double dual $V^{**}$을 정의할 수 있다.
 
-$$ v^* \in V^* \Rightarrow [v^*]_\beta^1 = ([v^*]_{\beta^*}) ^T $$
+### 명제
+vector space $V/\Bbb F$가 있을 때, 함수 $\phi$를 다음과 같이 정의하자.
+$$ \phi : V \rightarrow V^{**} \quad s.t \quad v \mapsto \phi(v) $$ 
 
-이 떄, $1$은 $\R$의 기저이다.
+$$\text{Where,} \quad \phi(v) : V^* \rightarrow \mathbb F \quad s.t. \quad v^* \mapsto v^*(v) $$
+
+이 때, 다음을 증명하여라.
+$$ \phi \text { is a vector space isomorphism} $$
 
 **Proof**
 
-$v^* = a_i\beta^i$라 하자.
-$$ v^*(\beta_j) = a_j \Rightarrow [v^*]_\beta^1 = \begin{bmatrix} a_1 & \cdots & a_n \end{bmatrix} \quad {_\blacksquare} $$
+[$\phi \in L(V;V^{**})$]  
+$v_1,v_2 \in V, \enspace a \in \mathbb F, \enspace v^* \in V^*$라 하자.
+$$ \begin{aligned} \phi (v_1 + av_2)(v^*) &= v^*(v_1 + av_2) \\ &= v^*(v_1) + av^*(v_2) \\ &= \phi(v_1) + a\phi(v_2) \end{aligned} $$
 
-## covector의 사용
-> 참고
-> [Book] (Dullemond & Peeters) Introudction to Tensor Calculus chap 2.1
+[bijective]  
+정의에 의해 $\ker(\phi) = \{ 0_V \}$이고 $\dim(V) = \dim(V^*) = \dim(V^{**})$임으로 dimension theorem의 명제에 의해 $\phi$는 bijective이다. $\quad {_\blacksquare}$
 
-### 명제1
-유한차원 벡터공간 $V/\Bbb F$가 있을 때, 기저를 $\beta, \gamma$, dual basis를 $\beta^*, \gamma^*$라 하자. $v \in V, v^* \in V^*$에 대해서 다음이 성립한다.
+#### 참고1
+$\phi$는 basis의 선택에 의존하지 않는다.
 
-$$ \begin{array}{l l} \beta \rightarrow \gamma & \gamma = P^T\beta \\ \beta \rightarrow \gamma & [v]_{\gamma} = P^{-1} [v]_{\beta}\\ \beta^* \rightarrow \gamma^* & \gamma^* = P^{-1} \beta^* \\ \beta^* \rightarrow \gamma^* & [v^*]_{\gamma^*} = P^T [v^*]_{\beta^*} \end{array} $$
-$$ \text{Where, } P = [Id_V]^\beta_\gamma  $$
+> [Mathmatics - natural-isomorphism-in-linear-algebra](https://math.stackexchange.com/questions/234127/natural-isomorphism-in-linear-algebra)  
 
-> 참고  
-> [Dual Space - 피그티의 기초물리 블로그](https://elementary-physics.tistory.com/16)  
-> [note] (upenn) The Dual Space  
-> [What are covectors - eigenchris Youtube](https://www.youtube.com/watch?v=LNoQ_Q5JQMY)  
-> [how-are-co-vectors-not-just-row-vectors - Mathmatics](https://math.stackexchange.com/questions/3295875/how-are-co-vectors-not-just-row-vectors)  
-> [Linear_form - Wiki](https://en.wikipedia.org/wiki/Linear_form)  
+#### 참고2
+$v \in V, \enspace v^{*} \in V^{*}$라 하면 다음이 성립한다.
+$$ (\phi(v))(v^*) = v^{*}(v) $$
 
-  
+$v^* \in V^*, \enspace v^{**} \in V^{**}$라 하면 다음이 성립한다.
+$$ v^*(\phi^{-1}(v^{**})) = v^{**}(v^*) $$
 
-
-
+> Reference  
+> [note] (Garrett) Duals, naturality, bilinear forms
 
 ---
 
-> [what-is-the-difference-between-a-dual-vector-and-a-reciprocal-vector - Pysics](https://physics.stackexchange.com/questions/509334/what-is-the-difference-between-a-dual-vector-and-a-reciprocal-vector)  
-> reciprocal vector, covariant components, metric tensor in euclidean space  
-
-
-
-
-
+> Reference  
 > [Dual Space - Wiki](https://en.wikipedia.org/wiki/Dual_space)  
-> [Covariance and Contravarient - Wiki](https://en.wikipedia.org/wiki/Covariance_and_contravariance_of_vectors)  
-> [dual basis - Mathmatics](https://math.stackexchange.com/questions/1286100/how-do-i-find-a-dual-basis-given-the-following-basis)  
-> [linear form - Wiki](https://en.wikipedia.org/wiki/Linear_form#Basis_of_the_dual_space)    
-> [What is a covector and what is it used for? - Mathmatics](https://math.stackexchange.com/questions/240491/what-is-a-covector-and-what-is-it-used-for)  
+> [note] (upenn) The Dual Space   
+> [note] (Canez) Notes on dual spaces  
+> [note] (Garrett) Duals, naturality, bilinear forms
