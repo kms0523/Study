@@ -1,4 +1,4 @@
-## Geometric preliminaries
+## 2. Geometric preliminaries
 ### rotation group and Lie algebra
 3차원 Euclidean 공간의 원점을 보존하는 모든 회전변환의 집합에 연산으로 `합성(composition)`을 주면 군구조를 만족하며 이를 $SO(3)$라 한다.
 $$ SO(3) := \{ \mathbf P : \R^3 \rightarrow \R^3 \enspace | \enspace \mathbf P^{-1} = \mathbf P^T \land \det(\mathbf P) = 1 \} $$
@@ -33,22 +33,45 @@ $$ T_\lambda SO(3) := \{ \lambda \mathbf Q \equiv \mathbf q\lambda \enspace | \e
 
 # 3.Kinematic description of the shell
 ## 3.1 Configurations
-differetiable manifold인 집합 $\mathcal C$를 다음과 같이 정의한다.
-$$ \mathcal C := \{ (\varphi, t) \enspace | \enspace \mathcal A \rightarrow \R^3 \times S^2 \} $$
+differetiable manifold인 집합 $\mathscr C$를 다음과 같이 정의한다.
+$$ \mathscr C := \{ (\varphi, t) \enspace | \enspace \mathscr A \rightarrow \R^3 \times S^2 \} $$
 
-이 때, $\mathcal A \subset \R^2$는 smooth boundary $\partial \mathcal A$를 갖는 open set이며 compact closure이다.
+$$ \text {Where, } \varphi : \mathscr A \rightarrow \R^3, \enspace t : \mathscr A \rightarrow S^2 $$
+
+이 때, $\mathscr A \subset \R^2$는 smooth boundary $\partial \mathscr A$를 갖는  compact set이며 map $\varphi$는 shell의 mid-surface의 위치를 정의하며, map $t$는 surface의 각 점마다 unit vector field(director field)를 정의한다.
+
+### Basic Assumption
+함수 $\Phi$를 다음과 같이 정의하자.
+$$\Phi : \mathscr A \times [h^-, h^+] \rightarrow \mathscr S \quad s.t. \quad (\xi^1,\xi^2,\xi) \mapsto \varphi(\xi^1, \xi^2) + \xi t(\xi^1, \xi^2) $$
+
+$$ \text {Where, } (\varphi,t) \in \mathscr C $$
+
+임의의 shell의 configuration을 $\mathscr S \subset \R^3$라 할 때, $\mathscr S$를 다음과 같이 정의하자.
+$$ \mathscr S := \{ \mathbf x \in \R^3 \enspace | \enspace \mathbf x = \Phi(\xi^1,\xi^2,\xi) \text { where } \xi \in [h^-, h^+] \} $$
+
+이 때, reference configuration은 다음과 같다.
+$$ \mathscr B := \{ \mathbf x_0 \in \R^3 \enspace | \enspace \mathbf x_0 = \Phi_0(\xi^1,\xi^2, \xi) \text { where } \Phi_0 = \varphi_0 + \xi t_0, \enspace \xi \in [h^-, h^+] \} $$
 
 
 
 
-$S^2 := \{ t \in \R^3 \enspace | \enspace \Vert t \Vert = 1 \}$를 `단위 구(unit sphere)`, $T_tS^2 := \{ w \in \R^3 \enspace | \enspace t \cdot w = 0 \}$을 $t \in S^2$에서의 `접평면(tangent space)`라 하자.
+# 6. The variational formulation
+momentum equation이 다음과 같이 주어져 있다고 하자.
+<p align = "center">
+<img src = "./image/1989 (Simo & Fox)_1.png" width = 400>
+</p>
 
-shell의 configuration sppce를 $\mathcal C$라 하면, 다음과 같이 정의된다.
-$$ \mathcal C := \{ \Phi := (\varphi, t) : \mathcal A \rightarrow \R^3 \times S^2 \} $$
+weak form은 다음과 같다.
+<p align = "center">
+<img src = "./image/1989 (Simo & Fox)_2.png">
+</p>
 
-이 때, $\mathcal A \subset \R^2$은 compact이며, boundary $\partial \mathcal A$를 갖는다. 이 때, $\partial_\varphi \mathcal A \subset \partial \mathcal A$는 displacement가 $\partial_t \mathcal A \subset \partial \mathcal A$는 rotation이 주어진 boudnary이다.
+component expression으로 나타내면 다음과 같다.
+<p align = "center">
+<img src = "./image/1989 (Simo & Fox)_3.png">
+</p>
 
-임의의 shell의 configuration을 $\mathcal S$라 할 때, $\mathcal S$가 다음과 같이 정의된다고 가정하자.
-$$ \mathcal S := \{ x \in \R^3 \enspace | \enspace x = \varphi + \xi t \text{ where } (\varphi,t) \in \mathcal C \text { and } \xi \in [h^-, h^+] \} $$
-
-이 때, shell의 두께는 $h = h^+ - h^-$로 주어지고, $\varphi : \mathcal A \rightarrow \R^3$은 shell의 mid-surface를 정의하며, $t : \mathcal A \rightarrow S^2$이다.
+위의 component expression을 operator expressions으로 나타내면 다음과 같다.
+<p align = "center">
+<img src = "./image/1989 (Simo & Fox)_4.png">
+</p>
