@@ -39,6 +39,26 @@ $a,b,c,d \in \R$라 하자.
 부분집합 $U \subset \R^n$이 있을 때, 다음을 만족하는 $U$를 $\R^n$에서의 `closed set`이라고 한다.
 $$ \R^n - U \text { is an open set of } \R^n $$
 
+### 명제1
+closed set $U \subset \R^n$와 sequence $i \mapsto \mathbf x_i \in U$가 있다고 하자.
+
+$\lim_{i \rightarrow \infty} \mathbf x_i = \mathbf x_0$일 때 다음을 증명하여라.
+$$ \mathbf x_0 \in U $$
+
+**Proof**
+
+$\mathbf x_0 \in \R^n - U$라 하자.
+
+$\R^n - U$는 open set이기 때문에 다음이 성립한다.
+$$ \exist r >0 \quad s.t. \quad B_r(\mathbf x_0) \subset (\R^n - U) $$
+
+따라서, 모든 $\mathbf x_m$에 대해서 다음이 성립해야 한다.
+$$ r \le  |\mathbf x_m - \mathbf x_0| $$
+
+하지만 수렴의 정의에 의해 다음도 동시에 성립해야 한다.
+$$  0 < \epsilon \Rightarrow \exist m \quad s.t. \quad |\mathbf x_m - \mathbf x_0| < \epsilon $$
+
+이는 모순임으로, $\mathbf x_0 \in U$이다. $\quad {_\blacksquare}$
 
 ### 예시1
 부분집합 $U \subset \R^2$가 아래 그림과 같이 회색으로 표현된 영역과 굵은 선으로 표시된 boundary를 포함한 부분이라고 하자.
