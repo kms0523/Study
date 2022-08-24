@@ -47,10 +47,13 @@ $$\Phi : \mathscr A \times [h^-, h^+] \rightarrow \mathscr S \quad s.t. \quad (\
 $$ \text {Where, } (\varphi,t) \in \mathscr C $$
 
 임의의 shell의 configuration을 $\mathscr S \subset \R^3$라 할 때, $\mathscr S$를 다음과 같이 정의하자.
-$$ \mathscr S := \{ \mathbf x \in \R^3 \enspace | \enspace \mathbf x = \Phi(\xi^1,\xi^2,\xi) \text { where } \xi \in [h^-, h^+] \} $$
+$$ \mathscr S := \{ \mathbf x \in \R^3 \enspace | \enspace \mathbf x = \Phi(\xi^1,\xi^2,\xi) \} $$
 
 이 때, reference configuration은 다음과 같다.
-$$ \mathscr B := \{ \mathbf x_0 \in \R^3 \enspace | \enspace \mathbf x_0 = \Phi_0(\xi^1,\xi^2, \xi) \text { where } \Phi_0 = \varphi_0 + \xi t_0, \enspace \xi \in [h^-, h^+] \} $$
+$$ \mathscr B := \{ \mathbf x_0 \in \R^3 \enspace | \enspace \mathbf x_0 = \Phi_0(\xi^1,\xi^2, \xi) \text { where } \Phi_0 = \varphi_0 + \xi t_0 \} $$
+
+shell의 deformation을 $\mathcal X : \mathscr B \rightarrow \mathscr S$라 하면 $\mathcal X$는 다음과 같다.
+$$ \mathcal X := \Phi \circ (\Phi_0)^{-1} $$
 
 
 
@@ -74,4 +77,5 @@ component expression으로 나타내면 다음과 같다.
 위의 component expression을 operator expressions으로 나타내면 다음과 같다.
 <p align = "center">
 <img src = "./image/1989 (Simo & Fox)_4.png">
+<img src = "./image/1989 (Simo & Fox)_5.png">
 </p>
