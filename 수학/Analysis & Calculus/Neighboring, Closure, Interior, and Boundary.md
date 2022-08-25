@@ -2,9 +2,9 @@
 $\mathbf x \in \R^n$의 `neighborhood`는 다음을 만족하는 $\R^n$의 부분집합 $\mathcal N_\mathbf x$이다.
 $$ \exist \epsilon > 0, \quad  B_\epsilon(\mathbf x) \subset \mathcal N_\mathbf x $$
 
-정의에서 알 수 있듯이, neighborhood는 임의의 크기의 $\mathbf x$에서의 open ball을 포함하는 집합이지만 neighborhood 자체가 open set은 아니다. 따라서, $\mathbf x$주위의 영역을 표현할 때, open set인 조건을 포함하지 않기 위해 사용된다. 
+정의에서 알 수 있듯이, neighborhood는 $\mathbf x$를 중심으로 하는 어떤 open ball을 포함하는 집합이지만 neighborhood 자체가 open set은 아니다. 따라서, $\mathbf x$주위의 영역을 표현할 때, open set인 조건을 포함하지 않기 위해 사용된다. 
 
-만약, 어떤 집합이 모든 점에서 Neighborhood가 존재한다면 그 집합은 open set이 된다.
+만약, 어떤 집합이 모든 점의 Neighborhood를 포함한다면 그 집합은 open set이 된다.
 
 > 참고  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  

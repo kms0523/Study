@@ -70,9 +70,11 @@ $$ \frak m_\beta^\beta(L_A) = \frak m_{\epsilon_n}^\beta(id) \frak m_{\epsilon_n
 
 즉, $\frak m_\beta^\beta(L_A) \sim A$이다.
 
-이 때, $L_A$가 diagonalizable하고, $\beta$가 고유벡터로 이루어졌다고 하면, $\frak m_\beta^\beta(L_A)$는 대각행렬이 되고, $A$는 대각행렬과 similar하다.
+이 때, $L_A$가 diagonalizable하고, $\beta$가 고유벡터로 이루어졌다고 하자.
 
-결론적으로, $A$가 어떤 대각행렬 $D \in F^{n \times n}$과  similar인 경우, $L_A$가 diagonalizable하며, 이 경우 행렬 $A$가 diagonalizable하다고 한다.
+그러면 $\frak m_\beta^\beta(L_A)$는 대각행렬이 되고 $A$는 대각행렬과 similar하다.
+
+결론적으로, $A$가 어떤 대각행렬 $D \in F^{n \times n}$과  similar인 경우 $L_A$가 diagonalizable하며, 이 경우 행렬 $A$가 diagonalizable하다고 한다.
 
 
 ### 참고1
