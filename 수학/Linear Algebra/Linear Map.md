@@ -173,3 +173,46 @@ Kernel의 명제2에 의해 $T$는 injective이다.
 $$ \dim(W) = \dim(V) = \text{nullity}(T) + \text{rank}(T) = \text{rank}(T) = \dim(\text{img}(T)) $$
 
 $\text{img}(T) \le W$이고 $\dim(\text{img}(T)) = \dim(W)$임으로 차원의 명제1에 의해 $\text{img}(T) = W$이다. $\quad {_\blacksquare}$
+
+# Determinant of an Linear Map
+vector space $V/ \mathbb F$와 $T \in \text{End}(V)$가 있을 때, $T$의 determinat를 다음과 같이 정의한다.
+$$ \det(T) : \text{End}(V) \rightarrow \mathbb F \quad s.t. \quad T \mapsto \det(\frak m_\beta^\beta(T)) \text { for any basis } \beta $$
+
+### 명제1
+vector space $V/ \mathbb F$와 $T \in \text{End}(V)$가 있을 때 다음을 증명하여라
+$$\det(T) \text{ is well-defined}$$
+
+**Proof**
+
+well-defined 되기 위해서는 기저의 선택에 관계없이 일정함을 보이면 된다.
+
+$V$의 두 기저를 $\beta,\gamma$라 하면 다음이 성립한다.
+$$ \frak m^\gamma_\gamma(T) \sim  \frak m^\beta_\beta(T)$$
+
+similar한 두 행렬의 성질에 의해 다음이 성립한다.
+$$ \det(\frak m^\gamma_\gamma(T)) = \det(\frak m^\beta_\beta(T)) \quad {_\blacksquare} $$
+
+# Trace of an Linear Map
+vector space $V/ \mathbb F$와 $T \in \text{End}(V)$가 있을 때, $T$의 trace를 다음과 같이 정의한다.
+
+$$ \mathrm{tr}(T) : \text{End}(V) \rightarrow \mathbb F \quad s.t. \quad T \mapsto \mathrm{tr}(\frak m_\beta^\beta(T)) \text { for any basis } \beta $$
+
+### 명제1
+vector space $V/ \mathbb F$와 $T \in \text{End}(V)$가 있을 때, 다음을 증명하여라
+$$\text{tr}(T) \text{ is well-defined}$$
+
+**Proof**
+
+well-defined 되기 위해서는 기저의 선택에 관계없이 일정함을 보이면 된다.
+
+$V$의 두 기저를 $\beta,\gamma$라 하면 다음이 성립한다.
+$$ \frak m^\gamma_\gamma(T) \sim  \frak m^\beta_\beta(T)$$
+
+similar한 두 행렬의 성질에 의해 다음이 성립한다.
+$$ \mathrm{tr}(\frak m^\gamma_\gamma(T)) = \mathrm{tr}(\frak m^\beta_\beta(T)) \quad {_\blacksquare} $$
+
+# Characteristic Polynomial of an linear map
+vector space $V/\mathbb F$와 $T \in \text{End}(V)$가 있을 때, $T$의 특성다항식은 다음과 같이 정의된다.
+$$ \varphi_T(t) = \det(T - tid) $$
+
+특성다항식의 근이 고유값이 된다.

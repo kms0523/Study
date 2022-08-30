@@ -1,13 +1,32 @@
 # Neighborhood
 $\mathbf x \in \R^n$의 `neighborhood`는 다음을 만족하는 $\R^n$의 부분집합 $\mathcal N_\mathbf x$이다.
-$$ \exist \epsilon > 0, \quad  B_\epsilon(\mathbf x) \subset \mathcal N_\mathbf x $$
+$$ \exist \epsilon > 0, \quad  B_\epsilon(\mathbf x) \subseteq \mathcal N_\mathbf x $$
 
-정의에서 알 수 있듯이, neighborhood는 $\mathbf x$를 중심으로 하는 어떤 open ball을 포함하는 집합이지만 neighborhood 자체가 open set은 아니다. 따라서, $\mathbf x$주위의 영역을 표현할 때, open set인 조건을 포함하지 않기 위해 사용된다. 
+> Reference  
+> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5 
 
-만약, 어떤 집합이 모든 점의 Neighborhood를 포함한다면 그 집합은 open set이 된다.
+### 참고
+정의에서 알 수 있듯이, neighborhood는 $\mathbf x$를 중심으로 하는 어떤 open ball을 포함하는 집합일 뿐이다. 즉, neighborhood 자체가 반드시 open set일 필요는 없다. 
 
-> 참고  
-> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
+> Reference  
+> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5 
+
+### 명제
+부분집합 $U \subset \R^n$이 있을 때, 다음을 증명하여라.
+
+$$ \forall x \in U, \quad \exist \mathcal N_x \quad s.t. \quad \mathcal N_x \subseteq U \Leftrightarrow U \text{ is an open set } $$
+
+**Proof**
+
+[$\Rightarrow$]  
+$$ \begin{aligned} x \in U &\Rightarrow \mathcal N_x \subseteq U \\ &\Rightarrow \exist \epsilon \quad s.t. \quad B_\epsilon(x) \subseteq \mathcal N_x \\ &\Rightarrow \exist \epsilon \quad s.t. \quad B_\epsilon(x) \subseteq U \\ &\Leftrightarrow U \text{ is an open set.} \quad {_\blacksquare} \end{aligned} $$
+
+[$\Leftarrow$]  
+$$ \begin{aligned} x \in U &\Rightarrow \exist r >0 \quad s.t. \quad B_r(x) \subseteq U \\ &\Rightarrow \exist \epsilon \quad s.t. \quad 0 < \epsilon < r \\ &\Rightarrow \exist \mathcal N_x \quad s.t. \quad \mathcal N_x \subseteq B_r(x) \\ &\Rightarrow \exist \mathcal N_x \quad s.t. \quad \mathcal N_x \subseteq U \end{aligned} $$
+
+> Reference  
+> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5 
+ 
 
 # Closure
 부분집합 $U \subset \R^n$이 있을 때, 다음과 같이 정의된 부분집합 $\bar U$를 $U$의 `closure`라고 한다.
@@ -17,7 +36,7 @@ closure는 $U$를 포함하는 가장 작은 closed set이라는 의미다.
 
 따라서 closed set의 closure는 자기 자신이 된다.
 
-> 참고  
+> Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
 
 # Interior
@@ -28,7 +47,7 @@ interior는 $U$에 포함된 가장 큰 open set이라는 의미다.
 
 따라서 open set의 interior는 자기 자신이 된다.
 
-> 참고  
+> Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
 
 # Boudnary of subset
@@ -40,5 +59,5 @@ $$ \partial U := \{ \mathbf x \in \R^n \enspace | \enspace \forall \mathcal N_\m
 $\partial U$에 대해서 다음과 같은 관계식이 성립한다.
 $$ \begin{aligned} \bar U &= U \cup \partial U \\ \mathring U &= U - \partial U \\ \partial U &= \bar U - \mathring U \end{aligned}  $$
 
-> 참고  
+> Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  

@@ -1,28 +1,47 @@
 # Similar
-$n$차원 벡터공간 $V/ \mathbb F$와 $V$의 두 기저 $\beta,\gamma$ 그리고 $T \in \text{End}(V)$가 있다고 하자.
+$n$차원 벡터공간 $V/ \mathbb F$와 $V$의 두 기저 $\beta,\gamma$가 있다고 하자.
 
-$T = id_V \circ T \circ id_V$임으로 다음이 성립한다.
-$$ [T]_\gamma = [id_V]^\gamma_\beta [T]_\beta [id_V]^\beta_\gamma $$
+$T \in \text{End}(V)$가 있을 때, $T = id_V \circ T \circ id_V$임으로 다음이 성립한다.
+$$ \frak m^\gamma_\gamma(T) = \frak m^\gamma_\beta(id_V) \frak m^\beta_\beta(T) \frak m_\gamma^\beta(id_V)$$
 
 기저 $\beta$를 $\gamma$로 바꿔주는 기저변환행렬을 $\mathbf B$라고 하면 다음과 같다.
-$$ [T]_\gamma = \mathbf B^{-1}[T]_\beta \mathbf B $$
+$$ \frak m^\gamma_\gamma(T) = \mathbf B^{-1} \frak m^\beta_\beta(T) \mathbf B$$
 
-이를 통해, 두 행렬 $[T]_\gamma, [T]_\beta$는 동일한 선형변환인 $T$를 서로 다른 기저에서 표현한것임을 알 수 있다. 즉, 동일한 선형변환 $T$를 표현한다는 맥락에서 두 행렬은 '닮았다'라고 볼 수 있다.
+두 행렬 $\frak m^\gamma_\gamma(T), \frak m^\beta_\beta(T)$는 동일한 선형변환인 $T$를 서로 다른 기저에서 표현한것으로, 동일한 선형변환 $T$를 표현한다는 맥락에서 두 행렬은 '닮았다'라고 볼 수 있다.
 
-따라서, $A,B \in M_{n \times n}(\mathbb F)$가 있을 때, $A = P^{-1}BP$을 만족하는 가역행렬 $P \in M_{n \times n}(\mathbb F)$가 존재하는 경우 $A$가 $B$와 `닮았다(similar)`라고 하고 $A \sim B$라고 표기한다.
+따라서, $M,N \in M_{nn}(\mathbb F)$가 있을 때, $M = B^{-1}NB$을 만족하는 가역행렬 $B \in M_{nn}(\mathbb F)$가 존재하는 경우 $M$이 $N$과 `닮았다(similar)`라고 하고 $M \sim N$라고 표기한다.
 
 ### 명제1
-$A,B \in \mathbb F^{n \times n}$가 있을 때, 다음을 증명하여라.
-$$ A \sim B \Leftrightarrow \exist \beta \quad s.t. \quad [L_B]_\beta = A $$
-$$ \text{Where, } L_B : \mathbb F^n \rightarrow \mathbb F^n \quad s.t. \quad x \mapsto Bx $$
+$M,N \in \mathbb M_{nn}(\mathbb F)$가 있을 때, $M \sim N$이라 하자.
+
+이 때, 다음을 증명하여라.
+$$ \exist \beta \quad s.t. \quad \frak m^\beta_\beta(L_N) = M $$
+$$ \text{Where, } L_N : \mathbb F^n \rightarrow \mathbb F^n \quad s.t. \quad x \mapsto Nx $$
 
 **Proof**
 
 [$\Rightarrow$]  
-$$ \begin{aligned} & A \sim B \\ \Rightarrow \enspace & A = P^{-1}BP = [Id]^\beta_{\epsilon_n}[L_B]_{\epsilon_n}[Id]_\beta^{\epsilon_n} = [L_B]_\beta \\ & \text{Where, } \beta_i \text{ is i-th column vector of P} \quad {_\blacksquare}  \end{aligned} $$
+$$ \begin{aligned} & M \sim N \\ \Rightarrow \enspace & M = B^{-1}NB = \frak m^\beta_\epsilon(id_V) \frak m^\epsilon_\epsilon(L_N) \frak m_\beta^\epsilon(id_V) = \frak m_\beta^\beta(L_N)\\ & \text{Where, } \beta_i \text{ is i-th column vector of B} \quad {_\blacksquare}  \end{aligned} $$
 
 [$\Leftarrow$]  
-$$ \begin{aligned}  A &= [L_B]_\beta \\ & = [Id]^\beta_{\epsilon_n}[L_B]_{\epsilon_n}[Id]_\beta^{\epsilon_n}  \\ &= P^{-1}BP \quad {_\blacksquare}  \end{aligned} $$
+$$ \begin{aligned}  M &= m^\beta_\beta(L_N) \\ & = \frak m^\beta_\epsilon(id_V) \frak m^\epsilon_\epsilon(L_N) \frak m_\beta^\epsilon(id_V) \\ &= B^{-1}NB \quad {_\blacksquare}  \end{aligned} $$
 
-> 참고  
-> [Wiki - Endomorphism](https://en.wikipedia.org/wiki/Endomorphism)
+### 명제2
+$M,N \in \mathbb M_{nn}(\mathbb F)$가 있을 때, $M \sim N$라 하자.
+
+이 때, 다음을 증명하여라.
+$$ \det(M) = \det(N) $$
+
+**Proof**
+
+$$ \det(M) = \det(B^{-1}NB) = \det(B^{-1})\det(N)\det(B) = \det({B^{-1}B})\det(N) = \det(N) \quad {_\blacksquare} $$
+
+### 명제3
+$M,N \in \mathbb M_{nn}(\mathbb F)$가 있을 때, $M \sim N$라 하자.
+
+이 때, 다음을 증명하여라.
+$$ \text{tr}(M) = \text{tr}(N) $$
+
+**Proof**
+
+$$ \mathrm{tr}(M) = \mathrm{tr}(B^{-1}NB) = \mathrm{tr}(BB^{-1}N) = \mathrm{tr}(N) \quad (\because \mathrm{tr}(M_1M_2) = \mathrm{tr}(M_2M_1)) \quad {_\blacksquare}  $$

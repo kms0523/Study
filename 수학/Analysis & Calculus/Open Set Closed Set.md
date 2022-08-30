@@ -6,12 +6,128 @@ $$ B_r(\mathbf x) := \{ \mathbf y \in \R^n \enspace | \enspace |\mathbf x - \mat
 
 또한 open ball은 1차원에서 개구간(open interval)과 같다.
 
-> 참고  
+> Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
 
 # Open set
-부분집합 $U \subset \R^n$이 있을 때, 다음을 만족하는 $U$를 $\R^n$에서의 `open set`이라고 한다.
-$$ \mathbf x \in U \Rightarrow \exist r > 0 \quad s.t. \quad B_r(\mathbf x) \subset U $$
+부분집합 $U \subset \R^n$이 있다고 하자.
+
+$\forall \mathbf x \in U$에 대해서 다음을 만족하면 $U$를 $\R^n$에서의 `open set`이라고 한다.
+$$ \exist r > 0 \quad s.t. \quad B_r(\mathbf x) \subseteq U $$
+
+> Reference  
+> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
+
+### 명제1
+다음을 증명하여라.
+$$ \text {Any union of open sets is open.} $$
+
+**Proof**
+
+모든 open set의 집합을 $S$라 하고 집합 $X$를 다음과 같이 정의하자.
+$$ X = \bigcup_{s \in S} s $$
+
+$x \in X$면, 어떤 $s \in S$에 대해서 $x \in s$이다.
+
+이 때, $s$는 open set임으로 다음이 성립한다.
+$$\exist r \quad s.t. \quad B_r(x) \subset s$$
+
+$X$의 정의에 의해 $s \subset X$임으로 다음이 성립한다.
+$$\exist r \quad s.t. \quad B_r(x) \subset X$$
+
+따라서 $X$는 open set이다. $\quad {_\blacksquare}$
+
+> Refrence  
+> [Book] (Apostol)  Mathematical analysis Theorem 3.7  
+> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach prob 1.5.3
+
+### 명제2
+다음을 증명하여라.
+$$ \text {Any finite intersection of open sets is open.} $$
+
+**Proof**
+
+모든 open set의 집합을 $S$라 하고 집합 $X$를 다음과 같이 정의하자.
+$$ X = \bigcap_{i=1}^n s_i $$
+
+$x \in X$면 $s_i \in S$에 대해 다음이 성립한다. 
+$$ x \in s_i, \enspace i=1,\cdots,n $$
+
+이 때, $s_i$는 open set임으로 다음이 성립한다.
+$$\exist r_i \quad s.t. \quad B_{r_i}(x) \subset s_i, \enspace i=1,\cdots,n$$
+
+$\min(r_i) = r$이라 하면 다음이 성립한다.
+$$ B_r(x) \subset s_i, \enspace i=1,\cdots,n $$
+
+따라서, $X$의 정의에 의해 다음이 성립한다.
+$$B_r(x) \subset X$$
+
+따라서 $X$는 open set이다. $\quad {_\blacksquare}$
+
+> Refrence  
+> [Book] (Apostol)  Mathematical analysis Theorem 3.8  
+> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach prob 1.5.3
+> 
+### 명제3
+다음을 증명하여라.
+$$ \text {An infinite intersection of open sets is not necessarily open.} $$
+
+**Proof**
+
+open set의 집합을 $S$를 다음과 같이 정의하자.
+$$ S := \{ {(-1/n, 1/n)} \enspace | \enspace i=1,2,3, \cdots \} $$
+
+모든 $s \in S$의 intersection은 $\{ 0 \}$이 되고 $\{ 0 \}$은 open set이 아니다. 
+
+즉, infinite intersection을 고려하는 경우 open set이 아닌 경우가 있다. $\quad {_\blacksquare}$
+
+> Refrence  
+> [Book] (Apostol)  Mathematical analysis Theorem 3.8  
+> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach prob 1.5.3
+
+### 명제4
+$U \subset \R^n$이 있다고 하자.
+
+다음을 증명하여라.
+$$ U \text{ is an open set on } U $$
+
+**Proof**
+
+$x \in U$가 있을 때, $x$를 원점으로 하는 open ball의 정의는 다음과 같다.
+$$ B_r(x) = \{ y \in U \enspace | \enspace |x-y| < r \} $$
+
+정의에서 알 수 있듯이, $B_r$은 $U$의 원소들로 이루어진 집합임으로 다음이 성립한다.
+$$ B_r \subset U $$
+
+즉, $U$는 $U$에서의 open set이 된다.$\quad {_\blacksquare}$
+
+#### 참고
+$\R^n$에서는 $U$가 open set이 아닐 수 있다.
+
+> Reference  
+> [mathematics - why-is-a-metric-space-an-open-subset-of-itself](https://math.stackexchange.com/questions/1169561/why-is-a-metric-space-an-open-subset-of-itself)
+
+### 명제5
+부분집합 $U \subset \R^n$이 있다고 하자.
+
+다음을 증명하여라.
+$$ \empty \text{ is an open set on } U $$
+
+**Proof**
+
+open set의 정의상, $x \in \empty$에 대해 open ball을 고려해야 되는데 공집합에서 원소를 뽑을 수는 없다.
+
+따라서, 가정이 항상 거짓인 `공허하게 참인 명제(vacuously true statement)`가 된다.$\quad {_\blacksquare}$
+
+
+### 참고
+명제1,2,4,5을 만족하는 집합족의 원소를 open set으로 정의할 경우 거리가 정의되어 있지 않은 공간에서도 open set과 closed set을 정의할 수 있다.
+
+즉, 훨씬 일반적인 형태의 open set과 closed set을 정의할 수 있게 된다.
+
+> Reference  
+> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach prob 1.5.3
+
 
 ### 예시1
 부분집합 $U \subset \R^2$가 아래 그림과 같이 회색으로 표현된 영역에서 boundary를 뺀 부분이라고 하자.
@@ -24,6 +140,9 @@ $$ \mathbf x \in U \Rightarrow \exist r > 0 \quad s.t. \quad B_r(\mathbf x) \sub
 
 즉, open set이 되기 위해서는 기하학적으로 boundary를 하나도 포함하지 않아야 된다는 것을 알 수 있다.
 
+> Reference  
+> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
+
 ### 예시2
 $a,b,c,d \in \R$라 하자.
 
@@ -32,33 +151,54 @@ $a,b,c,d \in \R$라 하자.
 * $(a,\infty)$는 open set이다.
 * $(-\infty, a)$는 open set이다.
 
-> 참고  
+> Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
 
 # Closed set
 부분집합 $U \subset \R^n$이 있을 때, 다음을 만족하는 $U$를 $\R^n$에서의 `closed set`이라고 한다.
 $$ \R^n - U \text { is an open set of } \R^n $$
 
-### 명제1
-closed set $U \subset \R^n$와 sequence $i \mapsto \mathbf x_i \in U$가 있다고 하자.
+> Reference  
+> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
 
-$\lim_{i \rightarrow \infty} \mathbf x_i = \mathbf x_0$일 때 다음을 증명하여라.
-$$ \mathbf x_0 \in U $$
+### 명제1
+$U \subset \R^n$와 $U$위의 임의의 sequence $s(m)$이 있다고 하자.
+
+이 떄, 다음을 증명하여라.
+$$ U \text { is a closed.} \Leftrightarrow \lim_{m \rightarrow \infty} s(m) \in U $$
 
 **Proof**
 
-$\mathbf x_0 \in \R^n - U$라 하자.
+[$\Rightarrow$]  
+$\lim_{m \rightarrow \infty} s(m) = \mathbf x_0 \in \R^n - U$라고 가정하자.
 
-$\R^n - U$는 open set이기 때문에 다음이 성립한다.
+$U$가 closed set임으로 $\R^n - U$는 open set이고 따라서 다음이 성립한다.
 $$ \exist r >0 \quad s.t. \quad B_r(\mathbf x_0) \subset (\R^n - U) $$
 
-따라서, 모든 $\mathbf x_m$에 대해서 다음이 성립해야 한다.
-$$ r \le  |\mathbf x_m - \mathbf x_0| $$
+이 떄, 모든 $m$에 대해서 $s(m) \in U$임으로 다음이 성립한다.
+$$ r \le  |s(m) - \mathbf x_0| $$
 
 하지만 수렴의 정의에 의해 다음도 동시에 성립해야 한다.
-$$  0 < \epsilon \Rightarrow \exist m \quad s.t. \quad |\mathbf x_m - \mathbf x_0| < \epsilon $$
+$$ \forall \epsilon > 0, \quad \exist N \quad s.t. \quad N < m \Rightarrow |s(m) - \mathbf x_0| < \epsilon $$
 
-이는 모순임으로, $\mathbf x_0 \in U$이다. $\quad {_\blacksquare}$
+이는 모순임으로, 귀류법에 의해 $\mathbf x_0 \in U$이다. $\quad {_\blacksquare}$
+
+[$\Leftarrow$]  
+$\R^n-U$가 open set이 아니라고 가정하자.
+
+그러면 임의의 $n \in \N$에 대해서 다음을 만족하는 $x \in \R^n-U$이 존재한다.
+$$ B_{1/n}(x) \cap U \neq \empty  $$
+
+$B_{1/n}(x) \cap U$ 위의 sequence를 $s_{1/n}(m)$이라 하면 다음이 성립한다.
+$$ \lim_{m \rightarrow \infty}s_{1/n}(m) \in U $$
+
+이 때, $n \rightarrow \infty$으로 가면 $B_{1/n}(x) = \{ x \}$가 되고 따라서 다음이 성립한다.
+$$ \lim_{m \rightarrow \infty}(\lim_{n \rightarrow \infty}s_{1/n})(m) = x $$
+
+이는 모순임으로, 귀류법에 의해 $\R^n-U$는 open set이고 $U$는 closed set이다. $\quad {_\blacksquare}$
+
+> Reference  
+> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
 
 ### 예시1
 부분집합 $U \subset \R^2$가 아래 그림과 같이 회색으로 표현된 영역과 굵은 선으로 표시된 boundary를 포함한 부분이라고 하자.
@@ -73,6 +213,9 @@ $$  0 < \epsilon \Rightarrow \exist m \quad s.t. \quad |\mathbf x_m - \mathbf x_
 
 즉, closed set이 되기 위해서는 기하학적으로 boundary를 전부 포함해야 된다는 것을 알 수 있다.
 
+> Reference  
+> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
+
 ### 예시2
 $a,b \in \R$라 하자.
 * $a < b$라 할 때, $[a,b] := \{ x \in \R \enspace | \enspace a \le x \le b \}$는 closed set이다.
@@ -81,8 +224,11 @@ $a,b \in \R$라 하자.
 
 두 번째, 예시에서 알 수 있듯이, open set이 아니라고 반드시 closed set인것은 아니다. open set도 closed set도 아닌 경우가 있다.
 
+> Reference  
+> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
+
 ### 예시3
 $f(x,y) = \sqrt{\frac{x}{y}}$의 natural domain(함수가 well-defined되는 정의역)은 open set도 closed set도 아니다.
 
-> 참고  
+> Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  

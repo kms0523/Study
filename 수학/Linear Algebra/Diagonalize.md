@@ -1,10 +1,10 @@
-# Diagonalize(선형변환)
+# Diagonalize of a Linear Map
 vector space $V/ \mathbb F$와 $T \in L(V)$가 있을 때, $\frak m_\beta^\beta(T)$가 대각행렬이 되게 만드는 $V$의 기저 $\beta$가 존재하는 경우 $T$를 `대각화 가능(diagonalizable)`하다고 한다. 
 
 ### 명제1
-$n$차원 vector space $V/ \mathbb F$와 $T \in L(V; V)$가 있다고 하자.
+$n$차원 vector space $V/ \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
 
-$\beta$가 $T$의 고유벡터로 이루어진 기저일 때, 다음을 증명하여라.
+$V$가 $T$의 eigen vector로 이루어진 기저를 갖을 때, 다음을 증명하여라.
 $$ T \text{ is diagonalizeble} $$
 
 **Proof**
@@ -25,24 +25,9 @@ $$ T \text{ is diagonalizeble} $$
 
 **Proof**
 
-고유벡터를 $\beta_1, \cdots, \beta_n$이라 하고 해당하는 고유값들을 $\lambda^1, \cdots , \lambda^n$이라 하자. 
+eigen vector의 성질에 의해, 서로 다른 eigen value를 갖는 eigen vector들은 서로 선형 독립이다. 
 
-고유벡터의 집합이 선형종속이라고 가정하고, 일반성을 잃지 않고 선형 종속인 원소를 $\beta_n$이라고 하자.
-
-$\beta_n$은 선형종속임으로 다음이 성립한다.
-$$  \begin{aligned} & \beta_n = a^1\beta_1 + \cdots + a^{n-1}\beta_{n-1} \\ \Rightarrow \enspace & T(\beta_n) = T(a^1\beta_1+ \cdots + a^{n-1}\beta_{n-1}) \\ \Rightarrow \enspace & \lambda^n \beta_n = \lambda^1a^1\beta_1 + \cdots + \lambda^{n-1}a^{n-1}\beta_{n-1} \end{aligned} $$
-
-동시에 다음도 성립한다.
-$$ \begin{aligned} & \beta_n = a^1\beta_1 + \cdots + a^{n-1}\beta_{n-1} \\ \Rightarrow \enspace &  \lambda^n\beta_n = \lambda^n a^1 \beta_1 + \cdots + \lambda^n a^{n-1} \beta_{n-1} \end{aligned} $$
-
-두 식을 빼면 다음과 같다.
-$$ 0_V = a^1(\lambda^n - \lambda^1)\beta_1 + \cdots + a^{n-1}(\lambda^n - \lambda^{n-1})\beta_{n-1} $$
-
-이 때, 서로 다른 고유값을 가짐으로 $a_1 = \cdots = a_{n-1} = 0$이되고 $\beta_n = 0_V$가 된다. 이 때, 고유값은 $0_V$가 아님으로 모순이 발생한다.
-
-고유벡터의 집합이 선형종속이라 가정하였을 때 모순이 발생함으로, 고유벡터의 집합은 선형독립이 되고 고유벡터의 집합은 기저가 된다.
-
-따라서, 고유벡터로 이루어진 기저가 존재함으로 명제1에 의해 대각화 가능하다. $\quad {_\blacksquare}$ 
+따라서, eigen vector로 이루어진 기저가 존재함으로 명제1에 의해 대각화 가능하다. $\quad {_\blacksquare}$ 
 
 #### 참고
 반드시 서로 다른 고유값들을 가져야만 대각화 가능한 것은 아니다.
@@ -50,18 +35,32 @@ $$ 0_V = a^1(\lambda^n - \lambda^1)\beta_1 + \cdots + a^{n-1}(\lambda^n - \lambd
 예를 들어 다음의 행렬을 생각해보자.
 $$ A= \begin{bmatrix} 4 & 0 & 1 \\ 2 & 3 & 2 \\ 1 & 0 & 4 \end{bmatrix} $$
 
-다음 행렬의 특성다항식의 근은 $\lambda = 3,5$로 두개의 근을 갖는다. 하지만 $\lambda =3$일 때, 두개의 선형독립인 고유벡터 $\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}$가 존재하며, $\lambda = 5$일 때, $\begin{bmatrix} 1 \\ 4 \\ 1 \end{bmatrix}$인 고유벡터가 존재한다. 이 세개의 고유벡터로 이루어진 기저가 존재함으로, $L_A : \R^2 \rightarrow \R^2$는 대각화 가능하며 $\begin{bmatrix} 5 && \\ & 3 & \\ &&-1 \end{bmatrix}$인 대각행렬을 갖는다.
+다음 행렬의 특성다항식의 근은 $\lambda = 3,5$로 두개의 근을 갖는다. 하지만 $\lambda =3$일 때, 두개의 선형독립인 고유벡터 $\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}$가 존재하며, $\lambda = 5$일 때, $\begin{bmatrix} 1 \\ 4 \\ 1 \end{bmatrix}$인 고유벡터가 존재한다. 이 세개의 고유벡터로 이루어진 기저가 존재함으로, $L_A : \R^2 \rightarrow \R^2$는 대각화 가능하며 $\begin{bmatrix} 5 && \\ & 3 & \\ &&3 \end{bmatrix}$인 대각행렬을 갖는다.
 
 ### 명제3
-$n$차원 vector space $V/ \mathbb F$와 $T \in L(V)$가 있을 때, $T$가 대각화 가능하다는 말과 고유값 $\lambda^1, \cdots \lambda^k, \enspace k \le n$에 대해 $V = \oplus_i^k E_{\lambda^i}$가 동치임을 증명하여라.
+$n$차원 vector space $V/ \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
+
+$T$의 고윳값이 $\lambda^1, \cdots \lambda^k, \enspace k \le n$로 주어졌을 때, 다음을 증명하여라.
+$$ T \text{ is diagonalizable } \Leftrightarrow V = \bigoplus_{i=1}^k E_{\lambda^i} $$
 
 **Proof**
 
 [$\Rightarrow$]  
-$\exist \beta = \{ v_{1,1}, \cdots, v_{1,m_1} \cdots, v_{k,1}, \cdots, v_{k,m_k}\}$
+$T$가 diagonalizable함으로, $V$에는 다음을 만족하는 basis $\beta$가 존재한다.
+$$ \beta = \bigcup_{i=1}^k \beta_{\lambda^i} $$
 
+$$ \text{Where, } \beta_{\lambda^i} \text{ is a set of eigen vectors with eigen value } \lambda^i $$
 
-# Diagonalize(행렬)
+따라서 다음이 성립한다.
+$$ \begin{aligned} V &= \text{span}(\beta) \\&= \bigoplus_{i=1}^k\text{span}(\beta_{\lambda^i}) \\ &= \bigoplus_{i=1}^k E_{\lambda^i} \quad {_\blacksquare} \end{aligned} $$
+
+[$\Leftarrow$]  
+$V = \bigoplus_{i=1}^k E_{\lambda^i}$임으로, $V$의 기저를 $\beta$, $E_{\lambda^i}$의 기저를 $\beta_{\lambda^i}$라 한다면 기저의 성질에 의해 다음이 성립한다.
+$$ \beta = \bigcup_{i=1}^k \beta_{\lambda^i} $$
+
+이 떄, eigen space의 기저는 eigen vector임으로, $V$에는 eigen vector로 이루어진 기저가 존재하고 따라서, $T$는 diagonalizable하다. $\quad {_\blacksquare}$
+
+# Diagonalize of a Matrix
 $A \in \mathbb M_{nn}(\mathbb F)$가 있을 때, 선형변환을 다음과 같이 정의하자.
 $$L_A : \mathbb F^n \rightarrow \mathbb F^n \quad s.t. \quad x \mapsto Ax$$
 

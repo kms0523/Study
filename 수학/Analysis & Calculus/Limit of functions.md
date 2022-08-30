@@ -2,9 +2,9 @@
 subset $X \subset \R^n$와 함수 $\mathbf f : X \rightarrow \R^m$가 있다고 하자.
 
 $\mathbf x_0 \in \overline X$가 있을 때, $\mathbf x \in X$가 $\mathbf x_0$로 갈 때, $f(\mathbf x)$의 극한값이 $\mathbf L$이라는 말은 다음과 동치이다.
-$$ \forall \epsilon > 0, \quad \exist  \delta \quad s.t. \quad 0 < |\mathbf x - \mathbf x_0| < \delta \Rightarrow |\mathbf f(\mathbf x_0) - \mathbf L| < \epsilon. $$
+$$ \forall \epsilon > 0, \quad \exist  \delta \quad s.t. \quad 0 < |\mathbf x - \mathbf x_0| < \delta \Rightarrow |\mathbf f(\mathbf x) - \mathbf L| < \epsilon. $$
 
-이를 간단하게 표현하면 다음과 같다.
+이를 다음과 같이 간단하게 표현한다.
 $$\lim_{\mathbf x \rightarrow \mathbf x_0} \mathbf f(\mathbf x) = \mathbf L$$
 
 > Reference  
@@ -19,7 +19,7 @@ $\mathbf x$는 $\mathbf x_0$와 항상 $\delta$만큼 떨어져 있기 때문에
 ### 참고2
 함수의 극한이값이 $L$이기 위해서는 $0 < |\mathbf x - \mathbf x_0| < \delta$을 만족하는 모든 $\mathbf x$에 대해서 $|\mathbf f(\mathbf x_0) - \mathbf L| < \epsilon$을 만족해야 된다.
 
-$0 < |\mathbf x - \mathbf x_0| < \delta$을 만족하는 특정 $\mathbf x$에 대해 $|\mathbf f'(\mathbf x_0) - \mathbf L'| < \epsilon$을 만족하는 $\mathbf L'$은 극한값이 될 수 없다.
+$0 < |\mathbf x - \mathbf x_0| < \delta$을 만족하는 특정 $\mathbf x$에 대해 $|\mathbf f'(\mathbf x) - \mathbf L'| < \epsilon$을 만족하는 $\mathbf L'$은 극한값이 될 수 없다.
 
 #### 예시
 $f(x) = \sin \frac{1}{x}$이 있다고 하자.
@@ -59,3 +59,30 @@ $$ \forall \epsilon > 0, \quad \exist \delta \enspace \text{satisfying} \quad 0 
 
 > Reference  
 > [Book] (J. Stewart) Calculus 1.7   
+
+### 참고4
+open ball을 이용해서 극한의 정의를 표현하면 다음과 같다.
+$$ \forall \epsilon > 0, \quad \exist  \delta \quad s.t. \quad x \in  B_\delta(x_0) \Rightarrow f(x) \in B_\epsilon(L) $$
+
+### 명제
+$U \subset \R^n, \enspace V \subset \R^m$와 함수 $\mathbf f : U \rightarrow V, \enspace \mathbf g : V \rightarrow \R^k$가 있다고 하자.
+
+$\mathbf x_0 \in U$에 대해서 다음이 성립한다.
+$$ \lim_{\mathbf x \rightarrow \mathbf x_0} \mathbf f(\mathbf x) = \mathbf y_0, \enspace \lim_{\mathbf y \rightarrow \mathbf y_0} \mathbf g(\mathbf y) = \mathbf z_0$$
+
+이 때, 다음을 증명하여라.
+$$ \lim_{\mathbf x \rightarrow \mathbf x_0} (\mathbf g \circ \mathbf f)(\mathbf x) = \mathbf z_0 $$
+
+**Proof**
+
+$\lim_{\mathbf y \rightarrow \mathbf y_0} \mathbf g(\mathbf y) = \mathbf z_0$임으로 다음이 성립한다.
+$$ \forall \epsilon >0, \quad \exist \delta_1 \quad s.t. \quad |\mathbf y - \mathbf y_0| < \delta_1 \Rightarrow |\mathbf g(\mathbf y) - \mathbf z_0| < \epsilon $$
+
+또한, $\lim_{\mathbf x \rightarrow \mathbf x_0} \mathbf f(\mathbf x) = \mathbf y_0$임으로 다음이 성립한다.
+$$ \exist \delta \quad s.t. \quad |\mathbf x - \mathbf x_0| < \delta \Rightarrow |\mathbf f(\mathbf x) - \mathbf y_0| < \delta_1 $$
+
+두 결과를 통해 다음이 성립함을 알 수 있다.
+$$ \forall \epsilon >0, \quad \exist \delta \quad s.t. \quad|\mathbf x - \mathbf x_0| < \delta \Rightarrow |(\mathbf g \circ \mathbf f)(\mathbf x) - \mathbf z_0| < \epsilon $$
+
+따라서, 함수의 극한의 정의에 의해 다음이 성립한다.
+$$ \lim_{\mathbf x \rightarrow \mathbf x_0} (\mathbf g \circ \mathbf f)(\mathbf x) = \mathbf z_0 \quad {_\blacksquare} $$
