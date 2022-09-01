@@ -5,3 +5,6 @@
 
 ### 참고
 Topology의 1,2,3번 성질을 보면 알 수 있듯이, $\mathcal T$가  open set 집합의 성질을 만족하도록 정의된 것을 알 수 있다. 따라서, topology $\mathcal T$는 open set의 집합이라 보고 $s \in \mathcal T$를 open set이라 정의 한다.
+
+> Referece  
+> [Book] (Lee) Introduction to Topological Manifolds p.20
