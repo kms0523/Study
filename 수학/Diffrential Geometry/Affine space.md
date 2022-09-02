@@ -2,18 +2,33 @@
 `Affine space`란 집합 $A$에 vector space $V / \mathbb F$와 다음과 같이 정의된 이항연산 $+$가 주어진 구조이다.
 $$ + : A \times V \rightarrow A $$
 
-일반적으로, 집합 $A$의 원소를 `점(point)`이라고 한다.
+$+$는 $V$의 $A$로의 작용으로써 다음 성질들을 만족한다.
+$$ \begin{aligned} 1) \quad & p \in A \Rightarrow p + 0_V = p \\ 2) \quad & v_1, v_2 \in V \land p \in A \Rightarrow (p + v_1) + v_2 = p + (v_1 + v_2) \\ 3) \quad & p \in A \enspace \land \enspace f_p : V \rightarrow A \quad s.t. \quad v \mapsto p + v = p_v \Rightarrow f_p \text{ is bijective} \end{aligned} $$
 
-$+$는 $V$의 $A$로의 작용으로써, 다음 성질들을 만족한다.
-$$ \begin{aligned} 1) \quad & P \in A \Rightarrow P + 0_V = P \\ 2) \quad & v_1, v_2 \in V \land P \in A \Rightarrow (P + v_1) + v_2 = P + (v_1 + v_2) \\ 3) \quad & P \in A \enspace \land \enspace f_P : V \rightarrow A \quad s.t. \quad v \mapsto P + v = P_v \Rightarrow f_P \text{ is bijective} \end{aligned} $$
+> Reference  
+> [Affine space - wiki](https://en.wikipedia.org/wiki/Affine_space)  
 
-1), 2)은 right group action을 정의하고 있다.
+### 참고1
+집합 $A$의 원소를 `점(point)`, $+$를 `translation`이라고 한다.
 
-3)으로 인해 $V$ 또한 affine space로 볼 수 있다. $v \in V$가 있을 때, $v$는 vector이면서 $f_P$에 의해 동시에 $f_P(v) = P_v$임으로 $P_v$라는 point로 볼 수 있다. 따라서 $V$는 affine space이기도 하다.
+> Reference  
+> [Affine space - wiki](https://en.wikipedia.org/wiki/Affine_space)  
 
-이 때, $P$를 `원점(origin)`이라고 한다면 1)에 의해 $0_V$는 항상 origin과 동일시 된다. 
+### 참고2
+$+$의 1), 2)성질은 right group action을 정의하고 있다.
 
-만약 origin $P_0$와 $V$의 기저 $\beta$가 결정되면, bijective function $\phi : A \rightarrow \R^n$가 존재한다. 이 때, $v \in V$에 의해 $P_0$점이 $P_v$로 translation 됨으로, $v$를 $P_0$점에서 시작해서 $P_v$로 가는 화살표로 표현할 수 있다.
+$+$의 3)성질은 $p \in A$가 주어지면 $A$와 $V$를 오갈 수 있는 $f_p$가 존재한다는 의미이다.
+
+이 때, $p$를 `원점(origin)`이라고 하며 1) 성질에 의해 $0_V$는 항상 origin과 동일시 된다. 
+
+### 참고3
+origin $p$가 주어지면 다음과 같이 point와 vector의 pair로 이루어진 vector space를 구성할 수 있다.
+$$ V_p := \{(p,v) \enspace | \enspace v \in V  \} $$
+
+### 참고4
+만약 origin $P_0$와 $V$의 기저 $\beta$가 결정되면, bijective function $\phi : A \rightarrow \R^n$가 존재한다. 
+
+이 때, $v \in V$에 의해 $P_0$점이 $P_v$로 translation 됨으로, $v$를 Cartesian coordinate상에서 $\phi(P_0)$점에서 시작해서 $\phi(P_v)$로 가는 화살표로 표현할 수 있다.
 
 ### 명제1
 vector space $V / \mathbb F$가 주어진 affine space $A$와 $v \in V$가 있을 때, 다음과 같이 정의된 함수를 $f_v$라 하자.
@@ -73,7 +88,7 @@ $$ \phi : A \rightarrow \R^n \quad s.t. \quad P \mapsto [P-P_0]_\beta $$
 
 또한 +는 연산에 닫혀있음으로, $a \in \R^n$에 대해, $P = P_0 + a_i\beta_i$를 만족하는 $P$가 항상 존재함으로 surjective이다. $\quad {_\blacksquare}$
 
-> 참고  
+> Reference  
 > [Affine space - wiki](https://en.wikipedia.org/wiki/Affine_space)  
 > [what-are-differences-between-affine-space-and-vector-space - mathematics](https://math.stackexchange.com/questions/884666/what-are-differences-between-affine-space-and-vector-space)  
 > [an-affine-space-is-nothing-more-than-a-vector-space - mathmatics](https://math.stackexchange.com/questions/3527297/an-affine-space-is-nothing-more-than-a-vector-space-whose-origin-we-try-to-forg)  
@@ -82,12 +97,24 @@ $$ \phi : A \rightarrow \R^n \quad s.t. \quad P \mapsto [P-P_0]_\beta $$
 > [Euclidean space - wiki](https://en.wikipedia.org/wiki/Euclidean_space) 
 
 # Affine subspace
-vector space $V / \mathbb F$가 주어진 affine space $A$가 있을 때, linear subspace를 $S \le V$, $S$의 기저를 $\beta$라 하자. 
+vector space $V_A / \mathbb F$가 주어진 affine space $A$와 $S \le V$가 있다고 하자.
 
-$v \in V - \beta$가 있을 때, $S$를 affine space라 보고 $S' = \{s + v | s \in S \}$라 하면, $S'$은 affine subspace이다.
+$p \in A$에 대해서, 집합 $B$를 다음과 같이 정의하자.
+$$ B := \{ p + v \enspace | \enspace v \in S \} $$
 
-이를, $S$를 $v$만큼 translate 시켜 $S'$을 얻었다고 볼 수 있다.
+그러면 $B$는 vector space $S$가 주어진 affine space가 되며, $B$를 $A$의 affine subspace라 한다.
 
+> Reference  
+> [Affine space - wiki](https://en.wikipedia.org/wiki/Affine_space)  
 
-> 참고  
+### 참고
+$B$가 $A$의 affine subspace라는 것을 다음과 같이 간단하게 나타낸다.
+$$ B \le A $$
+
+# Parallel
+vector space $V_A / \mathbb F$가 주어진 affine space $A$가 있다고 하자.
+
+$B,C \le A$일 때 $V_B = V_C$이면, $B$와 $C$가 `평행(parallel)`하다고 한다.
+
+> Reference  
 > [Affine space - wiki](https://en.wikipedia.org/wiki/Affine_space)  

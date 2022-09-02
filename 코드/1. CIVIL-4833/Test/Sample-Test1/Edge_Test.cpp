@@ -275,18 +275,17 @@ TEST(quadratic_formula, edge_test2)
 	}
 }
 
-
-TEST(newton_method, edge_test2)
+TEST(quadratic_formula, edge_test3)
 {
-	const double x1 = 1, x2 = 0, x3 = 50000, x4 = 2;
-	const double y1 = 0, y2 = 5, y3 = 50000, y4 = -1;
+	const double x1 = 0, x2 = 5, x3 = 5, x4 = 1;
+	const double y1 = 5, y2 = 5, y3 = -1, y4 = 0;
 
 	Edge_point_generator generator({ x1,x2,x3,x4 }, { y1,y2,y3,y4 });
 
 	constexpr auto num_division_per_edge = 100;
 	const auto line_index_to_edge_points = generator.generate_line_index_to_edge_points(num_division_per_edge);
 
-	
+
 	constexpr auto delta = 2.0 / num_division_per_edge;
 	const auto num_points = num_division_per_edge + 1;
 
@@ -305,7 +304,7 @@ TEST(newton_method, edge_test2)
 
 		try
 		{
-			quadratic_formula(xi, eta, xp, yp, x1, x2, x3, x4, y1, y2, y3, y4);
+			quadratic_formula(xi, eta, xp, yp, x1, x2, x3, x4, y1, y2, y3, y4);			 
 		}
 		catch (...)
 		{
@@ -400,3 +399,250 @@ TEST(newton_method, edge_test2)
 	}
 }
 
+TEST(newton_method, edge_test2)
+{
+	const double x1 = 1, x2 = 0, x3 = 50000, x4 = 2;
+	const double y1 = 0, y2 = 5, y3 = 50000, y4 = -1;
+
+	Edge_point_generator generator({ x1,x2,x3,x4 }, { y1,y2,y3,y4 });
+
+	constexpr auto num_division_per_edge = 100;
+	const auto line_index_to_edge_points = generator.generate_line_index_to_edge_points(num_division_per_edge);
+
+	
+	constexpr auto delta = 2.0 / num_division_per_edge;
+	const auto num_points = num_division_per_edge + 1;
+
+
+	for (size_t i = 0; i < num_points; i++)
+	{
+		const auto& edge_point = line_index_to_edge_points[0][i];
+		const auto xp = edge_point.first;
+		const auto yp = edge_point.second;
+
+		auto xi = 0.0;
+		auto eta = 0.0;
+
+		const auto ref_xi = -1 + delta * i;
+		const auto ref_eta = -1;
+
+		try
+		{
+			newton_method(xi, eta, xp, yp, x1, x2, x3, x4, y1, y2, y3, y4);
+		}
+		catch (...)
+		{
+			std::cout << "ref_xi : " << ref_xi << "\n";
+			std::cout << "ref_eta : " << ref_eta << "\n";
+			exit(523);
+		}
+
+		EXPECT_NEAR(xi, ref_xi, epsilon);
+		EXPECT_NEAR(eta, ref_eta, epsilon);
+	}
+
+	for (size_t i = 0; i < num_points; i++)
+	{
+		const auto& edge_point = line_index_to_edge_points[2][i];
+		const auto xp = edge_point.first;
+		const auto yp = edge_point.second;
+
+		auto xi = 0.0;
+		auto eta = 0.0;
+
+		const auto ref_xi = 1 - delta * i;
+		const auto ref_eta = 1;
+
+		try
+		{
+			newton_method(xi, eta, xp, yp, x1, x2, x3, x4, y1, y2, y3, y4);
+		}
+		catch (...)
+		{
+			std::cout << "ref_xi : " << ref_xi << "\n";
+			std::cout << "ref_eta : " << ref_eta << "\n";
+			exit(523);
+		}
+
+		EXPECT_NEAR(xi, ref_xi, epsilon);
+		EXPECT_NEAR(eta, ref_eta, epsilon);
+	}
+
+	for (size_t i = 0; i < num_points; i++)
+	{
+		const auto& edge_point = line_index_to_edge_points[1][i];
+		const auto xp = edge_point.first;
+		const auto yp = edge_point.second;
+
+		auto xi = 0.0;
+		auto eta = 0.0;
+
+		const auto ref_xi = 1;
+		const auto ref_eta = -1 + delta * i;
+
+		try
+		{
+			newton_method(xi, eta, xp, yp, x1, x2, x3, x4, y1, y2, y3, y4);
+		}
+		catch (...)
+		{
+			std::cout << "ref_xi : " << ref_xi << "\n";
+			std::cout << "ref_eta : " << ref_eta << "\n";
+			exit(523);
+		}
+
+		EXPECT_NEAR(xi, ref_xi, epsilon);
+		EXPECT_NEAR(eta, ref_eta, epsilon);
+	}
+
+	for (size_t i = 0; i < num_points; i++)
+	{
+		const auto& edge_point = line_index_to_edge_points[3][i];
+		const auto xp = edge_point.first;
+		const auto yp = edge_point.second;
+
+		auto xi = 0.0;
+		auto eta = 0.0;
+
+		const auto ref_xi = -1;
+		const auto ref_eta = 1 - delta * i;
+
+		try
+		{
+			quadratic_formula(xi, eta, xp, yp, x1, x2, x3, x4, y1, y2, y3, y4);
+		}
+		catch (...)
+		{
+			std::cout << "ref_xi : " << ref_xi << "\n";
+			std::cout << "ref_eta : " << ref_eta << "\n";
+			exit(523);
+		}
+
+		EXPECT_NEAR(xi, ref_xi, epsilon);
+		EXPECT_NEAR(eta, ref_eta, epsilon);
+	}
+}
+
+TEST(newton_method, edge_test3)
+{
+	const double x1 = 0, x2 = 5, x3 = 5, x4 = 1;
+	const double y1 = 5, y2 = 5, y3 = -1, y4 = 0;
+
+	Edge_point_generator generator({ x1,x2,x3,x4 }, { y1,y2,y3,y4 });
+
+	constexpr auto num_division_per_edge = 100;
+	const auto line_index_to_edge_points = generator.generate_line_index_to_edge_points(num_division_per_edge);
+
+
+	constexpr auto delta = 2.0 / num_division_per_edge;
+	const auto num_points = num_division_per_edge + 1;
+
+
+	for (size_t i = 0; i < num_points; i++)
+	{
+		const auto& edge_point = line_index_to_edge_points[0][i];
+		const auto xp = edge_point.first;
+		const auto yp = edge_point.second;
+
+		auto xi = 0.0;
+		auto eta = 0.0;
+
+		const auto ref_xi = -1 + delta * i;
+		const auto ref_eta = -1;
+
+		try
+		{
+			newton_method(xi, eta, xp, yp, x1, x2, x3, x4, y1, y2, y3, y4);
+		}
+		catch (...)
+		{
+			std::cout << "ref_xi : " << ref_xi << "\n";
+			std::cout << "ref_eta : " << ref_eta << "\n";
+			exit(523);
+		}
+
+		EXPECT_NEAR(xi, ref_xi, epsilon);
+		EXPECT_NEAR(eta, ref_eta, epsilon);
+	}
+
+	for (size_t i = 0; i < num_points; i++)
+	{
+		const auto& edge_point = line_index_to_edge_points[2][i];
+		const auto xp = edge_point.first;
+		const auto yp = edge_point.second;
+
+		auto xi = 0.0;
+		auto eta = 0.0;
+
+		const auto ref_xi = 1 - delta * i;
+		const auto ref_eta = 1;
+
+		try
+		{
+			newton_method(xi, eta, xp, yp, x1, x2, x3, x4, y1, y2, y3, y4);
+		}
+		catch (...)
+		{
+			std::cout << "ref_xi : " << ref_xi << "\n";
+			std::cout << "ref_eta : " << ref_eta << "\n";
+			exit(523);
+		}
+
+		EXPECT_NEAR(xi, ref_xi, epsilon);
+		EXPECT_NEAR(eta, ref_eta, epsilon);
+	}
+
+	for (size_t i = 0; i < num_points; i++)
+	{
+		const auto& edge_point = line_index_to_edge_points[1][i];
+		const auto xp = edge_point.first;
+		const auto yp = edge_point.second;
+
+		auto xi = 0.0;
+		auto eta = 0.0;
+
+		const auto ref_xi = 1;
+		const auto ref_eta = -1 + delta * i;
+
+		try
+		{
+			newton_method(xi, eta, xp, yp, x1, x2, x3, x4, y1, y2, y3, y4);
+		}
+		catch (...)
+		{
+			std::cout << "ref_xi : " << ref_xi << "\n";
+			std::cout << "ref_eta : " << ref_eta << "\n";
+			exit(523);
+		}
+
+		EXPECT_NEAR(xi, ref_xi, epsilon);
+		EXPECT_NEAR(eta, ref_eta, epsilon);
+	}
+
+	for (size_t i = 0; i < num_points; i++)
+	{
+		const auto& edge_point = line_index_to_edge_points[3][i];
+		const auto xp = edge_point.first;
+		const auto yp = edge_point.second;
+
+		auto xi = 0.0;
+		auto eta = 0.0;
+
+		const auto ref_xi = -1;
+		const auto ref_eta = 1 - delta * i;
+
+		try
+		{
+			newton_method(xi, eta, xp, yp, x1, x2, x3, x4, y1, y2, y3, y4);
+		}
+		catch (...)
+		{
+			std::cout << "ref_xi : " << ref_xi << "\n";
+			std::cout << "ref_eta : " << ref_eta << "\n";
+			exit(523);
+		}
+
+		EXPECT_NEAR(xi, ref_xi, epsilon);
+		EXPECT_NEAR(eta, ref_eta, epsilon);
+	}
+}

@@ -9,8 +9,30 @@ $x,y,z \in M$에 대해, $d$가 다음 성질들을 만족할 때,
 
 집합 $M$에 함수 $d$가 주어진 구조인 $(M,d)$를 `metric space`라고 한다.
 
+### 참고1
+$x \in M$을 point, $d$를 metric of the space라고 부른다.
+
+### 참고2
+$M = \R^n$이고 $d(x,y) = |x-y|$로 주어진 metric space를 `Euclidean metric space`라고 한다.
+
 > Reference  
 > [Book] (Apostol)  Mathematical analysis Chap 3.13
+
+# Metric Subspace
+metric space $(M,d)$가 있다고 하자.
+
+$S \subseteq M$일 때, $d$의 정의역과 치역이 $S$로 restriction된 함수 $d_s$를 다음과 같이 정의하자.
+$$d_S := d |_S^S : S \times S \rightarrow \R \quad s.t. \quad (s_1,s_2) \mapsto d(s_1,s_2) $$
+
+이 때, $(S,d_s)$는 metric space이며 이를 `metric subspace`라 한다.
+
+> Reference  
+> [Book] (Apostol)  Mathematical analysis p.61 
+
+### 참고
+$S$가 $M$의 metric subspace라는 것을 간단하게 다음과 같이 표기하기도 한다.
+$$ S \le M $$
+
 
 # Limit of Functions
 metric spaces $(M_1,d_1),$ $(M_2,d_2)$와 함수 $f : M_1 \rightarrow M_2$가 있다고 하자.
