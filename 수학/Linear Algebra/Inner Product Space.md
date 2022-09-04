@@ -27,13 +27,46 @@ $$ B(x,y) \equiv \lang x,y \rang $$
 # Inner Product Space
 $n$차원 vector space $V / \mathbb F$에 내적 $B$가 주어진 공간을 `내적 공간(inner product space)`라고 한다.
 
+### 명제(Riesz representation)
+$n$차원 inner product space $V / \mathbb F$가 있다고 하자.
+
+$v \in V$에 대해서 다음과 같이 linear map $B(\cdot,v) \in V^*$를 정의하자.
+$$ B(\cdot, v) := V \rightarrow \mathbb F \quad s.t. \quad w \mapsto B(w,v) $$
+
+$\forall v^* \in V^*$에 대해 다음을 증명하여라.
+$$ \exist! v \in V \quad s.t. \quad v^* = B(\cdot, v)$$
+
+**Proof**
+
+$\beta$를 $V$의 orthonormal basis라 하자.
+
+[uniquness]  
+$v^* \in V^*$에 대해 $v^*= B(\cdot,v)$인 $v \in V$가 존재한다고 하자.
+
+$v \in V$임으로 다음이 성립한다.
+$$v = B(v,\beta_i)\beta_i = \overline{B(\beta_i, v)}\beta_i = \overline{v^*(\beta_i)}\beta_i$$
+
+$\forall i$마다 $v^*(\beta_i)$는 유일한 값을 갖음으로, $v$가 존재한다면 유일하다. $\quad {_\blacksquare}$
+
+[existence]  
+$v^* \in V^*$에 대해 $v \in V$를 다음과 같이 정의하자.
+$$ v = \overline{v^*(\beta_i)}\beta_i $$
+
+$w = b^i\beta_i \in V$에 대해 다음이 성립한다.
+$$ B(\cdot, v)(w) = B(w,v) = b^iv^*(\beta_j) B(\beta_i,\beta_j) = b^iv^*(\beta_i) = v^*(w)$$
+
+즉, $v^*$와 동일한 $B(\cdot,v)$가 존재한다. $\quad {_\blacksquare}$
+
+
+
+
 # Norm
 $n$차원 inner product space $V / \mathbb F$가 있을 때, `norm`은 다음과 같이 정의된 함수이다.
 $$ n : V \rightarrow \R \quad s.t. \quad v \mapsto \sqrt{ B(v,v)} $$
 
 ### 참고
 다음과 같은 표기법을 많이 사용한다.
-$$ n(v) \equiv \lVert n \rVert $$
+$$ n(v) \equiv \lVert v \rVert $$
 
 # Angle
 $n$차원 inner product space $V / \mathbb F$가 있을 때, `angle`는 다음과 같이 정의된 함수이다.
@@ -47,8 +80,6 @@ $$ \cos \theta =  \frac{B(v,w)}{\lVert v \rVert \lVert w \rVert} $$
 # Distance
 $n$차원 inner product space $V / \mathbb F$가 있을 때, `distance`는 다음과 같이 정의된 함수이다.
 $$ d : V \times V \rightarrow \R \quad s.t. \quad (v,w) \mapsto \lVert v-w \rVert $$
-
-
 
 # Orthogonal Subset
 $n$차원 inner product space $V / \mathbb F$가 있다고 하자.
@@ -76,7 +107,7 @@ norm의 정의에 의해, 모든 j에 대해 $a^j = 0$임을 알 수 있다. 따
 $n$차원 inner product space $V / \mathbb F$가 있다고 하자.
 
 $S = \{ v_1, \cdots, v_k \}$가 orthogonal subset일 때 다음을 증명하여라.
-$$ y \in \text{span}(S) \Rightarrow y = \frac{B(y,v_i)}{\lVert v_i \rVert} v_i $$
+$$ y \in \text{span}(S) \Rightarrow y = \frac{B(y,v_i)}{\lVert v_i \rVert \lVert v_i \rVert} v_i $$
 
 **Proof** 
 
@@ -84,7 +115,88 @@ $y$는 다음과 같이 표현할 수 있다.
 $$ y = a^iv_i $$
 
 내적을 이용하면 다음이 성립한다.
-$$ \begin{aligned} & B(y, v_j) = B(a^iv_i, v_j) = a^j \lVert v_j \rVert \\ \Rightarrow \enspace & a^j = \frac{B(y,v_j)}{\lVert v_j \rVert} \end{aligned}  $$
+$$ \begin{aligned} & B(y, v_j) = B(a^iv_i, v_j) = a^j \lVert v_j \rVert \lVert v_j \rVert \\ \Rightarrow \enspace & a^j = \frac{B(y,v_j)}{\lVert v_j \rVert\lVert v_j \rVert} \end{aligned}  $$
 
 이를 원래 표현식에 대입하면 다음을 얻을 수 있다.
-$$ y = \frac{B(y,v_i)}{\lVert v_i \rVert} v_i \quad {_\blacksquare}$$
+$$ y = \frac{B(y,v_i)}{\lVert v_i \rVert \lVert v_i \rVert} v_i \quad {_\blacksquare}$$
+
+#### 참고
+$S$가 orthonormal subset이라고 하자.
+$$ \lVert v_i \rVert = 1 $$
+
+그러면 $y \in \text{span}(S)$는 다음과 같이 표현할 수 있다.
+$$ y = B(y,v_i)v_i $$
+
+이 때, $B(y,v_i)$를 `Fourier coefficient`라고 한다.
+
+# Orthogonal Complement
+$n$차원 inner product space $V / \mathbb F$가 있다고 하자.
+
+$S \subseteq V$가 있을 때, $S$의 `orthogonal complement` $S^\perp$는 다음과 같이 정의된 집합이다.
+$$ S^\perp := \{ v \in V \enspace | \enspace \forall s \in S, \quad  B(v,s) = 0_\mathbb F \}$$
+
+### 명제1
+$n$차원 inner product space $V / \mathbb F$가 있다고 하자.
+
+$W \le V$가 있을 때, 다음을 증명하여라.
+$$ W^\perp \le V $$
+
+**Proof**
+
+[기본 연산 법칙]  
+$w \in W^\perp$면, $w \in V$이기 때문에 교환법칙 분배법칙등 $F-$가군의 성질들이 전부 성립한다. 
+
+[연산에 닫힘]  
+$w_1,w_2 \in W^\perp$, $a \in \Bbb F$이고 $s \in W$라 하면 다음이 성립한다.
+$$ B(aw_1 + w_2, s) = aB(w_1,s) + B(w_2,s) = 0_\mathbb F  $$
+
+따라서, $aw_1 + w_2 \in W^\perp$임으로 연산에 닫혀있다. $\quad {_\blacksquare}$
+
+[$+$연산 항등원의 존재성]  
+$s \in W$라 하면 다음이 성립한다.
+$$ B(0_V,s) =  0_\mathbb F $$
+
+따라서 $0_V \in W^\perp$이다.
+
+[$+$연산 역원의 존재성]  
+상수곱이 정의되어 있음으로 환의 명제2에 의해 역원이 존재한다.
+
+
+### 명제2
+$n$차원 inner product space $V / \mathbb F$가 있다고 하자.
+
+$W \le V$가 있을 때, 다음을 증명하여라.
+$$ V = W \oplus W^\perp $$
+
+**Proof**
+
+[$V = W + W^\perp$]  
+$W$의 orthonormal basis를 $\beta$라 하자.
+
+$v \in V$가 있을 때, $u \in W$를 다음과 같이 정의하자.
+$$ u = B(v,\beta_i)\beta_i $$
+
+그러면, 다음이 성립한다.
+$$ \begin{aligned} B(v-u, \beta_i) &= B(v,\beta_i) - B(v,\beta_j) B(\beta_j, \beta_i) \\ &= B(v,\beta_i) - B(v,\beta_i) \\ &= 0_\mathbb F \end{aligned} $$
+
+따라서, $v-u \in W^\perp$임으로, $V = W + W^\perp$이다. $\quad {_\blacksquare}$
+
+[$W \cap W^\perp = \{ 0_V \}$]  
+$w \in W \cap W^\perp$라 하자.
+
+$W^\perp$의 정의에 의해 다음이 성립한다.
+$$ B(w,w) = 0_\mathbb F $$
+
+내적의 정의에 의해 $w = 0_V$이다. $\quad {_\blacksquare}$
+
+#### 참고1
+$v \in V$면 $v = w + w^\perp, \enspace w \in W, w^\perp \in W^\perp$이 성립하고 direct sum의 성질에 의해 이러한 표현법이 유일하다.
+
+#### 참고2
+$v \in V$가 있을 때, $u \in W$를 다음과 같이 정의하자.
+$$ u = B(v,\beta_i)\beta_i $$
+
+$\forall w \in W$에 대해서 다음이 성립한다.
+$$ \lVert v - u \rVert \le \lVert v - w \rVert $$
+
+따라서 $u$는 $W$의 vector중 $u$와 가장 가까운 closest vector이다.

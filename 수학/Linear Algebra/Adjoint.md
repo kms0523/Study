@@ -6,3 +6,7 @@ $$ A^* \in M_{nm}(\mathbb F) \quad s.t. \quad A^*_{ij} = \overline{A_{ji}} $$
 $\mathbb F = \R$이면, adjoint는 단순히 transpose가 되며, $A = A^*$인 경우를  $A$가 symmetric하다고 한다.
 
 만약, $\mathbb F = \R$이면, $A = A^*$인 경우를  $A$를 Hermitian이라고 한다.
+
+# Adjoint of a Linear Operator
+inner product space $V / \mathbb F$가 있다고 하자.
+

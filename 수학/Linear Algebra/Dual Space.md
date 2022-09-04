@@ -1,5 +1,5 @@
 # Dual space
-벡터공간 $V/\Bbb F$이 있을 때, $V$의 `쌍대공간(dual space)` $V^* / \mathbb F$는 다음과 같이 정의된 벡터공간이다.
+vetor space $V/\Bbb F$이 있을 때, $V$의 `쌍대공간(dual space)` $V^* / \mathbb F$는 다음과 같이 정의된 vetor space이다.
 $$ V^* := L(V; \mathbb F) $$
 
 즉, dual space는 linear form의 집합이다. 
@@ -80,6 +80,8 @@ $$ \dim(V) = \dim(V^*) $$
 > Reference  
 > [Dual Space - Wiki](https://en.wikipedia.org/wiki/Dual_space)  
 
+#### 참고
+$\dim(V) = \infty$면 일반적으로, $\dim(V) \neq \dim(V^*)$이다.
 
 # Double dual
 vector space $V/\Bbb F$가 있을 때, $V^*$ 또한 vector space임으로 $V^*$의 dual space인 double dual $V^{**}$을 정의할 수 있다.
@@ -116,6 +118,18 @@ $$ v^*(\phi^{-1}(v^{**})) = v^{**}(v^*) $$
 
 > Reference  
 > [note] (Garrett) Duals, naturality, bilinear forms
+
+# Dual Map
+vector space $V,W/\Bbb F$가 있을 때 $T \in L(V;W)$가 있다고 하자.
+
+$T$의 `dual map` $T^*$은 다음과 같이 정의된 함수이다.
+$$T^* \in L(W^*; V^*) \quad s.t. \quad w^* \mapsto w^* \circ T$$
+
+### 명제
+vector space $V,W/\Bbb F$가 있을 때 $T \in L(V;W)$가 있다고 하자.
+
+다음을 증명하여라.
+$$ \frak m^{\beta^*}_{\gamma^*}(T^*) = (\frak m_{\beta}^{\gamma}(T))^T $$
 
 ---
 
