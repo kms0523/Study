@@ -1,25 +1,30 @@
-# 함수의 극한
-subset $X \subset \R^n$와 함수 $\mathbf f : X \rightarrow \R^m$가 있다고 하자.
+# Limit of functions
+Metric space $M_1,M_2$과 함수 $f : M_1 \rightarrow M_2$가 있다고 하자.
 
-$\mathbf x_0 \in \overline X$가 있을 때, $\mathbf x \in X$가 $\mathbf x_0$로 갈 때, $f(\mathbf x)$의 극한값이 $\mathbf L$이라는 말은 다음과 동치이다.
-$$ \forall \epsilon > 0, \quad \exist  \delta \quad s.t. \quad 0 < |\mathbf x - \mathbf x_0| < \delta \Rightarrow |\mathbf f(\mathbf x) - \mathbf L| < \epsilon. $$
+$x_0 \in \overline{M_1}$가 있을 때, $x \rightarrow x_0$일 때, $f(x)$의 극한값이 $L$이라는 말은 다음과 동치이다.
+$$ \forall \epsilon > 0, \quad \exist  \delta \quad s.t. \quad d_1(x,x_0) < \delta \Rightarrow d_2(f(x),L) < \epsilon. $$
 
-이를 다음과 같이 간단하게 표현한다.
-$$\lim_{\mathbf x \rightarrow \mathbf x_0} \mathbf f(\mathbf x) = \mathbf L$$
+### 참고1
+open ball을 이용해서 표현하면 다음과 같다.
+$$ \forall \epsilon > 0, \quad \exist \delta>0 \quad s.t. \quad x \in B(x_0,\delta) - \{x_0\} \Rightarrow f(x) \in B(L,\epsilon) $$
+
+### 참고2
+$x \rightarrow x_0$일 때, $f(x)$의 극한값이 $L$이라는 말은 다음과 같이 표현한다.
+$$\lim_{x \rightarrow x_0} f(x) = L$$
 
 > Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach Chapter 1.5
 
-### 참고1
-$\mathbf x$는 $\mathbf x_0$와 항상 $\delta$만큼 떨어져 있기 때문에 극한을 정의하는데 있어 함수 $\bf f(x)$는 $\mathbf x = \mathbf x_0$에서 반드시 정의되어 있을 필요는 없다.
+### 참고3
+$x$는 $x_0$와 항상 $\delta$만큼 떨어져 있기 때문에 극한을 정의하는데 있어 함수 $f(x)$는 $x = x_0$에서 반드시 정의되어 있을 필요는 없다.
 
 > Reference  
 > [Book] (J. Stewart) Calculus 1.7   
 
-### 참고2
-함수의 극한이값이 $L$이기 위해서는 $0 < |\mathbf x - \mathbf x_0| < \delta$을 만족하는 모든 $\mathbf x$에 대해서 $|\mathbf f(\mathbf x_0) - \mathbf L| < \epsilon$을 만족해야 된다.
+### 참고4
+함수의 극한값이 $L$이기 위해서는 $d(x,x_0) < \delta$을 만족하는 모든 $x$에 대해서 $d(f(x),L) < \epsilon$을 만족해야 된다.
 
-$0 < |\mathbf x - \mathbf x_0| < \delta$을 만족하는 특정 $\mathbf x$에 대해 $|\mathbf f'(\mathbf x) - \mathbf L'| < \epsilon$을 만족하는 $\mathbf L'$은 극한값이 될 수 없다.
+$d(x,x_0) < \delta$을 만족하는 특정 $x$에 대해 $d(f(x),L') < \epsilon$을 만족하는 $L'$은 극한값이 될 수 없다.
 
 #### 예시
 $f(x) = \sin \frac{1}{x}$이 있다고 하자.
@@ -31,11 +36,10 @@ $x_n = \frac{1}{(2n + 0.5)\pi}, \enspace x_m = \frac{1}{(2m - 0.5)\pi}$로 두�
 > Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach Chapter 1.5
 
-
-### 참고3
+### 참고5
 극한의 정의가 갖는 의미를 이해하기 위해 구체적인 예시를 살펴보자. 
 
-먼저 함수 $f(x)$가 다음과 같이 정의되어 있다고 하자.
+$\R$위에서 함수 $f(x)$가 다음과 같이 정의되어 있다고 하자.
 $$ f(x) = \begin{cases} 2x-1 & \text{if} \quad x \neq 3 \\ 6 & \text{if} \quad x = 3 \end{cases} $$
 
 함수의 정의로부터 $x \neq 3$일 때, $x$가 $3$으로 다가갈수록 $f(x)$가 5에 가까워진다는 것을 직관적으로 알 수 있다. 하지만 "다가간다"는 표현과 "가까워진다"는 표현이 명확하지 않아 "다가간다는것은 무엇인가?", "$x$가 $3$에 얼마나 다가가야 하는가?", "가까워진다는것은 무엇인가?", "$f(x)$가 $5$에 얼마나 가까워지는가?"에 대한 질문에 대답을 하기가 어렵다. 따라서 모호한 표현을 명확하게 하기 위해 다음과 같은 질문을 해보자.
@@ -59,10 +63,6 @@ $$ \forall \epsilon > 0, \quad \exist \delta \enspace \text{satisfying} \quad 0 
 
 > Reference  
 > [Book] (J. Stewart) Calculus 1.7   
-
-### 참고4
-open ball을 이용해서 극한의 정의를 표현하면 다음과 같다.
-$$ \forall \epsilon > 0, \quad \exist  \delta \quad s.t. \quad x \in  B_\delta(x_0) \Rightarrow f(x) \in B_\epsilon(L) $$
 
 ### 명제
 $U \subset \R^n, \enspace V \subset \R^m$와 함수 $\mathbf f : U \rightarrow V, \enspace \mathbf g : V \rightarrow \R^k$가 있다고 하자.

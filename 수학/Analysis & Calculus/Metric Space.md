@@ -13,7 +13,9 @@ $x,y,z \in M$에 대해, $d$가 다음 성질들을 만족할 때,
 $x \in M$을 point, $d$를 metric of the space라고 부른다.
 
 ### 참고2
-$M = \R^n$이고 $d(x,y) = |x-y|$로 주어진 metric space를 `Euclidean metric space`라고 한다.
+$M = \R^n$이고 $d(x,y) = |x-y|$로 주어진 metric space를 $n$ 차원 `Euclidean metric space`라고 한다.
+
+$n$ 차원 Euclidean metric space를 간단하게 $\R^n$으로 표기한다.
 
 > Reference  
 > [Book] (Apostol)  Mathematical analysis Chap 3.13

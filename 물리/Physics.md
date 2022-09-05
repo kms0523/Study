@@ -19,16 +19,6 @@ $$ \Delta \mathbf R = \mathbf e_\theta \Delta \theta \times \mathbf R $$
 양변을 $\Delta t$로 나누고 극한을 취해주면 다음 관계식을 얻을 수 있다.
 $$ \frac{d\mathbf R}{dt} = \boldsymbol{\omega} \times \mathbf R  $$
 
-# 스프링
-<p align = "center">
-<img src = "./image/스프링.png">
-</p>
-
-위 그림과 같이 외력 $f_1,f_2$를 받아 변위 $d_1,d_2$가 생긴 탄성 스프링(elastic spring)이 평형상태에 있다고 하자.
-
-이 떄, `평형 방정식(equilibrium equation)`은 다음과 같다.
-$$ \begin{aligned} k(d_1 - d_2) = f_1 \\ k(d_2 - d_1) = f_2 \end{aligned} $$
-
 # 열전도
 <p align = "center">
 <img src = "./image/열전도.png">

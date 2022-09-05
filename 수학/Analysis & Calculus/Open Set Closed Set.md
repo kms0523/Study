@@ -1,19 +1,35 @@
 # Open ball
-$\mathbf x \in \R^n$과 $0 < r$이 있을 때, 반지름이 $r$인 $\mathbf x$ 주위의 `open ball`은 다음과 같이 정의된 $\R^n$의 부분집합이다.
-$$ B_r(\mathbf x) := \{ \mathbf y \in \R^n \enspace | \enspace |\mathbf x - \mathbf y| < r \} $$
+Metric space $M$이 있다고 하자. 
 
-여기서 주목할만한 점은, open이기 위해서 반드시 $|\mathbf x - \mathbf y| \neq r$ 이어야 한다는 점이다.
+$x \in M, \enspace 0 < r$이 있을 때, `open ball`은 다음과 같이 정의된 $M$의 부분집합이다.
+$$ B(x,r) := \{ y \in M \enspace | \enspace d(x,y) < r \} $$
 
-또한 open ball은 1차원에서 개구간(open interval)과 같다.
+### 참고1
+open이기 위해서 반드시 $d(x,y) \neq r$ 이어야 한다.
+
+### 참고2
+open ball은 1차원에서 `개구간(open interval)`과 같다.
 
 > Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
 
-# Open set
-부분집합 $U \subset \R^n$이 있다고 하자.
+### 참고3
+$S \le M$이 있을 때, $B_S(x,r)$은 다음과 같이 정의된다.
+$$ B_S(x,r) := \{ y \in S \enspace | \enspace d(x,y) < r \} = B(x,r) \cap S $$
 
-$\forall \mathbf x \in U$에 대해서 다음을 만족하면 $U$를 $\R^n$에서의 `open set`이라고 한다.
-$$ \exist r > 0 \quad s.t. \quad B_r(\mathbf x) \subseteq U $$
+#### 예시
+Metric space $\R$이 있을 때, $B(0,1) = (-1,1)$이다.
+
+$S=[0,1] \le \R$이 있을 때, $B_S(0,1) = [0,1)$이다.
+
+> Refrence  
+> [Book] (Apostol)  Mathematical analysis Theorem p.61  
+
+# Open set
+Metric space $M$과 $S \le M$이 있다고 하자.
+
+$\forall x \in S$에 대해서 다음을 만족하면 $S$를 $M$에서의 `open set`이라고 한다.
+$$ \exist r > 0 \quad s.t. \quad B(x,r) \subseteq S $$
 
 > Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
@@ -30,10 +46,10 @@ $$ X = \bigcup_{s \in S} s $$
 $x \in X$면, 어떤 $s \in S$에 대해서 $x \in s$이다.
 
 이 때, $s$는 open set임으로 다음이 성립한다.
-$$\exist r \quad s.t. \quad B_r(x) \subset s$$
+$$\exist r \quad s.t. \quad B(x,r) \subset s$$
 
 $X$의 정의에 의해 $s \subset X$임으로 다음이 성립한다.
-$$\exist r \quad s.t. \quad B_r(x) \subset X$$
+$$\exist r \quad s.t. \quad B(x,r) \subset X$$
 
 따라서 $X$는 open set이다. $\quad {_\blacksquare}$
 
@@ -54,13 +70,13 @@ $x \in X$면 $s_i \in S$에 대해 다음이 성립한다.
 $$ x \in s_i, \enspace i=1,\cdots,n $$
 
 이 때, $s_i$는 open set임으로 다음이 성립한다.
-$$\exist r_i \quad s.t. \quad B_{r_i}(x) \subset s_i, \enspace i=1,\cdots,n$$
+$$\exist r_i \quad s.t. \quad B(x, r_i) \subset s_i, \enspace i=1,\cdots,n$$
 
-$\min(r_i) = r$이라 하면 다음이 성립한다.
-$$ B_r(x) \subset s_i, \enspace i=1,\cdots,n $$
+$\min(\{ r_i \}) = r$이라 하면 다음이 성립한다.
+$$ B(x,r) \subset s_i, \enspace i=1,\cdots,n $$
 
 따라서, $X$의 정의에 의해 다음이 성립한다.
-$$B_r(x) \subset X$$
+$$B(x,r) \subset X$$
 
 따라서 $X$는 open set이다. $\quad {_\blacksquare}$
 
@@ -74,7 +90,7 @@ $$ \text {An infinite intersection of open sets is not necessarily open.} $$
 
 **Proof**
 
-open set의 집합을 $S$를 다음과 같이 정의하자.
+Metric space $\R$위의 open set들의 집합을 $S$를 다음과 같이 정의하자.
 $$ S := \{ {(-1/n, 1/n)} \enspace | \enspace i=1,2,3, \cdots \} $$
 
 모든 $s \in S$의 intersection은 $\{ 0 \}$이 되고 $\{ 0 \}$은 open set이 아니다. 
@@ -86,32 +102,26 @@ $$ S := \{ {(-1/n, 1/n)} \enspace | \enspace i=1,2,3, \cdots \} $$
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach prob 1.5.3
 
 ### 명제4
-$U \subset \R^n$이 있다고 하자.
+Metric space $M$과 $S \le M$이 있다고 하자.
 
-다음을 증명하여라.
-$$ U \text{ is an open set on } U $$
+이 때, 다음을 증명하여라.
+$$ S \text{ is an open set on } S $$
 
 **Proof**
 
-$x \in U$가 있을 때, $x$를 원점으로 하는 open ball의 정의는 다음과 같다.
-$$ B_r(x) = \{ y \in U \enspace | \enspace |x-y| < r \} $$
+$\forall x \in S$에 대해, $B_S(x,r) = B(x,r) \cap S$임으로 다음이 성립한다.
+$$ B_s(x,r) \subset S $$
 
-정의에서 알 수 있듯이, $B_r$은 $U$의 원소들로 이루어진 집합임으로 다음이 성립한다.
-$$ B_r \subset U $$
-
-즉, $U$는 $U$에서의 open set이 된다.$\quad {_\blacksquare}$
-
-#### 참고
-$\R^n$에서는 $U$가 open set이 아닐 수 있다.
+따라서, $S$는 $S$에서의 open set이 된다.$\quad {_\blacksquare}$
 
 > Reference  
 > [mathematics - why-is-a-metric-space-an-open-subset-of-itself](https://math.stackexchange.com/questions/1169561/why-is-a-metric-space-an-open-subset-of-itself)
 
 ### 명제5
-부분집합 $U \subset \R^n$이 있다고 하자.
+Metric space $M$과 $S \le M$이 있다고 하자.
 
-다음을 증명하여라.
-$$ \empty \text{ is an open set on } U $$
+이 때, 다음을 증명하여라.
+$$ \empty \text{ is an open set on } S $$
 
 **Proof**
 
@@ -155,53 +165,55 @@ $a,b,c,d \in \R$라 하자.
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
 
 # Closed set
-부분집합 $U \subset \R^n$이 있을 때, 다음을 만족하는 $U$를 $\R^n$에서의 `closed set`이라고 한다.
-$$ \R^n - U \text { is an open set of } \R^n $$
+Metric space $M$과 $S \le M$이 있다고 하자.
+
+다음을 만족하는 $S$를 $M$에서의 `closed set`이라고 한다.
+$$ M - S \text { is an open set on } M $$
 
 > Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
 
 ### 명제1
-$U \subset \R^n$와 $U$위의 임의의 sequence $s(m)$이 있다고 하자.
+Metric space $M$과 $S \le M$이 있다고 하자.
 
-이 떄, 다음을 증명하여라.
-$$ U \text { is a closed.} \Leftrightarrow \lim_{m \rightarrow \infty} s(m) \in U $$
+$S$위의 임의의 sequence $s(m)$가 있을 때, 다음을 증명하여라.
+$$ S \text { is a closed.} \Leftrightarrow \lim_{m \rightarrow \infty} s(m) \in S $$
 
 **Proof**
 
 [$\Rightarrow$]  
-$\lim_{m \rightarrow \infty} s(m) = \mathbf x_0 \in \R^n - U$라고 가정하자.
+$\lim_{m \rightarrow \infty} s(m) = x_0 \in M-S$라고 가정하자.
 
-$U$가 closed set임으로 $\R^n - U$는 open set이고 따라서 다음이 성립한다.
-$$ \exist r >0 \quad s.t. \quad B_r(\mathbf x_0) \subset (\R^n - U) $$
+$U$가 closed set임으로 $M-S$는 open set이고 따라서 다음이 성립한다.
+$$ \exist r >0 \quad s.t. \quad B(x_0,r) \subset M-S $$
 
-이 떄, 모든 $m$에 대해서 $s(m) \in U$임으로 다음이 성립한다.
-$$ r \le  |s(m) - \mathbf x_0| $$
+이 떄, 모든 $m$에 대해서 $s(m) \in S$임으로 다음이 성립한다.
+$$ r \le  |s(m) - x_0| $$
 
 하지만 수렴의 정의에 의해 다음도 동시에 성립해야 한다.
-$$ \forall \epsilon > 0, \quad \exist N \quad s.t. \quad N < m \Rightarrow |s(m) - \mathbf x_0| < \epsilon $$
+$$ \forall \epsilon > 0, \quad \exist N \quad s.t. \quad N < m \Rightarrow |s(m) - x_0| < \epsilon $$
 
-이는 모순임으로, 귀류법에 의해 $\mathbf x_0 \in U$이다. $\quad {_\blacksquare}$
+이는 모순임으로, 귀류법에 의해 $x_0 \in S$이다. $\quad {_\blacksquare}$
 
 [$\Leftarrow$]  
-$\R^n-U$가 open set이 아니라고 가정하자.
+$M - S$가 open set이 아니라고 가정하자.
 
-그러면 임의의 $n \in \N$에 대해서 다음을 만족하는 $x \in \R^n-U$이 존재한다.
-$$ B_{1/n}(x) \cap U \neq \empty  $$
+그러면 임의의 $n \in \N$에 대해서 다음을 만족하는 $x \in M - S$이 존재한다.
+$$ B(x, 1/n) \cap S \neq \empty  $$
 
-$B_{1/n}(x) \cap U$ 위의 sequence를 $s_{1/n}(m)$이라 하면 다음이 성립한다.
-$$ \lim_{m \rightarrow \infty}s_{1/n}(m) \in U $$
+$B(x, 1/n) \cap S$ 위의 sequence를 $s_{1/n}(m)$이라 하면 다음이 성립한다.
+$$ \lim_{m \rightarrow \infty}s_{1/n}(m) \in S $$
 
-이 때, $n \rightarrow \infty$으로 가면 $B_{1/n}(x) = \{ x \}$가 되고 따라서 다음이 성립한다.
+이 때, $n \rightarrow \infty$으로 가면 $B(x, 1/n) = \{ x \}$가 되고 따라서 다음이 성립한다.
 $$ \lim_{m \rightarrow \infty}(\lim_{n \rightarrow \infty}s_{1/n})(m) = x $$
 
-이는 모순임으로, 귀류법에 의해 $\R^n-U$는 open set이고 $U$는 closed set이다. $\quad {_\blacksquare}$
+따라서, $x \in S$여야 하는데 이는 모순임으로, 귀류법에 의해 $M - S$는 open set이고 $S$는 closed set이다. $\quad {_\blacksquare}$
 
 > Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
 
 ### 예시1
-부분집합 $U \subset \R^2$가 아래 그림과 같이 회색으로 표현된 영역과 굵은 선으로 표시된 boundary를 포함한 부분이라고 하자.
+$U \le \R^2$가 아래 그림과 같이 회색으로 표현된 영역과 굵은 선으로 표시된 boundary를 포함한 부분이라고 하자.
 
 <p align = "center">
 <img src = "./image/ClosedSet_1.png">
