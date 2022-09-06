@@ -126,10 +126,14 @@ $T$의 `dual map` $T^*$은 다음과 같이 정의된 함수이다.
 $$T^* \in L(W^*; V^*) \quad s.t. \quad w^* \mapsto w^* \circ T$$
 
 ### 명제
-vector space $V,W/\Bbb F$가 있을 때 $T \in L(V;W)$가 있다고 하자.
+$n,m$차원 vector space $V,W/\Bbb F$가 있을 때 $T \in L(V;W)$가 있다고 하자.
 
 다음을 증명하여라.
 $$ \frak m^{\beta^*}_{\gamma^*}(T^*) = (\frak m_{\beta}^{\gamma}(T))^T $$
+
+**Proof**
+
+$$ \begin{aligned} \frak m^{\beta^*}_{\gamma^*}(T^*) &= \begin{bmatrix} \frak m_{\beta^*}(T^*(\gamma^*_1)) & \cdots & \frak m_{\beta^*}(T^*(\gamma^*_m)) \end{bmatrix} \\ &= \begin{bmatrix} (\gamma_1^* \circ T)(\beta_1) & \cdots & (\gamma_m^* \circ T)(\beta_1) \\ \vdots & & \vdots \\ (\gamma_1^* \circ T)(\beta_n) & \cdots & (\gamma_m^* \circ T)(\beta_n) \end{bmatrix} \\ &= \begin{bmatrix} \frak m_\gamma(T(\beta_1)) ^T \\ \vdots \\ \frak m_\gamma(T(\beta_n))^T \end{bmatrix}  \\ &= \begin{bmatrix} \frak m_\gamma(T(\beta_1)) & \cdots & \frak m_\gamma(T(\beta_n)) \end{bmatrix} ^T \end{aligned} $$
 
 ---
 

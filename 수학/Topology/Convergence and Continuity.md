@@ -47,8 +47,19 @@ $x \in X$에 대해서, $\mathcal N_x = X$로 두면 자명하다. $\quad {_\bla
 open set $U \subset Y$라 하자. 
 
 $x \in \text{preimg}(U)$라 하면, $\mathcal N_x$에서 $f$는 continous함으로 다음이 성립한다.
-$$ $$
+$$ \text{img}(\mathcal N_x) \text { is an open set on Y} $$
 
+$U$와 $\text{img}(\mathcal N_x)$가 모두 $Y$에서 open set임으로 topology의 성질에 의해 다음이 성립한다.
+$$ U \cap \text{img}(\mathcal N_x) \text { is an open set on Y} $$
+
+$\mathcal N_x$에서 $f$는 continous함으로 다음이 성립한다.
+$$ \begin{aligned} & \text{preimg}(U \cap \text{img}(\mathcal N_x)) \text { is an open set on X} \\ \Leftrightarrow \enspace & \text{preimg}(U) \cap \mathcal N_x \text { is an open set on X} \end{aligned}  $$
+
+즉, $\forall x \in \text{preimg}(U)$에 대해 $\text{preimg}(U)$에 포함되는 $x$의 neighborhood가 존재하며 neighborhood의 성질에 의해 
+다음이 성립한다.
+$$ \text{preimg}(U) \text{ is an open set on X} $$
+
+따라서, continuous 정의에 의해 $f$는 $X$에서 continous이다. $\quad {_\blacksquare}$
 
 > Referece  
 > [Book] (Lee) Introduction to Topological Manifolds Proposition 2.19

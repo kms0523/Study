@@ -15,3 +15,18 @@ distance의 개념 없이 정의된 open set을 사용함으로써, "nearness"�
 
 > Referece  
 > [Book] (Lee) Introduction to Topological Manifolds p.20
+
+### 명제
+topological space $X$가 있다고 하자.
+
+$S \subseteq X$가 있을 때, 다음을 증명하여라.
+$$ S \text { is an open set on } X \Leftrightarrow \forall x \in S, \enspace \exist \mathcal N_x \quad s.t. \quad \mathcal N_x \subseteq S $$
+
+**Proof**
+
+[$\Rightarrow$]  
+$S$가 open set임으로 $\mathcal N_x = S$로 두면 항상 성립한다.
+
+[$\Leftarrow$]  
+Topology는 unione에 닫혀 있음으로 다음이 성립한다.
+$$ \bigcup_{x \in S} \mathcal N_x \in \mathcal T \Rightarrow S \in \mathcal T $$
