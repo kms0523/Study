@@ -24,6 +24,19 @@ $$ B(x,cy + z) = \bar c B(x,y) + B(x,z) $$
 다음과 같은 표기법을 많이 사용한다.
 $$ B(x,y) \equiv \lang x,y \rang $$
 
+### 명제
+$n$차원 vector space $V / \mathbb F$와 내적 $B$가 있다고 하자.
+
+$v \in V$가 있을 때, 다음을 증명하여라.
+$$ \forall w \in V, \quad B(v,w) = 0_\mathbb F \Leftrightarrow v = 0_V $$
+
+**Proof**
+
+$\forall w \in V$에 대해 성립함으로, $w = v$로 두면 다음이 성립한다.
+$$ B(v,v) = 0_\mathbb F $$
+
+이 떄, inner product의 4번 성질에 의해 $v = 0_V$이다. $\quad {_\blacksquare}$
+
 # Inner Product Space
 $n$차원 vector space $V / \mathbb F$에 내적 $B$가 주어진 공간을 `내적 공간(inner product space)`라고 한다.
 

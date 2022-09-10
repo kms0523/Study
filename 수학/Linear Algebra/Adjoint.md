@@ -27,8 +27,8 @@ $y \in V$가 있다고 하자.
 linear fuctinal $f_y$를 다음과 같이 정의하자.
 $$ f_y \in V^* \quad s.t. \quad x \mapsto B(T(x),y) $$
 
-$\beta$를 $V$의 orthonormal basis라 할 때, Rieze representation theorem에 의해서 다음이 성립한다.
-$$ v_{f_y} = f_y(\beta_i)\beta_i \in V \quad s.t. \quad f_y(x) = B(x, v_{f_y})$$
+Rieze representation theorem에 의해서 다음이 성립한다.
+$$ \exist! v_{f_y} \in V \quad s.t. \quad f_y(x) = B(x, v_{f_y})$$
 
 이 떄, 함수 $T^*$를 다음과 같이 정의하자.
 $$ T^* : V \rightarrow V  \quad s.t. \quad y \mapsto v_{f_y} $$
@@ -39,4 +39,71 @@ $$ \begin{aligned} B(x, T^*(y_1 + cy_2)) &= B( x, v_{f_{y_1 + cy_2}}) \\&= f_{y_
 즉, $T^*(y_1 + cy_2) = T^*(y_1) + cT^*(y_2)$이다.
 
 다음과 같이 정의된 $T^* \in \text{End}(V)$이고 $B(T(x),y) = B(x, T^*(y))$를 만족함으로, adjoint operator가 적어도 하나 이상 존재한다. $\quad {_\blacksquare}$
+
+[Uniquness]  
+$T \in \text{End}(V)$의 adjoint operator가 $T^*_1, T^*_2$라 하자.
+
+$\forall x,y \in V$에 대해 다음이 성립한다.
+$$ \begin{aligned} & B(T(x),y) = B(x, T^*_1(y)) = B(x, T^*_2(y)) \\ \Rightarrow & \enspace B(x, T^*_1(y) - T^*_2(y)) = 0_\mathbb F \\ \Rightarrow & T^*_1(y) - T^*_2(y) = 0_V \end{aligned} $$
+
+즉, 모든 $y \in V$에 대해서 $T^*_1(y) = T^*_2(y)$임으로, $T^*_1 = T^*_2$이고 adjoint operator는 unique하다. $\quad {_\blacksquare}$
+
+### 명제2
+$n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
+
+$\beta$를 $V$의 orthonormal basis라 할 때, 다음을 증명하여라.
+$$ \frak m_\beta^\beta(T^*) = \frak m_\beta^\beta(T)^* $$
+
+**Proof**
+
+$\beta$가 orthonormal basis임으로 다음이 성립한다.
+$$ \begin{aligned} T(\beta_j) &= B(T(\beta_j),\beta_i)\beta_i, \\ T^*(\beta_j) &= B(T^*(\beta_j),\beta_i)\beta_i \\&= \overline{B(\beta_i, T^*(\beta_j))}\beta_i \\&= \overline{B(T(\beta_i), \beta_j)}\beta_i \end{aligned}  $$
+
+따라서, 다음이 성립한다.
+$$ \begin{aligned} \frak m_\beta^\beta(T^*) &= \begin{bmatrix} \frak m_\beta(T^*(\beta_1)) & \cdots & \frak m_\beta(T^*(\beta_n)) \end{bmatrix} \\ &= \begin{bmatrix} \overline{B(T(\beta_1), \beta_1)} & \cdots &\overline{B(T(\beta_1), \beta_n)} \\ \vdots & & \vdots \\ \overline{B(T(\beta_n), \beta_1)} & \cdots &\overline{B(T(\beta_n), \beta_n)} \end{bmatrix} \\ &= \begin{bmatrix} B(T(\beta_1), \beta_1) & \cdots &B(T(\beta_n), \beta_1) \\ \vdots & & \vdots \\ B(T(\beta_1), \beta_n) & \cdots &B(T(\beta_n), \beta_n) \end{bmatrix}^* \\ &= \frak m_\beta^\beta(T)^* \end{aligned}  $$
+
+#### 따름명제
+$A \in M_{nn}(\mathbb F)$가 있을 때, 다음을 증명하여라.
+$$ (L_A)^* = L_{A^*} $$
+
+### 명제3
+$n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
+
+이 때, 다음을 증명하여라.
+$$B(T^*(x),y) = B(x, T(y))$$
+
+**Proof**
+
+$$\begin{aligned} B(T^*(x),y) &= \overline{B(y, T^*(x))} \\ &= \overline{B(T(y), x)} \\&= B(x, T(y)) \quad {_\blacksquare} \end{aligned} $$
+
+### 명제4
+$n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
+
+이 때, 다음을 증명하여라.
+$$(T_1 \circ T_2)^* = T^*_2 \circ T^*_1$$
+
+**Proof**
+
+$$ B(x, (T_1\circ T_2)^*(y)) = B((T_1\circ T_2)(x), y) = B((T_1)(z), y) = B(z, T_1^*(y)) = B(T_2(x), T_1^*(y)) = B(x, T_2^*(T_1^*(y))) = B(x, (T_2^* \circ T_1^*)(y)) $$
+
+### 명제6
+$n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
+
+이 때, 다음을 증명하여라.
+$$(T^*)^* = T$$
+
+### 명제6
+$n$차원 inner product space $V / \mathbb F$가 있다고 하자.
+
+이 때, 다음을 증명하여라.
+$$(id_V)^* = id_V$$
+
+### 계산연습
+$V : \{ ax+b \}, B(f,g) = \int_{-1}^1 fg \thinspace dx, T(f) = 3f + f'$
+
+이 떄, $T^*(4-2x) =?$
+
+1) adjoint operator의 성질 이용
+
+2) orthonormality를 이용한 표현법을 이용
 
