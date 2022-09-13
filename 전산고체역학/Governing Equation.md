@@ -21,7 +21,7 @@ $$ \text{Where, } \mathcal{D} := \{ d_i \in C^2(\Omega) \enspace | \enspace d_i 
 > 연속체 역학 정리.md
 
 # 지배 방정식의 수치 방정식
-## 평형 방정식
+## 정적 평형 방정식
 ### Weak formulation
 3개의 평형방정식의 주어진 식(1)을 equivalent한 weak formulation으로 바꾸기 위해 test vector function $\mathbf w$와 내적한뒤 다음과 같은 과정을 거친다.
 $$ \begin{equation} \begin{gathered} \int_{\Omega} ( \mathrm{div}(\boldsymbol\sigma) + \mathbf {f ) \cdot w} dV  = 0. \\\\ \int_{\Omega} \mathrm{div}(\boldsymbol\sigma  \mathbf {w}) - \boldsymbol\sigma : \boldsymbol{\epsilon}  + \mathbf {f \cdot w} dV  = 0. \\\\ \int_{\Omega} \boldsymbol\sigma : \text{grad}(\mathbf w) dV = \int _{\partial\Omega} \boldsymbol\sigma  \mathbf {w \cdot n} dS + \int _{\Omega} \mathbf {f \cdot w} dV \\\\ \int_{\Omega} \boldsymbol\sigma : \text{grad}(\mathbf w) dV = \int _{\partial\Omega} \mathbf t \cdot \mathbf w dS + \int _{\Omega} \mathbf {f \cdot w} dV \end{gathered} \end{equation} $$
