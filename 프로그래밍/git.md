@@ -20,32 +20,29 @@ Staging Area에 있는 모든 파일을 다시 unstage
 
 
 # Git 설정
-
 local config file --> 현재 git repository  
 global config file --> 모든 git repository
 
-> 참고  
+> Reference  
 > [블로그 - config file의 구성과 조작](https://kotlinworld.com/302)
 
-### editor 설정
-아래를 global config file에 추가하여 vscode를 editor로 설정한다.
-
+### Global 설정
 ```
-[core]  
-	editor = \"C:\\Users\\##computer_name##\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
-```
-
-### diff 설정
-아래를 global config file에 추가하여 vscode를 difftool로 설정한다.
-
-```
+[user]
+  name = Kim Minseok
+  email = rla523at@naver.com
+[core]
+  editor = \"C:\\Users\\김민석\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
 [diff]
-    tool = vscode
+  tool = vscode
 [difftool "vscode"]
-    cmd = code --wait --diff $LOCAL $REMOTE
+  cmd = code --wait --diff $LOCAL $REMOTE
 ```
+* [user] : user 정보 설정
+* [core] : vscode를 editor로 설정
+* [diff] & [difftool "vscode"] : vscode를 difftool로 설정 
 
-> 참고  
+> Reference  
 > [블로그 - vscode를 git diff 툴로 활용하기](https://november11tech.tistory.com/168)
 
 ### 명령어
