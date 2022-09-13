@@ -243,7 +243,7 @@ $$ \frak m^\gamma_\gamma(T) \sim  \frak m^\beta_\beta(T)$$
 similar한 두 행렬의 성질에 의해 다음이 성립한다.
 $$ \mathrm{tr}(\frak m^\gamma_\gamma(T)) = \mathrm{tr}(\frak m^\beta_\beta(T)) \quad {_\blacksquare} $$
 
-# Characteristic Polynomial of an linear map
+# Characteristic Polynomial of an Linear Map
 vector space $V/\mathbb F$와 $T \in \text{End}(V)$가 있을 때, $T$의 특성다항식은 다음과 같이 정의된다.
 $$ \varphi_T(t) = \det(T - tid) $$
 

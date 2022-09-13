@@ -66,6 +66,9 @@ $$ \begin{aligned} \frak m_\beta^\beta(T^*) &= \begin{bmatrix} \frak m_\beta(T^*
 $A \in M_{nn}(\mathbb F)$가 있을 때, 다음을 증명하여라.
 $$ (L_A)^* = L_{A^*} $$
 
+#### 참고
+matrix representation이 adjoint matrix 형태로 나타나기 때문에 adjoint operator라고 표현한다.
+
 ### 명제3
 $n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
 
@@ -84,19 +87,37 @@ $$(T_1 \circ T_2)^* = T^*_2 \circ T^*_1$$
 
 **Proof**
 
-$$ B(x, (T_1\circ T_2)^*(y)) = B((T_1\circ T_2)(x), y) = B((T_1)(z), y) = B(z, T_1^*(y)) = B(T_2(x), T_1^*(y)) = B(x, T_2^*(T_1^*(y))) = B(x, (T_2^* \circ T_1^*)(y)) $$
+$\forall x,y \in V$에 대해 다음이 성립한다. 
+$$ \begin{aligned} B(x, (T_1\circ T_2)^*(y)) &= B((T_1\circ T_2)(x), y) \\&= B(T_2(x), T_1^*(y)) \\&= B(x, T_2^*(T_1^*(y))) \\&= B(x, (T_2^* \circ T_1^*)(y)) \end{aligned} $$
 
-### 명제6
+따라서 $(T_1 \circ T_2)^* = T^*_2 \circ T^*_1$이다. $\quad {_\blacksquare}$
+
+### 명제5
 $n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
 $$(T^*)^* = T$$
+
+**Proof**
+
+$\forall x,y \in V$에 대해 다음이 성립한다. 
+$$ B(x, (T^*)^*(y)) = B(T^*(x), y) = B(x, T(y)) $$
+
+따라서 $(T^*)^* = T$이다. $\quad {_\blacksquare}$
 
 ### 명제6
 $n$차원 inner product space $V / \mathbb F$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
 $$(id_V)^* = id_V$$
+
+**Proof**
+
+$\forall x,y \in V$에 대해 다음이 성립한다. 
+$$ B(x, (id_V)^*(y)) = B(id_V(x), y) = B(x, id_V(y)) $$
+
+따라서 $(id_V)^* = id_V$이다. $\quad {_\blacksquare}$
+
 
 ### 계산연습
 $V : \{ ax+b \}, B(f,g) = \int_{-1}^1 fg \thinspace dx, T(f) = 3f + f'$
@@ -106,4 +127,3 @@ $V : \{ ax+b \}, B(f,g) = \int_{-1}^1 fg \thinspace dx, T(f) = 3f + f'$
 1) adjoint operator의 성질 이용
 
 2) orthonormality를 이용한 표현법을 이용
-

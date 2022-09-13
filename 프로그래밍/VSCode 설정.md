@@ -22,6 +22,15 @@ Markdown All in One
 바로 가기 키 설정 >> "그룹에서 다음 편집기 열기" 검색 >> alt + $\rightarrow$ 
 
 # Markdown All in One
+## 설정
+#### css 설정하기
+F1 >> 사용자 설정 열기(JSON) >> 아래 내용 입력
+```
+"markdown.styles": [
+    "./css/ms_dark.css"
+    ]
+```
+
 ## 바로가기 키 설정
 #### 미리보기 새로 고침 키 설정하기  
 F1 >> "미리보기 새로 고침" 검색 >> 톱니바퀴 >> 키 바인딩에 ctrl + R 입력
