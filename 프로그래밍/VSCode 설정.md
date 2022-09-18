@@ -15,11 +15,14 @@ Markdown All in One
 #### 마우스로 편집기 글꼴 확대/축소  
 설정 >> zoom 검색 >> Mouse wheel zoom
 
-
 ## 바로가기 키 설정
 #### 편집기 간 이동  
 바로 가기 키 설정 >> "그룹에서 이전 편집기 열기" 검색 >> alt + $\leftarrow$   
 바로 가기 키 설정 >> "그룹에서 다음 편집기 열기" 검색 >> alt + $\rightarrow$ 
+
+#### 일치항목
+바로 가기 키 설정 >> 일치 항목 찾기의 모든 항목 선택 >> ctrl + e  
+바로 가기 키 설정 >> 다음 일치 항목 찾기에 선택 항목 추가 >> ctrl + d  
 
 # Markdown All in One
 ## 설정

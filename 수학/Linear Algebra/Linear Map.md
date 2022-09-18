@@ -20,6 +20,11 @@ $f : V \rightarrow V$인 linear map을 `endomorphism`이라 하며 endomorphism�
 ### 참고4
 $W = \mathbb F$이면 `linear form`이라고 한다.
 
+### 참고5
+vector space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
+
+$W \le V$에 대해서 $T|_W \in \text{End}(W)$이면 $W$를 $T-$invariant라고 한다.
+
 ### 명제1
 vector spaces $V,W / \mathbb F$가 있을 때, 다음과 같은 연산이 주어졌다고 하자.
 $$ \begin{aligned} + : & L(V,W) \times L(V,W) \rightarrow L(V,W) \quad s.t. \quad T_1 + T_2 \mapsto (T_1 + T_2) \\ & \text {satisfying} \quad (T_1 + T_2)(v) = T_1(v) + T_2 (v) \\ \cdot : & \mathbb F \times L(V,W) \rightarrow L(V,W) \quad s.t. \quad a \cdot T \mapsto (aT) \\ & \text {satisfying} \quad (aT)(v) = aT(v) \end{aligned}  $$

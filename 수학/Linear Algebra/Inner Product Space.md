@@ -40,7 +40,7 @@ $$ B(v,v) = 0_\mathbb F $$
 # Inner Product Space
 $n$차원 vector space $V / \mathbb F$에 내적 $B$가 주어진 공간을 `내적 공간(inner product space)`라고 한다.
 
-### 명제(Riesz representation)
+### 명제1(Riesz representation)
 $n$차원 inner product space $V / \mathbb F$가 있다고 하자.
 
 $v \in V$에 대해서 다음과 같이 linear map $B(\cdot,v) \in V^*$를 정의하자.
@@ -70,8 +70,63 @@ $$ B(\cdot, v)(w) = B(w,v) = b^iv^*(\beta_j) B(\beta_i,\beta_j) = b^iv^*(\beta_i
 
 즉, $v^*$와 동일한 $B(\cdot,v)$가 존재한다. $\quad {_\blacksquare}$
 
+### 명제2(Schur's theorem)
+$n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
 
+$T$의 characteristic polynomial $\varphi_T(t)$가 split될 때, 다음을 증명하여라.
+$$ \exist \text{ orthonormal basis } \beta \quad s.t. \quad \frak m_\beta^\beta(T) \text{ is an upper triangular matrix} $$
 
+**Proof**
+
+$\dim(V) = 1$인 경우 자명하게 성립한다.
+
+$\dim(V) = n-1$일 때, 성립한다고 가정하고 $\dim(V) = n$이라고 하자.
+
+$\lambda$를 $T$의 eigenvalue라 할 때, eigenvalue가 $\overline\lambda$인 $T^*$의 크기가 1인 eigen vector를 $v$라 하면 다음이 성립한다.
+$$ V = \text{span}(v) \oplus \text{span}(v)^\perp$$
+
+> basis not in spna(v)
+
+#### 보조명제
+$\lambda$를 $T$의 eigenvalue라 할 때, eigenvalue가 $\overline\lambda$인 $T^*$의 크기가 1인 eigen vector를 $v$라 할 때, 다음을 증명하여라.
+$$ \text{span}(v)^\perp \text{ is a } T \text{ invariant} $$
+
+**Proof**
+
+$x \in \text{span}(v)^\perp$라 하면 다음이 성립한다.
+$$ B(T(x),v) = B(x, T^*(v)) = B(x, \overline\lambda v) = \overline\lambda B(x, v) = 0_\mathbb F $$
+
+임의의 $x \in \text{span}(v)^\perp$에 대해, $T(x)$와 $v$가 수직함으로, $T(x) \in \text{span}(v)^\perp$이다.
+
+따라서, $\text{span}(v)^\perp$는 $T \text{ invariant}$이다. $\quad {_\blacksquare}$
+
+#### 참고1
+$\frak m_\beta^\beta(T)$가 다음과 같은 upper triangular matrix로 주어진다고 하자.
+$$ \frak m_\beta^\beta(T) = \begin{bmatrix} a_1 & \cdots & & * \\ & a_2 \\ & & \ddots & \vdots \\ 0 & & & a_n \end{bmatrix} $$
+
+$T(\beta_1) = a_1\beta_1$이 되기 때문에 $\beta_1$은 eigen vector, $a_1$은 eigen value가 된다.
+
+<p align = "center">
+<img src = "./image/inner product space_1.png">
+</p>
+
+#### 참고2
+$\mathbb F = \mathbb C$이면 fundamental theorem of algebra에 의해 $\varphi_T$는 항상 split 된다.
+
+#### 따름명제
+다음을 증명하여라.
+$$ \text{ every complex matrix is similar to an upper triangular matrix} $$
+
+**Proof**
+
+$A \in M_{n \times n}(\mathbb C)$가 있다고 하자.
+
+Schur's theorem에 의해 $\frak m_\beta^\beta(L_A)$가 upper triangular matrix이 되는 orthonormal basis $\beta$가 존재한다.
+
+따라서 다음이 성립한다.
+$$ \begin{aligned} \frak m_\beta^\beta(L_A) &= \frak m_\epsilon^\beta(id) \frak m_\epsilon^\epsilon(L_A) \frak m_\beta^\epsilon(L_A) \\&= C^{-1}AC \end{aligned}  $$
+
+즉, $\frak m_\beta^\beta(L_A) \sim A$이다. $\quad {_\blacksquare}$
 
 # Norm
 $n$차원 inner product space $V / \mathbb F$가 있을 때, `norm`은 다음과 같이 정의된 함수이다.

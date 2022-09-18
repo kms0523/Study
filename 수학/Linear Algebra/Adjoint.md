@@ -118,6 +118,16 @@ $$ B(x, (id_V)^*(y)) = B(id_V(x), y) = B(x, id_V(y)) $$
 
 따라서 $(id_V)^* = id_V$이다. $\quad {_\blacksquare}$
 
+### 명제7
+$n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
+
+이 때, 다음을 증명하여라.
+$$ \lambda \text{ is an eigenvalue of } T \Rightarrow \overline\lambda \text{ is an eigenvalue of } T^* $$
+
+**Proof**
+
+$\beta$가 $V$의 orthonormal baiss이고 $\lambda$가 $T$의 eigenvalue 임으로 다음이 성립한다.
+$$ \begin{aligned} & \det(T - \lambda id) = 0 \\ \Rightarrow \enspace & \det(\frak m_\beta^\beta(T - \lambda id)) = 0 \\ \Rightarrow \enspace & \det(\frak m_\beta^\beta(T) - \lambda I) = 0 \\ \Rightarrow \enspace & \det(\frak m_\beta^\beta(T)^* - \overline\lambda I) = 0 \\ \Rightarrow \enspace & \det(\frak m_\beta^\beta(T^*) - \overline\lambda I) = 0 \\ \Rightarrow \enspace & \det(\frak m_\beta^\beta(T^*- \overline\lambda id)) = 0 \\ \Rightarrow \enspace & \det(T^*- \overline\lambda id) = 0 \quad {_\blacksquare} \end{aligned} $$
 
 ### 계산연습
 $V : \{ ax+b \}, B(f,g) = \int_{-1}^1 fg \thinspace dx, T(f) = 3f + f'$
