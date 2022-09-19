@@ -119,25 +119,24 @@ $$ \mathbf t_{\beta_i} = \sigma^j_i\beta_j $$
 $\sigma^j_i$는 $\beta_i$를 normal vector로 갖는 평면에 작용하는 stress vector의 $\beta_j$방향의 크기다.
 
 ### 명제3
-$\R^3$공간의 standard basis $\epsilon$이 있다고 하자.
+주어진 $\mathbf x,t$에서 응력텐서 $\boldsymbol{\sigma}$가 주어졌다고 하자.
 
-$\frak m^\epsilon_\epsilon(\boldsymbol\sigma) = \sigma$라 할 떄, 다음을 증명하여라.
+$\R^3$공간의 standard basis를 $\epsilon$이라 하고 $\frak m^\epsilon_\epsilon(\boldsymbol\sigma) = \sigma$라 할 떄, 다음을 증명하여라.
 $$ \sigma \text{ is symmetric.}$$
 
 **Proof**
+
+$\boldsymbol{\sigma}$가 아래 그림과 같이 정육면체 미소요소에 작용하고 있다고 하자.
 
 <p align = "center">
 <img src = "./image/stress4.png" width = 300>
 </p>
 
-응력텐서 $\boldsymbol{\sigma}$가 작용하는 정육면체 미소요소의 $A$점에서 $x_3$ 방향의 모멘트 평형 방정식을 고려해보자.
-$$ \begin{equation} (M_A)_3 = I_{33}\alpha \end{equation} $$
+중앙점에서 모멘트와 회전관성을 계산하면 다음과 같다.
+$$ \begin{aligned} (M_A)_3 &= \sigma^2_1(\Delta x^2)(\Delta x^3)(\Delta x^1 / 2) + (\sigma^2_1 + \Delta \sigma^2_1)(\Delta x^2)(\Delta x^3)(\Delta x^1 / 2) \\ &- \sigma^1_2(\Delta x^1)(\Delta x^3)(\Delta x^2 / 2) - (\sigma^1_2 + \Delta \sigma^1_2)(\Delta x^1)(\Delta x^3)(\Delta x^2 / 2) \\ I_{33} &= \Delta x^1 \Delta x^2 \Delta x^3((\Delta x^1)^2 + (\Delta x^2)^2) \end{aligned} $$
 
-정중앙의 점 $A$에서 모멘트와 회전관성을 계산하면 다음과 같다.
-$$ \begin{equation} \begin{aligned} (M_A)_3 &= \sigma^2_1(\Delta x_2)(\Delta x_3)(\Delta x_1 / 2) + (\sigma^2_1 + \Delta \sigma^2_1)(\Delta x_2)(\Delta x_3)(\Delta x_1 / 2) \\ &- \sigma^1_2(\Delta x_1)(\Delta x_3)(\Delta x_2 / 2) - (\sigma^1_2 + \Delta \sigma^1_2)(\Delta x_1)(\Delta x_3)(\Delta x_2 / 2) \\ I_{33} &= \Delta x_1 \Delta x_2 \Delta x_3((\Delta x_1)^2 + (\Delta x_2)^2) \end{aligned} \end{equation}  $$
-
-식(6)에 식(7)을 대입하면 다음과 같다.
-$$ \sigma^2_1 + \Delta \sigma^2_1 - \sigma^1_2 - \Delta \sigma^1_2 = \alpha ((\Delta x_1)^2 + (\Delta x_2)^2)$$
+중앙점에서 $x_3$ 방향의 모멘트 평형 방정식을 고려하면 다음과 같다.
+$$ \begin{aligned} (M_A)_3 &= I_{33}\alpha \\ \sigma^2_1 + \Delta \sigma^2_1 - \sigma^1_2 - \Delta \sigma^1_2 &= \alpha ((\Delta x^1)^2 + (\Delta x^2)^2) \end{aligned} $$
 
 미소 값을 무시하면 다음과 같다.
 $$ \begin{gathered} \sigma^2_1 - \sigma^1_2 = 0 \\ \therefore \sigma^2_1 = \sigma^1_2 \end{gathered} $$
@@ -152,12 +151,9 @@ $$ \sigma^3_1 = \sigma^1_3, \sigma^3_2 = \sigma^2_3 $$
 > Reference  
 [book] (Lai et al) Introduction to Continuum Mechanics Chapter4.4  
 
+# Principal Direction & Principal Stress
+주어진 $\mathbf x,t$에서 응력텐서 $\boldsymbol{\sigma}$가 주어졌다고 하자.
 
----
+$\R^3$공간의 standard basis를 $\epsilon$이라 하고 $\frak m^\epsilon_\epsilon(\boldsymbol\sigma) = \sigma$라 하면 $\sigma$는 symmetric matrix이기 때문에 orthonormal한 3개의 eigen vector를 갖으며 이를 `principal direction`이라고 한다.
 
-# 오일러-코시 응력 법칙
-연속체로 가정한 물체 내부의 모든점에 작용하는 `체적력(body force)`과 `표면력(surface force)`을 고려해보자.
-
-체적력은 중력, 전자기력과 같이 단위 부피당 작용하는 힘을 의미하며 표면력은 실제 표면이나 물체를 두부분으로 나누는 가상의 표면에 작용하는 힘이다.
-
-먼저 표면력을 생각해보자. 
+따라서, $\sigma$는 diagonalizable하며 $\sigma$와 similar한 diagonal matrix의 원소들을 `principal stresses`라고 한다.

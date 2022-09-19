@@ -12,10 +12,8 @@ $$ \frak m^\gamma_\gamma(T) = \mathbf B^{-1} \frak m^\beta_\beta(T) \mathbf B$$
 따라서, $M,N \in M_{nn}(\mathbb F)$가 있을 때, $M = B^{-1}NB$을 만족하는 가역행렬 $B \in M_{nn}(\mathbb F)$가 존재하는 경우 $M$이 $N$과 `닮았다(similar)`라고 하고 $M \sim N$라고 표기한다.
 
 ### 명제1
-$M,N \in \mathbb M_{nn}(\mathbb F)$가 있을 때, $M \sim N$이라 하자.
-
-이 때, 다음을 증명하여라.
-$$ \exist \beta \quad s.t. \quad \frak m^\beta_\beta(L_N) = M $$
+$M,N \in \mathbb M_{nn}(\mathbb F)$가 있을 때, 다음을 증명하여라.
+$$ M \sim N \Leftrightarrow \exist \beta \quad s.t. \quad \frak m^\beta_\beta(L_N) = M $$
 $$ \text{Where, } L_N : \mathbb F^n \rightarrow \mathbb F^n \quad s.t. \quad x \mapsto Nx $$
 
 **Proof**

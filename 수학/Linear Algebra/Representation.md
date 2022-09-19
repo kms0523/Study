@@ -56,6 +56,9 @@ $$ \frak m_\beta^\gamma : L(V;W) \rightarrow M_{mn}(\mathbb F) \quad s.t. \quad 
 $T$의 행렬 표현은 다음과 같이 나타낼 수 있다.
 $$\frak m^\gamma_\beta(T) = \begin{bmatrix} \frak m_\gamma(T(\beta_1)) & \cdots & \frak m_\gamma(T(\beta_n)) \end{bmatrix}  $$
 
+따라서 $\frak m^\gamma_\beta(T) = A$라 할 때, 다음이 성립한다.
+$$ T(\beta_i) = A^j_i \gamma_j $$
+
 ### 참고2
 $b^i =c^i_ja^j$임으로 행렬 곱의 성질에 의해 다음이 성립한다.
 $$ \frak m_\gamma(T(v)) = \frak m^\gamma_\beta(T) \frak m_\beta(v) $$

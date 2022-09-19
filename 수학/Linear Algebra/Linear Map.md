@@ -80,8 +80,6 @@ $$ c^i_jf_i^j(v_1) = a^kc^i_jf_i^j(\beta_k) = a^k c^i_j \delta^j_k \gamma_i  = a
 
 따라서, $c^i_j$를 $a^jc^i_j = b^i$를 만족하게 결정하면 $T \in \text{span}(\{ f_i^j \})$이다.
 
-
-
 [$\{ f_i^j \}$ are linearly independent]  
 $c^i_jf_i^j = 0_{L(V;W)}$라 하자.
 

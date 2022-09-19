@@ -1,4 +1,4 @@
-# Vectorspace bilinear map
+# Vector Space Bilinear Map
 벡터공간 $V,W,X / \mathbb F$이 있을 때, 다음과 같이 정의된 함수 $T$가 있다고 하자.
 $$ T : V \times W \rightarrow X $$
 
