@@ -129,6 +129,23 @@ $$ \lambda \text{ is an eigenvalue of } T \Rightarrow \overline\lambda \text{ is
 $\beta$가 $V$의 orthonormal baiss이고 $\lambda$가 $T$의 eigenvalue 임으로 다음이 성립한다.
 $$ \begin{aligned} & \det(T - \lambda id) = 0 \\ \Rightarrow \enspace & \det(\frak m_\beta^\beta(T - \lambda id)) = 0 \\ \Rightarrow \enspace & \det(\frak m_\beta^\beta(T) - \lambda I) = 0 \\ \Rightarrow \enspace & \det(\frak m_\beta^\beta(T)^* - \overline\lambda I) = 0 \\ \Rightarrow \enspace & \det(\frak m_\beta^\beta(T^*) - \overline\lambda I) = 0 \\ \Rightarrow \enspace & \det(\frak m_\beta^\beta(T^*- \overline\lambda id)) = 0 \\ \Rightarrow \enspace & \det(T^*- \overline\lambda id) = 0 \quad {_\blacksquare} \end{aligned} $$
 
+#### 참고
+$T$의 eigen vector를 $v$라 할 떄, $v$는 $T^*$의 eigen vector가 아니다.
+
+**Proof**
+
+$A \in M_{22}(\R)$이 다음과 같이 정의되었다고 하자.
+$$ A := \begin{bmatrix} 1 & 1 \\ 0 & 1  \end{bmatrix} $$
+
+eigen vector를 계산해보면 $v = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$임을 알 수 있다.
+
+$L_A$의 adjoint operator를 $L_{A^*}$라 하면 다음이 성립한다.
+$$ A^* := \begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix} $$
+
+eigen vector를 계산해보면 $w = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$임을 알 수 있다.
+
+따라서, $T$의 eigen vector $v$는 $T^*$의 eigen vector가 아니다.
+
 ### 계산연습
 $V : \{ ax+b \}, B(f,g) = \int_{-1}^1 fg \thinspace dx, T(f) = 3f + f'$
 

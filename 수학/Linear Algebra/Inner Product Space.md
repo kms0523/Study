@@ -85,7 +85,7 @@ $\dim(V) = n-1$일 때, 성립한다고 가정하고 $\dim(V) = n$이라고 하�
 $\lambda$를 $T$의 eigenvalue라 할 때, eigenvalue가 $\overline\lambda$인 $T^*$의 크기가 1인 eigen vector를 $v$라 하면 다음이 성립한다.
 $$ V = \text{span}(v) \oplus \text{span}(v)^\perp$$
 
-> basis not in spna(v)
+> $T|_{\text{span}(v)^\perp}$ is split?
 
 #### 보조명제
 $\lambda$를 $T$의 eigenvalue라 할 때, eigenvalue가 $\overline\lambda$인 $T^*$의 크기가 1인 eigen vector를 $v$라 할 때, 다음을 증명하여라.
