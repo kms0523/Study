@@ -157,3 +157,70 @@ $$ \sigma^3_1 = \sigma^1_3, \sigma^3_2 = \sigma^2_3 $$
 $\R^3$공간의 standard basis를 $\epsilon$이라 하고 $\frak m^\epsilon_\epsilon(\boldsymbol\sigma) = \sigma$라 하면 $\sigma$는 symmetric matrix이기 때문에 orthonormal한 3개의 eigen vector를 갖으며 이를 `principal direction`이라고 한다.
 
 따라서, $\sigma$는 diagonalizable하며 $\sigma$와 similar한 diagonal matrix의 원소들을 `principal stresses`라고 한다.
+
+### 명제1(Maximum Shearing Stress)
+주어진 $\mathbf x,t$에서 응력텐서 $\boldsymbol{\sigma}$가 주어졌다고 하자.
+
+$\lVert \mathbf n \rVert = 1$을 만족하는 $\mathbf n$을 normal vector로 갖는 평면의 stress vector를 $\mathbf t_n$이라 할 때, 평면에 접하는 $\mathbf t_n$의 성분을 shearing stress $\mathbf s_s$라 하자.
+
+$\sigma_1,\sigma_2,\sigma_3$를 principal stress라고 했을 때, 다음을 증명하여라.
+$$ \max(\mathbf s_s) = \max \Big( \frac{\sigma_i-\sigma_j}{2} \Big), \quad i,j = 1,2,3, \enspace i \neq j $$
+
+**Proof**
+
+$\beta$를 $\boldsymbol{\sigma}$의 principal direction이라고 하고 $\mathbf n = n^i\beta_i$라 하면 $\mathbf t_n$는 다음과 같다.
+$$ t_n^i = \sigma_in^i, \quad i=1,2,3 $$
+
+평면에 수직한 $\mathbf t_n$의 성분인 normal stress $\mathbf s_n$과 평면에 접하는 $\mathbf t_n$의 성분인 shearing stress $\mathbf s_s$는 다음과 같다.
+$$ \begin{aligned} \mathbf s_n &= (\mathbf t_n \cdot n)\mathbf n \\ \mathbf s_s &= \mathbf t_n - \mathbf s_n \\ &= \mathbf t_n - (\mathbf t_n \cdot n)\mathbf n \end{aligned} $$
+
+따라서, 다음이 성립한다.
+$$ \begin{aligned} \lVert \mathbf s_s \rVert &= (\mathbf t_n - (\mathbf t_n \cdot n)\mathbf n) \cdot (\mathbf t_n - (\mathbf t_n \cdot n)\mathbf n) \\ &= \mathbf t_n \cdot \mathbf t_n - \mathbf s_n \cdot \mathbf s_n \\ &= \sum_{i=1}^3 (\sigma_in^i)^2 - \bigg( \sum_{i=1}^3 \sigma_i(n^i)^2 \bigg) \end{aligned} $$
+
+표기를 간단하게 하기 위해 다음과 같이 정의하자.
+$$ \sigma_1 = a, \enspace \sigma_2 = b, \enspace \sigma_3 = c \\ n_1 = x, \enspace n_2 = y , \enspace n_3 = z \\ \lVert \mathbf s_s \rVert = f(x,y,z) = a^2x^2 + b^2y^2 + c^2z^2 - (ax^2 + by^2 + cz^2)^2 $$
+
+Maximum shearing stress를 찾는 문제는 다음과 같다.
+$$ \text{find }  \text{maximimum } f|_C $$
+
+$$ \text{Where, } C = \{ \mathbf (x,y,z) \in \R^3 \enspace | \enspace x^2 + y^2 + z^2 = 1 \}  $$
+
+이를 풀기 위해 Lagrange Multiplier Method를 사용하자.
+
+Constraint function $c$를 다음과 같이 정의하자.
+$$ c(x,y,z) = x^2 + y^2 + z^2 $$
+
+그러면 다음과 같은 4개의 연립방정식을 얻을 수 있다.
+$$ \begin{aligned} \frac{\partial f}{\partial x} &= \lambda \frac{\partial c}{\partial x} \\ \frac{\partial f}{\partial y} &= \lambda \frac{\partial c}{\partial y} \\ \frac{\partial f}{\partial z} &= \lambda \frac{\partial c}{\partial z} \\ c &= 1 \end{aligned} $$
+
+위 연립방정식을 만족하는 모든 $(x,y,z)$를 대입하여 그 중 최대 $f$값이 최대 $f|_C$가 된다.
+
+먼저 위 연립방정식을 풀어 쓰면 다음과 같다.
+$$ \begin{aligned} x(a^2 - 2a(ax^2 + by^2 + cz^2)) &= \lambda x \\ y(b^2 - 2a(ax^2 + by^2 + cz^2)) &= \lambda y \\ z(c^2 - 2a(ax^2 + by^2 + cz^2)) &= \lambda z \\ x^2 + y^2 + z^2 &= 1 \end{aligned} $$
+
+주어진 $a,b,c$를 경우에 따라 나눠 연립방정식을 풀어보자.
+
+[$a = b = c$]  
+연립방정식은 다음과 같이 간단해진다.
+$$ \begin{aligned} -a^2x &= \lambda x \\ -a^2y &= \lambda y \\ -a^2z &= \lambda z \end{aligned} $$
+
+따라서, 연립방정식의 해는 다음과 같다.
+$$\lambda = -a^2, \enspace (x,y,z) \in C$$
+
+그리고 이 때 $f$는 다음과 같다.
+$$ f=0 $$
+
+이는 $a=b=c$인 경우에, 모든 평면은 shearing stress가 0인 principal plane이 된다는 것을 의미한다. (명제화)
+
+임의의 새로운 기저를 $\gamma$라 하면 다음을 만족한다.
+$$ \frak m_\gamma^\gamma(\sigma) = B^{-1}\frak m_\beta^\beta(\sigma)B$$
+
+> Reference  
+> [book] (J. Stewart) Calculus chap 14.8  
+
+
+
+### 명제2
+
+> Reference  
+> [Wiki - Invaraints of tensors](https://en.wikipedia.org/wiki/Invariants_of_tensors)

@@ -251,3 +251,6 @@ vector space $V/\mathbb F$와 $T \in \text{End}(V)$가 있을 때, $T$의 특성
 $$ \varphi_T(t) = \det(T - tid) $$
 
 특성다항식의 근이 고유값이 된다.
+
+> Reference  
+> [Mathmatics - Coefficients of the characteristic polynomial](https://math.stackexchange.com/questions/1616930/trace-and-the-coefficients-of-the-characteristic-polynomial-of-a-matrix)

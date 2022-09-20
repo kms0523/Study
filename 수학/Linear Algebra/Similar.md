@@ -43,3 +43,12 @@ $$ \text{tr}(M) = \text{tr}(N) $$
 **Proof**
 
 $$ \mathrm{tr}(M) = \mathrm{tr}(B^{-1}NB) = \mathrm{tr}(BB^{-1}N) = \mathrm{tr}(N) \quad (\because \mathrm{tr}(M_1M_2) = \mathrm{tr}(M_2M_1)) \quad {_\blacksquare}  $$
+
+### 명제4
+$M,N \in \mathbb M_{nn}(\mathbb F)$가 있을 때, $M \sim N$라 하자.
+
+이 때, 다음을 증명하여라.
+$$ \text{tr}(M^2) = \text{tr}(N^2) $$
+
+**Proof**
+$$ \mathrm{tr}(M^2) = \mathrm{tr}(B^{-1}NBB^{-1}NB) = \mathrm{tr}(B^{-1}N^2B) = \mathrm{tr}(N^2)  \quad {_\blacksquare}  $$
