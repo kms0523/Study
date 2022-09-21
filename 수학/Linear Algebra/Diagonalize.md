@@ -83,7 +83,9 @@ Diagonalize는 어떤 `체(field)`인지에 따라 달라진다. 다음 예시�
 $$ L_R : \mathbb F^n \rightarrow \mathbb F^n \quad s.t. \quad x \mapsto Rx$$
 $$ \text {where, } R = \begin{bmatrix} \cos \theta & - \sin \theta \\ \sin \theta & \cos \theta \end{bmatrix}, \quad 0 < \theta < 2\pi \land \theta \neq \pi $$
 
-이 때, $L_R$이 diagonalizable지 알아보자. $L_R$이 diagonalizable한지 알아보기 위해서는 고유벡터를 찾아야한다. 즉, 다음을 만족 $v \in \mathbb F^n - \{ 0_{\mathbb F^n} \}$를 찾아야 한다.
+이 때, $L_R$이 diagonalizable지 알아보자. 
+
+$L_R$이 diagonalizable한지 알아보기 위해서는 고유벡터를 찾아야한다. 즉, 다음을 만족 $v \in \mathbb F^n - \{ 0_{\mathbb F^n} \}$를 찾아야 한다.
 $$ \begin{equation} \begin{aligned} & L_R(v) = \lambda v, \quad \lambda \in \mathbb F \\ \Leftrightarrow \enspace & Rv = \lambda v \\ \Leftrightarrow \enspace & (R -\lambda I)v = 0  \end{aligned} \end{equation} $$
 
 $v \neq 0$이라는 사실을 통해 $R-\lambda I$가 역행렬이 없어야 함을 알 수 있다. 따라서 $\det(R - \lambda I) = 0$이어야 하고 $\det(R - \lambda I)$를 행렬의 `특성다항식(characteristic polynomial)`이라고 한다.
