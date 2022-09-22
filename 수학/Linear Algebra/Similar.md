@@ -12,7 +12,7 @@ $$ \frak m^\gamma_\gamma(T) = \mathbf B^{-1} \frak m^\beta_\beta(T) \mathbf B$$
 따라서, $M,N \in M_{nn}(\mathbb F)$가 있을 때, $M = B^{-1}NB$을 만족하는 가역행렬 $B \in M_{nn}(\mathbb F)$가 존재하는 경우 $M$이 $N$과 `닮았다(similar)`라고 하고 $M \sim N$라고 표기한다.
 
 ### 명제1
-$M,N \in \mathbb M_{nn}(\mathbb F)$가 있을 때, 다음을 증명하여라.
+$M,N \in M_{nn}(\mathbb F)$가 있을 때, 다음을 증명하여라.
 $$ M \sim N \Leftrightarrow \exist \beta \quad s.t. \quad \frak m^\beta_\beta(L_N) = M $$
 $$ \text{Where, } L_N : \mathbb F^n \rightarrow \mathbb F^n \quad s.t. \quad x \mapsto Nx $$
 
@@ -25,7 +25,7 @@ $$ \begin{aligned} & M \sim N \\ \Rightarrow \enspace & M = B^{-1}NB = \frak m^\
 $$ \begin{aligned}  M &= m^\beta_\beta(L_N) \\ & = \frak m^\beta_\epsilon(id_V) \frak m^\epsilon_\epsilon(L_N) \frak m_\beta^\epsilon(id_V) \\ &= B^{-1}NB \quad {_\blacksquare}  \end{aligned} $$
 
 ### 명제2
-$M,N \in \mathbb M_{nn}(\mathbb F)$가 있을 때, $M \sim N$라 하자.
+$M,N \in M_{nn}(\mathbb F)$가 있을 때, $M \sim N$라 하자.
 
 이 때, 다음을 증명하여라.
 $$ \det(M) = \det(N) $$
@@ -35,7 +35,7 @@ $$ \det(M) = \det(N) $$
 $$ \det(M) = \det(B^{-1}NB) = \det(B^{-1})\det(N)\det(B) = \det({B^{-1}B})\det(N) = \det(N) \quad {_\blacksquare} $$
 
 ### 명제3
-$M,N \in \mathbb M_{nn}(\mathbb F)$가 있을 때, $M \sim N$라 하자.
+$M,N \in M_{nn}(\mathbb F)$가 있을 때, $M \sim N$라 하자.
 
 이 때, 다음을 증명하여라.
 $$ \text{tr}(M) = \text{tr}(N) $$
@@ -45,10 +45,25 @@ $$ \text{tr}(M) = \text{tr}(N) $$
 $$ \mathrm{tr}(M) = \mathrm{tr}(B^{-1}NB) = \mathrm{tr}(BB^{-1}N) = \mathrm{tr}(N) \quad (\because \mathrm{tr}(M_1M_2) = \mathrm{tr}(M_2M_1)) \quad {_\blacksquare}  $$
 
 ### 명제4
-$M,N \in \mathbb M_{nn}(\mathbb F)$가 있을 때, $M \sim N$라 하자.
+$M,N \in M_{nn}(\mathbb F)$가 있을 때, $M \sim N$라 하자.
 
 이 때, 다음을 증명하여라.
 $$ \text{tr}(M^2) = \text{tr}(N^2) $$
 
 **Proof**
+
 $$ \mathrm{tr}(M^2) = \mathrm{tr}(B^{-1}NBB^{-1}NB) = \mathrm{tr}(B^{-1}N^2B) = \mathrm{tr}(N^2)  \quad {_\blacksquare}  $$
+
+### 명제5
+$M,N \in M_{nn}(\mathbb F)$가 있을 때, $M \sim N$라 하자.
+
+$X_m = \text{tr}(X)$로 정의할 떄, 다음을 증명하여라.
+$$ M - M_mI \sim N - N_m I $$
+
+**Proof**
+
+$M \sim N$이기 때문에 다음을 만족하는 $B \in M_{nn}(\mathbb F)$가 존재한다.
+$$ M = B^{-1}NB $$
+
+따라서, 다음이 성립한다.
+$$ B^{-1}(N-N_mI)B = B^{-1}NB - N_mI = M -N_mI = M - M_mI \quad {_\blacksquare} $$

@@ -346,7 +346,15 @@ $$ \begin{aligned} & \max(\sqrt f) = \max( \frac{|a-b|}{2}, \frac{|b-c|}{2}, \fr
 > [book] (Lai et al) Introduction to Continuum Mechanics Chap4.6
 
 
-### 명제3
+# Principal Invariants of Second Rank Tensor
+Second rank tensor $\mathbf A: \R^3 \rightarrow \R^3$가 있다고 하자.
+
+$\mathbf A$의 principal invariants $I_{1,2,3}$은 다음과 같다.
+$$ \begin{aligned} I_1 &= \text{tr}(\mathbf A) \\ I_2 &= \frac{1}{2}(\text{tr}(\mathbf A)^2 - \text{tr}(\mathbf A\circ \mathbf A)) \\ I_3 &= \det(\mathbf A) \end{aligned}  $$
+
+
+
+
 
 > Reference  
 > [Wiki - Invaraints of tensors](https://en.wikipedia.org/wiki/Invariants_of_tensors)

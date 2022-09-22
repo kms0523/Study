@@ -67,7 +67,7 @@ $$ \begin{aligned} &  A \mathbf m = A_0 \det(\mathbf F) \mathbf F^{-T} \mathbf n
 네 점 $\bm X, \bm X + \Delta \bm X_1, \bm X + \Delta \bm X_2, \bm X + \Delta \bm X_3$이 있다고 하자
 
 $\bm X, \bm X + \Delta \bm X_{1,2,3}$ 이루어진 벡터를 $\Delta \bm X_{1,2,3}$이라하고 변형된 벡터를 $\Delta x_{1,2,3}$라 할 떄, 다음을 만족한다고 하자.
-$$ \Delta \bm X_1 \cdot \Delta \bm X_2 \times \Delta \bm X_3 = V_0 , \enspace \Delta \mathbf x_1 \cdot \mathbf x_2 \times \Delta \mathbf x_2 = V$$
+$$ \Delta \bm X_1 \cdot \Delta \bm X_2 \times \Delta \bm X_3 = V_0 , \enspace \Delta \mathbf x_1 \cdot \Delta \mathbf x_2 \times \Delta \mathbf x_2 = V$$
 
 $\Delta \bm X$가 충분히 작을 때, 다음을 증명하여라.
 $$ V = \det(\mathbf F) V_0 $$

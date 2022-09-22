@@ -253,4 +253,5 @@ $$ \varphi_T(t) = \det(T - tid) $$
 특성다항식의 근이 고유값이 된다.
 
 > Reference  
-> [Mathmatics - Coefficients of the characteristic polynomial](https://math.stackexchange.com/questions/1616930/trace-and-the-coefficients-of-the-characteristic-polynomial-of-a-matrix)
+> [Mathmatics - Coefficients of the characteristic polynomial](https://math.stackexchange.com/questions/2115713/coefficient-of-characteristic-polynomial-as-sum-of-principal-minors)  
+> [Note] (UCSC) The Characteristic Polynomial
