@@ -67,3 +67,5 @@ $$ M = B^{-1}NB $$
 
 따라서, 다음이 성립한다.
 $$ B^{-1}(N-N_mI)B = B^{-1}NB - N_mI = M -N_mI = M - M_mI \quad {_\blacksquare} $$
+
+### 명제6

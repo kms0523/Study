@@ -352,9 +352,27 @@ Second rank tensor $\mathbf A: \R^3 \rightarrow \R^3$가 있다고 하자.
 $\mathbf A$의 principal invariants $I_{1,2,3}$은 다음과 같다.
 $$ \begin{aligned} I_1 &= \text{tr}(\mathbf A) \\ I_2 &= \frac{1}{2}(\text{tr}(\mathbf A)^2 - \text{tr}(\mathbf A\circ \mathbf A)) \\ I_3 &= \det(\mathbf A) \end{aligned}  $$
 
+### 명제1
+Second rank tensor $\mathbf A: \R^3 \rightarrow \R^3$가 있다고 하자.
 
+$\R^3$의 임의의 기저를 $\beta$라 할 때, $\frak m_\beta^\beta(\mathbf A) = A$이다.
 
+이 떄, 다음을 증명하여라.
+$$ I_2 = A_{11}A_{22} + A_{22}A_{33} + A_{33}A_{11} - A_{12}A_{21} - A_{23}A_{32} - A_{13}A_{31} $$
 
+### 명제2
+Second rank tensor $\mathbf A: \R^3 \rightarrow \R^3$가 있다고 하자.
+
+$\mathbf A$의 eigen value를 $\lambda_{1,2,3}$이라 할 떄, 다음을 증명하여라.
+$$ \begin{aligned} I_1 &= \lambda_1 + \lambda_2 + \lambda_3 \\ I_2 &= \lambda_1\lambda_2 + \lambda_2\lambda_3 + \lambda_3\lambda_1 \\ I_3 &= \lambda_1\lambda_2\lambda_3 \end{aligned}  $$
+
+### 명제3
+Second rank tensor $\mathbf A: \R^3 \rightarrow \R^3$가 있다고 하자.
+
+$\R^3$의 임의의 기저를 $\beta$에 대해 $\frak m_\beta^\beta(\mathbf A) = A$라 하고 $\frac{1}{3}\text{tr}(A) = A_m$ 할 때, $A-A_mI$의 principal invariants를 $I_{1,2,3}$이라 하자.
+
+$\mathbf A$의 eigen value를 $\lambda_{1,2,3}$이라 할 떄, 다음을 증명하여라.
+$$ I_2 = -\frac{1}{6} ((\lambda_1 - \lambda_2)^2 + (\lambda_2 -\lambda_3)^2 + (\lambda_3 - \lambda_1)^2)  $$
 
 > Reference  
 > [Wiki - Invaraints of tensors](https://en.wikipedia.org/wiki/Invariants_of_tensors)

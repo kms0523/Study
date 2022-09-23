@@ -32,6 +32,11 @@ $$ \begin{bmatrix} b_1 \\ \vdots \\ b_n \end{bmatrix} = \mathbf C \begin{bmatrix
 
 따라서, $\mathbf C$를 $\beta$에 의한 좌표를 $\gamma$에 의한 좌표로 변환하는 `좌표 변환 행렬(coordinate change matrix)`이라고 한다.
 
+### 참고
+변수변환이 $x = Pv$형태로 이루어졌다고 하자. 
+
+이 때, $x$는 기저 $\beta$에 대한 coordinate이고 $v$는 기저 $\gamma$에 대한 coordinate로 보면 $P$는 $\beta \rightarrow \gamma$인  coordinate change matrix이다.
+
 ### 명제1
 $n$차원 벡터공간 $V/F$와 $V$의 두 기저 $\beta,\gamma$가 있을 때, $\beta \rightarrow \gamma$기저변환 행렬을 $\mathbf B$ 좌표변환 행렬을 $\mathbf C$라 할 때, 다음을 증명하여라.
 $$ \mathbf C = \mathbf B^{-1} $$

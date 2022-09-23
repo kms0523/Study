@@ -12,3 +12,6 @@ $$ A : A = \text{tr}(A^2) $$
 **Proof**
 
 직접 계산하면 동일함을 알 수 있다. $\quad {_\blacksquare}$
+
+> Referece  
+> [Wiki - Trace](https://en.wikipedia.org/wiki/Trace_(linear_algebra))
