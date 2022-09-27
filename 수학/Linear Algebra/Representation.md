@@ -119,3 +119,19 @@ $$ \frak m^{\epsilon^m}_{\gamma}(\frak m_\gamma) = \begin{bmatrix} \frak m_{\eps
 
 따라서 다음이 성립한다.
 $$ \begin{aligned} \frak m^{\epsilon^m}_{\epsilon^n}(f) &= \frak m^{\epsilon^m}_{\gamma}(\frak m_\gamma) \frak m^\gamma_\beta(T) \frak m^{\beta}_{\epsilon^n}(\frak m_\beta^{-1}) \\ &= I_m \frak m^\gamma_\beta(T) I_n \\ &= \frak m^\gamma_\beta(T) \quad {_\blacksquare} \end{aligned}  $$
+
+### 명제5
+$n$ 차원 vector space $V / \mathbb F$와 $U,W \le V$ 그리고 $T \in \text{End}(V)$가 있다고 하자.
+
+이 때, $V = U \oplus W$이고 $U,W$가 $T$ invariant일 때 $V,U,W$ 각각의 기저 $\alpha, \beta, \gamma$에 대해 다음을 증명하여라.
+$$ \frak m_\alpha^\alpha(T) = \begin{bmatrix} \begin{array}{c | c} \frak m_\beta^\beta(T|_U) & 0 \\ \hline  0 & \frak m_\gamma^\gamma(T|_W) \end{array} \end{bmatrix} $$
+
+**Proof**
+
+$\dim(U) =k$라고 하자.
+
+$V = U \oplus W$임으로 다음이 성립한다.
+$$ \alpha = \beta \cup \gamma = \{ \beta_1, \cdots, \beta_k, \gamma_1, \cdots, \gamma_{n-k} \} $$ 
+
+이 떄, $U,W$가 $T$ invariant임으로 다음이 성립한다.
+$$ \begin{aligned} \frak m_\alpha^\alpha(T) &= \begin{bmatrix} \frak m_\alpha (T(\beta_1)) & \cdots & \frak m_\alpha (T(\beta_k)) & \frak m_\alpha (T(\gamma_1)) & \frak m_\alpha (T(\gamma_{n-k})) \end{bmatrix} \\ &= \begin{bmatrix} \frak m_\beta (T(\beta_1)) & \cdots & \frak m_\beta (T(\beta_k)) & \frak m_\beta (T(\gamma_1)) & \frak m_\beta (T(\gamma_{n-k})) \\ \frak m_\gamma (T(\beta_1)) & \cdots & \frak m_\gamma (T(\beta_k)) & \frak m_\gamma (T(\gamma_1)) & \frak m_\gamma (T(\gamma_{n-k})) \end{bmatrix} \\ &= \begin{bmatrix} \frak m_\beta^\beta (T|_U) & \frak m_\beta^\beta (T|_W) \\ \frak m_\gamma^\gamma (T|_U) & \frak m_\gamma^\gamma (T|_W) \end{bmatrix} \\ &= \begin{bmatrix} \begin{array}{c | c} \frak m_\beta^\beta(T|_U) & 0 \\ \hline  0 & \frak m_\gamma^\gamma(T|_W) \end{array} \end{bmatrix} \quad {_\blacksquare} \end{aligned} $$

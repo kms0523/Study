@@ -69,10 +69,7 @@
 - [Namespace](#namespace)
 - [Cmake](#cmake)
 
-* [comparing double](https://stackoverflow.com/questions/12278523/comparing-double-values-in-c/35252979)
-* [ULP](https://en.wikipedia.org/wiki/Unit_in_the_last_place)
-  * Unit in the last place
-  * measur of accuracy in numeric calculations
+
 
 <br><br>
 

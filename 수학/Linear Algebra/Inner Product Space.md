@@ -78,16 +78,54 @@ $$ \exist \text{ orthonormal basis } \beta \quad s.t. \quad \frak m_\beta^\beta(
 
 **Proof**
 
-$\dim(V) = 1$인 경우 자명하게 성립한다.
+증명을 위해 수학적 귀납법을 사용한다.
 
-$\dim(V) = n-1$일 때, 성립한다고 가정하고 $\dim(V) = n$이라고 하자.
+먼저 $\dim(V) = 1$인 경우 자명하게 성립한다.
+
+다음으로 $\dim(V) = n-1$일 때, 성립한다고 가정하고 $\dim(V) = n$이라고 하자.
 
 $\lambda$를 $T$의 eigenvalue라 할 때, eigenvalue가 $\overline\lambda$인 $T^*$의 크기가 1인 eigen vector를 $v$라 하면 다음이 성립한다.
 $$ V = \text{span}(v) \oplus \text{span}(v)^\perp$$
 
-> $T|_{\text{span}(v)^\perp}$ is split?
+이 떄, 보조명제와 귀납적 가정에 의해 다음이 성립한다.
+$$ \exist \text{orthonormal basis } \gamma = \{\gamma_1, \cdots, \gamma_{n-1} \} \quad s.t. \quad \frak m_{\gamma}^{\gamma}(T|_{\text{span}(v)^\perp}) \text{ be an upper triangular matrix.} $$
+
+이 때, $V$이 기저 $\beta$를 다음과 같이 정의하자.
+$$ \beta = \{ \gamma_1, \cdots, \gamma_{n-1}, v \}$$ 
+
+그러면 다음이 성립한다.
+$$ \frak m_{\beta}^{\beta}(T) = \begin{bmatrix} \begin{array}{c | c} \frak m_{\gamma}^{\gamma}(T|_{\text{span}(v)^\perp}) & a_1 \\ & \vdots \\ 0 & a_n \end{array} \end{bmatrix} $$
+
+$$ \text{Where, } T(v) = a_1 \gamma_1 + \cdots + a_{n-1}\gamma_{n-1} + a_nv $$
+
+이 때, $\frak m_{\gamma}^{\gamma}(T|_{\text{span}(v)^\perp})$가 upper triangular matrix임으로 $\frak m_{\beta}^{\beta}(T)$도 upper trianular matrix가 된다. 
+
+동시에 $\beta$를 이루고 있는 $\gamma$와 $v$는 direct sum 관계에 있는 두 공간의 기저임으로 $\beta$는 orthonormal basis가 된다.$\quad {_\blacksquare}$
 
 #### 보조명제
+$\lambda$를 $T$의 eigenvalue라 할 때, eigenvalue가 $\overline\lambda$인 $T^*$의 크기가 1인 eigen vector를 $v$라 할 때, 다음을 증명하여라.
+$$ \text{span}(v)^\perp \text{ is split} $$
+
+**Proof**
+
+$V$에 대해 다음이 성립한다.
+$$ V = \text{span}(v) \oplus \text{span}(v)^\perp$$
+
+$\text{span}(v)^\perp$의 임의의 기저를 $\gamma = \{ \gamma_1, \cdots, \gamma_{n-1} \}$이라 할 때, $V$의 기저 $\beta$을 다음과 같이 정의하자
+$$ \beta = \{ \gamma_1, \cdots, \gamma_{n-1}, v \}$$ 
+
+이 때, 보조명제에 의해서 $\text{span}(v)^\perp$는 $T$ invariant임으로 다음이 성립한다.
+$$ \frak m_{\beta}^{\beta}(T) = \begin{bmatrix} \begin{array}{c | c} \frak m_\gamma^\gamma(T|_{\text{span}(v)^\perp}) & a_1 \\ & \vdots \\ \hline 0 & a_n \end{array} \end{bmatrix} $$
+
+$$ \text{Where, } T(v) = a_1 \gamma_1 + \cdots + a_{n-1}\gamma_{n-1} + a_nv $$
+
+이 때, detrminant의 block matrix에 대한 성질에 의해 다음이 성립한다.
+$$\det(\frak m_{\beta}^{\beta}(T) - \lambda I_n) = \det(m_\gamma^\gamma(T|_{\text{span}(v)^\perp}) - \lambda I_{n-1})(a_n - \lambda)$$
+
+따라서, $T$가 split 됨으로 $T|_{\text{span}(v)^\perp}$도 split 됨을 알 수 있다. $\quad {_\blacksquare}$
+
+
+##### 보조명제
 $\lambda$를 $T$의 eigenvalue라 할 때, eigenvalue가 $\overline\lambda$인 $T^*$의 크기가 1인 eigen vector를 $v$라 할 때, 다음을 증명하여라.
 $$ \text{span}(v)^\perp \text{ is a } T \text{ invariant} $$
 
@@ -100,18 +138,8 @@ $$ B(T(x),v) = B(x, T^*(v)) = B(x, \overline\lambda v) = \overline\lambda B(x, v
 
 따라서, $\text{span}(v)^\perp$는 $T \text{ invariant}$이다. $\quad {_\blacksquare}$
 
-#### 참고1
-$\frak m_\beta^\beta(T)$가 다음과 같은 upper triangular matrix로 주어진다고 하자.
-$$ \frak m_\beta^\beta(T) = \begin{bmatrix} a_1 & \cdots & & * \\ & a_2 \\ & & \ddots & \vdots \\ 0 & & & a_n \end{bmatrix} $$
-
-$T(\beta_1) = a_1\beta_1$이 되기 때문에 $\beta_1$은 eigen vector, $a_1$은 eigen value가 된다.
-
-<p align = "center">
-<img src = "./image/inner product space_1.png">
-</p>
-
-#### 참고2
-$\mathbb F = \mathbb C$이면 fundamental theorem of algebra에 의해 $\varphi_T$는 항상 split 된다.
+###### 참고
+$\text{span}(v)$는 일반적으로 $T$ invariant가 아니다.
 
 #### 따름명제
 다음을 증명하여라.
@@ -127,6 +155,21 @@ Schur's theorem에 의해 $\frak m_\beta^\beta(L_A)$가 upper triangular matrix�
 $$ \begin{aligned} \frak m_\beta^\beta(L_A) &= \frak m_\epsilon^\beta(id) \frak m_\epsilon^\epsilon(L_A) \frak m_\beta^\epsilon(L_A) \\&= C^{-1}AC \end{aligned}  $$
 
 즉, $\frak m_\beta^\beta(L_A) \sim A$이다. $\quad {_\blacksquare}$
+
+#### 참고1
+$\frak m_\beta^\beta(T)$가 다음과 같은 upper triangular matrix로 주어진다고 하자.
+$$ \frak m_\beta^\beta(T) = \begin{bmatrix} a_1 & \cdots & & * \\ & a_2 \\ & & \ddots & \vdots \\ 0 & & & a_n \end{bmatrix} $$
+
+$T(\beta_1) = a_1\beta_1$이 되기 때문에 $\beta_1$은 eigen vector, $a_1$은 eigen value가 된다.
+
+또한, upper triangular matrix의 성질에 의해 다음이 성립한다.
+$$ \det(T-\lambda I) = \prod_{i=1}^n (a_i - \lambda) $$ 
+
+따라서, $a_1, \cdots, a_n$은 eigen value가 된다.
+
+#### 참고2
+$\mathbb F = \mathbb C$이면 fundamental theorem of algebra에 의해 $\varphi_T$는 항상 split 된다.
+
 
 # Norm
 $n$차원 inner product space $V / \mathbb F$가 있을 때, `norm`은 다음과 같이 정의된 함수이다.
