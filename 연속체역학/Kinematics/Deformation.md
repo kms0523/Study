@@ -1,24 +1,30 @@
 # Deformation
-운동하는 연속체를 생각해보자. 
+운동하는 연속체의 reference figure를 $\Omega_0$라 하자.
 
-운동하고 있는 연속체의 한 점에 위치는 시간에 따라 바뀌게 된다. 이를 벡터함수 $\mathbf p$로 나타낸다고 할 때 $\mathbf p$에 의해서 연속체 내부에 있는 모든점의 변형된 위치가 서술된다. 따라서 $\mathbf p$를 `변형(deformation)`이라고 한다.
+시간 $t$에서 deformed figure $\Omega$의 위치가 벡터함수 $\varphi$로 나타난다고 하자.
+$$ \varphi : \Omega_0 \times \R \rightarrow \Omega \quad  $$
+
+그러면 $\varphi$에 의해서 연속체 내부에 있는 모든점의 변형된 위치가 서술된다. 
+
+따라서 $\varphi$를 `변형(deformation)`이라고 한다.
 
 # Displacement 
 연속체 한 점의 `변위(displacement)` $\bf d$는 다음과 같이 정의한다.
-$$ \mathbf d(\bm X, t) = \mathbf p(\bm X, t) - \bm X $$
+$$ \mathbf d(\bm X, t) = \varphi(\bm X, t) - \bm X $$
 
 # Deformation Gradient
+Reference figure $\Omega_0$와 deforemd firuge $\Omega$가 있다고 하자.
 
-두 점 $\bm X, \bm X + \Delta \bm X$이 있을 때, 두 점으로 이루어진 벡터 $\Delta \bm X$를 다음과 같이 정의하자.
+두 점 $\bm X, \bm X + \Delta \bm X \in \Omega_0$이 있을 때, 두 점으로 이루어진 벡터 $\Delta \bm X$를 다음과 같이 정의하자.
 $$ \Delta \bm X := (\bm X + \Delta \bm X) - \bm X $$
 
 시간 $t$가 지난후 변형된 두 점 $\bm X, \bm X + \Delta \bm X$으로 이루어진 변형된 벡터를 $\Delta \mathbf x$라 하고 다음과 같이 정의하자.
-$$ \Delta \mathbf x(t) := \mathbf p(\bm X + \Delta \bm X, t) - \mathbf p(\bm X,t) $$
+$$ \Delta \mathbf x(t) := \varphi(\bm X + \Delta \bm X, t) - \varphi(\bm X,t) $$
 
-$\Delta \bm X$가 충분히 작아 $\mathbf p (\bm X + \Delta \bm X, t)$를 선형으로 근사할 수 있다고 가정하면 $\Delta \mathbf x$는 다음과 같다.
-$$ \begin{aligned} \Delta \mathbf x & \approx \frac{\partial p_i}{\partial X_j} \Delta X_j \\ & = \nabla \mathbf p \Delta \bm X \\ & =  (\mathbf I + \nabla \mathbf d )\Delta X \\ & = \mathbf F \Delta \bm X \end{aligned} $$
+$\Delta \bm X$가 충분히 작아 $\varphi (\bm X + \Delta \bm X, t)$를 선형으로 근사할 수 있다고 가정하면 $\Delta \mathbf x$는 다음과 같다.
+$$ \begin{aligned} \Delta \mathbf x & \approx \frac{\partial p_i}{\partial X_j} \Delta X_j \\ & = \nabla \varphi \Delta \bm X \\ & =  (\mathbf I + \nabla \mathbf d )\Delta X \\ & = \mathbf F \Delta \bm X \end{aligned} $$
 
-$$ \text{Where, } \mathbf F = \nabla \mathbf p = \mathbf I + \nabla \mathbf d $$
+$$ \text{Where, } \mathbf F = \nabla \varphi = \mathbf I + \nabla \mathbf d $$
 
 이 때, $\mathbf F$를 `deformation gradient`, $\nabla \mathbf d$를 `displacement gradient`라 한다.
 

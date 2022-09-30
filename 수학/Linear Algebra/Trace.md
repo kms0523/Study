@@ -1,7 +1,8 @@
-
 ### 명제1
-$A \in M_{nn}(\R)$이라 하면 다음이 성립한다.
-$$ \text{tr}(A^2) = \sum_{i=1}^n \sum_{j=1}^n A_{ij}A_{ji} $$
+$A,B \in M_{nn}(\R)$이라 하자.
+
+이 떄, 다음을 증명하여라.
+$$ \text{tr}(AB) = \sum_{i=1}^n \sum_{j=1}^n A_{ij}B_{ji} $$
 
 **Proof**
 
@@ -27,6 +28,17 @@ $$ A : A = B : B $$
 
 $$ \begin{aligned} A : A &= \text{tr}(A^2) \\ &= \text{tr}(B^2) \\ &= B : B\quad {_\blacksquare} \end{aligned} $$
 
+### 명제4
+$A,B \in M_{nn}(\R)$이라 하자.
+
+이 떄, 다음을 증명하여라.
+$$ \text{tr}(AB) = \text{tr}(BA) $$
+
+**Proof**
+
+$$ \begin{aligned} \text{tr}(AB) &= \sum_{i=1}^n \sum_{j=1}^n A_{ij}B_{ji} \\ &= \sum_{j=1}^n \sum_{i=1}^n B_{ji}A_{ij} \\&= \text{tr}(BA) \quad {_\blacksquare} \end{aligned} $$
+
+
 
 > Referece  
-> [Wiki - Trace](https://en.wikipedia.org/wiki/Trace_(linear_algebra))
+> [Wiki - Trace Notes1](https://en.wikipedia.org/wiki/Trace_(linear_algebra))
