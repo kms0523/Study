@@ -22,7 +22,7 @@ $$ \Delta \bm X := (\bm X + \Delta \bm X) - \bm X $$
 $$ \Delta \mathbf x(t) := \varphi(\bm X + \Delta \bm X, t) - \varphi(\bm X,t) $$
 
 $\Delta \bm X$가 충분히 작아 $\varphi (\bm X + \Delta \bm X, t)$를 선형으로 근사할 수 있다고 가정하면 $\Delta \mathbf x$는 다음과 같다.
-$$ \begin{aligned} \Delta \mathbf x & \approx \frac{\partial p_i}{\partial X_j} \Delta X_j \\ & = \nabla \varphi \Delta \bm X \\ & =  (\mathbf I + \nabla \mathbf d )\Delta X \\ & = \mathbf F \Delta \bm X \end{aligned} $$
+$$ \begin{aligned} \Delta \mathbf x & \approx \frac{\partial \varphi_i}{\partial X_j} \Delta X_j \\ & = \nabla \varphi \Delta \bm X \\ & =  (\mathbf I + \nabla \mathbf d )\Delta X \\ & = \mathbf F \Delta \bm X \end{aligned} $$
 
 $$ \text{Where, } \mathbf F = \nabla \varphi = \mathbf I + \nabla \mathbf d $$
 
