@@ -8,79 +8,88 @@ $$ \varphi : \Omega_0 \times \R \rightarrow \Omega \quad  $$
 
 따라서 $\varphi$를 `변형(deformation)`이라고 한다.
 
+### 참고
+$\varphi$는 특정 점의 특정 시간에서 변형된 위치를 서술함으로 물리적으로 말이 되기 위해서는 반드시 전단사 함수여야 한다.
+
+따라서, $\varphi$는 역함수가 존재한다.
+
 # Displacement 
 연속체 한 점의 `변위(displacement)` $\bf d$는 다음과 같이 정의한다.
-$$ \mathbf d(\bm X, t) = \varphi(\bm X, t) - \bm X $$
+$$  d(X, t) = \varphi(X, t) - X $$
 
 # Deformation Gradient
 Reference figure $\Omega_0$와 deforemd firuge $\Omega$가 있다고 하자.
 
-두 점 $\bm X, \bm X + \Delta \bm X \in \Omega_0$이 있을 때, 두 점으로 이루어진 벡터 $\Delta \bm X$를 다음과 같이 정의하자.
-$$ \Delta \bm X := (\bm X + \Delta \bm X) - \bm X $$
+두 점 $X, X + \Delta X \in \Omega_0$이 있을 때, 두 점으로 이루어진 벡터 $\Delta X$를 다음과 같이 정의하자.
+$$ \Delta X := (X + \Delta X) - X $$
 
-시간 $t$가 지난후 변형된 두 점 $\bm X, \bm X + \Delta \bm X$으로 이루어진 변형된 벡터를 $\Delta \mathbf x$라 하고 다음과 같이 정의하자.
-$$ \Delta \mathbf x(t) := \varphi(\bm X + \Delta \bm X, t) - \varphi(\bm X,t) $$
+시간 $t$가 지난후 변형된 두 점 $X, X + \Delta X$으로 이루어진 변형된 벡터를 $\Delta  x$라 하고 다음과 같이 정의하자.
+$$ \Delta  x(t) := \varphi(X + \Delta X, t) - \varphi(X,t) $$
 
-$\Delta \bm X$가 충분히 작아 $\varphi (\bm X + \Delta \bm X, t)$를 선형으로 근사할 수 있다고 가정하면 $\Delta \mathbf x$는 다음과 같다.
-$$ \begin{aligned} \Delta \mathbf x & \approx \frac{\partial \varphi_i}{\partial X_j} \Delta X_j \\ & = \nabla \varphi \Delta \bm X \\ & =  (\mathbf I + \nabla \mathbf d )\Delta X \\ & = \mathbf F \Delta \bm X \end{aligned} $$
+$\Delta X$가 충분히 작아 $\varphi (X + \Delta X, t)$를 선형으로 근사할 수 있다고 가정하면 $\Delta  x$는 다음과 같다.
+$$ \begin{aligned} \Delta  x & \approx \frac{\partial \varphi_i}{\partial X_j} \Delta X_j \\ & = \nabla \varphi \Delta X \\ & =  ( I + \nabla  d )\Delta X \\ & =  F \Delta X \end{aligned} $$
 
-$$ \text{Where, } \mathbf F = \nabla \varphi = \mathbf I + \nabla \mathbf d $$
+$$ \text{Where, }  F = \nabla \varphi =  I + \nabla  d $$
 
-이 때, $\mathbf F$를 `deformation gradient`, $\nabla \mathbf d$를 `displacement gradient`라 한다.
+이 때, $ F$를 `deformation gradient`, $\nabla  d$를 `displacement gradient`라 한다.
 
 
 ### 명제1(Change of length)
-두 점 $\bm X, \bm X + \Delta \bm X$이 있을 때, 두 점으로 이루어진 벡터를 $\Delta \bm X$, 변형된 벡터를 $\Delta x$가 다음을 만족한다고 하자.
-$$ \Delta \bm X = l_0 \mathbf n, \enspace \Delta \mathbf x = l \mathbf m$$
+Reference figure $\Omega_0$, deformation $\varphi$, defromation gradient $F$가 있다고 하자.
 
-$\bf n, m$이 단위벡터이고 $\Delta \bm X$가 충분히 작을 때, 다음을 증명하여라.
-$$ l = \lVert \mathbf{Fn} \rVert l_0, \enspace \mathbf m = \frac{\mathbf F \mathbf n}{\lVert \mathbf F \mathbf n \rVert} $$
+두 점 $X, X + \Delta X \in \Omega_0$이 있을 때, 두 점으로 이루어진 vector $\Delta X, \Delta x$를 다음과 같이 정의하자.
+$$ \begin{aligned} \Delta X &= l_0n  \\ \Delta x &= \varphi(X + \Delta X, t) - \varphi(X, t) = lm \end{aligned} $$
+
+이 때, $l_0, l$은 길이를 나타내는 scalar 값이고 $n,m$은 단위벡터이다.
+
+ $\Delta X$가 충분히 작을 때, 다음을 증명하여라.
+$$ l = \lVert Fn \rVert l_0, \enspace m = \frac{Fn}{\lVert Fn \rVert} $$
 
 **Proof**
 
-$\Delta \bm X$가 충분히 작음으로 다음이 성립한다.
-$$ \begin{aligned} & \Delta \mathbf x = \mathbf F \Delta \bm X \\ \Rightarrow \enspace &  l \mathbf m = l_0 \mathbf F \mathbf n \end{aligned} $$
+$\Delta X$가 충분히 작음으로 다음이 성립한다.
+$$ \begin{aligned} & \Delta  x =  F \Delta X \\ \Rightarrow \enspace &  l  m = l_0  F  n \end{aligned} $$
 
-$\mathbf m$은 $\mathbf F \mathbf n$과 평행하고 단위방향 벡터임으로 다음이 성립한다.
-$$ \mathbf m = \frac{\mathbf F \mathbf n}{\lVert \mathbf F \mathbf n \rVert} $$
+$ m$은 $ F  n$과 평행하고 단위방향 벡터임으로 다음이 성립한다.
+$$  m = \frac{ F  n}{\lVert  F  n \rVert} $$
 
 이를 활용하면 다음이 성립한다.
-$$ \begin{aligned} & l \mathbf m = l_0 \mathbf F \mathbf n \\ \Rightarrow \enspace & l \mathbf F \mathbf n = \lVert \mathbf F \mathbf n \rVert l_0 \mathbf F \mathbf n \\ \Rightarrow \enspace & l = \lVert \mathbf F \mathbf n \rVert l_0 \quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} & l  m = l_0  F  n \\ \Rightarrow \enspace & l  F  n = \lVert  F  n \rVert l_0  F  n \\ \Rightarrow \enspace & l = \lVert  F  n \rVert l_0 \quad {_\blacksquare} \end{aligned} $$
 
 ### 명제2(Change of area)
-세 점 $\bm X, \bm X + \Delta \bm X_1, \bm X + \Delta \bm X_2$이 있다고 하자
+세 점 $X, X + \Delta X_1, X + \Delta X_2$이 있다고 하자
 
-$\bm X, \bm X + \Delta \bm X_1$ 이루어진 벡터를 $\Delta \bm X_1$이라하고 $\bm X, \bm X + \Delta \bm X_2$ 이루어진 벡터를 $\Delta \bm X_2$, 변형된 벡터를 $\Delta x_1, \Delta x_2$가 다음을 만족한다고 하자.
-$$ \Delta \bm X_1 \times \Delta \bm X_2 = A_0 \mathbf n, \enspace \Delta \mathbf x_1 \times \Delta \mathbf x_2 = A \mathbf m$$
+$X, X + \Delta X_1$ 이루어진 벡터를 $\Delta X_1$이라하고 $X, X + \Delta X_2$ 이루어진 벡터를 $\Delta X_2$, 변형된 벡터를 $\Delta x_1, \Delta x_2$가 다음을 만족한다고 하자.
+$$ \Delta X_1 \times \Delta X_2 = A_0  n, \enspace \Delta  x_1 \times \Delta  x_2 = A  m$$
 
-$\bf n, m$이 단위벡터이고 $\Delta \bm X$가 충분히 작을 때, 다음을 증명하여라.
-$$ A = \lVert \mathbf F^{-T} \mathbf n \rVert \det(\mathbf F) A_0, \enspace \mathbf m = \frac{\mathbf{F^{-T}n}}{\lVert \mathbf{F^{-T}n} \rVert} $$
+$\bf n, m$이 단위벡터이고 $\Delta X$가 충분히 작을 때, 다음을 증명하여라.
+$$ A = \lVert  F^{-T}  n \rVert \det( F) A_0, \enspace  m = \frac{{F^{-T}n}}{\lVert {F^{-T}n} \rVert} $$
 
 **Proof**
 
-$\Delta \bm X$가 충분히 작음으로 다음이 성립한다.
-$$ \begin{aligned} & A \mathbf m = (\mathbf F \Delta \bm X_1) \times (\mathbf F \Delta \bm X_2) \\ \Rightarrow \enspace &  A \mathbf F \mathbf n \cdot  \mathbf m = \mathbf F \mathbf n \cdot (\mathbf F \Delta \bm X_1) \times (\mathbf F \Delta \bm X_2) \\ \Rightarrow \enspace &  A \mathbf n \cdot \mathbf F^T \mathbf m = \det( \mathbf {FX}) \\ \Rightarrow \enspace &  A  \mathbf F^T \mathbf m = \det(\mathbf F)\det(\mathbf X) \mathbf n \\ \Rightarrow \enspace &  A  \mathbf m = \det(\mathbf F) A_0 \mathbf F^{-T} \mathbf n \end{aligned} $$
+$\Delta X$가 충분히 작음으로 다음이 성립한다.
+$$ \begin{aligned} & A  m = ( F \Delta X_1) \times ( F \Delta X_2) \\ \Rightarrow \enspace &  A  F  n \cdot   m =  F  n \cdot ( F \Delta X_1) \times ( F \Delta X_2) \\ \Rightarrow \enspace &  A  n \cdot  F^T  m = \det(  {FX}) \\ \Rightarrow \enspace &  A   F^T  m = \det( F)\det( X)  n \\ \Rightarrow \enspace &  A   m = \det( F) A_0  F^{-T}  n \end{aligned} $$
 
-$$ \text{Where, } \mathbf X = \begin{bmatrix} \mathbf n & \Delta \bm X_1 & \Delta \bm X_2 \end{bmatrix} $$
+$$ \text{Where, }  X = \begin{bmatrix}  n & \Delta X_1 & \Delta X_2 \end{bmatrix} $$
 
-$\mathbf m$은 $\mathbf F^{-T} \mathbf n$과 평행하고 단위방향 벡터임으로 다음이 성립한다.
-$$ \mathbf m = \frac{\mathbf F^{-T} \mathbf n}{\lVert \mathbf F^{-T} \mathbf n \rVert} $$
+$ m$은 $ F^{-T}  n$과 평행하고 단위방향 벡터임으로 다음이 성립한다.
+$$  m = \frac{ F^{-T}  n}{\lVert  F^{-T}  n \rVert} $$
 
 이를 활용하면 다음이 성립한다.
-$$ \begin{aligned} &  A \mathbf m = A_0 \det(\mathbf F) \mathbf F^{-T} \mathbf n \\ \Rightarrow \enspace & A \mathbf F^{-T} \mathbf n = \lVert \mathbf F^{-T} \mathbf n \rVert \det(\mathbf F) A_0 \mathbf F^{-T} \mathbf n \\ \Rightarrow \enspace & A = \lVert \mathbf F^{-T} \mathbf n \rVert \det(\mathbf F) A_0 \quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} &  A  m = A_0 \det( F)  F^{-T}  n \\ \Rightarrow \enspace & A  F^{-T}  n = \lVert  F^{-T}  n \rVert \det( F) A_0  F^{-T}  n \\ \Rightarrow \enspace & A = \lVert  F^{-T}  n \rVert \det( F) A_0 \quad {_\blacksquare} \end{aligned} $$
 
 ### 명제3(Change of volume)
-네 점 $\bm X, \bm X + \Delta \bm X_1, \bm X + \Delta \bm X_2, \bm X + \Delta \bm X_3$이 있다고 하자
+네 점 $X, X + \Delta X_1, X + \Delta X_2, X + \Delta X_3$이 있다고 하자
 
-$\bm X, \bm X + \Delta \bm X_{1,2,3}$ 이루어진 벡터를 $\Delta \bm X_{1,2,3}$이라하고 변형된 벡터를 $\Delta x_{1,2,3}$라 할 떄, 다음을 만족한다고 하자.
-$$ \Delta \bm X_1 \cdot \Delta \bm X_2 \times \Delta \bm X_3 = V_0 , \enspace \Delta \mathbf x_1 \cdot \Delta \mathbf x_2 \times \Delta \mathbf x_2 = V$$
+$X, X + \Delta X_{1,2,3}$ 이루어진 벡터를 $\Delta X_{1,2,3}$이라하고 변형된 벡터를 $\Delta x_{1,2,3}$라 할 떄, 다음을 만족한다고 하자.
+$$ \Delta X_1 \cdot \Delta X_2 \times \Delta X_3 = V_0 , \enspace \Delta  x_1 \cdot \Delta  x_2 \times \Delta  x_2 = V$$
 
-$\Delta \bm X$가 충분히 작을 때, 다음을 증명하여라.
-$$ V = \det(\mathbf F) V_0 $$
+$\Delta X$가 충분히 작을 때, 다음을 증명하여라.
+$$ V = \det( F) V_0 $$
 
 **Proof**
 
-$\Delta \bm X$가 충분히 작음으로 다음이 성립한다.
-$$ \begin{aligned} V &= (F\Delta \bm X_1) \cdot (F\Delta \bm X_2) \times (F\Delta \bm X_3) \\ &=  \det(\mathbf{FX}) \\ &= \det(\mathbf F) V_0 \quad {_\blacksquare} \end{aligned} $$
+$\Delta X$가 충분히 작음으로 다음이 성립한다.
+$$ \begin{aligned} V &= (F\Delta X_1) \cdot (F\Delta X_2) \times (F\Delta X_3) \\ &=  \det({FX}) \\ &= \det( F) V_0 \quad {_\blacksquare} \end{aligned} $$
 
-$$ \text{Where, } \mathbf X = \begin{bmatrix} \Delta \bm X_1 & \Delta \bm X_2 & \Delta \bm X_3 \end{bmatrix} $$
+$$ \text{Where, }  X = \begin{bmatrix} \Delta X_1 & \Delta X_2 & \Delta X_3 \end{bmatrix} $$

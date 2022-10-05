@@ -46,7 +46,7 @@ $$ \frac{\partial}{\partial t} \det(F) = \det(F)\text{div}(v) $$
 
 #### 보조명제
 다음을 증명하여라.
-$$ \text{tr}(F^{-1} \frac{\partial}{\partial t} F) = \text{div}(v) $$
+$$ \text{tr}(F^{-1} \frac{\partial F}{\partial t}) = \text{div}(v) $$
 
 > Reference  
 > [Book] (Gurtin) An Introduction to Continuum Mechanics p.63

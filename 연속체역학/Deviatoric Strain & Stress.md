@@ -11,7 +11,7 @@ $$ \text{Where, } \epsilon_m = \frac{1}{3}\text{tr}(\epsilon) $$
 
 이 떄, $\epsilon_mI$를 $\epsilon$의 volume-chainging part, $\epsilon_m$을 volumetric strain이라고 하며 $\tilde \epsilon$를 $\epsilon$의 volume-preserving part 또는 `deviatoric strain`이라고 한다. 
 
-### 명제
+### 명제1
 Infinitesimal strains $\epsilon_{1,2}$가 있다고 하자.
 
 이 떄, 다음을 증명하여라.
@@ -22,6 +22,27 @@ $$ \widetilde{\epsilon_1 + \epsilon_2} = \tilde \epsilon_1 + \tilde \epsilon_2 $
 Deviatoric strain의 정의에 의해 다음이 성립한다.
 $$ \begin{aligned} \widetilde{\epsilon_1 + \epsilon_2} &= \epsilon_1 + \epsilon_2 - \frac{1}{3}\text{tr}(\epsilon_1 + \epsilon_2)I \\&= \epsilon_1 - \frac{1}{3} \text{tr}(\epsilon_1)I + \epsilon_2 - \frac{1}{3} \text{tr}(\epsilon_2)I \\&= \tilde \epsilon_1 + \tilde \epsilon_2 \quad {_\blacksquare}\end{aligned} $$
 
+### 명제2
+Infinitesimal strains $\epsilon$이 있다고 하자.
+
+$\epsilon$의 eigen value가 $\epsilon_{1,2,3}$일 때, 다음을 증명하여라.
+$$ \tilde\epsilon : \tilde\epsilon = (\epsilon_1 - \epsilon_m)^2 + (\epsilon_2 - \epsilon_m)^2 + (\epsilon_3 - \epsilon_m)^2 $$
+
+**Proof**
+
+Double dot 연산의 성질에 의해 다음이 성립한다.
+$$ \begin{aligned} \tilde\epsilon : \tilde\epsilon &= \text{tr}(\tilde\epsilon^2) \\&= \text{tr}(D_{\tilde\epsilon}^2) \\&= (\epsilon_1 - \epsilon_m)^2 + (\epsilon_2 - \epsilon_m)^2 + (\epsilon_3 - \epsilon_m)^2 \quad {_\blacksquare}  \end{aligned} $$
+
+### 명제3
+Infinitesimal strains $\epsilon$이 있다고 하자.
+
+$\epsilon$의 eigen value가 $\epsilon_{1,2,3}$일 때, 다음을 증명하여라.
+$$ \tilde\epsilon : \tilde\epsilon = \frac{1}{3}( (\epsilon_1 - \epsilon_2)^2 + (\epsilon_2 - \epsilon_3)^2 + (\epsilon_3 - \epsilon_1)^2) $$
+
+**Proof**
+
+명제2에 의해 다음이 성립한다.
+$$ \begin{aligned} \tilde\epsilon : \tilde\epsilon &= (\epsilon_1 - \epsilon_m)^2 + (\epsilon_2 - \epsilon_m)^2 + (\epsilon_3 - \epsilon_m)^2 \\ &= \epsilon_1^2 + \epsilon_2^2 + \epsilon_3^2 +  - 2(\epsilon_1 + \epsilon_2 + \epsilon_3) \epsilon_m + 3\epsilon_m^2 \\ &= \epsilon_1^2 + \epsilon_2^2 + \epsilon_3^2 +  - \frac{1}{3} (\epsilon_1 + \epsilon_2 + \epsilon_3)^2 \\ &= \frac{1}{3} ( 2\epsilon_1^2 + 2\epsilon_2^2 + 2\epsilon_3^2 - 2(\epsilon_1\epsilon_2 + \epsilon_2\epsilon_3 + \epsilon_3\epsilon_1)) \\ &= \frac{1}{3} ( (\epsilon_1 - \epsilon_2)^2 + (\epsilon_2 - \epsilon_3)^2 + (\epsilon_3 - \epsilon_1)^2) \quad {_\blacksquare} \end{aligned} $$
 
 # Deviatoric Stress
 미소 변위, 변형률을 가정하고 등방성 선형 탄성재료의 경우 구성방정식은 다음과 같다.
@@ -56,6 +77,19 @@ $$ \begin{aligned} \sigma - \tilde \sigma &= \frac{1}{3}\text{tr}(\sigma)I \\ &=
 
 위 식을 정리하면 다음이 성립한다.
 $$ \tilde \sigma = \sigma - \sigma_m I \quad {_\blacksquare}$$
+
+#### 따름명제1
+미소 변위, 변형률을 가정하고 등방성 선형 탄성재료라고 하자.
+
+$\sigma$의 eigen value가 $\sigma_{1,2,3}$일 때, 다음을 증명하여라.
+$$ \tilde\sigma : \tilde\sigma = (\sigma_1 - \sigma_m)^2 + (\sigma_2 - \sigma_m)^2 + (\sigma_3 - \sigma_m)^2 $$
+
+#### 따름명제2
+미소 변위, 변형률을 가정하고 등방성 선형 탄성재료라고 하자.
+
+$\sigma$의 eigen value가 $\sigma_{1,2,3}$일 때, 다음을 증명하여라.
+$$ \tilde\sigma : \tilde\sigma = \frac{1}{3}( (\sigma_1 - \sigma_2)^2 + (\sigma_2 - \sigma_3)^2 + (\sigma_3 - \sigma_1)^2) $$
+
 
 # Distortion Strain Energy Density
 미소 변위, 변형률을 가정하고 선형 탄성재료의 경우 다음과 같은 strain energy function을 갖는다.

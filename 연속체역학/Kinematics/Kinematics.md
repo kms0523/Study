@@ -203,10 +203,10 @@ $\mathbf p$를 물질미분하면 연속체의 한 점을 고정한 채 연속�
 
 
 연속체의 두 점 $\bm X, \bm X + \Delta \bm X$으로 이루어진 벡터를 다음과 같이 정의하자.
-$$ \begin{equation} \Delta \mathbf x = \mathbf p(\bm X + \Delta \bm X, t) - \mathbf p(\bm X, t) \end{equation}  $$
+$$ \begin{equation} \Delta \mathbf x = \varphi(\bm X + \Delta \bm X, t) - \varphi(\bm X, t) \end{equation}  $$
 
 식(7)을 물질미분 하면 다음과 같다.
-$$ \begin{aligned} \frac{D}{Dt} \Delta \mathbf x &= \frac{D}{Dt} \mathbf p(\bm X + \Delta \bm X, t) - \frac{D}{Dt} \mathbf p(\bm X, t) \\ &= \mathbf u(\bm X + \Delta \bm X,t) - \mathbf u(\bm X,t) \\ &= \mathbf v(\mathbf x + \Delta \mathbf x,t) - \mathbf v(\mathbf x,t) \end{aligned} $$
+$$ \begin{aligned} \frac{D}{Dt} \Delta \mathbf x &= \frac{D}{Dt} \varphi(\bm X + \Delta \bm X, t) - \frac{D}{Dt} \varphi(\bm X, t) \\ &= \mathbf u(\bm X + \Delta \bm X,t) - \mathbf u(\bm X,t) \\ &= \mathbf v(\mathbf x + \Delta \mathbf x,t) - \mathbf v(\mathbf x,t) \end{aligned} $$
 
 $\Delta \bm X, \Delta \mathbf x$가 충분히 작아 $\mathbf u(\bm X + \Delta \bm X,t), \mathbf v(\mathbf x + \Delta \mathbf x,t)$를 선형으로 근사할 수 있다고 가정하면 다음과 같다.
 $$ \begin{equation} \frac{D}{Dt} \Delta \mathbf x = (\nabla_{\bm X} \mathbf u) \Delta \bm X = (\nabla_{\mathbf x} \mathbf v) \Delta \mathbf x \end{equation} $$

@@ -18,7 +18,7 @@ $$ A : A = \text{tr}(A^2) $$
 
 $$ \begin{aligned} A : A &= A_{ij}A_{ij} \\&= A_{ij}A_{ji} \\&= \text{tr}(A^2) \quad {_\blacksquare} \end{aligned} $$
 
-### 명제3
+#### 따름명제
 $A \in M_{nn}(\R)$가 symmetric metrix라 하자.
 
 $A \sim B$일 때, 다음을 증명하여라.
