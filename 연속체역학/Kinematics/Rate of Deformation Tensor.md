@@ -1,5 +1,5 @@
 # Rate of Deformation Tensor
-Deformation $\varphi$와 이에 따른 속도 $V$가 있다고 하자.
+Deformation $\varphi$와 이에 따른 속도 $v(x,t)$가 있다고 하자.
 
 $\nabla_x v$를 다음과 같이 symmetric part와 antisymmetric part로 나눠보자.
 $$ \nabla_x v = D + W $$
@@ -22,34 +22,40 @@ $$ \frac{\partial}{\partial t} \Delta x = \nabla_x v \Delta x = D \Delta x + W \
 ### 명제1
 Reference figure $\Omega_0$, deformation $\varphi$, defromation gradient $F$가 있다고 하자.
 
-두 점 $X, X + \Delta X \in \Omega_0$이 있을 때, 두 점으로 이루어진 vector $\Delta x$를 다음과 같이 정의하자.
-$$ \Delta x = \varphi(X + \Delta X, t) - \varphi(X, t) = lm$$
+점 $X \in \Omega_0$와 vector $\Delta X$가 있을 때, 점 $x \in \Omega$와 vector $\Delta x$를 다음과 같이 정의하자.
+$$ \begin{aligned} x &:= \varphi(X,t) \\ \Delta x &:= \varphi(X + \Delta X, t) - \varphi(X, t) \end{aligned} $$
 
-이 때, $l$은 길이를 나타내는 scalar 값이고 $m$은 단위벡터이다.
+이 때, vector $\Delta x$를 크기 $l$과 단위 vector $m$으로 나타내자.
+$$ \Delta x = lm $$
 
  $\Delta X$가 충분히 작을 때, 다음을 증명하여라.
 $$ \frac{1}{l} \frac{\partial l}{\partial t} = m \cdot Dm $$
 
-**Proof1**
+**Proof**
 
-$\Delta x$의 정의와 보조명제에 의해 다음이 성립한다.
-$$ \begin{aligned} & l^2 = \Delta x \cdot \Delta x \\ \Rightarrow \enspace & 2 l \frac{\partial l}{\partial t} = 2 \Delta x \cdot \frac{\partial}{\partial t} \Delta x \\ \Rightarrow \enspace & l \frac{\partial l}{\partial t} = l^2 m \cdot \nabla_x v m \\ \Rightarrow \enspace & \frac{1}{l} \frac{\partial l}{\partial t} = m \cdot (D + W) m  \\ \Rightarrow \enspace & \frac{1}{l} \frac{\partial l}{\partial t} = m \cdot D m  \end{aligned} $$
+time rate of change의 명제에 의해 다음이 성립한다. 
+$$ \frac{1}{l} \frac{\partial l}{\partial t} = m \cdot (\nabla_xv)m $$
+
+
+
+$$ \begin{aligned} & l^2 = \Delta x \cdot \Delta x \\ \Rightarrow \enspace & 2 l \frac{\partial l}{\partial t} = 2 \Delta x \cdot \frac{\partial}{\partial t} \Delta x \\ \Rightarrow \enspace & l \frac{\partial l}{\partial t} = l^2 m \cdot \nabla_x v m \\ \Rightarrow \enspace & \frac{1}{l} \frac{\partial l}{\partial t} = m \cdot (D + W) m  \end{aligned} $$
+
+보조명제에 의해 다음이 성립한다.
+$$ \begin{aligned} & \frac{1}{l} \frac{\partial l}{\partial t} = m \cdot (D + W) m  \\ \Rightarrow \enspace & \frac{1}{l} \frac{\partial l}{\partial t} = m \cdot D m \quad {_\blacksquare}  \end{aligned} $$
 
 **Proof2**
 
-$\Delta X$를 다음과 같이 정의하자.
+vector $\Delta X$를 크기 $l_0$와 단위 vector $n$으로 나타내자.
 $$ \Delta X = l_0n $$
 
-이 때, $l_0$은 길이를 나타내는 scalar 값이고 $n$은 단위벡터이다.
-
-그러면 다음이 성립한다.
+그러면 deformation gradient의 성질에 의해 다음이 성립한다.
 $$ l = \lVert Fn \rVert l_0, \enspace m = \frac{Fn}{\lVert Fn \rVert} $$
 
 따라서, 다음이 성립한다.
 $$ \begin{aligned} \frac{\partial l}{ \partial t} &= l_0 \frac{\partial}{\partial t} (Fn \cdot Fn)^{1/2} \\&= l_0 \frac{1}{2} (Fn \cdot Fn)^{-1/2} \frac{\partial}{\partial t} (Fn \cdot Fn) \\&= l_0 \frac{1}{\lVert Fn \rVert} Fn \cdot (\frac{\partial}{\partial t} F)n \\&= l_0m \cdot \nabla _x vFn \\&= l m \cdot (D + W) m \end{aligned} $$
 
 이 때, 보조명제에 의해 다음이 성립한다.
-$$ \frac{1}{l}\frac{\partial l}{ \partial t} = m \cdot D m $$
+$$ \frac{1}{l}\frac{\partial l}{ \partial t} = m \cdot D m \quad {_\blacksquare} $$
 
 #### 보조명제
 $A \in M_{nn}(\mathbb F)$와 $x \in M_{n1}(\mathbb F)$가 있다고 하자.
@@ -58,7 +64,12 @@ $A$가 Anti symmetric matrix일 때, 다음을 증명하여라.
 $$ x \cdot A x = 0 $$
 
 **Proof**
-$$ \begin{aligned} x \cdot A x &= A x \cdot x \\&= x^T A^T x \\&= x \cdot A^T x \\&= - x \cdot A x \\&= 0 \end{aligned} $$
+
+내적의 성질에 의해 다음이 성립한다.
+$$ \begin{aligned} x \cdot A x &= A x \cdot x \\&= x^T A^T x \\&= x \cdot A^T x \\&= - x \cdot A x \end{aligned} $$
+
+따라서 다음이 성립한다.
+$$ 2 x \cdot Ax = 0 \enspace \Rightarrow \enspace x \cdot Ax = 0 \quad {_\blacksquare} $$
 
 #### 참고
 $n$방향에 있는 요소의 단위 길이당 길이의 시간변화율은 $n \cdot Dn$으로 표현되며 $D_{ii}$은 $e$방향에 있는 요소의 단위 길이당 길이의 시간변화율을 나타낸다.

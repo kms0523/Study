@@ -2,7 +2,7 @@
 Deformation $\varphi$가 있다고 하자.
 $$ x(X,t) := \varphi(X,t) $$
 
-$\varphi$를 시간으로 편미분하면 연속체의 한 점을 고정한 채 연속체의 한 점이 공간상의 차지하는 한 점(위치)의 시간에 따른 변화량, 즉 속도 $V$를 얻게 된다.
+$\varphi$를 시간으로 편미분하면 연속체의 한 점이 공간상의 차지하는 위치의 시간에 따른 변화량, 즉 `속도(velocity)` $V$를 얻게 된다.
 $$ V(X,t) := \frac{\partial \varphi}{\partial t}  $$
 
 ### 참고
@@ -13,15 +13,39 @@ $$ v(x,t) = V \circ \varphi^{-1} $$
 > 참고  
 > [book] (Lai et al) Introduction to Continuum Mechanics Chapter 3.12
 
+# Time Rate of Deformation Gradient
 ### 명제1
-Deformation $\varphi$와 이에 따른 속도 $V$가 있다고 하자.
+Deformation $\varphi$와 이에 따른 속도 $V(X,t)$가 있다고 하자.
+
+Deformation gradient $F$가 있을 때, 다음을 증명하여라.
+$$ \frac{\partial F}{\partial t} = \nabla_X V  $$
+
+**Proof**
+
+Deformation gradient $F$의 정의에 의해 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial F_{ij}}{\partial t} &=  \frac{\partial }{\partial t}\frac{\partial \varphi_i}{\partial X_j} \\&= \frac{\partial }{\partial X_j}\frac{\partial \varphi_i}{\partial t} \\&= \frac{\partial V_i }{\partial X_j} \quad {_\blacksquare} \end{aligned} $$
+
+### 명제2
+Deformation $\varphi$와 이에 따른 속도 $v(x,t)$가 있다고 하자.
+
+Deformation gradient $F$가 있을 때, 다음을 증명하여라.
+$$ \frac{\partial F}{\partial t} = \nabla_x v F $$
+
+**Proof**
+
+명제 1과 $v$의 정의에 의해 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial F_i}{\partial t} &= \frac{\partial V_i }{\partial X_j} \\&= \frac{\partial}{\partial X_j} (v \circ \varphi)_i \\&= \frac{\partial v_i}{\partial \varphi_j} \frac{\partial \varphi_j}{\partial X_k} \\&= \frac{\partial v_i}{\partial x_j} F_{jk} \quad {_\blacksquare} \end{aligned} $$
+
+# Other Time Rates
+
+### 명제1
+Deformation $\varphi$와 이에 따른 속도 $V(X,t)$가 있다고 하자.
 
 점 $X \in \Omega_0$와 vector $\Delta X$가 있을 때, 점 $x \in \Omega$와 vector $\Delta x$를 다음과 같이 정의하자.
 $$ \begin{aligned} x &:= \varphi(X,t) \\ \Delta x &:= \varphi(X + \Delta X, t) - \varphi(X, t) \end{aligned} $$
 
-
 $\Delta X$가 충분히 작을 때, 다음을 증명하여라.
-$$ \frac{D}{Dt} \Delta x = (\nabla_{X} V) \Delta X $$
+$$ \frac{\partial}{\partial t} \Delta x = (\nabla_{X} V) \Delta X $$
 
 **Proof**
 
@@ -35,7 +59,7 @@ $$ \begin{aligned} \frac{\partial}{\partial t} \Delta x &= V(X + \Delta X,t) - V
 > [book] (Lai et al) Introduction to Continuum Mechanics Chapter 3.12
 
 ### 명제2
-Deformation $\varphi$와 이에 따른 속도 $V$가 있다고 하자.
+Deformation $\varphi$와 이에 따른 속도 $v(x,t)$가 있다고 하자.
 
 점 $X \in \Omega_0$와 vector $\Delta X$가 있을 때, 점 $x \in \Omega$와 vector $\Delta x$를 다음과 같이 정의하자.
 $$ \begin{aligned} x &:= \varphi(X,t) \\ \Delta x &:= \varphi(X + \Delta X, t) - \varphi(X, t) \end{aligned} $$
@@ -54,25 +78,52 @@ $$ \begin{aligned} \frac{\partial}{\partial t} \Delta x &= v(x + \Delta x,t) - v
 > 참고  
 > [book] (Lai et al) Introduction to Continuum Mechanics Chapter 3.12
 
-# Time Rate of Deformation Gradient
-### 명제1
-Deformation $\varphi$와 이에 따른 속도 $V$가 있다고 하자.
+### 명제3
+Reference figure $\Omega_0$, deformation $\varphi$, defromation gradient $F$가 있다고 하자.
 
-Deformation gradient $F$가 있을 때, 다음을 증명하여라.
-$$ \frac{\partial F}{\partial t} = \nabla_X V  $$
+점 $X \in \Omega_0$와 vector $\Delta X$가 있을 때, 점 $x \in \Omega$와 vector $\Delta x$를 다음과 같이 정의하자.
+$$ \begin{aligned} x &:= \varphi(X,t) \\ \Delta x &:= \varphi(X + \Delta X, t) - \varphi(X, t) \end{aligned} $$
+
+이 때, vector $\Delta x$를 크기 $l$과 단위 vector $m$으로 나타내자.
+$$ \Delta x = lm $$
+
+ $\Delta X$가 충분히 작을 때, 다음을 증명하여라.
+$$ \frac{1}{l} \frac{\partial l}{\partial t} = m \cdot (\nabla_xv)m $$
+
+**Proof1**
+
+$\Delta x$의 정의에 의해 다음이 성립한다. 
+$$ \begin{aligned} & l^2 = \Delta x \cdot \Delta x \\ \Rightarrow \enspace & 2 l \frac{\partial l}{\partial t} = 2 \Delta x \cdot \frac{\partial}{\partial t} \Delta x \\ \Rightarrow \enspace & l \frac{\partial l}{\partial t} = l^2 m \cdot \nabla_x v m \\ \Rightarrow \enspace & \frac{1}{l} \frac{\partial l}{\partial t} = m \cdot (\nabla_xv) m  \end{aligned} $$
+
+**Proof2**
+
+vector $\Delta X$를 크기 $l_0$와 단위 vector $n$으로 나타내자.
+$$ \Delta X = l_0n $$
+
+그러면 deformation gradient의 성질에 의해 다음이 성립한다.
+$$ l = \lVert Fn \rVert l_0, \enspace m = \frac{Fn}{\lVert Fn \rVert} $$
+
+따라서, 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial l}{ \partial t} &= l_0 \frac{\partial}{\partial t} (Fn \cdot Fn)^{1/2} \\&= l_0 \frac{1}{2} (Fn \cdot Fn)^{-1/2} \frac{\partial}{\partial t} (Fn \cdot Fn) \\&= l_0 \frac{1}{\lVert Fn \rVert} Fn \cdot (\frac{\partial}{\partial t} F)n \\&= l_0m \cdot \nabla _x vFn \\&= l m \cdot (\nabla_xv) m \end{aligned} $$
+
+### 명제4
+deformation $\varphi$와 그에 따른 속도 $v(x,t)$가 있다고 하자.
+
+$(\nabla_xv)$의 eigen values를 $\lambda_{1,2,3}$이라 하고, eigen vector를 $e_{1,2,3}$이라 할 때, 각각의 eigen vector들과 평행한 3개의 vector이루어진 부피를 $\rm V$라 하자.
+
+이 떄, 다음을 증명하여라.
+$$ \frac{1}{\rm V} \frac{\partial \rm V}{\partial t} = \text{div}(v) $$
 
 **Proof**
 
-Deformation gradient $F$의 정의에 의해 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial F_{ij}}{\partial t} &=  \frac{\partial }{\partial t}\frac{\partial \varphi_i}{\partial X_j} \\&= \frac{\partial }{\partial X_j}\frac{\partial \varphi_i}{\partial t} \\&= \frac{\partial V_i }{\partial X_j} \quad {_\blacksquare} \end{aligned} $$
+$\rm V$의 정의에 의해 다음과 같이 표현할 수 있다.
+$$ {\rm V} = l_1e_1 \cdot l_2e_2 \times l_3e_3 = l_1l_2l_3 $$
 
-### 명제2
-Deformation $\varphi$와 이에 따른 속도 $V$가 있다고 하자.
+따라서 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial {\rm V}}{\partial t} &= \frac{\partial l_1}{\partial t}l_2l_3 + \frac{\partial l_2}{\partial t}l_1l_3 + \frac{\partial l_3}{\partial t}l_1l_2 \\&= l_1l_2l_3 \bigg( \frac{1}{l_1}\frac{\partial l_1}{\partial t} + \frac{1}{l_2}\frac{\partial l_2}{\partial t} + \frac{1}{l_3}\frac{\partial l_3}{\partial t} \bigg) \\ \frac{1}{{\rm V}} \frac{\partial {\rm V}}{\partial t} &= \frac{1}{l_1}\frac{\partial l_1}{\partial t} + \frac{1}{l_2}\frac{\partial l_2}{\partial t} + \frac{1}{l_3}\frac{\partial l_3}{\partial t} \end{aligned} $$
 
-Deformation gradient $F$가 있을 때, 다음을 증명하여라.
-$$ \frac{\partial F}{\partial t} = \nabla_x v F $$
+명제3에 의해 다음이 성립한다.
+$$ \begin{aligned} \frac{1}{{\rm V}} \frac{\partial {\rm V}}{\partial t} &= \frac{1}{l_1}\frac{\partial l_1}{\partial t} + \frac{1}{l_2}\frac{\partial l_2}{\partial t} + \frac{1}{l_3}\frac{\partial l_3}{\partial t} \\&= e_1 \cdot (\nabla_xv) e_1 + e_2 \cdot (\nabla_xv) e_2 + e_3 \cdot (\nabla_xv) e_3 \\&= \lambda_1 + \lambda_2 + \lambda_3 \\&= \text{tr}(D_{\nabla_xv}) \end{aligned} $$
 
-**Proof**
-
-명제 1과 $v$의 정의에 의해 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial F_i}{\partial t} &= \frac{\partial V_i }{\partial X_j} \\&= \frac{\partial}{\partial X_j} (v \circ \varphi)_i \\&= \frac{\partial v_i}{\partial \varphi_j} \frac{\partial \varphi_j}{\partial X_k} \\&= \frac{\partial v_i}{\partial x_j} F_{jk} \quad {_\blacksquare} \end{aligned} $$
+$\nabla_xv \sim D_{\nabla_xv}$임으로 trace의 성질에 의해 다음이 성립한다.
+$$ \begin{aligned} \frac{1}{{\rm V}} \frac{\partial {\rm V}}{\partial t} &= \text{tr}(D_{\nabla_xv}) \\&= \text{tr}(\nabla_xv) \\&= \frac{\partial v_1}{\partial x_1} + \frac{\partial v_2}{\partial x_2} + \frac{\partial v_3}{\partial x_3} \\&= \text{div}(v) \quad {_\blacksquare} \end{aligned} $$

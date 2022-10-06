@@ -51,7 +51,7 @@ $$ \sigma = \lambda \text{tr}(\epsilon) I + 2\mu \epsilon $$
 구성방정식을 $\tilde \epsilon$으로 나타내면 다음과 같다.
 $$ \begin{aligned} \sigma &= \lambda \text{tr}(\epsilon) I + 2\mu \epsilon \\ &= 3 \lambda \epsilon_m I + 2\mu(\tilde \epsilon + \epsilon_m I) \\ &= (3\lambda + 2\mu)\epsilon_m I + 2\mu \tilde \epsilon \end{aligned} $$
 
-Volume chainging part와 관련된 항을 제외한 stress $\tilde \sigma$를 다음과 같이 정의한다.
+$\epsilon_m$과 관련된 항을 제외한 stress $\tilde \sigma$를 다음과 같이 정의한다.
 $$ \tilde \sigma := 2\mu \tilde \epsilon $$
 
 이 때, $\tilde \sigma$를 `deviatoric stress`라고 한다.
