@@ -36,6 +36,14 @@ $$ \frac{\partial F}{\partial t} = \nabla_x v F $$
 명제 1과 $v$의 정의에 의해 다음이 성립한다.
 $$ \begin{aligned} \frac{\partial F_i}{\partial t} &= \frac{\partial V_i }{\partial X_j} \\&= \frac{\partial}{\partial X_j} (v \circ \varphi)_i \\&= \frac{\partial v_i}{\partial \varphi_j} \frac{\partial \varphi_j}{\partial X_k} \\&= \frac{\partial v_i}{\partial x_j} F_{jk} \quad {_\blacksquare} \end{aligned} $$
 
+### 명제3
+deformation $\varphi$와 deformation gradient $F$ 그리고 그에 따른 속도 $v(x,t)$가 있다고 하자.
+
+이 떄, 다음을 증명하여라.
+$$ \frac{\partial}{\partial t} \det(F) = \text{div}(v)\det(F) $$
+
+**Proof**
+
 # Other Time Rates
 
 ### 명제1
@@ -109,6 +117,8 @@ $$ \begin{aligned} \frac{\partial l}{ \partial t} &= l_0 \frac{\partial}{\partia
 ### 명제4
 deformation $\varphi$와 그에 따른 속도 $v(x,t)$가 있다고 하자.
 
+
+
 $(\nabla_xv)$의 eigen values를 $\lambda_{1,2,3}$이라 하고, eigen vector를 $e_{1,2,3}$이라 할 때, 각각의 eigen vector들과 평행한 3개의 vector이루어진 부피를 $\rm V$라 하자.
 
 이 떄, 다음을 증명하여라.
@@ -126,4 +136,7 @@ $$ \begin{aligned} \frac{\partial {\rm V}}{\partial t} &= \frac{\partial l_1}{\p
 $$ \begin{aligned} \frac{1}{{\rm V}} \frac{\partial {\rm V}}{\partial t} &= \frac{1}{l_1}\frac{\partial l_1}{\partial t} + \frac{1}{l_2}\frac{\partial l_2}{\partial t} + \frac{1}{l_3}\frac{\partial l_3}{\partial t} \\&= e_1 \cdot (\nabla_xv) e_1 + e_2 \cdot (\nabla_xv) e_2 + e_3 \cdot (\nabla_xv) e_3 \\&= \lambda_1 + \lambda_2 + \lambda_3 \\&= \text{tr}(D_{\nabla_xv}) \end{aligned} $$
 
 $\nabla_xv \sim D_{\nabla_xv}$임으로 trace의 성질에 의해 다음이 성립한다.
-$$ \begin{aligned} \frac{1}{{\rm V}} \frac{\partial {\rm V}}{\partial t} &= \text{tr}(D_{\nabla_xv}) \\&= \text{tr}(\nabla_xv) \\&= \frac{\partial v_1}{\partial x_1} + \frac{\partial v_2}{\partial x_2} + \frac{\partial v_3}{\partial x_3} \\&= \text{div}(v) \quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} \frac{1}{{\rm V}} \frac{\partial {\rm V}}{\partial t} &= \text{tr}(D_{\nabla_xv}) \\&= \text{tr}(\nabla_xv) \\&= \text{div}(v) \quad {_\blacksquare} \end{aligned} $$
+
+
+
