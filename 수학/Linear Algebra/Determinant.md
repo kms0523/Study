@@ -87,14 +87,17 @@ $$ M := \{ m \in M_{nn}(\mathbb F) \enspace | \enspace \det(m) \neq 0 \} $$
 미분가능한 함수 $A : \mathbb F \rightarrow M$이 있을 때, 다음을 증명하여라.
 $$ \frac{d}{dt} \det(A(t)) = \det(A(t)) \text{tr} ( A(t)^{-1} A'(t) ) $$
 
+$$ \text{Where, } A'(t) \equiv \frac{dA}{dt} $$
+
 **Proof**
 
 명제3과 명제6에 의해 다음이 성립한다.
-$$ \begin{aligned} \det ( A + h A' ) &= \det(A) \det ( I + h A^{-1} A' ) \\&= \det(A) + h \det(A)\text{tr}(A^{-1}A') \end{aligned} $$
+$$ \begin{aligned} \det ( A + h A' ) &= \det(A) \det ( I + h A^{-1} A' ) \\&= \det(A)(I + h \text{tr}(A^{-1}A') + O(h^2)) \end{aligned} $$
 
 Chain rule의 성질에 의해 다음이 성립한다.
-$$ \begin{aligned} \frac{d}{dt} \det(A(t)) &= \lim_{h \rightarrow 0} \frac{\det(A(t+h)) - \det(A(t))}{h} \\&= \lim_{h \rightarrow 0} \frac{\det(A(t) + A'h)) - \det(A(t))}{h} \\&= \lim_{h \rightarrow 0} \frac{h \det(A)\text{tr}(A^{-1}A')}{h} \\&= \det(A)\text{tr}(A^{-1}A') \quad{_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} \frac{d}{dt} \det(A(t)) &= \lim_{h \rightarrow 0} \frac{\det(A(t+h)) - \det(A(t))}{h} \\&= \lim_{h \rightarrow 0} \frac{\det(A(t) + hA') - \det(A(t))}{h} \\&= \lim_{h \rightarrow 0} \frac{(\det(A(t) + hA'))_L - \det(A(t))}{h} \\&= \lim_{h \rightarrow 0} \frac{h \det(A)\text{tr}(A^{-1}A')}{h} \\&= \det(A)\text{tr}(A^{-1}A') \quad{_\blacksquare} \end{aligned} $$
 
+$$ \text{Where, } (\cdot)_L \text{ is linear part of } (\cdot) $$
 
 > Reference  
 > [Blog - Matrix identities](https://terrytao.wordpress.com/2013/01/13/matrix-identities-as-derivatives-of-determinant-identities/)  

@@ -14,13 +14,17 @@
 $$ \text{find} \quad x \in \R \quad s.t. \quad  f(x)=0 $$
 
 알고리즘은 다음 순서로 이루어진다.
-1. 초기 해 $x_0$를 예측한다
-2. $x_0$에서 $f$를 선형근사한다.
-$$ y= f'(x_0)(x-x_0)+f(x_0) $$
-3. 선형근사한 함수의 해를 찾는다.
-$$ x_1 = x_0 - \frac{f(x_0)}{f'(x_0)} $$
-4. $x_1$는 $x_0$ 보다 근에 대해 더 나은 근사이다. 이 과정을 원하는 수준의 근사까지 반복한다.
-$$ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} $$
+1. $k=0$으로 두고 초기 해 $x_0$를 예측한다
+2. $x_k$에서 $f$를 선형근사한다.
+$$ y= f'(x_k)(x - x_k) + f(x_k) $$
+3. 선형근사한 함수의 해를 $x_{k+1}$로 둔다.
+$$ x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)} $$
+4. $x_{k+1}$이 convergence criterion을 만족하는지 확인한다.
+$$ |f(x_{k+1})| \le \epsilon \enspace \land \enspace N \le k+1    $$
+5. Convergence criterion을 만족하면 다음과 같이 해를 결정한다.
+$$ x = x_{k+1} \enspace \land \enspace \text{ Exit algorithm } $$
+6. Convergence criterion을 만족하지 않는다면 $k = k + 1$로 두고 step2로 돌아간다.
+
 
 ## 벡터함수
 미분가능한 벡터 함수 $f:\R^n \rightarrow \R^m$가 주어졌을 때 근 $x$를 찾고자 한다.
@@ -40,14 +44,16 @@ $$ f = \begin{bmatrix}
 \end{bmatrix}, \quad f_i : \R^n \rightarrow \R, \quad i=1,\cdots,m $$
 
 ### $n=m$
-알고리즘은 다음 순서로 이루어진다.
-1. 초기 해 $x_0$를 예측한다
-2. $x_0$에서 $f$를 선형근사한다.
-$$ y= J_f(x_0)(x-x_0)+f(x_0) $$
-3. 선형근사한 함수의 해를 찾는다.
-$$ x_1 = x_0 - J_f(x_0)^{-1}f(x_0)$$
-4. $x_1$는 $x_0$ 보다 해에 대해 더 나은 근사이다. 이 과정을 원하는 수준의 근사까지 반복한다.
-$$ x_{n+1} = x_n - J_f(x_n)^{-1}f(x_n) $$
+1. $k=0$으로 두고 초기 해 $x_0$를 예측한다
+2. $x_k$에서 $f$를 선형근사한다.
+$$ y= J_f(x_k)(x - x_k) + f(x_k) $$
+3. 선형근사한 함수의 해를 $x_{k+1}$로 둔다.
+$$ x_{k+1} = x_k - J_f(x_k)^{-1} f(x_k) $$
+4. $x_{k+1}$이 convergence criterion을 만족하는지 확인한다.
+$$ |f(x_{k+1})| \le \epsilon \enspace \land \enspace N \le k+1    $$
+5. Convergence criterion을 만족하면 다음과 같이 해를 결정한다.
+$$ x = x_{k+1} \enspace \land \enspace \text{ Exit algorithm } $$
+6. Convergence criterion을 만족하지 않는다면 $k = k + 1$로 두고 step2로 돌아간다.
 
 ### $n<m$
 알고리즘은 다음 순서로 이루어진다.

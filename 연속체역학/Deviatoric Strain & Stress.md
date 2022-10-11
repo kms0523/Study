@@ -44,6 +44,16 @@ $$ \tilde\epsilon : \tilde\epsilon = \frac{1}{3}( (\epsilon_1 - \epsilon_2)^2 + 
 명제2에 의해 다음이 성립한다.
 $$ \begin{aligned} \tilde\epsilon : \tilde\epsilon &= (\epsilon_1 - \epsilon_m)^2 + (\epsilon_2 - \epsilon_m)^2 + (\epsilon_3 - \epsilon_m)^2 \\ &= \epsilon_1^2 + \epsilon_2^2 + \epsilon_3^2 +  - 2(\epsilon_1 + \epsilon_2 + \epsilon_3) \epsilon_m + 3\epsilon_m^2 \\ &= \epsilon_1^2 + \epsilon_2^2 + \epsilon_3^2 +  - \frac{1}{3} (\epsilon_1 + \epsilon_2 + \epsilon_3)^2 \\ &= \frac{1}{3} ( 2\epsilon_1^2 + 2\epsilon_2^2 + 2\epsilon_3^2 - 2(\epsilon_1\epsilon_2 + \epsilon_2\epsilon_3 + \epsilon_3\epsilon_1)) \\ &= \frac{1}{3} ( (\epsilon_1 - \epsilon_2)^2 + (\epsilon_2 - \epsilon_3)^2 + (\epsilon_3 - \epsilon_1)^2) \quad {_\blacksquare} \end{aligned} $$
 
+### 명제4
+Infinitesimal strains $\epsilon$이 있을 때, 다음을 증명하여라.
+$$ \frac{\partial \tilde\epsilon_{ij}}{\partial \epsilon_{kl}} = \delta_{ik}\delta_{jl} - \frac{1}{3}\delta_{ij}\delta_{kl} $$
+
+**Proof**
+
+$\tilde{\epsilon}$의 정의에 의해 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial \tilde\epsilon_{ij}}{\partial \epsilon_{kl}} &= \frac{\partial (\epsilon_{ij} - \frac{1}{3}\epsilon_{mm}\delta_{ij})}{\partial \epsilon_{kl}} \\&= \frac{\partial \epsilon_{ij}}{\partial \epsilon_{kl}} - \frac{1}{3} \delta_{ij} \frac{\partial \epsilon_{mm}}{\partial \epsilon_{kl}} \\&= \delta_{ik}\delta_{jl} - \frac{1}{3} \delta_{ij} \delta_{kl} \quad {_\blacksquare} \end{aligned} $$
+
+
 # Deviatoric Stress
 미소 변위, 변형률을 가정하고 등방성 선형 탄성재료의 경우 구성방정식은 다음과 같다.
 $$ \sigma = \lambda \text{tr}(\epsilon) I + 2\mu \epsilon $$
@@ -78,17 +88,22 @@ $$ \begin{aligned} \sigma - \tilde \sigma &= \frac{1}{3}\text{tr}(\sigma)I \\ &=
 위 식을 정리하면 다음이 성립한다.
 $$ \tilde \sigma = \sigma - \sigma_m I \quad {_\blacksquare}$$
 
-#### 따름명제1
+#### 명제1.1
 미소 변위, 변형률을 가정하고 등방성 선형 탄성재료라고 하자.
 
 $\sigma$의 eigen value가 $\sigma_{1,2,3}$일 때, 다음을 증명하여라.
 $$ \tilde\sigma : \tilde\sigma = (\sigma_1 - \sigma_m)^2 + (\sigma_2 - \sigma_m)^2 + (\sigma_3 - \sigma_m)^2 $$
 
-#### 따름명제2
+#### 명제1.2
 미소 변위, 변형률을 가정하고 등방성 선형 탄성재료라고 하자.
 
 $\sigma$의 eigen value가 $\sigma_{1,2,3}$일 때, 다음을 증명하여라.
 $$ \tilde\sigma : \tilde\sigma = \frac{1}{3}( (\sigma_1 - \sigma_2)^2 + (\sigma_2 - \sigma_3)^2 + (\sigma_3 - \sigma_1)^2) $$
+
+#### 명제 1.3
+미소 변위, 변형률을 가정하고 등방성 선형 탄성재료라고 할 때, 다음을 증명하여라.
+$$ \frac{\partial \tilde\sigma_{ij}}{\partial \sigma_{kl}} = \delta_{ik}\delta_{jl} - \frac{1}{3}\delta_{ij}\delta_{kl} $$
+
 
 
 # Distortion Strain Energy Density

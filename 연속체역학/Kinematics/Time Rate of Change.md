@@ -33,7 +33,7 @@ $$ \frac{\partial F}{\partial t} = \nabla_x v F $$
 
 **Proof**
 
-명제 1과 $v$의 정의에 의해 다음이 성립한다.
+명제1과 $v$의 정의에 의해 다음이 성립한다.
 $$ \begin{aligned} \frac{\partial F_i}{\partial t} &= \frac{\partial V_i }{\partial X_j} \\&= \frac{\partial}{\partial X_j} (v \circ \varphi)_i \\&= \frac{\partial v_i}{\partial \varphi_j} \frac{\partial \varphi_j}{\partial X_k} \\&= \frac{\partial v_i}{\partial x_j} F_{jk} \quad {_\blacksquare} \end{aligned} $$
 
 ### 명제3
@@ -43,6 +43,9 @@ deformation $\varphi$와 deformation gradient $F$ 그리고 그에 따른 속도
 $$ \frac{\partial}{\partial t} \det(F) = \text{div}(v)\det(F) $$
 
 **Proof**
+
+Jacobi's theorem과 $F$의 시간변화율에 의한 성질에 의해 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial}{\partial t} \det(F) &= \det(F) \text{tr}(F' F^{-1}) \\&= \det(F)\text{tr}(\nabla_x v) \\&= \det(F)\text{div}(v) \quad {_\blacksquare} \end{aligned} $$
 
 # Other Time Rates
 
@@ -117,26 +120,22 @@ $$ \begin{aligned} \frac{\partial l}{ \partial t} &= l_0 \frac{\partial}{\partia
 ### 명제4
 deformation $\varphi$와 그에 따른 속도 $v(x,t)$가 있다고 하자.
 
+$X \in \Omega_0$와 vector $\Delta X_{1,2,3}$가 있을 때, $x \in \Omega$와 vector $\Delta x_{1,2,3}$를 다음과 같이 정의하자.
+$$ \begin{aligned} x &:= \varphi(X,t) \\ \Delta x_{1,2,3} &:= \varphi(X + \Delta X_{1,2,3}, t) - \varphi(X, t) \end{aligned} $$
 
+이 떄, vector $\Delta x_{1,2,3}$로 이루어진 부피를 $\rm V$ 표현하자.
+$$ \rm V:= \Delta  x_1 \cdot \Delta  x_2 \times \Delta  x_2$$
 
-$(\nabla_xv)$의 eigen values를 $\lambda_{1,2,3}$이라 하고, eigen vector를 $e_{1,2,3}$이라 할 때, 각각의 eigen vector들과 평행한 3개의 vector이루어진 부피를 $\rm V$라 하자.
-
-이 떄, 다음을 증명하여라.
+$\Delta X_{1,2,3}$가 충분히 작을 때, 다음을 증명하여라.
 $$ \frac{1}{\rm V} \frac{\partial \rm V}{\partial t} = \text{div}(v) $$
 
 **Proof**
 
-$\rm V$의 정의에 의해 다음과 같이 표현할 수 있다.
-$$ {\rm V} = l_1e_1 \cdot l_2e_2 \times l_3e_3 = l_1l_2l_3 $$
+Vector $\Delta X_{1,2,3}$로 이루어진 부피를 $\rm V_0$라 하자.
+$$ \mathrm V_0 := \Delta X_1 \cdot \Delta X_2 \times \Delta X_3 $$
 
-따라서 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial {\rm V}}{\partial t} &= \frac{\partial l_1}{\partial t}l_2l_3 + \frac{\partial l_2}{\partial t}l_1l_3 + \frac{\partial l_3}{\partial t}l_1l_2 \\&= l_1l_2l_3 \bigg( \frac{1}{l_1}\frac{\partial l_1}{\partial t} + \frac{1}{l_2}\frac{\partial l_2}{\partial t} + \frac{1}{l_3}\frac{\partial l_3}{\partial t} \bigg) \\ \frac{1}{{\rm V}} \frac{\partial {\rm V}}{\partial t} &= \frac{1}{l_1}\frac{\partial l_1}{\partial t} + \frac{1}{l_2}\frac{\partial l_2}{\partial t} + \frac{1}{l_3}\frac{\partial l_3}{\partial t} \end{aligned} $$
+Deformation gradient를 $F$라 할 때, $\Delta X_{1,2,3}$가 충분히 작기 때문에 다음이 성립한다.
+$$ \begin{aligned} \mathrm V &= \det(F) \mathrm V_0 \\ \Rightarrow \enspace \frac{\partial \rm V}{\partial t} &= \frac{\partial \det(F)}{\partial t} \mathrm V_0 \end{aligned}  $$
 
-명제3에 의해 다음이 성립한다.
-$$ \begin{aligned} \frac{1}{{\rm V}} \frac{\partial {\rm V}}{\partial t} &= \frac{1}{l_1}\frac{\partial l_1}{\partial t} + \frac{1}{l_2}\frac{\partial l_2}{\partial t} + \frac{1}{l_3}\frac{\partial l_3}{\partial t} \\&= e_1 \cdot (\nabla_xv) e_1 + e_2 \cdot (\nabla_xv) e_2 + e_3 \cdot (\nabla_xv) e_3 \\&= \lambda_1 + \lambda_2 + \lambda_3 \\&= \text{tr}(D_{\nabla_xv}) \end{aligned} $$
-
-$\nabla_xv \sim D_{\nabla_xv}$임으로 trace의 성질에 의해 다음이 성립한다.
-$$ \begin{aligned} \frac{1}{{\rm V}} \frac{\partial {\rm V}}{\partial t} &= \text{tr}(D_{\nabla_xv}) \\&= \text{tr}(\nabla_xv) \\&= \text{div}(v) \quad {_\blacksquare} \end{aligned} $$
-
-
-
+Jacobi's Theorem과 $F$의 시간변화율에 대한 성질에 의해 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial \rm V}{\partial t} &= \frac{\partial \det(F)}{\partial t} \mathrm V_0 \\&= \mathrm V \text{tr} \bigg( \frac{\partial F}{\partial t} F^{-1} \bigg) \\ \frac{1}{\mathrm V}\frac{\partial \rm V}{\partial t} &= \text{tr}(\nabla_x v) \\&= \text{div}(v) \quad {_\blacksquare} \end{aligned}  $$

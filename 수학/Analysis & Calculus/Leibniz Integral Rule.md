@@ -3,53 +3,41 @@
 > Referebce  
 > [Wiki - Leibniz integral rule ](https://en.wikipedia.org/wiki/Leibniz_integral_rule)  
 
-# 3D Generalization
-3차원에서 일반화된 Leibniz integral rule은 다음과 같다.
-$$ \frac{d}{dt} \int_{\Omega(t)} f(x,t) \thinspace dV = \int_{\Omega(t)} \frac{\partial}{\partial t} f \thinspace dV + \int_{\partial\Omega(t)} f(v_b(x,t) \cdot n(x,t)) \thinspace dS$$
+# Multi Dimension
+다차원에서 일반화된 Leibniz integral rule은 다음과 같다.
+$$ \frac{d}{dt} \int_{\Omega(t)} f(x,t) \thinspace dV = \int_{\Omega(t)} \frac{\partial f}{\partial t} \thinspace dV + \int_{\partial\Omega(t)} (v(x,t) \cdot n(x,t))f \thinspace dS$$
 
-이 때, $n$은 $\partial\Omega(t)$의 outward unit normal vector이며 $v_b$는 $x$에서의 $\partial \Omega(t)$의 velocity vector이다.
+이 때, $n$은 $\partial\Omega(t)$의 outward unit normal vector이며 $v$는 $x$에서의 $\Omega(t)$의 velocity vector이다.
 
 ## Derivation
-물질 좌표를 $X$라 할 때, deformation이 다음과 같이 정의되어 있다고 하자.
-$$ x = \varphi(X,t) $$
+Reference figure $\Omega_0$와 deforemd firuge $\Omega$가 있다고 하자.
+
+Deformation $\varphi$를 다음과 같이 정의하자.
+$$ \varphi : \Omega_0 \times \R^+ \rightarrow \Omega \quad s.t. \quad (X,t) \mapsto x $$
 
 따라서 deformation gradient $F$는 다음과 같다.
-$$ F(X,t) = \nabla \varphi $$
+$$ F(X,t) = \nabla_X \varphi $$
 
-그러면 $f_m$은 다음과 같다.
-$$ f_m(X,t) = f(\varphi(X,t),t) $$
+Deformation gradient의 성질에 의해 다음이 성립한다.
+$$ \begin{aligned} \int_{\Omega} f(x,t) \thinspace dV &= \int_{\Omega} (f \circ \varphi)(X,t) \det(F) \thinspace dV_0 \\&= \int_{\Omega_0} f(\varphi(X,t),t) J \thinspace dV_0 \\&= \int_{\Omega_0} f_m J \thinspace dV_0 \end{aligned} $$
 
-$\Omega_0$가 $\Omega(t)$의 reference configuration이라고 하면 다음이 성립한다.
-$$ \begin{aligned} \int_{\Omega} f(x,t) \thinspace dV &= \int_{\Omega_0} f(\varphi(X,t),t) \det(F) \thinspace dV_0 \\&= \int_{\Omega_0} f_m \det(F) \thinspace dV_0 \\&= \int_{\Omega_0} f_m J \thinspace dV_0 \end{aligned} $$
+$$ \text {Where, } f_m(X,t) := f(\varphi(X,t),t), \enspace J := \det(F)$$
 
-따라서, 다음이 성립한다.
-$$ \begin{aligned} \frac{d}{dt} \left( \int_{\Omega} f(x,t) \thinspace dV \right) &= \lim_{\Delta t \rightarrow 0} \frac{1}{\Delta t} \left( \int_{\Omega(t + \Delta t)} f(x,t + \Delta t) \thinspace dV  - \int_{\Omega(t)} f(x,t) \thinspace dV \right) \\&= \lim_{\Delta t \rightarrow 0} \frac{1}{\Delta t} \left( \int_{\Omega_0} f_m(X,t + \Delta t) J(X, t + \Delta t) - f_m J \thinspace dV_0 \right) \\&= \int_{\Omega_0} \left( \lim_{\Delta t \rightarrow 0} \frac{ f_m(X,t + \Delta t) J(X, t + \Delta t) - f_m J \thinspace dV_0}{\Delta t} \right) \thinspace dV_0 \\&= \int_{\Omega_0} \left( \frac{\partial}{\partial t} f_m J \right) \thinspace dV_0 \\&= \int_{\Omega_0} \left( J\frac{\partial}{\partial t} f_m + f_m\frac{\partial}{\partial t}J \right) \thinspace dV_0 \end{aligned} $$
+미분의 정의에 의해, 다음이 성립한다.
+$$ \begin{aligned} \frac{d}{dt} \left( \int_{\Omega} f(x,t) \thinspace dV \right) &= \lim_{\Delta t \rightarrow 0} \frac{1}{\Delta t} \left( \int_{\Omega(t + \Delta t)} f(x,t + \Delta t) \thinspace dV  - \int_{\Omega(t)} f(x,t) \thinspace dV \right) \\&= \lim_{\Delta t \rightarrow 0} \frac{1}{\Delta t} \left( \int_{\Omega_0} f_m(X,t + \Delta t) J(X, t + \Delta t) - f_m J \thinspace dV_0 \right) \\&= \int_{\Omega_0} \left( \lim_{\Delta t \rightarrow 0} \frac{ f_m(X,t + \Delta t) J(X, t + \Delta t) - f_m J \thinspace dV_0}{\Delta t} \right) \thinspace dV_0 \\&= \int_{\Omega_0} \frac{\partial}{\partial t} (f_m J) \thinspace dV_0  \end{aligned} $$
+
+$F$의 시간변화율의 성질에 의해, 다음이 성립한다.
+$$ \begin{aligned} \frac{d}{dt} \left( \int_{\Omega} f(x,t) \thinspace dV \right) &= \int_{\Omega_0} \frac{\partial}{\partial t} (f_m J) \thinspace dV_0 \\&= \int_{\Omega_0} \left( J\frac{\partial f_m}{\partial t} + f_m\frac{\partial J}{\partial t} \right) \thinspace dV_0 \\&= \int_{\Omega_0} \left( J\frac{\partial f_m}{\partial t} + f_m J (\nabla_x \cdot v) \right) \thinspace dV_0 \\&= \int_{\Omega_0} \left( \frac{\partial f_m}{\partial t} + f_m (\nabla_x \cdot v) \right) J \thinspace dV_0 \\&= \int_{\Omega} \left( \frac{Df}{Dt} + f (\nabla_x \cdot v) \right) \thinspace dV \end{aligned} $$
+
+Material derivative의 성질에 의해, 다음이 성립한다.
+$$ \begin{aligned} \frac{d}{dt} \left( \int_{\Omega} f(x,t) \thinspace dV \right) &= \int_{\Omega} \left( \frac{Df}{Dt} + f (\nabla_x \cdot v) \right) \thinspace dV \\&= \int_{\Omega} \left( \frac{\partial f}{\partial t} + (\nabla_x f) v + f (\nabla_x \cdot v) \right) \thinspace dV \\&= \int_{\Omega} \frac{\partial f}{\partial t} \thinspace dV + \int_{\Omega} \left( (\nabla_x f) v + f (\nabla_x \cdot v) \right) \thinspace dV \end{aligned} $$
+
+Tensor product의 identity와 divergence theorem에 의해 다음이 성립한다.
+$$ \begin{aligned} \frac{d}{dt} \left( \int_{\Omega} f(x,t) \thinspace dV \right) &= \int_{\Omega} \frac{\partial f}{\partial t}   \thinspace dV + \int_{\Omega} \left( (\nabla_x f) v + f (\nabla_x \cdot v) \right) \thinspace dV \\&= \int_{\Omega} \frac{\partial f}{\partial t} \thinspace dV + \int_{\Omega} \nabla_x \cdot (f \otimes v) \thinspace dV \\&= \int_{\Omega} \frac{\partial f}{\partial t} \thinspace dV + \int_{\partial\Omega} (f \otimes v)  n \thinspace dS \\&= \int_{\Omega} \frac{\partial f}{\partial t} \thinspace dV + \int_{\partial\Omega}  (v \cdot n) f \thinspace dS \end{aligned} $$
 
 > Reference  
 > [Wiki - Reynolds transport theorem](https://en.wikipedia.org/wiki/Reynolds_transport_theorem)  
 
-### 명제1
-$F$를 deformation gradient라고 하자.
-
-이 때, 다음을 증명하여라.
-$$ \frac{\partial}{\partial t} \det(F) = \det(F)\text{div}(v) $$
-
-**Proof**
-
-
-
-
-> Reference  
-> [Book] (Lai et al) Introduction to Continuum Mechanics chap 7.4  
-> [Wiki - Jacobi's formula](https://en.wikipedia.org/wiki/Jacobi%27s_formula)  
-
-
-#### 보조명제
-다음을 증명하여라.
-$$ \text{tr}(F^{-1} \frac{\partial F}{\partial t}) = \text{div}(v) $$
-
-> Reference  
-> [Book] (Gurtin) An Introduction to Continuum Mechanics p.63
 
 ## Material volume & Control volume
 $\Omega_0$를 reference figure라고 하고 Material volume $\Omega_m(t)$와 control volume $\Omega_c$를 다음과 같이 정의하자.

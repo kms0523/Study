@@ -32,7 +32,7 @@ $$d_S := d |_S^S : S \times S \rightarrow \R \quad s.t. \quad (s_1,s_2) \mapsto 
 > [Book] (Apostol)  Mathematical analysis p.61 
 
 ### 참고
-$S$가 $M$의 metric subspace라는 것을 간단하게 다음과 같이 표기하기도 한다.
+$S$가 $M$의 metric subspace라는 것을 간단하게 다음과 같이 표기한다.
 $$ S \le M $$
 
 

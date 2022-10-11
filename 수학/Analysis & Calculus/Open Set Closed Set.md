@@ -1,8 +1,8 @@
 # Open ball
 Metric space $M$이 있다고 하자. 
 
-$x \in M, \enspace 0 < r$이 있을 때, `open ball`은 다음과 같이 정의된 $M$의 부분집합이다.
-$$ B(x,r) := \{ y \in M \enspace | \enspace d(x,y) < r \} $$
+$x \in M, \enspace r \in \R^+$이 있을 때, `open ball`은 다음과 같이 정의된 $M$의 metric subspace이다.
+$$ B_M(x,r) := \{ y \in M \enspace | \enspace d(x,y) < r \} $$
 
 ### 참고1
 open이기 위해서 반드시 $d(x,y) \neq r$ 이어야 한다.
@@ -15,7 +15,7 @@ open ball은 1차원에서 `개구간(open interval)`과 같다.
 
 ### 참고3
 $S \le M$이 있을 때, $B_S(x,r)$은 다음과 같이 정의된다.
-$$ B_S(x,r) := \{ y \in S \enspace | \enspace d(x,y) < r \} = B(x,r) \cap S $$
+$$ B_S(x,r) := \{ y \in S \enspace | \enspace d(x,y) < r \} = B_M(x,r) \cap S $$
 
 #### 예시
 Metric space $\R$이 있을 때, $B(0,1) = (-1,1)$이다.
@@ -29,27 +29,27 @@ $S=[0,1] \le \R$이 있을 때, $B_S(0,1) = [0,1)$이다.
 Metric space $M$과 $S \le M$이 있다고 하자.
 
 $\forall x \in S$에 대해서 다음을 만족하면 $S$를 $M$에서의 `open set`이라고 한다.
-$$ \exist r > 0 \quad s.t. \quad B(x,r) \subseteq S $$
+$$ \exist r \in \R^+ \quad s.t. \quad B_M(x,r) \le S $$
 
 > Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
 
 ### 명제1
-다음을 증명하여라.
-$$ \text {Any union of open sets is open.} $$
+Metric space $M$이 있을 때, 다음을 증명하여라.
+$$ \text {Any union of open sets on } M \text{ is open set on } M. $$
 
 **Proof**
 
-모든 open set의 집합을 $S$라 하고 집합 $X$를 다음과 같이 정의하자.
-$$ X = \bigcup_{s \in S} s $$
+$M$의 모든 open set의 집합을 $S$라 하고 집합 $X$를 다음과 같이 정의하자.
+$$ X := \bigcup_{s \in S} s $$
 
 $x \in X$면, 어떤 $s \in S$에 대해서 $x \in s$이다.
 
 이 때, $s$는 open set임으로 다음이 성립한다.
-$$\exist r \quad s.t. \quad B(x,r) \subset s$$
+$$\exist r \in \R^+ \quad s.t. \quad B_M(x,r) \le s$$
 
-$X$의 정의에 의해 $s \subset X$임으로 다음이 성립한다.
-$$\exist r \quad s.t. \quad B(x,r) \subset X$$
+$X$의 정의에 의해 $s \le X$임으로 다음이 성립한다.
+$$\exist r \in \R^+ \quad s.t. \quad B_M(x,r) \le X$$
 
 따라서 $X$는 open set이다. $\quad {_\blacksquare}$
 
@@ -58,25 +58,25 @@ $$\exist r \quad s.t. \quad B(x,r) \subset X$$
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach prob 1.5.3
 
 ### 명제2
-다음을 증명하여라.
+Metric space $M$이 있을 때, 다음을 증명하여라.
 $$ \text {Any finite intersection of open sets is open.} $$
 
 **Proof**
 
-모든 open set의 집합을 $S$라 하고 집합 $X$를 다음과 같이 정의하자.
-$$ X = \bigcap_{i=1}^n s_i $$
+$M$의 모든 open set의 집합을 $S$라 하고 $s_i \in S, \enspace i = 1, \cdots, n$일 떄, 집합 $X$를 다음과 같이 정의하자.
+$$ X := \bigcap_{i=1}^n s_i $$
 
 $x \in X$면 $s_i \in S$에 대해 다음이 성립한다. 
 $$ x \in s_i, \enspace i=1,\cdots,n $$
 
 이 때, $s_i$는 open set임으로 다음이 성립한다.
-$$\exist r_i \quad s.t. \quad B(x, r_i) \subset s_i, \enspace i=1,\cdots,n$$
+$$\exist r_i \quad s.t. \quad B_M(x, r_i) \le s_i, \enspace i=1,\cdots,n$$
 
 $\min(\{ r_i \}) = r$이라 하면 다음이 성립한다.
-$$ B(x,r) \subset s_i, \enspace i=1,\cdots,n $$
+$$ B_M(x,r) \le s_i, \enspace i=1,\cdots,n $$
 
 따라서, $X$의 정의에 의해 다음이 성립한다.
-$$B(x,r) \subset X$$
+$$ B_M(x,r) \le X$$
 
 따라서 $X$는 open set이다. $\quad {_\blacksquare}$
 
@@ -85,7 +85,7 @@ $$B(x,r) \subset X$$
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach prob 1.5.3
 > 
 ### 명제3
-다음을 증명하여라.
+Metric space $M$이 있을 때, 다음을 증명하여라.
 $$ \text {An infinite intersection of open sets is not necessarily open.} $$
 
 **Proof**
@@ -109,8 +109,8 @@ $$ S \text{ is an open set on } S $$
 
 **Proof**
 
-$\forall x \in S$에 대해, $B_S(x,r) = B(x,r) \cap S$임으로 다음이 성립한다.
-$$ B_s(x,r) \subset S $$
+$\forall x \in S$에 대해, $B_S(x,r) = B_M(x,r) \cap S$임으로 다음이 성립한다.
+$$ B_S(x,r) \subset S $$
 
 따라서, $S$는 $S$에서의 open set이 된다.$\quad {_\blacksquare}$
 
@@ -133,10 +133,10 @@ open set의 정의상, $x \in \empty$에 대해 open ball을 고려해야 되는
 ### 참고
 명제1,2,4,5을 만족하는 집합족의 원소를 open set으로 정의할 경우 거리가 정의되어 있지 않은 공간에서도 open set과 closed set을 정의할 수 있다.
 
-즉, 훨씬 일반적인 형태의 open set과 closed set을 정의할 수 있게 된다.
+즉, 더 일반적인 형태의 open set과 closed set을 정의할 수 있게 된다.
 
 > Reference  
-> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach prob 1.5.3
+> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach p.102 
 
 
 ### 예시1
