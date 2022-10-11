@@ -22,16 +22,14 @@ $$ \exist! T^* $$
 **Proof**
 
 [Existence]  
-$y \in V$가 있다고 하자.
+$v \in V$에 대해 $f_v$와 $g_v$를 다음과 같이 정의하자.
+$$ \begin{gathered} f_v : V \rightarrow \mathbb F \quad s.t. \quad x \mapsto B(x,v) \\ g_v : V \rightarrow \mathbb F \quad s.t. \quad x \mapsto B(T(x),v) \end{gathered}  $$
 
-linear fuctinal $f_y$를 다음과 같이 정의하자.
-$$ f_y \in V^* \quad s.t. \quad x \mapsto B(T(x),y) $$
-
-Rieze representation theorem에 의해서 다음이 성립한다.
-$$ \exist! v_{f_y} \in V \quad s.t. \quad f_y(x) = B(x, v_{f_y})$$
+Riesz representation theorem에 의해서 다음이 성립한다.
+$$ \exist! v_{g_v} \in V \quad s.t. \quad g_v = f_{v_{g_v}}$$
 
 이 떄, 함수 $T^*$를 다음과 같이 정의하자.
-$$ T^* : V \rightarrow V  \quad s.t. \quad y \mapsto v_{f_y} $$
+$$ T^* : V \rightarrow V  \quad s.t. \quad v \mapsto v_{g_v} $$
 
 $x,y_1,y_2 \in V, \enspace c \in \mathbb F$가 있을 때, $T^*$의 정의에 의해 다음이 성립한다.
 $$ \begin{aligned} B(x, T^*(y_1 + cy_2)) &= B( x, v_{f_{y_1 + cy_2}}) \\&= f_{y_1 + cy_2}(x) \\&= B(T(x), y_1 +cy_2) \\&= B(T(x),y_1) + \overline c B(T(x),y_2) \\&= B(x, v_{f_{y_1}}) + B(x, cv_{f_{y_2}}) \\&= B(x, T^*(y_1) + cT^*(y_2)) \end{aligned} $$
