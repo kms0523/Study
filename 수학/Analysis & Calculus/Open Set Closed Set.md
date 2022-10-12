@@ -43,15 +43,16 @@ $$ \text {Any union of open sets on } M \text{ is open set on } M. $$
 $M$의 모든 open set의 집합을 $S$라 하고 집합 $X$를 다음과 같이 정의하자.
 $$ X := \bigcup_{s \in S} s $$
 
-$x \in X$면, 어떤 $s \in S$에 대해서 $x \in s$이다.
-
-이 때, $s$는 open set임으로 다음이 성립한다.
+$\forall x \in X$에 대해 다음을 만족한다.
+$$ \exist s \in S \quad s.t. \quad x \in s $$
+ 
+이 때, $s$는 $M$위의 open set임으로, 다음이 성립한다.
 $$\exist r \in \R^+ \quad s.t. \quad B_M(x,r) \le s$$
 
-$X$의 정의에 의해 $s \le X$임으로 다음이 성립한다.
+$X$의 정의에 의해 $s \le X$임으로, 다음이 성립한다.
 $$\exist r \in \R^+ \quad s.t. \quad B_M(x,r) \le X$$
 
-따라서 $X$는 open set이다. $\quad {_\blacksquare}$
+따라서 $X$는 $M$에서의 open set이다. $\quad {_\blacksquare}$
 
 > Refrence  
 > [Book] (Apostol)  Mathematical analysis Theorem 3.7  
@@ -66,7 +67,7 @@ $$ \text {Any finite intersection of open sets is open.} $$
 $M$의 모든 open set의 집합을 $S$라 하고 $s_i \in S, \enspace i = 1, \cdots, n$일 떄, 집합 $X$를 다음과 같이 정의하자.
 $$ X := \bigcap_{i=1}^n s_i $$
 
-$x \in X$면 $s_i \in S$에 대해 다음이 성립한다. 
+$\forall x \in X$에 대해, 다음이 성립한다.
 $$ x \in s_i, \enspace i=1,\cdots,n $$
 
 이 때, $s_i$는 open set임으로 다음이 성립한다.
@@ -75,10 +76,10 @@ $$\exist r_i \quad s.t. \quad B_M(x, r_i) \le s_i, \enspace i=1,\cdots,n$$
 $\min(\{ r_i \}) = r$이라 하면 다음이 성립한다.
 $$ B_M(x,r) \le s_i, \enspace i=1,\cdots,n $$
 
-따라서, $X$의 정의에 의해 다음이 성립한다.
+$X$의 정의에 의해 다음이 성립한다.
 $$ B_M(x,r) \le X$$
 
-따라서 $X$는 open set이다. $\quad {_\blacksquare}$
+따라서 $X$는 $M$에서의 open set이다. $\quad {_\blacksquare}$
 
 > Refrence  
 > [Book] (Apostol)  Mathematical analysis Theorem 3.8  
@@ -102,6 +103,25 @@ $$ S := \{ {(-1/n, 1/n)} \enspace | \enspace i=1,2,3, \cdots \} $$
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach prob 1.5.3
 
 ### 명제4
+Metric space $M$이 있다고 하자.
+
+이 때, 다음을 증명하여라.
+$$ M \text{ is an open set on } M $$
+
+**Proof**
+
+$x \in M$이 있다고 하자.
+
+임의의 $r \in \R^+$에 대해, $B_M(x,r)$의 정의에 의해 다음이 성립한다.
+$$ B_M(x,r) \le M $$
+
+이로 인해 $\forall x \in M$에 대해, 다음이 성립한다.
+$$ \exist r \in R^+ \quad s.t. \quad B_M(x,r) \le M $$
+
+따라서 $M$는 $M$에서의 open set이 된다.$\quad {_\blacksquare}$
+
+
+#### 명제4.1
 Metric space $M$과 $S \le M$이 있다고 하자.
 
 이 때, 다음을 증명하여라.
@@ -110,7 +130,7 @@ $$ S \text{ is an open set on } S $$
 **Proof**
 
 $\forall x \in S$에 대해, $B_S(x,r) = B_M(x,r) \cap S$임으로 다음이 성립한다.
-$$ B_S(x,r) \subset S $$
+$$ B_S(x,r) \le S $$
 
 따라서, $S$는 $S$에서의 open set이 된다.$\quad {_\blacksquare}$
 
@@ -118,10 +138,10 @@ $$ B_S(x,r) \subset S $$
 > [mathematics - why-is-a-metric-space-an-open-subset-of-itself](https://math.stackexchange.com/questions/1169561/why-is-a-metric-space-an-open-subset-of-itself)
 
 ### 명제5
-Metric space $M$과 $S \le M$이 있다고 하자.
+Metric space $M$이 있다고 하자.
 
 이 때, 다음을 증명하여라.
-$$ \empty \text{ is an open set on } S $$
+$$ \empty \text{ is an open set on } M $$
 
 **Proof**
 

@@ -54,12 +54,12 @@ $$ \boldsymbol \sigma \text{ is an linear map} $$
 
 $\R^3$공간의 임의의 기저 $\beta$가 있다고 하자.
 
-$v_1 = a^i\beta_i, v_2 = b^i\beta_i \in \R^3, \enspace c \in \R$라 하면 보조명제에 의해 다음이 성립한다.
+$v_1 = a^i\beta_i, v_2 = b^i\beta_i \in \R^3, \enspace c \in \R$라 하면 명제1.1에 의해 다음이 성립한다.
 $$ \begin{aligned} \boldsymbol \sigma (v_1 + cv_2) &= \boldsymbol \sigma ((a_i + cb_i)\beta_i) \\ &= (a_i + cb_i) \boldsymbol \sigma (\beta_i) \\ &= \boldsymbol \sigma (v_1) + c \boldsymbol \sigma (v_2)\end{aligned} $$
 
 따라서, $\boldsymbol{\sigma}$는 linear map이다. $\quad {_\blacksquare}$
 
-#### 보조명제
+#### 명제1.1
 $\R^3$공간의 임의의 기저 $\beta$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
@@ -70,10 +70,10 @@ $$ \boldsymbol \sigma (n^i \beta_i) = n^i \boldsymbol \sigma (\beta_i)$$
 $B$를 $\epsilon$에서 $\beta$으로 변환하는 기저변환 행렬이라고 하면 다음이 성립한다.
 $$ \beta_i = B^j_ie_j $$
 
-따라서 보조명제에 의해 다음이 성립한다.
+따라서 명제1.1.1에 의해 다음이 성립한다.
 $$ \begin{aligned} \sigma(n^i\beta_i) &= \sigma(n^iB^j_ie_j) \\ &= n^i\sigma(B^j_ie_j) \\ &= n^i \boldsymbol \sigma (\beta_i) \quad {_\blacksquare} \end{aligned} $$
 
-##### 보조명제
+##### 명제1.1.1
 $\R^3$공간의 standard basis을 $\epsilon$이라 하자.
 
 이 때, 다음을 증명하여라.
