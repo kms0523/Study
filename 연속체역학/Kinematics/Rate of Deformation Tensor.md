@@ -20,7 +20,7 @@ $$ \frac{\partial}{\partial t} \Delta x = \nabla_x v \Delta x = D \Delta x + W \
 > [book] (Lai et al) Introduction to Continuum Mechanics Chapter 3.13
 
 ### 명제1
-Reference figure $\Omega_0$, deformation $\varphi$, defromation gradient $F$가 있다고 하자.
+Reference figure $\Omega_0$와 deforemd firuge $\Omega$ 그리고 deformation $\varphi$가 있다고 하자.
 
 점 $X \in \Omega_0$와 vector $\Delta X$가 있을 때, 점 $x \in \Omega$와 vector $\Delta x$를 다음과 같이 정의하자.
 $$ \begin{aligned} x &:= \varphi(X,t) \\ \Delta x &:= \varphi(X + \Delta X, t) - \varphi(X, t) \end{aligned} $$
@@ -33,31 +33,13 @@ $$ \frac{1}{l} \frac{\partial l}{\partial t} = m \cdot Dm $$
 
 **Proof**
 
-time rate of change의 명제에 의해 다음이 성립한다. 
-$$ \frac{1}{l} \frac{\partial l}{\partial t} = m \cdot (\nabla_xv)m $$
+Time rate of change의 명제에 의해 다음이 성립한다. 
+$$ \begin{aligned} \frac{1}{l} \frac{\partial l}{\partial t} &= m \cdot (\nabla_xv)m \\&= m \cdot (D + W)m \end{aligned} $$
 
-
-
-$$ \begin{aligned} & l^2 = \Delta x \cdot \Delta x \\ \Rightarrow \enspace & 2 l \frac{\partial l}{\partial t} = 2 \Delta x \cdot \frac{\partial}{\partial t} \Delta x \\ \Rightarrow \enspace & l \frac{\partial l}{\partial t} = l^2 m \cdot \nabla_x v m \\ \Rightarrow \enspace & \frac{1}{l} \frac{\partial l}{\partial t} = m \cdot (D + W) m  \end{aligned} $$
-
-보조명제에 의해 다음이 성립한다.
+명제1.1에 의해 다음이 성립한다.
 $$ \begin{aligned} & \frac{1}{l} \frac{\partial l}{\partial t} = m \cdot (D + W) m  \\ \Rightarrow \enspace & \frac{1}{l} \frac{\partial l}{\partial t} = m \cdot D m \quad {_\blacksquare}  \end{aligned} $$
 
-**Proof2**
-
-vector $\Delta X$를 크기 $l_0$와 단위 vector $n$으로 나타내자.
-$$ \Delta X = l_0n $$
-
-그러면 deformation gradient의 성질에 의해 다음이 성립한다.
-$$ l = \lVert Fn \rVert l_0, \enspace m = \frac{Fn}{\lVert Fn \rVert} $$
-
-따라서, 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial l}{ \partial t} &= l_0 \frac{\partial}{\partial t} (Fn \cdot Fn)^{1/2} \\&= l_0 \frac{1}{2} (Fn \cdot Fn)^{-1/2} \frac{\partial}{\partial t} (Fn \cdot Fn) \\&= l_0 \frac{1}{\lVert Fn \rVert} Fn \cdot (\frac{\partial}{\partial t} F)n \\&= l_0m \cdot \nabla _x vFn \\&= l m \cdot (D + W) m \end{aligned} $$
-
-이 때, 보조명제에 의해 다음이 성립한다.
-$$ \frac{1}{l}\frac{\partial l}{ \partial t} = m \cdot D m \quad {_\blacksquare} $$
-
-#### 보조명제
+#### 명제1.1
 $A \in M_{nn}(\mathbb F)$와 $x \in M_{n1}(\mathbb F)$가 있다고 하자.
 
 $A$가 Anti symmetric matrix일 때, 다음을 증명하여라.
@@ -72,9 +54,27 @@ $$ \begin{aligned} x \cdot A x &= A x \cdot x \\&= x^T A^T x \\&= x \cdot A^T x 
 $$ 2 x \cdot Ax = 0 \enspace \Rightarrow \enspace x \cdot Ax = 0 \quad {_\blacksquare} $$
 
 #### 참고
-$n$방향에 있는 요소의 단위 길이당 길이의 시간변화율은 $n \cdot Dn$으로 표현되며 $D_{ii}$은 $e$방향에 있는 요소의 단위 길이당 길이의 시간변화율을 나타낸다.
+$W$는 길이 변화에 영향을 주지 않는다.
 
-식(10)에서 알 수 있듯이, $W$는 $\Delta x$로 표현되는 요소의 길이 변화에 영향을 주지 않는다.
+### 명제2
+Rate deformation tensor $D$와 infinitesimal strain tensor $E$가 있다고 하자.
+
+small deformation을 가정할 때, 다음을 증명하여라.
+$$ D = \frac{\partial E}{\partial t} $$
+
+**Proof**
+
+$E$의 정의에 의해 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial E}{\partial t} &= \frac{\partial E_{ij}}{\partial t}e_{ij} \\&=\frac{1}{2} \frac{\partial }{\partial t} \bigg( \frac{\partial d_i}{\partial X_j} + \frac{\partial d_j}{\partial X_i} \bigg)e_{ij} \\&= \frac{1}{2} \bigg( \frac{\partial}{\partial X_j}\frac{\partial d_i}{\partial t} + \frac{\partial}{\partial X_i}\frac{\partial d_j}{\partial t} \bigg) e_{ij} \\&= \frac{1}{2} \bigg( \frac{\partial}{\partial X_j}\frac{\partial (x_i -X_i)}{\partial t} + \frac{\partial}{\partial X_i}\frac{\partial (x_j -X_j)}{\partial t} \bigg) e_{ij} \\&= \frac{1}{2} \bigg( \frac{\partial V_i}{\partial X_j} + \frac{\partial V_j}{\partial X_i} \bigg) e_{ij} \\&= \frac{1}{2} \bigg( \frac{\partial v_i}{\partial x_k}\frac{\partial x_k}{\partial X_j} + \frac{\partial v_j}{\partial x_k}\frac{\partial x_k}{\partial X_i} \bigg) e_{ij} \\&= \frac{1}{2} \bigg( \frac{\partial v_i}{\partial x_k}\frac{\partial (X_k + d_k)}{\partial X_j} + \frac{\partial v_j}{\partial x_k}\frac{\partial (X_k + d_k)}{\partial X_i} \bigg) e_{ij} \\&= \frac{1}{2} \bigg( \frac{\partial v_i}{\partial x_k}\delta_{kj} + \frac{\partial v_i}{\partial x_k}\frac{\partial d_k}{\partial X_j} + \frac{\partial v_j}{\partial x_k} \delta_{ki} + \frac{\partial v_j}{\partial x_k}\frac{\partial d_k}{\partial X_i} \bigg) e_{ij} \end{aligned} $$
+
+Small deformation 가정에 의해 다음이 성립한다고 하자.
+$$  \bigg \lVert \frac{\partial v}{\partial x} \bigg\rVert \ll1, \enspace \bigg\lVert \frac{\partial d}{\partial X} \bigg\rVert \ll 1 $$
+
+미소항의 고차항을 무시하면 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial E}{\partial t} &= \frac{1}{2} \bigg( \frac{\partial v_i}{\partial x_k}\delta_{kj} + \frac{\partial v_i}{\partial x_k}\frac{\partial d_k}{\partial X_j} + \frac{\partial v_j}{\partial x_k} \delta_{ki} + \frac{\partial v_j}{\partial x_k}\frac{\partial d_k}{\partial X_i} \bigg) e_{ij} \\&= \frac{1}{2} \bigg( \frac{\partial v_i}{\partial x_j} + \frac{\partial v_j}{\partial x_i} \bigg) e_{ij} \\&= D_{ij}e_{ij} \\&= D \quad {_\blacksquare} \end{aligned} $$
+
+> Reference  
+> [book] (Lai et al) Introduction to Continuum Mechanics Example 5.2.1 (a)  
 
 ## 각도의 시간 변화율
 이번에는 두 요소가 이루는 각도가 시간에 따라 어떻게 변화하는지 알아보자.
@@ -86,15 +86,13 @@ $$ \begin{gathered} \Delta x = l_1 n \\ \Delta y = l_2 m \end{gathered}  $$
 $$ \begin{equation} \Delta x \cdot \Delta y  = l_1 l_2 \cos \theta \end{equation} $$
 
 시간에 따른 변화율을 보기 위해 식(9)를 물질미분하면 다음과 같다.
-$$ \begin{equation} \begin{aligned} \frac{\partial}{\partial t} \Delta x \cdot \Delta y + \Delta x \cdot \frac{\partial}{\partial t} \Delta y  = & \left( \frac{\partial}{\partial t} l_1 \right) l_2 \cos \theta + l_1 \left( \frac{\partial}{\partial t} l_2 \right) \cos \theta \\  &- l_1 l_2 \sin \theta \frac{D\theta}{Dt} \end{aligned} \end{equation} $$
+$$ \begin{equation} \begin{aligned} \frac{\partial}{\partial t} \Delta x \cdot \Delta y + \Delta x \cdot \frac{\partial}{\partial t} \Delta y  = & \left( \frac{\partial}{\partial t} l_1 \right) l_2 \cos \theta + l_1 \left( \frac{\partial}{\partial t} l_2 \right) \cos \theta \\  &- l_1 l_2 \sin \theta \frac{D\theta}{\partial t} \end{aligned} \end{equation} $$
 
 식 (10)의 왼쪽항을 rate of deformation tensor와 spin tensor를 이용해서 표현하면 다음과 같다.
 $$ \begin{aligned} & \frac{\partial}{\partial t} \Delta x \cdot \Delta y + \Delta x \cdot \frac{\partial}{\partial t} \Delta y \\ = \enspace & \nabla_x v \Delta x \cdot \Delta y + \Delta x \cdot \nabla_x v \Delta y \\ = \enspace & \Delta x \cdot ( \nabla_x v + (\nabla_x v)^T) \Delta y \\ = \enspace & 2 \Delta x \cdot D \Delta y \\ = \enspace & 2 l_1 l_2 n \cdot D m  \end{aligned} $$
 
 식 (10)에 다시 대입해서 정리하면 다음과 같다.
-$$ 2 n \cdot D m =  \left( \frac{1}{l_1} \frac{\partial}{\partial t} l_1 + \frac{1}{l_2} \frac{\partial}{\partial t} l_2 \right) \cos \theta - \sin \theta \frac{D\theta}{Dt}$$
+$$ 2 n \cdot D m =  \left( \frac{1}{l_1} \frac{\partial}{\partial t} l_1 + \frac{1}{l_2} \frac{\partial}{\partial t} l_2 \right) \cos \theta - \sin \theta \frac{D\theta}{\partial t}$$
 
 만약 ${n = e,m = e_j}$이었다면, $2D_{ij}$는 $e$방향과 $e_j$방향에 있는 요소사이의 각도의 감소율을 나타낸다.
 
-## 부피의 시간 변화율
-$$ \frac{1}{\Delta V} \frac{\partial}{\partial t} \Delta V = \text{div} (v) $$

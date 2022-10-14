@@ -1,30 +1,41 @@
 # 연속체의 지배 방정식
+연속체 $\Omega$가 있다고 하자.
+
 ## 운동 상태
-운동하는 연속체에 Euler의 운동방정식과 Euler-Cauchy stress principle을 적용하면 다음과 같다.
+$\Omega$에 Euler의 운동방정식과 Euler-Cauchy stress principle을 적용하면 다음과 같다.
 $$ \int_{\partial\Omega} \boldsymbol{\sigma}\mathbf n \thinspace dS + \int_\Omega \rho \mathbf f_b \thinspace dV = \frac{d}{dt} \int_\Omega \rho\mathbf u \thinspace dV $$
 
-$\boldsymbol{\sigma}$가 충분히 매끄러울 때, divergence theorem과 Reynolds transport theorem을 적용하여 유도한 미분형 지배방정식은 다음과 같다.
-$$ \text{find} \enspace \mathbf d \in \mathcal D^3 \quad s.t. \quad \mathrm{div}(\boldsymbol\sigma) + \rho \mathbf f_b = \frac{\partial}{\partial t}(\rho \mathbf u) + \mathrm{div}(\rho \mathbf{u \otimes u}) $$
-$$ \text{Where, } \mathcal{D} := \{ d_i \in C^2(\Omega) \enspace | \enspace d_i \text{ satisfies boundary condition on } \partial\Omega\}  $$
+이를 적분형 지배방정식이라 한다.
 
-## 정적 평형 상태
-정적 평형 상태의 연속체에 Euler의 운동방정식과 Euler-Cauchy stress principle을 적용하면 다음과 같다.
-$$ \int_{\partial\Omega} \boldsymbol{\sigma}\mathbf n \thinspace dS + \int_\Omega \rho \mathbf f_b \thinspace dV = 0 $$
+$\rho u$가 충분히 매끄러울 떄, Leibniz integral theorem을 적용하면 다음과 같다.
+$$ \int_{\partial\Omega} \boldsymbol{\sigma}\mathbf n \thinspace dS + \int_\Omega \rho \mathbf f_b \thinspace dV = \int_\Omega \frac{\partial}{\partial t} (\rho\mathbf u) + \text{div}(\rho u \otimes u) \thinspace dV $$
 
-여기서, $\mathbf f_b$는 단위 질량당 체적력을 의미한다.
+$\boldsymbol{\sigma}$가 충분히 매끄러울 때, divergence theorem을 적용하면 다음과 같다.
+$$ \int_{\Omega} \text{div} (\boldsymbol{\sigma}) +\rho \mathbf f_b \thinspace dV = \int_\Omega \frac{\partial}{\partial t} (\rho\mathbf u) + \text{div}(\rho u \otimes u) \thinspace dV $$
 
-$\boldsymbol{\sigma}$가 충분히 매끄러울 때, divergence theorem을 적용하여 유도한 미분형 지배방정식은 다음과 같다.
-$$ \text{find} \enspace \mathbf d \in \mathcal D^3 \quad s.t. \quad \mathrm{div}(\boldsymbol\sigma) + \rho \mathbf f_b = 0 $$
-$$ \text{Where, } \mathcal{D} := \{ d_i \in C^2(\Omega) \enspace | \enspace d_i \text{ satisfies boundary condition on } \partial\Omega\}  $$
+이 때, 임의의 $\Omega$에서 위식이 성립해야 함으로 다음이 성립한다.
+$$ \mathrm{div}(\boldsymbol\sigma) + \rho \mathbf f_b = \frac{\partial}{\partial t}(\rho \mathbf u) + \mathrm{div}(\rho \mathbf{u \otimes u}) $$
+
+이를 미분형 지배방정식이라 한다.
 
 > Reference  
 > 연속체 역학 정리.md
 
-# 지배 방정식의 수치 방정식
-## 정적 평형 방정식
+## 정적 평형 상태
+$\Omega$가 정적 평형 상태에 있을 때, 적분형 지배방정식은 다음과 같다.
+$$ \int_{\partial\Omega} \boldsymbol{\sigma}\mathbf n \thinspace dS + \int_\Omega \rho \mathbf f_b \thinspace dV = 0 $$
+
+$\Omega$가 정적 평형 상태에 있을 때, 미분형 지배방정식은 다음과 같다.
+$$ \text{div}(\boldsymbol\sigma) + \rho \mathbf f_b = 0 $$
+
 ### Weak formulation
-3개의 평형방정식의 주어진 식(1)을 equivalent한 weak formulation으로 바꾸기 위해 test vector function $\mathbf w$와 내적한뒤 다음과 같은 과정을 거친다.
-$$ \begin{equation} \begin{gathered} \int_{\Omega} ( \mathrm{div}(\boldsymbol\sigma) + \mathbf {f ) \cdot w} dV  = 0. \\\\ \int_{\Omega} \mathrm{div}(\boldsymbol\sigma  \mathbf {w}) - \boldsymbol\sigma : \boldsymbol{\epsilon}  + \mathbf {f \cdot w} dV  = 0. \\\\ \int_{\Omega} \boldsymbol\sigma : \text{grad}(\mathbf w) dV = \int _{\partial\Omega} \boldsymbol\sigma  \mathbf {w \cdot n} dS + \int _{\Omega} \mathbf {f \cdot w} dV \\\\ \int_{\Omega} \boldsymbol\sigma : \text{grad}(\mathbf w) dV = \int _{\partial\Omega} \mathbf t \cdot \mathbf w dS + \int _{\Omega} \mathbf {f \cdot w} dV \end{gathered} \end{equation} $$
+정적 평형상태의 연속체가 있고 $\sigma$가 충분히 매끄럽다고 가정하자.
+
+연속체의 미분형 지배 방정식은 3개의 평형방정식으로 이루어져있다.
+$$ \text{div}(\boldsymbol\sigma) + \rho \mathbf f_b = 0 $$
+
+이 식을 equivalent한 weak formulation으로 바꾸기 위해 test vector function $\mathbf w$와 내적한뒤 다음과 같은 과정을 거친다.
+$$ \begin{equation} \begin{gathered} \int_{\Omega} ( \mathrm{div}(\boldsymbol\sigma) + \rho \mathbf {f ) \cdot w} dV  = 0. \\ \int_{\Omega} \mathrm{div}(\boldsymbol\sigma  \mathbf {w}) - \boldsymbol\sigma : \text{grad}(w)  + \mathbf {f \cdot w} dV  = 0. \\\\ \int_{\Omega} \boldsymbol\sigma : \text{grad}(\mathbf w) dV = \int _{\partial\Omega} \boldsymbol\sigma  \mathbf {w \cdot n} dS + \int _{\Omega} \mathbf {f \cdot w} dV \\\\ \int_{\Omega} \boldsymbol\sigma : \text{grad}(\mathbf w) dV = \int _{\partial\Omega} \mathbf t \cdot \mathbf w dS + \int _{\Omega} \mathbf {f \cdot w} dV \end{gathered} \end{equation} $$
 
 > Q. test vector function과 내적한 식의 해가 연립방정식의 해와 동일한가?
 
@@ -37,7 +48,9 @@ $$ \begin{equation} \text{find} \enspace \mathbf d \in (\mathcal D_W)^3 \quad s.
 $$ \begin{aligned} \text{Where, } \mathcal{D}_W &:= \{ d_i \in C^1(\Omega) \enspace | \enspace d_i \text{ satisfies boundary condition on } \partial\Omega_E \}  \\ \mathcal W &:= \{ w \in C^\infty(\Omega) \enspace | \enspace \forall \mathbf x \in \partial\Omega_E, \quad w(\mathbf x) = 0 \ \end{aligned}  $$
 
 #### 참고
-이 방법은 `가상 일 원리(principle of virtual work)`라고도 한다. $\bf w$를 `가상 변위(virtual displacement)` $\delta \mathbf d$로 보면 식(2)는 다음과 같다.
+이 방법은 `가상 일 원리(principle of virtual work)`라고도 한다. 
+
+$\bf w$를 `가상 변위(virtual displacement)` $\delta \mathbf d$로 보면 식(2)는 다음과 같다.
 $$ \text{find} \enspace \mathbf d \in (\mathcal D_W)^3 \quad s.t. \quad \forall \mathbf \delta \mathbf d \in \mathcal W^3, \quad \int_{\Omega} \boldsymbol\sigma_v \cdot \delta(\delta \mathbf d) dV = \int _{\partial\Omega} \mathbf t \cdot \delta \mathbf d dS + \int _{\Omega} \mathbf f \cdot \delta \mathbf d dV $$
 
 이 떄, $\delta(\delta \mathbf d)$를 변형률로써 해석하면, 좌측항은 물리적으로 `내부 가상 일(internal virtual work)`, 우측항은 `외부 가상 일(external virtual work)`로 볼 수 있기 때문에 가상 일 원리라고 한다.
@@ -45,6 +58,10 @@ $$ \text{find} \enspace \mathbf d \in (\mathcal D_W)^3 \quad s.t. \quad \forall 
 > Reference  
 > [note] (Abaqus) Equilibrium and virtual work  
 > Weighted Residual Methods.md  
+
+# 지배 방정식의 수치 방정식
+## 정적 평형 방정식
+
 
 ### Bodunov-Galerkin method
 weak formulation을 수치적으로 풀기 위해 Bodunov-Galerkin method를 사용한다. Solution function space의 기저 함수로 shape function을 사용하면 solution과 weight vector를 각 각 $\mathbf d = \mathbf{N\hat{d}}, \mathbf w = \mathbf{N} \boldsymbol{\delta}$ 표현할 수 있고 문제가 다음과 같이 간단해진다.
@@ -81,3 +98,9 @@ $$ \text{Where, } \mathbf K = \int_{\Omega} \mathbf B^T \mathbf C \mathbf B \thi
 $$ \text{find} \enspace \mathbf d \in (\mathcal D_W)^3 \quad s.t. \quad \forall \mathbf \delta \mathbf d \in \mathcal W^3, \quad \int_{\Omega} \boldsymbol\sigma \cdot \delta \boldsymbol{\epsilon} dV = \int _{\partial\Omega} \mathbf t \cdot \delta \mathbf d dS + \int _{\Omega} \mathbf f \cdot \delta \mathbf d dV $$
 
 좌측항은 물리적으로 `내부 가상 일(internal virtual work)`, 우측항은 `외부 가상 일(external virtual work)`로 볼 수 있기 때문에 가상 일 원리라고 한다.
+
+
+---
+
+$$ \text{find} \enspace \mathbf d \in \mathcal D^3 \quad s.t. \quad \mathrm{div}(\boldsymbol\sigma) + \rho \mathbf f_b = \frac{\partial}{\partial t}(\rho \mathbf u) + \mathrm{div}(\rho \mathbf{u \otimes u}) $$
+$$ \text{Where, } \mathcal{D} := \{ d_i \in C^2(\Omega) \enspace | \enspace d_i \text{ satisfies boundary condition on } \partial\Omega\}  $$
