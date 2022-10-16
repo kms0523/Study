@@ -5,8 +5,20 @@ visual studio에서 프로젝트 속성 탭은 다음 과정으로 열 수 있�
 
     보기 >> 다른창 >> 속성 관리자
 
-## 링커
+## 디버깅
+#### 환경
+dll 참조 path를 추가해준다.
+```
+PATH=경로;%PATH%
+```
 
+> Reference  
+> [Blog - 외부 DLL 경로 추가하기](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=sharonichoya&logNo=220817543315)
+
+* https://pung77.tistory.com/27
+* https://irmxj777.tistory.com/4
+
+## 링커
 ### 일반
 #### 추가 라이브러리 디렉터리
 사용자가 환경의 라이브러리 경로를 재정의할 수 있다. (/LIBPATH:folder) 즉, 여기서 .lib 파일을 찾아볼 디렉터리를 관리한다.
@@ -15,30 +27,12 @@ visual studio에서 프로젝트 속성 탭은 다음 과정으로 열 수 있�
 #### 추가종속성
 링크 명령줄에 추가할 추가 항목(예: kernel32.lib)을 지정한다. 즉, 여기서 링크시 찾아 볼 .lib 파일의 목록을 관리한다.
 
-> 참고  
-> [linker property pages - MSDN](https://docs.microsoft.com/ko-kr/cpp/build/reference/linker-property-pages?view=msvc-160)
+> Reference  
+> [MSDN - linker property pages](https://docs.microsoft.com/ko-kr/cpp/build/reference/linker-property-pages?view=msvc-160)
 
 ## 프로젝트 속성 상속하는 법
 * http://wanochoi.com/?p=5240
 
-# 외부 DLL 경로 추가하기
-* https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=sharonichoya&logNo=220817543315
-* https://pung77.tistory.com/27
-* https://irmxj777.tistory.com/4
-* 
-
-# OneAPI
-## MPI
-* visual studio configuration   
-* https://software.intel.com/content/www/us/en/develop/documentation/mpi-developer-guide-windows/top/compiling-and-linking/configuring-a-visual-studio-project.html
-
-## ISSUE
-* Environement
-  * intel 홈페이지에 나와있는 환경변수가 잘못되어 있음
-    * PATH=\$(I_MPI_ONEAPI_ROOT)\bin\\$(ConfigurationName);\$(I_MPI_ONEAPI_ROOT)\libfabric\bin;\$(PATH)
-    * ConfigurationName $\rightarrow$ Configuration
-  * 인식 못하는 dll 파일이 있는 곳의 위치를 환경변수에 연결해줘야 함
-    * PATH=\$(I_MPI_ONEAPI_ROOT)\bin\\$(Configuration);\$(I_MPI_ONEAPI_ROOT)\libfabric\bin;C:\Program Files (x86)\Intel\oneAPI\mkl\2021.4.0\redist\intel64;\$(PATH)
 
 
 # Google Test

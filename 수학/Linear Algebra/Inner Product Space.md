@@ -63,27 +63,32 @@ $$ \begin{aligned} g(x) &= f_{v_g}(x) \\&= B(x, v_g) \end{aligned} $$
 이 때, Orthonormal basis의 성질에 의해 다음이 성립한다.
 $$ \begin{aligned} x &= B(x, \beta_i)\beta_i \\ v_g &= B(v_g,\beta_i)\beta_i \\&= \overline{B(\beta_i, v_g)}\beta_i \\&= \overline{g(\beta_i)}\beta_i \end{aligned} $$
 
-따라서, 다음이 성립한다.
-$$ \begin{aligned} g(x) &= B(x, v_g) \\&= f_{v_g}(\beta_i)B(x, \beta_i) \end{aligned} $$
+이 때, $g$는 well-defined 함수 임으로, $\overline{g(\beta_i)}$가 유일한 값을 갖는다. 
 
-
-$\overline{f_v(\beta_i)}$는 $v$의 coordinate임으로, coordinate의 성질에 의해 다음이 성립한다.
-$$ \overline{f_v(\beta_i)} \text{ is unique} $$
-
-$\forall i$마다 $f_v(\beta_i)$는 유일한 값을 갖음으로, $v$가 존재한다면 유일하다. $\quad {_\blacksquare}$
+따라서, $v_g$가 존재한다면 반드시 $v_g=\overline{g(\beta_i)}\beta_i$ 형태로 유일하게 결정된다. $\quad {_\blacksquare}$
 
 [existence]  
 $g \in V^*$에 대해 $v_g \in V$를 다음과 같이 정의하자.
-$$ v_g = \overline{f_v(\beta_i)}\beta_i $$
+$$ v_g = \overline{g(\beta_i)}\beta_i $$
 
 $w = b^i\beta_i \in V$에 대해 다음이 성립한다.
-$$ \begin{aligned} f_{v_g}(w) &= B(w,v_g) \\&= b^if_v(\beta_j) B(\beta_i,\beta_j) \end{aligned}$$
+$$ \begin{aligned} f_{v_g}(w) &= B(w,v_g) \\&= b^ig(\beta_j) B(\beta_i,\beta_j) \end{aligned}$$
 
 Orthonormal basis의 성질에 의해 다음이 성립한다.
-$$ \begin{aligned} f_v(w) &= b^if_v(\beta_j) B(\beta_i,\beta_j) \\&= b^i f_v(\beta_i) \\&= v^*(w) \end{aligned}$$
+$$ \begin{aligned} f_{v_g}(w) &= b^i g(\beta_j) B(\beta_i,\beta_j) \\&= b^i g(\beta_i) \\&= g(w) \end{aligned}$$
 
+즉, 임의의 $g$에 대해 $f_{v_g} = g$가 되는 $v_g$는 반드시 하나 이상 존재한다. $\quad {_\blacksquare}$
 
-즉, $v^*$와 동일한 $f_v$가 존재한다. $\quad {_\blacksquare}$
+#### 참고1
+$g \in V^*$가 있을 때, Reisz representation theorem에 의해 결정되는 $v_g$를 $g$에 대한 Reisz representation이라고 한다.
+
+#### 참고2
+$f_v$의 정의를 다음과 같이 변경해보자.
+$$ f_v : V \rightarrow \mathbb F \quad s.t. \quad w \mapsto B(v,w) $$
+
+inner product는 두번째 component에 대해서 conjugate linear이기 때문에 $f_v$는 conjugate linear map이 된다.
+
+따라서, $f_v \notin V^*$이 된다.
 
 ### 명제2(Schur's theorem)
 $n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
@@ -246,15 +251,6 @@ $$ \begin{aligned}  B(y, s_j) &= B(a^is_i, s_j) \\&= a^j B(s_j,s_j) \enspace(\te
 이를 원래 표현식에 대입하면 다음을 얻을 수 있다.
 $$ y = \frac{B(y,s_i)}{B(s_i, s_i)} s_i \quad {_\blacksquare}$$
 
-#### 참고
-$S$가 orthonormal subset이라고 하자.
-$$ \lVert v_i \rVert = 1 $$
-
-그러면 $y \in \text{span}(S)$는 다음과 같이 표현할 수 있다.
-$$ y = B(y,v_i)v_i $$
-
-이 때, $B(y,v_i)$를 `Fourier coefficient`라고 한다.
-
 # Orthogonal Complement
 $n$차원 inner product space $V / \mathbb F$가 있다고 하자.
 
@@ -326,3 +322,15 @@ $\forall w \in W$에 대해서 다음이 성립한다.
 $$ \lVert v - u \rVert \le \lVert v - w \rVert $$
 
 따라서 $u$는 $W$의 vector중 $u$와 가장 가까운 closest vector이다.
+
+# Orthonormal Subset
+$S= \{ s_1, \cdots, s_k \}$가 orthogonal subset이라고 하자.
+
+$s_i \in S$가 다음을 만족할 때, `orthonormal subset`이라고 한다.
+$$ \lVert s_i \rVert = 1 $$
+
+### 참고
+$y \in \text{span}(S)$는 다음과 같이 표현할 수 있다.
+$$ y = B(y,s_i)s_i $$
+
+이 때, $B(y,s_i)$를 `Fourier coefficient`라고 한다.

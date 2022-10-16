@@ -102,6 +102,13 @@ $$ \text{Where, } (\cdot)_L \text{ is linear part of } (\cdot) $$
 > Reference  
 > [Blog - Matrix identities](https://terrytao.wordpress.com/2013/01/13/matrix-identities-as-derivatives-of-determinant-identities/)  
 
+### 명제8
+$A \in M_{nn}(\mathbb F)$이 있을 때, 다음을 증명하여라.
+$$ \det(A^*) = \overline{\det(A)} $$
+
+> Reference  
+> [Wiki - conjugate transpose](https://en.wikipedia.org/wiki/Conjugate_transpose#Properties_of_the_conjugate_transpose)
+
 ---
 
 ### 참고1
