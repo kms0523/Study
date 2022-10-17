@@ -20,16 +20,6 @@ $$ \sigma_{ij} = C_{ijkl} \epsilon_{kl} $$
 > Reference  
 > [Book] (Lai et al) Introduction to Continuum Mechanics Chap5.2  
 
-## 변형률 에너지 함수
-응력에 의한 일률 $P_s$가 내부 변형률 에너지 함수 $U$의 시간에 대한 변화량과 같다고 하자.
-$$ P_s = \frac{dU}{dt} $$
-
-이 때, $P_s = \sigma_{ij}D_{ij}$임으로 다음 관계식이 만족한다.(Ex 5.2.1.)
-$$ \begin{equation} \sigma_{ij} = \frac{\partial U}{\partial \epsilon_{ij}} \end{equation}  $$
-
-구성 방정식을 대입하면 다음과 같다.
-$$ C_{ijkl}\epsilon_{kl} = \frac{\partial U}{\partial \epsilon_{ij}} $$
-
 ## Elasticity Tensor
 $\bf C$는 4차 텐서임으로 81개의 독립변수를 갖는다. 하지만 ${\epsilon}$과 ${\sigma}$의 대칭성 및 $U$에 의해 독립변수 개수가 줄어들게 된다.
 

@@ -1,7 +1,6 @@
-# 연속체의 지배 방정식
+# 운동 상태의 지배 방정식
 연속체 $\Omega$가 있다고 하자.
 
-## 운동 상태
 $\Omega$에 Euler의 운동방정식과 Euler-Cauchy stress principle을 적용하면 다음과 같다.
 $$ \int_{\partial\Omega} \boldsymbol{\sigma}\mathbf n \thinspace dS + \int_\Omega \rho \mathbf f_b \thinspace dV = \frac{d}{dt} \int_\Omega \rho\mathbf u \thinspace dV $$
 
@@ -21,21 +20,31 @@ $$ \mathrm{div}(\boldsymbol\sigma) + \rho \mathbf f_b = \frac{\partial}{\partial
 > Reference  
 > 연속체 역학 정리.md
 
-## 정적 평형 상태
+# 정적 평형 상태의 지배 방정식
+연속체 $\Omega$가 있다고 하자.
+
 $\Omega$가 정적 평형 상태에 있을 때, 적분형 지배방정식은 다음과 같다.
 $$ \int_{\partial\Omega} \boldsymbol{\sigma}\mathbf n \thinspace dS + \int_\Omega \rho \mathbf f_b \thinspace dV = 0 $$
 
 $\Omega$가 정적 평형 상태에 있을 때, 미분형 지배방정식은 다음과 같다.
 $$ \text{div}(\boldsymbol\sigma) + \rho \mathbf f_b = 0 $$
 
-### Weak formulation
+## Weak formulation
 정적 평형상태의 연속체가 있고 $\sigma$가 충분히 매끄럽다고 가정하자.
 
 연속체의 미분형 지배 방정식은 3개의 평형방정식으로 이루어져있다.
 $$ \text{div}(\boldsymbol\sigma) + \rho \mathbf f_b = 0 $$
 
-이 식을 equivalent한 weak formulation으로 바꾸기 위해 test vector function $\mathbf w$와 내적한뒤 다음과 같은 과정을 거친다.
-$$ \begin{equation} \begin{gathered} \int_{\Omega} ( \mathrm{div}(\boldsymbol\sigma) + \rho \mathbf {f ) \cdot w} dV  = 0. \\ \int_{\Omega} \mathrm{div}(\boldsymbol\sigma  \mathbf {w}) - \boldsymbol\sigma : \text{grad}(w)  + \mathbf {f \cdot w} dV  = 0. \\\\ \int_{\Omega} \boldsymbol\sigma : \text{grad}(\mathbf w) dV = \int _{\partial\Omega} \boldsymbol\sigma  \mathbf {w \cdot n} dS + \int _{\Omega} \mathbf {f \cdot w} dV \\\\ \int_{\Omega} \boldsymbol\sigma : \text{grad}(\mathbf w) dV = \int _{\partial\Omega} \mathbf t \cdot \mathbf w dS + \int _{\Omega} \mathbf {f \cdot w} dV \end{gathered} \end{equation} $$
+미분형 지배 방정식의 weighted residual formulation은 다음과 같다.
+$$ \forall w \in \R^3, \quad \int_{\Omega} ( \mathrm{div}(\boldsymbol\sigma) + \rho f ) \cdot w dV = 0 $$
+
+Weak formulation을 유도하기 위해, divergence theorem을 적용하면 다음과 같다.
+$$ \begin{aligned} & \int_{\Omega} ( \mathrm{div}(\boldsymbol\sigma) + \rho \mathbf {f ) \cdot w} dV = 0. \\ \Rightarrow \enspace & \int_{\Omega} \mathrm{div}(w^T \boldsymbol\sigma) - \boldsymbol\sigma : \text{grad}(w)  + \mathbf {f \cdot w} dV = 0. \\ \Rightarrow \enspace & \int_{\Omega} \boldsymbol\sigma : \text{grad}(\mathbf w) dV = \int _{\partial\Omega} w^T \boldsymbol\sigma n dS + \int _{\Omega} \mathbf {f \cdot w} dV \\ \Rightarrow \enspace & \int_{\Omega} \boldsymbol\sigma : \text{grad}(\mathbf w) dV = \int _{\partial\Omega} \mathbf t \cdot \mathbf w dS + \int _{\Omega} \mathbf {f \cdot w} dV \end{aligned} $$
+
+결론적으로 유도된 weak formulation은 다음과 같다.
+$$ \forall w \in \R^3, \quad \int_{\Omega} \boldsymbol\sigma : \text{grad}(\mathbf w) dV = \int _{\partial\Omega} \mathbf t \cdot \mathbf w dS + \int _{\Omega} \mathbf {f \cdot w} dV $$
+
+---
 
 > Q. test vector function과 내적한 식의 해가 연립방정식의 해와 동일한가?
 

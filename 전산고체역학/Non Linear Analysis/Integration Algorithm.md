@@ -173,9 +173,9 @@ $$ \begin{aligned} \lVert {}^{tr}\eta + C ({}^{n+1}N) \rVert &= \lVert \lVert {}
 
 ### 명제6
 함수 $f$가 다음과 같이 주어졌다고 하자.
-$$ f(\sigma, \alpha,  \epsilon_e^p) = \lVert \eta \rVert - \sqrt{\frac{2}{3}}k(\epsilon_e^p) $$
+$$ f(\sigma, \alpha,  \epsilon_e^p) = \lVert \eta \rVert - \sqrt{\frac{2}{3}}K(\epsilon_e^p) $$
 
-stress, back stress, yield stress가 다음과 같이 주어졌을 때,
+stress, back stress, plastic equivalent stress가 다음과 같이 주어졌을 때,
 $$ \begin{aligned} {}^{n+1}\sigma &= {}^{tr}\sigma -2 \mu \Delta\gamma ({}^{n+1}N) \\ {}^{n+1}\alpha &= {}^{tr}\alpha + H({}^{n+1}\epsilon_e^p) \Delta\gamma ({}^{n+1}N) \\ {}^{n+1} \epsilon_e^p &= {}^{tr}\epsilon_e^p + \sqrt{\frac{2}{3}} \Delta\gamma, \end{aligned} $$
 
 다음을 증명하여라.
@@ -194,7 +194,7 @@ $n+1$번째 값들은 plastic state에 있어야 하기 때문에 다음과 같�
 $$ \begin{aligned} & f({}^{n+1}\sigma, {}^{n+1}\alpha, {}^{n+1} \epsilon_e^p) = 0 \\ \Rightarrow \enspace & \lVert {}^{tr}\eta \rVert - (H({}^{n+1}\epsilon_e^p) + 2\mu) \Delta\gamma - \sqrt{\frac{2}{3}}K({}^{n+1}\epsilon_e^p) = 0 \end{aligned} $$
 
 이 때, ${}^{tr}\tilde\sigma,{}^{tr}\alpha,{}^{tr}\epsilon_e^p$는 전부 아는 값임으로 유일한 변수는 $\Delta\gamma$가 된다.
-$$ f_{alg}(\Delta\gamma) := \lVert {}^{tr}\eta \rVert - (H({}^{n+1}\epsilon_e^p) + 2\mu) \Delta\gamma - \sqrt{\frac{2}{3}}k({}^{n+1}\epsilon_e^p)$$
+$$ f_{alg}(\Delta\gamma) := \lVert {}^{tr}\eta \rVert - (H({}^{n+1}\epsilon_e^p) + 2\mu) \Delta\gamma - \sqrt{\frac{2}{3}}K({}^{n+1}\epsilon_e^p)$$
 
 따라서 $f_{alg}=0$이 되게 $\Delta\gamma$을 결정한다.
 
@@ -212,42 +212,66 @@ $$ f_{alg}({}^{k+1}\Delta\gamma) \le \epsilon \enspace \land \enspace N \le k + 
 5. 만족하지 않는 경우 $k = k +1$로 두고 과정2로 돌아간다.
 
 ### 명제1
-$$ \frac{\partial f_{alg}}{\partial \Delta \epsilon} =  $$
+함수 $f_{alg}$가 다음과 같이 주어졌다고 하자.
+$$ f_{alg}(\Delta\gamma) := \lVert {}^{tr}\eta \rVert - (H({}^{n+1}\epsilon_e^p) + 2\mu) \Delta\gamma - \sqrt{\frac{2}{3}}K({}^{n+1}\epsilon_e^p)$$
 
-# Discrete Plastic Consistency Requirement
-선형 탄성 재료에 J2 plasticity model을 기반으로한 알고리즘을 사용한다고 하자.
+이 때, 다음을 증명하여라.
+$$ \frac{\partial f_{alg}}{\partial \Delta \epsilon} = 2\mu N - \bigg( 2\mu + H({}^{n+1}\epsilon_e^p) + \sqrt{\frac{2}{3}}\frac{\partial H}{\partial \epsilon_e^p} \Delta\gamma + \frac{2}{3} \frac{\partial K}{\partial \epsilon_e^p} \bigg)\frac{\partial \Delta \gamma}{ \partial \Delta \epsilon} $$
 
-Stress calculation 과정에서 plastic state일 때, yield surface에 머물러 있어야 함으로 다음이 성립해야 한다.
-$$ \begin{aligned} \frac{\partial f_{alg}}{\partial \Delta \epsilon} &= 0 \\  \end{aligned} $$
+**Proof**
 
-$$ \text{Where, } f_{alg}(\Delta\gamma) = \lVert {}^{tr}\eta \rVert - (H({}^{n+1}\epsilon_e^p) + 2\mu) \Delta\gamma - \sqrt{\frac{2}{3}}K({}^{n+1}\epsilon_e^p)$$
+$f_{alg}$의 정의에 의해 다음이 성립한다.
+$$ \frac{\partial f_{alg}}{\partial \Delta \epsilon} = \frac{\partial \lVert {}^{tr}\eta \rVert}{\partial \Delta \epsilon} - (H({}^{n+1}\epsilon_e^p) + 2\mu)  \frac{\partial \Delta\gamma}{\partial \Delta \epsilon} - \frac{\partial H({}^{n+1}\epsilon_e^p)}{\partial \Delta \epsilon} \Delta\gamma - \sqrt{\frac{2}{3}} \frac{\partial K({}^{n+1}\epsilon_e^p)}{\partial \Delta \epsilon} $$
 
-### 명제1
+명제1.1-3에 의해 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial f_{alg}}{\partial \Delta \epsilon} &= \frac{\partial \lVert {}^{tr}\eta \rVert}{\partial \Delta \epsilon} - (H({}^{n+1}\epsilon_e^p) + 2\mu)  \frac{\partial \Delta\gamma}{\partial \Delta \epsilon} - \frac{\partial H({}^{n+1}\epsilon_e^p)}{\partial \Delta \epsilon} \Delta\gamma - \sqrt{\frac{2}{3}} \frac{\partial K({}^{n+1}\epsilon_e^p)}{\partial \Delta \epsilon} \\&= 2\mu N - (H({}^{n+1}\epsilon_e^p) + 2\mu)  \frac{\partial \Delta\gamma}{\partial \Delta \epsilon} - \sqrt{\frac{2}{3}} \Delta \gamma \frac{\partial H}{\partial \epsilon_e^p} \frac{\partial \Delta \gamma}{\partial \Delta \epsilon} - \frac{2}{3} \frac{\partial K}{\partial \epsilon_e^p} \frac{\partial \Delta \gamma}{\partial \Delta \epsilon} \\&= 2\mu N - \bigg( 2\mu + H({}^{n+1}\epsilon_e^p) + \sqrt{\frac{2}{3}}\frac{\partial H}{\partial \epsilon_e^p} \Delta\gamma + \frac{2}{3} \frac{\partial K}{\partial \epsilon_e^p} \bigg)\frac{\partial \Delta \gamma}{ \partial \Delta \epsilon} \end{aligned} $$
+
+
+#### 명제1.1
 선형 탄성 재료에 J2 plasticity model을 사용한다고 할 때, 다음을 증명하여라.
 $$ \frac{\partial \lVert {}^{tr}\eta \rVert}{\partial \Delta \epsilon} = 2\mu N $$
 
 **Proof**
 
 ${}^{tr}\eta$의 정의에 의해 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial {}^{tr}\eta}{\partial \Delta\epsilon} &= \frac{\partial \lVert {}^n \tilde \sigma + 2 \mu \Delta \tilde \epsilon - {}^n\alpha \rVert}{\partial \Delta \tilde \epsilon} \frac{\partial \Delta \tilde \epsilon}{\partial \Delta \epsilon} \\&= 2\mu (\delta_{ik}\delta_{jl} - \frac{1}{3} \delta_{ij}\delta_{kl})e_{ijkl} \end{aligned}  $$
+$$ \begin{aligned} \frac{\partial {}^{tr}\eta}{\partial \Delta\tilde\epsilon} &= \frac{\partial }{\partial \Delta \tilde \epsilon} ({}^n \tilde \sigma + 2 \mu \Delta \tilde \epsilon - {}^n\alpha) \\&= \frac{\partial }{\partial \Delta \tilde \epsilon_{kl}} ({}^n \tilde \sigma_{ij} + 2 \mu \Delta \tilde \epsilon_{ij} - {}^n\alpha_{ij}) e_{ijkl} \\&= 2\mu \delta_{ik} \delta_{jl} e_{ijkl} \end{aligned}  $$
 
-따라서, 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial \lVert {}^{tr}\eta \rVert}{\partial \Delta \epsilon} &= \frac{\partial \lVert {}^{tr}\eta \rVert}{\partial {}^{tr}\eta} \frac{\partial {}^{tr}\eta}{\partial \Delta\epsilon} \\&= \end{aligned} $$
+따라서, chain rule에 의해 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial \lVert {}^{tr}\eta \rVert}{\partial \Delta \epsilon} &= \frac{\partial \lVert {}^{tr}\eta \rVert}{\partial {}^{tr}\eta} \frac{\partial {}^{tr}\eta}{\partial \Delta\tilde\epsilon} \frac{\partial \Delta \tilde \epsilon}{\partial \Delta\epsilon} \\&= N_{ij} (2\mu \delta_{ik} \delta_{jl}) \bigg( \delta_{km}\delta_{ln} - \frac{1}{3} \delta_{kl}\delta_{mn} \bigg)e_{mn} \\&= 2\mu N_{kl} \bigg( \delta_{km}\delta_{ln} - \frac{1}{3} \delta_{kl}\delta_{mn} \bigg)e_{mn} \\&= 2\mu ( N_{mn} - \frac{1}{3} N_{kk\delta_{mn}} ) e_{mn} \end{aligned} $$
 
+$N$은 deviatoric tensor임으로 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial \lVert {}^{tr}\eta \rVert}{\partial \Delta \epsilon} &= 2\mu ( N_{mn} - \frac{1}{3} N_{kk\delta_{mn}} ) e_{mn} \\&= 2\mu N_{mn} e_{mn} \\&= 2\mu N \quad {_\blacksquare} \end{aligned} $$
 
-
-### 명제2
-선형 탄성 재료에 J2 plasticity model을 사용한다고 할 때, 다음을 증명하여라.
-$$ \frac{\partial F({}^{n+1}\epsilon_e^p)}{\partial \Delta \epsilon} = \sqrt{\frac{2}{3}} \frac{\partial F}{\partial \epsilon_e^p} \frac{\partial \Delta \gamma}{\partial \Delta \epsilon} $$
+#### 명제1.2
+다음을 증명하여라.
+$$ \frac{\partial H({}^{n+1}\epsilon_e^p)}{\partial \Delta \epsilon} = \sqrt{\frac{2}{3}} \frac{\partial H}{\partial \epsilon_e^p} \frac{\partial \Delta \gamma}{\partial \Delta \epsilon}  $$
 
 **Proof**
 
+Chain rule에 의해서 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial H({}^{n+1}\epsilon_e^p)}{\partial \Delta \epsilon} &= \frac{\partial H({}^{n+1}\epsilon_e^p)}{\partial ({}^{n+1}\epsilon_e^p)} \frac{\partial ({}^{n+1}\epsilon_e^p)}{\partial \Delta \gamma} \frac{\partial \Delta \gamma}{\partial \Delta \epsilon} \\&= \sqrt{\frac{2}{3}}  \frac{\partial H(\epsilon_e^p)}{\partial \epsilon_e^p} \frac{\partial \Delta \gamma}{\partial \Delta \epsilon} \quad {_\blacksquare} \end{aligned}  $$
 
-### 명제3
+#### 명제1.3
+다음을 증명하여라.
+$$ \frac{\partial K({}^{n+1}\epsilon_e^p)}{\partial \Delta \epsilon} = \sqrt{\frac{2}{3}} \frac{\partial K}{\partial \epsilon_e^p} \frac{\partial \Delta \gamma}{\partial \Delta \epsilon}  $$
+
+**Proof**
+
+Chain rule에 의해서 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial K({}^{n+1}\epsilon_e^p)}{\partial \Delta \epsilon} &= \frac{\partial K({}^{n+1}\epsilon_e^p)}{\partial ({}^{n+1}\epsilon_e^p)} \frac{\partial ({}^{n+1}\epsilon_e^p)}{\partial \Delta \gamma} \frac{\partial \Delta \gamma}{\partial \Delta \epsilon} \\&= \sqrt{\frac{2}{3}}  \frac{\partial K(\epsilon_e^p)}{\partial \epsilon_e^p} \frac{\partial \Delta \gamma}{\partial \Delta \epsilon} \quad {_\blacksquare} \end{aligned}  $$
+
+
+# Discrete Plastic Consistency Requirement
+선형 탄성 재료에 J2 plasticity model을 기반으로한 알고리즘을 사용한다고 하자.
+
+Stress calculation 과정에서 plastic state일 때, yield surface에 머물러 있어야 함으로 다음이 성립해야 한다.
+$$ \begin{aligned} &\frac{\partial f_{alg}}{\partial \Delta \epsilon} = 0 \\ \Rightarrow \enspace & 2\mu N - \bigg( 2\mu + H({}^{n+1}\epsilon_e^p) + \sqrt{\frac{2}{3}}\frac{\partial H}{\partial \epsilon_e^p} \Delta\gamma + \frac{2}{3} \frac{\partial K}{\partial \epsilon_e^p} \bigg) \frac{\partial \Delta \gamma}{ \partial \Delta \epsilon} = 0 \\ \Rightarrow \enspace & \frac{\partial \Delta \gamma}{ \partial \Delta \epsilon} = \frac{2\mu N}{2\mu + H({}^{n+1}\epsilon_e^p) + \sqrt{\frac{2}{3}}\frac{\partial H}{\partial \epsilon_e^p} \Delta\gamma + \frac{2}{3} \frac{\partial K}{\partial \epsilon_e^p}}  \end{aligned} $$
+
+### 명제
 선형 탄성 재료에 J2 plasticity model을 사용한다고 하자.
 
 Plastic state일 때, 알고리즘을 통해 계산된 $\Delta \sigma$가 있다고 할 때, 다음을 증명하여라.
-$$ \frac{\partial \Delta \sigma}{ \partial \Delta \epsilon} = C - \frac{4 \mu^2 N \otimes N}{2\mu + H + \frac{2}{3}\frac{\partial K}{\partial \epsilon_e^p}} - \frac{4 \mu^2 \Delta \gamma}{\lVert{}^{tr}\sigma - {}^{tr}\alpha\rVert}(I_{dev} - N \otimes N)   $$
+$$ \frac{\partial \Delta \sigma}{ \partial \Delta \epsilon} = C - \frac{4 \mu^2 N \otimes N}{2\mu + H + \sqrt{\frac{2}{3}}\frac{\partial H}{\partial \epsilon_e^p} \Delta \gamma + \frac{2}{3}\frac{\partial K}{\partial \epsilon_e^p}} - \frac{4 \mu^2 \Delta \gamma}{\lVert {}^{tr}\eta \rVert}(I_{dev} - N \otimes N)   $$
 
 **Proof**
 
