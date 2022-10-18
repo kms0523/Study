@@ -1,4 +1,4 @@
-# 운동 상태의 지배 방정식
+# Momentum Equation
 연속체 $\Omega$가 있다고 하자.
 
 $\Omega$에 Euler의 운동방정식과 Euler-Cauchy stress principle을 적용하면 다음과 같다.
@@ -20,7 +20,7 @@ $$ \mathrm{div}(\boldsymbol\sigma) + \rho \mathbf f_b = \frac{\partial}{\partial
 > Reference  
 > 연속체 역학 정리.md
 
-# 정적 평형 상태의 지배 방정식
+## Static State
 연속체 $\Omega$가 있다고 하자.
 
 $\Omega$가 정적 평형 상태에 있을 때, 적분형 지배방정식은 다음과 같다.
@@ -28,6 +28,18 @@ $$ \int_{\partial\Omega} \boldsymbol{\sigma}\mathbf n \thinspace dS + \int_\Omeg
 
 $\Omega$가 정적 평형 상태에 있을 때, 미분형 지배방정식은 다음과 같다.
 $$ \text{div}(\boldsymbol\sigma) + \rho \mathbf f_b = 0 $$
+
+# Solving Static State Momentum Equation
+Linear elastic material의 변형이 작다고 가정하자.
+
+$C$는 linear stiffness tensor이고, $\epsilon$은 infinitesimal strain tensor일 때, 다음이 성립한다.
+$$ \sigma = C:\epsilon $$
+
+$\sigma$가 충분히 매끄럽다고 할 때, 미분형 momentume equations에 constitutive equation을 대입하면 displacement based momentum equations를 얻을 수 있다.
+$$  \text{div}(C : \epsilon) + \rho \mathbf f_b = 0 $$
+
+
+
 
 ## Weak formulation
 정적 평형상태의 연속체가 있고 $\sigma$가 충분히 매끄럽다고 가정하자.
@@ -52,9 +64,6 @@ $$ \forall w \in \R^3, \quad \int_{\Omega} \boldsymbol\sigma : \text{grad}(\math
 $$ \boldsymbol\sigma : \text{grad}(\mathbf w) = \boldsymbol\sigma_v \cdot \delta \mathbf w $$
 $$ \text{Where, } \boldsymbol\sigma_v = \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{23} \\ \sigma_{13} \\ \sigma_{12} \end{bmatrix}, \enspace \delta \mathbf w = \begin{bmatrix} \frac{\partial w_1}{\partial x_1} \\ \frac{\partial w_2}{\partial x_2} \\ \frac{\partial w_3}{\partial x_3} \\ \frac{\partial w_2}{\partial x_3} + \frac{\partial w_3}{\partial x_2}  \\ \frac{\partial w_1}{\partial x_3} + \frac{\partial w_3}{\partial x_1} \\ \frac{\partial w_1}{\partial x_2} + \frac{\partial w_2}{\partial x_1} \end{bmatrix} $$
 
-결론적으로 유도된 weak formulation은 다음과 같다.
-$$ \begin{equation} \text{find} \enspace \mathbf d \in (\mathcal D_W)^3 \quad s.t. \quad \forall \mathbf w \in \mathcal W^3, \quad \int_{\Omega} \boldsymbol\sigma_v \cdot \delta \mathbf w dV = \int _{\partial\Omega} \mathbf t \cdot \mathbf w dS + \int _{\Omega} \mathbf {f \cdot w} dV \end{equation} $$
-$$ \begin{aligned} \text{Where, } \mathcal{D}_W &:= \{ d_i \in C^1(\Omega) \enspace | \enspace d_i \text{ satisfies boundary condition on } \partial\Omega_E \}  \\ \mathcal W &:= \{ w \in C^\infty(\Omega) \enspace | \enspace \forall \mathbf x \in \partial\Omega_E, \quad w(\mathbf x) = 0 \ \end{aligned}  $$
 
 #### 참고
 이 방법은 `가상 일 원리(principle of virtual work)`라고도 한다. 
@@ -113,3 +122,8 @@ $$ \text{find} \enspace \mathbf d \in (\mathcal D_W)^3 \quad s.t. \quad \forall 
 
 $$ \text{find} \enspace \mathbf d \in \mathcal D^3 \quad s.t. \quad \mathrm{div}(\boldsymbol\sigma) + \rho \mathbf f_b = \frac{\partial}{\partial t}(\rho \mathbf u) + \mathrm{div}(\rho \mathbf{u \otimes u}) $$
 $$ \text{Where, } \mathcal{D} := \{ d_i \in C^2(\Omega) \enspace | \enspace d_i \text{ satisfies boundary condition on } \partial\Omega\}  $$
+
+결론적으로 유도된 weak formulation은 다음과 같다.
+$$ \begin{equation} \text{find} \enspace \mathbf d \in (\mathcal D_W)^3 \quad s.t. \quad \forall \mathbf w \in \mathcal W^3, \quad \int_{\Omega} \boldsymbol\sigma_v \cdot \delta \mathbf w dV = \int _{\partial\Omega} \mathbf t \cdot \mathbf w dS + \int _{\Omega} \mathbf {f \cdot w} dV \end{equation} $$
+$$ \begin{aligned} \text{Where, } \mathcal{D}_W &:= \{ d_i \in C^1(\Omega) \enspace | \enspace d_i \text{ satisfies boundary condition on } \partial\Omega_E \}  \\ \mathcal W &:= \{ w \in C^\infty(\Omega) \enspace | \enspace \forall \mathbf x \in \partial\Omega_E, \quad w(\mathbf x) = 0 \ \end{aligned}  $$
+

@@ -2,15 +2,12 @@
 `구성방정식(constitutive equation)`은 stress와 그에 대응하는 변형의 관계를 나타내는 방정식이다.
 
 # Linearly Elastic Solid
-다음과 같은 상황을 가정하자.
-* 하중은 정적으로 가해진다.
-* 하중을 제거하면 변형이 완전히 사라진다.
-* 변형이 매우 작다
+Small deformation 가정을 하자.
 
-선형 탄성 재료의 경우, stress와 변형은 선형 관계를 갖음으로 constitutive equation을 다음과 같이 가정하자.
-$$ \sigma = C : \epsilon $$
+이 때, 다음 constitutive equation을 만족하는 재료를 `선형탄성재료(linearly elastic solid)`라고 한다.
+$$ \sigma = C(\epsilon) $$
 
-이 때, $\sigma$는 Cauchy stress tensor이고 ${\epsilon}$은 infinitesimal strain tensor이고 $C$는 `탄성 텐서(elasticity tensor)`이다.
+이 때, $\sigma$는 Cauchy stress tensor이고 ${\epsilon}$은 infinitesimal strain tensor이고 $C$는 `선형 강성 텐서(linear stiffness tensor)`이다.
 
 $C$는 4차 텐서로 $\sigma - \epsilon$의 선형관계를 나타내는 계수들을 표현한 텐서이다.
 

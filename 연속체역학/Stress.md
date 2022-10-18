@@ -8,22 +8,22 @@
 
 (b)에 나타난 가상의 평면에 작용하는 힘을 정확히 표현하기 위해서는 평면 위의 분자들간의 상호작용을 모두 고려해야 한다. 하지만 많은 분자를 모두 고려하는 일은 매우 어려운 일이다. 
 
-이를 해결하기 위해 Cauchy는 (c)와 같이 물질의 분자구조를 무시하고 가상의 평면에 작용하는 가상의 분자력 $\bf F$를 고안하였다. 이 때, $\bf F$는 평면 위의 분자들에 의해 평면에 작용하는 힘이다.
+이를 해결하기 위해 Cauchy는 (c)와 같이 물질의 분자구조를 무시하고 가상의 평면에 작용하는 가상의 분자력 $\bf F$를 고안하였다. 이 때, $\bf F$는 평면의 normal vector의 $+$방향에 있는 분자들에 의해 평면에 작용하는 분자력이다.
 
 (d)를 보면 알 수 있듯이 $\bf F$는 어떤 평면을 선택하냐에 따라 달라지며 이는 평면이 달라지면 평면에 힘을 가하는 분자들의 집합이 달라지기 때문이다.
 
-다음으로, (c)와 같이 가정한 상황에서 가상의 평면위의 점 $P$에 작용하는 가상의 분자력에 의해 발생하는 응력을 고려해보자.
+다음으로, (c)와 같이 가정한 상황에서 가상의 평면위의 점 $P$에 작용하는 가상의 분자력을 고려해보자.
 
 <p align = "center">
 <img src = "./image/stress1.png" width = 300>
 </p>
 
-위의 그림과 같이 $P$를 포함하는 영역을 $\Delta A$라 하고 $\Delta A$ 위에 작용하는 가상의 분자력을 $\Delta \bf F$라 하자.
+위의 그림과 같이 $P$를 포함하는 영역을 $\Delta A$라 하고 $n$의 $+$방향에 있는 분자들에 의해 $\Delta A$에 작용하는 가상의 분자력을 $\Delta \bf F$라 하자.
 
-이 때, $P$에 작용하는 `응력 벡터(stress vector)` $\bf t_n$은 다음과 같이 정의한다.
-$$ \mathbf{t_n} = \lim_{\Delta A \rightarrow 0} \frac{\Delta \bf F}{\Delta A} $$
+이 때, $P$에 작용하는 `응력 벡터(stress vector)` $\bf \overset{n}{t}$은 다음과 같이 정의한다.
+$$ \overset{n}{t} := \lim_{\Delta A \rightarrow 0} \frac{\Delta \bf F}{\Delta A} $$
 
-위에 살펴보았듯이 평면의 선택 즉, $\bf n$에 따라서 $\Delta \bf F$가 달라지기 때문에 $\bf t_n$을 표기할 때 하첨자로 $\bf n$을 사용한다.
+위에 살펴보았듯이 평면의 선택 즉, $\bf n$에 따라서 $\Delta \bf F$가 달라지기 때문에 $\bf \overset{n}{t}$을 표기할 때 $\bf n$을 사용한다.
 
 # Cauchy's Stress Principle
 연속체 역학의 기본 공리인 Cauchy's stress principle은 다음과 같다. 
@@ -31,18 +31,18 @@ $$ \mathbf{t_n} = \lim_{\Delta A \rightarrow 0} \frac{\Delta \bf F}{\Delta A} $$
 "주어진 점 $\bf x$와 시간 $t$에서 동일한 접평면을 갖는 모든 면의 응력 벡터는 동일하다."
 
 즉, 주어진 점을 포함하는 가상의 곡면의 형태(곡률)와는 전혀 관계 없이 주어진 점에서 접평면만 동일하다면 응력벡터는 동일하다는 의미로 이를 식으로 나타내면 다음과 같다.
-$$ \mathbf {t_n} = \mathbf {t_n}(\mathbf {x, n}, t) $$
+$$ \mathbf {\overset{n}{t}} = \mathbf {\overset{n}{t}}(\mathbf {x, n}, t) $$
 
 또한, 동일한 접평면에서 단위 접선 벡터만 반대방향일 경우 응력 벡터 또한 크기는 같고 방향만 반대이다.
-$$ \mathbf {t_n} = -\mathbf {t_{-n}} $$
+$$ \mathbf {\overset{n}{t}} = -\mathbf {t_{-n}} $$
 
 이는 Newton의 작용 반작용 법칙과 동치이다.
 
 # Stress Tensor
-Cauchy's stress principle에 의해 주어진 점 $\bf x$와 시간 $t$에서 $\bf t_n$은 $\bf n$에 의해 결정된다. 
+Cauchy's stress principle에 의해 주어진 점 $\bf x$와 시간 $t$에서 $\bf \overset{n}{t}$은 $\bf n$에 의해 결정된다. 
 
 따라서 다음과 같은 함수 $\boldsymbol \sigma$를 생각해보자. 
-$$ \begin{equation} \boldsymbol \sigma : \R^3 \rightarrow \R^3 \quad s.t. \quad  n \mapsto \bf t_n \end{equation} $$
+$$ \begin{equation} \boldsymbol \sigma : \R^3 \rightarrow \R^3 \quad s.t. \quad  n \mapsto \bf \overset{n}{t} \end{equation} $$
 
 이 때, $\boldsymbol \sigma$는 linear map이며 이를 `응력텐서(stress tensor)`라 한다.
 
@@ -99,7 +99,7 @@ $$ \mathbf t_{- \mathbf e_i} \Delta A^i + \mathbf{t_{n}} \Delta A^n = \mathbf 0 
 $$ \mathbf{t_{n}} = n^i\mathbf{t_{e_i}} $$
 
 $\boldsymbol \sigma$의 정의에 의해 다음이 성립한다.
-$$ \begin{aligned} \boldsymbol \sigma (n^i \mathbf e_i) &= \mathbf t_n \\ &= n^i \mathbf t_{\mathbf e_i} \\ &= n^i \boldsymbol \sigma (\mathbf{e}_i) \quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} \boldsymbol \sigma (n^i \mathbf e_i) &= \mathbf {\overset{n}{t}} \\ &= n^i \mathbf t_{\mathbf e_i} \\ &= n^i \boldsymbol \sigma (\mathbf{e}_i) \quad {_\blacksquare} \end{aligned} $$
 
 ### 명제2
 $\R^3$공간의 임의의 기저 $\beta$가 있다고 하자.
@@ -185,21 +185,21 @@ $$ \begin{aligned} \frak m^\gamma_\gamma(\boldsymbol\sigma) &= B^{-1} \frak m^\b
 ### 명제2(Maximum Shearing Stress)
 주어진 $\mathbf x,t$에서 응력텐서 $\boldsymbol{\sigma}$가 주어졌다고 하자.
 
-$\lVert \mathbf n \rVert = 1$을 만족하는 $\mathbf n$을 normal vector로 갖는 평면의 stress vector를 $\mathbf t_n$이라 할 때, 평면에 접하는 $\mathbf t_n$의 성분을 shearing stress $\mathbf s_s$라 하자.
+$\lVert \mathbf n \rVert = 1$을 만족하는 $\mathbf n$을 normal vector로 갖는 평면의 stress vector를 $\mathbf {\overset{n}{t}}$이라 할 때, 평면에 접하는 $\mathbf {\overset{n}{t}}$의 성분을 shearing stress $\mathbf s_s$라 하자.
 
 $\sigma_1,\sigma_2,\sigma_3$를 principal stress라고 했을 때, 다음을 증명하여라.
 $$ \max( \lVert \mathbf s_s \rVert) = \max \Big( \frac{|\sigma_i-\sigma_j|}{2} \Big), \quad i,j = 1,2,3, \enspace i \neq j $$
 
 **Proof**
 
-$\beta$를 $\boldsymbol{\sigma}$의 principal direction이라고 하고 $\mathbf n = n^i\beta_i$라 하면 $\mathbf t_n$는 다음과 같다.
-$$ t_n^i = \sigma_in^i, \quad i=1,2,3 $$
+$\beta$를 $\boldsymbol{\sigma}$의 principal direction이라고 하고 $\mathbf n = n^i\beta_i$라 하면 $\mathbf {\overset{n}{t}}$는 다음과 같다.
+$$ \overset{n}{t}^i = \sigma_in^i, \quad i=1,2,3 $$
 
-평면에 수직한 $\mathbf t_n$의 성분인 normal stress $\mathbf s_n$과 평면에 접하는 $\mathbf t_n$의 성분인 shearing stress $\mathbf s_s$는 다음과 같다.
-$$ \begin{aligned} \mathbf s_n &= (\mathbf t_n \cdot n)\mathbf n \\ \mathbf s_s &= \mathbf t_n - \mathbf s_n \\ &= \mathbf t_n - (\mathbf t_n \cdot n)\mathbf n \end{aligned} $$
+평면에 수직한 $\mathbf {\overset{n}{t}}$의 성분인 normal stress $\mathbf s_n$과 평면에 접하는 $\mathbf {\overset{n}{t}}$의 성분인 shearing stress $\mathbf s_s$는 다음과 같다.
+$$ \begin{aligned} \mathbf s_n &= (\mathbf {\overset{n}{t}} \cdot n)\mathbf n \\ \mathbf s_s &= \mathbf {\overset{n}{t}} - \mathbf s_n \\ &= \mathbf {\overset{n}{t}} - (\mathbf {\overset{n}{t}} \cdot n)\mathbf n \end{aligned} $$
 
 따라서, 다음이 성립한다.
-$$ \begin{aligned} \lVert \mathbf s_s \rVert ^2 &= (\mathbf t_n - (\mathbf t_n \cdot n)\mathbf n) \cdot (\mathbf t_n - (\mathbf t_n \cdot n)\mathbf n) \\ &= \mathbf t_n \cdot \mathbf t_n - \mathbf s_n \cdot \mathbf s_n \\ &= \sum_{i=1}^3 (\sigma_in^i)^2 - \bigg( \sum_{i=1}^3 \sigma_i(n^i)^2 \bigg) \end{aligned} $$
+$$ \begin{aligned} \lVert \mathbf s_s \rVert ^2 &= (\mathbf {\overset{n}{t}} - (\mathbf {\overset{n}{t}} \cdot n)\mathbf n) \cdot (\mathbf {\overset{n}{t}} - (\mathbf {\overset{n}{t}} \cdot n)\mathbf n) \\ &= \mathbf {\overset{n}{t}} \cdot \mathbf {\overset{n}{t}} - \mathbf s_n \cdot \mathbf s_n \\ &= \sum_{i=1}^3 (\sigma_in^i)^2 - \bigg( \sum_{i=1}^3 \sigma_i(n^i)^2 \bigg) \end{aligned} $$
 
 표기를 간단하게 하기 위해 다음과 같이 정의하자.
 $$ \sigma_1 = a, \enspace \sigma_2 = b, \enspace \sigma_3 = c \\ n_1 = x, \enspace n_2 = y , \enspace n_3 = z \\ \lVert \mathbf s_s \rVert^2 = f(x,y,z) = a^2x^2 + b^2y^2 + c^2z^2 - (ax^2 + by^2 + cz^2)^2 $$

@@ -11,7 +11,7 @@
 이 상황에서 strain increment $\Delta \epsilon$이 주어졌을 때, ${}^{n+1}\sigma, {}^{n+1}\alpha,{}^{n+1}\epsilon_e^p$를 구해보자.
 
 ## 1. Elasticity assumption
-선형 탄성가정에 의해 다음이 성립한다.
+J2 plasticity model의 가정에 의해 다음이 성립한다.
 $$ \sigma = C : \epsilon^e $$
 
 $$ \text{Where, } C \text{ is a linear elastic stiffness tensor} $$
