@@ -20,7 +20,7 @@ $$ \mathrm{div}(\boldsymbol\sigma) + \rho \mathbf f_b = \frac{\partial}{\partial
 > Reference  
 > 연속체 역학 정리.md
 
-## Static State
+## Equilibrium State
 연속체 $\Omega$가 있다고 하자.
 
 $\Omega$가 정적 평형 상태에 있을 때, 적분형 지배방정식은 다음과 같다.
@@ -29,53 +29,67 @@ $$ \int_{\partial\Omega} \boldsymbol{\sigma}\mathbf n \thinspace dS + \int_\Omeg
 $\Omega$가 정적 평형 상태에 있을 때, 미분형 지배방정식은 다음과 같다.
 $$ \text{div}(\boldsymbol\sigma) + \rho \mathbf f_b = 0 $$
 
-# Solving Static State Momentum Equation
-Linear elastic material의 변형이 작다고 가정하자.
+# Dispalcement based Momentum Equation
+Dispaclement를 $d$라 할 떄, infinitesimal strain tensor $\epsilon(d)$은 다음과 같다.
+$$ \epsilon_{ij} := \frac{1}{2} \bigg( \frac{\partial d_i}{\partial x_j} + \frac{\partial d_j}{\partial x_i} \bigg) $$
 
-$C$는 linear stiffness tensor이고, $\epsilon$은 infinitesimal strain tensor일 때, 다음이 성립한다.
-$$ \sigma = C:\epsilon $$
+Linear elastic material의 변형이 작다고 가정하면 linear stiffness tensor $C$에 대해 다음이 성립한다.
+$$ \sigma(d) = C:\epsilon $$
 
 $\sigma$가 충분히 매끄럽다고 할 때, 미분형 momentume equations에 constitutive equation을 대입하면 displacement based momentum equations를 얻을 수 있다.
-$$  \text{div}(C : \epsilon) + \rho \mathbf f_b = 0 $$
 
+# Dispacement based FE Formulation
 
+## Equilibrium State
+Displacement based momentum equations으로 서술되는 boundary value problem(BVP)이 다음과 같이 주어졌다고 하자.
+$$ \text{find} \enspace d \in \mathcal D^3 \quad s.t. \quad \text{div}(\sigma(d)) + \rho f_b = 0 $$
 
+$$ \text{Where, } \mathcal{D} := \{ d_i \in C^2(\Omega) \enspace | \enspace d_i \text{ satisfies boundary condition on } \partial\Omega \}  $$
 
-## Weak formulation
-정적 평형상태의 연속체가 있고 $\sigma$가 충분히 매끄럽다고 가정하자.
-
-연속체의 미분형 지배 방정식은 3개의 평형방정식으로 이루어져있다.
-$$ \text{div}(\boldsymbol\sigma) + \rho \mathbf f_b = 0 $$
-
-미분형 지배 방정식의 weighted residual formulation은 다음과 같다.
-$$ \forall w \in \R^3, \quad \int_{\Omega} ( \mathrm{div}(\boldsymbol\sigma) + \rho f ) \cdot w dV = 0 $$
-
-Weak formulation을 유도하기 위해, divergence theorem을 적용하면 다음과 같다.
-$$ \begin{aligned} & \int_{\Omega} ( \mathrm{div}(\boldsymbol\sigma) + \rho \mathbf {f ) \cdot w} dV = 0. \\ \Rightarrow \enspace & \int_{\Omega} \mathrm{div}(w^T \boldsymbol\sigma) - \boldsymbol\sigma : \text{grad}(w)  + \mathbf {f \cdot w} dV = 0. \\ \Rightarrow \enspace & \int_{\Omega} \boldsymbol\sigma : \text{grad}(\mathbf w) dV = \int _{\partial\Omega} w^T \boldsymbol\sigma n dS + \int _{\Omega} \mathbf {f \cdot w} dV \\ \Rightarrow \enspace & \int_{\Omega} \boldsymbol\sigma : \text{grad}(\mathbf w) dV = \int _{\partial\Omega} \mathbf t \cdot \mathbf w dS + \int _{\Omega} \mathbf {f \cdot w} dV \end{aligned} $$
-
-결론적으로 유도된 weak formulation은 다음과 같다.
-$$ \forall w \in \R^3, \quad \int_{\Omega} \boldsymbol\sigma : \text{grad}(\mathbf w) dV = \int _{\partial\Omega} \mathbf t \cdot \mathbf w dS + \int _{\Omega} \mathbf {f \cdot w} dV $$
-
----
+BVP의 Weighted residual form은 다음과 같다.
+$$ \text{find} \enspace d \in \mathcal D^3 \quad s.t. \quad \forall w \in (C^\infty_c)^3, \quad \int_{\Omega} \text{div}(\sigma(d)) \cdot w \thinspace dV + \int_{\Omega} \rho f_b \cdot w \thinspace dV = 0 $$
 
 > Q. test vector function과 내적한 식의 해가 연립방정식의 해와 동일한가?
+
+Weak form을 유도하기 위해, divergence theorem을 적용하면 다음과 같다.
+$$ \begin{aligned} & \int_{\Omega} \text{div}(\sigma) \cdot w \thinspace dV + \int_{\Omega} \rho f_b \cdot w \thinspace dV = 0 \\ \Rightarrow \enspace & \int_{\Omega} \mathrm{div}(w^T \sigma) - \sigma : \text{grad}(w)  + \rho f_b \cdot w dV = 0. \\ \Rightarrow \enspace & \int_{\Omega} \sigma : \text{grad}(w) dV = \int _{\partial\Omega} w^T \sigma n dS + \int _{\Omega} \rho f_b \cdot w dV \\ \Rightarrow \enspace & \int_{\Omega} \sigma : \text{grad}(w) dV = \int _{\partial\Omega} t \cdot \mathbf w dS + \int _{\Omega} \rho f_b \cdot w dV \end{aligned} $$
+
+따라서 결론적으로 유도된 weak formulation은 다음과 같다.
+$$ \text{find} \enspace d \in (\mathcal D_W)^3 \quad s.t. \quad \forall w \in \mathcal W^3, \quad \int_{\Omega} \sigma(d) : \text{grad}(w) dV = \int_{\partial\Omega} t \cdot \mathbf w dS + \int _{\Omega} \rho f_b \cdot w dV $$
+
+$$ \begin{aligned} \text{Where, } \mathcal{D}_W &:= \{ d_i \in C^1(\Omega) \enspace | \enspace d_i \text{ satisfies boundary condition on } \partial\Omega_E \}  \\ \mathcal W &:= \{ w \in C^\infty(\Omega) \enspace | \enspace \forall \mathbf x \in \partial\Omega_E, \quad w(\mathbf x) = 0 \ \end{aligned}  $$
+
+이 때, 물리적으로 essentail BC에 대응되는 natural BC가 존재한다. 다시 말해, 지지조건으로 displacement가 결정된 essential BC에는 지지력이 발생하게 되고, 이 지지력을 지지조건 대신에 부여해도 같은 해를 얻을 수 있다. 따라서 essential BC를 적절한 natrual BC로 바꿀 수 있게 된다. 
+
+현재는 결정되지 않았지만, 나중에 계산을 통해 결정할 natural BC들이 주어졌다고 가정하면 위 논리에 따라 다음과 같이 둘 수 있다.
+$$ \partial\Omega = \partial\Omega_N $$
+
+따라서, BVP는 다음과 같아진다.
+$$ \text{find} \enspace d \in (\mathcal D_W)^3 \quad s.t. \quad \forall w \in (C^\infty)^3, \quad \int_{\Omega} \sigma(d) : \text{grad}(w) dV = \int _{\partial\Omega} t \cdot \mathbf w dS + \int _{\Omega} \rho f_b \cdot w dV $$
+$$ \text{Where, } \mathcal{D}_W := \{ d_i \in C^1(\Omega) \} $$
+
+> Reference  
+> [Book] (Bathe) Finite Element Procedures p.161
+
 
 이 때, $\boldsymbol\sigma : \text{grad}(\mathbf w)$항은 $\boldsymbol{\sigma}$의 symmetry에 의해 다음과 같이 표현할 수 있다.
 $$ \boldsymbol\sigma : \text{grad}(\mathbf w) = \boldsymbol\sigma_v \cdot \delta \mathbf w $$
 $$ \text{Where, } \boldsymbol\sigma_v = \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{23} \\ \sigma_{13} \\ \sigma_{12} \end{bmatrix}, \enspace \delta \mathbf w = \begin{bmatrix} \frac{\partial w_1}{\partial x_1} \\ \frac{\partial w_2}{\partial x_2} \\ \frac{\partial w_3}{\partial x_3} \\ \frac{\partial w_2}{\partial x_3} + \frac{\partial w_3}{\partial x_2}  \\ \frac{\partial w_1}{\partial x_3} + \frac{\partial w_3}{\partial x_1} \\ \frac{\partial w_1}{\partial x_2} + \frac{\partial w_2}{\partial x_1} \end{bmatrix} $$
 
 
-#### 참고
-이 방법은 `가상 일 원리(principle of virtual work)`라고도 한다. 
+### 참고1(Principle of Virtual Displacement)
+BVP의 weak formulation이 다음과 같이 주어졌다고 하자.
+$$ \text{find} \enspace d \in (\mathcal D_W)^3 \quad s.t. \quad \forall w \in \mathcal W^3, \quad \int_{\Omega} \sigma(d) : \text{grad}(w) dV = \int_{\partial\Omega} t \cdot \mathbf w dS + \int _{\Omega} \rho f_b \cdot w dV $$
 
-$\bf w$를 `가상 변위(virtual displacement)` $\delta \mathbf d$로 보면 식(2)는 다음과 같다.
-$$ \text{find} \enspace \mathbf d \in (\mathcal D_W)^3 \quad s.t. \quad \forall \mathbf \delta \mathbf d \in \mathcal W^3, \quad \int_{\Omega} \boldsymbol\sigma_v \cdot \delta(\delta \mathbf d) dV = \int _{\partial\Omega} \mathbf t \cdot \delta \mathbf d dS + \int _{\Omega} \mathbf f \cdot \delta \mathbf d dV $$
+$$ \begin{aligned} \text{Where, } \mathcal{D}_W &:= \{ d_i \in C^1(\Omega) \enspace | \enspace d_i \text{ satisfies boundary condition on } \partial\Omega_E \}  \\ \mathcal W &:= \{ w \in C^\infty(\Omega) \enspace | \enspace \forall \mathbf x \in \partial\Omega_E, \quad w(\mathbf x) = 0 \ \end{aligned}  $$
+
+이 때, $w$를 `가상 변위(virtual displacement)` $\delta d$로 보면 다음이 성립한다.
+$$ \text{find} \enspace d \in (\mathcal D_W)^3 \quad s.t. \quad \forall \delta d \in \mathcal W^3, \quad \int_{\Omega} \sigma(d) : \text{grad}(\delta d) \thinspace  dV = \int_{\partial\Omega} t \cdot \mathbf \delta d \thinspace dS + \int _{\Omega} \rho f_b \cdot \delta d \thinspace dV $$
 
 이 떄, $\delta(\delta \mathbf d)$를 변형률로써 해석하면, 좌측항은 물리적으로 `내부 가상 일(internal virtual work)`, 우측항은 `외부 가상 일(external virtual work)`로 볼 수 있기 때문에 가상 일 원리라고 한다.
 
 > Reference  
-> [note] (Abaqus) Equilibrium and virtual work  
-> Weighted Residual Methods.md  
+> [Book] (Bathe) Finite Element Procedures p.156
 
 # 지배 방정식의 수치 방정식
 ## 정적 평형 방정식
@@ -120,8 +134,7 @@ $$ \text{find} \enspace \mathbf d \in (\mathcal D_W)^3 \quad s.t. \quad \forall 
 
 ---
 
-$$ \text{find} \enspace \mathbf d \in \mathcal D^3 \quad s.t. \quad \mathrm{div}(\boldsymbol\sigma) + \rho \mathbf f_b = \frac{\partial}{\partial t}(\rho \mathbf u) + \mathrm{div}(\rho \mathbf{u \otimes u}) $$
-$$ \text{Where, } \mathcal{D} := \{ d_i \in C^2(\Omega) \enspace | \enspace d_i \text{ satisfies boundary condition on } \partial\Omega\}  $$
+
 
 결론적으로 유도된 weak formulation은 다음과 같다.
 $$ \begin{equation} \text{find} \enspace \mathbf d \in (\mathcal D_W)^3 \quad s.t. \quad \forall \mathbf w \in \mathcal W^3, \quad \int_{\Omega} \boldsymbol\sigma_v \cdot \delta \mathbf w dV = \int _{\partial\Omega} \mathbf t \cdot \mathbf w dS + \int _{\Omega} \mathbf {f \cdot w} dV \end{equation} $$

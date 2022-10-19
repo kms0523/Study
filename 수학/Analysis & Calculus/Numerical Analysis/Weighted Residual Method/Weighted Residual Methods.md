@@ -21,7 +21,7 @@ $$ \text{Where, } \mathcal U := \{ u \in C^m(\Omega) \enspace | \enspace u \text
 식(1)의 weighted residual formulation은 다음과 같이 주어진다.  
 $$ \begin{equation} \text{find } u \in \mathcal U \quad s.t. \quad \forall w \in  \mathcal W, \quad \int_\Omega w r \thinspace dV = 0 \end{equation} $$
 
-$$ \text{Where, } C^\infty_c(\Omega) \subset \mathcal W, \quad  r(\mathbf x) = \mathcal P(u) + f(\mathbf x) $$
+$$ \text{Where, } C^\infty_c(\Omega) \subseteq \mathcal W, \quad  r(\mathbf x) = \mathcal P(u) + f(\mathbf x) $$
 
 이 떄, $\mathcal W$는 `테스트 함수공간(test function space)`, $w$는 `테스트 함수(test function)`, $r$은 `residual`이라한다.
 
