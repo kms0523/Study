@@ -5,10 +5,10 @@
 
 위 그림과 같이 외력 $f_1,f_2$를 받아 변위 $d_1,d_2$가 생긴 `탄성 스프링(elastic spring)`이 평형상태에 있다고 하자.
 
-왼쪽 물체에 대한 `힘 평형 방정식(force equilibrium equation)`은 다음과 같다.
+왼쪽 물체의 경우 $d_1-d_2$만큼 이동함으로 스프링에 의해 $-k(d_1 - d_2)$의 힘이 작용한다. 따라서 `힘 평형 방정식(force equilibrium equation)`은 다음과 같다.
 $$ f_1 - k(d_1-d_2) = 0 $$
 
-왼쪽 물체에 대한 force equilibrium equation은 다음과 같다.
+오른쪽 물체의 경우 $d_2-d_1$만큼 이동함으로 스프링에 의해 $-k(d_2 - d_1)$의 힘이 작용한다. 따라서 force equilibrium equation은 다음과 같다.
 $$ f_2 - k(d_2-d_1) = 0 $$
 
 전체 force equilibrium equation을 행렬형태로 나타내면 다음과 같다.
@@ -31,7 +31,9 @@ $$ k\begin{bmatrix} 1 & -1 \\ -1 & 1 \end{bmatrix} \begin{bmatrix} d_1 \\ d_2 \e
 위 그림과 같이 3개의 강체와 5개의 linear spring으로 이루어진 system으로 모델링 한다.
 
 ## 2. Element equilibrium
-linear spring을 element로 두고, 강체의 displacement인 $U_1,U_2,U_3$를 state variable로 두자.
+linear spring을 element로 두고, 각각의 강체를 node로 보자.
+
+강체의 displacement인 $U_1,U_2,U_3$를 state variable로 두자.
 
 각 element의 equilibrium equation은 다음과 같다.
 $$\begin{equation} \begin{gathered} k_1U_1 = f_{11} \\ k_2 \begin{bmatrix} 1 & -1 \\ -1 & 1 \end{bmatrix} \begin{bmatrix} U_1 \\ U_2 \end{bmatrix} = \begin{bmatrix} f_{21} \\ f_{22} \end{bmatrix} \\ k_3\begin{bmatrix} 1 & -1 \\ -1 & 1 \end{bmatrix} \begin{bmatrix} U_1 \\ U_2 \end{bmatrix} = \begin{bmatrix} f_{31} \\ f_{32} \end{bmatrix} \\  k_4\begin{bmatrix} 1 & -1 \\ -1 & 1 \end{bmatrix} \begin{bmatrix} U_1 \\ U_3 \end{bmatrix} = \begin{bmatrix} f_{41} \\ f_{43} \end{bmatrix} \\ k_5\begin{bmatrix} 1 & -1 \\ -1 & 1 \end{bmatrix} \begin{bmatrix} U_2 \\ U_3 \end{bmatrix} = \begin{bmatrix} f_{52} \\ f_{53} \end{bmatrix} \end{gathered} \end{equation} $$

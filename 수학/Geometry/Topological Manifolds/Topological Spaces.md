@@ -6,16 +6,36 @@ $X$ 위의 `위상(topology)` $\mathcal T$란, 다음 성질을 만족하는 $X$
 2. $$ s_i \in \mathcal T, \enspace i=1, \cdots,n \Rightarrow \bigcap_{i=1}^n s_i \in \mathcal T $$
 3. $$ \bigcup_{s \in \mathcal T} s \in \mathcal T $$
 
-# Topological Spaces
+### 명제1(Metric Topology)
+Metric space M이 있다고 하자.
+
+$M$의 모든 open set의 집합을 $\mathcal T$라 할 때, 다음을 증명하여라.
+$$ \mathcal T \text{ is a topology on } M $$
+
+**Proof**
+
+Metric space의 open set의 성질에 의해 다음을 만족한다.
+1. $$\empty, M \in \mathcal T$$
+2. $$ s_i \in \mathcal T, \enspace i=1, \cdots,n \Rightarrow \bigcap_{i=1}^n s_i \in \mathcal T $$
+3. $$ \bigcup_{s \in \mathcal T} s \in \mathcal T $$
+
+따라서, $\mathcal T$는 $M$의 topology이다.
+
+#### 참고
+Metric sapce $M$의 모든 open set의 집합을 `metric topology`라고 한다.
+
+특히, $M$이 Euclidean metric space일 경우 `Euclidean topology`라고 한다.
+
+# Topological Space
 집합 $X$와 $X$ 위의 위상 $\mathcal T$가 있을 때, $(X, \mathcal T)$를 `위상공간(topological space)`이라 한다.
 
 ### 참고
 $x \in X$를 point라고 부른다.
 
-### 명제
+### 명제1
 Topological space $X$가 있다고 하자.
 
-$Y \in \mathcal T_X$이고 $\mathcal T_Y$를 다음과 같이 정의하자.
+$Y$가 $X$의 open subset일 떄, $\mathcal T_Y$를 다음과 같이 정의하자.
 $$ \mathcal T_Y := \{ S \in \mathcal T_X \enspace | \enspace S \subset Y \} $$
 
 이 떄, 다음을 증명하여라.
@@ -23,28 +43,70 @@ $$ (Y, \mathcal T_Y) \text{ is a topological space} $$
 
 **Proof**
 
-[$\empty \in \mathcal T_Y$]  
-$\empty$는 모든 집합의 부분집합임으로 자명하다.
+명제 1.1-1.4에 의해 $\mathcal T_Y$가 $Y$의 topology임으로 $(Y, \mathcal T_Y)$는 topological space이다. $\quad {_\blacksquare}$ 
 
-[$Y \in \mathcal T_Y$]  
-모든 집합은 자기 자신을 부분집합으로 갖음으로 자명하다.
+#### 명제1.1
+Topological space $X$가 있다고 하자.
 
-[finite intersection]  
+$Y$가 $X$의 open subset일 떄, $\mathcal T_Y$를 다음과 같이 정의하자.
+$$ \mathcal T_Y := \{ S \in \mathcal T_X \enspace | \enspace S \subset Y \} $$
+
+이 떄, 다음을 증명하여라.
+$$ \empty \in \mathcal T_Y $$
+
+**Proof**
+
+$\empty$는 모든 집합의 부분집합임으로 자명하다.$\quad {_\blacksquare}$
+
+#### 명제1.2
+Topological space $X$가 있다고 하자.
+
+$Y$가 $X$의 open subset일 떄, $\mathcal T_Y$를 다음과 같이 정의하자.
+$$ \mathcal T_Y := \{ S \in \mathcal T_X \enspace | \enspace S \subset Y \} $$
+
+이 떄, 다음을 증명하여라.
+$$ Y \in \mathcal T_Y $$
+
+**Proof**
+
+모든 집합은 자기 자신을 부분집합으로 갖음으로 자명하다. $\quad {_\blacksquare}$
+
+#### 명제1.3
+Topological space $X$가 있다고 하자.
+
+$Y$가 $X$의 open subset일 떄, $\mathcal T_Y$를 다음과 같이 정의하자.
+$$ \mathcal T_Y := \{ S \in \mathcal T_X \enspace | \enspace S \subset Y \} $$
+
+이 떄, 다음을 증명하여라.
+$$ s_i \in \mathcal T_Y, \enspace i=1, \cdots,n \Rightarrow \bigcap_{i=1}^n s_i \in \mathcal T_Y $$
+
+**Proof**
+
 $s_i \in \mathcal T_Y, \enspace i = 1, \cdots, n$이라 하자.
 
 이 떄, 집합 $X$를 다음과 같이 정의하자.
 $$ X = \bigcap_{i=1}^n s_i $$
 
-$s_i \in \mathcal T_X, \enspace i = 1, \cdots, n$임으로 $\mathcal T_X$의 정의에 의해 다음이 성립한다.
+$s_i \in \mathcal T_X, \enspace i = 1, \cdots, n$이고 $\mathcal T_X$는 topology임으로 다음이 성립한다.
 $$ X \in \mathcal T_X $$
 
-그리고 $s_i \subset Y, \enspace i = 1, \cdots, n$임으로 다음이 성립한다.
+그리고 $\mathcal T_Y$의 정의에 의해 $s_i \subset Y, \enspace i = 1, \cdots, n$임으로 다음이 성립한다.
 $$ X \subset Y $$
 
-따라서 다음이 성립한다.
-$$ X \in \mathcal T_Y  $$
+따라서 $\mathcal T_Y$의 정의에 의해 다음이 성립한다.
+$$ X \in \mathcal T_Y \quad {_\blacksquare} $$
 
-[union]  
+#### 명제1.4
+Topological space $X$가 있다고 하자.
+
+$Y$가 $X$의 open subset일 떄, $\mathcal T_Y$를 다음과 같이 정의하자.
+$$ \mathcal T_Y := \{ S \in \mathcal T_X \enspace | \enspace S \subset Y \} $$
+
+이 떄, 다음을 증명하여라.
+$$ \bigcup_{s \in \mathcal T} s \in \mathcal T $$
+
+**Proof**
+
 집합 $X$를 다음과 같이 정의하자.
 $$ X = \bigcup_{s \in \mathcal T_Y} s $$
 
@@ -55,4 +117,8 @@ $$ X \in \mathcal T_X $$
 $$ X \subset Y $$
 
 따라서 다음이 성립한다.
-$$ X \in \mathcal T_Y  $$
+$$ X \in \mathcal T_Y \quad {_\blacksquare} $$
+
+
+> Reference  
+> [Book] (Lee) Introduction to Topological Manifolds Exercise 2.5.

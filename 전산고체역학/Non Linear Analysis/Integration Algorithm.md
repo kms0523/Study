@@ -2,8 +2,6 @@
 선형 탄성 재료에 J2 plasticity model을 사용한다고 하자.
 
 이 떄, 다음 값들이 주어져 있다고 하자.
-* elastic modulus $E$
-* plastic modulus $H$
 * $n$번째 load increment에서 stress ${}^n\sigma$
 * $n$번째 load increment에서 back stress ${}^n\alpha$
 * $n$번째 load increment에서 effective plastic strain ${}^n\epsilon_e^p$

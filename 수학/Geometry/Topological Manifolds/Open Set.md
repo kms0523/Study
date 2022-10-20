@@ -9,3 +9,5 @@ Topology의 정의를 보면 알 수 있듯이, $\mathcal T$가  open set 집합
 
 > Referece  
 > [Book] (Lee) Introduction to Topological Manifolds p.20
+
+### 명제1
