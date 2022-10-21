@@ -191,3 +191,10 @@ $$ (A:B) C = (C \otimes A) : B $$
 $$ (A:B) C = A_{kl}B_{kl}C_{ij}e_{ij} $$
 
 $$ (C \otimes A) : B = C_{ij}A_{kl}B_{kl}e_{ij} $$
+
+# Tangent Stiffness Tensor
+J2 plasticity with hardening model에 따른 tangent stiffness tensor를 다음과 같이 정의하자.
+$$ C^{m} := \frac{\partial\dot\sigma}{\partial\dot\epsilon} $$
+
+model에 의해 다음과 같다.
+$$ C^{m} = \begin{dcases} C & \text{elastic state} \\ C - \frac{4 \mu^2 N \otimes N}{2\mu + H + \frac{2}{3}\frac{\partial K}{\partial \epsilon_e^p}} & \text{plastic state} \end{dcases} $$

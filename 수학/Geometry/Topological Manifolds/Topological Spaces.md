@@ -7,7 +7,7 @@ $X$ 위의 `위상(topology)` $\mathcal T$란, 다음 성질을 만족하는 $X$
 3. $$ \bigcup_{s \in \mathcal T} s \in \mathcal T $$
 
 ### 명제1(Metric Topology)
-Metric space M이 있다고 하자.
+Metric space $M$이 있다고 하자.
 
 $M$의 모든 open set의 집합을 $\mathcal T$라 할 때, 다음을 증명하여라.
 $$ \mathcal T \text{ is a topology on } M $$
@@ -46,12 +46,7 @@ $$ (Y, \mathcal T_Y) \text{ is a topological space} $$
 명제 1.1-1.4에 의해 $\mathcal T_Y$가 $Y$의 topology임으로 $(Y, \mathcal T_Y)$는 topological space이다. $\quad {_\blacksquare}$ 
 
 #### 명제1.1
-Topological space $X$가 있다고 하자.
-
-$Y$가 $X$의 open subset일 떄, $\mathcal T_Y$를 다음과 같이 정의하자.
-$$ \mathcal T_Y := \{ S \in \mathcal T_X \enspace | \enspace S \subset Y \} $$
-
-이 떄, 다음을 증명하여라.
+다음을 증명하여라.
 $$ \empty \in \mathcal T_Y $$
 
 **Proof**
@@ -59,12 +54,7 @@ $$ \empty \in \mathcal T_Y $$
 $\empty$는 모든 집합의 부분집합임으로 자명하다.$\quad {_\blacksquare}$
 
 #### 명제1.2
-Topological space $X$가 있다고 하자.
-
-$Y$가 $X$의 open subset일 떄, $\mathcal T_Y$를 다음과 같이 정의하자.
-$$ \mathcal T_Y := \{ S \in \mathcal T_X \enspace | \enspace S \subset Y \} $$
-
-이 떄, 다음을 증명하여라.
+다음을 증명하여라.
 $$ Y \in \mathcal T_Y $$
 
 **Proof**
@@ -72,52 +62,42 @@ $$ Y \in \mathcal T_Y $$
 모든 집합은 자기 자신을 부분집합으로 갖음으로 자명하다. $\quad {_\blacksquare}$
 
 #### 명제1.3
-Topological space $X$가 있다고 하자.
-
-$Y$가 $X$의 open subset일 떄, $\mathcal T_Y$를 다음과 같이 정의하자.
-$$ \mathcal T_Y := \{ S \in \mathcal T_X \enspace | \enspace S \subset Y \} $$
-
-이 떄, 다음을 증명하여라.
+다음을 증명하여라.
 $$ s_i \in \mathcal T_Y, \enspace i=1, \cdots,n \Rightarrow \bigcap_{i=1}^n s_i \in \mathcal T_Y $$
 
 **Proof**
 
 $s_i \in \mathcal T_Y, \enspace i = 1, \cdots, n$이라 하자.
 
-이 떄, 집합 $X$를 다음과 같이 정의하자.
-$$ X = \bigcap_{i=1}^n s_i $$
+이 떄, 집합 $S$를 다음과 같이 정의하자.
+$$ S = \bigcap_{i=1}^n s_i $$
 
 $s_i \in \mathcal T_X, \enspace i = 1, \cdots, n$이고 $\mathcal T_X$는 topology임으로 다음이 성립한다.
-$$ X \in \mathcal T_X $$
+$$ S \in \mathcal T_X $$
 
 그리고 $\mathcal T_Y$의 정의에 의해 $s_i \subset Y, \enspace i = 1, \cdots, n$임으로 다음이 성립한다.
-$$ X \subset Y $$
+$$ S \subset Y $$
 
 따라서 $\mathcal T_Y$의 정의에 의해 다음이 성립한다.
-$$ X \in \mathcal T_Y \quad {_\blacksquare} $$
+$$ S \in \mathcal T_Y \quad {_\blacksquare} $$
 
 #### 명제1.4
-Topological space $X$가 있다고 하자.
-
-$Y$가 $X$의 open subset일 떄, $\mathcal T_Y$를 다음과 같이 정의하자.
-$$ \mathcal T_Y := \{ S \in \mathcal T_X \enspace | \enspace S \subset Y \} $$
-
-이 떄, 다음을 증명하여라.
+다음을 증명하여라.
 $$ \bigcup_{s \in \mathcal T} s \in \mathcal T $$
 
 **Proof**
 
-집합 $X$를 다음과 같이 정의하자.
-$$ X = \bigcup_{s \in \mathcal T_Y} s $$
+집합 $S$를 다음과 같이 정의하자.
+$$ S = \bigcup_{s \in \mathcal T_Y} s $$
 
-$s \in \mathcal T_y \Rightarrow s \in T_x$임으로 $\mathcal T_X$의 정의에 의해 다음이 성립한다.
-$$ X \in \mathcal T_X $$
+$s \in \mathcal T_Y \Rightarrow s \in T_X$이고 $\mathcal T_X$는 topology임으로 다음이 성립한다.
+$$ S \in \mathcal T_X $$
 
-그리고 $s \in \mathcal T_y \Rightarrow s \subset Y$임으로 다음이 성립한다.
-$$ X \subset Y $$
+그리고 $s \in \mathcal T_Y \Rightarrow s \subset Y$임으로 다음이 성립한다.
+$$ S \subset Y $$
 
-따라서 다음이 성립한다.
-$$ X \in \mathcal T_Y \quad {_\blacksquare} $$
+따라서 $\mathcal T_Y$의 정의에 의해 다음이 성립한다.
+$$ S \in \mathcal T_Y \quad {_\blacksquare} $$
 
 
 > Reference  
