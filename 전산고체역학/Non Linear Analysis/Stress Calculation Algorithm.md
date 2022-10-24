@@ -350,4 +350,4 @@ $\Delta t \rightarrow 0$일 때, 다음이 성립한다.
 $$ \Delta \gamma \rightarrow 0 $$
 
 따라서 다음이 성립한다.
-$$ \lim_{\Delta t \rightarrow 0} C^{alg} =  $$
+$$ \lim_{\Delta t \rightarrow 0} C^{alg} = C^{ep} $$

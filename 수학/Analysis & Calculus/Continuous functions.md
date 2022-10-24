@@ -1,33 +1,30 @@
 # Continuous
-open subsset $X \subset \R^n$과 함수 $\mathbf f : X \rightarrow \R^m$이 있다고 하자.
+Metric space $M_1,M_2$와 함수 $f : M_1 \rightarrow M_2$가 있다고 하자.
 
-$\mathbf x_0 \in X$에서 $f$가 `연속(continuous)`이라는 말은 다음과 동치이다.
-$$ \lim_{\mathbf x \rightarrow \mathbf x_0} \mathbf f(\mathbf x) = \mathbf f(\mathbf x_0) $$
+$x_0 \in M_1$에서 $f$가 `연속(continuous)`이라는 말은 다음과 동치이다.
+$$ \lim_{x \rightarrow x_0} f(x) = f(x_0) $$
 
 > Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach Chapter 1.5
 
 ### 참고1
-연속의 정의는 다음 세가지를 요구한다.
-1. $f(\mathbf x_0)$가 정의되어 있어야 한다.
-2. $\lim_{x \rightarrow \mathbf x_0} f(x)$이 존재해야 한다.
-3. $\lim_{x \rightarrow \mathbf x_0} f(x) = f(\mathbf x_0)$
-
-> Reference  
-> [Book] (J. Stewart) Calculus Chapter 1.8   
+연속의 정의를 풀어 쓰면 다음과 같다.
+$$ \forall \epsilon > 0, \quad \exist  \delta \quad s.t. \quad x \in  B_\delta(x_0) \Rightarrow f(x) \in B_\epsilon(f(x_0)) $$
 
 ### 참고2
-함수 $\mathbf f$가 $\mathbf x_0$에서 연속이라면 $\mathbf x \rightarrow \mathbf x_0$일 때, $\mathbf f(\mathbf x) \rightarrow \mathbf f(\mathbf x_0)$임으로 $\mathbf x$가 $\mathbf x_0$ 근처에서 조금 변화면 $\mathbf f$도 조금 변한다는 의미이다.
+연속의 정의는 다음 세가지를 요구한다.
+1. $f(x_0)$가 정의되어 있어야 한다.
+2. $\lim_{x \rightarrow x_0} f(x)$이 존재해야 한다.
+3. $\lim_{x \rightarrow x_0} f(x) = f(x_0)$
 
 > Reference  
 > [Book] (J. Stewart) Calculus Chapter 1.8   
 
 ### 참고3
-연속의 정의를 풀어 쓰면 다음과 같다.
-$$ \forall \epsilon > 0, \quad \exist  \delta \quad s.t. \quad 0 < d_1(x, x_0) < \delta \Rightarrow d_2(f(x), f(x_0)) < \epsilon. $$
+함수 $f$가 $x_0$에서 연속이라면 $x \rightarrow x_0$일 때, $f(x) \rightarrow f(x_0)$임으로 $x$가 $x_0$ 근처에서 조금 변화면 $f$도 조금 변한다는 의미이다.
 
-이를 open ball을 이용해 표현하면 다음과 같다.
-$$ \forall \epsilon > 0, \quad \exist  \delta \quad s.t. \quad x \in  B_\delta(x_0) \Rightarrow f(x) \in B_\epsilon(f(x_0)) $$
+> Reference  
+> [Book] (J. Stewart) Calculus Chapter 1.8   
 
 ### 명제1
 open subsset $X \subset \R^n$과 함수 $\mathbf f : X \rightarrow \R^m$이 있을 때,
@@ -112,30 +109,30 @@ $$ f \text{ is continuous } \Leftrightarrow \text{preimage of every open subset 
 **Proof**
 
 [$\Rightarrow$]  
-$f$가 continuous하고 $U \subseteq M_2$가 open subset이라 하자.
+$U \subseteq M_2$가 openset이라 하자.
 
 $x \in \text{preimg}(U)$면 $U$가 open set임으로 다음이 성립한다.
 $$ \exist r > 0  \quad s.t. \quad B_r(f(x)) \subseteq U $$
 
-이 때, $f$가 $x$에서 continuous임으로 다음이 성립한다.
+이 때, $f$가 continuous임으로 다음이 성립한다.
 $$ \forall \epsilon > 0, \quad \exist  \delta \quad s.t. \quad y \in  B_\delta(x) \Rightarrow f(y) \in B_\epsilon(f(x)) $$
 
 즉, $\exist \delta \quad s.t. \quad y \in  B_\delta(x) \Rightarrow f(y) \in U$ 임으로 다음이 성립한다.
 $$ \exist \delta \quad s.t. \quad B_\delta(x) \subseteq \text{preimg}(U) $$
 
-따라서, $\text{preimg}(U)$는 open set이다. $\quad {_\blacksquare}$
+임의의 $x$에서 $\text{preimg}(U)$에 속하는 ball이 존재함으로, $\text{preimg}(U)$는 open set이다. $\quad {_\blacksquare}$
 
 [$\Leftarrow$]  
 $U \subseteq M_2$가 open subset이라 하자.
 
-$f(x) \in U$에 대해 다음이 성립한다.
-$$ \exist r > 0 \quad s.t. \quad B_r(f(x)) \subseteq U $$
+$U$가 open set임으로 $f(x) \in U$에 대해 다음이 성립한다.
+$$ \exist \epsilon \in \R^+ \quad s.t. \quad B_\epsilon(f(x)) \subseteq U $$
 
 그러면 가정에 의해, $\text{preimg}(B_r(f(x)))$는 open set임으로 다음이 성립한다.
-$$ \exist \delta > 0 \quad s.t. \quad B_\delta(x) \subseteq \text{preimg}(B_r(f(x))) $$
+$$ \exist \delta \in \R^+ \quad s.t. \quad B_\delta(x) \subseteq \text{preimg}(B_\epsilon(f(x))) $$
 
 즉, 다음이 성립한다.
-$$ y \in B_\delta(x) \Rightarrow f(y) \in B_r(f(x)) $$
+$$ y \in B_\delta(x) \Rightarrow f(y) \in B_\epsilon(f(x)) $$
 
 이를 조합하면 다음이 성립힌다.
 $$ \forall \epsilon > 0, \quad \exist  \delta \quad s.t. \quad y \in B_\delta(x) \Rightarrow f(y) \in B_\epsilon(f(x)) $$
@@ -143,5 +140,5 @@ $$ \forall \epsilon > 0, \quad \exist  \delta \quad s.t. \quad y \in B_\delta(x)
 즉, $f$는 임의의 $x$에서 연속임으로, $f$는 continous function이다. $\quad {_\blacksquare}$ 
 
 > Reference  
-> [Book] (Lee) Introduction to Topological Manifolds Appendix B
+> [Book] (Lee) Introduction to Topological Manifolds p.399
 

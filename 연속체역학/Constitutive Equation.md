@@ -1,60 +1,87 @@
 
 `구성방정식(constitutive equation)`은 stress와 그에 대응하는 변형의 관계를 나타내는 방정식이다.
-
 # Linearly Elastic Solid
 Small deformation 가정을 하자.
 
 이 때, 다음 constitutive equation을 만족하는 재료를 `선형탄성재료(linearly elastic solid)`라고 한다.
-$$ \sigma = C(\epsilon) $$
+$$ \sigma_{ij} = C_{ijkl} \epsilon_{kl} $$
 
 이 때, $\sigma$는 Cauchy stress tensor이고 ${\epsilon}$은 infinitesimal strain tensor이고 $C$는 `선형 강성 텐서(linear stiffness tensor)`이다.
 
 $C$는 4차 텐서로 $\sigma - \epsilon$의 선형관계를 나타내는 계수들을 표현한 텐서이다.
 
-Linear elastic solid의 constitutive equation을 cartesian coordinate에서 나타내면 다음과 같다.
-$$ \sigma_{ij} = C_{ijkl} \epsilon_{kl} $$
-
 > Reference  
 > [Book] (Lai et al) Introduction to Continuum Mechanics Chap5.2  
 
-## Elasticity Tensor
-$\bf C$는 4차 텐서임으로 81개의 독립변수를 갖는다. 하지만 ${\epsilon}$과 ${\sigma}$의 대칭성 및 $U$에 의해 독립변수 개수가 줄어들게 된다.
+### 명제1
+$C$가 선형 강성 텐서라고 할 떄, 다음을 증명하여라.
+$$ C \text{ has 21 independent variables} $$
 
-먼저 ${\epsilon}$의 대칭성을 고려해보자. $\epsilon_{kl} = \epsilon_{lk}$임으로 $C_{ijkl}\epsilon_{kl} + C_{ijlk}\epsilon_{lk} = (C_{ijkl} + C_{ijlk} ) \epsilon_{kl}$이다(여기서는 summation notation이 사용된게 아니다). 따라서 두개의 독립변수 $C_{ijkl}, C_{ijlk}$가 있는 것이 아닌 하나의 독립변수 $( C_{ijkl} + C_{ijlk} )$가 있게 된다. $( C_{ijkl} + C_{ijlk} )$를 하나의 독립변수로 두는 것은 $C_{ijkl} = C_{ijlk}$로 두는것과 동치이다. 이를 통해 $\bf C$의 독립변수 숫자는 $3 \times 3 \times 6 = 54$로 줄어들게 된다.
+**Proof**
 
-다음으로 ${\sigma}$의 대칭성을 고려해보자. $\sigma_{ij} = \sigma_{ji} \Rightarrow C_{ijkl}\epsilon_{kl} = C_{jikl}\epsilon_{kl}$임으로 $C_{ijkl} = C_{jikl}$이 된다. 따라서 $\bf C$의 독립변수 숫자는 $6 \times 6 = 36$로 줄어들게 된다.
+$C$는 4차 텐서임으로 81개의 독립변수를 갖는다.
 
-마지막으로 $U$를 고려하자. $\sigma_{ij} = C_{ijkl}\epsilon_{kl}$임으로 다음이 성립한다.
-$$ C_{ijkl} = \frac{\partial\sigma_{ij}}{\partial \epsilon_{kl}} $$
+이 때, $\epsilon$의 대칭성에 의해 다음이 성립한다.
+$$ C_{ijkl}\epsilon_{kl} + C_{ijlk}\epsilon_{lk} = (C_{ijkl} + C_{ijlk} ) \epsilon_{kl} \quad (\text{not summation}) $$
 
-식(12)를 대입하면 다음과 같다.
-$$ C_{ijkl} = \frac{\partial^2 U}{\partial \epsilon_{ij}\partial \epsilon_{kl}} = \frac{\partial\sigma_{kl}}{\partial \epsilon_{ij}} = C_{klij} $$
+따라서 두개의 독립변수 $C_{ijkl}, C_{ijlk}$가 있는 것이 아닌 하나의 독립변수 $( C_{ijkl} + C_{ijlk} )$가 있게 된다. $( C_{ijkl} + C_{ijlk} )$를 하나의 독립변수로 두는 것은 $C_{ijkl} = C_{ijlk}$로 두는것과 동치이다.
 
-따라서 $\bf C$의 독립변수 숫자는 21개로 줄어들게 된다.
+따라서, 유의미한 $(k,l)$은 다음과 같다.
+$$ (k,l) \in \{(1,1), (1,2), (1,3), (2,2), (2,3), (3,3) \} $$
 
->참고  
-[book] (Lai et al) Introduction to Continuum Mechanics Chap5.2
+이를 통해 $C$의 독립변수 숫자는 $3 \times 3 \times 6 = 54$로 줄어들게 된다.
 
-# 등방성 선형 탄성 재료
-특정 방향에 따라 물성치가 변하지 않을 때 `등방성(isotropic)`재료라고 한다. 따라서 등방성 재료의 경우 모든 방향에서 응력-변형률 관계가 같아야 한다. 그리고 모든 방향에서 응력-변형률 관계가 같으려면 $\bf C$가 isotropic tensor여야 한다.
+다음으로, $\sigma$의 대칭성에 의해 다음이 성립한다.
+$$ C_{ijkl}\epsilon_{kl} = C_{jikl}\epsilon_{kl} $$
 
-fourth-order isotropic tensor의 경우 다음과 같은 general form을 갖는다.
+위와 동일한 논리로, $C_{ijkl} = C_{jikl}$이 되게 되고 유의미한 $(i,j)$는 다음과 같다.
+$$ (i,j) \in \{(1,1), (1,2), (1,3), (2,2), (2,3), (3,3) \} $$
+
+이를 통해 $C$의 독립변수 숫자는 $6 \times 6 = 36$으로 줄어들게 된다.
+
+마지막으로 strain energy function $U$에 의해 다음이 성립한다.
+$$ \begin{aligned} C_{ijkl} &=  \frac{\partial \sigma_{ij}}{\partial \epsilon_{kl}}  \\&= \frac{\partial^2 U}{\partial \epsilon_{ij}\partial \epsilon_{kl}} \\&= \frac{\partial\sigma_{kl}}{\partial \epsilon_{ij}} \\&= C_{klij} \end{aligned}  $$
+
+따라서, 유의미한 $(i,j,k,l)$는 다음과 같다.
+$$ (i,j,k,l) \in \{ (1,1,1,1), \cdots, (1,1,3,3), (1,2,1,2), \cdots , (1,2,3,3), \cdots, (3,3,3,3) \} $$
+
+이를 통해, $C$의 독립변수 숫자는 $6 + \cdots + 1 = 21$으로 줄어든다. $\quad\tiny\blacksquare$
+
+> Reference    
+> [book] (Lai et al) Introduction to Continuum Mechanics p.205
+
+# Isotropic Linear Elastic Solid
+특정 방향에 따라 물성치가 변하지 않을 때 `등방성(isotropic)`재료라고 한다. 
+
+등방성 재료의 경우 모든 방향에서 응력-변형률 관계가 같아야 하기 때문에 $C$는 isotropic tensor여야 한다.
+
+Fourth-order isotropic tensor의 경우 다음과 같은 general form을 갖는다.
 $$ C_{ijkl} = \lambda \delta_{ij}\delta_{kl} + \alpha \delta_{ik}\delta_{jl} + \beta \delta_{il}\delta_{jk} $$
 
-식(11)에 대입하여 응력-변형률 관계식을 정리하면 다음과 같다.
-$$ \begin{equation} \sigma_{ij} = \lambda \epsilon_{kk}\delta_{ij} + 2\mu\epsilon_{ij} \end{equation} $$
+$\sigma_{ij} = C_{ijkl} \epsilon_{kl}$임으로 다음이 성립한다.
+$$ \sigma_{ij} = \lambda \epsilon_{kk}\delta_{ij} + 2\mu\epsilon_{ij} $$
 $$ \text{Where, } 2\mu = \alpha + \beta$$
 
-식(13)으로부터 다음 관계식을 얻을 수 있다.
-$$ \sigma_{ii} = (3\lambda + 2\mu) \epsilon_{kk} $$
+### 참고
+두 개의 재료 상수 $\lambda$, $\mu$를 `Lame's constant`라고 한다.
 
-따라서 식(13)을 정리하여 변형률-응력 관계식을 정리하면 다음과 같다.
-$$ \begin{equation} \epsilon_{ij} = \frac{1}{2\mu} \left( \sigma_{ij} - \frac{\lambda}{3\lambda + 2\mu}\sigma_{kk}\delta_{ij} \right) \end{equation} $$
+$\epsilon$이 무차원 변수임으로 Lame's constant는 응력과 동일한 차원을 갖는다.
 
-응력-변형률 관계식과 변형률-응력 관계식에서 공통적으로 나타나는 두 개의 재료 상수 $\lambda$, $\mu$를 `Lame's constant`라고 한다. $\epsilon$이 무차원 변수임으로 Lame's constant는 응력과 동일한 차원을 갖는다.
+### 명제1
+Isotropic linear elastic solid일 때, 다음을 증명하여라.
+$$ \epsilon_{ij} = \frac{1}{2\mu} \left( \sigma_{ij} - \frac{\lambda}{3\lambda + 2\mu}\sigma_{kk}\delta_{ij} \right) $$
 
-> 참고  
-[book] (Lai et al) Introduction to Continuum Mechanics Chap5.3
+**Proof**
+
+Isotropic linear elastic solid임으로 다음이 성립한다.
+$$ \begin{aligned} \sigma_{kk} &= (3\lambda + 2\mu) \epsilon_{kk} \\ \Rightarrow \enspace \epsilon_{kk} &= \frac{\sigma_{kk}}{3\lambda + 2\mu} \end{aligned} $$
+
+따라서 다음이 성립한다.
+$$ \begin{aligned} & \sigma_{ij} = \lambda \epsilon_{kk}\delta_{ij} + 2\mu\epsilon_{ij} \\ \Rightarrow\enspace& \sigma_{ij} = \lambda\frac{\sigma_{kk}}{3\lambda + 2\mu}\delta_{ij} + 2\mu\epsilon_{ij} \\ \Rightarrow\enspace& \epsilon_{ij} = \frac{1}{2\mu} \left( \sigma_{ij} - \frac{\lambda}{3\lambda + 2\mu}\sigma_{kk}\delta_{ij} \right) \end{aligned} $$
+
+
+> Reference  
+> [book] (Lai et al) Introduction to Continuum Mechanics Chap5.3
 
 ## unaxial stress state
 만약 하나의 normal stree만 존재하고 나머지는 전부 0인 경우를 `uniaxial stress state`라고 한다. 
