@@ -1,8 +1,8 @@
 # Homeomorphism
 Topological space $X,Y$가 있다고 하자.
 
-$X$에서 $Y$로의 `위상동형사상(homeomorphism)` $\phi$는 다음과 같은 성질을 갖는 함수이다.
-$$ \phi : X \rightarrow Y \quad s.t. \quad \phi, \phi^{-1} \text{ are continous. } $$
+함수 $f: X \rightarrow Y$가 다음 성질을 만족할 떄, $f$를 $X$에서 $Y$로의 `위상동형사상(homeomorphism)`이라 한다.
+$$ f \text{ is bijective} \enspace \land \enspace f, f^{-1} \text{ are continous. } $$
 
 만약 homeomorphism $\phi$가 존재한다면, $X$와 $Y$를 `위상동형(homeomorphic, topologically equivalent)`이라고 한다.
 

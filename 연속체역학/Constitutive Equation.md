@@ -53,6 +53,12 @@ $$ (i,j,k,l) \in \{ (1,1,1,1), \cdots, (1,1,3,3), (1,2,1,2), \cdots , (1,2,3,3),
 # Isotropic Linear Elastic Solid
 특정 방향에 따라 물성치가 변하지 않을 때 `등방성(isotropic)`재료라고 한다. 
 
+### 명제1
+Isotropic linear elastic solid일 때, 다음을 증명하여라.
+$$ \sigma_{ij} = \lambda \epsilon_{kk}\delta_{ij} + 2\mu\epsilon_{ij} $$
+
+**Proof**
+
 등방성 재료의 경우 모든 방향에서 응력-변형률 관계가 같아야 하기 때문에 $C$는 isotropic tensor여야 한다.
 
 Fourth-order isotropic tensor의 경우 다음과 같은 general form을 갖는다.
@@ -60,14 +66,21 @@ $$ C_{ijkl} = \lambda \delta_{ij}\delta_{kl} + \alpha \delta_{ik}\delta_{jl} + \
 
 $\sigma_{ij} = C_{ijkl} \epsilon_{kl}$임으로 다음이 성립한다.
 $$ \sigma_{ij} = \lambda \epsilon_{kk}\delta_{ij} + 2\mu\epsilon_{ij} $$
-$$ \text{Where, } 2\mu = \alpha + \beta$$
 
-### 참고
-두 개의 재료 상수 $\lambda$, $\mu$를 `Lame's constant`라고 한다.
+$$ \text{Where, } 2\mu = \alpha + \beta \quad\tiny\blacksquare $$
+
+#### 참고1
+재료 상수 $\lambda$, $\mu$를 `Lame's constant`라고 한다.
 
 $\epsilon$이 무차원 변수임으로 Lame's constant는 응력과 동일한 차원을 갖는다.
 
-### 명제1
+#### 참고2
+vognit notation을 이용하여 행렬로 나타내면 다음과 같다.
+$$ \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{12} \\ \sigma_{23} \\ \sigma_{31} \end{bmatrix} =  \begin{bmatrix} c_1 & c_2 & c_2 & & & \\ c_2 & c_1 & c_2 &&& \\ c_2 & c_2 & c_1 &&& \\ &&& c_3 && \\ &&&& c_3 & \\ &&&&& c_3 \end{bmatrix} \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ \epsilon_{12} \\ \epsilon_{23} \\ \epsilon_{31} \end{bmatrix} $$
+
+$$ \begin{aligned} \text{Where, } c_1 &= 2\mu + \lambda \\ c_2 &= \lambda \\ c_3 &= 2\mu \end{aligned}  $$
+
+### 명제2
 Isotropic linear elastic solid일 때, 다음을 증명하여라.
 $$ \epsilon_{ij} = \frac{1}{2\mu} \left( \sigma_{ij} - \frac{\lambda}{3\lambda + 2\mu}\sigma_{kk}\delta_{ij} \right) $$
 
@@ -77,78 +90,154 @@ Isotropic linear elastic solid임으로 다음이 성립한다.
 $$ \begin{aligned} \sigma_{kk} &= (3\lambda + 2\mu) \epsilon_{kk} \\ \Rightarrow \enspace \epsilon_{kk} &= \frac{\sigma_{kk}}{3\lambda + 2\mu} \end{aligned} $$
 
 따라서 다음이 성립한다.
-$$ \begin{aligned} & \sigma_{ij} = \lambda \epsilon_{kk}\delta_{ij} + 2\mu\epsilon_{ij} \\ \Rightarrow\enspace& \sigma_{ij} = \lambda\frac{\sigma_{kk}}{3\lambda + 2\mu}\delta_{ij} + 2\mu\epsilon_{ij} \\ \Rightarrow\enspace& \epsilon_{ij} = \frac{1}{2\mu} \left( \sigma_{ij} - \frac{\lambda}{3\lambda + 2\mu}\sigma_{kk}\delta_{ij} \right) \end{aligned} $$
+$$ \begin{aligned} & \sigma_{ij} = \lambda \epsilon_{kk}\delta_{ij} + 2\mu\epsilon_{ij} \\ \Rightarrow\enspace& \sigma_{ij} = \lambda\frac{\sigma_{kk}}{3\lambda + 2\mu}\delta_{ij} + 2\mu\epsilon_{ij} \\ \Rightarrow\enspace& \epsilon_{ij} = \frac{1}{2\mu} \left( \sigma_{ij} - \frac{\lambda}{3\lambda + 2\mu}\sigma_{kk}\delta_{ij} \right) \quad\tiny\blacksquare \end{aligned} $$
 
+#### 참고
+vognit notation을 이용하여 행렬로 나타내면 다음과 같다.
+$$ \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ \epsilon_{12} \\ \epsilon_{23} \\ \epsilon_{31} \end{bmatrix} =  \begin{bmatrix} c_1 & c_2 & c_2 & & & \\ c_2 & c_1 & c_2 &&& \\ c_2 & c_2 & c_1 &&& \\ &&& c_3 && \\ &&&& c_3 & \\ &&&&& c_3 \end{bmatrix} \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{12} \\ \sigma_{23} \\ \sigma_{31} \end{bmatrix} $$
+
+$$ \begin{aligned} \text{Where, } c_1 &= \frac{1}{2\mu} \bigg( 1-\frac{\lambda}{3\lambda + 2\mu} \bigg) = \frac{\lambda + \mu}{\mu(3\lambda + 2\mu)} \\ c_2 &= -\frac{\lambda}{2\mu(3\lambda + 2\mu)} \\ c_3 &= \frac{1}{2\mu} \end{aligned}  $$
 
 > Reference  
 > [book] (Lai et al) Introduction to Continuum Mechanics Chap5.3
 
-## unaxial stress state
-만약 하나의 normal stree만 존재하고 나머지는 전부 0인 경우를 `uniaxial stress state`라고 한다. 
+### 명제3(Uniaxial stress state)
+uniaxial stress가 다음과 같이 주어졌다고 하자.
+$$\sigma_{ij} = \begin{cases} \sigma_{11} & i=j=1 \\ 0 & \text{else} \end{cases} $$
 
-uniaxial stress state 일 때, 변형률-응력 관계식은 다음과 같다.
-$$ \begin{equation} \begin{gathered} \epsilon_{11} = \frac{1}{2\mu} \left( \sigma_{11} - \frac{\lambda}{3\lambda + 2\mu}\sigma_{11} \right) = \frac{\lambda + \mu}{\mu (3\lambda + 2\mu)}\sigma_{11} \\ \epsilon_{22} = \epsilon_{33} = \frac{1}{2\mu} \left( 0 - \frac{\lambda}{3\lambda + 2\mu}\sigma_{11} \right) = -\frac{\lambda}{2\mu (3\lambda + 2\mu)}\sigma_{11} = - \frac{\lambda}{2(\lambda + \mu)}\epsilon_{11} \\ \epsilon_{12} = \epsilon_{13} = \epsilon_{23} = 0 \end{gathered} \end{equation} $$
+이 떄, `탄성계수(Young's modulus, modulus of elasticity)` $E$와  `프와송비(Poisson's ratio)` $\nu$를 다음과 같이 정의하자.
+$$ \begin{aligned} E &:= \frac{\sigma_{11}}{\epsilon_{11}} \\ \nu &:= -\frac{\epsilon_{22}}{\epsilon_{11}} = -\frac{\epsilon_{33}}{\epsilon_{11}} \end{aligned} $$
 
-식(15)로부터 다음과 같은 새로운 재료상수를 얻을 수 있다.
-$$ \begin{equation} \begin{gathered} E_Y = \frac{\sigma_{11}}{\epsilon_{11}} =  \frac{\mu (3\lambda + 2\mu)}{\lambda + \mu} \\ \nu = -\frac{\epsilon_{22}}{\epsilon_{11}} = -\frac{\epsilon_{33}}{\epsilon_{11}} = \frac{\lambda}{2(\lambda + \mu)} \end{gathered} \end{equation}   $$
+다음을 증명하여라.
+$$ \begin{aligned} E &= \frac{\mu (3\lambda + 2\mu)}{\lambda + \mu} \\ \nu &= \frac{\lambda}{2(\lambda + \mu)} \end{aligned} $$
 
-이 때, $E_Y$를 `탄성계수(Young's modulus, modulus of elasticity)`라고 하며 $\nu$를 `프와송비(Poisson's ratio)`라고 한다.
+**Proof**
 
-식(16)에서 $\lambda$를 제거하면 $\mu(E_Y,\nu)$을 얻을 수 있고 이를 통해 $\lambda(E_Y,\nu)$도 얻을 수 있다.
-$$ \begin{equation} \begin{aligned} \mu &= \frac{E_Y}{2(1+\nu)} \\ \lambda &= \frac{\nu}{(1-2\nu)(1+\nu)}E_Y \end{aligned} \end{equation} $$
+명제1에 의해 다음이 성립한다.
+$$ \begin{aligned} \epsilon_{11} &= \frac{1}{2\mu} \left( \sigma_{11} - \frac{\lambda}{3\lambda + 2\mu}\sigma_{11} \right) \\&= \frac{\lambda + \mu}{\mu (3\lambda + 2\mu)}\sigma_{11} \\ \epsilon_{22} = \epsilon_{33} &= -\frac{\lambda}{2\mu (3\lambda + 2\mu)}\sigma_{11} \\&= - \frac{\lambda}{2(\lambda + \mu)}\epsilon_{11}  \end{aligned} $$
 
-식(16)에서 얻은 재료 상수를 식(13)에 대입하고 식(17)의 관계를 이용하면 다음과 같은 변형률-응력 관계식을 얻는다.
-$$ \begin{equation} \begin{aligned} \epsilon_{ij} &= \frac{1}{2\mu} \left( \sigma_{ij} - \frac{\lambda}{3\lambda + 2\mu}\sigma_{kk}\delta_{ij} \right) \\ &=  \frac{\lambda + \mu}{\mu(3\lambda + 2\mu)} \left( \frac{3\lambda + 2\mu}{2(\lambda + \mu)} \sigma_{ij} - \frac{\lambda}{2(\lambda + \mu)}\sigma_{kk}\delta_{ij} \right) \\ &= \frac{1}{E_Y} \left( \frac{E_Y}{2\mu} \sigma_{ij} - \nu\sigma_{kk}\delta_{ij} \right) \\ &= \frac{1}{E_Y} \Big( (1 + \nu) \sigma_{ij} - \nu\sigma_{kk}\delta_{ij} \Big) \end{aligned} \end{equation} $$
+따라서, 다음이 성립한다.
+$$ \begin{aligned} E &= \frac{\sigma_{11}}{\epsilon_{11}} \\&=  \frac{\mu (3\lambda + 2\mu)}{\lambda + \mu} \\ \nu &= -\frac{\epsilon_{22}}{\epsilon_{11}} = -\frac{\epsilon_{33}}{\epsilon_{11}} \\&= \frac{\lambda}{2(\lambda + \mu)} \quad\tiny\blacksquare \end{aligned} $$
 
-> 참고  
-[book] (Lai et al) Introduction to Continuum Mechanics Chap5.4
+> Reference  
+> [book] (Lai et al) Introduction to Continuum Mechanics Chap5.4
 
-## Simple shear stress state
-하나의 shear stress만 존재하고 나머지는 전부 0인 경우를 `simple shear stress state`라고 한다.
 
-simple shear stress state일 때 Lame's constant로 나타낸 변형률-응력 관계식은 다음과 같다.
-$$ \begin{equation} \epsilon_{12} = \frac{\sigma_{12}}{2\mu} \end{equation} $$
+### 명제4(Simple shear stress state)
+simple shear stress가 다음과 같이 주어졌다고 하자.
+$$\sigma_{ij} = \begin{cases} \sigma_{12} & i=1, j=2 \\ 0 & \text{else} \end{cases} $$
 
-식(19)로부터 다음과 같은 재료상수를 얻을 수 있다.
-$$ G = \frac{\sigma_{12}}{2\epsilon_{12}} = \mu $$
+이 떄, `전단계수(shear modulus)` $G$를 다음과 같이 정의하자.
+$$ G:= \frac{\sigma_{12}}{2\epsilon_{12}}$$
 
-이 때, $G$를 `전단계수(shear modulus)`라고 한다.
+다음을 증명하여라.
+$$ G = \mu $$
 
-다음으로, simple shear stress state일 때 $E_Y, \nu$로 나타낸 변형률-응력 관계식은 다음과 같다.
-$$ \epsilon_{12} = \frac{1+\nu}{E_Y}\sigma_{12} $$
+**Proof**
 
-따라서 다음이 성립한다.
-$$ G =\frac{\sigma_{12}}{2\epsilon_{12}} = \frac{E_Y}{2(1 + \nu)} $$
+명제1에 의해 다음이 성립한다.
+$$ \begin{aligned} \epsilon_{12} &= \frac{1}{2\mu}  \sigma_{12} \\ \frac{\sigma_{12}}{2\epsilon_{12}} &= \mu \quad\tiny\blacksquare \end{aligned} $$
 
-> 참고  
-[book] (Lai et al) Introduction to Continuum Mechanics Chap5.4
+> Reference  
+> [book] (Lai et al) Introduction to Continuum Mechanics Chap5.4
 
-## hydrostatic state of stress
-${\sigma} = p \bf I$인 경우를 `hydrostatic state of stress`라고 한다.
+### 명제5(Hydrostatic state of stress)
+simple shear stress가 다음과 같이 주어졌다고 하자.
+$$\sigma_{ij} = \begin{cases} p & i=j \\ 0 & \text{else} \end{cases} $$
 
-hydrostatic state of stress일 때 Lame's constant로 나타낸 변형률-응력 관계식은 다음과 같다.
-$$ \begin{equation} \epsilon_{ii} = \frac{3p}{3\lambda + 2\mu} \end{equation} $$
+이 떄, `체적계수(bulk modulus)` $k$를 다음과 같이 정의하자.
+$$ k:= \frac{p}{\epsilon_{ii}}$$
 
-식(20)으로부터 다음과 같은 재료상수를 얻을 수 있다.
-$$ k = \frac{p}{\epsilon_{ii}} = \lambda + \frac{2}{3}\mu $$
+다음을 증명하여라.
+$$ k = \lambda + \frac{2}{3}\mu $$
 
-이 떄, $k$를 `체적계수(bulk modulus)`라고 한다.
+**Proof**
 
-다음으로, hydrostatic state of stress일 때 $E_Y, \nu$로 나타낸 변형률-응력 관계식은 다음과 같다.
-$$ \epsilon_{ii} = \frac{3(1 - 2\nu)}{E_Y}p $$
+명제1에 의해 다음이 성립한다.
+$$ \begin{aligned} & \epsilon_{ij} = \frac{1}{2\mu} \left( \sigma_{ij} - \frac{\lambda}{3\lambda + 2\mu}\sigma_{kk}\delta_{ij} \right)  \\ \Rightarrow \enspace &  \epsilon_{ii} = \frac{1}{2\mu} \left( 3p - \frac{9p\lambda}{3\lambda + 2\mu} \right) \\  \Rightarrow \enspace & \epsilon_{ii} = \frac{3p}{3\lambda + 2\mu} \\ \Rightarrow \enspace & \frac{p}{\epsilon_{ii}} = \lambda + \frac{2}{3}\mu \quad\tiny\blacksquare \end{aligned} $$
 
-따라서 다음이 성립한다.
-$$ k =\frac{p}{\epsilon_{ii}} = \frac{E_Y}{3(1 - 2\nu)} $$
+> Reference  
+> [book] (Lai et al) Introduction to Continuum Mechanics Chap5.4
 
-## 상수간의 관계식
-지금까지 본 재료상수들 $\lambda, \mu, E_Y, \nu, G, \kappa$중 등방성 선형 탄성재료에서는 2개만 독립이다. 즉, 두개의 재료상수로 나머지 재료 상수들을 전부 표현할 수 있고 그 관계식은 [book] (Lai et al) Introduction to Continuum Mechanics의 Table 5.1(212p)에 잘 정리되어 있다.
 
-> 참고  
-[book] (Lai et al) Introduction to Continuum Mechanics Chap5.4
+### 명제6(Relation between materal constants)
+다음을 증명하여라,
+$$ \begin{aligned} \mu &= \frac{E}{2(1+\nu)} \\ \lambda &= \frac{\nu}{(1-2\nu)(1+\nu)}E \end{aligned} $$
+
+**Proof**
+
+명제2로부터 다음이 성립한다.
+$$ \begin{aligned} \lambda &= \frac{2\nu}{1 - 2\nu}\mu \\&= \frac{\mu(2\mu-E)}{E-3\mu} \end{aligned}  $$
+
+이를, $\mu$에 대해 정리하면 다음과 같다.
+$$ \begin{aligned} & \frac{2\nu}{1 - 2\nu}\mu = \frac{\mu(2\mu-E)}{E-3\mu} \\ \Rightarrow \enspace & \frac{2\nu}{1 - 2\nu} = \frac{2\mu-E}{E-3\mu} \\ \Rightarrow \enspace & 2\nu E - 6 \mu \nu = (2\mu - E)(1-2\nu) \\ \Rightarrow \enspace & -2(1 + \nu)\mu = -E \\ \Rightarrow \enspace & \mu = \frac{E}{2(1 + \nu)} \end{aligned} $$
+
+이를 다시 위에 식에 대입하면 다음이 성립한다.
+$$ \begin{aligned} \lambda &= \frac{2\nu}{1 - 2\nu}\mu \\&= \frac{\nu E}{(1 - 2\nu)(1 + \nu)} \quad\tiny\blacksquare \end{aligned}  $$
+
+#### 참고
+지금까지 본 재료상수들 $\lambda, \mu, E, \nu, \kappa$중 등방성 선형 탄성재료에서는 2개만 독립이다. 
+
+즉, 두개의 재료상수로 나머지 재료 상수들을 전부 표현할 수 있고 그 관계식은 [book] (Lai et al) Introduction to Continuum Mechanics의 Table 5.1(212p)에 잘 정리되어 있다.
+
+> Reference  
+> [book] (Lai et al) Introduction to Continuum Mechanics Table 5.1
+
+#### 명제6.1
+다음을 증명하여라.
+$$ \sigma_{ij} = \frac{E}{(1-2\nu)(1 + \nu)} ((1-2\nu)\epsilon_{ij} + \nu\epsilon_{kk} \delta_{ij}) $$
+
+**Proof**
+
+명제1과 명제6에 의해 다음이 성립한다.
+$$ \begin{aligned} \sigma_{ij} &= \lambda \epsilon_{kk} \delta_{ij} + 2\mu\epsilon_{ij} \\&= \frac{\nu E}{(1 - 2\nu)(1 + \nu)} \epsilon_{kk}\delta_{ij} + \frac{E}{1 + \nu} \epsilon_{ij} \\&= \frac{E}{(1-2\nu)(1 + \nu)} ((1-2\nu)\epsilon_{ij} + \nu\epsilon_{kk}\delta_{ij}) \quad\tiny\blacksquare \end{aligned} $$
+
+##### 참고
+vognit notation을 이용하여 행렬로 나타내면 다음과 같다.
+$$ \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{12} \\ \sigma_{23} \\ \sigma_{31} \end{bmatrix} =  \begin{bmatrix} c_1 & c_2 & c_2 & & & \\ c_2 & c_1 & c_2 &&& \\ c_2 & c_2 & c_1 &&& \\ &&& c_3 && \\ &&&& c_3 & \\ &&&&& c_3 \end{bmatrix} \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ \epsilon_{12} \\ \epsilon_{23} \\ \epsilon_{31} \end{bmatrix} $$
+
+$$ \begin{aligned} \text{Where, } c_1 &= \frac{E(1 - \nu)}{(1-2\nu)(1 + \nu)} \\ c_2 &= \frac{E\nu}{(1-2\nu)(1 + \nu)} \\ c_3 &= \frac{E}{1 + \nu} \end{aligned}  $$
+
+#### 명제6.2
+다음을 증명하여라.
+$$ \epsilon_{ij} = \frac{1}{E} \Big( (1 + \nu) \sigma_{ij} - \nu\sigma_{kk}\delta_{ij} \Big) $$
+
+**Proof**
+
+명제2와 명제6에 의해 다음이 성립한다.
+$$ \begin{aligned} \epsilon_{ij} &= \frac{1}{2\mu} \left( \sigma_{ij} - \frac{\lambda}{3\lambda + 2\mu}\sigma_{kk}\delta_{ij} \right) \\ &=  \frac{\lambda + \mu}{\mu(3\lambda + 2\mu)} \left( \frac{3\lambda + 2\mu}{2(\lambda + \mu)} \sigma_{ij} - \frac{\lambda}{2(\lambda + \mu)}\sigma_{kk}\delta_{ij} \right) \\ &= \frac{1}{E} \left( \frac{E}{2\mu} \sigma_{ij} - \nu\sigma_{kk}\delta_{ij} \right) \\ &= \frac{1}{E} \Big( (1 + \nu) \sigma_{ij} - \nu\sigma_{kk}\delta_{ij} \Big) \end{aligned} $$
+
+##### 참고
+vognit notation을 이용하여 행렬로 나타내면 다음과 같다.
+$$ \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ \epsilon_{12} \\ \epsilon_{23} \\ \epsilon_{31} \end{bmatrix} =  \begin{bmatrix} c_1 & c_2 & c_2 & & & \\ c_2 & c_1 & c_2 &&& \\ c_2 & c_2 & c_1 &&& \\ &&& c_3 && \\ &&&& c_3 & \\ &&&&& c_3 \end{bmatrix} \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{12} \\ \sigma_{23} \\ \sigma_{31} \end{bmatrix} $$
+
+$$ \begin{aligned} \text{Where, } c_1 &= \frac{1}{E} \\ c_2 &= -\frac{\nu}{E} \\ c_3 &= \frac{1 + \nu}{E} \end{aligned}  $$
+
+
+#### 명제6.3
+다음을 증명하여라.
+$$ \sigma_{ij} = (k - \frac{2}{3}\mu)\epsilon_{kk}\delta_{ij} + 2\mu\epsilon_{ij} $$
+
+**Proof**
+
+명제1과 Reference에 의해 다음이 성립한다.
+$$ \begin{aligned} \sigma_{ij} &= \lambda \epsilon_{kk} \delta_{ij} + 2\mu\epsilon_{ij} \\&= (k- \frac{2}{3}\mu) \epsilon_{kk}\delta_{ij} + 2\mu \epsilon_{ij} \quad\tiny\blacksquare \end{aligned} $$
+
+> Reference  
+> [book] (Lai et al) Introduction to Continuum Mechanics Table 5.1
+
+##### 참고
+vognit notation을 이용하여 행렬로 나타내면 다음과 같다.
+$$ \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{12} \\ \sigma_{23} \\ \sigma_{31} \end{bmatrix} =  \begin{bmatrix} c_1 & c_2 & c_2 & & & \\ c_2 & c_1 & c_2 &&& \\ c_2 & c_2 & c_1 &&& \\ &&& c_3 && \\ &&&& c_3 & \\ &&&&& c_3 \end{bmatrix} \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ \epsilon_{12} \\ \epsilon_{23} \\ \epsilon_{31} \end{bmatrix} $$
+
+$$ \begin{aligned} \text{Where, } c_1 &= k + \frac{4}{3}\mu \\ c_2 &= k - \frac{2}{3}\mu \\ c_3 &= 2\mu \end{aligned}  $$
+
+##### 참고2
+다음과 같이 형태를 변형할 수 있다.
+$$ \begin{aligned} \sigma_{ij} &= (k - \frac{2}{3}\mu)\epsilon_{kk}\delta_{ij} + 2\mu\epsilon_{ij} \\&= 2\mu(\epsilon_{ij} - \frac{\epsilon_{kk}}{3}\delta_{ij}) + k \epsilon_{kk} \delta_{ij} \end{aligned} $$
 
 # 비등방성 선형탄성 재료
 방향에 따라 물성치가 변할 경우 이를 `비등방성(anistropic)`재료라고 한다.
-
 
 # 유체
 ## 구성방정식
