@@ -101,28 +101,52 @@ FE formulation은 물리적으로 essential BC에 대응되는 natural BC가 존
 $$ \partial\Omega = \partial\Omega_N $$
 
 ## Equilibrium State
-BVP는 다음과 같다.
-$$ \text{find} \enspace d \in (\mathcal D_W)^3 \quad s.t. \quad \forall w \in (C^\infty)^3, \quad \int_{\Omega} \sigma(d) : \text{grad}(w) dV = \int _{\partial\Omega} t \cdot  w dS + \int _{\Omega} \rho f_b \cdot w dV $$
+Essential BC를 natural BC로 바꾸면 solution function space와 test function space의 restriction이 완화되며 BVP는 다음과 같아진다.
+$$ \text{find} \enspace d \in (\mathcal D_W)^3 \quad s.t. \quad \forall w \in (C^\infty)^3, \quad \int_{\Omega} \sigma : \text{grad}(w) dV = \int _{\partial\Omega} t \cdot  w dS + \int _{\Omega} \rho f_b \cdot w dV $$
+
+$$ \text{Where, } \mathcal{D}_W := \{ d_i \in C^1(\Omega) \} $$
+
+$\Omega$를 서로 겹치지 않는 $N_E$개의 요소로 나누면 다음과 같다,
+$$ \text{find} \enspace d \in (\mathcal D_W)^3 \quad s.t. \quad \forall w \in (C^\infty)^3, \quad \sum_{i=1}^{N_E}\int_{\Omega_i} \sigma : \text{grad}(w) \thinspace dV = \sum_{i=1}^{N_E}\int _{\partial\Omega_i} t \cdot  w \thinspace dS +\sum_{i=1}^{N_E} \int_{\Omega_i} \rho f_b \cdot w \thinspace dV $$
+
+명제1에 의해 다음이 성립한다.
+$$ \text{find} \enspace d \in (\mathcal D_W)^3 \quad s.t. \quad \forall w \in (C^\infty)^3, \quad \sum_{i=1}^{N_E}\int_{\Omega_i} \sigma_v \cdot \delta w \thinspace dV = \sum_{i=1}^{N_E}\int _{\partial\Omega_i} t \cdot  w \thinspace dS +\sum_{i=1}^{N_E} \int_{\Omega_i} \rho f_b \cdot w \thinspace dV $$
+
+Bodunov-Galerkin method를 사용하면 명제2에 의해 BVP가 다음과 같아진다.
+
+
+
+### 명제1
+다음을 증명하여라.
+$$ \sigma : \text{grad}(w) = \sigma_v \cdot \delta  w $$
+
+$$ \text{Where, } \sigma_v = \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{23} \\ \sigma_{13} \\ \sigma_{12} \end{bmatrix}, \enspace \delta  w = \begin{bmatrix} \frac{\partial w_1}{\partial x_1} \\ \frac{\partial w_2}{\partial x_2} \\ \frac{\partial w_3}{\partial x_3} \\ \frac{\partial w_2}{\partial x_3} + \frac{\partial w_3}{\partial x_2}  \\ \frac{\partial w_1}{\partial x_3} + \frac{\partial w_3}{\partial x_1} \\ \frac{\partial w_1}{\partial x_2} + \frac{\partial w_2}{\partial x_1} \end{bmatrix} $$
+
+**Proof**
+
+$\sigma$의 symmetry에 의해 $i \neq j$일 때, 다음이 성립한다.
+$$ \sigma_{ij}\frac{\partial w_i}{\partial x_j} + \sigma_{ji}\frac{\partial w_j}{\partial x_i} = \sigma_{ij} \bigg( \frac{\partial w_i}{\partial x_j} + \frac{\partial w_j}{\partial x_i} \bigg) \enspace \text{(not summation)} $$
+
+따라서, 직접 계산해보면 두 식이 동일함을 알 수 있다.$\quad\tiny\blacksquare$ 
+
+### 명제2(Bodunov-Galerkin method)
+BVP이 다음과 같이 주어졌다고 하자.
+$$ \text{find} \enspace d \in (\mathcal D_W)^3 \quad s.t. \quad \forall w \in (C^\infty)^3, \quad \sum_{i=1}^{N_E}\int_{\Omega_i} \sigma_v \cdot \delta w \thinspace dV = \sum_{i=1}^{N_E}\int _{\partial\Omega_i} t \cdot  w \thinspace dS +\sum_{i=1}^{N_E} \int_{\Omega_i} \rho f_b \cdot w \thinspace dV $$
+
 $$ \text{Where, } \mathcal{D}_W := \{ d_i \in C^1(\Omega) \} $$
 
 
-이 때, $\boldsymbol\sigma : \text{grad}( w)$항은 $\sigma$의 symmetry에 의해 다음과 같이 표현할 수 있다.
-$$ \boldsymbol\sigma : \text{grad}( w) = \boldsymbol\sigma_v \cdot \delta  w $$
-$$ \text{Where, } \boldsymbol\sigma_v = \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{23} \\ \sigma_{13} \\ \sigma_{12} \end{bmatrix}, \enspace \delta  w = \begin{bmatrix} \frac{\partial w_1}{\partial x_1} \\ \frac{\partial w_2}{\partial x_2} \\ \frac{\partial w_3}{\partial x_3} \\ \frac{\partial w_2}{\partial x_3} + \frac{\partial w_3}{\partial x_2}  \\ \frac{\partial w_1}{\partial x_3} + \frac{\partial w_3}{\partial x_1} \\ \frac{\partial w_1}{\partial x_2} + \frac{\partial w_2}{\partial x_1} \end{bmatrix} $$
+Bodunov-Galerkin method를 사용한다. Solution function space의 기저 함수로 shape function을 사용하면 solution과 weight vector를 각 각 $d =  N \hat{d},  w =  N \boldsymbol{\delta}$ 표현할 수 있고 문제가 다음과 같이 간단해진다.
 
 
-
-
-# 지배 방정식의 수치 방정식
-## 정적 평형 방정식
 
 
 ### Bodunov-Galerkin method
-weak formulation을 수치적으로 풀기 위해 Bodunov-Galerkin method를 사용한다. Solution function space의 기저 함수로 shape function을 사용하면 solution과 weight vector를 각 각 $ d =  N\hat{d}},  w =  N} \boldsymbol{\delta}$ 표현할 수 있고 문제가 다음과 같이 간단해진다.
-$$ \begin{equation} \text{find} \enspace \hat { d} \in \R^{3n} \quad s.t. \quad \forall \boldsymbol \delta \in \R^{3n}, \quad \int_{\Omega} \boldsymbol\sigma_v \cdot  B \boldsymbol \delta dV = \int _{\partial\Omega}  t \cdot  N} \boldsymbol{\delta} dS + \int _{\Omega}  f \cdot  N} \boldsymbol{\delta} dV \end{equation} $$
+weak formulation을 수치적으로 풀기 위해 Bodunov-Galerkin method를 사용한다. Solution function space의 기저 함수로 shape function을 사용하면 solution과 weight vector를 각 각 $d =  N \hat{d},  w =  N \boldsymbol{\delta}$ 표현할 수 있고 문제가 다음과 같이 간단해진다.
+$$ \text{find} \enspace \hat { d} \in \R^{3n} \quad s.t. \quad \forall \boldsymbol \delta \in \R^{3n}, \quad \int_{\Omega} \boldsymbol\sigma_v \cdot  B \boldsymbol \delta dV = \int _{\partial\Omega}  t \cdot  N \boldsymbol{\delta} dS + \int _{\Omega}  f \cdot  N \boldsymbol{\delta} dV $$
 
 위 식을 다음과 같이 정리할 수 있다.
-$$ \begin{aligned} & \int_{\Omega} \boldsymbol\sigma_v \cdot  B \boldsymbol \delta dV = \int _{\partial\Omega}  t \cdot  N} \boldsymbol{\delta} dS + \int _{\Omega}  f \cdot  N} \boldsymbol{\delta} dS \\ \Leftrightarrow \enspace &  \boldsymbol \delta^T \left( \int_{\Omega}  B^T \boldsymbol\sigma_v \thinspace dV  - \int _{\partial\Omega}  n^T  t \thinspace dS - \int _{\Omega}  n^T  f \thinspace dV \right) = 0 \end{aligned} $$
+$$ \begin{aligned} & \int_{\Omega} \sigma_v \cdot  B  \delta dV = \int _{\partial\Omega}  t \cdot  N {\delta} dS + \int _{\Omega}  f \cdot  N {\delta} dS \\ \Leftrightarrow \enspace &   \delta^T \left( \int_{\Omega}  B^T \sigma_v \thinspace dV  - \int _{\partial\Omega}  n^T  t \thinspace dS - \int _{\Omega}  n^T  f \thinspace dV \right) = 0 \end{aligned} $$
 
 임의의 $\boldsymbol \delta$에 대해서 위 식이 성립해야 됨으로 문제가 다음과 같이 간단해진다.
 $$ \text{find} \enspace \hat { d} \in \R^{3n} \quad s.t. \quad K( \hat { d}) =  f  $$

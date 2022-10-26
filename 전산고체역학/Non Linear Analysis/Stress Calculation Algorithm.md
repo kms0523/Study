@@ -141,15 +141,15 @@ stress, back stress가 다음과 같다고 하자.
 $$ \begin{aligned} \sigma^{k+1} &= \sigma^{tr} -2 \mu \Delta\gamma N^{k+1} \\ \alpha^{k+1} &= \alpha^{tr} + H^{k+1} \Delta\gamma N^{k+1}, \end{aligned} $$
 
 다음을 증명하여라.
-$$ \eta^{k+1}  = \eta^{k} - \Delta\gamma(2\mu + H)N^{k+1} $$
+$$ \eta^{k+1}  = \eta^{tr} - \Delta\gamma(2\mu + H)N^{k+1} $$
 
 **Proof**
 
 $N$은 deviatoric tensor임으로 다음이 성립한다.
-$$ \begin{aligned} \tilde\sigma^{k+1} &= \tilde\sigma^{tr} -2 \mu \Delta\gamma (\tilde N^{k+1}) \\&= \tilde\sigma^{tr} -2 \mu \Delta\gamma (N^{k+1}) \end{aligned} $$
+$$ \begin{aligned} \tilde\sigma^{k+1} &= \tilde\sigma^{tr} -2 \mu \Delta\gamma \tilde N^{k+1} \\&= \tilde\sigma^{tr} -2 \mu \Delta\gamma N^{k+1} \end{aligned} $$
 
 따라서 $\eta$의 정의에 의해 다음이 성립한다.
-$$ \begin{aligned} \eta^{k+1} &= \tilde\sigma^{k+1} - \alpha^{k+1} \\&= \eta^{k} - \Delta\gamma (2 \mu  + H)N^{k+1} \\&= \eta^{k} - \Delta\gamma (2 \mu  + H)N^{k+1} \quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} \eta^{k+1} &= \tilde\sigma^{k+1} - \alpha^{k+1} \\&= \eta^{tr} - \Delta\gamma (2 \mu  + H)N^{k+1} \\&= \eta^{tr} - \Delta\gamma (2 \mu  + H)N^{k+1} \quad {_\blacksquare} \end{aligned} $$
 
 
 ### 명제5
@@ -162,11 +162,11 @@ $$ N^{k+1} = N^{tr} $$
 **Proof**
 
 명제4에 의해 다음이 성립한다.
-$$ \begin{aligned} & \eta^{k+1}  = \eta^{k} - \Delta\gamma(2\mu + H)N^{k+1} \\ \Rightarrow \enspace & (\lVert \eta^{k+1} \rVert + \Delta\gamma(2\mu + H)) N^{k+1} = \eta^{k}\\ \Rightarrow \enspace & \eta^{k} = C N^{k+1} \end{aligned} $$
+$$ \begin{aligned} & \eta^{k+1}  = \eta^{tr} - \Delta\gamma(2\mu + H)N^{k+1} \\ \Rightarrow \enspace & (\lVert \eta^{k+1} \rVert + \Delta\gamma(2\mu + H)) N^{k+1} = \eta^{tr}\\ \Rightarrow \enspace & \eta^{tr} = C N^{k+1} \end{aligned} $$
 
-이는 $\eta^{k}$과 $N^{k+1}$이 평행하다는 의미이다.
+이는 $\eta^{tr}$과 $N^{k+1}$이 평행하다는 의미이다.
 
-따라서,  $\eta^{k}$의 방향을 나타내는 $N^{tr}$과 같다.
+따라서,  $\eta^{tr}$의 방향을 나타내는 $N^{tr}$과 같다.
 $$ N^{k+1} = N^{tr} \quad {_\blacksquare} $$
 
 #### 명제5.1
@@ -225,9 +225,9 @@ $$ \begin{aligned} \frac{\partial N^{tr}}{\partial\Delta\epsilon} &= \frac{\part
 
 ## 4. Calculating $\Delta \gamma$
 $k+1$번째 값들은 plastic state에 있기 때문에 discrete plastic consistency condition을 만족한다.
-$$ \begin{aligned} & f({\sigma}^{k+1}, {\alpha}^{k+1}, (\epsilon_e^p)^{k+1} ) = 0 \\ \Rightarrow \enspace & \lVert \eta^{tr} \rVert - (H^{k+1} + 2\mu) \Delta\gamma - \sqrt{\frac{2}{3}}K^{k+1} = 0 \end{aligned} $$
+$$ \begin{aligned} & f({\sigma}^{k+1}, {\alpha}^{k+1}, (\epsilon_e^p)^{k+1} ) = 0 \\ \Rightarrow \enspace & \lVert \eta^{k+1} \rVert - (H^{k+1} + 2\mu) \Delta\gamma - \sqrt{\frac{2}{3}}K^{k+1} = 0 \end{aligned} $$
 
-$$\text {Where, } F^{k+1}(\epsilon_e^p) \equiv F^{k+1} $$
+$$\text {Where, } F((\epsilon_e^p)^{k+1}) \equiv F^{k+1} $$
 
 이 때, ${\eta}^{tr},(\epsilon_e^p)^{tr}$는 전부 아는 값임으로 유일한 변수는 $\Delta\gamma$가 된다.
 $$ f_{alg}(\Delta\gamma) := \lVert \eta^{tr} \rVert - (H^{k+1} + 2\mu) \Delta\gamma - \sqrt{\frac{2}{3}}K^{k+1}$$
@@ -252,7 +252,7 @@ $$ f_{alg}(\Delta\gamma_{n+1}) \le \epsilon \enspace \land \enspace N \le k + 1 
 $$ f_{alg}(\Delta\gamma) := \lVert \eta^{tr} \rVert - (H^{k+1} + 2\mu) \Delta\gamma - \sqrt{\frac{2}{3}}K^{k+1}$$
 
 이 때, 다음을 증명하여라.
-$$ \frac{\partial f_{alg}}{\partial \Delta\gamma} = -(2\mu + H^{k+1} + \sqrt{\frac{2}{3}}\frac{\partial H^{k+1}}{\partial \epsilon_e^p}\Delta\gamma + \frac{2}{3}\frac{\partial K^{k+1}}{\partial \epsilon_e^p}$$
+$$ \frac{\partial f_{alg}}{\partial \Delta\gamma} = -\bigg( 2\mu + H^{k+1} + \sqrt{\frac{2}{3}}\frac{\partial H^{k+1}}{\partial \epsilon_e^p}\Delta\gamma + \frac{2}{3}\frac{\partial K^{k+1}}{\partial \epsilon_e^p} \bigg)$$
 
 **Proof**
 

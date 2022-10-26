@@ -21,8 +21,8 @@ $$ f \text{ is a homeomorphism} \Leftrightarrow f(\mathcal T_1) = \mathcal T_2 $
 -[$f(\mathcal T_1) \subseteq \mathcal T_2$]  
 $s \in \mathcal{T_1}$이라 하자.
 
-$f$가 homeomorphism임으로 $f^{-1}$도 continuous하고 따라서 다음이 성립한다.
-$$ \begin{aligned} & \text{preimg(s)} \in \mathcal T_2 \\ \Leftrightarrow \enspace & f(s) \in \mathcal T_2\end{aligned}  $$
+$f$가 homeomorphism임으로 다음이 성립한다.
+$$ \begin{aligned} & \text{img(s)} \in \mathcal T_2 \\ \Leftrightarrow \enspace & f(s) \in \mathcal T_2\end{aligned}  $$
 
 -[$\mathcal T_2 \subseteq f(\mathcal T_1)$]  
 $s \in \mathcal{T_2}$이라 하자.
@@ -35,17 +35,49 @@ $$ \begin{aligned} & \text{preimg(s)} \in \mathcal T_1 \\ \Leftrightarrow \enspa
 $s \in \mathcal T_2$라 하자.
 
 $f(\mathcal T_1) = \mathcal T_2$이고, $f$가 bijective임으로 다음이 성립한다.
-$$ \begin{aligned} & f^{-1}(s) \in \mathcal T_1 \\ \Leftrightarrow \enspace & \text{preimg}(s) \in \mathcal T_1 \end{aligned} $$
+$$ f^{-1}(s) \in \mathcal T_1 $$
 
-즉, $Y$에 있는 모든 open set의 preimage도 open set임으로 $f$는 continous이다.
+따라서 다음이 성립한다.
+$$ \text{preimg}(s) = f^{-1}(s) \in \mathcal T_1 $$
+
+즉, $X_2$ 위의 임의의 open set에 대한 $f$의 preimage가 $X_1$위의 open set임으로 $f$는 continous이다.
 
 -[$f^{-1}$ is continous]  
 $s \in \mathcal T_1$라 하자.
 
 $f(\mathcal T_1) = \mathcal T_2$이고, $f$가 bijective임으로 다음이 성립한다.
-$$ \begin{aligned} & f(s) \in \mathcal T_2 \\ \Leftrightarrow \enspace & \text{preimg}(s) \in \mathcal T_2 \end{aligned} $$
+$$ f(s) \in \mathcal T_2 $$
 
-즉, $X$에 있는 모든 open set의 preimage도 open set임으로 $f^{-1}$는 continous이다.
+따라서, 다음이 성립한다.
+$$ \text{preimg}(s) = f(s) \in \mathcal T_2 $$
 
-> Referece  
-> [Book] (Lee) Introduction to Topological Manifolds Exercise 2.21
+즉, $X_1$ 위의 임의의 open set에 대한 $f^{-1}$의 preimage가 $X_2$위의 open set임으로 $f^{-1}$는 continous이다. $\quad\tiny\blacksquare$
+
+### 명제2
+Topological space $X,Y$와 homeomorphism $f: X \rightarrow Y$가 있다고 하자.
+
+open set $U \subseteq X$가 있을 때, 다음을 증명하여라.
+$$ f|_U \text{ is a homeomorphism}$$
+
+**Proof**
+
+[$f|_U$ is bijective]  
+bijective function의 restriction은 bijective function이다.
+
+[$f|_U$ is continuous]  
+continuous function의 restriction과 관련된 성질에 의해 다음이 성립한다.
+$$ f|_U \text{ is a continuous} $$
+
+[$(f|_U)^{-1}$ is continuous]  
+inverse function의 restriction과 관련된 성질에 의해 다음이 성립한다.
+$$ (f|_U)^{-1} = f^{-1}|_{f(U)} $$
+
+$f$가 homeomorphism임으로 $f^{-1}$은 continuous function임으로 continuous function의 restriction과 관련된 성질에 의해 다음이 성립한다.
+$$ \begin{aligned} & f^{-1}|_{f(U)} \text{ is a continuous} \\ \Leftrightarrow\enspace& (f|_U)^{-1} \text{ is a continuous} \end{aligned} $$
+
+
+
+
+
+> Reference  
+> [Proof Wiki](https://proofwiki.org/wiki/Restriction_of_Homeomorphism_is_Homeomorphism)

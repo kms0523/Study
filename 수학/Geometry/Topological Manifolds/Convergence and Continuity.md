@@ -90,7 +90,7 @@ $$ f^{-1}(g^{-1}(U)) \text{ is a open set on X} $$
 따라서, $g \circ f$는 continuous function이다. $\quad\tiny\blacksquare$
 
 ### 명제5(Local Criterion for Continuity)
-topological space $X,Y$와 함수 $f : X \rightarrow Y$가 있다고 하자.
+Topological space $X,Y$와 함수 $f : X \rightarrow Y$가 있다고 하자.
 
 이 떄, 다음을 증명하여라.
 $$ f \text{ is continous} \Leftrightarrow \forall x \in X, \quad \exist \mathcal N_x \quad s.t. \quad f|_{\mathcal N_x} \text{ is continous} $$
@@ -110,6 +110,9 @@ $U$와 $\text{img}(\mathcal N_x)$가 모두 $Y$에서 open set임으로 topology
 $$ U \cap \text{img}(\mathcal N_x) \text { is an open set on Y} $$
 
 $f|_{\mathcal N_x}$는 continous함으로 다음이 성립한다.
+$$ \text{preimg}(U \cap \text{img}(\mathcal N_x)) \text { is an open set on X} $$
+
+명제5.1에 의해 다음이 성립한다.
 $$ \begin{aligned} & \text{preimg}(U \cap \text{img}(\mathcal N_x)) \text { is an open set on X} \\ \Leftrightarrow \enspace & \text{preimg}(U) \cap \mathcal N_x \text { is an open set on X} \end{aligned}  $$
 
 즉, $\forall x \in \text{preimg}(U)$에 대해 $\text{preimg}(U)$에 포함되는 $x$의 neighborhood가 존재한다.
@@ -119,5 +122,22 @@ $$ \text{preimg}(U) \text{ is an open set on X} $$
 
 따라서, continuity의 정의에 의해 $f$는 $X$에서 continous이다. $\quad\tiny\blacksquare$
 
+#### 명제5.1
+Topological space $X,Y$와 함수 $f : X \rightarrow Y$가 있다고 하자.
+
+$U,V \subset X$가 있을 때, 다음을 증명하여라.
+$$ U \cap V = \text{preimg}(\text{img}(U) \cap \text{img}(V)) $$
+
+**Proof**
+
+[$U \cap V \subseteq \text{preimg}(\text{img}(U) \cap \text{img}(V))$]  
+$x \in U \cap V$라 하면 다음이 성립한다.
+$$\begin{aligned} & x \in U \enspace\land\enspace x \in V \\ \Rightarrow\enspace& f(x) \in \text{img}(U) \enspace \land \enspace f(x) \in \text{img}(V) \\ \Rightarrow\enspace& f(x) \in \text{img}(U) \cap \text{img}(V) \\ \Rightarrow\enspace& x \in \text{preimg}(\text{img}(U) \cap \text{img}(V)) \end{aligned} $$
+
+[$\text{preimg}(\text{img}(U) \cap \text{img}(V)) \subseteq U \cap V$]  
+$x \in \text{preimg}(\text{img}(U) \cap \text{img}(V))$라 하면 다음이 성립한다.
+$$\begin{aligned} & f(x) \in \text{img}(U) \cap \text{img}(V) \\ \Rightarrow\enspace& f(x) \in \text{img}(U) \enspace \land \enspace f(x) \in \text{img}(V) \\ \Rightarrow\enspace& x \in U  \enspace \land \enspace x \in V \\ \Rightarrow\enspace& x \in U \cap V \quad\tiny\blacksquare \end{aligned} $$
+
 > Referece  
 > [Book] (Lee) Introduction to Topological Manifolds Proposition 2.19
+

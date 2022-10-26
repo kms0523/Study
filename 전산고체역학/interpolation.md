@@ -55,11 +55,13 @@ $$ \boldsymbol{\phi} = \begin{bmatrix} n_1 \enspace \underbrace{0 \cdots 0}_{r-1
 
 $$ \boldsymbol{\phi} = \mathbf N \boldsymbol{\hat\phi} $$
 
+
+
 #### 형상함수 성질
 1. $$ \sum_i n_i = 1 $$
 2. $$ n_i(x_j) = \delta_{ij} $$
 
-2번 성질이 왜 만족할까?
+> Q. 2번 성질이 왜 만족할까?
 
 # $C^1$ 보간
 ## $\phi : \R \rightarrow \R$

@@ -22,7 +22,7 @@ $$ \frac{\partial \epsilon^p}{\partial t} = \gamma \frac{\partial f}{\partial \s
 
 ## Hardening rule
 Hardening rule은 다음과 같이 정의한다.
-$$ \begin{aligned} \frac{\partial \alpha}{\partial t} &= H(\epsilon_e^p)\frac{\partial \epsilon^p}{\partial t} \\ \frac{\partial \epsilon^p_e}{\partial t} &= \sqrt{\frac{2}{3}}\gamma \end{aligned}  $$
+$$ \begin{aligned} \frac{\partial \alpha}{\partial t} &:= H(\epsilon_e^p)\frac{\partial \epsilon^p}{\partial t} \\ \frac{\partial \epsilon^p_e}{\partial t} &= \sqrt{\frac{2}{3}} \bigg\lVert\frac{\partial \epsilon^p}{\partial t}\bigg\rVert \end{aligned}  $$
 
 이 떄, 함수 $H$는 kinematic hardening modulus라고 한다.
 
@@ -52,7 +52,7 @@ $f$의 정의에 의해 다음이 성립한다.
 $$ \begin{aligned} \frac{\partial f}{\partial \sigma} &= \frac{\partial f}{\partial \sigma_{ij}}e_{ij} \\&= \frac{\partial f}{\partial \eta_{kl}} \frac{\partial \eta_{kl}}{\partial \sigma_{ij}} e_{ij} \\&= \frac{1}{\lVert \eta \rVert} \eta_{kl} \bigg(\delta_{ik}\delta_{jl} - \frac{1}{3}\delta_{ij}\delta_{kl} \bigg) e_{ij} \\&= \frac{1}{\lVert \eta \rVert} \bigg( \eta_{ij} - \frac{1}{3}\eta_{kk} \delta_{ij} \bigg) e_{ij} \end{aligned} $$
 
 $\eta$가 symmetric & deviatoric tensor임으로 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial f}{\partial \sigma} &= \frac{1}{\lVert \eta \rVert} \bigg( \eta_{ij} - \frac{1}{3}\eta_{kk} \delta_{ij} \bigg) e_{ij} \\&= \frac{1}{\lVert \eta \rVert} \eta_{ij} e_{ij} \\&= \frac{\eta}{\lVert \eta \rVert} \\&= N \quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} \frac{\partial f}{\partial \sigma} &= \frac{1}{\lVert \eta \rVert} \bigg( \eta_{ij} - \frac{1}{3}\eta_{kk} \delta_{ij} \bigg) e_{ij} \\&= \frac{1}{\lVert \eta \rVert} \eta_{ij} e_{ij} \\&= \frac{\eta}{\lVert \eta \rVert} \\&= N \quad\tiny\blacksquare \end{aligned} $$
 
 #### 명제1.1
 J2 plasticity model에서 다음을 증명하여라.
@@ -61,7 +61,17 @@ $$ \frac{\partial \epsilon^p}{\partial t} = \gamma N $$
 **Proof**
 
 Flow rule과 명제 1에 의해 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial \epsilon^p}{\partial t} &= \gamma \frac{\partial f}{\partial \sigma} \\ &= \gamma N \quad {_\blacksquare} \end{aligned}  $$
+$$ \begin{aligned} \frac{\partial \epsilon^p}{\partial t} &= \gamma \frac{\partial f}{\partial \sigma} \\ &= \gamma N \quad\tiny\blacksquare \end{aligned}  $$
+
+##### 명제1.1.1
+J2 plasticity model에서 다음을 증명하여라.
+$$ \frac{\partial \epsilon_e^p}{\partial t} = \sqrt{\frac{2}{3}}\gamma $$
+
+**Proof**
+
+hardening rule과 명제1.1에 의해 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial \epsilon_e^p}{\partial t} &= \sqrt{\frac{2}{3}} \bigg\lVert\frac{\partial \epsilon^p}{\partial t}\bigg\rVert \\ &= \sqrt{\frac{2}{3}}\gamma \quad\tiny\blacksquare \end{aligned}  $$
+
 
 ### 명제3
 J2 plasticity model에서 다음을 증명하여라.
@@ -70,7 +80,7 @@ $$ N : N = 1 $$
 **Proof**
 
 $N$의 정의에 의해 다음이 성립한다.
-$$ \begin{aligned} N : N &= \frac{\eta}{\lVert \eta \rVert} : \frac{\eta}{\lVert \eta \rVert} \\&= \frac{1}{\lVert \eta \rVert ^2} \eta:\eta \\&= \frac{1}{\eta : \eta} \eta:\eta \\&= 1 \quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} N : N &= \frac{\eta}{\lVert \eta \rVert} : \frac{\eta}{\lVert \eta \rVert} \\&= \frac{1}{\lVert \eta \rVert ^2} \eta:\eta \\&= \frac{1}{\eta : \eta} \eta:\eta \\&= 1 \quad\tiny\blacksquare \end{aligned} $$
 
 
 ### 명제4
@@ -88,7 +98,7 @@ $$ C_{ijkl} = \lambda \delta_{ij}\delta_{kl} + \mu (\delta_{ik} \delta_{jl} + \d
 $$ \begin{aligned} N : C &= N_{ij}C_{klmn} e_{ij} : e_{klmn} \\&= N_{ij}C_{klmn} \delta_{ik}\delta_{jl} e_{mn} \\&= N_{ij}C_{ijmn}e_{mn} \\&= N_{ij}(\lambda \delta_{ij}\delta_{mn} + \mu (\delta_{im} \delta_{jn} + \delta_{in} \delta_{jm}))e_{mn} \\&= \lambda N_{ii} \delta_{mn} + \mu(N_{mn} + N_{nm}) \end{aligned} $$
 
 $N$은 symmetric & deviatoric tensor임으로 다음이 성립한다.
-$$ \begin{aligned} N : D &= \lambda N_{ii} \delta_{mn} + \mu(N_{mn} + N_{nm}) \\&= 2\mu N_{mn} e_{mn} \\&= 2\mu N \quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} N : D &= \lambda N_{ii} \delta_{mn} + \mu(N_{mn} + N_{nm}) \\&= 2\mu N_{mn} e_{mn} \\&= 2\mu N \quad\tiny\blacksquare \end{aligned} $$
 
 #### 명제4.1
 선형 탄성 재료에 J2 plasticity model을 적용할 때, 다음을 증명하여라.
@@ -110,7 +120,7 @@ $f$의 정의에 의해 다음이 성립한다.
 $$ \begin{aligned} \frac{\partial f}{\partial t} &= \frac{\partial f}{\partial \sigma} \frac{\partial \sigma}{\partial t} + \frac{\partial f}{\partial \alpha} \frac{\partial \alpha}{\partial t} + \frac{\partial f}{\partial \epsilon_e^p} \frac{\partial \epsilon_e^p}{\partial t} \end{aligned} $$
 
 명제 5.1-3에 의해 다음이 성립한다.
-$$ \frac{\partial f}{\partial t} = 2\mu N : \frac{\partial \epsilon}{\partial t} - \gamma(2\mu + H + \frac{2}{3}\frac{\partial K}{\partial \epsilon_e^p}) \quad {_\blacksquare} $$
+$$ \frac{\partial f}{\partial t} = 2\mu N : \frac{\partial \epsilon}{\partial t} - \gamma(2\mu + H + \frac{2}{3}\frac{\partial K}{\partial \epsilon_e^p}) \quad\tiny\blacksquare $$
 
 
 #### 명제 5.1
@@ -147,7 +157,7 @@ Hardening rule에 의해 다음이 성립한다.
 $$ \begin{aligned} \frac{\partial f}{\partial \alpha} \frac{\partial \alpha}{\partial t} &= -H N :\frac{\partial \epsilon^p}{\partial t} \\&= - H \gamma N : N \end{aligned} $$
 
 명제 3에 의해 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial f}{\partial \alpha} \frac{\partial \alpha}{\partial t} &= - H \gamma N : N \\&= - H \gamma \quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} \frac{\partial f}{\partial \alpha} \frac{\partial \alpha}{\partial t} &= - H \gamma N : N \\&= - H \gamma \quad\tiny\blacksquare \end{aligned} $$
 
 #### 명제 5.3
 J2 plasticity model에서 다음을 증명하여라.
