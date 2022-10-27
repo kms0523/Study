@@ -57,12 +57,12 @@ $$ \text{preimg}(s) = f(s) \in \mathcal T_2 $$
 Topological space $X,Y$와 homeomorphism $f: X \rightarrow Y$가 있다고 하자.
 
 open set $U \subseteq X$가 있을 때, 다음을 증명하여라.
-$$ f|_U \text{ is a homeomorphism}$$
+$$ f|_{U \times f(U)} \text{ is a homeomorphism}$$
 
 **Proof**
 
-[$f|_U$ is bijective]  
-bijective function의 restriction은 bijective function이다.
+[$f|_{U \times f(U)}$ is bijective]  
+bijective function의 domain & codomain restriction은 bijective function이다.
 
 [$f|_U$ is continuous]  
 continuous function의 restriction과 관련된 성질에 의해 다음이 성립한다.
