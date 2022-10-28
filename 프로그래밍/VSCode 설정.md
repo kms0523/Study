@@ -7,6 +7,8 @@ Markdown All in One
 * ctrl , : 설정
 * ctrl $\uparrow, \downarrow$ : 마우스 휠과 동일
 * ctrl k + ctrl s : 바로가기 키 설정 
+* ctrl + shift + n : 새 vscode창
+* ctrl + n : 이름없는 새 파일
 
 ## 설정
 #### 창의 확대 축소 수준  
