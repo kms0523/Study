@@ -13,7 +13,7 @@ $$ \exist \epsilon > 0, \quad  B(x,\epsilon) \le \mathcal N_x $$
 > Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5 
 
-### 명제
+### 명제1
 Metric space $M$과 $S \le M$이 있다고 하자.
 
 이 때, 다음을 증명하여라.
@@ -31,6 +31,22 @@ $$ \begin{aligned} x \in S &\Rightarrow \exist r >0 \quad s.t. \quad B(x,r) \le 
 > Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5 
  
+### 명제2
+Metric space $M$있다고 하자.
+
+$x,y \in M$이 있을 때, 다음을 증명하여라.
+$$ \exist \mathcal N_x, \mathcal N_y \quad s.t. \quad  \mathcal N_x \text{ and } \mathcal N_y \text{ are disjoint.} $$
+
+**Proof**
+
+$x \neq y$임으로, open ball의 성질에 의해 다음이 성립한다.
+$$ \exist r \quad s.t. \quad B_M(x,r) \text{ and } B_M(y,r) \text{ are disjoint.} $$
+
+따라서, $\mathcal N_x = B_M(x,r), \mathcal N_y = B_M(y,r)$라고 둘 수 있음으로, $\mathcal N_x, \mathcal N_y$는 disjoint이다. $\quad\tiny\blacksquare$
+
+> Reference  
+> [Proof Wiki](https://proofwiki.org/wiki/Distinct_Points_in_Metric_Space_have_Disjoint_Neighborhoods)
+
 # Closure
 Metric space $M$과 $S \le M$이 있다고 하자.
 

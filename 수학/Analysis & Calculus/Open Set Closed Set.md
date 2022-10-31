@@ -1,30 +1,3 @@
-# Open ball
-Metric space $M$이 있다고 하자. 
-
-$x \in M, \enspace r \in \R^+$이 있을 때, `open ball`은 다음과 같이 정의된 $M$의 metric subspace이다.
-$$ B_M(x,r) := \{ y \in M \enspace | \enspace d(x,y) < r \} $$
-
-### 참고1
-open이기 위해서 반드시 $d(x,y) \neq r$ 이어야 한다.
-
-### 참고2
-open ball은 1차원에서 `개구간(open interval)`과 같다.
-
-> Reference  
-> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
-
-### 참고3
-$S \le M$이 있을 때, $B_S(x,r)$은 다음과 같이 정의된다.
-$$ B_S(x,r) := \{ y \in S \enspace | \enspace d(x,y) < r \} = B_M(x,r) \cap S $$
-
-#### 예시
-Metric space $\R$이 있을 때, $B(0,1) = (-1,1)$이다.
-
-$S=[0,1] \le \R$이 있을 때, $B_S(0,1) = [0,1)$이다.
-
-> Refrence  
-> [Book] (Apostol)  Mathematical analysis Theorem p.61  
-
 # Open set
 Metric space $M$과 $S \le M$이 있다고 하자.
 
@@ -194,6 +167,23 @@ $$ M - S \text { is an open set on } M $$
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.5  
 
 ### 명제1
+Metric space $M$이 있다고 하자.
+
+$x \in M$이라 할 때, 다음을 증명하여라.
+$$ \{ x \} \text{ is an closed set on } M $$
+
+**Proof**
+
+[$M - \{x\} = \empty$]  
+$\empty$는 open set임으로, $M - \{x\} = \empty$는 $M$에서 open set이고 $\{x\}$는 $M$에서 closed set이다.
+
+[$M - \{x\} \neq \empty$]  
+$y \in M - \{x\}$이라 하면 다음이 성립한다.
+$$ B_M(y, d(x,y)/2) \le M-\{x\} $$
+
+따라서, $M - \{x\}$는 $M$에서 open set이고 $\{ x\}$는 $M$에서 closed set이다. $\quad\tiny\blacksquare$
+
+### 명제2
 Metric space $M$과 $S \le M$이 있다고 하자.
 
 $S$위의 임의의 sequence $s(m)$가 있을 때, 다음을 증명하여라.
