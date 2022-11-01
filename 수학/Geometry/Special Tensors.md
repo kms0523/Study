@@ -115,6 +115,11 @@ $$ \begin{aligned} x \times (y \times z) &= \epsilon_{kij}\epsilon_{klm}x_jy_lz_
 > Reference  
 > [Blog - Isotropic Tensors](https://farside.ph.utexas.edu/teaching/336L/Fluid/node252.html)
 
+## 2nd order symmetric unit tensor
+$$ I = \delta_{ij}e_{ij} $$
+
+## 4th order symmtric unit tensor
+$$ I_{sym} = \frac{1}{2}(\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk})e_{ijkl} $$
 
 ## Deviatoric Tensor
-$$ I_{dev} = (\delta_{ik}\delta_{jl} - \frac{1}{3}\delta_{ij}\delta_{kl})e_{ijkl}  $$
+$$ I_{dev} =  I_{sym} - \frac{1}{3}I \otimes I $$

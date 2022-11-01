@@ -42,10 +42,12 @@ $$ s \text{ can converge to at most one point in } M $$
 
 **Proof**
 
-$s$가 $x,y \in M$에 수렴한다고 하면 $\forall \epsilon \in \R^+$에 대해 어떤 $N \in \N$이 존재하여 다음이 성립한다.
+$s$가 $x,y \in M$에 수렴한다고 하자.
+
+ $\forall \epsilon \in \R^+$에 대해 어떤 $N \in \N$이 존재하여 다음이 성립한다.
 $$ \begin{aligned} & 0 \le d(x,y) \le d(s(N),x) + d(s(N), y) \\ \Rightarrow \enspace &  0 \le d(x,y) \le 2\epsilon \end{aligned}  $$
 
-$\forall \epsilon \in \R^+$에서 위가 성립하기 위해서는 $d(x,y) = 0$일 수 밖에 없다.
+보조명제2.1에 의해 $d(x,y) = 0$이고 따라서, $x = y$이다. $\quad\tiny\blacksquare$
 
 #### 보조명제2.1
 $\forall \epsilon \in \R^+$에 대해 다음이 성립한다고 하자.
@@ -56,7 +58,11 @@ $$ d = 0 $$
 
 **Proof**
 
-$0 < d$라 가정하자.
+$d \neq 0$라 가정하자.
+
+가정에 의해 $0 < d$이고 그러면 $\epsilon < d/2$에서 조건 $0  \le d \le \epsilon$가 성립하지 않는 모순이 발생한다.
+
+따라서, proof by contradiction에 의해 $d =0$이다. $\quad\tiny\blacksquare$
 
 > Reference  
 > [Book] (Apostol)  Mathematical analysis Theorem 4.2.

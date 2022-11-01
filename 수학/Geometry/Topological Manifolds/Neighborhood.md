@@ -16,7 +16,7 @@ distance의 개념 없이 정의된 open set을 사용함으로써, "nearness"�
 > Referece  
 > [Book] (Lee) Introduction to Topological Manifolds p.20
 
-### 명제
+### 명제1
 topological space $X$가 있다고 하자.
 
 $S \subseteq X$가 있을 때, 다음을 증명하여라.
@@ -35,3 +35,17 @@ $$ S = \bigcup_{\forall x \in S} \mathcal N_x $$
 $$ \bigcup_{\forall x \in S} \mathcal N_x \in \mathcal T_X \Rightarrow S \in \mathcal T_X $$
 
 따라서, $S$는 $X$의 open set이다. $\quad {_\blacksquare}$
+
+### 명제2
+Topological space $X$가 있다고 하자.
+
+$a,b \in X$라 할 때, 다음을 증명하여라.
+$$ a,b \text{ may not have a disjoint neighborhood} $$
+
+**Proof**
+
+$X$가 다음과 같이 주어졌다고 하자.
+$$ X = \{ 1,2,3 \}, \enspace \mathcal{T}_X = \{ \empty, \{ 1 \}, \{ 1,2 \}, \{ 1,2,3 \} \} $$
+
+$1,2$의 경우 $2$를 포함하는 모든 open set이 $1$도 포함함으로 $1$과 $2$는 disjoint neighborhood를 갖을 수 없다. $\quad\tiny\blacksquare$
+

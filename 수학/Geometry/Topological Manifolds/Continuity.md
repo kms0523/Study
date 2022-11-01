@@ -37,22 +37,22 @@ Identity map의 정의에 의해 자명하게 open set의 preimage 또한 open s
 ### 명제3
 Topological space $X,Y$와 연속인 함수 $f: X\rightarrow Y$가 있다고 하자.
 
-$S$가 $X$의 open set일 때, 다음을 증명하여라.
-$$ f|_S \text{ is a continuous function} $$
+$U$가 $X$의 open set일 때, 다음을 증명하여라.
+$$ f|_U \text{ is a continuous function} $$
 
 **Proof**
 
-Open set $U \subseteq Y$가 있다고 하자.
+Open set $V \subseteq Y$가 있다고 하자.
 
 $f$가 연속임으로 다음이 성립한다.
-$$ f^{-1}(U) \text{ is open set on } X $$
+$$ f^{-1}(V) \text{ is open set on } X $$
 
-$X$위의 open set과 $X$위의 subset의 교집합은 subset 위의 topology를 형성함으로 다음이 성립한다.
-$$ f^{-1}(U) \cap S \text { is open set on } S $$
+Open set의 성질에 의해 다음이 성립한다.
+$$ f^{-1}(V) \cap U \text { is open set on } U $$
 
-이 떄, $\text{preimg}(f|_S(U)) = f^{-1}(U) \cap S$임으로, open set $U$의 $f|_S$에 의한 preimage가 open set $f^{-1}(U) \cap S$이 된다.
+이 떄, $\text{preimg}(f^{-1}|_U(V)) = f^{-1}(V) \cap U$임으로, open set $V$의 $f|_U$에 의한 preimage가 open set $f^{-1}(V) \cap U$이 된다.
 
-따라서, $f|_S$는 continuous function이다. $\quad\tiny\blacksquare$ 
+따라서, $f|_U$는 continuous function이다. $\quad\tiny\blacksquare$ 
 
 > Refrernce  
 > [Mathematics](https://math.stackexchange.com/questions/1826827/topology-show-restriction-of-continuous-function-is-continuous-and-restriction)

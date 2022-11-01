@@ -67,9 +67,6 @@ $$ \text{find} \enspace d \in (\mathcal D_W)^3 \quad s.t. \quad \forall w \in \m
 
 $$ \begin{aligned} \text{Where, } \mathcal{D}_W &:= \{ d_i \in C^1(\Omega) \enspace | \enspace d_i \text{ satisfies boundary condition on } \partial\Omega_E \}  \\ \mathcal W &:= \{ w \in C^\infty(\Omega) \enspace | \enspace \forall  x \in \partial\Omega_E, \quad w( x) = 0 \} \end{aligned}  $$
 
-> Reference  
-> [Book] (Bathe) Finite Element Procedures p.161
-
 ### 명제1
 $\sigma, w$가 충분히 매끄러울 때, 다음을 증명하여라.
 $$ \int_{\Omega} \text{div}(\sigma) \cdot w \thinspace dV = \int _{\partial\Omega} t \cdot  w dS - \int_{\Omega} \sigma : \text{grad}(w) dV$$

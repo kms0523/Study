@@ -36,7 +36,7 @@ $x \in X$를 point라고 부른다.
 Topological space $X$가 있다고 하자.
 
 $Y$가 $X$의 open set일 떄, $\mathcal T_Y$를 다음과 같이 정의하자.
-$$ \mathcal T_Y := \{ S \in \mathcal T_X \enspace | \enspace S \subset Y \} $$
+$$ \mathcal T_Y := \{ S \subseteq Y \enspace | \enspace S \subseteq Y \enspace\land\enspace S \in \mathcal T_X \} $$
 
 이 떄, 다음을 증명하여라.
 $$ \mathcal T_Y \text{ is a topology on } Y $$

@@ -15,3 +15,49 @@ $$\text{metric space convegence definition } \Leftrightarrow \text{topological s
 > [Book] (Lee) Introduction to Topological Manifolds exercise 2.12
 
 ### 명제2
+Topological space $X$와 $a \in X$가 있다고 하자.
+
+$X$위의 constant sequence $s=\{a,a,\cdots\}$가 있을 때, 다음을 증명하여라.
+$$ s \text{ may not converge to } a $$
+
+**Proof**
+
+$X$가 다음과 같이 주어졌다고 하자.
+$$ X = \{ 1,2,3 \}, \enspace \mathcal{T}_X = \{ \empty, \{ 1 \}, \{ 1,2 \}, \{ 1,2,3 \} \} $$
+
+$X$위의 constant sequence $s = \{ 2,2,\cdots \}$가 있다고 하자.
+
+$2 \in \forall\mathcal N_3$임으로 $s(n)$은 $3$에 수렴한다. $\quad\tiny\blacksquare$
+
+### 명제3
+Topological space $X$가 있다고 하자.
+
+$X$위의 sequence $s$가 있을 때, 다음을 증명하여라.
+$$ s \text{ may not converge to one point } $$
+
+**Proof**
+
+$X$가 다음과 같이 주어졌다고 하자.
+$$ X = \{ 1,2,3 \}, \enspace \mathcal{T}_X = \{ \empty, \{ 1 \}, \{ 1,2 \}, \{ 1,2,3 \} \} $$
+
+$X$위의 constant sequence $s = \{ 2,2,\cdots \}$가 있다고 하자.
+
+$2 \in \forall\mathcal N_2$인 동시에 $2 \in \forall\mathcal N_3$임으로 $s(n)$은 $2,3$에 수렴한다. $\quad\tiny\blacksquare$
+
+### 명제4
+Trivial topology가 주어진 topological space $X$가 있다고 하자.
+
+$X$위의 sequence $s$가 있을 때, 다음을 증명하여라.
+$$ s \text{ is converge to every point on } X $$
+
+**Proof**
+
+$x \in X$라 하자.
+
+$X$가 trivial topology를 갖음으로 다음이 성립한다.
+$$ \mathcal N_x = X $$
+
+$x$의 유일한 neighborhood가 $X$임으로, $s \in \mathcal N_x$이고 다음이 성립한다.
+$$ s \text{ is converge to } x $$
+
+임의의 $x \in X$에 대해 위가 성립함으로 $s$는 $X$위의 모든 점에 수렴한다. $\quad\tiny\blacksquare$
