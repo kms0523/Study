@@ -27,9 +27,9 @@ $$ \int_{\Omega} \text{div} (\sigma) +\rho  f_b \thinspace dV = \int_\Omega \fra
 위 식은 임의의 $\Omega$에서 성립해야 함으로 다음이 성립한다.
 $$ \mathrm{div}(\boldsymbol\sigma) + \rho  f_b = \frac{\partial}{\partial t}(\rho  u) + \mathrm{div}(\rho  u \otimes u) $$
 
-따라서, 위 식은 적분형 운동방정식과 동일하며 이를 미분형 운동방정식이라 한다.$\quad {_\blacksquare}$
+따라서, 위 식은 적분형 운동방정식과 동일하며 이를 미분형 운동방정식이라 한다.$\quad\tiny\blacksquare$
 
-#### 명제1.1
+#### 따름명제1.1
 연속체 $\Omega$가 정적 평형상태에 있다고 하자.
 
 $\rho u, \sigma$가 충분히 매끄럽다고 할 때, 다음을 증명하여라.
@@ -37,7 +37,7 @@ $$ \begin{aligned} & \int_{\partial\Omega} \sigma n \thinspace dS + \int_\Omega 
 
 **Proof**
 
-명제1과 동일한 방법으로 증명할 수 있다. $\quad {_\blacksquare}$
+명제1과 동일한 방법으로 증명할 수 있다. $\quad\tiny\blacksquare$
 
 
 # Dispalcement based Momentum Equations
@@ -67,6 +67,17 @@ $$ \text{find} \enspace d \in (\mathcal D_W)^3 \quad s.t. \quad \forall w \in \m
 
 $$ \begin{aligned} \text{Where, } \mathcal{D}_W &:= \{ d_i \in C^1(\Omega) \enspace | \enspace d_i \text{ satisfies boundary condition on } \partial\Omega_E \}  \\ \mathcal W &:= \{ w \in C^\infty(\Omega) \enspace | \enspace \forall  x \in \partial\Omega_E, \quad w( x) = 0 \} \end{aligned}  $$
 
+### 참고1(Principle of Virtual Displacement)
+Weak formulation의 test function $w$를 `가상 변위(virtual displacement)` $\delta$로 보면 다음이 성립한다.
+$$ \text{find} \enspace d \in (\mathcal D_W)^3 \quad s.t. \quad \forall \delta \in \mathcal W^3, \quad \int_{\Omega} \sigma(d) : \text{grad}(\delta) \thinspace  dV = \int_{\partial\Omega} t \cdot  \delta \thinspace dS + \int _{\Omega} \rho f_b \cdot \delta \thinspace dV $$
+
+$$ \begin{aligned} \text{Where, } \mathcal{D}_W &:= \{ d_i \in C^1(\Omega) \enspace | \enspace d_i \text{ satisfies boundary condition on } \partial\Omega_E \}  \\ \mathcal W &:= \{ \delta_i \in C^\infty(\Omega) \enspace | \enspace \forall  x \in \partial\Omega_E, \quad \delta_i( x) = 0 \} \end{aligned} $$
+
+이 떄, $\delta(\delta  d)$를 변형률로써 해석하면, 좌측항은 물리적으로 `내부 가상 일(internal virtual work)`, 우측항은 `외부 가상 일(external virtual work)`로 볼 수 있기 때문에 가상 일 원리라고 한다.
+
+> Reference  
+> [Book] (Bathe) Finite Element Procedures p.156
+
 ### 명제1
 $\sigma, w$가 충분히 매끄러울 때, 다음을 증명하여라.
 $$ \int_{\Omega} \text{div}(\sigma) \cdot w \thinspace dV = \int _{\partial\Omega} t \cdot  w dS - \int_{\Omega} \sigma : \text{grad}(w) dV$$
@@ -75,52 +86,3 @@ $$ \int_{\Omega} \text{div}(\sigma) \cdot w \thinspace dV = \int _{\partial\Omeg
 
 Divergence theorem에 의해 다음이 성립한다.
 $$ \begin{aligned} \int_{\Omega} \text{div}(\sigma) \cdot w \thinspace dV &=  \int_{\Omega} \mathrm{div}(w^T \sigma) - \sigma : \text{grad}(w) \thinspace dV \\&= \int _{\partial\Omega} w^T \sigma n dS - \int_{\Omega} \sigma : \text{grad}(w) dV \\&= \int _{\partial\Omega} t \cdot  w dS - \int_{\Omega} \sigma : \text{grad}(w) dV \end{aligned} $$
-
-
-### 참고1(Principle of Virtual Displacement)
-Weak formulation의 test function $w$를 `가상 변위(virtual displacement)` $\delta d$로 보면 다음이 성립한다.
-$$ \text{find} \enspace d \in (\mathcal D_W)^3 \quad s.t. \quad \forall \delta d \in \mathcal W^3, \quad \int_{\Omega} \sigma(d) : \text{grad}(\delta d) \thinspace  dV = \int_{\partial\Omega} t \cdot  \delta d \thinspace dS + \int _{\Omega} \rho f_b \cdot \delta d \thinspace dV $$
-
-$$ \begin{aligned} \text{Where, } \mathcal{D}_W &:= \{ d_i \in C^1(\Omega) \enspace | \enspace d_i \text{ satisfies boundary condition on } \partial\Omega_E \}  \\ \mathcal W &:= \{ \delta d_i \in C^\infty(\Omega) \enspace | \enspace \forall  x \in \partial\Omega_E, \quad \delta d_i( x) = 0 \} \end{aligned}  $$
-
-
-이 떄, $\delta(\delta  d)$를 변형률로써 해석하면, 좌측항은 물리적으로 `내부 가상 일(internal virtual work)`, 우측항은 `외부 가상 일(external virtual work)`로 볼 수 있기 때문에 가상 일 원리라고 한다.
-
-> Reference  
-> [Book] (Bathe) Finite Element Procedures p.156
-
-
-
-
-# Infinitesimal Deformation Assumption
-고체의 constitutive equation과 strain-displacement 관계식을 이용하면 다음과 같다.
-$$ \boldsymbol\sigma_v =  C  \partial  d, \quad \delta  w =  \partial  w  $$
-
-결론적으로 유도된 weak formulation은 다음과 같다.
-$$ \begin{equation} \text{find} \enspace  d \in (\mathcal D_W)^3 \quad s.t. \quad \forall  w \in \mathcal W^3, \quad \int_{\Omega}  C  \partial  d \cdot  \partial  w dV = \int _{\partial\Omega}  t \cdot  w dS + \int _{\Omega}  {f \cdot w} dV \end{equation} $$
-$$ \begin{aligned} \text{Where, } \mathcal{D}_W &:= \{ d_i \in C^1(\Omega) \enspace | \enspace d_i \text{ satisfies boundary condition on } \partial\Omega_E \}  \\ \mathcal W &:= \{ w \in C^\infty(\Omega) \enspace | \enspace \forall  x \in \partial\Omega_E, \quad w( x) = 0 \ \end{aligned}  $$
-
-weak formulation을 수치적으로 풀기 위해 Bodunov-Galerkin method를 사용한다. Solution function space의 기저 함수로 shape function을 사용하면 solution과 weight vector를 각 각 $ d =  N\hat{d}},  w =  N} \boldsymbol{\delta}$ 표현할 수 있고 문제가 다음과 같이 간단해진다.
-$$ \begin{equation} \text{find} \enspace \hat { d} \in \R^{3n} \quad s.t. \quad \forall \boldsymbol \delta \in \R^{3n}, \quad \int_{\Omega}  C  B \hat { d} \cdot  B \boldsymbol \delta dV = \int _{\partial\Omega}  t \cdot  N} \boldsymbol{\delta} dS + \int _{\Omega}  f \cdot  N} \boldsymbol{\delta} dV \end{equation} $$
-
-위 식을 다음과 같이 정리할 수 있다.
-$$ \begin{aligned} & \int_{\Omega}  C  B \hat { d} \cdot  B \boldsymbol \delta dV = \int _{\partial\Omega}  t \cdot  N} \boldsymbol{\delta} dS + \int _{\Omega}  f \cdot  N} \\ \Leftrightarrow \enspace &  \boldsymbol \delta^T \left( \left( \int_{\Omega}  B^T  C  B \thinspace dV \right) \hat { d} - \int _{\partial\Omega}  n^T  t \thinspace dS - \int _{\Omega}  n^T  f \thinspace dV \right) = 0 \end{aligned} $$
-
-임의의 $\boldsymbol \delta$에 대해서 위 식이 성립해야 됨으로 문제가 다음과 같이 간단해진다.
-$$ \text{find} \enspace \hat { d} \in \R^{3n} \quad s.t. \quad  K \hat { d} =  f  $$
-$$ \text{Where, }  K = \int_{\Omega}  B^T  C  B \thinspace dV, \enspace  f = \int _{\partial\Omega}  n^T  t \thinspace dS + \int _{\Omega}  n^T  f \thinspace dV $$
-
-이 방법은 `가상 일 원리(principle of virtual work)`라고도 한다. $\bf w$를 `가상 변위(virtual displacement)` $\delta  d$로 보면 식(2)는 다음과 같다.
-$$ \text{find} \enspace  d \in (\mathcal D_W)^3 \quad s.t. \quad \forall  \delta  d \in \mathcal W^3, \quad \int_{\Omega} \boldsymbol\sigma \cdot \delta \boldsymbol{\epsilon} dV = \int _{\partial\Omega}  t \cdot \delta  d dS + \int _{\Omega}  f \cdot \delta  d dV $$
-
-좌측항은 물리적으로 `내부 가상 일(internal virtual work)`, 우측항은 `외부 가상 일(external virtual work)`로 볼 수 있기 때문에 가상 일 원리라고 한다.
-
-
----
-
-
-
-결론적으로 유도된 weak formulation은 다음과 같다.
-$$ \begin{equation} \text{find} \enspace  d \in (\mathcal D_W)^3 \quad s.t. \quad \forall  w \in \mathcal W^3, \quad \int_{\Omega} \boldsymbol\sigma_v \cdot \delta  w dV = \int _{\partial\Omega}  t \cdot  w dS + \int _{\Omega}  {f \cdot w} dV \end{equation} $$
-$$ \begin{aligned} \text{Where, } \mathcal{D}_W &:= \{ d_i \in C^1(\Omega) \enspace | \enspace d_i \text{ satisfies boundary condition on } \partial\Omega_E \}  \\ \mathcal W &:= \{ w \in C^\infty(\Omega) \enspace | \enspace \forall  x \in \partial\Omega_E, \quad w( x) = 0 \ \end{aligned}  $$
-

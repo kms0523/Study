@@ -1,5 +1,5 @@
 # Neighborhood
-topological space $X$가 있다고 하자.
+Topological space $X$가 있다고 하자.
 
 $p \in X$일 때, $p$의 `neighborhood` $\mathcal N_p$는 $p$를 포함하는 $X$의 open set이다.
 $$ p \in \mathcal N_p \in \mathcal T_X $$

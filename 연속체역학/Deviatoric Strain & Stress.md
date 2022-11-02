@@ -81,31 +81,39 @@ $$ \tilde \sigma = I_{dev}:\sigma $$
 **Proof**
 
 구성방정식에 의해 다음이 성립한다.
-$$ \begin{aligned} \text{tr}(\sigma) &= (\lambda \text{tr}(\epsilon) I + 2\mu \epsilon) : I \\ &= (3\lambda +  2\mu) \text{tr}(\epsilon) \\ &= 3(3\lambda +  2\mu)\epsilon_m \end{aligned} $$
+$$ \begin{aligned} \text{tr}(\sigma) &= (\lambda \text{tr}(\epsilon) I + 2\mu \epsilon) : I \\ &= (3\lambda + 2\mu) \text{tr}(\epsilon) \\ &= 3(3\lambda +  2\mu)\epsilon_m \end{aligned} $$
 
 $I_{dev}$의 정의와 $\sigma$의 symmetry에 의해 다음이 성립한다.
 $$ \begin{aligned} I_{dev} : \sigma &= \sigma_{ij} - \frac{1}{3}\text{tr}(\sigma)\delta_{ij} \\&= (3\lambda + 2\mu)\epsilon_m \delta_{ij} + 2\mu \tilde \epsilon - (3\lambda +  2\mu)\epsilon_m\delta_{ij} \\&= 2\mu\tilde\epsilon  \quad\tiny\blacksquare \end{aligned} $$
 
+### 명제2
+$\sigma_m = \text{tr}(\sigma)/3$이라 할 떄, 다음을 증명하여라.
 
-#### 따름명제1.1
 $$ \tilde \sigma = \sigma - \sigma_m I $$
 
+**Proof**
 
-#### 명제1.1
+구성방정식에 의해 다음이 성립한다.
+$$ \begin{aligned} \text{tr}(\sigma) &= (\lambda \text{tr}(\epsilon) I + 2\mu \epsilon) : I \\ &= (3\lambda + 2\mu) \text{tr}(\epsilon) \\ &= 3(3\lambda +  2\mu)\epsilon_m \end{aligned} $$
+
+$\sigma_m$의 정의에 따라 다음이 성립한다.
+$$ \begin{aligned} \sigma - \sigma_mI &= (3\lambda + 2\mu)\epsilon_m I + 2\mu \tilde \epsilon - (3\lambda +  2\mu)\epsilon_mI \\&= 2\mu\tilde\epsilon \quad\tiny\blacksquare \end{aligned} $$
+
+### 명제3
 미소 변위, 변형률을 가정하고 등방성 선형 탄성재료라고 하자.
 
 $\sigma$의 eigen value가 $\sigma_{1,2,3}$일 때, 다음을 증명하여라.
 $$ \tilde\sigma : \tilde\sigma = (\sigma_1 - \sigma_m)^2 + (\sigma_2 - \sigma_m)^2 + (\sigma_3 - \sigma_m)^2 $$
 
-#### 명제1.2
+### 명제4
 미소 변위, 변형률을 가정하고 등방성 선형 탄성재료라고 하자.
 
 $\sigma$의 eigen value가 $\sigma_{1,2,3}$일 때, 다음을 증명하여라.
 $$ \tilde\sigma : \tilde\sigma = \frac{1}{3}( (\sigma_1 - \sigma_2)^2 + (\sigma_2 - \sigma_3)^2 + (\sigma_3 - \sigma_1)^2) $$
 
-#### 명제 1.3
+### 명제5
 미소 변위, 변형률을 가정하고 등방성 선형 탄성재료라고 할 때, 다음을 증명하여라.
-$$ \frac{\partial \tilde\sigma_{ij}}{\partial \sigma_{kl}} = \delta_{ik}\delta_{jl} - \frac{1}{3}\delta_{ij}\delta_{kl} $$
+$$ \frac{\partial\tilde\sigma}{\partial\sigma} = I_{dev}$$
 
 
 

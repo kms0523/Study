@@ -1,7 +1,7 @@
 $\Omega \subset \R^d$와 $f \in C^0(\Omega)$가 있다고 할 때 다음을 증명하여라.  
 $$ f = 0 \text{ on } \Omega \Leftrightarrow \forall w \in \mathcal W , \int_\Omega w f \thinspace dV = 0 $$
 
-$$ \text{Where, } C^\infty_c(\Omega) \subset \mathcal W $$
+$$ \text{Where, } C^\infty_c(\Omega) \subseteq \mathcal W $$
 
 **Proof**
 

@@ -6,10 +6,10 @@ $$ V(X,t) := \frac{\partial \varphi}{\partial t}  $$
 
 ### 참고
 $V$를 spatial description으로 나타낸 함수 $v$를 다음과 같이 정의한다.
-$$ v(x,t) := V \circ \varphi^{-1} $$
+$$ v(x,t) := V (\varphi^{-1}(x,t),t) $$
 
 따라서, 다음 관계식이 성립한다.
-$$ V = v \circ \varphi $$
+$$ V(X,t) = v(\varphi(X,t),t) $$
 
 
 > 참고  
@@ -25,7 +25,7 @@ $$ \frac{\partial F}{\partial t} = \nabla_X V  $$
 **Proof**
 
 $F$의 정의에 의해 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial F_{ij}}{\partial t} &=  \frac{\partial }{\partial t}\frac{\partial \varphi_i}{\partial X_j} \\&= \frac{\partial }{\partial X_j}\frac{\partial \varphi_i}{\partial t} \\&= \frac{\partial V_i }{\partial X_j} \quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} \frac{\partial F_{ij}}{\partial t} &=  \frac{\partial }{\partial t}\frac{\partial \varphi_i}{\partial X_j} \\&= \frac{\partial }{\partial X_j}\frac{\partial \varphi_i}{\partial t} \\&= \frac{\partial V_i }{\partial X_j} \quad\tiny\blacksquare \end{aligned} $$
 
 ### 명제2
 Deformation $\varphi$와 이에 따른 속도 $v(x,t)$가 있다고 하자.
@@ -36,9 +36,9 @@ $$ \frac{\partial F}{\partial t} = \nabla_x v F $$
 **Proof**
 
 명제1과 $v$의 정의에 의해 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial F_i}{\partial t} &= \frac{\partial V_i }{\partial X_j} \\&= \frac{\partial}{\partial X_j} (v \circ \varphi)_i \\&= \frac{\partial v_i}{\partial \varphi_j} \frac{\partial \varphi_j}{\partial X_k} \\&= \frac{\partial v_i}{\partial x_j} F_{jk} \quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} \frac{\partial F_i}{\partial t} &= \frac{\partial V_i}{\partial X_j} \\&= \frac{\partial}{\partial X_j}v_i(\varphi(X,t),t) \\&= \frac{\partial v_i}{\partial \varphi_k} \frac{\partial \varphi_k}{\partial X_j} \\&= \frac{\partial v_i}{\partial x_k} F_{kj} \quad\tiny\blacksquare \end{aligned} $$
 
-#### 명제2.1
+#### 따름명제2.1
 Deformation $\varphi$와 이에 따른 속도 $V(X,t), v(x,t)$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
@@ -57,7 +57,7 @@ $$ \frac{\partial}{\partial t} \det(F) = \text{div}(v)\det(F) $$
 **Proof**
 
 Jacobi's theorem과 $F$의 시간변화율에 의한 성질에 의해 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial}{\partial t} \det(F) &= \det(F) \text{tr}(F' F^{-1}) \\&= \det(F)\text{tr}(\nabla_x v) \\&= \det(F)\text{div}(v) \quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} \frac{\partial}{\partial t} \det(F) &= \det(F) \text{tr}(F' F^{-1}) \\&= \det(F)\text{tr}(\nabla_x v) \\&= \det(F)\text{div}(v) \quad\tiny\blacksquare \end{aligned} $$
 
 # Other Time Rates
 
@@ -76,7 +76,7 @@ $\Delta x$의 정의에 의해 다음이 성립한다.
 $$ \begin{aligned} \frac{\partial}{\partial t} \Delta x &= \frac{\partial}{\partial t} \varphi(X + \Delta X, t) - \frac{\partial}{\partial t} \varphi(X, t) \\ &= V(X + \Delta X,t) - V(X,t) \end{aligned} $$
 
 $\Delta X$가 충분히 작아 $V(X + \Delta X,t)$를 선형으로 근사할 수 있다고 가정하면 다음과 같다.
-$$ \begin{aligned} \frac{\partial}{\partial t} \Delta x &= V(X + \Delta X,t) - V(X,t) \\&= V(X,t) + \nabla_X V \Delta X - V(X,t) \\&= \nabla_{X} V \Delta X \quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} \frac{\partial}{\partial t} \Delta x &= V(X + \Delta X,t) - V(X,t) \\&= V(X,t) + \nabla_X V \Delta X - V(X,t) \\&= \nabla_{X} V \Delta X \quad\tiny\blacksquare \end{aligned} $$
 
 > 참고  
 > [book] (Lai et al) Introduction to Continuum Mechanics Chapter 3.12
@@ -90,13 +90,18 @@ $$ \begin{aligned} x &:= \varphi(X,t) \\ \Delta x &:= \varphi(X + \Delta X, t) -
 $\Delta x$가 충분히 작을 때, 다음을 증명하여라.
 $$ \frac{\partial}{\partial t} \Delta x = (\nabla_{x} v) \Delta x $$
 
-**Proof**
+**Proof1**
 
 명제1과 $v$의 정의에 의해 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial}{\partial t} \Delta x &= V(X + \Delta X,t) - V(X,t) \\&= (v \circ \varphi)(X + \Delta X,t) - (v \circ \varphi)(X,t) \\&= v(x + \Delta x, t) - v(x, t)  \end{aligned} $$
+$$ \begin{aligned} \frac{\partial}{\partial t}\Delta x &= V(X + \Delta X,t) - V(X,t) \\&= v (\varphi(X + \Delta X,t), t) - v(\varphi(X,t),t) \\&= v(x + \Delta x, t) - v(x, t)  \end{aligned} $$
 
 $\Delta x$가 충분히 작아 $v(x + \Delta x,t)$를 선형으로 근사할 수 있음으로 다음이 성립한다
-$$ \begin{aligned} \frac{\partial}{\partial t} \Delta x &= v(x + \Delta x,t) - v(x,t) \\&= v(x,t) + \nabla_x v \Delta x - v(x,t) \\&= \nabla_{x} v \Delta x \quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} \frac{\partial}{\partial t} \Delta x &= v(x + \Delta x,t) - v(x,t) \\&= v(x,t) + \nabla_x v \Delta x - v(x,t) \\&= \nabla_{x} v \Delta x \quad\tiny\blacksquare \end{aligned} $$
+
+**Proof2**
+
+명제1과 velocity gradient의 성질에 의해 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial}{\partial t}\Delta x &= \nabla_XV\Delta X \\&= \nabla_xvF\Delta X \\&= \nabla_xv\Delta x \quad\tiny\blacksquare \end{aligned} $$
 
 > 참고  
 > [book] (Lai et al) Introduction to Continuum Mechanics Chapter 3.12
@@ -116,7 +121,7 @@ $$ \frac{1}{l} \frac{\partial l}{\partial t} = m \cdot (\nabla_xv)m $$
 **Proof1**
 
 $\Delta x$의 정의에 의해 다음이 성립한다. 
-$$ \begin{aligned} & l^2 = \Delta x \cdot \Delta x \\ \Rightarrow \enspace & 2 l \frac{\partial l}{\partial t} = 2 \Delta x \cdot \frac{\partial}{\partial t} \Delta x \\ \Rightarrow \enspace & l \frac{\partial l}{\partial t} = l^2 m \cdot \nabla_x v m \\ \Rightarrow \enspace & \frac{1}{l} \frac{\partial l}{\partial t} = m \cdot (\nabla_xv) m  \end{aligned} $$
+$$ \begin{aligned} & l^2 = \Delta x \cdot \Delta x \\ \Rightarrow \enspace & 2 l \frac{\partial l}{\partial t} = 2 \Delta x \cdot \frac{\partial}{\partial t} \Delta x \\ \Rightarrow \enspace & l \frac{\partial l}{\partial t} = l^2 m \cdot \nabla_x v m \\ \Rightarrow \enspace & \frac{1}{l} \frac{\partial l}{\partial t} = m \cdot (\nabla_xv) m \quad\tiny\blacksquare \end{aligned} $$
 
 **Proof2**
 
@@ -127,7 +132,7 @@ $$ \Delta X = l_0n $$
 $$ l = \lVert Fn \rVert l_0, \enspace m = \frac{Fn}{\lVert Fn \rVert} $$
 
 따라서, 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial l}{ \partial t} &= l_0 \frac{\partial}{\partial t} (Fn \cdot Fn)^{1/2} \\&= l_0 \frac{1}{2} (Fn \cdot Fn)^{-1/2} \frac{\partial}{\partial t} (Fn \cdot Fn) \\&= l_0 \frac{1}{\lVert Fn \rVert} Fn \cdot (\frac{\partial}{\partial t} F)n \\&= l_0m \cdot \nabla _x vFn \\&= l m \cdot (\nabla_xv) m \end{aligned} $$
+$$ \begin{aligned} \frac{\partial l}{ \partial t} &= l_0 \frac{\partial}{\partial t} (Fn \cdot Fn)^{1/2} \\&= l_0 \frac{1}{2} (Fn \cdot Fn)^{-1/2} \frac{\partial}{\partial t} (Fn \cdot Fn) \\&= l_0 \frac{1}{\lVert Fn \rVert} Fn \cdot (\frac{\partial}{\partial t} F)n \\&= l_0m \cdot \nabla _x vFn \\&= l m \cdot (\nabla_xv) m \\ \frac{1}{l} \frac{\partial l}{\partial t} &= m \cdot (\nabla_xv)m \quad\tiny\blacksquare \end{aligned} $$
 
 ### 명제4
 deformation $\varphi$와 그에 따른 속도 $v(x,t)$가 있다고 하자.
@@ -150,4 +155,4 @@ Deformation gradient를 $F$라 할 때, $\Delta X_{1,2,3}$가 충분히 작기 �
 $$ \begin{aligned} \mathrm V &= \det(F) \mathrm V_0 \\ \Rightarrow \enspace \frac{\partial \rm V}{\partial t} &= \frac{\partial \det(F)}{\partial t} \mathrm V_0 \end{aligned}  $$
 
 Jacobi's Theorem과 $F$의 시간변화율에 대한 성질에 의해 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial \rm V}{\partial t} &= \frac{\partial \det(F)}{\partial t} \mathrm V_0 \\&= \mathrm V \text{tr} \bigg( \frac{\partial F}{\partial t} F^{-1} \bigg) \\ \frac{1}{\mathrm V}\frac{\partial \rm V}{\partial t} &= \text{tr}(\nabla_x v) \\&= \text{div}(v) \quad {_\blacksquare} \end{aligned}  $$
+$$ \begin{aligned} \frac{\partial \rm V}{\partial t} &= \frac{\partial \det(F)}{\partial t} \mathrm V_0 \\&= \mathrm V \text{tr} \bigg( \frac{\partial F}{\partial t} F^{-1} \bigg) \\ \frac{1}{\mathrm V}\frac{\partial \rm V}{\partial t} &= \text{tr}(\nabla_x v) \\&= \text{div}(v) \quad\tiny\blacksquare \end{aligned}  $$

@@ -2,7 +2,7 @@
 먼저, Internal plastic variable $q$를 다음과 같이 정의한다.
 $$ q := \{ \alpha, \epsilon_e^p \} $$
 
-이 떄, $\alpha$는 back stress로 symmetric & deviatoric tensor라고 가정한다. 그리고 $\epsilon_e^p$는 equivalent strain이라고 한다.
+이 떄, $\alpha$는 back stress로 symmetric & deviatoric tensor라고 가정한다. 그리고 $\epsilon_e^p$는 equivalent plastic strain이라고 한다.
 
 다음으로 Yield function $f(\sigma,q)$는 다음과 같이 정의한다.
 $$ f(\sigma, \alpha, \epsilon_e^p) := \lVert \eta(\sigma,\alpha) \rVert - \sqrt{\frac{2}{3}}K(\epsilon_e^p) $$
@@ -48,13 +48,23 @@ $$ \text{Where, } N := \frac{\eta}{\lVert \eta \rVert} $$
 
 **Proof**
 
-$f$의 정의에 의해 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial f}{\partial \sigma} &= \frac{\partial f}{\partial \sigma_{ij}}e_{ij} \\&= \frac{\partial f}{\partial \eta_{kl}} \frac{\partial \eta_{kl}}{\partial \sigma_{ij}} e_{ij} \\&= \frac{1}{\lVert \eta \rVert} \eta_{kl} \bigg(\delta_{ik}\delta_{jl} - \frac{1}{3}\delta_{ij}\delta_{kl} \bigg) e_{ij} \\&= \frac{1}{\lVert \eta \rVert} \bigg( \eta_{ij} - \frac{1}{3}\eta_{kk} \delta_{ij} \bigg) e_{ij} \end{aligned} $$
+보조명제2.1에 의해 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial f}{\partial\sigma} &= \frac{\partial f}{\partial\eta}\frac{\partial\eta}{\partial\tilde\sigma}\frac{\partial\tilde\sigma}{\partial\sigma} \\&= N : I : I_{dev} \end{aligned} $$
 
-$\eta$가 symmetric & deviatoric tensor임으로 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial f}{\partial \sigma} &= \frac{1}{\lVert \eta \rVert} \bigg( \eta_{ij} - \frac{1}{3}\eta_{kk} \delta_{ij} \bigg) e_{ij} \\&= \frac{1}{\lVert \eta \rVert} \eta_{ij} e_{ij} \\&= \frac{\eta}{\lVert \eta \rVert} \\&= N \quad\tiny\blacksquare \end{aligned} $$
+$\eta$가 symmetric & deviatoric tensor임으로 $N$도 symmetric & deviatoric tensor이다.
 
-#### 명제1.1
+따라서, 다음이 성립한다.
+$$ \begin{aligned} \frac{\partial f}{\partial\sigma} &= N : I : I_{dev} \\&= N : I_{dev} \\&= N_{sym} - \frac{1}{3}\text{tr}(N)I \\&= N \quad\tiny\blacksquare \end{aligned} $$
+
+#### 보조명제2.1
+J2 plasticity model에서 다음을 증명하여라.
+$$ \frac{\partial f}{\partial\eta} = N $$
+
+**Proof**
+
+$$ \begin{aligned} \frac{\partial\lVert\eta\rVert}{\partial\eta} &= \frac{\partial(\eta:\eta)^{1/2}}{\partial\eta} \\&= \frac{1}{2}(\eta:\eta)^{-1/2}(\eta:I + I:\eta) \\&= \frac{\eta}{\lVert \eta \rVert} \\&= N \quad\tiny\blacksquare\end{aligned} $$
+
+### 명제3
 J2 plasticity model에서 다음을 증명하여라.
 $$ \frac{\partial \epsilon^p}{\partial t} = \gamma N $$
 
@@ -63,17 +73,16 @@ $$ \frac{\partial \epsilon^p}{\partial t} = \gamma N $$
 Flow rule과 명제 1에 의해 다음이 성립한다.
 $$ \begin{aligned} \frac{\partial \epsilon^p}{\partial t} &= \gamma \frac{\partial f}{\partial \sigma} \\ &= \gamma N \quad\tiny\blacksquare \end{aligned}  $$
 
-##### 명제1.1.1
+### 명제4
 J2 plasticity model에서 다음을 증명하여라.
 $$ \frac{\partial \epsilon_e^p}{\partial t} = \sqrt{\frac{2}{3}}\gamma $$
 
 **Proof**
 
-hardening rule과 명제1.1에 의해 다음이 성립한다.
+Hardening rule과 명제2에 의해 다음이 성립한다.
 $$ \begin{aligned} \frac{\partial \epsilon_e^p}{\partial t} &= \sqrt{\frac{2}{3}} \bigg\lVert\frac{\partial \epsilon^p}{\partial t}\bigg\rVert \\ &= \sqrt{\frac{2}{3}}\gamma \quad\tiny\blacksquare \end{aligned}  $$
 
-
-### 명제3
+### 명제5
 J2 plasticity model에서 다음을 증명하여라.
 $$ N : N = 1 $$
 
@@ -82,8 +91,7 @@ $$ N : N = 1 $$
 $N$의 정의에 의해 다음이 성립한다.
 $$ \begin{aligned} N : N &= \frac{\eta}{\lVert \eta \rVert} : \frac{\eta}{\lVert \eta \rVert} \\&= \frac{1}{\lVert \eta \rVert ^2} \eta:\eta \\&= \frac{1}{\eta : \eta} \eta:\eta \\&= 1 \quad\tiny\blacksquare \end{aligned} $$
 
-
-### 명제4
+### 명제6
 선형 탄성 재료에 J2 plasticity model을 적용할 때, 다음을 증명하여라.
 $$ N:C = 2\mu N $$
 
@@ -92,15 +100,12 @@ $$ \text{Where, } C \text{ is an linear elastic stiffness tensor} $$
 **Proof**
 
 $C$는 다음과 같다.
-$$ C_{ijkl} = \lambda \delta_{ij}\delta_{kl} + \mu (\delta_{ik} \delta_{jl} + \delta_{il} \delta_{jk}) e_{ijkl}  $$
+$$ C = \lambda I \otimes I + 2\mu I_{sym} $$
 
-따라서, $N : C$를 Tensor notation으로 적으면 다음이 성립한다. 
-$$ \begin{aligned} N : C &= N_{ij}C_{klmn} e_{ij} : e_{klmn} \\&= N_{ij}C_{klmn} \delta_{ik}\delta_{jl} e_{mn} \\&= N_{ij}C_{ijmn}e_{mn} \\&= N_{ij}(\lambda \delta_{ij}\delta_{mn} + \mu (\delta_{im} \delta_{jn} + \delta_{in} \delta_{jm}))e_{mn} \\&= \lambda N_{ii} \delta_{mn} + \mu(N_{mn} + N_{nm}) \end{aligned} $$
+그리고 $N$은 symmetric & deviatoric tensor임으로 다음이 성립한다.
+$$ \begin{aligned} N : C &= \lambda\text{tr}(N)I + 2\mu N_{sym} \\&= 2\mu N \end{aligned} $$
 
-$N$은 symmetric & deviatoric tensor임으로 다음이 성립한다.
-$$ \begin{aligned} N : D &= \lambda N_{ii} \delta_{mn} + \mu(N_{mn} + N_{nm}) \\&= 2\mu N_{mn} e_{mn} \\&= 2\mu N \quad\tiny\blacksquare \end{aligned} $$
-
-#### 명제4.1
+#### 따름명제6.1
 선형 탄성 재료에 J2 plasticity model을 적용할 때, 다음을 증명하여라.
 $$ C:N = 2\mu N $$
 
@@ -108,9 +113,9 @@ $$ \text{Where, } C \text{ is an linear elastic stiffness tensor} $$
 
 **Proof**
 
-명제 4와 동일한 방식으로 증명할 수 있다.
+명제6과 동일한 방식으로 증명할 수 있다.
 
-### 명제5
+### 명제7
 선형 탄성 재료에 J2 plasticity model을 적용할 때, 다음을 증명하여라.
 $$ \frac{\partial f}{\partial t} = 2\mu N : \frac{\partial \epsilon}{\partial t} - \gamma(2\mu + H + \frac{2}{3}\frac{\partial K}{\partial \epsilon_e^p}) $$
 
@@ -119,47 +124,46 @@ $$ \frac{\partial f}{\partial t} = 2\mu N : \frac{\partial \epsilon}{\partial t}
 $f$의 정의에 의해 다음이 성립한다.
 $$ \begin{aligned} \frac{\partial f}{\partial t} &= \frac{\partial f}{\partial \sigma} \frac{\partial \sigma}{\partial t} + \frac{\partial f}{\partial \alpha} \frac{\partial \alpha}{\partial t} + \frac{\partial f}{\partial \epsilon_e^p} \frac{\partial \epsilon_e^p}{\partial t} \end{aligned} $$
 
-명제 5.1-3에 의해 다음이 성립한다.
+보조명제7.1-3에 의해 다음이 성립한다.
 $$ \frac{\partial f}{\partial t} = 2\mu N : \frac{\partial \epsilon}{\partial t} - \gamma(2\mu + H + \frac{2}{3}\frac{\partial K}{\partial \epsilon_e^p}) \quad\tiny\blacksquare $$
 
-
-#### 명제 5.1
+#### 보조명제 7.1
 선형 탄성 재료에 J2 plasticity model을 적용할 때, 다음을 증명하여라.
 $$ \frac{\partial f}{\partial \sigma}\frac{\partial \sigma}{\partial t} = 2\mu N : \frac{\partial \epsilon}{\partial t} -2 \mu \gamma   $$
 
 **Proof**
 
-선형 탄성 가정에 의해 다음이 성립한다.
+J2 plasticity model의 가정에 의해 다음이 성립한다.
 $$ \begin{aligned} \frac{\partial \sigma}{\partial t} &= C :\frac{\partial \epsilon^e}{\partial t} \\&= C : \bigg( \frac{\partial \epsilon}{\partial t} - \frac{\partial \epsilon^p}{\partial t} \bigg) \end{aligned} $$
 
-명제1.1에 의해 다음이 성립한다.
+명제3에 의해 다음이 성립한다.
 $$ \begin{aligned} \frac{\partial \sigma}{\partial t} &= C : \bigg( \frac{\partial \epsilon}{\partial t} - \frac{\partial \epsilon^p}{\partial t} \bigg) \\&= C : \bigg( \frac{\partial \epsilon}{\partial t} - \gamma N \bigg) \end{aligned} $$
 
-명제4에 의해 다음이 성립한다.
+명제6에 의해 다음이 성립한다.
 $$ \begin{aligned} \frac{\partial \sigma}{\partial t} &= C : \bigg( \frac{\partial \epsilon}{\partial t} - \gamma N \bigg) \\&= C : \frac{\partial \epsilon}{\partial t} -2 \mu \gamma N \end{aligned} $$
 
-명제1에 의해 다음이 성립한다.
+명제2에 의해 다음이 성립한다.
 $$ \begin{aligned} \frac{\partial f}{\partial \sigma}\frac{\partial \sigma}{\partial t} &= N : \bigg( C : \frac{\partial \epsilon}{\partial t} -2 \mu \gamma N \bigg) \\&=  N : C : \frac{\partial \epsilon}{\partial t} - 2 \mu \gamma N : N  \end{aligned} $$
 
-명제3,4에 의해 다음이 성립한다.
+명제5,6에 의해 다음이 성립한다.
 $$ \begin{aligned} \frac{\partial f}{\partial \sigma}\frac{\partial \sigma}{\partial t} &=  N : C : \frac{\partial \epsilon}{\partial t} - 2 \mu \gamma N : N \\&= 2\mu N : \frac{\partial \epsilon}{\partial t} - 2 \mu \gamma  \end{aligned} $$
 
-#### 명제 5.2
+#### 보조명제7.2
 J2 plasticity model에서 다음을 증명하여라.
 $$ \frac{\partial f}{\partial \alpha} \frac{\partial \alpha}{\partial t} = -H \gamma$$
 
 **Proof**
 
 $f$의 정의에 의해 다음이 성립한다.
-$$ \begin{aligned} \frac{\partial f}{\partial \alpha} &= - \frac{\tilde \sigma - \alpha}{\lVert \tilde \sigma - \alpha \rVert} \\&= -N \end{aligned} $$
+$$ \begin{aligned} \frac{\partial f}{\partial \alpha} &= \frac{\partial f}{\partial \eta}\frac{\partial\eta}{\partial\alpha} \\&= N(-1) \\&= -N \end{aligned} $$
 
 Hardening rule에 의해 다음이 성립한다.
 $$ \begin{aligned} \frac{\partial f}{\partial \alpha} \frac{\partial \alpha}{\partial t} &= -H N :\frac{\partial \epsilon^p}{\partial t} \\&= - H \gamma N : N \end{aligned} $$
 
-명제 3에 의해 다음이 성립한다.
+명제5에 의해 다음이 성립한다.
 $$ \begin{aligned} \frac{\partial f}{\partial \alpha} \frac{\partial \alpha}{\partial t} &= - H \gamma N : N \\&= - H \gamma \quad\tiny\blacksquare \end{aligned} $$
 
-#### 명제 5.3
+#### 보조명제7.3
 J2 plasticity model에서 다음을 증명하여라.
 $$ \frac{\partial f}{\partial \epsilon_e^p} \frac{\partial \epsilon_e^p}{\partial t} = -\frac{2}{3} \frac{\partial K}{\partial \epsilon_e^p} \gamma$$
 

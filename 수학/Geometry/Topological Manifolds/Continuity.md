@@ -38,21 +38,24 @@ Identity map의 정의에 의해 자명하게 open set의 preimage 또한 open s
 Topological space $X,Y$와 연속인 함수 $f: X\rightarrow Y$가 있다고 하자.
 
 $U$가 $X$의 open set일 때, 다음을 증명하여라.
-$$ f|_U \text{ is a continuous function} $$
+$$ f|_{U \times f(U)} \text{ is a continuous function} $$
 
 **Proof**
 
-Open set $V \subseteq Y$가 있다고 하자.
+$V$가 $Y$의 open set이라고 하자.
+
+$Y$의 subspace $f(U)$에 대해 다음이 성립한다.
+$$ f(U) \cap V \text{ is open set on } f(U) $$
 
 $f$가 연속임으로 다음이 성립한다.
-$$ f^{-1}(V) \text{ is open set on } X $$
+$$ \text{preimg}_f(V) \text{ is open set on } X $$
 
-Open set의 성질에 의해 다음이 성립한다.
-$$ f^{-1}(V) \cap U \text { is open set on } U $$
+$X$의 subspace $U$가 있을 떄, open set의 성질에 의해 다음이 성립한다.
+$$ \text{preimg}_f(V) \cap U \text { is open set on } U $$
 
-이 떄, $\text{preimg}(f^{-1}|_U(V)) = f^{-1}(V) \cap U$임으로, open set $V$의 $f|_U$에 의한 preimage가 open set $f^{-1}(V) \cap U$이 된다.
+이 때, $\text{preimg}_{f|_U}(f(U) \cap V) =  \text{preimg}_f(V) \cap U$이다.
 
-따라서, $f|_U$는 continuous function이다. $\quad\tiny\blacksquare$ 
+따라서, $f|_U$에 의해 $f(U)$위의 임의의 open set의 preimg가 $U$위의 open set이 됨으로, $f|_U$는 continuous function이다. $\quad\tiny\blacksquare$ 
 
 > Refrernce  
 > [Mathematics](https://math.stackexchange.com/questions/1826827/topology-show-restriction-of-continuous-function-is-continuous-and-restriction)
@@ -98,7 +101,7 @@ $$ U \cap \text{img}(\mathcal N_x) \text { is an open set on Y} $$
 $f|_{\mathcal N_x}$는 continous함으로 다음이 성립한다.
 $$ \text{preimg}(U \cap \text{img}(\mathcal N_x)) \text { is an open set on X} $$
 
-명제5.1에 의해 다음이 성립한다.
+보조명제5.1에 의해 다음이 성립한다.
 $$ \begin{aligned} & \text{preimg}(U \cap \text{img}(\mathcal N_x)) \text { is an open set on X} \\ \Leftrightarrow \enspace & \text{preimg}(U) \cap \mathcal N_x \text { is an open set on X} \end{aligned}  $$
 
 즉, $\forall x \in \text{preimg}(U)$에 대해 $\text{preimg}(U)$에 포함되는 $x$의 neighborhood가 존재한다.
@@ -108,21 +111,21 @@ $$ \text{preimg}(U) \text{ is an open set on X} $$
 
 따라서, continuity의 정의에 의해 $f$는 $X$에서 continous이다. $\quad\tiny\blacksquare$
 
-#### 명제5.1
+#### 보조명제5.1
 Topological space $X,Y$와 함수 $f : X \rightarrow Y$가 있다고 하자.
 
-$U,V \subset X$가 있을 때, 다음을 증명하여라.
-$$ U \cap V = \text{preimg}(\text{img}(U) \cap \text{img}(V)) $$
+$V_1,V_2 \subset Y$가 있을 때, 다음을 증명하여라.
+$$ \text{preimg}(V_1) \cap \text{preimg}(V_2) = \text{preimg}(V_1 \cap V_2) $$
 
 **Proof**
 
-[$U \cap V \subseteq \text{preimg}(\text{img}(U) \cap \text{img}(V))$]  
-$x \in U \cap V$라 하면 다음이 성립한다.
-$$\begin{aligned} & x \in U \enspace\land\enspace x \in V \\ \Rightarrow\enspace& f(x) \in \text{img}(U) \enspace \land \enspace f(x) \in \text{img}(V) \\ \Rightarrow\enspace& f(x) \in \text{img}(U) \cap \text{img}(V) \\ \Rightarrow\enspace& x \in \text{preimg}(\text{img}(U) \cap \text{img}(V)) \end{aligned} $$
+[$\text{preimg}(V_1) \cap \text{preimg}(V_2) \subseteq \text{preimg}(V_1 \cap V_2)$]  
+$x \in \text{preimg}(V_1) \cap \text{preimg}(V_2)$라 하면 다음이 성립한다.
+$$\begin{aligned} & x \in \text{preimg}(V_1) \enspace\land\enspace x \in \text{preimg}(V_2) \\ \Rightarrow\enspace& f(x) \in V_1 \enspace\land\enspace f(x) \in V_2 \\ \Rightarrow\enspace& f(x) \in V_1 \cap V_2 \\ \Rightarrow\enspace& x \in \text{preimg}(V_1 \cap V_2) \end{aligned} $$
 
-[$\text{preimg}(\text{img}(U) \cap \text{img}(V)) \subseteq U \cap V$]  
-$x \in \text{preimg}(\text{img}(U) \cap \text{img}(V))$라 하면 다음이 성립한다.
-$$\begin{aligned} & f(x) \in \text{img}(U) \cap \text{img}(V) \\ \Rightarrow\enspace& f(x) \in \text{img}(U) \enspace \land \enspace f(x) \in \text{img}(V) \\ \Rightarrow\enspace& x \in U  \enspace \land \enspace x \in V \\ \Rightarrow\enspace& x \in U \cap V \quad\tiny\blacksquare \end{aligned} $$
+[$\text{preimg}(V_1 \cap V_2) \subseteq \text{preimg}(V_1) \cap \text{preimg}(V_2)$]  
+$x \in \text{preimg}(V_1 \cap V_2)$라 하면 다음이 성립한다.
+$$\begin{aligned} & f(x) \in V_1 \cap V_2 \\ \Rightarrow\enspace& f(x) \in V_1 \enspace \land \enspace f(x) \in V_2 \\ \Rightarrow\enspace& x \in \text{preimg}(V_1) \enspace\land\enspace x \in \text{preimg}(V_2) \\ \Rightarrow\enspace& x \in \text{preimg}(V_1) \cap \text{preimg}(V_2) \quad\tiny\blacksquare \end{aligned} $$
 
 > Referece  
 > [Book] (Lee) Introduction to Topological Manifolds Proposition 2.19

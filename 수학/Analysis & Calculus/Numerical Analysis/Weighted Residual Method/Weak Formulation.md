@@ -4,8 +4,8 @@ Weak formulation을 다음 예제를 통해 구체적으로 알아보자.
 
 # Strong formulation
 
-`경계값 문제(boudnary value problem)`가 다음과 같이 주어졌다고 해보자.  
-$$ \begin{equation} \text{find } u \in \mathcal U \quad s.t. \quad -\frac{d}{dx}(a\frac{du}{dx}) + cu -f = 0 \text{ on } \Omega := (0,L) \subset \R \end{equation} $$
+`경계값 문제(boudnary value problem)`가 $\Omega := [0,L] \subset \R$위에서 다음과 같이 주어졌다고 해보자.  
+$$ \begin{equation} \text{find } u \in \mathcal U \quad s.t. \quad -\frac{d}{dx}(a\frac{du}{dx}) + cu -f = 0 \end{equation} $$
 
 $$ \text{Where, } \mathcal U := \left\{ u \in C^2(\Omega) \enspace \bigg| \enspace u(0) = u_0 \land \left( a\frac{du}{dx} \right)_{x=L} = Q_L \right\} $$
 
@@ -15,26 +15,29 @@ $$ \text{Where, } \mathcal U := \left\{ u \in C^2(\Omega) \enspace \bigg| \enspa
 식(1)의 weighted residual formulation은 다음과 같다.  
 $$ \text{find } u \in \mathcal U \quad s.t. \quad \forall w \in \mathcal W, \quad \int_\Omega -w\frac{d}{dx}(a\frac{du}{dx}) \thinspace dV + \int_\Omega wcu \thinspace dV = \int_\Omega wf \thinspace dV $$
 
-$$ \text{Where, } C^\infty_c(\Omega) \subset \mathcal W $$
-
+$$ \text{Where, } C^\infty_c(\Omega) \subseteq \mathcal W $$
 
 # Weak formulation
-weighted residual formulation의 왼쪽 첫번째 항에 부분적분법을 적용하면 다음과 같다.  
+Weighted residual formulation의 왼쪽 첫번째 항에 부분적분법을 적용하면 다음과 같다.  
 $$ \text{find } u \in \mathcal U \quad s.t. \quad \forall w \in \mathcal W, \quad \int_\Omega a\frac{dw}{dx}\frac{du}{dx} + wcu \thinspace dV = wa\frac{du}{dx} \bigg|_{x = 0}^L + \int_\Omega wf \thinspace dV $$
 
-BC를 적용하면 다음과 같다.  
+Natural BC를 적용하면 다음과 같다.  
 $$ \begin{equation} \text{find } u \in \mathcal U \quad s.t. \quad \forall w \in \mathcal W, \quad \int_\Omega a\frac{dw}{dx}\frac{du}{dx} + wcu \thinspace dV = w(L)Q_L - wa\frac{du}{dx} \bigg|_{x = 0} + \int_\Omega wf \thinspace dV \end{equation} $$
 
-부분 적분법에 의해 미분항이 $w$로 하나 옮겨갔음으로 solution을 $C^2(\Omega)$가 아닌 $C^1(\Omega)$에서 찾을 수 있다. 또 한, 식(2)가 natural BC를 포함함으로써  약하게 적용되어 있음으로, solution function space에서 강하게 natural BC를 적용할 필요가 없다. (약하게 적용 => 예제 참고)
+부분 적분법에 의해 미분항이 $w$로 하나 옮겨갔음으로 solution을 $C^2(\Omega)$가 아닌 $C^1(\Omega)$에서 찾을 수 있다. 
 
-따라서 $\mathcal U$를 확장하면 다음과 같다.
+또, 식(2)가 natural BC를 포함함으로써 natural BC가 약하게 적용되어 있음으로, solution function space에서 강하게 natural BC를 적용할 필요가 없다. (약하게 적용 => 예제 참고)
+
+여기서 주목할 점은, $\mathcal W$에서 $w(L)$이 항상 0으로 가면 natural BC를 적용할 수 없게 된다. 따라서, $\mathcal W$는 natural BC에서 0이 되는 공간보다 큰 공간이여야 한다.
+
+Solution function space의 요구조건을 완화해서 $\mathcal U$를 확장하면 다음과 같다.
 $$ \begin{equation} \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in \mathcal W, \quad \int_\Omega a\frac{dw}{dx}\frac{du}{dx} + wcu \thinspace dV = w(L)Q_L - wa\frac{du}{dx} \bigg|_{x = 0} + \int_\Omega wf \thinspace dV \end{equation}$$
 
 $$ \text{Where, } \mathcal U_W := \left\{ u \in C^1(\Omega) \enspace \bigg| \enspace u(0) = u_0 \right\} $$
 
 $\mathcal U_W$는 $\mathcal U$보다 더 약한 regularity를 요구하기 때문에 식(3)이 식(2)보다 더 일반적인 형태이다. weak formulation이라고 불리는 이유는 바로 solution space의 regularity 요구사항을 약화시켰기 때문이다. $u \notin C^2(\Omega)$이면 strong formulation이 정의조차 되지 않기 때문에 식(3)는 더이상 strong formulation과 동치가 아니다.
 
-weak formulation은 functional $B_W,l_W$을 이용해 다음과 같이 간단하게 나타낼 수 있다.
+Weak formulation은 functional $B_W,l_W$을 이용해 다음과 같이 간단하게 나타낼 수 있다.
 
 $$ \begin{equation} \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in \mathcal W, \quad B_W(w,u) = l_W(w) \end{equation} $$
 

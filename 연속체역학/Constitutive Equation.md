@@ -50,6 +50,10 @@ $$ (i,j,k,l) \in \{ (1,1,1,1), \cdots, (1,1,3,3), (1,2,1,2), \cdots , (1,2,3,3),
 > Reference    
 > [book] (Lai et al) Introduction to Continuum Mechanics p.205
 
+#### 참고
+vognit notation을 이용하여 행렬로 나타내면 다음과 같다.
+$$ \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{23} \\ \sigma_{13} \\ \sigma_{12} \end{bmatrix} =  \begin{bmatrix} c_{1111} & c_{1122} & c_{1133} & c_{1123} & c_{1113} & c_{2212} \\ & c_{2222} & c_{2233} & c_{2223} & c_{2213} & c_{2212} \\ && c_{3333} & c_{3323} & c_{3313} & c_{3312} \\ &&& c_{2323} & c_{2313} & c_{2312} \\ &\text{sym}&&& c_{1313} & c_{1312} \\ &&&&& c_{1212} \end{bmatrix} \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ 2\epsilon_{23} \\ 2\epsilon_{13} \\ 2\epsilon_{12} \end{bmatrix} $$
+
 # Isotropic Linear Elastic Solid
 특정 방향에 따라 물성치가 변하지 않을 때 `등방성(isotropic)`재료라고 한다. 
 

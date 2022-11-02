@@ -113,3 +113,42 @@ $V_i \in \mathcal T_X$이고 $\mathcal T_X$는 topology임으로 다음이 성�
 $$ \begin{aligned} W &= \bigcup_{i=1}^n s_i \\&= \bigcup_{i=1}^n (S \cap V_i) \\&= S \cap (\bigcup_{i=1}^n V_i) \\&= S \cap \hat V \in \mathcal T_S \end{aligned}  $$
 
 $\mathcal T_S$가 topology의 조건을 전부 만족함으로, $\mathcal T_S$는 topology이다. $\quad\tiny\blacksquare$
+
+#### 참고
+위와 같이 정의된 $\mathcal T_S$를 $S$위의 `subspace topology` 혹은 `relative topology`라고 한다.
+
+> Reference  
+> [Book] (Lee) Introduction to Topological Manifolds p.49
+
+# Subspace
+Topological space $X$가 있다고 하자.
+
+$U$가 $X$의 subset이고 $\mathcal T_U$가 subspace topology일 때, $(U,\mathcal T_U)$를 $X$의 subspace라고 한다.
+
+### 명제1
+Topological space $X$와 $X$의 subset $U$가 있다고 하자.
+
+$X$의 subspace $U$가 있을 떄, 다음을 증명하여라.
+$$ \text{open set in }U \text{ may not be open in } X $$
+
+**Proof**
+
+$U$는 subspace $U$의 open set이지만, $X$의 open set은 아니다. $\quad\tiny\blacksquare$
+
+> Reference  
+> [stack exchange - math](https://math.stackexchange.com/questions/1138151/show-that-a-set-that-is-open-in-the-subspace-topology-is-open-in-the-full-space)
+
+### 명제2
+Topological space $X$와 $X$의 openset $U$가 있다고 하자.
+
+$X$의 subspace $U$가 있을 떄, 다음을 증명하여라.
+$$ \text{open set in }U \text{ is an open set in } X $$
+
+**Proof**
+
+$U$의 open set을 $S_U$라 할 떄, subspace의 정의에 의해 다음이 성립한다.
+$$ \exist S_X \in \mathcal T_X \quad s.t. \quad S_U = U \cap S_X $$
+
+$U$가 $X$의 open set임으로, topology의 성질에 의해 다음이 성립한다.
+$$ \begin{aligned} & U \cap S_X \in \mathcal T_x \\ \Rightarrow\enspace& S_U \in \mathcal T_x \quad\tiny\blacksquare \end{aligned} $$
+

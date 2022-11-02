@@ -24,16 +24,16 @@ $$ \text{Where, } \mathcal{D}_{W_i} := \{ d_i \in C^1(\Omega_i) \} $$
 $$ \text{find} \enspace d \in (\mathcal D_{W_i})^3 \quad s.t. \quad \forall w \in (C^\infty)^3, \quad \int_{\Omega_i} C \epsilon_v \cdot \partial  w \thinspace dV = \int _{\partial\Omega_i} t \cdot  w \thinspace dS + \int_{\Omega_i} \rho f_b \cdot w \thinspace dV $$
 
 Bodunov-Galerkin method를 사용하면 명제2에 의해 BVP가 다음과 같아진다.
-$$ \text{find} \enspace \hat{d}_i \in \R^{3N_{N_i}} \quad s.t. \quad K_i\hat{d}_i = f_i $$
+$$ \text{find} \enspace \hat{d}_i \in \R^{3N_{N_i}} \quad s.t. \quad K_i\hat{d}_i = f_i \quad (i=1,\cdots,N_E) $$
 
-Element assemblage를 위해 direct stiffness method를 사용하여 global equation을 구한다.
+Direct stiffness method를 사용하여 element assemblage하여 global equation을 구한다.
 $$ \text{find} \enspace \hat{d} \in \R^{3N_N} \quad s.t. \quad K\hat{d} = f $$
 
 ### 명제1
 다음을 증명하여라.
 $$ \sigma : \text{grad}(w) = C\epsilon_v \cdot \partial  w $$
 
-$$ \begin{aligned} \text{Where, } C &:= \text{elasticity tensor} \\  \epsilon_v &= \begin{bmatrix} \epsilon_{11} & \epsilon_{22} & \epsilon_{33} & \epsilon_{23} & \epsilon_{13} & \epsilon_{12} \end{bmatrix}^T \\ \partial w &= \begin{bmatrix} \frac{\partial}{\partial x_1} & 0 & 0 \\ 0 & \frac{\partial}{\partial x_2} & 0 \\ 0 & 0 & \frac{\partial}{\partial x_3} \\ 0 & \frac{\partial}{\partial x_3} & \frac{\partial}{\partial x_2} \\ \frac{\partial}{\partial x_3} & 0 & \frac{\partial}{\partial x_1} \\ \frac{\partial}{\partial x_2} & \frac{\partial}{\partial x_1} & 0 \end{bmatrix} \begin{bmatrix} w_1 \\ w_2 \\ w_3 \end{bmatrix} \end{aligned} $$
+$$ \begin{aligned} \text{Where, } C &:= \text{elasticity matrix} \\  \epsilon_v &= \begin{bmatrix} \epsilon_{11} & \epsilon_{22} & \epsilon_{33} & \epsilon_{23} & \epsilon_{13} & \epsilon_{12} \end{bmatrix}^T \\ \partial &= \begin{bmatrix} \frac{\partial}{\partial x_1} & 0 & 0 \\ 0 & \frac{\partial}{\partial x_2} & 0 \\ 0 & 0 & \frac{\partial}{\partial x_3} \\ 0 & \frac{\partial}{\partial x_3} & \frac{\partial}{\partial x_2} \\ \frac{\partial}{\partial x_3} & 0 & \frac{\partial}{\partial x_1} \\ \frac{\partial}{\partial x_2} & \frac{\partial}{\partial x_1} & 0 \end{bmatrix} \\ w &= \begin{bmatrix} w_1 & w_2 & w_3 \end{bmatrix}^T \end{aligned} $$
 
 **Proof**
 
@@ -83,6 +83,3 @@ $$ \def\arraystretch{2}\begin{darray}{lll} &\text{find} \enspace \hat{d}_i \in \
 
 $\forall \hat{w} \in \R^{3N_{N_i}}$에 대해서 위 식이 성립함으로 BVP가 다음과 같이 간단해진다.
 $$ \def\arraystretch{2}\begin{darray}{lll} &\text{find} \enspace \hat{d}_i \in \R^{3N_{N_i}} & \int_{\Omega_i}  B_i^TCB \thinspace dV \hat{d}_i = \int_{\partial\Omega_i} (H_i)^T t \thinspace dS + \int_{\Omega_i} (H_i)^Tf_b \thinspace dV \quad\tiny\blacksquare \\ \Rightarrow& &  K_i \hat{d}_i = f_i \end{darray} $$
-
-
-$$  $$
