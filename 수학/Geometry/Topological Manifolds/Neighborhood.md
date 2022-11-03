@@ -28,7 +28,7 @@ $$ S \text { is an open set on } X \Leftrightarrow \forall x \in S, \enspace \ex
 $S$가 open set임으로 $\mathcal N_x = S$로 두면 항상 성립한다.
 
 [$\Leftarrow$]  
-$\mathcal N_x$의 성질에 의해 다음이 성립한다.
+$\forall x \in X$에 대해, $x \in \mathcal N_x$임으로 다음이 성립한다.
 $$ S = \bigcup_{\forall x \in S} \mathcal N_x $$
 
 이 때, 임의의 $x \in S$에 대해서 $\mathcal N_x \in \mathcal T_X$이고, Topology는 union에 닫혀 있음으로 다음이 성립한다.

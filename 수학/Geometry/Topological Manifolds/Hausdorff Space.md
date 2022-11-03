@@ -38,7 +38,7 @@ $$ \exist \text{ disjoint } \mathcal N^U_x, \mathcal N^U_y \text{ on } U $$
 
 > Reference  
 > [Book] (Lee) Introduction to Topological Manifolds p.32  
-> [stack exchange - math](https://math.stackexchange.com/questions/3442811/topology-hausdorff-space-and-the-subspace-topology)  
+> [Stackexchange - math](https://math.stackexchange.com/questions/3442811/topology-hausdorff-space-and-the-subspace-topology)  
 
 ### 명제3
 Topological space $X$가 있다고 하자.
@@ -69,3 +69,22 @@ $$ \exist \text{ disjoint } \mathcal N_x, \mathcal N_y \text{ on } X $$
 
 > Reference  
 > [Stackexchnage - Math](https://math.stackexchange.com/questions/678138/let-x-be-a-topological-space-suppose-forall-p-in-x-exists-f-in-cx?rq=1)
+
+### 명제4
+$X$가 Hausdorff space라고 하자.
+
+이 떄, 다음을 증명하여라.
+$$ \text{Every finite subset of } X \text{ is closed} $$
+
+**Proof**
+
+$x \in X$라 하자.
+
+$X$가 Hausdorff space이기 때문에 $\forall y \in X - \{x\}$에 대해 다음이 성립한다.
+$$ \exist \text{ disjoint } \mathcal{N_x},\mathcal{N_y} \text{ on } X $$
+
+즉, $\forall y \in X - \{x\}$에 대해 $X - \{x\}$의 subset인 $\mathcal{N_y}$가 존재함으로 closed set의 성질에 의해 $\{x\}$는 closed set이다.
+
+
+
+

@@ -51,8 +51,8 @@ $$ (i,j,k,l) \in \{ (1,1,1,1), \cdots, (1,1,3,3), (1,2,1,2), \cdots , (1,2,3,3),
 > [book] (Lai et al) Introduction to Continuum Mechanics p.205
 
 #### 참고
-vognit notation을 이용하여 행렬로 나타내면 다음과 같다.
-$$ \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{23} \\ \sigma_{13} \\ \sigma_{12} \end{bmatrix} =  \begin{bmatrix} c_{1111} & c_{1122} & c_{1133} & c_{1123} & c_{1113} & c_{2212} \\ & c_{2222} & c_{2233} & c_{2223} & c_{2213} & c_{2212} \\ && c_{3333} & c_{3323} & c_{3313} & c_{3312} \\ &&& c_{2323} & c_{2313} & c_{2312} \\ &\text{sym}&&& c_{1313} & c_{1312} \\ &&&&& c_{1212} \end{bmatrix} \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ 2\epsilon_{23} \\ 2\epsilon_{13} \\ 2\epsilon_{12} \end{bmatrix} $$
+voigt notation을 이용하여 행렬로 나타내면 다음과 같다.
+$$ \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{23} \\ \sigma_{13} \\ \sigma_{12} \end{bmatrix} =  \begin{bmatrix} c_{1111} & c_{1122} & c_{1133} & c_{1123} & c_{1113} & c_{1112} \\ & c_{2222} & c_{2233} & c_{2223} & c_{2213} & c_{2212} \\ && c_{3333} & c_{3323} & c_{3313} & c_{3312} \\ &&& c_{2323} & c_{2313} & c_{2312} \\ &\text{sym}&&& c_{1313} & c_{1312} \\ &&&&& c_{1212} \end{bmatrix} \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ 2\epsilon_{23} \\ 2\epsilon_{13} \\ 2\epsilon_{12} \end{bmatrix} $$
 
 # Isotropic Linear Elastic Solid
 특정 방향에 따라 물성치가 변하지 않을 때 `등방성(isotropic)`재료라고 한다. 
@@ -79,10 +79,10 @@ $$ \text{Where, } 2\mu = \alpha + \beta \quad\tiny\blacksquare $$
 $\epsilon$이 무차원 변수임으로 Lame's constant는 응력과 동일한 차원을 갖는다.
 
 #### 참고2
-vognit notation을 이용하여 행렬로 나타내면 다음과 같다.
-$$ \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{12} \\ \sigma_{23} \\ \sigma_{31} \end{bmatrix} =  \begin{bmatrix} c_1 & c_2 & c_2 & & & \\ c_2 & c_1 & c_2 &&& \\ c_2 & c_2 & c_1 &&& \\ &&& c_3 && \\ &&&& c_3 & \\ &&&&& c_3 \end{bmatrix} \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ \epsilon_{12} \\ \epsilon_{23} \\ \epsilon_{31} \end{bmatrix} $$
+voigt notation을 이용하여 행렬로 나타내면 다음과 같다.
+$$ \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{23} \\ \sigma_{13} \\ \sigma_{12} \end{bmatrix} = \begin{bmatrix} c_1 & c_2 & c_2 &&& \\ & c_1 & c_2 &&0& \\ && c_1 &&& \\ &&& c_3 && \\ &\text{sym}&&& c_3 & \\ &&&&& c_3 \end{bmatrix} \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ 2\epsilon_{23} \\ 2\epsilon_{13} \\ 2\epsilon_{12} \end{bmatrix} $$
 
-$$ \begin{aligned} \text{Where, } c_1 &= 2\mu + \lambda \\ c_2 &= \lambda \\ c_3 &= 2\mu \end{aligned}  $$
+$$ \begin{aligned} \text{Where, } c_1 &= 2\mu + \lambda \\ c_2 &= \lambda \\ c_3 &= \mu \end{aligned}  $$
 
 ### 명제2
 Isotropic linear elastic solid일 때, 다음을 증명하여라.
@@ -97,10 +97,10 @@ $$ \begin{aligned} \sigma_{kk} &= (3\lambda + 2\mu) \epsilon_{kk} \\ \Rightarrow
 $$ \begin{aligned} & \sigma_{ij} = \lambda \epsilon_{kk}\delta_{ij} + 2\mu\epsilon_{ij} \\ \Rightarrow\enspace& \sigma_{ij} = \lambda\frac{\sigma_{kk}}{3\lambda + 2\mu}\delta_{ij} + 2\mu\epsilon_{ij} \\ \Rightarrow\enspace& \epsilon_{ij} = \frac{1}{2\mu} \left( \sigma_{ij} - \frac{\lambda}{3\lambda + 2\mu}\sigma_{kk}\delta_{ij} \right) \quad\tiny\blacksquare \end{aligned} $$
 
 #### 참고
-vognit notation을 이용하여 행렬로 나타내면 다음과 같다.
-$$ \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ \epsilon_{12} \\ \epsilon_{23} \\ \epsilon_{31} \end{bmatrix} =  \begin{bmatrix} c_1 & c_2 & c_2 & & & \\ c_2 & c_1 & c_2 &&& \\ c_2 & c_2 & c_1 &&& \\ &&& c_3 && \\ &&&& c_3 & \\ &&&&& c_3 \end{bmatrix} \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{12} \\ \sigma_{23} \\ \sigma_{31} \end{bmatrix} $$
+voigt notation을 이용하여 행렬로 나타내면 다음과 같다.
+$$ \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ 2\epsilon_{23} \\ 2\epsilon_{13} \\ 2\epsilon_{12} \end{bmatrix} = \begin{bmatrix} c_1 & c_2 & c_2 &&& \\ & c_1 & c_2 &&0& \\ && c_1 &&& \\ &&& c_3 && \\ &\text{sym}&&& c_3 & \\ &&&&& c_3 \end{bmatrix} \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{23} \\ \sigma_{13} \\ \sigma_{12} \end{bmatrix} $$
 
-$$ \begin{aligned} \text{Where, } c_1 &= \frac{1}{2\mu} \bigg( 1-\frac{\lambda}{3\lambda + 2\mu} \bigg) = \frac{\lambda + \mu}{\mu(3\lambda + 2\mu)} \\ c_2 &= -\frac{\lambda}{2\mu(3\lambda + 2\mu)} \\ c_3 &= \frac{1}{2\mu} \end{aligned}  $$
+$$ \begin{aligned} \text{Where, } c_1 &= \frac{1}{2\mu} \bigg( 1-\frac{\lambda}{3\lambda + 2\mu} \bigg) = \frac{\lambda + \mu}{\mu(3\lambda + 2\mu)} \\ c_2 &= -\frac{\lambda}{2\mu(3\lambda + 2\mu)} \\ c_3 &= \frac{1}{\mu} \end{aligned} $$
 
 > Reference  
 > [book] (Lai et al) Introduction to Continuum Mechanics Chap5.3
@@ -197,10 +197,10 @@ $$ \sigma_{ij} = \frac{E}{(1-2\nu)(1 + \nu)} ((1-2\nu)\epsilon_{ij} + \nu\epsilo
 $$ \begin{aligned} \sigma_{ij} &= \lambda \epsilon_{kk} \delta_{ij} + 2\mu\epsilon_{ij} \\&= \frac{\nu E}{(1 - 2\nu)(1 + \nu)} \epsilon_{kk}\delta_{ij} + \frac{E}{1 + \nu} \epsilon_{ij} \\&= \frac{E}{(1-2\nu)(1 + \nu)} ((1-2\nu)\epsilon_{ij} + \nu\epsilon_{kk}\delta_{ij}) \quad\tiny\blacksquare \end{aligned} $$
 
 ##### 참고
-vognit notation을 이용하여 행렬로 나타내면 다음과 같다.
-$$ \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{12} \\ \sigma_{23} \\ \sigma_{31} \end{bmatrix} =  \begin{bmatrix} c_1 & c_2 & c_2 & & & \\ c_2 & c_1 & c_2 &&& \\ c_2 & c_2 & c_1 &&& \\ &&& c_3 && \\ &&&& c_3 & \\ &&&&& c_3 \end{bmatrix} \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ \epsilon_{12} \\ \epsilon_{23} \\ \epsilon_{31} \end{bmatrix} $$
+voigt notation을 이용하여 행렬로 나타내면 다음과 같다.
+$$ \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{23} \\ \sigma_{13} \\ \sigma_{12} \end{bmatrix} = \begin{bmatrix} c_1 & c_2 & c_2 &&& \\ & c_1 & c_2 &&0& \\ && c_1 &&& \\ &&& c_3 && \\ &\text{sym}&&& c_3 & \\ &&&&& c_3 \end{bmatrix} \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ 2\epsilon_{23} \\ 2\epsilon_{13} \\ 2\epsilon_{12} \end{bmatrix} $$
 
-$$ \begin{aligned} \text{Where, } c_1 &= \frac{E(1 - \nu)}{(1-2\nu)(1 + \nu)} \\ c_2 &= \frac{E\nu}{(1-2\nu)(1 + \nu)} \\ c_3 &= \frac{E}{1 + \nu} \end{aligned}  $$
+$$ \begin{aligned} \text{Where, } c_1 &= \frac{E(1 - \nu)}{(1-2\nu)(1 + \nu)} \\ c_2 &= \frac{E\nu}{(1-2\nu)(1 + \nu)} \\ c_3 &= \frac{E}{2(1 + \nu)} \end{aligned}  $$
 
 #### 명제6.2
 다음을 증명하여라.
@@ -212,10 +212,10 @@ $$ \epsilon_{ij} = \frac{1}{E} \Big( (1 + \nu) \sigma_{ij} - \nu\sigma_{kk}\delt
 $$ \begin{aligned} \epsilon_{ij} &= \frac{1}{2\mu} \left( \sigma_{ij} - \frac{\lambda}{3\lambda + 2\mu}\sigma_{kk}\delta_{ij} \right) \\ &=  \frac{\lambda + \mu}{\mu(3\lambda + 2\mu)} \left( \frac{3\lambda + 2\mu}{2(\lambda + \mu)} \sigma_{ij} - \frac{\lambda}{2(\lambda + \mu)}\sigma_{kk}\delta_{ij} \right) \\ &= \frac{1}{E} \left( \frac{E}{2\mu} \sigma_{ij} - \nu\sigma_{kk}\delta_{ij} \right) \\ &= \frac{1}{E} \Big( (1 + \nu) \sigma_{ij} - \nu\sigma_{kk}\delta_{ij} \Big) \end{aligned} $$
 
 ##### 참고
-vognit notation을 이용하여 행렬로 나타내면 다음과 같다.
-$$ \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ \epsilon_{12} \\ \epsilon_{23} \\ \epsilon_{31} \end{bmatrix} =  \begin{bmatrix} c_1 & c_2 & c_2 & & & \\ c_2 & c_1 & c_2 &&& \\ c_2 & c_2 & c_1 &&& \\ &&& c_3 && \\ &&&& c_3 & \\ &&&&& c_3 \end{bmatrix} \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{12} \\ \sigma_{23} \\ \sigma_{31} \end{bmatrix} $$
+voigt notation을 이용하여 행렬로 나타내면 다음과 같다.
+$$ \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ 2\epsilon_{23} \\ 2\epsilon_{13} \\ 2\epsilon_{12} \end{bmatrix} = \begin{bmatrix} c_1 & c_2 & c_2 &&& \\ & c_1 & c_2 &&0& \\ && c_1 &&& \\ &&& c_3 && \\ &\text{sym}&&& c_3 & \\ &&&&& c_3 \end{bmatrix} \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{23} \\ \sigma_{13} \\ \sigma_{12} \end{bmatrix} $$
 
-$$ \begin{aligned} \text{Where, } c_1 &= \frac{1}{E} \\ c_2 &= -\frac{\nu}{E} \\ c_3 &= \frac{1 + \nu}{E} \end{aligned}  $$
+$$ \begin{aligned} \text{Where, } c_1 &= \frac{1}{E} \\ c_2 &= -\frac{\nu}{E} \\ c_3 &= \frac{2(1 + \nu)}{E} \end{aligned}  $$
 
 
 #### 명제6.3
@@ -231,10 +231,10 @@ $$ \begin{aligned} \sigma_{ij} &= \lambda \epsilon_{kk} \delta_{ij} + 2\mu\epsil
 > [book] (Lai et al) Introduction to Continuum Mechanics Table 5.1
 
 ##### 참고
-vognit notation을 이용하여 행렬로 나타내면 다음과 같다.
-$$ \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{12} \\ \sigma_{23} \\ \sigma_{31} \end{bmatrix} =  \begin{bmatrix} c_1 & c_2 & c_2 & & & \\ c_2 & c_1 & c_2 &&& \\ c_2 & c_2 & c_1 &&& \\ &&& c_3 && \\ &&&& c_3 & \\ &&&&& c_3 \end{bmatrix} \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ \epsilon_{12} \\ \epsilon_{23} \\ \epsilon_{31} \end{bmatrix} $$
+voigt notation을 이용하여 행렬로 나타내면 다음과 같다.
+$$ \begin{bmatrix} \sigma_{11} \\ \sigma_{22} \\ \sigma_{33} \\ \sigma_{23} \\ \sigma_{13} \\ \sigma_{12} \end{bmatrix} = \begin{bmatrix} c_1 & c_2 & c_2 &&& \\ & c_1 & c_2 &&0& \\ && c_1 &&& \\ &&& c_3 && \\ &\text{sym}&&& c_3 & \\ &&&&& c_3 \end{bmatrix} \begin{bmatrix} \epsilon_{11} \\ \epsilon_{22} \\ \epsilon_{33} \\ 2\epsilon_{23} \\ 2\epsilon_{13} \\ 2\epsilon_{12} \end{bmatrix} $$
 
-$$ \begin{aligned} \text{Where, } c_1 &= k + \frac{4}{3}\mu \\ c_2 &= k - \frac{2}{3}\mu \\ c_3 &= 2\mu \end{aligned}  $$
+$$ \begin{aligned} \text{Where, } c_1 &= k + \frac{4}{3}\mu \\ c_2 &= k - \frac{2}{3}\mu \\ c_3 &= \mu \end{aligned}  $$
 
 ##### 참고2
 다음과 같이 형태를 변형할 수 있다.
@@ -248,4 +248,5 @@ $$ \begin{aligned} \sigma_{ij} &= (k - \frac{2}{3}\mu)\epsilon_{kk}\delta_{ij} +
 
 > 참고  
 [Navier-Stokes equation - Wiki](https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations)  
+
 
