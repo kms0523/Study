@@ -74,7 +74,7 @@ $$ \exist \text{ disjoint } \mathcal N_x, \mathcal N_y \text{ on } X $$
 $X$가 Hausdorff space라고 하자.
 
 이 떄, 다음을 증명하여라.
-$$ \text{Every finite subset of } X \text{ is closed} $$
+$$ \text{one point set on } X \text{ is closed} $$
 
 **Proof**
 
@@ -83,8 +83,67 @@ $x \in X$라 하자.
 $X$가 Hausdorff space이기 때문에 $\forall y \in X - \{x\}$에 대해 다음이 성립한다.
 $$ \exist \text{ disjoint } \mathcal{N_x},\mathcal{N_y} \text{ on } X $$
 
-즉, $\forall y \in X - \{x\}$에 대해 $X - \{x\}$의 subset인 $\mathcal{N_y}$가 존재함으로 closed set의 성질에 의해 $\{x\}$는 closed set이다.
+즉, $\forall y \in X - \{x\}$에 대해 $X - \{x\}$의 subset인 $\mathcal{N_y}$가 존재함으로 closed set의 성질에 의해 $\{x\}$는 $X$의 closed set이다. $\quad\tiny\blacksquare$
+
+### 명제5
+$X$가 Hausdorff space라고 하자.
+
+이 떄, 다음을 증명하여라.
+$$ \text{Every finite subset of } X \text{ is closed} $$
+
+**Proof**
+
+$x \in X$라 하자.
+
+명제4에 의해 $\{x\}$는 closed set이다.
+
+closed set의 성질에 의해 다음이 성립한다.
+$$ \text{finite union of closed sets are closed.} $$
+
+이 떄, $X$의 finite subset은 단일 원소 집합의 finite union으로 구성되어 있음으로 closed이다. $\quad\tiny\blacksquare$
+
+### 명제6
+Hausdorff space $X$가 있다고 하자. 
+
+$X$위의 sequence $s$가 있을 때, 다음을 증명하여라.
+$$ s \text{ can converge to at most one point in } X $$
+
+**Proof**
+
+$s$가 서로 다른 $x,y \in X$에 수렴한다고 하자.
+
+수렴에 정의에 의해 다음이 성립한다.
+$$ \begin{aligned} \exist N_x \quad s.t. \quad \forall \mathcal N_x \quad s(N_x) \in \mathcal N_x \\ \exist N_y \quad s.t. \quad \forall \mathcal N_y \quad s(N_y) \in \mathcal N_y \end{aligned} $$
+
+$N = \max(N_x,N_y)$라 하면 모든 $\mathcal N_x,\mathcal N_y$에 대해 다음이 성립한다.
+$$ s(N) \in \mathcal N_x \cap \mathcal N_y $$
+
+하지만 $X$가 Hausdorff space임으로 다음이 성립한다.
+$$ \exist \text{ disjoint } \mathcal{N_x},\mathcal{N_y} \text{ on } X $$
+
+따라서, $s$가 $\empty$에 수렴하는 모순이 발생함으로 proof by contradiction에 의해 $x=y$이다. $\quad\tiny\blacksquare$
+
+### 명제7
+Finite set $X$가 있을 떄, 다음을 증명하여라.
+$$ \text{Hausdorff topology on } X \text{ is a discrete topology} $$
+
+**Proof**
+
+$X$가 Hausdorff space라고 하자.
+
+$X$의 subset $U$에 대해 $|X - U| = N$이고 $x_i \in X - U$라 하자.
+
+$X$가 finite set이기 때문에 다음이 성립한다.
+$$ U = X - \bigcup_{i=1}^N \{x_i\} $$
+
+$X$가 Hausdorff space임으로 명제4에 의해 $\{x_i\}$는 $X$의 closed set이고 closed set의 성질에 의해 다음이 성립한다.
+$$ \bigcup_{i=1}^N \{x_i\} \text{ is closed set on } X $$
+
+따라서, closed set의 성질에 의해 $U$는 $X$의 open set이다.
+
+임의의 subset $U$가 open set임으로 $X$는 discrete topology를 갖는다. $\quad\tiny\blacksquare$
 
 
 
-
+> Reference  
+> [Stackexchange math](https://math.stackexchange.com/questions/1567152/a-finite-hausdorff-space-is-discrete)

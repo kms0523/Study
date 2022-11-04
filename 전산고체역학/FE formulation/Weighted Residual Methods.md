@@ -52,7 +52,7 @@ Test function space을 $\mathcal W_h$로 축소함으로써 $n$개의 `기저함
 이 어려움을 해결하기 위해 이번에는 solution function space를 유한차원 함수공간인 $\cal U_h < U$로 축소하자.
 
 이 떄, 명제2에 따라 $\mathcal U_h := \phi + \text{span}(\{ u_1, \cdots, u_k \})$로 축소하면 식(4)는 다음과 같이 간단해진다.
-$$ \begin{equation} \begin{aligned} & \text{find } u \in \mathcal U_h \quad s.t. \quad B_r(w_i,u) = l_r(w_i), \enspace (i = 1,\cdots,n) \\ \Leftrightarrow \enspace & \text{find } \mathbf a \in \R^k \quad s.t. \quad B_r(w_i,\phi + a_j \mu_j) = l_r(w_i), \quad (i = 1,\cdots,n, \enspace j = 1,\cdots,k) \end{aligned} \end{equation} $$
+$$ \begin{equation} \begin{aligned} & \text{find } u \in \mathcal U_h \quad s.t. \quad B_r(w_i,u) = l_r(w_i), \enspace (i = 1,\cdots,n) \\ \Leftrightarrow \enspace & \text{find } \mathbf a \in \R^k \quad s.t. \quad B_r(w_i,\phi + a_j u_j) = l_r(w_i), \quad (i = 1,\cdots,n, \enspace j = 1,\cdots,k) \end{aligned} \end{equation} $$
 
 이 때, 주의할 점은 탐색하는 공간을 축소하였기 때문에 식(5)는 더 이상 식(1)과 동치가 아니다.
 

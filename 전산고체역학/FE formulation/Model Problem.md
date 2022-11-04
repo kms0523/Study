@@ -6,60 +6,25 @@ $$ \text{Where, } \mathcal U_s := \{ u \in C^2(\Omega) \enspace | \enspace u(0) 
 exact solution은 $u = 2e^{x^2}$이다.
 
 ## Weighted residual formulation
-$$ \text{find } u \in \mathcal U_s \quad s.t. \quad \forall w \in C^\infty(\Omega), \quad B(w,u) = 0  $$
+$$ \text{find } a \in \R^k \quad s.t. \quad B(w_i,\phi + a_ju_j) = 0 $$
 
-$$ \begin{gathered} \text{Where, } B(w,u) := \int_\Omega w \bigg( \frac{du}{dx} -2xu \bigg) \thinspace dV \end{gathered} $$
-
-### Weighted residual method
-$B$가 bi-linear 임으로
-$$ \text{find } a \in \mathcal \R^n \quad s.t. \quad B(w_i,u_j) a_j = - B(w_i, \phi) \quad (i = 1,\cdots,n \enspace j = 1,\cdots,k) $$
-
-$$ \begin{aligned} \text{Where, }  w_i &\in C^\infty(\Omega) \\ \phi &\in \mathcal U_s , \\ u_i &\in \{ u \in C^2(\Omega) \enspace | \enspace u(0) = 0 \} \end{aligned}  $$
-
-행렬식으로 나타내면
-$$ \begin{bmatrix} B(w_1,u_1) & \cdots & B(w_1,u_n) \\ \vdots & \ddots & \vdots \\ B(w_n,u_1) & \cdots & B(w_n,u_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \begin{bmatrix} - B(w_1, \phi) \\ \vdots \\ - B(w_n, \phi) \end{bmatrix} $$
-
-
-
-#### Galerkin method
-$n = 1$이고 $\phi = 2, \enspace \mu_1 = x$라 하자.
-
-$u_h = 2 + 16/9x$
+$$ \begin{aligned} \text{Where, } & i = 1,\cdots,n, \enspace j = 1,\cdots,k \\& \phi \in \mathcal{U}_s \\& u_i \in \{ u \in C^1(\Omega) \enspace | \enspace u=0 \text{ on } \partial\Omega \}  \\& B(w,u) := \int_\Omega w \bigg( \frac{du}{dx} -2xu \bigg) \thinspace dV \end{aligned} $$
 
 ## Weak formulation
-$$ \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in C^\infty(\Omega), \quad B(w,u) = 0  $$
+$$ \text{find } a \in \R^k \quad s.t. \quad B(w_i,\phi + a_ju_j) = 0 $$
 
-$$ \begin{gathered} \text{Where, } \mathcal U_W := \{ u \in C^0(\Omega) \enspace | \enspace u(0) = 2 \} \\ B(w,u) := wu \Big|_0^2 - \int_\Omega \bigg( \frac{dw}{dx} -2xw \bigg) u \thinspace dV \end{gathered} $$
+$$ \begin{aligned} \text{Where, } & i = 1,\cdots,n, \enspace j = 1,\cdots,k \\& \phi \in \{ u \in C^0(\Omega) \enspace | \enspace u \text{ staisfy essential BC } \} \\& u_i \in \{ u \in C^0(\Omega) \enspace | \enspace u=0 \text{ on } \partial\Omega_E \}  \\& B(w,u) := wu \Big|_0^2 - \int_\Omega \bigg( \frac{dw}{dx} + 2xw \bigg) u \thinspace dV \\&  \end{aligned} $$
 
-Boundary condition은 solution space를 통해 강하게 부여된다.
-
-### Weak method
-$$ \text{find } a \in \mathcal \R^n \quad s.t. \quad B(w_i, \phi + a_j\mu_j) = 0, \enspace i = 1, \cdots, n $$
-
-$$ \begin{gathered} \text{Where, } w_i \in C^\infty(\Omega), \quad \phi \in \mathcal U_W , \\ \mu_i \in \{ \mu \in C^0(\Omega) \enspace | \enspace u(0) = 0 \} \end{gathered}  $$
-
+## Matrix form
 $B$가 bi-linear 임으로
-$$ \text{find } a \in \mathcal \R^n \quad s.t. \quad B(w_i,\mu_j) a_j = - B(w_i, \phi) \enspace i = 1, \cdots, n $$
+$$ \text{find } a \in \mathcal \R^k \quad s.t. \quad a_jB(w_i,u_j) = - B(w_i, \phi) $$
 
 행렬식으로 나타내면
-$$ \begin{bmatrix} B(w_1,\mu_1) & \cdots & B(w_1,\mu_n) \\ \vdots & \ddots & \vdots \\ B(w_n,\mu_1) & \cdots & B(w_n,\mu_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \begin{bmatrix} - B(w_1, \phi) \\ \vdots \\ - B(w_n, \phi) \end{bmatrix} $$
+$$ \begin{bmatrix} B(w_1,u_1) & \cdots & B(w_1,u_n) \\ \vdots & \ddots & \vdots \\ B(w_n,u_1) & \cdots & B(w_n,u_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \begin{bmatrix} b - B(w_1, \phi) \\ \vdots \\ b - B(w_n, \phi) \end{bmatrix} $$
 
-#### Galerkin method
-$n = 1$이고 $\phi = 2, \enspace \mu_1 = x$라 하자.
-
-$a_1 = 16/9$
-
-
-
-
-
-
-
-
-
-
-
-
+## 참고
+* WRF_Galerkin method의 경우 $\phi = 2, \enspace u_i = x^i$라 하면 $n=7$정도 되면 비슷함
+* WRF_Galerkin method랑 WF_Galerkin method랑 같은 결과가 나옴
 
 # Model Problem2
 $$ \text{find } u \in \mathcal U_s \quad s.t. \quad \frac{d^2u}{dx^2} = 0 \quad \text{in} \enspace \Omega := [0,2] \subset \R $$
@@ -118,6 +83,7 @@ exact solution은 $u = x - 1$이다.
 
 > 참고  
 > [book] (Kelly) An Introduction to the FEM chapter 2.3.1
+
 
 ## Weak formulation1
 $$ \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in C^\infty(\Omega), \quad B(w,u) = l(w) $$
@@ -204,120 +170,26 @@ exact solution은 $u = 1 + 3x - 0.5x^2$이다.
 > 참고  
 > [book] (Kelly) An Introduction to the FEM chapter 2.3.2
 
-## Weak formulation1
-$$ \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in C^\infty(\Omega), \quad B(w,u) = l(w) $$
-
-$$ \begin{gathered} \text{Where, } \mathcal U_W := \{ u \in C^1(\Omega) \enspace | \enspace u(0) = 1 \} \\ B(w,u) := \int_\Omega \frac{dw}{dx}\frac{du}{dx} \thinspace dV, \quad  l(w) := \int_\Omega w \thinspace dV + w\frac{du}{dx} \bigg |^{2}_{x=0} \end{gathered} $$
-
-### method3
-$B$가 bi-linear 임으로
-$$ \text{find } a \in \mathcal \R^n \quad s.t. \quad B(w_i,\mu_j) a_j = l(w_i) \enspace i = 1, \cdots, n $$
-
-행렬식으로 나타내면
-$$ \begin{bmatrix} B(w_1,\mu_1) & \cdots & B(w_1,\mu_n) \\ \vdots & \ddots & \vdots \\ B(w_n,\mu_1) & \cdots & B(w_n,\mu_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \begin{bmatrix} l(w_1) \\ \vdots \\ l(w_n) \end{bmatrix} $$
-
-#### Galerkin Method1
-$n = 2, \enspace \mu_i = x^{i-1}$라 하자.
-
-행렬식은 다음과 같다.
-$$ \begin{bmatrix} 0 & 0 \\ 0 & 2 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} 3 - u'(0) \\ 4 \end{bmatrix} $$
-
-essential BC를 적용하면 다음과 같다.
-$$ a_1 = 1 $$
-$$ u_h = 2x +1 $$
-
-#### Galerkin Method2
-$n = 2, \enspace \mu_i = (x - 2)^{i-1}$라 하자.
-
-행렬식은 다음과 같다.
-$$ \begin{bmatrix} 0 & 0 \\ 0 & 2 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} 3 - u'(0) \\ -2 +2u'(0) \end{bmatrix} $$
-
-essential BC를 적용하면 다음과 같다.
-$$ a_1 - 2a_2 = 1 $$
-
-$$ u_h = 2(x-2) + 5 = 2x + 1 $$
-
-#### approx3
-$n = 2, \enspace \mu_i = (x - 1)^{i-1}$라 하자.
-
-행렬식은 다음과 같다.
-$$ \begin{bmatrix} 0 & 0 \\ 0 & 2 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} 3 - u'(0) \\ 1 + u'(0) \end{bmatrix} $$
-
-essential BC를 적용하면 다음과 같다.
-$$ a_1 - a_2 = 1 $$
-
-$$ u_h = 2(x-1) + 3 = 2x + 1 $$
-
-## Weak formulation2
-$$ \begin{equation} \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in \mathcal W, \quad B(w,v) = l(w) \end{equation} $$
-
-$$ \begin{gathered} \text{Where, } \mathcal U_W := \{ u \in C^1(\Omega) \enspace | \enspace u(0) = 1 \} \\ \mathcal W := \{ w \in C^\infty(\Omega) \enspace | \enspace w(0) = 0 \} \\ B(w,u) := \int_\Omega \frac{du}{dx}\frac{dw}{dx} \thinspace dV, \quad l(w) := \int_\Omega w \thinspace dV + w(2) \end{gathered} $$
-
-### Ritz method
-$B$가 bilinear 임으로
-$$ \text{find } \mathbf a \in \R^n \quad s.t. \quad B(\mu_i,  \mu_j) a_j = l(\mu_i) \quad i = 1, \cdots, n $$
-
-행렬식으로 나타내면
-$$ \begin{bmatrix} B(\mu_1,\mu_1) & \cdots & B(\mu_1,\mu_n) \\ \vdots & \ddots & \vdots \\ B(\mu_n,\mu_1) & \cdots & B(\mu_n,\mu_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \begin{bmatrix} l(\mu_1) \\ \vdots \\ l(\mu_n) \end{bmatrix} $$
-
-#### approx1
-$n=2, \mu_1 = 1, \mu_2 = x$라 하자.
-
-행렬식은 다음과 같다.
-$$ \begin{bmatrix} 0 & 0 \\ 0 & 2 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} 3 \\ 4 \end{bmatrix} $$
-
-essential BC를 적용하면 다음과 같다.
-$$ a_1 = 1 $$
-$$ u_h = 2x + 1 $$
-
-#### approx2
-$\mu_1 = 1, \mu_2 = x - 2$라 하자.
-
-행렬식은 다음과 같다.
-$$ \begin{bmatrix} 0 & 0 \\ 0 & 2 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} 3 \\ -2 \end{bmatrix} $$
-
-essential BC를 적용하면 다음과 같다.
-$$ a_1 - 2 a_2 = 1 $$
-$$ u_h = -(x-2) - 1 = -x +1 $$
-
-#### approx3
-$\mu_1 = 1, \mu_2 = x - 1$라 하자.
-
-행렬식은 다음과 같다.
-$$ \begin{bmatrix} 0 & 0 \\ 0 & 2 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} 3 \\ 1 \end{bmatrix} $$
-
-essential BC를 적용하면 다음과 같다.
-$$ a_1 - a_2 = 1 $$
-$$ u_h = 1/2(x-1) + 3/2 = 1/2x +1 $$
-
 ## Weighted residual formulation
-$$ \text{find } u \in \mathcal U_s \quad s.t. \quad \forall w \in C^\infty(\Omega), \quad \int_\Omega w \bigg( \frac{d^2u}{dx^2} + 1 \bigg) \thinspace dV = 0 $$
+$$ \text{find } a \in \R^k \quad s.t. \quad B(w_i,\phi + a_ju_j) = l(w_i) $$
+
+$$ \begin{aligned} \text{Where, } & i = 1,\cdots,n, \enspace j = 1,\cdots,k \\& \phi \in \mathcal{U}_s \\& u_i \in \{ u \in C^2(\Omega) \enspace | \enspace u=0 \text{ on } \partial\Omega_E, \enspace u'(2) = 0 \}  \\& B(w,u) := \int_\Omega w \bigg( \frac{d^2u}{dx^2}\bigg) \thinspace dV \\& l(w) := -\int_\Omega w \thinspace dV\end{aligned} $$
 
 ## Weak formulation
-$$ \begin{equation} \text{find } u \in \mathcal U_W \quad s.t. \quad \forall w \in C^\infty(\Omega), \quad B(w,u) = l(w) \end{equation} $$
+$$ \text{find } a \in \R^k \quad s.t. \quad B(w_i,\phi + a_ju_j) = 0 $$
 
-$$ \begin{gathered} \text{Where, } B : C^\infty \times \mathcal U_W \rightarrow \R \quad s.t. \quad (w,u) \mapsto \int_\Omega \frac{dw}{dx}\frac{du}{dx} \thinspace dV + w\frac{du}{dx} \bigg |_{x=0} \\ l : C^\infty \rightarrow \R \quad s.t. \quad w \mapsto w(2) + \int_\Omega w \thinspace dV \\ \mathcal U_W := \{ u \in C^1(\Omega) \enspace | \enspace u(0) = 1 \} \end{gathered} $$
+$$ \begin{aligned} \text{Where, } & i = 1,\cdots,n, \enspace j = 1,\cdots,k \\& \exist w_i \quad s.t. \quad w(2) \neq 0 \\& \phi \in \{ u \in C^1(\Omega) \enspace | \enspace u \text{ staisfy essential BC } \} \\& u_i \in \{ u \in C^1(\Omega) \enspace | \enspace u=0 \text{ on } \partial\Omega_E \} \\& B(w,u) := \int_\Omega \frac{dw}{dx}\frac{du}{dx} \thinspace dV \\& l(w) := \int_\Omega w \thinspace dV + w\frac{du}{dx} \bigg |_{x=2} \end{aligned} $$
 
-$\mathcal U_W$는 $\mathcal U_s$에서 regularity를 약화시키고, natural BC가 equation에 impose 되어 있음으로 natural BC 조건을 배제한 공간이다.
+## Matrix form
+$B$가 bi-linear 임으로
+$$ \text{find } a \in \mathcal \R^k \quad s.t. \quad a_jB(w_i,u_j) = l(w_i) - B(w_i, \phi) $$
 
-### Ritz method
-$u \approx a_i\mu_i$이고 Bodunov-Galerkin method를 적용하고 행렬식으로 나타내면
-$$ \begin{bmatrix} B(\mu_1,\mu_1) & \cdots & B(\mu_1,\mu_n) \\ \vdots & \ddots & \vdots \\ B(\mu_n,\mu_1) & \cdots & B(\mu_n,\mu_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \begin{bmatrix} l(\mu_1) \\ \vdots \\ l(\mu_n) \end{bmatrix} $$
+행렬식으로 나타내면
+$$ \begin{bmatrix} B(w_1,u_1) & \cdots & B(w_1,u_n) \\ \vdots & \ddots & \vdots \\ B(w_n,u_1) & \cdots & B(w_n,u_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \begin{bmatrix} l(w_1) - B(w_1, \phi) \\ \vdots \\ l(w_n) - B(w_n, \phi) \end{bmatrix} $$
 
-#### approx1
-$\mu_1 = 1, \mu_2 = x$라 하자.
-
-행렬식은 다음과 같다.
-$$ \begin{bmatrix} 0 & 1 \\ 0 & 2 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} 3 \\ 6 \end{bmatrix} $$
-
-essential BC를 적용하면 다음과 같다.
-$$ a_1 = 1 $$
-
-결과가 $u_h = 3x + 1$인데, 이러면 natural BC를 만족하지 않음...
-
-
-
-
+## 참고
+* WF_Galerkin method에서 $n=1, \enspace \phi=1, \enspace u_1 = x$로 하면 natural BC를 만족하지 않는것을 알 수 있다. 즉, natural BC가 식에 포함된 형태로 약하게 적용되어있기 때문에 solution space가 충분히 크지 않을 경우 natural BC를 만족하지 않을 수 있다.
+* WF_Galerkin method에서 $n=2, \enspace \phi=1, \enspace u_i = x^i$로 하면 exact solution을 얻는다.
 
 # Model Problem5
 $$ \text{find } u \in \mathcal U_s \quad s.t. \quad \frac{d^2u}{dx^2} + u -1 = 0 \quad \text{in} \enspace \Omega := [0,1] \subset \R $$
@@ -467,17 +339,6 @@ $$ 2a_1 + 4a_2 = 5 $$
 
 행렬식은 다음과 같다.
 $$ \begin{bmatrix} 2 &  16/3 \\ 4 & 196/15 \end{bmatrix} \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix} $$
-
-
-
-
-
----
----
----
----
----
-
 
 # Model Problem8
 $$ \text{find } u \in \mathcal U_s \quad s.t. \quad \frac{d}{dx} \bigg( e^x \frac{du}{dx} \bigg) - \sin x  = 0 \quad \text{in} \enspace \Omega := [0,\pi / 2] \subset \R $$
