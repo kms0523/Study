@@ -122,6 +122,50 @@ open set의 정의상, $x \in \empty$에 대해 open ball을 고려해야 되는
 
 따라서, 가정이 항상 거짓인 `공허하게 참인 명제(vacuously true statement)`가 된다.$\quad {_\blacksquare}$
 
+### 명제6
+Metric space $M$이 있다고 하자.
+
+이 떄, 다음을 증명하여라.
+$$ \text{open ball in } M \text{ is an open set of } M$$
+
+**Proof**  
+$x \in M, r \in \R^+$이 있다고 하자.
+
+$y \in B_M(x,r)$에 대해 $B_M(y,\epsilon)$을 고려해보자.
+
+$\forall z \in B_M(y, \epsilon)$이 있을 떄, 다음이 성립한다.
+$$ d(x,z) < d(x,y) + \epsilon $$
+
+이 떄, $\epsilon \le r - d(x,y)$면 다음이 성립한다.
+$$ d(x,z) < r $$
+
+따라서 다음이 성립한다.
+$$ B_M(y,\epsilon) \le B_M(x,r) $$
+
+이를 정리하면 다음과 같다.
+$$ \forall y \in B_M(x,r) \quad \exist\epsilon \in \R^+ \quad s.t. \quad B_M(y,r) \le B_M(x,r) $$
+
+open set의 정의에 의해 $B_M(x,r)$은 $M$의 open set이다. $\quad\tiny\blacksquare$
+
+### 명제7
+Metric space $M$이 있다고 하자.
+
+$M$의 subset $U$가 있을 때, 다음을 증명하여라.
+$$ U \text{ is an open set} \iff U \text{ is an union of some collection of open balls} $$
+
+**Proof**
+
+[$\implies$]  
+$U$의 정의에 의해 다음이 성립한다.
+$$ \forall x \in U, \quad \exist r_x \in \R^+ \quad s.t. \quad B_M(x,r_x) \le S $$
+
+따라서, 다음이 성립한다.
+$$ U = \bigcup_{x \in U} B_M(x,r_x) \quad\tiny\blacksquare $$
+
+[$\impliedby$]  
+명제6에 의해 open ball은 open set이다.
+
+open set의 성질에 의해 open set의 union은 open set이 된다. $\quad\tiny\blacksquare$
 
 ### 참고
 명제1,2,4,5을 만족하는 집합족의 원소를 open set으로 정의할 경우 거리가 정의되어 있지 않은 공간에서도 open set과 closed set을 정의할 수 있다.
