@@ -135,7 +135,7 @@ $\text{span}(v)^\perp$의 임의의 기저를 $\gamma = \{ \gamma_1, \cdots, \ga
 $$ \beta = \{ \gamma_1, \cdots, \gamma_{n-1}, v \}$$ 
 
 이 때, 보조명제에 의해서 $\text{span}(v)^\perp$는 $T$ invariant임으로 다음이 성립한다.
-$$ \frak m_{\beta}^{\beta}(T) = \begin{bmatrix} \begin{array}{c | c} \frak m_\gamma^\gamma(T|_{\text{span}(v)^\perp}) & a_1 \\ & \vdots \\ \hline 0 & a_n \end{array} \end{bmatrix} $$
+$$ \frak m_{\beta}^{\beta}(T) = \begin{bmatrix} \begin{array}{c | c} \frak m_\gamma^\gamma(T|_{\text{span}(v)^\perp}) & \begin{matrix} a_1 \\ \vdots \end{matrix} \\ \hline 0 & a_n \end{array} \end{bmatrix} $$
 
 $$ \text{Where, } T(v) = a_1 \gamma_1 + \cdots + a_{n-1}\gamma_{n-1} + a_nv $$
 

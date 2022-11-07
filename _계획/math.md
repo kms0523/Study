@@ -27,7 +27,9 @@
 16. open set의 교집합은 각 open set으로 구성된 subspace에 open set임을 증명 
 17. Subspace of a Hausdorff space is a Hausdorff 증명
 18. Hausdorff space from continuous functions 증명  
+
 11.04
+
 19. infinite intersection of closed set이 closed set임을 증명
 20. Hausdorff space에서 one point set은 always closed임을 증명
 21. Hausdorff space에서 every finite subset이 closed임을 증명
@@ -38,8 +40,19 @@
 
 # Linear Algebra
 
+### 완료
+11.05
+
+1. 선형대수 40강 공부
+
 ### 할 것
 1. Eigen space가 T invariant임을 증명
 2. Schur's theorem 증명
-3. Normal operator 
-4. 선형대수 40강
+3. Normal operator 명제 증명
+4. Unitary matrix 명제 증명
+5. Adjoint operator 명제 증명
+6. Self-Adjoint operator 명제 증명
+7. Self-adjoint matrix 정리
+8. 선형대수 41강
+9. 선형대수 42강
+10. 선형대수 43강

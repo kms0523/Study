@@ -1,4 +1,4 @@
-# Adjoint of a Matrix
+# Adjoint Matrix
 $A \in M_{mn}(\mathbb F)$가 있다고 하자. $A$의 `adjoint` $A^*$는 다음과 같이 정의된 행렬이다.
 $$ A^* \in M_{nm}(\mathbb F) \quad s.t. \quad A^*_{ij} = \overline{A_{ji}} $$
 
@@ -7,7 +7,7 @@ $\mathbb F = \R$이면, adjoint는 단순히 transpose가 되며, $A = A^*$인 �
 
 만약, $\mathbb F = \Complex$이면, $A = A^*$인 경우를  $A$를 Hermitian이라고 한다.
 
-# Adjoint of a Linear Operator
+# Adjoint Operator
 $n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
 
 $x,y \in V$에 대해서 다음을 만족하는 $T^* \in \text{End}(V)$를 $T$의 `adjoint operator`라 한다.
@@ -183,3 +183,139 @@ $$ \beta $$
 
 $\beta$가 orthonormal basis임으로 다음이 성립한다.
 $$ \begin{aligned} T^*(4-2x) &= B(T^*(4-2x), \beta_i)\beta_i \\&= B(4-2x, T(\beta_i))\beta_i  \end{aligned} $$
+
+# Self-adjoint Operator
+Inner product space $V/\mathbb{F}$가 있다고 하자.
+
+다음을 만족하는 $T \in \text{End}(V)$를 self-adjoint operator라고 한다.
+$$ T = T^* $$
+
+### 명제1
+Inner product space $V/\mathbb{F}$와 self-adjoint operator $T \in \text{End}(V)$가 있다고 하자.
+
+이 떄, 다음을 증명하여라.
+$$ \text{Every eigenvalue of } T \text{ is real.} $$
+
+**Proof**
+
+$T(v) = \lambda v$라고 하자.
+
+$T$가 self-adjoint operator이기 때문에, $T$는 normal operator임으로 다음이 성립한다.
+$$ T^*(v) = \bar\lambda v $$
+
+이 떄, $T$가 self-adjoint operator임으로 다음이 성립한다.
+$$ \begin{aligned} & T(v) = T^*(v) \\ \Rightarrow\enspace& \lambda v = \bar\lambda v \\ \Rightarrow\enspace& (\lambda - \bar\lambda) v =  0_V \\ \Rightarrow\enspace& \lambda - \bar\lambda =  0 \\ \Rightarrow\enspace& \lambda \in \R \quad\tiny\blacksquare \end{aligned} $$
+
+### 명제2
+Inner product space $V/\mathbb{R}$와 self-adjoint operator $T \in \text{End}(V)$가 있다고 하자.
+
+이 떄, 다음을 증명하여라.
+$$ \varphi_T \text{ is splits.} $$
+
+**Proof**
+
+$\beta$를 $V$의 orthonormal basis라고 하자.
+
+$\frak{m}_\beta^\beta(T) = A \in M_{nn}(\R)$라 할 떄, $L_{\hat{A}} \in \text{End}(\Complex^n)$을 다음과 같이 정의하자.
+$$ L_{\hat{A}} : \Complex^n \rightarrow \Complex^n \quad s.t. \quad x \mapsto Ax  $$
+
+$L_{\hat{A}}$는 complex위에서 정의되어 다음이 성립한다.
+$$ \varphi_{L_{\hat{A}}}(\lambda) \text{ is splits} $$
+
+이 떄, 보조명제2.1에 의해서 $L_{\hat{A}}$는 self-adjoint operator임으로 명제1에 의해 다음이 성립한다.
+$$ \varphi_{L_{\hat{A}}}(\lambda) = \prod_{i=1}^n (\lambda - \lambda_i) $$
+
+$$ \text{Where, } \lambda_i \in \R $$
+
+$\varphi_{L_{\hat{A}}}(\lambda) = \varphi_{L_{A}}(\lambda)$이고 $\varphi_{L_{\hat{A}}}(\lambda)$가 전부 실수 근으로 split 되었음으로 $\varphi_{L_{A}}(\lambda)$가 split 된다.
+
+Q. $L_A$와 $T$의 characteristic polynomial...
+
+#### 보조명제2.1
+Inner product space $V/\mathbb{R}$와 self-adjoint operator $T \in \text{End}(V)$가 있다고 하자.
+
+$\beta$를 $V$의 orthonormal basis라고 하자.
+
+$\frak{m}_\beta^\beta(T) = A \in M_{nn}(\R)$라 할 떄, $L_{\hat{A}} \in \text{End}(\Complex^n)$을 다음과 같이 정의하자.
+$$ L_{\hat{A}} : \Complex^n \rightarrow \Complex^n \quad s.t. \quad x \mapsto Ax  $$
+
+이 떄, 다음을 증명하여라.
+$$ L_{\hat{A}} \text{ is a self-adjoint operator} $$
+
+**Proof**
+
+$\epsilon$을 $\Complex^n$의 standarad basis라고 하면 다음이 성립한다.
+$$ \begin{aligned} \frak{m}^\epsilon_\epsilon(L_{\hat{A}}) &= A \\ \frak{m}^\epsilon_\epsilon(L^*_{\hat{A}}) &= \frak{m}^\epsilon_\epsilon(L_{\hat{A}})^* \\&= A^* \end{aligned}  $$
+
+이 떄, $T$가 self-adjoint operator임으로 다음이 성립한다.
+$$ \begin{aligned} & T = T^* \\ \Rightarrow\enspace& \frak{m}_\beta^\beta(T) = \frak{m}_\beta^\beta(T^*) \\ \Rightarrow\enspace& \frak{m}_\beta^\beta(T) = \frak{m}_\beta^\beta(T)^* \\ \Rightarrow\enspace& A = A^*  \end{aligned} $$
+
+따라서, $L_{\hat{A}}$는 self-adjoint operator이다. $\quad\tiny\blacksquare$
+
+### 명제3
+$n$차원 Inner product space $V/\mathbb{R}$와 self-adjoint operator $T \in \text{End}(V)$가 있다고 하자.
+
+이 떄, 다음을 증명하여라.
+$$ T \text{ is a self-adjoint operator } \Leftrightarrow \exist \text{ an orthonormal basis } \beta \text{ consisting of eigenvectors} $$
+
+**Proof**
+
+[$\Rightarrow$]  
+$T$가 self-adjoint matrix라고 하면 다음이 성립한다.
+$$ \varphi_T(\lambda) \text{ is split} $$
+
+Schur's theorem에 의해 다음이 성립한다.
+$$ \exist\text{ orthonormal basis } \quad s.t. \quad \frak{m}_\beta^\beta(T) \text{ is an upper triangular matrix} $$
+
+$T$가 self-adjoint operator임으로 다음이 성립한다.
+$$ \begin{aligned} & T = T^* \\ \Rightarrow\enspace& \frak{m}_\beta^\beta(T) = \frak{m}_\beta^\beta(T^*) \\ \Rightarrow\enspace& \frak{m}_\beta^\beta(T) = \frak{m}_\beta^\beta(T)^* \\ \Rightarrow\enspace& \frak{m}_\beta^\beta(T) \text{ is a diagonal matrix } \\ \Rightarrow\enspace& \exist \text{ an orthonormal basis } \beta \text{ consisting of eigenvectors} \quad\tiny\blacksquare  \end{aligned} $$
+
+[$\Leftarrow$]  
+$\beta$가 orthonormal basis임으로 다음이 성립한다.
+$$ \frak{m}_\beta^\beta(T^*) = \frak{m}_\beta^\beta(T)^* $$
+
+Eigenvalue를 $\lambda_i$라 할 때, $\lambda_i \in \R$임으로 다음이 성립한다.
+$$ \frak{m}_\beta^\beta(T)^* = \frak{m}_\beta^\beta(T) $$
+
+따라서 다음이 성립한다.
+$$ \begin{aligned} &\frak{m}_\beta^\beta(T) = \frak{m}_\beta^\beta(T^*) \\ \Rightarrow\enspace& T = T^*  \end{aligned} $$
+
+
+#### 따름명제3.1
+$A \in M_{nn}(\R)$가 있을 때, 다음을 증명하여라.
+$$ A \text{ is a symmetric matrix} \Leftrightarrow \exist \text{ orthogonal matrix } B \quad s.t. \quad B^TAB \text{ is a diagonal matrix} $$
+
+
+# Self-adjoint Matrix
+$A \in M_{nn}(\mathbb F)$가 있다고 하자.
+
+다음을 만족하는 $A$를 self-adjoint matrix라고 한다.
+$$ A = A^* $$
+
+### 참고1
+$\mathbb F = \R$이면 다음이 성립한다.
+$$ \text{self-adjoint matrix} \Leftrightarrow \text{symmetric matrix} $$
+
+### 참고2
+$\mathbb F = \R$일 때, 다음이 성립한다.
+$$ \text{symmetric matrix} \Rightarrow \text{normal matrix} $$
+
+하지만 그 역은 성립하지 않는다.
+$$ \text{normal matrix} \nRightarrow \text{symmetric matrix} $$
+
+예를 들어, $A$가 skew-symmetric인 경우 ,i.e. $A^T = -A$, normal matrix이지만 symmetric matrix는 아니다.
+
+### 참고3
+$\mathbb F = \Complex$이면 self-adjoint matrix를 Hermitian matrix라고 부르기도 한다.
+
+### 참고4
+$\mathbb F = \Complex$일 떄, 다음이 성립한다.
+$$ \text{self-adjoint matrix} \Rightarrow \text{normal matrix} $$
+
+### 참고5
+$\mathbb F = \Complex$일 떄, 다음이 성립한다.
+$$ \text{symmetric matrix} \nRightarrow \text{normal matrix} $$
+
+예를 들어 $A = \begin{bmatrix} i&i\\i&1 \end{bmatrix}$는 symmetric matrix이지만 normal matrix는 아니다.
+
+
