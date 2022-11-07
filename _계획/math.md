@@ -7,6 +7,7 @@
 # Topological Manifolds
 ### 할 것
 1. Bases and Countability 읽기
+2. Exercise 2.42. 증명하기
 
 ### 완료
 1. subset에 의한 subspace의 open set은 full space의 open set이 아닐수도 있음을 증명 
@@ -36,6 +37,13 @@
 22. Hausdorff space에서 sequence가 수렴할 경우 반드시 한 점으로 수렴함을 증명
 23. Finite set위의 Hausdorff topology는 idscrete topology가 유일함을 증명
 
+11.07
+
+24. Basis 공부하기
+25. Basis criterion 명제 증명하기
+26. Metric space에서 open ball은 open set임을 증명
+27. Metric space에서 모든 open set은 open ball의 union임을 증명
+28. Metric topology의 basis는 open ball의 collection임을 증명 
 
 
 # Linear Algebra
