@@ -1,4 +1,4 @@
-# J2 Plasiticity Model with Hardening
+# J2 Plasticity Model with Hardening
 먼저, Internal plastic variable $q$를 다음과 같이 정의한다.
 $$ q := \{ \alpha, \epsilon_e^p \} $$
 
@@ -15,10 +15,10 @@ J2 plasticity model은 classical elastoplasticiy model의 기본 가정을 따�
 
 ## Flow rule
 Associative flow rule을 따른다고 가정한다.
-$$ r := \frac{\partial f}{\partial \sigma} $$
+$$ r(\sigma,q) := \frac{\partial f}{\partial \sigma} $$
 
 따라서 Flow rule은 다음과 같다.
-$$ \frac{\partial \epsilon^p}{\partial t} = \gamma \frac{\partial f}{\partial \sigma} $$
+$$ \begin{aligned} \frac{\partial \epsilon^p}{\partial t} &:= \gamma r \\&= \gamma \frac{\partial f}{\partial \sigma} \end{aligned} $$
 
 ## Hardening rule
 Hardening rule은 다음과 같이 정의한다.

@@ -134,12 +134,12 @@ $x \in M, r \in \R^+$이 있다고 하자.
 $y \in B_M(x,r)$에 대해 $B_M(y,\epsilon)$을 고려해보자.
 
 $\forall z \in B_M(y, \epsilon)$이 있을 떄, 다음이 성립한다.
-$$ d(x,z) < d(x,y) + \epsilon $$
+$$ \begin{aligned} d(x,z) &< d(x,y) + d(y,z) \\&< d(x,y) + \epsilon \end{aligned} $$
 
-이 떄, $\epsilon \le r - d(x,y)$면 다음이 성립한다.
+이 떄, $\epsilon = r - d(x,y)$로 두면 다음이 성립한다.
 $$ d(x,z) < r $$
 
-따라서 다음이 성립한다.
+$\forall z \in B_M(y, \epsilon)$에 대해 $d(x,z) < r$임으로 다음이 성립한다.
 $$ B_M(y,\epsilon) \le B_M(x,r) $$
 
 이를 정리하면 다음과 같다.

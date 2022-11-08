@@ -46,3 +46,93 @@ Open ball의 성질에 의해 다음이 성립한다.
 2. $$ \text{Every open set of } M \text{ is an union of collection of some open balls } $$
 
 따라서, basis의 정의를 만족함으로 $M$의 collection of open ball은 $M$의 basis이다. $\quad\tiny\blacksquare$
+
+### 명제3
+Euclidean topology $\R^n$이 있다고 하자.
+
+Open square $S_{\R^n}(x,l)$를 다음과 같이 정의하자.
+$$ S_{\R^n}(x,l) := \{y \in \R^n \enspace | \enspace |x_i - y_i| < l/2\}  $$
+
+$S_{\R^n}(x,l)$의 collection $\mathcal{B}$를 다음과 같이 정의하자.
+$$ \mathcal{B} := \{ S_{\R^n}(x,l) \enspace | \enspace x \in \R^n \enspace\land\enspace l \in \R^+ \} $$
+
+이 떄, 다음을 증명하여라.
+$$ \mathcal{B} \text{ is basis for } \R^n $$
+
+**Proof**
+
+[$S_{\R^n}(x,l)$ is open set]  
+$S_{\R^n}(x,l) \in \mathcal{B}$가 있다고 하자.
+
+$\forall y \in S_{\R^n}(x,l)$에 대해 open ball $B_{\R^n}(y,\epsilon)$을 고려해보자.
+
+$\forall z \in B_{\R^n}(y,\epsilon)$에 대해 다음이 성립한다.
+$$ \begin{aligned} |x_i - z_i | &= |x_i - y_i + y_i - z_i| \\&< |x_i - y_i| + |y_i - z_i| \\&< |x_i-y_i| + \epsilon  \end{aligned} $$
+
+이 떄, $\epsilon \in \R^+$을 다음과 같이 정의하자.
+$$ \epsilon = \frac{s}{2} - |x_i - y_i| $$
+
+그러면 $\forall z \in B_{\R^n}(y,\epsilon)$에 대해 다음이 성립한다.
+$$ |x_i - z_i| < \frac{s}{2} $$
+
+따라서 다음이 성립한다.
+$$ B_{\R^n}(y,\epsilon) \subseteq S_{\R^n}(x,l) $$
+
+이를 정리하면 다음과 같다.
+$$ \forall y \in S_{\R^n}(x,l), \quad \exist \epsilon \quad s.t. \quad B_{\R^n}(y,\epsilon) \subseteq S_{\R^n}(x,l) $$
+
+따라서, open set의 정의에 의해 $S_{\R^n}(x,l)$는 $\R^n$의 open set이다.
+
+[Every open set is union of some collection of $S_{\R^n}(x,l)$]  
+보조명제3.1에 의해 open ball은 open square collection의 union이다.
+
+그리고 metric space에서 모든 open set은 어떤 open ball collection의 union이다.
+
+따라서, Euclidean space에서 모든 open set은 어떤 open square collection의 union이다. $\quad\tiny\blacksquare$
+
+#### 보조명제3.1
+다음을 증명하여라.
+$$ \text{Open ball is union of some collection of open square}  $$
+
+**Proof**
+
+$x \in \R^n, \enspace r \in \R^+$이 있을 떄, $B_{\R^n}(x,r)$이 있다고 하자.
+
+$\forall y \in B_{\R^n}(x,r)$에 $S_{\R^n}(y,l)$를 고려해보자.
+
+$\forall z \in S_{\R^n}(y,l)$에 대해 다음이 성립한다.
+$$ \begin{aligned} |x - z| &= |x - y + y - z| \\&< |x - y| + |y - z| \\&< |x - y| + \frac{\sqrt{2}}{2}l \end{aligned} $$
+
+이 떄, $l = \sqrt{2}(r - |x - y|)$로 두면 다음이 성립한다.
+$$ |x - z| < r $$
+
+$\forall z \in S_{\R^n}(y,l)$에 대해 $|x - z| < r$임으로 다음이 성립한다.
+$$ S_{\R^n}(y,l) \le B_{\R^n}(x,r) $$
+
+$\forall y \in B_{\R^n}(x,r)$에서 $S_{\R^n}(y,l_y) \le B_{\R^n}(x,r)$를 만족하는 $l_y$이 존재함으로 다음이 성립한다.
+$$ B_{\R^n}(x,r) = \bigcup_{\mathclap{y \in B_{\R^n}(x,r)}}  S_{\R^n}(y,l_y) \quad\tiny\blacksquare $$
+
+### 명제4
+Topological space $X,Y$와 함수 $f:X \rightarrow Y$가 있다고 하자.
+
+$Y$의 basis를 $\mathcal{B}$라 할 때, 다음을 증명하여라.
+$$ f \text{ is continuous} \iff \forall B \in \mathcal{B}, \quad \text{preimg}(B) \text{ is open set of } X $$
+
+**Proof**
+
+[$\implies$]  
+$f$가 continuous이고 $B$가 $Y$의 open set임으로, conitnuous function의 정의에 의해 $\text{preimg}(B)$는 $X$의 open set이다. 
+
+[$\impliedby$]  
+$V$가 $Y$의 open set이라고 하자.
+
+Basis criterion에 의해 다음이 성립한다.
+$$ \forall y \in V, \quad \exist B_y \quad s.t. \quad y \in B_y \subseteq V $$
+
+따라서, 다음이 성립한다.
+$$ \text{preimg}(y) \in \text{preimg}(B_y) \subseteq \text{preimg}(V) $$
+
+$\forall x \in \text{preimg}(V)$에 대해, $x = \text{preimg}(y)$를 만족하는 $y$가 존재하고 $y$와 $\text{preimg}(B_y)$가 존재함으로 다음이 성립한다.
+$$ \forall x \in \text{preimg}(V), \quad \exist \mathcal{N_x} \quad s.t. \quad \mathcal{N_x} \subseteq \text{preimg}(V) $$
+
+따라서, $\text{preimg}(V)$는 open set이다.$\quad\tiny\blacksquare$

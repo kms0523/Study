@@ -26,7 +26,7 @@ $$ \text{find} \enspace d \in (\mathcal D_{W_i})^3 \quad s.t. \quad \forall w \i
 Bodunov-Galerkin method를 사용하면 명제2에 의해 BVP가 다음과 같아진다.
 $$ \text{find} \enspace \hat{d}_i \in \R^{3N_{N_i}} \quad s.t. \quad K_i\hat{d}_i = f_i \quad (i=1,\cdots,N_E) $$
 
-Direct stiffness method를 사용하여 element assemblage하여 global equation을 구한다.
+Direct stiffness method를 사용하여 element equation을 global equation으로 assemble한다.
 $$ \text{find} \enspace \hat{d} \in \R^{3N_N} \quad s.t. \quad K\hat{d} = f $$
 
 ### 명제1
@@ -79,7 +79,7 @@ $$ d = H_i\hat{d}_i, \enspace w = H_i\hat{w} $$
 $$ \epsilon_v = \partial d = \partial H_i\hat{d}_i = B_i\hat{d}_i $$
 
 그러면 BVP는 다음과 같아진다.
-$$ \def\arraystretch{2}\begin{darray}{lll} &\text{find} \enspace \hat{d}_i \in \R^{3N_{N_i}} \quad s.t. \quad \forall \hat{w} \in \R^{3N_{N_i}} & \int_{\Omega_i} C \epsilon_v \cdot B_i\hat{w} \thinspace dV = \int_{\partial\Omega_i} t \cdot H_i\hat{w} \thinspace dS + \int_{\Omega_i} \rho f_b \cdot H_i\hat{w} \thinspace dV \\ \Rightarrow& & \hat{w}^T \left( \int_{\Omega_i} B_i^TCB \thinspace dV \hat{d}_i  - \int_{\partial\Omega_i} (H_i)^T t \thinspace dS - \int_{\Omega_i} (H_i)^Tf_b \thinspace dV \right) = 0 \end{darray} $$
+$$ \def\arraystretch{2}\begin{darray}{lll} &\text{find} \enspace \hat{d}_i \in \R^{3N_{N_i}} \quad s.t. \quad \forall \hat{w} \in \R^{3N_{N_i}} & \int_{\Omega_i} C \epsilon_v \cdot B_i\hat{w} \thinspace dV = \int_{\partial\Omega_i} t \cdot H_i\hat{w} \thinspace dS + \int_{\Omega_i} \rho f_b \cdot H_i\hat{w} \thinspace dV \\ \implies& & \hat{w}^T \left( \int_{\Omega_i} B_i^TCB \thinspace dV \hat{d}_i  - \int_{\partial\Omega_i} (H_i)^T t \thinspace dS - \int_{\Omega_i} (H_i)^Tf_b \thinspace dV \right) = 0 \end{darray} $$
 
 $\forall \hat{w} \in \R^{3N_{N_i}}$에 대해서 위 식이 성립함으로 BVP가 다음과 같이 간단해진다.
-$$ \def\arraystretch{2}\begin{darray}{lll} &\text{find} \enspace \hat{d}_i \in \R^{3N_{N_i}} & \int_{\Omega_i}  B_i^TCB \thinspace dV \hat{d}_i = \int_{\partial\Omega_i} (H_i)^T t \thinspace dS + \int_{\Omega_i} (H_i)^Tf_b \thinspace dV \quad\tiny\blacksquare \\ \Rightarrow& &  K_i \hat{d}_i = f_i \end{darray} $$
+$$ \def\arraystretch{2}\begin{darray}{lll} &\text{find} \enspace \hat{d}_i \in \R^{3N_{N_i}} & \int_{\Omega_i}  B_i^TCB \thinspace dV \hat{d}_i = \int_{\partial\Omega_i} (H_i)^T t \thinspace dS + \int_{\Omega_i} (H_i)^Tf_b \thinspace dV \\ \implies&&  K_i \hat{d}_i = f_i \quad\tiny\blacksquare \end{darray} $$
