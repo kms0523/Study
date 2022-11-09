@@ -33,7 +33,7 @@ $$ \text{find} \enspace \hat{d} \in \R^{3N_N} \quad s.t. \quad K\hat{d} = f $$
 다음을 증명하여라.
 $$ \sigma : \text{grad}(w) = C\epsilon_v \cdot \partial  w $$
 
-$$ \begin{aligned} \text{Where, } C &:= \text{elasticity matrix} \\  \epsilon_v &= \begin{bmatrix} \epsilon_{11} & \epsilon_{22} & \epsilon_{33} & \epsilon_{23} & \epsilon_{13} & \epsilon_{12} \end{bmatrix}^T \\ \partial &= \begin{bmatrix} \frac{\partial}{\partial x_1} & 0 & 0 \\ 0 & \frac{\partial}{\partial x_2} & 0 \\ 0 & 0 & \frac{\partial}{\partial x_3} \\ 0 & \frac{\partial}{\partial x_3} & \frac{\partial}{\partial x_2} \\ \frac{\partial}{\partial x_3} & 0 & \frac{\partial}{\partial x_1} \\ \frac{\partial}{\partial x_2} & \frac{\partial}{\partial x_1} & 0 \end{bmatrix} \\ w &= \begin{bmatrix} w_1 & w_2 & w_3 \end{bmatrix}^T \end{aligned} $$
+$$ \begin{aligned} \text{Where, } C &:= \text{elasticity matrix} \\  \epsilon_v &= \begin{bmatrix} \epsilon_{11} & \epsilon_{22} & \epsilon_{33} & 2\epsilon_{23} & 2\epsilon_{13} & 2\epsilon_{12} \end{bmatrix}^T \\ \partial &= \begin{bmatrix} \frac{\partial}{\partial x_1} & 0 & 0 \\ 0 & \frac{\partial}{\partial x_2} & 0 \\ 0 & 0 & \frac{\partial}{\partial x_3} \\ 0 & \frac{\partial}{\partial x_3} & \frac{\partial}{\partial x_2} \\ \frac{\partial}{\partial x_3} & 0 & \frac{\partial}{\partial x_1} \\ \frac{\partial}{\partial x_2} & \frac{\partial}{\partial x_1} & 0 \end{bmatrix} \\ w &= \begin{bmatrix} w_1 & w_2 & w_3 \end{bmatrix}^T \end{aligned} $$
 
 **Proof**
 

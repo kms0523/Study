@@ -73,7 +73,7 @@ $$ \begin{bmatrix} B(w_1,u_1) & \cdots & B(w_1,u_n) \\ \vdots & \ddots & \vdots 
 $\mathcal{U}$가 다음과 같은 affine space임을 증명하여라.
 $$ \mathcal{U} = \phi + \mathcal{U}_L $$
 
-$$ \text{Where, } \phi \in \mathcal U, \ \mathcal{U}_L:= \{ u \in C^m(\Omega) \enspace | \enspace u = 0 \text{ on } \partial\Omega \} $$
+$$ \text{Where, } \phi \in \mathcal U, \ \mathcal{U}_L:= \{ u \in C^m(\Omega) \enspace | \enspace u = 0 \text{ on } \partial\Omega_E, \enspace u'=0 \text{ on } \partial\Omega_N \} $$
 
 **Proof**
 

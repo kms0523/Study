@@ -1,7 +1,7 @@
 # Basis
 Topological space $X$가 있다고 하자.
 
-$X$의 subset collection $\mathcal{B}$가 다음을 만족할 때, $\mathcal{B}$를 $X$의 topology의 basis라고 한다.
+$X$의 subset collection $\mathcal{B}$가 다음을 만족할 때, $\mathcal{B}$를 topology $\mathcal{T}_X$의 basis라고 한다.
 1. Every element of $\mathcal{B}$ is an open subset of $X$
 2. Every open subset of $X$ is the union of some collection of elements of $\mathcal{B}$
 
@@ -136,3 +136,76 @@ $\forall x \in \text{preimg}(V)$에 대해, $x = \text{preimg}(y)$를 만족하�
 $$ \forall x \in \text{preimg}(V), \quad \exist \mathcal{N_x} \quad s.t. \quad \mathcal{N_x} \subseteq \text{preimg}(V) $$
 
 따라서, $\text{preimg}(V)$는 open set이다.$\quad\tiny\blacksquare$
+
+### 명제5(Topology from a basis)
+Set $X$와 $X$의 subset의 collection $\mathcal{B}$가 있다고 하자.
+
+이 때, 다음을 증명하여라.
+$$ \begin{array}{} & \mathcal{B} \text{ is a basis for some topology on } X & \iff & \begin{aligned} 1.& \bigcup_{B \in \mathcal{B}} B = X \\ 2. & B_1, B_2 \in \mathcal{B} \enspace\land\enspace x \in B_1 \cap B_2 \\& \implies \exist B \in \mathcal{B} \quad s.t. \quad x \in B \subseteq B_1 \cap B_2 \end{aligned} \end{array} $$
+
+**Proof**
+
+[$\implies$]  
+-[1]  
+$X$는 $X$의 open set이기 때문에 basis의 성질에 의해 다음이 성립한다.
+$$ \bigcup_{B \in \mathcal{B}} B = X $$
+
+-[2]  
+$B_{1,2} \in \mathcal{B}$가 있다고 하자.
+
+Basis의 성질에 의해 다음이 성립한다.
+$$ B_1 \cap B_2 \text{ is an open set of } X $$
+
+$B_1 \cap B_2$가 open set임으로 basis의 성질에 의해, 어떤 $B_i \in \mathcal{B}, \enspace(i = 3,\cdots,k)$에 대해 다음이 성립한다.
+$$ B_1 \cap B_2 = \bigcup_{i=3}^k B_i $$
+
+따라서, $\forall x \in B_1 \cap B_2$에 대해 다음이 성립한다.
+$$ \exist j \in [3,\cdots,k] \quad s.t. \quad x \in B_j $$
+
+[$\impliedby$]  
+$\mathcal{T}_X$가 $\mathcal{B}$의 원소를 0을 포함한 임의의 개수를 뽑아 union한 모든 집합의 collection이라고 하자.
+
+보조명제5.1에 의해 $\mathcal{T}_X$는 $X$의 topology이다.
+
+이 떄, $\mathcal{T}_X$의 정의해 $\mathcal{B}$의 원소는 $\mathcal{T}_X$의 원소이며, $\mathcal{T}_X$의 원소는 $\mathcal{B}$의 어떤 원소들의 union이다.
+
+따라서, basis의 정의에 의해 $\mathcal{B}$는 $\mathcal{T}_X$의 basis이다. $\quad\tiny\blacksquare$
+
+#### 보조명제5.1
+다음을 증명하여라.
+$$ \mathcal{T}_X \text{ is topology of } X  $$
+
+**Proof**
+
+-[$\empty \in \mathcal{T}_X$]  
+$\mathcal{B}$에서 0개의 원소를 뽑아 union하면 $\empty$가 됨으로 $\empty \in \mathcal{T}_X$이다.
+
+-[$X \in \mathcal{T}_X$]  
+$\mathcal{B}$의 모든 원소를 뽑아 union하면 1번 성질에 의해 $X$가 됨으로 $X \in \mathcal{T}_X$이다.
+
+-[finite intersection]  
+$U_i \in \mathcal T_X, \enspace i = 1, \cdots, n$이라 하자.
+
+이 떄, 집합 $U$를 다음과 같이 정의하자.
+$$ U = \bigcap_{i=1}^n U_i $$
+
+$\mathcal{B}$에 성질에 의해 $\forall x \in U$에 대해 다음이 성립한다.
+$$ B_i \in \mathcal{B} \quad s.t. \quad x \in B_i \subseteq U_i \quad (i=1,\cdots,n) $$
+
+$\mathcal{B}$의 2번 조건에 의해 다음이 성립한다.
+$$ \exist B_x \in \mathcal{B} \quad s.t. \quad x \in B_x \subseteq U $$
+
+따라서, 다음이 성립한다.
+$$ U = \bigcup_{x \in U}B_x $$
+
+이 때, $\mathcal{T}_X$의 정의에 의해 $\mathcal{B}$의 원소들의 union을 포함함으로 다음이 성립한다.
+$$ U \in \mathcal{T}_X $$
+
+-[infinite union]  
+집합 $U$를 다음과 같이 정의하자.
+$$ U = \bigcup_{\mathclap{U_i \in \mathcal{T}_X}} U_i $$
+
+$U_i$는 $\mathcal{B}$의 어떤 원소들의 union임으로 $U$는 $\mathcal{B}$의 어떤 원소들의 union으로 귀결된다.
+
+이 때, $\mathcal{T}_X$의 정의에 의해 $\mathcal{B}$의 원소들의 union을 포함함으로 다음이 성립한다.
+$$ U \in \mathcal{T}_X $$

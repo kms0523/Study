@@ -10,7 +10,7 @@
 9. 선형대수 42강
 10. 선형대수 43강
 11. Bases and Countability 읽기
-12. Defining a Topology from a Basis 읽기
+12. Countability Properties 읽기
    
 
 # 완료
@@ -60,3 +60,8 @@
 
 30. Euclidean topology에서 open square가 basis임을 증명
 31. 공역 Basis의 preimg가 open set이면 연속함수임을 증명
+
+11.09
+
+32. Defining a Topology from a Basis 읽기
+33. Collection이 basis가 될 필요 충분조건 증명

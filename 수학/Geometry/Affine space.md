@@ -19,7 +19,7 @@ $+$의 1), 2)성질은 right group action을 정의하고 있다.
 
 $+$의 3)성질은 $p \in A$가 주어지면 $A$와 $V$를 오갈 수 있는 $f_p$가 존재한다는 의미이다.
 
-이 때, $p$를 `원점(origin)`이라고 하며 1) 성질에 의해 $0_V$는 항상 origin과 동일시 된다. 
+이 때, $p$를 `원점(origin)`이라고 하며 1) 성질에 의해 $0_V$는 $f_p$에 의해 항상 $p$로 mapping 된다. 
 
 ### 참고3
 origin $p$가 주어지면 다음과 같이 point와 vector의 pair로 이루어진 vector space를 구성할 수 있다.

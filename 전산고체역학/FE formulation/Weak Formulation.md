@@ -60,7 +60,9 @@ $$ \begin{gathered} \text{Where, } B(w,u) :=  \int_\Omega a\frac{dw}{dx}\frac{du
 따라서 test function space와 solution function space를 각 각 유한차원 함수 공간으로 축소하여 문제를 단순화해보자.
 
 Weighted Residual formulation을 dimensional reduction했을 때와 동일한 과정을 거치면, weak formulation는 다음과 같이 간단해 진다.
-$$ \text{find } \mathbf a \in \R^n \quad s.t. \quad B_W(w_i, \phi + a_ju_j) = l_W(w_i), \enspace i = 1, \cdots, n  $$
+$$ \text{find } \mathbf a \in \R^n \quad s.t. \quad B_W(w_i, \phi + a_ju_j) = l_W(w_i), \enspace i = 1, \cdots, n , j=1,\cdots,k $$
+
+$$ \begin{aligned} \text{Where, } &\phi \in \mathcal{U}_W \\ & u_j \text{ is basis of } \mathcal{U}_{W_L} := \{ u \in C^1(\Omega) \enspace | \enspace u = 0 \text{ on } \Omega_E \} \end{aligned}  $$
 
 linear pde이기 때문에 이를 행렬 형태로 나타내면 다음과 같다.
 $$ \begin{bmatrix} B_W(w_1,u_1) & \cdots & B_W(w_1,u_n) \\ \vdots & \ddots & \vdots \\ B_W(w_n,u_1) & \cdots & B_W(w_n,u_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \begin{bmatrix} l_W(w_1) - B(w_1, \phi) \\ \vdots \\ l_W(w_n) - B(w_n, \phi) \end{bmatrix} $$

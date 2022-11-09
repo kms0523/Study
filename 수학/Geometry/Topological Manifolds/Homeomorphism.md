@@ -13,11 +13,11 @@ $$ f \text{ is bijective} \enspace \land \enspace f, f^{-1} \text{ are continous
 Topological space $(X_1,\mathcal T_1),(X_2,\mathcal T_2)$가 있다고 하자.
 
 함수 $f : X_1 \rightarrow X_2$가 bijective일 때, 다음을 증명하여라.
-$$ f \text{ is a homeomorphism} \Leftrightarrow f(\mathcal T_1) = \mathcal T_2 $$
+$$ f \text{ is a homeomorphism} \iff f(\mathcal T_1) = \mathcal T_2 $$
 
 **Proof**
 
-[$\Rightarrow$]  
+[$\implies$]  
 -[$f(\mathcal T_1) \subseteq \mathcal T_2$]  
 $U \in \mathcal{T_1}, \enspace f(U) \in f(\mathcal T_1)$이라 하자.
 
@@ -25,7 +25,7 @@ $f$가 bijective function 임으로 다음이 성립한다.
 $$ f^{-1}(f(U)) \text{ is an open set on } X_1 $$
 
 $f^{-1}$이 continous함으로  다음이 성립한다.
-$$ \begin{aligned} & f^{-1}(f(U)) \text{ is a open set on } X_1 \\ \Rightarrow\enspace& \text{preimg}(f^{-1}(f(U))) \text{ is a open set on } X_2 \\ \Rightarrow\enspace& f(U) \text{ is a open set on } X_2 \\ \Rightarrow\enspace& f(U) \in \mathcal T_2 \end{aligned}  $$
+$$ \begin{aligned} & f^{-1}(f(U)) \text{ is a open set on } X_1 \\ \implies\enspace& \text{preimg}(f^{-1}(f(U))) \text{ is a open set on } X_2 \\ \implies\enspace& f(U) \text{ is a open set on } X_2 \\ \implies\enspace& f(U) \in \mathcal T_2 \end{aligned}  $$
 
 -[$\mathcal T_2 \subseteq f(\mathcal T_1)$]  
 $V \in \mathcal{T_2}$이라 하자.
@@ -34,9 +34,9 @@ $f$가 bijective function 임으로 다음이 성립한다.
 $$ f(f^{-1}(V)) \text{ is an open set on } X_2 $$
 
 $f$가 continous함으로  다음이 성립한다.
-$$ \begin{aligned} & f(f^{-1}(V)) \text{ is a open set on } X_2 \\ \Rightarrow\enspace& \text{preimg}(f(f^{-1}(V))) \text{ is a open set on } X_1 \\ \Rightarrow\enspace& f^{-1}(V) \text{ is a open set on } X_1 \\ \Rightarrow\enspace& f^{-1}(V) \in \mathcal T_1 \\ \Rightarrow\enspace& V \in f(\mathcal T_1) \quad\tiny\blacksquare \end{aligned}  $$
+$$ \begin{aligned} & f(f^{-1}(V)) \text{ is a open set on } X_2 \\ \implies\enspace& \text{preimg}(f(f^{-1}(V))) \text{ is a open set on } X_1 \\ \implies\enspace& f^{-1}(V) \text{ is a open set on } X_1 \\ \implies\enspace& f^{-1}(V) \in \mathcal T_1 \\ \implies\enspace& V \in f(\mathcal T_1) \quad\tiny\blacksquare \end{aligned}  $$
 
-[$\Leftarrow$]  
+[$\impliedby$]  
 -[$f$ is continous]  
 $V \in \mathcal T_2$라 하자.
 
@@ -44,7 +44,7 @@ $f$가 bijective임으로 다음이 성립한다.
 $$ \text{preimg}(f(f^{-1}(V))) = f^{-1}(V) $$
 
 이 때, $f(\mathcal T_1) = \mathcal T_2$임으로 다음이 성립한다.
-$$ \begin{aligned} & \mathcal{T}_1 = f^{-1}(\mathcal{T}_2) \\ \Rightarrow\enspace& f^{-1}(V) \in \mathcal T_1 \end{aligned}  $$
+$$ \begin{aligned} & \mathcal{T}_1 = f^{-1}(\mathcal{T}_2) \\ \implies\enspace& f^{-1}(V) \in \mathcal T_1 \end{aligned}  $$
 
 즉, $X_2$ 위의 임의의 open set에 대한 $f$의 preimage가 $X_1$위의 open set임으로 $f$는 continous이다.
 
@@ -79,7 +79,7 @@ inverse function의 domain & codomian restriction과 관련된 성질에 의해 
 $$ (f|_{U \times f(U)})^{-1} = f^{-1}|_{f(U) \times U} $$
 
 $f$가 homeomorphism임으로 $f^{-1}$은 continuous function이다. 따라서, continuous function의 domain restriction과 관련된 성질에 의해 다음이 성립한다.
-$$ \begin{aligned} & f^{-1}|_{f(U) \times U} \text{ is a continuous} \\ \Leftrightarrow\enspace& (f|_{U \times f(U)})^{-1} \text{ is a continuous} \end{aligned} $$
+$$ \begin{aligned} & f^{-1}|_{f(U) \times U} \text{ is a continuous} \\ \iff\enspace& (f|_{U \times f(U)})^{-1} \text{ is a continuous} \end{aligned} $$
 
 [결론]  
 $f|_{U \times f(U)}$는 bijective이고 $f|_{U \times f(U)}$와 그 역함수가 모두 continuous함으로 homeomorphism이다. $\quad\tiny\blacksquare$
