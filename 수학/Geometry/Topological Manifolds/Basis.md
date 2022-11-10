@@ -14,8 +14,7 @@ $X$가 topological space이고 $\mathcal{B}$가 $X$의 basis라고 하자.
 $X$의 subset $U$가 있을 떄, 다음을 증명하여라.
 $$ U \text{ is open } \iff \forall x \in U, \quad  \exist B \in \mathcal{B} \quad s.t. \quad x \in B \subseteq U $$
 
-**Proof**
-
+ **Proof**
 [$\implies$]  
 $U$가 open set임으로 어떤 $B_i \in \mathcal{B}, \enspace(i = 1,\cdots,k)$의 성질에 의해 다음이 성립한다.
 $$ U = \bigcup_{i=1}^k B_i $$
@@ -32,6 +31,8 @@ $$ U = \bigcup_{x \in U}B_x $$
 
 이 떄, $B_x$는 $X$의 open set임으로 open set의 성질에 의해 다음이 성립한다.
 $$ U \text{ is an open set of } X \quad\tiny\blacksquare $$
+
+
 
 ### 명제2
 Metric topology $M$이 있다고 하자.
@@ -209,3 +210,25 @@ $U_i$는 $\mathcal{B}$의 어떤 원소들의 union임으로 $U$는 $\mathcal{B}
 
 이 때, $\mathcal{T}_X$의 정의에 의해 $\mathcal{B}$의 원소들의 union을 포함함으로 다음이 성립한다.
 $$ U \in \mathcal{T}_X $$
+
+# Neighborhood Basis
+Topological space $X$가 있다고 하자.
+
+$x \in X$가 있을 때, 다음을 만족하는 $\mathcal{N_x}$의 collection $\mathcal{B_x}$를 $x$에서 $X$의 `neighborhood basis`라고 한다.
+$$ \forall \mathcal{N_x}, \quad \exist B\in\mathcal{B_x} \quad s.t. \quad B \subseteq \mathcal{N_x}  $$
+
+### 참고
+Neighborhood basis를 `local basis`라고도 부른다.
+
+> Reference  
+> [Proofwiki](https://proofwiki.org/wiki/Definition:Local_Basis)
+
+# Nested Neighborhood Basis
+Topological space $X$가 있다고 하자.
+
+$x \in X$가 있을 때, $\mathcal{N_x}$의 sequence $s(n)$이 다음을 만족할 떄, $x$에서 `nested neighborhood basis`라고 한다.
+$$ \mathcal{N_x^{i+1}} \subseteq \mathcal{N_x^{i}} \enspace\land\enspace \forall \mathcal{N_x}, \quad \exist j \in \N \quad s.t. \quad \mathcal{N_x^{j}} \subseteq \mathcal{N_x}$$
+
+$$ \text{Where, } s(i) = \mathcal{N_x^{i}} $$
+
+

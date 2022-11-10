@@ -47,7 +47,7 @@ $n$차원, $m$차원 벡터공간 $V,W / \mathbb F$와 각각의 기저 $\beta, 
 $v = a^i\beta_i \in V, \enspace T(v) = b^i \gamma_i$일 때, $T$는 다음과 같이 나타낼 수 있다.
 $$ T= c^i_jf^j_i, \enspace i=1,\cdots,m, \enspace j=1, \cdots, n $$
 
-$$ \text{Where, } f^j_i(\beta_k) = \delta^j_k \gamma_i \enspace \land \enspace b^i =c^i_ja^j $$
+$$ \text{Where, } f^j_i(\beta_k) = \delta^j_k \gamma_i, \enspace b^i =c^i_ja^j $$
 
 이 떄, $T$의 $\beta,\gamma$에 대한 `행렬표현(matrix representation)` $\frak m_\beta^\gamma(v)$은 다음과 같이 정의된 함수이다.
 $$ \frak m_\beta^\gamma : L(V;W) \rightarrow M_{mn}(\mathbb F) \quad s.t. \quad T \mapsto \begin{bmatrix} c^1_1 & \cdots & c^1_n \\ \vdots & \ddots & \vdots \\ c^m_1 & \cdots & c^m_n \\ \end{bmatrix} $$  

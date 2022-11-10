@@ -9,8 +9,10 @@
 8. 선형대수 41강
 9. 선형대수 42강
 10. 선형대수 43강
-11. Bases and Countability 읽기
-12. Countability Properties 읽기
+11. [Book] (Lee) Introduction to Topological Manifolds, Bases and Countability 읽기
+12. [Book] (Lee) Introduction to Topological Manifolds, Countability Properties 읽기
+13. [Book] (Lee) Introduction to smooth manifolds, Chap3 읽기
+
    
 
 # 완료
@@ -65,3 +67,11 @@
 
 32. Defining a Topology from a Basis 읽기
 33. Collection이 basis가 될 필요 충분조건 증명
+
+11.10
+
+34. Neighborhood basis 정리
+35. First countability 정리
+36. 모든 Metric space가 first countiable임을 증명
+37. Nested neighborhood basis 정리
+38. first countable space에는 항상 nested neighborhood basis가 존재함을 증명

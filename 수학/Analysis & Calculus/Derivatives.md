@@ -85,12 +85,15 @@ $L$은 $\Delta f - L(h) = c_1h, \enspace c_1 \in \R - \{ 0 \}$로 차이가 선�
 $$ \begin{gathered} \lim_{h \rightarrow 0} \frac{1}{h} \Big( f(a + h) - f(a) - L(h) \Big) = \lim_{h \rightarrow 0}\frac{c_1h}{h} = c_1 \neq 0 \\ \lim_{h \rightarrow 0} \frac{1}{h} \Big( f(a + h) - f(a) - D(h) \Big) = \lim_{h \rightarrow 0}\frac{c_2 h^2}{h} = 0 \end{gathered} $$
 
 ## Definition using Alternative Form2
-open subset $U \subset \R^n$과 함수 $\mathbf f : U \rightarrow \R^m$이 있다고 하자.
+open subset $U \subset \R^n$과 함수 $f : U \rightarrow \R^m$이 있다고 하자.
 
-$\mathbf a \in U$이 있을 때, 다음을 만족하는 linear map $L : \R^n \rightarrow \R^m \quad s.t.  \quad v \mapsto Av$을 $\mathbf a$에서 $\mathbf f$의 `derivative`라고 한다.
-$$ \bf \lim_{h \rightarrow 0} \frac{1}{|h|}(f(a + h) - f(a) - \mathit L(h)) = 0 $$
+$a \in U$와 다음과 같이 정의된 linear map $L$이 있다고 하자.
+$$ L : \R^n \rightarrow \R^m \quad s.t.  \quad v \mapsto Av $$
 
-이런 $L$이 존재하는 경우, $\mathbf f$가 $\mathbf a$에서 `미분가능(differentiable)`하다고 한다.
+이 떄, $L$이 다음을 만족할 경우, $L$을 $a$에서 $f$의 `derivative` 또는 `total derivative`라고 한다.
+$$ \lim_{h \rightarrow 0} \frac{1}{|h|}(f(a + h) - f(a) - L(h)) = 0 $$
+
+이런 $L$이 존재하는 경우, $f$가 $a$에서 `미분가능(differentiable)`하다고 한다.
 
 ### 명제
 open subset $U \subset \R^n$과 함수 $\mathbf f : U \rightarrow \R^m$이 있다고 하자.
@@ -112,7 +115,7 @@ $$ L(\mathbf e_i) = A_{*i} = \begin{bmatrix} D_if_1(\mathbf a) \\ \vdots \\ D_if
 $$ A = \begin{bmatrix} A_{*1} & \cdots & A_{*n} \end{bmatrix} = \begin{bmatrix} D_1f_1(\mathbf a) & \cdots & D_nf_1(\mathbf a) \\ \vdots & & \vdots \\ D_1f_m(\mathbf a) & \cdots & D_nf_m(\mathbf a) \end{bmatrix} \quad {_\blacksquare} $$
 
 #### 참고1
-행렬$A$를 $\mathbf f$의 `Jacobian matrix`라고 부르며 $\bf Jf$로 표기한다.
+행렬$A$를 $\mathbf f$의 `Jacobian matrix`라고 부르며 $J_f$로 표기한다.
 $$ \mathbf{Jf(a)} = \begin{bmatrix} D_1f_1(\mathbf a) & \cdots & D_nf_1(\mathbf a) \\ \vdots & & \vdots \\ D_1f_m(\mathbf a) & \cdots & D_nf_m(\mathbf a) \end{bmatrix}$$
 
 #### 참고2
