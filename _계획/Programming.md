@@ -1,16 +1,20 @@
-# MSML
+# 할 일
+- msml 배포하기 (Git issue 알아보기)
+- .Lib 파일 만드는 법 문서 작성
 
-### 할일
-1. ms::blas::cAB 성능 test
-2. ms::blas::cATB 성능 test
-3. ms::blas::cABT 성능 test
-4. ms::blas::cATBT 성능 test
-5. const matrix wrapper operator* 개발
-6. const matrix wrapper operator* 테스트 
-7. matrix wraaper operator += 개발 및 테스트
-8. matrix wraaper operator -= 개발 및 테스트
+solver를 개발하는게 가장 많은 plus alpha가 나오는가?
 
-### 완료
+- CFD FVM code 개발하기
+- CFD FEM code 개발하기
+- CSM FEM code 개발하기
+
+- markdown preview enhanced custom css 파일 정리하기
+
+- mssel 만들기
+  - contain test하기
+  - contain icase test하기
+
+# 완료
 11.06
 
 1. const matrix wrapper has compact data 개발
@@ -43,3 +47,20 @@
 25. ms::blas::manual cATBT 테스트
 26. ms::blas::mkl cATBT 개발
 27. ms::blas::mkl cATBT 테스트
+
+11.08
+
+28. ms::blas::cAB 성능 test
+29. ms::blas::cATB 성능 test
+30. ms::blas::cABT 성능 test
+31. ms::blas::cATBT 성능 test
+32. const matrix wrapper class operator* 개발
+33. const matrix wrapper class operator* 테스트 
+34. const matrix wrapper class is_transposed 개발
+35. matrix wraaper operator += 개발 및 테스트
+36. matrix wraaper operator -= 개발
+
+11.10
+37. upper case test하기
+38. upper case inplace test하기
+39. compare icase test하기
