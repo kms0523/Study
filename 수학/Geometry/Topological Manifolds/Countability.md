@@ -58,3 +58,6 @@ $$ \forall \mathcal{N_x}, \quad \exist i \in \N \quad s.t. \quad B_i \subseteq \
 $$ \forall \mathcal{N_x}, \quad \exist i \in \N \quad s.t. \quad s(i) \subseteq \mathcal{N_x} $$
 
 그래서 nested neighborhood basis의 정의에 의해 $s(n)$은 nested neighborhood basis이다. $\quad\tiny\blacksquare$
+
+### 명제3
+

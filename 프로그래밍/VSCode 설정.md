@@ -45,3 +45,88 @@ F1 >> "미리보기 새로 고침" 검색 >> 톱니바퀴 >> 키 바인딩에 ct
 
 ## 단축키
 * ctrl k, ctrl v : 마크다운 미리보기
+
+# Markdwon Preview Enhanced
+
+## Customize css
+F1 >> Markdwon Preview Enhanced: Customize CSS >> 아래 내용 입력
+```
+.markdown-preview.markdown-preview 
+{
+    font-size: 14.5px;     
+
+    h1, h2, h3, h4, h5, h6 
+    {        
+        color: #e1e1e1;	
+    }
+
+    h1	
+    {
+        margin-top: 80px;
+        border-top: 1px solid #e1e1e1;                
+        border-bottom: 1px solid #e1e1e1;
+        padding: 15px 0px 15px 0px;        
+        text-align: center;
+        font-size: 40px;
+    }
+    h2	
+    {
+        margin: 60px 0px 10px 5px;
+        border-left: 8px solid #f79400;
+        padding: 0px 0px 0px 10px;        
+        font-size: 30px;
+    }
+    h3	
+    {
+        margin: 40px 0px 10px 10px;
+        border-left: 8px solid #32c97d;
+        padding: 0px 0px 0px 10px;        
+        font-size: 25px;
+    }
+    h4	
+    {        
+        margin: 20px 0px 5px 15px;
+        border-left: 8px solid #303F9F;
+        padding: 0px 0px 0px 10px;        
+        font-size: 20px;
+    }
+    h5	
+    {
+        margin: 20px 0px 5px 20px;
+        border-left: 8px solid #9f11ac;            
+        padding: 0px 0px 0px 10px;        
+        font-size: 16px;
+    }
+    h6	
+    {
+        font-size: 14px;
+    }
+
+    code //inline code
+    {
+        color: #f3dc95;
+        font-size: 14.5px !important;
+    }
+
+    pre > code //code block ```
+    {
+        color: #e1e1e1;	        
+        font-size: 14.5px !important;
+    }
+    
+    // blockquote // 인용문 >
+    // {
+    //     border-top: 1px solid white;
+    //     border-bottom: 1px solid white;
+    //     border-left-style: hidden;
+    //     border-style: hidden;    
+    //     padding-left: 10px;
+       
+    //     background: #292929;
+    //     color:#e2e2e2;
+    // }
+}
+
+```
+> Reference
+> [stackoverflow - separate-style-for-markdown-in-single-backticks-vs-triple-backticks](https://stackoverflow.com/questions/49703670/separate-style-for-markdown-in-single-backticks-vs-triple-backticks-using-the-m)

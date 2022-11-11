@@ -23,7 +23,6 @@ $$ P = q^ih_i $$
 > [Wiki](https://en.wikipedia.org/wiki/Curvilinear_coordinates)
 
 ## Coordainate surfaces
-다음과 같이 정의된 surface를 `coordinate surfaces`라고 한다.
 $$ q^1 = constant, \enspace q^2 = constant, \enspace q^3 = constant $$
 
 > Reference  

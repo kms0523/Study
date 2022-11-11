@@ -9,9 +9,25 @@
 8. 선형대수 41강
 9. 선형대수 42강
 10. 선형대수 43강
-11. [Book] (Lee) Introduction to Topological Manifolds, Bases and Countability 읽기
-12. [Book] (Lee) Introduction to Topological Manifolds, Countability Properties 읽기
-13. [Book] (Lee) Introduction to smooth manifolds, Chap3 읽기
+11. [Book] (Lee) Topological Manifolds, Bases and Countability 읽기
+12. [Book] (Lee) Topological Manifolds, Countability Properties 읽기
+    1. Sequence Lemma 증명
+       1. **Proposition 2.8 증명**
+          1. $A \subseteq X-U \implies A \subseteq X-\bar{U}$ 증명
+          2. exteriror의 point일 필요충분조건이 complement set에 포함된 neighborhood가 존재함임을 증명
+          3. boundary의 point일 필요충분조건이 모든 neighborhood가 set과 complement set의 원소를 포함함임을 증명
+          4. closure의 point일 필요충분조건이 모든 neighborhood가 set의 원소를 포함함임을 증명
+          5. closure는 set과 boundary의 union임을 증명
+          6. closure는 interior과 boundary의 union임을 증명
+          7. boundary가 closed set임을 증명
+          8.  open set은 boundary를 갖지 않음을 증명
+       2. Excercise 2.10 증명
+       3. Exercise 2.14 증명
+    2. Second countable 공부
+13. [Book] (Lee) smooth manifolds, Chap3 읽기
+14. [Book] (Hubbard & Hubbard), chapter 1.7 정리
+15. Derivatives.md 정리
+
 
    
 
@@ -75,3 +91,14 @@
 36. 모든 Metric space가 first countiable임을 증명
 37. Nested neighborhood basis 정리
 38. first countable space에는 항상 nested neighborhood basis가 존재함을 증명
+
+11.11
+39. Closure 공부
+40. Closure is closed set 증명
+41. Interior 공부
+42. Interior is open set 증명
+43. Exterior 공부
+44. Boundary 공부
+45. interior의 point일 필요충분조건이 set에 포함된 neighborhood가 존재함임을 증명
+46. exterior가 open set임을 증명
+47. open set은 interior과 동일함을 증명

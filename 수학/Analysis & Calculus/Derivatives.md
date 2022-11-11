@@ -70,7 +70,7 @@ $$ \lim_{h \rightarrow 0} \frac{1}{h} \Big( f(a + h) - f(a) - f'(a)h \Big) = 0 $
 다차원으로 확장할 때 나타나는 문제를 방지하기 위해 다음과 같이 변형한다.
 $$ \lim_{h \rightarrow 0} \frac{1}{|h|} \Big( f(a + h) - f(a) - f'(a)h \Big) = 0 $$
 
-이 경우에는 Alternative form1과 다르게 부호 문제가 발생하지 않는다.
+다음으로, 위의 식을 만족하는 $f'(a)$를 $f$의 $a$에서의 derivative라고 정의하면 Alternative form1과 다르게 부호 문제가 발생하지 않는다.
 
 ### 참고1
 $f(a + h) - f(a)$항은 $\Delta f$를 나타내고, $f'(a)h$항은 $\Delta f$를 선형근사한 값으로 볼 수 있다.
@@ -144,6 +144,8 @@ $$ \begin{aligned} \lim_{H \rightarrow 0_{M_{nn}}} \frac{1}{|H|}(AH + HA + H^2 -
 따라서, $\mathbf f$는 $A$에서 미분가능하며 그때 $\mathbf f'(A)$는 다음과 같다.
 $$ \mathbf  f'(A) : M_{nn} \rightarrow M_{nn} \quad s.t. \quad H \mapsto AH + HA $$
 
+> Reference  
+> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach p.132
 
 # Directional Derivative
 open subset $U \subset \R^n$과 함수 $\mathbf f : U \rightarrow \R^m$이 있다고 하자.
