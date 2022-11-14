@@ -1,32 +1,31 @@
 # 할 것
-1. Eigen space가 T invariant임을 증명
-2. Schur's theorem 증명
-3. Normal operator 명제 증명
-4. Unitary matrix 명제 증명
-5. Adjoint operator 명제 증명
-6. Self-Adjoint operator 명제 증명
-7. Self-adjoint matrix 정리
-8. 선형대수 41강
-9. 선형대수 42강
-10. 선형대수 43강
-11. [Book] (Lee) Topological Manifolds, Bases and Countability 읽기
-12. [Book] (Lee) Topological Manifolds, Countability Properties 읽기
-    1. Sequence Lemma 증명
-       1. **Proposition 2.8 증명**
-          1. $A \subseteq X-U \implies A \subseteq X-\bar{U}$ 증명
-          2. exteriror의 point일 필요충분조건이 complement set에 포함된 neighborhood가 존재함임을 증명
-          3. boundary의 point일 필요충분조건이 모든 neighborhood가 set과 complement set의 원소를 포함함임을 증명
-          4. closure의 point일 필요충분조건이 모든 neighborhood가 set의 원소를 포함함임을 증명
-          5. closure는 set과 boundary의 union임을 증명
-          6. closure는 interior과 boundary의 union임을 증명
-          7. boundary가 closed set임을 증명
-          8.  open set은 boundary를 갖지 않음을 증명
-       2. Excercise 2.10 증명
-       3. Exercise 2.14 증명
-    2. Second countable 공부
-13. [Book] (Lee) smooth manifolds, Chap3 읽기
-14. [Book] (Hubbard & Hubbard), chapter 1.7 정리
-15. Derivatives.md 정리
+* Eigen space가 T invariant임을 증명 
+* Normal operator 명제 증명
+* Unitary matrix 명제 증명
+* Adjoint operator 명제 증명
+* Self-Adjoint operator 명제 증명
+* Self-adjoint matrix 정리
+* 선형대수 41강
+* 선형대수 42강
+* 선형대수 43강
+* [Book] (Lee) Topological Manifolds, Bases and Countability 읽기
+* [Book] (Lee) Topological Manifolds, Countability Properties 읽기
+    * Sequence Lemma 증명
+       * **Proposition 2.8 증명**
+          * $A \subseteq X-U \implies A \subseteq X-\bar{U}$ 증명
+          * exteriror의 point일 필요충분조건이 complement set에 포함된 neighborhood가 존재함임을 증명
+          * boundary의 point일 필요충분조건이 모든 neighborhood가 set과 complement set의 원소를 포함함임을 증명
+          * closure의 point일 필요충분조건이 모든 neighborhood가 set의 원소를 포함함임을 증명
+          * closure는 set과 boundary의 union임을 증명
+          * closure는 interior과 boundary의 union임을 증명
+          * boundary가 closed set임을 증명
+          *  open set은 boundary를 갖지 않음을 증명
+       * Excercise 2.10 증명
+       * Exercise 2.14 증명
+    * Second countable 공부
+*  [Book] (Lee) smooth manifolds, Chap3 읽기
+*  [Book] (Hubbard & Hubbard), chapter 1.7 정리
+*  Derivatives.md 정리
 
 
    
@@ -102,3 +101,6 @@
 45. interior의 point일 필요충분조건이 set에 포함된 neighborhood가 존재함임을 증명
 46. exterior가 open set임을 증명
 47. open set은 interior과 동일함을 증명
+
+11.13
+48. Schur's theorem 증명

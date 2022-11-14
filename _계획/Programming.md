@@ -11,8 +11,7 @@ solver를 개발하는게 가장 많은 plus alpha가 나오는가?
 - markdown preview enhanced custom css 파일 정리하기
 
 - mssel 만들기
-  - contain test하기
-  - contain icase test하기
+  - parse by test
 
 # 완료
 11.06
@@ -64,3 +63,15 @@ solver를 개발하는게 가장 많은 plus alpha가 나오는가?
 37. upper case test하기
 38. upper case inplace test하기
 39. compare icase test하기
+
+11.11
+40. contain test하기
+41. contain icase test하기
+
+11.12
+42. find_position_icase 테스트하기
+43. find_position 테스트
+44. replace 테스트
+45. replace inplace 테스트
+46. remove 테스트
+47. remove inplace 테스트

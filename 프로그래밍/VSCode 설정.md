@@ -48,6 +48,8 @@ F1 >> "미리보기 새로 고침" 검색 >> 톱니바퀴 >> 키 바인딩에 ct
 
 # Markdwon Preview Enhanced
 
+* preview 화면 우클릭 >> preview theme >> monokai.css
+
 ## Customize css
 F1 >> Markdwon Preview Enhanced: Customize CSS >> 아래 내용 입력
 ```

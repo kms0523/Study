@@ -1,3 +1,40 @@
+# 기본 설정
+* 프로젝트 >> 속성 >> 링커 >> 시스템 >> (하위 시스템 , 콘솔 , 콘솔창이 꺼지지 않음)	
+*	도구 >> 옵션 >> 텍스트 편집기 >> 모든 언어 >> 스크롤 막대 >> 동작 >> 세로 스크롤 막대에 지도 모드 사용
+*	도구 >> 옵션 >> 환경 >> 글꼴 및 색 >> 글꼴 : (JetBrains Mono) >> 색 : 채도를 낮게 해야 보기 편함
+*	도구 >> 옵션 >> 텍스트 편집기 >> C/C++ >> 서식 >> 일반 >> ClangFormat 지원 사용 
+*	도구 >> 옵션 >> 환경 >> 국가별 설정 >> 언어	
+  
+## 단축키
+단축키는 아래 경로를 통해 설정할 수 있다.
+
+    도구 >> 옵션 >> 환경 >> 키보드 >> 단축키
+
+* 검색 : ctrl + q
+* 창.문서창닫기 : ctrl + w
+  * 편집.현재단어선택 >> 선택한 명령의 바로가기 제거
+* 창,다음문서창으로 이동 : ctrl + tab
+* 창.이전탭 : alt + $\leftarrow$
+* 창.다음탭 : alt + $\rightarrow$ 
+* 편집.문서서식(정렬) : ctrl + k, ctrl + d
+* 편집.선택영역을주석으로처리 >> ctrl + /, ctrl +/
+* 편집.선택영역의주석처리제거 >> alt + /, alt +/
+* 편집.아래로줄스크롤 >> ctrl + $\downarrow$
+* 편집.위로줄스크롤 >> ctrl + $\uparrow$
+* 개요 확장 축소 : ctrl M M
+* 개요 전체 확장 축소: ctrl M L
+* 개요 전체 삭제 : ctrl M P
+
+
+	
+
+[Intellisense 오류시 해결방법]  
+	.vs >> codename >> v15 v16 >> ipch 삭제
+	
+	
+[폰트 설치]
+	https://wonjjong.tistory.com/27
+
 # 프로젝트 속성
 프로젝트 속성에 대한 상세한 내용은 [Windows C++ 프로젝트 속성 페이지 참조 - MSVC](https://docs.microsoft.com/ko-kr/cpp/build/reference/property-pages-visual-cpp?view=msvc-160)에 잘 정리되어 있다.
 
@@ -81,36 +118,6 @@ Q2. DLL을 사용하는 프로젝트를 테스트하려면 어떻게 해야하�
 ##### 참고
 [Link libraries with dependencies in Visual C++ without getting LNK4006 - StackOverFlow](https://stackoverflow.com/questions/564872/link-libraries-with-dependencies-in-visual-c-without-getting-lnk4006)  
 [How to test an EXE with Google Test? - StackOverFlow](https://stackoverflow.com/questions/23088252/how-to-test-an-exe-with-google-test)  
-
-# 기본 설정
-* 프로젝트 >> 속성 >> 링커 >> 시스템 >> (하위 시스템 , 콘솔 , 콘솔창이 꺼지지 않음)	
-*	도구 >> 옵션 >> 텍스트 편집기 >> 모든 언어 >> 스크롤 막대 >> 동작 >> 세로 스크롤 막대에 지도 모드 사용
-*	도구 >> 옵션 >> 환경 >> 글꼴 및 색 >> 글꼴 : (JetBrains Mono) >> 색 : 채도를 낮게 해야 보기 편함
-*	도구 >> 옵션 >> 텍스트 편집기 >> C/C++ >> 서식 >> 일반 >> ClangFormat 지원 사용 
-*	도구 >> 옵션 >> 환경 >> 국가별 설정 >> 언어
-*	
-  
-## 단축키
-단축키는 아래 경로를 통해 설정할 수 있다.
-
-    도구 >> 옵션 >> 환경 >> 키보드 >> 단축키
-
-* 정렬 단축키 : ctrl+k+d
-* 개요 확장 축소 : ctrl M M
-*	개요 전체 확장 축소: ctrl M L
-*	개요 전체 삭제 : ctrl M P
-* 현재 단어 선택 : ctrl w
-* 편집.선택영역을주석으로처리
-* 편집.선택영역의주석처리제거
-
-	
-
-[Intellisense 오류시 해결방법]  
-	.vs >> codename >> v15 v16 >> ipch 삭제
-	
-	
-[폰트 설치]
-	https://wonjjong.tistory.com/27
 
 # SDK 
 `소프트웨어 개발 도구(Software Development Kit; SDK)`은 주로 코드를 프로그램으로 빌드하는 과정에서 사용되는 보조 도구이다.

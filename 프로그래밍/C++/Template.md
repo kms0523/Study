@@ -116,6 +116,9 @@ bool contains_icase(const std::string& str, const Args... args) {
 };
 ```
 
+> Reference
+> [cppreference](https://en.cppreference.com/w/cpp/language/fold)
+
 ### Parameter pack expansion
 A pattern followed by an ellipsis is expanded into ***zero or more comma-separated instantiations of the pattern***, where the name of the parameter pack is replaced by each of the elements from the pack, in order.
 
