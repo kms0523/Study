@@ -1,5 +1,10 @@
 # 할 것
+<<<<<<< HEAD
 * Eigen space가 T invariant임을 증명 
+=======
+* Eigen space가 T invariant임을 증명
+* Schur's theorem 증명
+>>>>>>> f1166aa011d200956d08cf4448c9a69ebcda0b76
 * Normal operator 명제 증명
 * Unitary matrix 명제 증명
 * Adjoint operator 명제 증명
@@ -10,22 +15,36 @@
 * 선형대수 43강
 * [Book] (Lee) Topological Manifolds, Bases and Countability 읽기
 * [Book] (Lee) Topological Manifolds, Countability Properties 읽기
+<<<<<<< HEAD
     * Sequence Lemma 증명
        * **Proposition 2.8 증명**
           * $A \subseteq X-U \implies A \subseteq X-\bar{U}$ 증명
           * exteriror의 point일 필요충분조건이 complement set에 포함된 neighborhood가 존재함임을 증명
+=======
+    1. Sequence Lemma 증명
+       1. **Proposition 2.8 증명**
+>>>>>>> f1166aa011d200956d08cf4448c9a69ebcda0b76
           * boundary의 point일 필요충분조건이 모든 neighborhood가 set과 complement set의 원소를 포함함임을 증명
           * closure의 point일 필요충분조건이 모든 neighborhood가 set의 원소를 포함함임을 증명
           * closure는 set과 boundary의 union임을 증명
           * closure는 interior과 boundary의 union임을 증명
           * boundary가 closed set임을 증명
           *  open set은 boundary를 갖지 않음을 증명
+<<<<<<< HEAD
        * Excercise 2.10 증명
        * Exercise 2.14 증명
     * Second countable 공부
 *  [Book] (Lee) smooth manifolds, Chap3 읽기
 *  [Book] (Hubbard & Hubbard), chapter 1.7 정리
 *  Derivatives.md 정리
+=======
+       2. Excercise 2.10 증명
+       3. Exercise 2.14 증명
+    2. Second countable 공부
+13. [Book] (Lee) smooth manifolds, Chap3 읽기
+14. [Book] (Hubbard & Hubbard), chapter 1.7 정리
+15. Derivatives.md 정리
+>>>>>>> f1166aa011d200956d08cf4448c9a69ebcda0b76
 
 
    
@@ -104,3 +123,7 @@
 
 11.13
 48. Schur's theorem 증명
+    
+11.14
+49.  $A \subseteq X-U \implies A \subseteq X-\bar{U}$ 증명
+50. exteriror의 point일 필요충분조건이 complement set에 포함된 neighborhood가 존재함임을 증명
