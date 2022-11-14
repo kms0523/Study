@@ -183,5 +183,3 @@ $$ \partial U := X - (\text{int}(U) \cup \Ext(U)) $$
 > [northeastern.edu](https://web.northeastern.edu/suciu/MATH4565/MATH4565-fa21-handout2.pdf)
 
 
-
-$\gdef\Ext{\text{Ext}}$

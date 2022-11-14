@@ -11,7 +11,8 @@ solver를 개발하는게 가장 많은 plus alpha가 나오는가?
 - markdown preview enhanced custom css 파일 정리하기
 
 - mssel 만들기
-  - parse by test
+  - 
+  - double to str test
 
 # 완료
 11.06
@@ -75,3 +76,6 @@ solver를 개발하는게 가장 많은 plus alpha가 나오는가?
 45. replace inplace 테스트
 46. remove 테스트
 47. remove inplace 테스트
+
+11.14
+48. parse by test
