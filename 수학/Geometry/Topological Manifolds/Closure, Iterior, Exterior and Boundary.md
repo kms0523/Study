@@ -55,18 +55,68 @@ $$ \begin{aligned} X - \bar{U} &= X \cap \bar{U}^C \\&\subseteq X \cap U^C \\&\s
 그럼으로, 다음이 성립한다.
 $$ A \subseteq X-\bar{U} \implies A \subseteq X-U \quad\tiny\blacksquare $$
 
+### 명제3
+Topological space $X$가 있다고 하자.
+
+$X$의 subset을 $U$가 있을 떄, 다음을 증명하여라.
+$$ x \in \bar{U} \iff \forall \mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty $$
+
+**Proof**
+
+[$\implies$]
+다음을 가정하자.
+$$ x \in \bar{U} \implies \exist \mathcal{N_x} \quad s.t. \quad \mathcal{N_x} \cap U = \empty $$
+
+위의 가정를 만족하는 $\mathcal{N_x}$에 대해 다음이 성립한다.
+$$ U \subseteq X-\mathcal{N_x} \land X - \mathcal{N_x} \text{ is closed set of }X $$
+
+이 떄, $x \in \bar{U}$임으로, Closure 정의에 의해 다음이 성립한다.
+$$ x \in X - \mathcal{N_x} $$
+
+$x \in \mathcal{N_x}$임으로 위의 결과는 모순이다.
+
+따라서, proof by contradiction에 의해 다음이 성립한다.
+$$ x \in \bar{U} \implies \forall \mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty $$
+
+[$\impliedby$]
+
+$x \in X$와 $X$의 closed set $A$가 다음을 만족한다고 하자.
+$$ \forall \mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty $$
+
+$$ U \subseteq A$$
+
+이 때, 다음을 가정하자.
+$$ \exist x \quad s.t. \quad x \notin A  $$
+
+$A$가 closed set임으로 다음이 성립한다.
+$$\begin{aligned} &X-A \text{ is an open set of } X \land x \in X-A \\\implies& X-A \in \Set{\mathcal{N_x}} \end{aligned} $$
+
+$\forall \mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty$임으로, 다음이 성립한다.
+$$ (X-A) \cap U \neq \empty $$
+
+이는 $U \subseteq A$라는 사실과 모순됨으로, proof by contradiction에 의해 다음이 성립한다.
+$$ x \in A  $$
+
+즉, $\forall \mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty$을 만족하는 $x$는 $U$를 포함하는 $X$의 closed set에 항상 포함된다. 
+
+따라서, closure의 정의에 의해 closure에도 포함되어 있음으로 다음이 성립한다.
+$$ \forall \mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty \implies x \in \bar{U} \quad\tiny\blacksquare $$
+
+> Reference
+> [northeastern.edu](https://web.northeastern.edu/suciu/MATH4565/MATH4565-fa21-handout2.pdf)
+
 
 # Interior
 Topological space $X$가 있다고 하자.
 
-$X$의 subset $U$가 있을 때, $X$에서 $U$의 interior $\text{int}(U)$는 다음과 같이 정의된다.
-$$ \text{int}(U) := \bigcup\Set{A \subseteq X | A \subseteq U \land A \text{ is open set of } X} $$
+$X$의 subset $U$가 있을 때, $X$에서 $U$의 interior $\Int(U)$는 다음과 같이 정의된다.
+$$ \Int(U) := \bigcup\Set{A \subseteq X | A \subseteq U \land A \text{ is open set of } X} $$
 
 ### 명제1
 Topological space $X$가 있다고 하자.
 
 $X$의 subset $U$가 있을 떄, 다음을 증명하여라.
-$$ \text{int}(U) \text{ is open set of } X $$
+$$ \Int(U) \text{ is open set of } X $$
 
 **Proof**
 
@@ -82,12 +132,12 @@ $$ \text{infinite union of open set is open set} $$
 Topological space $X$가 있다고 하자.
 
 $X$의 subset $U$가 있을 떄, 다음을 증명하여라.
-$$ x \in \text{int}(U) \iff \exist\mathcal{N_x} \subseteq U $$
+$$ x \in \Int(U) \iff \exist\mathcal{N_x} \quad s.t. \quad \mathcal{N_x} \subseteq U $$
 
 **Proof**
 
 [$\implies$]
-$\text{int}(U)$의 정의에 $x$를 포함하고 $U$에 subset인 $X$의 open set이 존재한다.
+$\Int(U)$의 정의에 $x$를 포함하고 $U$에 subset인 $X$의 open set이 존재한다.
 
 따라서, neighborhood의 정의에 의해 다음이 성립한다.
 $$ \exist\mathcal{N_x} \subseteq U $$
@@ -96,17 +146,21 @@ $$ \exist\mathcal{N_x} \subseteq U $$
 $U$에 포함되는 $\mathcal{N_x}$가 존재하기 때문에 다음이 성립한다.
 $$ \exist \text{open set } A \quad s.t. \quad x \in A \subseteq U $$
 
-$\text{int}(U)$는 $U$에 포함된 모든 open set의 union임으로 다음이 성립한다.
-$$ y \in A \implies y \in \text{int}(U) $$
+$\Int(U)$는 $U$에 포함된 모든 open set의 union임으로 다음이 성립한다.
+$$ y \in A \implies y \in \Int(U) $$
 
 따라서 다음이 성립한다.
-$$ x \in \text{int}(U) \quad\tiny\blacksquare $$
+$$ x \in \Int(U) \quad\tiny\blacksquare $$
+
+#### 따름명제 2.1
+다음을 증명하여라.
+$$ x \notin \Int(U) \iff \nexists\mathcal{N_x} \quad s.t. \quad \mathcal{N_x} \subseteq U $$
 
 ### 명제3
 Topological space $X$가 있다고 하자.
 
 $X$의 open set $U$가 있을 때, 다음을 증명하여라.
-$$ U = \text{int}(U) $$
+$$ U = \Int(U) $$
 
 **Proof**
 
@@ -117,7 +171,23 @@ $U$가 $X$의 open set이기 때문에 다음을 만족한다.
 $$ U \in C$$
 
 따라서, 다음이 성립한다.
-$$ \begin{aligned} \text{int}(U) &= \bigcup_{A \in C} A \\&= U \quad\tiny\blacksquare \end{aligned} $$
+$$ \begin{aligned} \Int(U) &= \bigcup_{A \in C} A \\&= U \quad\tiny\blacksquare \end{aligned} $$
+
+### 명제4
+Topological space $X$가 있다고 하자.
+
+$X$의 subset $U$가 있을 때, 다음을 증명하여라.
+$$ x \in X-U \implies x \notin \Int(U) $$
+
+**Proof**
+
+Interior의 정의에 의해, 다음이 성립한다.
+$$ \Int(U) \subseteq U $$
+
+따라서, 다음이 성립한다.
+$$ \begin{aligned} x &\in X-U  \\& \in X-\Int(U) \\\implies x & \notin \Int(U) \quad\tiny\blacksquare \end{aligned} $$
+
+
 
 # Exteriror
 Topological space $X$가 있다고 하자.
@@ -149,7 +219,7 @@ $$ x \in \Ext(U) \iff \exist\mathcal{N_x} \subseteq X -U $$
 
 [$\implies$]
 명제1에 의해 $\Ext(U)$는 open set임으로 다음이 성립한다.
-$$ \text{int}(\Ext(U)) = \Ext(U) $$
+$$ \Int(\Ext(U)) = \Ext(U) $$
 
 따라서, interior의 성질에 의해 다음이 성립한다.
 $$ x \in \Ext(U) \implies \exist\mathcal{N_x} \subseteq \Ext(U) $$
@@ -175,9 +245,40 @@ $$ \begin{aligned} &A \subseteq X-U \\\implies& A \subseteq X - \bar{U} \\\impli
 Topological space $X$가 있다고 하자.
 
 $X$의 subset $U$가 있을 때, $X$에서 $U$의 `boundary` $\partial U$는 다음과 같이 정의된다.
-$$ \partial U := X - (\text{int}(U) \cup \Ext(U)) $$
+$$ \partial U := X - (\Int(U) \cup \Ext(U)) $$
 
 ### 명제1
+Topological space $X$가 있다고 하자.
+
+$X$의 subset $U$가 있을 때, 다음을 증명하여라.
+$$ x \in \partial U \iff \forall \mathcal{N_x}, \quad \exist y_1,y_2 \in \mathcal{N_x} \quad s.t. \quad y_1 \in U \land y_2 \in X-U $$
+
+**Proof**
+
+[$\implies$]
+$\partial U$의 정의에 의해 다음이 성립한다.
+$$ \begin{aligned} \partial U &= X - (\Int(U) \cup \Ext(U)) \\&= X \cap (\Int(U)^C \cap \Ext(U)^C) \\&= (X-\Int(U)) \cap (X-\Ext(U)) \\&= (X-\Int(U)) \cap (X-(X-\bar{U}))) \\&= (X-\Int(U)) \cap \bar{U} \end{aligned} $$
+
+그럼으로, $x \in \partial U$에 대해서 다음이 성립한다.
+$$ x \notin \Int(U) \land x \in \bar{U} $$
+
+이 떄, Interior의 성질에 의해 다음이 성립한다.
+$$ \begin{aligned} &\nexists \mathcal{N_x} \quad s.t. \quad \mathcal{N_x} \subseteq U \\\implies& \exist y \in \mathcal{N_x} \quad s.t. \quad y \in X-U \end{aligned} $$
+
+동시에, closure의 성질에 의해 다음이 성립한다.
+$$ \begin{aligned} &\mathcal{N_x} \cap U \neq \empty \\\implies& \exist y \in \mathcal{N_x} \quad s.t \quad y \in U  \end{aligned}  $$
+
+[$\impliedby$]
+가정을 만족하는 $x \in X$가 있다고 하자.
+
+가정에 의해 다음이 성립한다.
+$$ \begin{aligned} & y_1 \in U \\\implies& \forall\mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty \\\implies& x \in \bar{U} \\& y_2 \in X-U \\\implies& y_2 \notin \Int(U) \\\implies& \nexists\mathcal{N_x} \st \mathcal{N_x} \subseteq U \\\implies& x \notin \Int(U) \end{aligned} $$
+
+따라서, 다음이 성립한다.
+$$ \begin{aligned} &x \notin \Int(U) \land x \in \bar{U} \\\implies& x \in (X-\Int(U)) \cap \bar{U} \\\implies& x \in \partial U \quad\tiny\blacksquare  \end{aligned}  $$
+
+
+
 
 > Reference
 > [northeastern.edu](https://web.northeastern.edu/suciu/MATH4565/MATH4565-fa21-handout2.pdf)

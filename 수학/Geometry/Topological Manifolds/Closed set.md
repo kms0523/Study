@@ -71,3 +71,19 @@ $X$가 다음과 같이 주어졌다고 하자.
 $$ X = \{ 1,2,3 \}, \enspace \mathcal{T}_X = \{ \empty, \{ 1 \}, \{ 1,2 \}, \{ 1,2,3 \} \} $$
 
 $\{1\}$의 경우 $\{2,3\}$이 open set이 아님으로 closed set이 아니다.$\quad\tiny\blacksquare$
+
+### 명제5
+Topological space $X$가 있다고 하자.
+
+$X$의 open set $U$가 있을 떄, 다음을 증명하여라.
+$$ X-U \text{ is an closed set of } X $$
+
+**Proof**
+
+$X-U$가 closed set이 아니라고 하자.
+
+$U$가 open set임으로 다음이 성립한다.
+$$ \begin{aligned} & X-(X-U) = U \\\implies& X-U \text{ is closed set of } X \end{aligned} $$
+
+가정에 의해 모순이 발생함으로, Proof by contradiction에 의해 다음이 성립한다.
+$$ X-U \text{ is an closed set of } X \quad\tiny\blacksquare $$
