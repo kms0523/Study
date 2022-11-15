@@ -8,11 +8,9 @@ solver를 개발하는게 가장 많은 plus alpha가 나오는가?
 - CFD FEM code 개발하기
 - CSM FEM code 개발하기
 
-- markdown preview enhanced custom css 파일 정리하기
-
 - mssel 만들기
-  - 
-  - double to str test
+  - str to value 테스트
+
 
 # 완료
 11.06
@@ -79,3 +77,10 @@ solver를 개발하는게 가장 많은 plus alpha가 나오는가?
 
 11.14
 48. parse by test
+
+11.15
+49. double to str test
+50. is integer 개발 및 테스트
+51. is real 개발 및 테스트
+52. is natural number 개발 및 테스트
+53. markdown preview enhanced custom css 파일 정리하기
