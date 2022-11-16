@@ -11,16 +11,8 @@
 * [Book] (Lee) Topological Manifolds, Bases and Countability 읽기
 * [Book] (Lee) Topological Manifolds, Countability Properties 읽기
     * Sequence Lemma 증명
-       * **Proposition 2.8 증명**
-          * 
-            * 
-            * 
-            * 
-          * closure는 set과 boundary의 union임을 증명
-          * closure는 interior과 boundary의 union임을 증명
-          * boundary가 closed set임을 증명
-          *  open set은 boundary를 갖지 않음을 증명
        * Excercise 2.10 증명
+         * Limit point, isolated point 공부하기
        * Exercise 2.14 증명
     * Second countable 공부
 *  [Book] (Lee) smooth manifolds, Chap3 읽기
@@ -114,3 +106,15 @@
 52. closure의 point일 필요충분조건이 모든 neighborhood와 set의 intersection이 공집합이 아님을 증명
 53. complement set에 원소는 interior set의 원소가 아님을 증명
 54. boundary point일 필요충분조건이 모든 neighborhood가 set과 complement set의 원소를 포함함임을 증명
+
+11.16
+55. closure point는 set 또는 boundary의 point임을 증명
+56. closure는 set과 boundary의 union임을 증명
+57. set과 boundary의 union은 interior와 boundary의 union과 같음을 증명
+58. closure는 interior과 boundary의 union임을 증명
+59. boundary point면 closure point임을 증명
+60. boundary가 closed set임을 증명
+61. open set은 boundary를 갖지 않음을 증명
+62. closed set은 closure와 동일함을 증명
+63. closed set은 boundary를 포함함을 증명
+64. closed set일 필요충분 조건은 complement set의 모든 원소가 complement set에 포함되는 neighborhood를 갖고 있음임을 증명

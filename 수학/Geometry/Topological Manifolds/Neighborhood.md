@@ -17,26 +17,45 @@ distance의 개념 없이 정의된 open set을 사용함으로써, "nearness"�
 > [Book] (Lee) Introduction to Topological Manifolds p.20
 
 ### 명제1
-topological space $X$가 있다고 하자.
+Topological space $X$가 있다고 하자.
 
-$S \subseteq X$가 있을 때, 다음을 증명하여라.
-$$ S \text { is an open set on } X \Leftrightarrow \forall x \in S, \enspace \exist \mathcal N_x \quad s.t. \quad \mathcal N_x \subseteq S $$
+$X$의 subset $S$가 있을 때, 다음을 증명하여라.
+$$ S \text { is an open set of } X \iff \forall x \in S, \enspace \exist \mathcal N_x \quad s.t. \quad \mathcal N_x \subseteq S $$
 
 **Proof**
 
-[$\Rightarrow$]  
+[$\implies$]  
 $S$가 open set임으로 $\mathcal N_x = S$로 두면 항상 성립한다.
 
-[$\Leftarrow$]  
+[$\impliedby$]  
 $\forall x \in X$에 대해, $x \in \mathcal N_x$임으로 다음이 성립한다.
 $$ S = \bigcup_{\forall x \in S} \mathcal N_x $$
 
 이 때, 임의의 $x \in S$에 대해서 $\mathcal N_x \in \mathcal T_X$이고, Topology는 union에 닫혀 있음으로 다음이 성립한다.
-$$ \bigcup_{\forall x \in S} \mathcal N_x \in \mathcal T_X \Rightarrow S \in \mathcal T_X $$
+$$ \bigcup_{\forall x \in S} \mathcal N_x \in \mathcal T_X \implies S \in \mathcal T_X $$
 
 따라서, $S$는 $X$의 open set이다. $\quad {_\blacksquare}$
 
 ### 명제2
+Topological space $X$가 있다고 하자.
+
+$X$의 subset $S$가 있을 때, 다음을 증명하여라.
+$$ S \text { is closed set of } X \iff \forall x \in X-S, \enspace \exist \mathcal N_x \quad s.t. \quad \mathcal N_x \subseteq X-S $$
+
+[$\implies$]  
+$S$가 closed set임으로 다음이 성립한다.
+$$ X-S \text{ is an open set of } X $$
+
+따라서, 명제 1에 의해 다음이 성립한다.
+$$ \forall x \in X-S, \enspace \exist \mathcal N_x \quad s.t. \quad \mathcal N_x \subseteq X-S $$
+
+[$\impliedby$]
+명제 1에 의해 다음이 성립한다.
+$$ X-S \text{ is an open set of } X $$
+
+따라서, $X$의 $S$는 closed set이다. $\qed$
+
+### 명제3
 Topological space $X$가 있다고 하자.
 
 $a,b \in X$라 할 때, 다음을 증명하여라.
