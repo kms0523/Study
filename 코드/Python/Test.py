@@ -2,6 +2,8 @@ import sympy
 import numpy
 
 
+
+
 m = numpy.mat(numpy.zeros((3,3)))
 
 m[0,0] = 1
