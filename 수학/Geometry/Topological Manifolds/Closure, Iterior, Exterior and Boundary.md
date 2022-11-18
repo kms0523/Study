@@ -58,49 +58,44 @@ $$ A \subseteq X-\bar{U} \implies A \subseteq X-U \qed $$
 ### 명제3
 Topological space $X$가 있다고 하자.
 
-$X$의 subset을 $U$가 있을 떄, 다음을 증명하여라.
+$x \in X$와 $X$의 subset을 $U$가 있을 떄, 다음을 증명하여라.
 $$ x \in \bar{U} \iff \forall \mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty $$
 
 **Proof**
 
 [$\implies$]
-다음을 가정하자.
-$$ x \in \bar{U} \implies \exist \mathcal{N_x} \quad s.t. \quad \mathcal{N_x} \cap U = \empty $$
+ 다음을 가정하자.
+$$ \exist \mathcal{N_x} \quad s.t. \quad \mathcal{N_x} \cap U = \empty $$
 
 위의 가정를 만족하는 $\mathcal{N_x}$에 대해 다음이 성립한다.
 $$ U \subseteq X-\mathcal{N_x} \land X - \mathcal{N_x} \text{ is closed set of }X $$
 
-이 떄, $x \in \bar{U}$임으로, Closure 정의에 의해 다음이 성립한다.
+전제에 의해 $x \in \bar{U}$임으로, Closure 정의에 의해 다음이 성립한다.
 $$ x \in X - \mathcal{N_x} $$
 
-$x \in \mathcal{N_x}$임으로 위의 결과는 모순이다.
+그러나, neighborhood의 정의에 의해 $x \in \mathcal{N_x}$임으로 모순이 발생한다.
 
 따라서, proof by contradiction에 의해 다음이 성립한다.
-$$ x \in \bar{U} \implies \forall \mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty $$
+$$ \forall \mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty \qed $$
 
 [$\impliedby$]
+Collection $C$를 다음과 같이 정의하자.
+$$ C := \Set{A \subseteq X | U \subseteq A \land A \text{ is a closed set of } X} $$
 
-$x \in X$와 $X$의 closed set $A$가 다음을 만족한다고 하자.
-$$ \forall \mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty $$
-
-$$ U \subseteq A$$
-
-이 때, 다음을 가정하자.
-$$ \exist x \quad s.t. \quad x \notin A  $$
+이 떄, 다음을 가정하자.
+$$ \exist A \in C \quad s.t. \quad x \notin A  $$
 
 $A$가 closed set임으로 다음이 성립한다.
 $$\begin{aligned} &X-A \text{ is an open set of } X \land x \in X-A \\\implies& X-A \in \Set{\mathcal{N_x}} \end{aligned} $$
 
-$\forall \mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty$임으로, 다음이 성립한다.
+전제에 의해 다음이 성립한다.
 $$ (X-A) \cap U \neq \empty $$
 
 이는 $U \subseteq A$라는 사실과 모순됨으로, proof by contradiction에 의해 다음이 성립한다.
-$$ x \in A  $$
+$$ \forall A \in C, \quad  x \in A $$
 
-즉, $\forall \mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty$을 만족하는 $x$는 $U$를 포함하는 $X$의 closed set에 항상 포함된다. 
-
-따라서, closure의 정의에 의해 closure에도 포함되어 있음으로 다음이 성립한다.
-$$ \forall \mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty \implies x \in \bar{U} \qed $$
+따라서, closure의 정의에 의해 다음이 성립한다.
+$$ x \in \bar{U} \qed $$
 
 > Reference
 > [northeastern.edu](https://web.northeastern.edu/suciu/MATH4565/MATH4565-fa21-handout2.pdf)

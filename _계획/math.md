@@ -11,16 +11,13 @@
 * [Book] (Lee) Topological Manifolds, Bases and Countability 읽기
 * [Book] (Lee) Topological Manifolds, Countability Properties 읽기
     * Sequence Lemma 증명
-       * Excercise 2.10 증명
-         * Limit point, isolated point 공부하기
-       * Exercise 2.14 증명
+      * b 
+      * c
+      * d
     * Second countable 공부
 *  [Book] (Lee) smooth manifolds, Chap3 읽기
 *  [Book] (Hubbard & Hubbard), chapter 1.7 정리
 *  Derivatives.md 정리
-
-
-   
 
 # 완료
 1. 교집합과의 차는 차의 합집임을 증명
@@ -118,3 +115,10 @@
 62. closed set은 closure와 동일함을 증명
 63. closed set은 boundary를 포함함을 증명
 64. closed set일 필요충분 조건은 complement set의 모든 원소가 complement set에 포함되는 neighborhood를 갖고 있음임을 증명
+
+11.18
+65. Limit point, isolated point 공부하기
+66. 모든 limit point를 포함하는 set과 closed set은 동치임을 증명
+67. set 위의 수열은 closure의 점으로 수렴함을 증명
+68. first countable space에서 closure point와 set위의 sequence의 극한이란 말은 동치임을 증명
+69. eventually in 공부하기

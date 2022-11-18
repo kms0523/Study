@@ -60,4 +60,37 @@ $$ \forall \mathcal{N_x}, \quad \exist i \in \N \quad s.t. \quad s(i) \subseteq 
 그래서 nested neighborhood basis의 정의에 의해 $s(n)$은 nested neighborhood basis이다. $\quad\tiny\blacksquare$
 
 ### 명제3
+First countable space $X$가 있다고 하자.
+
+이 떄, 다음을 증명하여라.
+$$  \exist\text{ sequence } s \text{ on } U \st \text{ converge to } x \iff x \in \bar{U} $$
+
+**Proof**
+[$\implies$]
+convergence의 성질에 의해 성립한다.
+
+[$\impliedby$]
+$X$가 first countable space임으로 다음이 성립한다.
+$$ \exist\text{ countable neighborhood basis }\mathcal{B_x} $$
+
+$\mathcal{(B_x)_i} \in \mathcal{B_x}$가 있을 떄, open set의 성질에 의해 $N \in \N$에 대해, 다음이 성립한다.
+$$ \bigcap_{i=1}^N \mathcal{(B_x)_i} \in \Set{\mathcal{N_x}}  $$
+
+또한, $x \in \bar{U}$임으로 다음이 성립한다.
+$$ \forall\mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty $$
+
+따라서, $(\bigcap_{i=1}^N \mathcal{(B_x)_i}) \cap U \neq \empty$임으로 $U$위의 sequence $s(n)$을 다음과 같이 정의하자.
+$$ s(n) := \text{one of a point in } \bigg(\bigcap_{i=1}^n \mathcal{(B_x)_i}\bigg) \cap U$$
+
+이 떄, $\mathcal{B_x}$가 neighborhood basis임으로 다음을 만족한다.
+$$ \forall\mathcal{N_x}, \quad \exist j \in \N \st \mathcal{(B_x)_j} \subseteq \mathcal{N_x} $$
+
+따라서, 임의의 $\mathcal{N_x}$가 주어졌을 떄, $j \le n$으로 두면 다음이 성립한다
+$$ \begin{aligned} s(n) &\in \bigg(\bigcap_{i=1}^n \mathcal{(B_x)_i}\bigg) \cap U \\& \in \mathcal{(B_x)_j} \\& \in \mathcal{N_x} \end{aligned}  $$
+
+그럼으로, convergence의 정의에 의해 $s(n)$은 $x$에 수렴한다.$\qed$
+
+> Reference
+> [proofwiki](https://proofwiki.org/wiki/Sequence_Lemma)
+
 

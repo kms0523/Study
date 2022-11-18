@@ -36,6 +36,10 @@ $$ \bigcup_{\forall x \in S} \mathcal N_x \in \mathcal T_X \implies S \in \mathc
 
 따라서, $S$는 $X$의 open set이다. $\quad {_\blacksquare}$
 
+#### 참고
+대우명제는 다음과 같다.
+$$ \exist x \in X-U \st \forall\mathcal{N_x}, \quad \mathcal{N_x} \nsubseteq X-U \iff S \text{ is not an open set of } X $$
+
 ### 명제2
 Topological space $X$가 있다고 하자.
 
