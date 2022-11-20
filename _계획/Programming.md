@@ -4,7 +4,8 @@
     - msml
     - mkl
   - 라이브러리 배포하는 법 with CMAKE 
-    - [모두코드 - ](https://modoocode.com/311)
+    - [blog.모두코드](https://modoocode.com/332)
+    - [blog.별준코딩](https://junstar92.tistory.com/category/CMake?page=1)
     - [blog - Cmake를 이용한 라이브러리](https://tttsss77.tistory.com/219)
     - [cgold](https://cgold.readthedocs.io/en/latest/overview/cmake-can.html)
     - [cmake 도움 문서](https://gist.github.com/luncliff/6e2d4eb7ca29a0afd5b592f72b80cb5c?permalink_comment_id=2831356)
