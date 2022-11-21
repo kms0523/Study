@@ -1,15 +1,11 @@
 # 할 일
-- msml 배포하기 (Git issue 알아보기)
-  - 2017에서 라이브러리 작동하는지 확인해보기
-    - msml
-    - mkl
-  - 라이브러리 배포하는 법 with CMAKE 
-    - [blog.모두코드](https://modoocode.com/332)
-    - [blog.별준코딩](https://junstar92.tistory.com/category/CMake?page=1)
-    - [blog - Cmake를 이용한 라이브러리](https://tttsss77.tistory.com/219)
-    - [cgold](https://cgold.readthedocs.io/en/latest/overview/cmake-can.html)
-    - [cmake 도움 문서](https://gist.github.com/luncliff/6e2d4eb7ca29a0afd5b592f72b80cb5c?permalink_comment_id=2831356)
-    - [blog - cmake로 다른 library 빌드하는 과정](https://luckygg.tistory.com/376)
+- msml 배포하기
+  - 라이브러리 README 문서 작성하기
+- mssl 개발하기
+  - rfindnth 개발 & 테스트
+  - str to value 테스트
+- mssl 배포하기
+  - 라이브러리 배포하는 문서 작성하기
 - .Lib 파일 만드는 법 문서 작성
 
 solver를 개발하는게 가장 많은 plus alpha가 나오는가?
@@ -17,9 +13,6 @@ solver를 개발하는게 가장 많은 plus alpha가 나오는가?
 - CFD FVM code 개발하기
 - CFD FEM code 개발하기
 - CSM FEM code 개발하기
-
-- mssel 만들기
-  - str to value 테스트
 
 
 # 완료
