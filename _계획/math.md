@@ -11,7 +11,6 @@
 * [Book] (Lee) Topological Manifolds, Bases and Countability 읽기
 * [Book] (Lee) Topological Manifolds, Countability Properties 읽기
     * Sequence Lemma 증명
-      * b 
       * c
       * d
     * Second countable 공부
@@ -122,3 +121,7 @@
 67. set 위의 수열은 closure의 점으로 수렴함을 증명
 68. first countable space에서 closure point와 set위의 sequence의 극한이란 말은 동치임을 증명
 69. eventually in 공부하기
+
+11.21
+70. interior point일 필요충분조건은 그 점으로 수렴하는 모든 수열이 eventually in set임을 증명
+71. 

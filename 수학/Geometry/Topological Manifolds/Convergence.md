@@ -10,6 +10,13 @@ $$ \exist N \in \N \quad s.t. \quad  N \le n \Rightarrow s(n) \in \forall\mathca
 ### 참고1
 $s(n)$이 $x$에 수렴한다는 말은, $s(n)$의 `극한(limit)`이 $x$라고도 한다.
 
+### 참고2
+$s(n)$이 $x$에 수렴한다는 다음과 같이 표기한다.
+$$ s(n) \rightarrow x $$
+
+또는 다음과 같이 표기한다.
+$$ \lim_{i\rightarrow\infty} s(i) = x $$
+
 ### 명제1
 metric space $M$이 있을 떄, 다음을 증명하여라.
 $$\text{metric space convegence definition } \Leftrightarrow \text{topological space convegence definition} $$
@@ -73,7 +80,7 @@ $$  \exist\text{ sequence } s \text{ on } U \st \text{ converge to } x \implies 
 
 **Proof**
 
-$s$가 $x$에 converge함으로 어떤 $s(N) \in U$에 대해 다음이 성립한다.
+$s$가 $x$에 converge함으로 어떤 $N \in \N$에 대해,  $s(N) \in U$가 다음을 만족한다.
 $$ \begin{aligned} & \forall\mathcal{N_x}, \quad s(N) \in \mathcal{N_x} \\\implies& \forall\mathcal{N_x}, \quad U \cap \mathcal{N_x} \neq \empty \end{aligned} $$
 
 Closure의 성질에 의해 다음이 성립한다.

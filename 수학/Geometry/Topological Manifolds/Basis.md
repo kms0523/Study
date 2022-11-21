@@ -226,9 +226,18 @@ Neighborhood basis를 `local basis`라고도 부른다.
 # Nested Neighborhood Basis
 Topological space $X$가 있다고 하자.
 
-$x \in X$가 있을 때, $\mathcal{N_x}$의 sequence $s(n)$이 다음을 만족할 떄, $x$에서 `nested neighborhood basis`라고 한다.
-$$ \mathcal{N_x^{i+1}} \subseteq \mathcal{N_x^{i}} \enspace\land\enspace \forall \mathcal{N_x}, \quad \exist j \in \N \quad s.t. \quad \mathcal{N_x^{j}} \subseteq \mathcal{N_x}$$
+$x \in X$가 있을 때, sequence $\mathcal{B}(n)$이 다음을 만족할 떄, $x$에서 `nested neighborhood basis`라고 한다.
+$$ \mathcal{B_x}(i+1) \subseteq \mathcal{B_x}(i) \enspace\land\enspace \forall \mathcal{N_x}, \quad \exist j \in \N \quad s.t. \quad \mathcal{B_x}(j)\subseteq \mathcal{N_x}$$
 
-$$ \text{Where, } s(i) = \mathcal{N_x^{i}} $$
+$$ \text{Where, } \mathcal{B_x}(i) = \mathcal{N_x^{i}} \in \Set{\mathcal{N_x}} $$
 
 
+
+
+
+
+
+
+
+
+-
