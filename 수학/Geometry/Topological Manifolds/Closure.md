@@ -82,7 +82,7 @@ $$ \forall \mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty \qed $$
 Collection $C$를 다음과 같이 정의하자.
 $$ C := \Set{A \subseteq X | U \subseteq A \land A \text{ is a closed set of } X} $$
 
-이 떄, 다음을 가정하자.
+이 떄, 전제를 만족시키는 $x$에 대해 다음을 가정하자.
 $$ \exist A \in C \quad s.t. \quad x \notin A  $$
 
 $A$가 closed set임으로 다음이 성립한다.

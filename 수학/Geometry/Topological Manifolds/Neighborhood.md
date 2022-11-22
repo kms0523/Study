@@ -38,7 +38,10 @@ $$ \bigcup_{\forall x \in S} \mathcal N_x \in \mathcal T_X \implies S \in \mathc
 
 #### 참고
 대우명제는 다음과 같다.
-$$ \exist x \in X-U \st \forall\mathcal{N_x}, \quad \mathcal{N_x} \nsubseteq X-U \iff S \text{ is not an open set of } X $$
+$$ \exist x \in S \st \forall\mathcal{N_x}, \quad \mathcal{N_x} \nsubseteq S \iff S \text{ is not an open set of } X $$
+
+이 떄, 좌측 명제는 다음 명제와 동치이다.
+$$ \begin{aligned} & \exist x \in S \st \forall\mathcal{N_x}, \quad \mathcal{N_x} \nsubseteq S \\\iff& \exist x \in S \st \forall\mathcal{N_x}, \quad \mathcal{N_x} \cap S \neq \empty \end{aligned} $$
 
 ### 명제2
 Topological space $X$가 있다고 하자.

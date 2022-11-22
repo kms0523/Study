@@ -9,7 +9,7 @@ Topological space $X$가 있다고 하자.
 
 $X$의 subset $U$가 있을 떄, 다음을 증명하여라.
 $$ \Int(U) \text{ is open set of } X $$
-ㅋ
+
 **Proof**
 
 open set의 성질에 의해 다음이 성립한다.
@@ -29,7 +29,7 @@ $$ x \in \Int(U) \iff \exist\mathcal{N_x} \quad s.t. \quad \mathcal{N_x} \subset
 **Proof**
 
 [$\implies$]
-$\Int(U)$의 정의에 $x$를 포함하고 $U$에 subset인 $X$의 open set이 존재한다.
+$\Int(U)$의 정의에 의해, $x$를 포함하고 $U$에 subset인 $X$의 open set이 존재한다.
 
 따라서, neighborhood의 정의에 의해 다음이 성립한다.
 $$ \exist\mathcal{N_x} \subseteq U $$

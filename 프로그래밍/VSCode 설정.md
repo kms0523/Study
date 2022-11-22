@@ -50,6 +50,10 @@ F1 >> "미리보기 새로 고침" 검색 >> 톱니바퀴 >> 키 바인딩에 ct
 
 * preview 화면 우클릭 >> preview theme >> monokai.css
 
+## 바로가기 키 설정
+* 바로가기 키 설정 >> Markdown: open preview >> 키 바인딩 제거
+* 바로가기 키 설정 >> Markdown: open preview to the side >> 키 바인딩 제거
+
 ## Customize css
 F1 >> Markdwon Preview Enhanced: Customize CSS >> 아래 내용 입력
 ```

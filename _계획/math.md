@@ -8,11 +8,18 @@
 * 선형대수 41강
 * 선형대수 42강
 * 선형대수 43강
+* Topology 복습하기
+  * Closure
+  * Interiror
+  * Exterior
+  * Boundary
+  * convergence
+  * Hausdroff space
+  * Basis
+  * Countability
+  * Eventually in
 * [Book] (Lee) Topological Manifolds, Bases and Countability 읽기
-* [Book] (Lee) Topological Manifolds, Countability Properties 읽기
-    * Sequence Lemma 증명
-      * c
-      * d
+  * [Book] (Lee) Topological Manifolds, Countability Properties 읽기    
     * Second countable 공부
 *  [Book] (Lee) smooth manifolds, Chap3 읽기
 *  [Book] (Hubbard & Hubbard), chapter 1.7 정리
@@ -124,4 +131,7 @@
 
 11.21
 70. interior point일 필요충분조건은 그 점으로 수렴하는 모든 수열이 eventually in set임을 증명
-71. 
+
+11.22
+71. first countable space에서 closed set과 sequentially closed set은 동치임을 증명
+72. first countable space에서 open set과 sequentially open set은 동치임을 증명

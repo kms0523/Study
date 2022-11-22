@@ -36,7 +36,7 @@ $$ X-U \text{ is not a open set of } X $$
 그러면 다음이 성립한다.
 $$ \begin{aligned} & \exist x \in X-U \st \forall\mathcal{N_x}, \quad \mathcal{N_x} \nsubseteq X-U \\\iff& \exist x \in X-U \st \forall\mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty \end{aligned} $$
 
-이 떄, $x \in X-U$임으로 다음이 성립한다.
+위를 만족하는 $x\in X-U$에 대해 다음이 성립한다.
 $$ \begin{aligned} & \forall\mathcal{N_x}, \quad \mathcal{N_x} \cap U \text{ contains a point of } U \text{ other than } x \\\iff& x \text{ is a limit point of } U  \end{aligned} $$
 
 하지만 이는, $U$의 모든 limit point가 $U$에 포함된다는 전제에 모순이 된다.

@@ -110,33 +110,98 @@ $$ \forall n \in \N, \quad \mathcal{B_x}(n) \cap U \neq \empty \qed $$
 First countable space $X$와 $X$의 subset $U$가 있다고 하자.
 
 이 떄, 다음을 증명하여라.
-$$ U \text{ is closed set of } X \iff \begin{gathered} \text{ contains every limit of} \\ \text{every convergent sequence of points in } U \end{gathered}  $$
+$$ U \text{ is closed set of } X \iff \begin{gathered} U\text{ contains every limit of} \\ \text{every convergent sequence of points in } U \end{gathered}  $$
 
 **Proof**
 
 [$\implies$]
-$x \in X$에 대해 다음을 가정하자.
+$x \in X$가 있을 떄, $x$로 수렴하는 $U$위의 convergent sequence $s(n)$이 있다고 하자.
+$$ \lim_{i\rightarrow\infty}s(i)=x $$
+
+Convergence의 정의에 의해 다음이 성립한다.
+$$ \forall\mathcal{N_x}, \quad \exist N \in \N \st N \le n \implies s(n) \in \mathcal{N_x} $$
+
+따라서, $N \le n$에 대해서 다음이 성립한다.
+$$ s(n) \in U \cap \mathcal{N_x} $$
+
+이 떄, 다음을 가정하자.
 $$ x \notin U $$
 
 전제에 의해 $U = \bar{U}$임으로, closure의 성질에 의해 다음이 성립한다.
 $$ x \notin U \iff \exist\mathcal{N_x} \st \mathcal{N_x} \cap U = \empty $$
 
-$U$위의 sequence $s(n)$이 $x$에 converge 한다고 하면 Convergence의 정의에 의해 다음이 성립한다.
-$$ \forall\mathcal{N_x}, \quad \exist N \in \N \st N \le n \implies s(n) \in \mathcal{N_x} $$
-
-이는 $\mathcal{N_x} \cap U = \empty$인 $\mathcal{N_x}$가 존재한다는 사실에 모순된다.
+이는 $\forall\mathcal{N_x}$에 대해 $N \le n$일 떄, $s(n) \in U \cap \mathcal{N_x}$이라는 사실에 모순된다.
 
 따라서, proof by contradiction에 의해 다음이 성립한다.
 $$ x \in U $$
 
 [$\impliedby$]
+다음을 가정하자.
+$$ U \text{ is not a closed set of } X $$
+
+그러면 $X-U$가 open set이 아님으로, open set의 성질에 의해 다음이 성립한다.
+$$ \begin{aligned} & \exist x \in X-U \st \forall\mathcal{N_x}, \quad \mathcal{N_x} \nsubseteq X-U \\\iff& \exist x \in X-U \st \forall\mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty \end{aligned} $$
+
+위를 만족하는 $x \in X-U$에 대해서, $X$가 first countable space임으로 다음이 성립한다.
+$$ \exist\text{nested neighborhood basis } \mathcal{B_x}(n) $$
+
+$U$위의 sequence $s(n)$을 다음과 같이 정의하자.
+$$ s(n) = \text{one of a point in } \mathcal{B_x}(n) \cap U $$
+
+보조명제4.1에 의해 $\mathcal{B_x}(n) \cap U \neq \empty$임으로 $s(n)$은 정의 될 수 있다.
+
+보조명제4.2에 의해 $\lim_{i\rightarrow\infty} s(i) = x$임으로 전제에 의해, $x \in U$이다.
+
+하지만 이는 $x \in X-U$라는 사실에 모순된다.
+
+따라서, proof by contradiction에 의해 다음이 성립한다.
+$$ U \text{ is a closed set of } X \qed $$
+
+> Reference
+> [math.stackexchange](https://math.stackexchange.com/questions/3002079/what-is-the-proof-that-first-countable-is-sufficient-to-say-that-sequentially-cl)
 
 
+#### 보조명제4.1
+다음을 증명하여라.
+$$\mathcal{B_x}(n) \cap U \neq \empty$$
 
+**Proof**
 
+Nested neighborhood basis의 성질에 의해 다음이 성립한다.
+$$ \forall n \in \N, \quad \mathcal{B_x}(n) \in \Set{\mathcal{N_x}} $$
 
+따라서, $x$의 성질에 의해 다음이 성립한다.
+$$ \begin{aligned} & \forall\mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty \\\iff& \forall n \in \N, \quad \mathcal{B_x}(n) \cap U \neq \empty \qed \end{aligned} $$
 
+#### 보조명제4.2
+다음을 증명하여라.
+$$ \lim_{i\rightarrow\infty} s(i) = x $$
 
+**Proof**
+
+$\mathcal{B_x}(n)$가 nested neighborhood basis임으로 임의의 $\mathcal{N_x}$가 주어졌을 떄, 다음이 성립한다.
+$$ \exist j \in \N \st \mathcal{B_x}(j) \subseteq \mathcal{N_x} $$
+
+$s(n)$의 정의에 의해  다음이 성립한다.
+$$ \begin{aligned} &s(n) \in \mathcal{B_x}(n) \cap U \\\implies& s(n) \in \mathcal{B_x}(n) \land s(n) \in U \\\implies& s(n) \in \mathcal{B_x}(n) \end{aligned}  $$
+
+$\mathcal{B_x}(n)$가 nested neighborhood basis임으로 $j \le n$에 대해 다음이 성립한다.
+$$ \begin{aligned} & \mathcal{B_x}(n) \subseteq \mathcal{B_x}(j) \\\implies& s(n) \in \mathcal{B_x}(j) \\\implies& s(n) \in \mathcal{N_x}  \end{aligned} $$
+
+따라서, convergence의 정의에 의해 $s(n)$은 $x$에 수렴한다.$\qed$
+
+#### 참고1
+$U$가 다음을 만족할 때, $U$를 sequentially closed set이라고 한다.
+$$ U\text{ contains every limit of every convergent sequence of points in } U $$
+
+> Reference
+> [math.stackexchange](https://math.stackexchange.com/questions/1912653/a-subset-of-a-topological-space-is-closed-iff-it-contains-all-its-limit-points)
+
+#### 참고2
+$X$가 first countable space가 아니더라도 closed set은 sequentially closed set이지만 그 역은 성립하지 않는다.
+
+> Reference
+> [math.stackexchange](https://math.stackexchange.com/questions/2940442/why-closed-implies-sequentially-closed-but-not-the-converse)
 
 
 
