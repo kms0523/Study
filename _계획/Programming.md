@@ -1,6 +1,4 @@
 # 할 일
-- msml 배포하기
-  - 라이브러리 README 문서 작성하기
 - mssl 개발하기
   - rfindnth 개발 & 테스트
   - str to value 테스트
@@ -87,3 +85,7 @@ solver를 개발하는게 가장 많은 plus alpha가 나오는가?
 51. is real 개발 및 테스트
 52. is natural number 개발 및 테스트
 53. markdown preview enhanced custom css 파일 정리하기
+
+11.23
+54. msml 라이브러리 README 문서 작성
+55. msml 배포

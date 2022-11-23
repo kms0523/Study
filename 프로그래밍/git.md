@@ -18,6 +18,9 @@ Tracked 파일은 또 `Commited`(Git Directory의 상태와 동일)와 `Modified
 * `git restore --staged ./`  
 Staging Area에 있는 모든 파일을 다시 unstage
 
+* `git rm --cached -r ./`
+Traced 파일을 Untracked 파일로 바꿈
+
 
 # Git 설정
 local config file --> 현재 git repository  
@@ -101,6 +104,10 @@ global config file --> 모든 git repository
 > Progit >> Git 도구 >> Reset 명확히 알고 가기
 * 
 
+# .gitignore
+
+* folder/**
+폴더 안에 파일들 전부 무시하기
 
 # Git LFS
 > Reference  
