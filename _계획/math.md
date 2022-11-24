@@ -9,10 +9,6 @@
 * 선형대수 42강
 * 선형대수 43강
 * Topology 복습하기
-  * Closure
-  * Interiror
-  * Exterior
-  * Boundary
   * convergence
   * Hausdroff space
   * Basis

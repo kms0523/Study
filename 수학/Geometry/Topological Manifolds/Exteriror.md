@@ -33,14 +33,45 @@ $$ \Int(\Ext(U)) = \Ext(U) $$
 따라서, interior의 성질에 의해 다음이 성립한다.
 $$ x \in \Ext(U) \implies \exist\mathcal{N_x} \subseteq \Ext(U) $$
 
-$\Ext(U)$의 정의와 $U \subseteq \bar{U}$임으로 다음이 성립한다.
-$$ \begin{aligned} x \in \Ext(U) &\implies \exist\mathcal{N_x} \subseteq \Ext(U) \\&\implies \exist\mathcal{N_x} \subseteq X - \bar{U} \\&\implies \exist\mathcal{N_x} \subseteq X - U \end{aligned} $$
+$\Ext(U)$의 정의에 의해 다음이 성립한다.
+$$ \exist\mathcal{N_x} \subseteq \Ext(U) \iff \exist\mathcal{N_x} \subseteq X - \bar{U} $$
+
+$U \subseteq \bar{U}$임으로 다음이 성립한다.
+$$ \exist\mathcal{N_x} \subseteq X - \bar{U} \implies \exist\mathcal{N_x} \subseteq X - U $$
+
+따라서, 다음이 성립한다.
+$$ x \in \Ext(U) \implies \exist\mathcal{N_x} \subseteq X -U \qed $$
 
 [$\impliedby$]
-$x \in X-U$가 있다고 하자.
+$x \in X$가 있다고 하자.
 
-$X - U$에 포함되는 $\mathcal{N_x}$가 존재하기 때문에 다음이 성립한다.
+전제에 의해 다음이 성립한다.
 $$ \exist \text{open set } A \quad s.t. \quad x \in A \subseteq X-U $$
 
 이 때, closure의 성질에 의해 다음이 성립한다.
-$$ \begin{aligned} &A \subseteq X-U \\\implies& A \subseteq X - \bar{U} \\\implies& A \subseteq \Ext(U) \\\implies& x  \in \Ext(U) \qed \end{aligned} $$
+$$ A \subseteq X-U \iff A \subseteq X - \bar{U} $$
+
+Exterior의 정의에 의해 $A \subseteq \Ext(U)$임으로 다음이 성립한다.
+$$ x  \in \Ext(U) \qed $$
+
+### 명제3
+Topological space $X$가 있다고 하자.
+
+이 떄, 다음을 증명하여라.
+$$ X - \Ext(U) = \bar{U} $$
+
+**Proof**
+
+Exterior의 정의에 의해 다음이 성립한다.
+$$ \begin{aligned} X - \Ext(U) &= X - (X - \bar{U})\\&= X \cap (X \cap \bar{U}^c)^c \\&= X \cap (X^c \cup\bar{U}) \\&= (X \cap X^c) \cup (X \cap \bar{U}) \\&= \bar{U}  \qed \end{aligned} $$
+
+
+
+
+
+
+
+
+
+
+`

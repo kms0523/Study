@@ -1,8 +1,11 @@
 # Interior
 Topological space $X$가 있다고 하자.
 
-$X$의 subset $U$가 있을 때, $X$에서 $U$의 interior $\Int(U)$는 다음과 같이 정의된다.
-$$ \Int(U) := \bigcup\Set{A \subseteq X | A \subseteq U \land A \text{ is open set of } X} $$
+$X$의 subset $U$가 있을 때, collection $C$를 다음과 같이 정의하자.
+$$ C:= \Set{A \subseteq X | A \subseteq U \land A \text{ is open set of } X} $$
+
+$X$에서 $U$의 interior $\Int(U)$는 다음과 같이 정의된다.
+$$ \Int(U) := \bigcup_{A \in C}A $$
 
 ### 명제1
 Topological space $X$가 있다고 하자.
@@ -24,29 +27,31 @@ $$ \text{infinite union of open set is open set} $$
 Topological space $X$가 있다고 하자.
 
 $X$의 subset $U$가 있을 떄, 다음을 증명하여라.
-$$ x \in \Int(U) \iff \exist\mathcal{N_x} \quad s.t. \quad \mathcal{N_x} \subseteq U $$
+$$ x \in \Int(U) \iff \exist\mathcal{N_x} \st \mathcal{N_x} \subseteq U $$
 
 **Proof**
 
+Collection $C$를 다음과 같이 정의하자.
+$$ C:= \Set{A \subseteq X | A \subseteq U \land A \text{ is open set of } X} $$
+
+
 [$\implies$]
-$\Int(U)$의 정의에 의해, $x$를 포함하고 $U$에 subset인 $X$의 open set이 존재한다.
+전제에 의해 다음이 성립한다.
+$$ \exist A \in C \st x \in A $$
 
 따라서, neighborhood의 정의에 의해 다음이 성립한다.
-$$ \exist\mathcal{N_x} \subseteq U $$
+$$ \exist\mathcal{N_x} \in \Set{\mathcal{N_x}} \st \mathcal{N_x} \subseteq U $$
 
 [$\impliedby$]
-$U$에 포함되는 $\mathcal{N_x}$가 존재하기 때문에 다음이 성립한다.
-$$ \exist \text{open set } A \quad s.t. \quad x \in A \subseteq U $$
+전제에 의해 다음이 성립한다.
+$$ \exist A \in C \st x \in A $$
 
-$\Int(U)$는 $U$에 포함된 모든 open set의 union임으로 다음이 성립한다.
-$$ y \in A \implies y \in \Int(U) $$
+$\Int(U)$의 정의에 의해 다음이 성립한다.
+$$ x \in A \implies x \in \Int(U) \qed $$
 
-따라서 다음이 성립한다.
-$$ x \in \Int(U) \qed $$
-
-#### 따름명제 2.1
-다음을 증명하여라.
-$$ x \notin \Int(U) \iff \nexists\mathcal{N_x} \quad s.t. \quad \mathcal{N_x} \subseteq U $$
+#### 참고
+대우명제는 다음과 같다.
+$$ x \notin \Int(U) \iff \nexists\mathcal{N_x} \st \mathcal{N_x} \subseteq U $$
 
 ### 명제3
 Topological space $X$가 있다고 하자.
