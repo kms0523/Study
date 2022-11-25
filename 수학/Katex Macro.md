@@ -6,3 +6,4 @@ $\gdef\Ext{\text{Ext}}$
 $\gdef\Int{\text{Int}}$
 $\gdef\st{\quad s.t \quad}$
 $\gdef\qed{\quad\tiny\blacksquare}$
+$\gdef\preimg{\text{preimg}}$

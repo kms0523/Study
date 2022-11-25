@@ -1,8 +1,8 @@
 # Convergence
-topological space $X$가 있다고 하자.
+Topological space $X$가 있다고 하자.
 
 $s(n)$이 $X$위의 sequence일 때, $s(n)$이 $x \in X$에 `수렴(convergence)`한다는 말은 다음과 동치이다.
-$$ \exist N \in \N \quad s.t. \quad  N \le n \Rightarrow s(n) \in \forall\mathcal{N_x}$$
+$$\forall\mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad  \exist N \in \N \quad s.t. \quad  N \le n \implies s(n) \in \mathcal{N_x}$$
 
 > Referece  
 > [Book] (Lee) Introduction to Topological Manifolds p.26
@@ -18,8 +18,8 @@ $$ s(n) \rightarrow x $$
 $$ \lim_{i\rightarrow\infty} s(i) = x $$
 
 ### 명제1
-metric space $M$이 있을 떄, 다음을 증명하여라.
-$$\text{metric space convegence definition } \Leftrightarrow \text{topological space convegence definition} $$
+Metric space $M$이 있을 떄, 다음을 증명하여라.
+$$\text{metric space convegence definition } \iff \text{topological space convegence definition} $$
 
 > Referece  
 > [Book] (Lee) Introduction to Topological Manifolds exercise 2.12
@@ -37,7 +37,7 @@ $$ X = \{ 1,2,3 \}, \enspace \mathcal{T}_X = \{ \empty, \{ 1 \}, \{ 1,2 \}, \{ 1
 
 $X$위의 constant sequence $s = \{ 2,2,\cdots \}$가 있다고 하자.
 
-$2 \in \forall\mathcal N_3$임으로 $s(n)$은 $3$에 수렴한다. $\qed$
+$\forall\mathcal N_3 \in \Set{\mathcal{N_3}}$에 대해, $2 \in \mathcal{N_3}$임으로 $s(n)$은 $3$에도 수렴한다. $\qed$
 
 ### 명제3
 Topological space $X$가 있다고 하자.
@@ -80,8 +80,15 @@ $$  \exist\text{ sequence } s \text{ on } U \st \text{ converge to } x \implies 
 
 **Proof**
 
-$s$가 $x$에 converge함으로 어떤 $N \in \N$에 대해,  $s(N) \in U$가 다음을 만족한다.
-$$ \begin{aligned} & \forall\mathcal{N_x}, \quad s(N) \in \mathcal{N_x} \\\implies& \forall\mathcal{N_x}, \quad U \cap \mathcal{N_x} \neq \empty \end{aligned} $$
+$s$가 $x$에 converge함으로 다음을 만족한다.
+$$ \forall\mathcal{N_x}, \quad \exist N \in \N \st N \le n \implies s(n) \in \mathcal{N_x} $$
+
+전제에 의해 $\forall n \in \N, \quad s(n) \in U$임으로 $N \le n$에 대해 다음이 성립한다.
+$$ \forall\mathcal{N_x}, \quad s(n) \in U \cap \mathcal{N_x} $$
+
+따라서 다음이 성립한다.
+$$ \forall\mathcal{N_x}, \quad U \cap \mathcal{N_x} \neq \empty $$
+
 
 Closure의 성질에 의해 다음이 성립한다.
 $$ \forall\mathcal{N_x}, \quad U \cap \mathcal{N_x} \neq \empty \iff x \in \bar{U} \qed $$

@@ -121,11 +121,11 @@ $$ \text{preimg}(V_1) \cap \text{preimg}(V_2) = \text{preimg}(V_1 \cap V_2) $$
 
 [$\text{preimg}(V_1) \cap \text{preimg}(V_2) \subseteq \text{preimg}(V_1 \cap V_2)$]  
 $x \in \text{preimg}(V_1) \cap \text{preimg}(V_2)$라 하면 다음이 성립한다.
-$$\begin{aligned} & x \in \text{preimg}(V_1) \enspace\land\enspace x \in \text{preimg}(V_2) \\ \Rightarrow\enspace& f(x) \in V_1 \enspace\land\enspace f(x) \in V_2 \\ \Rightarrow\enspace& f(x) \in V_1 \cap V_2 \\ \Rightarrow\enspace& x \in \text{preimg}(V_1 \cap V_2) \end{aligned} $$
+$$\begin{aligned} & x \in \text{preimg}(V_1) \enspace\land\enspace x \in \text{preimg}(V_2) \\ \implies& f(x) \in V_1 \enspace\land\enspace f(x) \in V_2 \\ \implies& f(x) \in V_1 \cap V_2 \\ \implies& x \in \text{preimg}(V_1 \cap V_2) \end{aligned} $$
 
 [$\text{preimg}(V_1 \cap V_2) \subseteq \text{preimg}(V_1) \cap \text{preimg}(V_2)$]  
 $x \in \text{preimg}(V_1 \cap V_2)$라 하면 다음이 성립한다.
-$$\begin{aligned} & f(x) \in V_1 \cap V_2 \\ \Rightarrow\enspace& f(x) \in V_1 \enspace \land \enspace f(x) \in V_2 \\ \Rightarrow\enspace& x \in \text{preimg}(V_1) \enspace\land\enspace x \in \text{preimg}(V_2) \\ \Rightarrow\enspace& x \in \text{preimg}(V_1) \cap \text{preimg}(V_2) \quad\tiny\blacksquare \end{aligned} $$
+$$\begin{aligned} & f(x) \in V_1 \cap V_2 \\ \implies& f(x) \in V_1 \enspace \land \enspace f(x) \in V_2 \\ \implies& x \in \text{preimg}(V_1) \enspace\land\enspace x \in \text{preimg}(V_2) \\ \implies& x \in \text{preimg}(V_1) \cap \text{preimg}(V_2) \quad\tiny\blacksquare \end{aligned} $$
 
 > Referece  
 > [Book] (Lee) Introduction to Topological Manifolds Proposition 2.19

@@ -17,8 +17,8 @@ $$ \mathcal{B_x} := \{ B_M(x,1/r) \enspace|\enspace r \in \N \} $$
 
 Metric space에서 open ball은 open set임으로 $\mathcal{B_x}$의 원소는 $\mathcal{N_x}$이다.
 
-Neighborhood의 정의에 의해 임의의 $\mathcal{N_x}$에 대해서 다음이 성립한다.
-$$ \exist\epsilon \in \R^+ \quad s.t \quad B_M(x,\epsilon) \subseteq \mathcal{N_x} $$
+Neighborhood의 정의에 의해 다음이 성립한다.
+$$ \forall\mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad \exist\epsilon \in \R^+ \quad s.t \quad B_M(x,\epsilon) \subseteq \mathcal{N_x} $$
 
 자연수의 성질에 의해 다음이 성립한다.
 $$ \exist r \quad s.t. \quad B_M(x,1/r) \subseteq B_M(x,\epsilon) $$
@@ -26,7 +26,7 @@ $$ \exist r \quad s.t. \quad B_M(x,1/r) \subseteq B_M(x,\epsilon) $$
 따라서, 다음이 성립한다.
 $$ \exist B \in \mathcal{B_x} \quad s.t. \quad B \subseteq \mathcal{N_x} $$
 
-Neighborhood basis의 정의에 의해 $\mathcal{B_x}$ neighborhood basis이며, 정의에 의해 countable하다.
+Neighborhood basis의 정의에 의해 $\mathcal{B_x}$는 neighborhood basis이며, 정의에 의해 countable하다.
 
 따라서, $\forall x\in M$마다 countable neighborhood basis가 존재함으로 first countable의 정의에 의해 $M$은 first countable하다. $\quad\tiny\blacksquare$
 

@@ -12,8 +12,11 @@ $$ f'(a) := \lim_{h \rightarrow 0} \frac{1}{h}(f(a + h) - f(a)) $$
 # Partial Derivatives
 open subset $U \subset \R^n$과 함수 $f : U \rightarrow \R$이 있다고 하자.
 
-$\mathbf a \in U$에서 $f$의 $i$번째 변수의 `편미분(partial derivatives)`은 다음과 같다.
-$$ D_if(\mathbf a) := \lim_{h \rightarrow 0}\frac{f(\mathbf a + h \mathbf e_i) -f (\mathbf a)}{h} = \lim_{h \rightarrow 0} \frac{1}{h}(f(a_1, \cdots, a_i + h, \cdots, a_n) - f(a_1, \cdots, a_n)) $$
+$\R^n$의 basis를 $\beta$라 할 떄, $a \in U$는 다음과 같이 표현된다.
+$$ a = a^i\beta_i $$
+
+$a$에서 $f$의 $i$번째 변수의 `편미분(partial derivatives)` $D_if(a)$은 다음과 같이 정의된다.
+$$ \begin{aligned} D_if(a) &:= \lim_{h \rightarrow 0}\frac{f(a + h \beta_i) -f (a)}{h} \\&= \lim_{h \rightarrow 0} \frac{1}{h}(f(a^1, \cdots, a^i + h, \cdots, a^n) - f(a^1, \cdots, a^n))  \end{aligned} $$
 
 위의 극한값이 존재할 경우 편미분은 그 극한값이 되며, 존재하지 않을 경우 편미분은 존재하지 않게 된다.
 
@@ -28,18 +31,24 @@ $$ D_if = \frac{\partial f}{\partial x_i} $$
 편미분은 다변수 함수를 일변수 함수처럼 보고 미분하는 방식이다. 다시 말해, 나머지 변수는 전부 상수로 간주하고 한 변수에 대해서 미분을 구하는 방식이다.
 
 ### 참고3
-$D_i  f(\mathbf a)$는 $\mathbf a$에서 $\mathbf e_i$방향으로 움직일 때, $f$가 어떻게 변하는지를 나타낸다.
+$D_i  f(a)$는 $a$에서 $e_i$방향으로 움직일 때, $f$가 어떻게 변하는지를 나타낸다.
 
 # Partial Derivatives of Vector-valued Function
-open subset $U \subset \R^n$과 함수 $\mathbf f : U \rightarrow \R^m$이 있다고 하자.
+open subset $U \subset \R^n$과 함수 $f^i:U \rightarrow \R \enspace i=1,\cdots,m$이 있다고 하자.
 
-$\mathbf a \in U$에서 $f$의 $i$번째 변수의 편미분은 다음과 같다.
-$$ D_i \mathbf f(\mathbf a) := \lim_{h \rightarrow 0} \frac{1}{h}(\mathbf f(a_1, \cdots, a_i + h, \cdots, a_n) - \mathbf f(a_1, \cdots, a_n)) = \begin{bmatrix} D_if_1(\mathbf a) \\ \vdots \\ D_if_m(\mathbf a) \end{bmatrix} $$ 
+$\R^m$의 basis를 $\gamma$라 할 떄, $f : U \rightarrow \R^m$는 다음과 같이 표현된다.
+$$ f = f^i\gamma_i $$
+
+또한, $\R^n$의 basis를 $\beta$라 할 떄, $a \in U$는 다음과 같이 표현된다.
+$$ a = a^i\beta_i $$
+
+$a \in U$에서 $f$의 $i$번째 변수의 편미분은 다음과 같다.
+$$ \begin{aligned} D_i f(a) &:= \lim_{h \rightarrow 0} \frac{1}{h}(f(a^1, \cdots, a^i + h, \cdots, a^n) - f(a^1, \cdots, a^n)) \\&= \Big( \lim_{h \rightarrow 0} \frac{1}{h} (f^j(a^1, \cdots, a^i + h, \cdots, a^n) - f^j(a^1, \cdots, a^n)) \Big)\gamma_j \\&= D_if^j\gamma_j \\&= \begin{bmatrix} D_if^1(a) \\ \vdots \\ D_if^m(a) \end{bmatrix} \end{aligned} $$ 
 
 > Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.7
 
-# Derivatives of Vector-valued Functions
+# Total Derivative
 open subset $U \subset \R^n$과 함수 $\mathbf f : U \rightarrow \R^m$이 있다고 하자.
 
 기존의 미분의 정의를 그대로 활용하여 $\mathbf f$의 미분을 정의한다면 다음과 같다.
@@ -88,9 +97,9 @@ $$ \begin{gathered} \lim_{h \rightarrow 0} \frac{1}{h} \Big( f(a + h) - f(a) - L
 open subset $U \subset \R^n$과 함수 $f : U \rightarrow \R^m$이 있다고 하자.
 
 $a \in U$와 다음과 같이 정의된 linear map $L$이 있다고 하자.
-$$ L : \R^n \rightarrow \R^m \quad s.t.  \quad v \mapsto Av $$
+$$ L : \R^n \rightarrow \R^m \st v \mapsto Av $$
 
-이 떄, $L$이 다음을 만족할 경우, $L$을 $a$에서 $f$의 `derivative` 또는 `total derivative`라고 한다.
+이 떄, $L$이 다음을 만족할 경우, $L$을 $a$에서 $f$의  `total derivative`라고 한다.
 $$ \lim_{h \rightarrow 0} \frac{1}{|h|}(f(a + h) - f(a) - L(h)) = 0 $$
 
 이런 $L$이 존재하는 경우, $f$가 $a$에서 `미분가능(differentiable)`하다고 한다.
@@ -99,7 +108,7 @@ $$ \lim_{h \rightarrow 0} \frac{1}{|h|}(f(a + h) - f(a) - L(h)) = 0 $$
 open subset $U \subset \R^n$과 함수 $\mathbf f : U \rightarrow \R^m$이 있다고 하자.
 
 $\mathbf a \in U$에서 $\bf f$가 미분가능할 때, 다음을 증명하여라.
-$$ L : \R^n \rightarrow \R^m \quad s.t.  \quad v \mapsto Av $$
+$$ L : \R^n \rightarrow \R^m \st v \mapsto Av $$
 
 $$ \text{Where, } A = \begin{bmatrix} D_1f_1(\mathbf a) & \cdots & D_nf_1(\mathbf a) \\ \vdots & & \vdots \\ D_1f_m(\mathbf a) & \cdots & D_nf_m(\mathbf a) \end{bmatrix}$$
 
