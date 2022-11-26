@@ -1,20 +1,20 @@
 # Adjoint Matrix
-$A \in M_{mn}(\mathbb F)$가 있다고 하자. $A$의 `adjoint` $A^*$는 다음과 같이 정의된 행렬이다.
-$$ A^* \in M_{nm}(\mathbb F) \quad s.t. \quad A^*_{ij} = \overline{A_{ji}} $$
+$A \in M_{mn}(\F)$가 있다고 하자. $A$의 `adjoint` $A^*$는 다음과 같이 정의된 행렬이다.
+$$ A^* \in M_{nm}(\F) \quad s.t. \quad A^*_{ij} = \overline{A_{ji}} $$
 
 ### 참고
-$\mathbb F = \R$이면, adjoint는 단순히 transpose가 되며, $A = A^*$인 경우를  $A$가 symmetric하다고 한다.
+$\F = \R$이면, adjoint는 단순히 transpose가 되며, $A = A^*$인 경우를  $A$가 symmetric하다고 한다.
 
-만약, $\mathbb F = \Complex$이면, $A = A^*$인 경우를  $A$를 Hermitian이라고 한다.
+만약, $\F = \Complex$이면, $A = A^*$인 경우 $A$를 Hermitian이라고 한다.
 
 # Adjoint Operator
-$n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
+$n$차원 inner product space $V/\F$와 $T\in\End(V)$가 있다고 하자.
 
-$x,y \in V$에 대해서 다음을 만족하는 $T^* \in \text{End}(V)$를 $T$의 `adjoint operator`라 한다.
+$x,y \in V$에 대해서 다음을 만족하는 $T^*\in\End(V)$를 $T$의 `adjoint operator`라 한다.
 $$B(T(x),y) = B(x, T^*(y))$$
 
 ### 명제1
-$n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
+$n$차원 inner product space $V/\F$와 $T \in \End(V)$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
 $$ \exist! T^* $$
@@ -22,37 +22,57 @@ $$ \exist! T^* $$
 **Proof**
 
 [Existence]  
-$v \in V$에 대해 $f_v$와 $g_v$를 다음과 같이 정의하자.
-$$ \begin{gathered} f_v : V \rightarrow \mathbb F \quad s.t. \quad x \mapsto B(x,v) \\ g_v : V \rightarrow \mathbb F \quad s.t. \quad x \mapsto B(T(x),v) \end{gathered}  $$
+$\forall v \in V$마다 $v$에 의존하는 $g \in V^*$를 다음과 같이 정의하자.
+$$ g : V \rightarrow \F \quad s.t. \quad x \mapsto B(T(x),v) $$
 
-$g_v \in V^*$임으로 Riesz representation theorem에 의해서 다음이 성립한다.
-$$ \exist! v_{g_v} \in V \quad s.t. \quad g_v = f_{v_{g_v}}$$
+그리고 $g$의 Riesz representation을 $v_g$라 하자.
 
-이 떄, 함수 $T^*$를 다음과 같이 정의하자.
-$$ T^* : V \rightarrow V  \quad s.t. \quad x \mapsto v_{g_x} $$
+$\forall v \in V$마다 $g$가 유일하게 결정되고, Riesz representation theorem에 의해 $g$마다 $v_g$가 유일하게 결정된다.
 
-$T^*$의 정의에 의해 다음이 성립한다.
-$$ \begin{aligned} & g_v = f_{v_{g_v}} \\ \Rightarrow \enspace & B(T(\cdot), v) = B(\cdot, v_{g_v}) \\ \Rightarrow \enspace & B(T(\cdot), v) = B(\cdot, T^*(v)) \end{aligned} $$
+그럼으로 $\forall v \in V$마다 $v_g$는 유일하게 결정된다.
 
-따라서, $x,y_1,y_2 \in V, \enspace c \in \mathbb F$가 있을 때, 다음이 성립한다.
-$$ \begin{aligned} B(x, T^*(y_1 + cy_2)) &= B(T(x), y_1 + cy_2) \\&= B(T(x), y_1) + \bar c B(T(x),y_2) \\&= B(x, T^*(y_1)) + \bar c B(x, T^*(y_2)) \\&= B(x, T^*(y_1)) + B(x, cT^*(y_2)) \\&= B(x, T^*(y_1) +cT^*(y_2)) \end{aligned} $$
+따라서, 함수 $T^*$를 다음과 같이 정의하자.
+$$ T^* : V \rightarrow V  \quad s.t. \quad v \mapsto v_g $$
 
-즉, $T^*(y_1 + cy_2) = T^*(y_1) + cT^*(y_2)$이다.
+보조명제1.1에 의해서 $B(T(\cdot), v) = B(\cdot, T^*(v))$이 성립한다.
+보조명제1.2에 의해서 $T^* \in \End(V)$이다.
 
-$T^*$는 $B(T(x),y) = B(x, T^*(y))$를 만족하고 $T^* \in \text{End}(V)$임으로, adjoint operator이다.
+따라서, adjoint operator의 정의에 의해 다음이 성립한다.
+$$ T^* \text{ is an adjoint operator} $$
 
-따라서, adjoint operator가 적어도 하나 이상 존재한다. $\quad {_\blacksquare}$
+그럼으로, adjoint operator가 적어도 하나 이상 존재한다. $\qed$
 
 [Uniquness]  
-$T \in \text{End}(V)$의 adjoint operator가 $T^*_1, T^*_2$라 하자.
+$T \in \End(V)$의 adjoint operator가 $T^*_1, T^*_2$라 하자.
 
 $\forall x,y \in V$에 대해 다음이 성립한다.
-$$ \begin{aligned} & B(T(x),y) = B(x, T^*_1(y)) = B(x, T^*_2(y)) \\ \Rightarrow & \enspace B(x, T^*_1(y) - T^*_2(y)) = 0_\mathbb F \\ \Rightarrow & T^*_1(y) - T^*_2(y) = 0_V \end{aligned} $$
+$$ \begin{aligned} & B(T(x),y) = B(x, T^*_1(y)) = B(x, T^*_2(y)) \\ \Rightarrow & \enspace B(x, T^*_1(y) - T^*_2(y)) = 0_\F \\ \Rightarrow & T^*_1(y) - T^*_2(y) = 0_V \end{aligned} $$
 
-즉, 모든 $y \in V$에 대해서 $T^*_1(y) = T^*_2(y)$임으로, $T^*_1 = T^*_2$이고 adjoint operator는 unique하다. $\quad {_\blacksquare}$
+즉, 모든 $y \in V$에 대해서 $T^*_1(y) = T^*_2(y)$임으로, $T^*_1 = T^*_2$이고 adjoint operator는 unique하다. $\qed$
+
+#### 보조명제1.1
+다음을 증명하여라.
+$$ B(T(\cdot), v) = B(\cdot, T^*(v)) $$
+
+**Proof**
+
+$\forall v \in V$에 대해, $T^*$의 정의에 의해 다음이 성립한다.
+$$ \begin{aligned} & g(\cdot) = B(\cdot, v_g) \\\implies& B(T(\cdot), v) = B(\cdot, v_g) \\\implies& B(T(\cdot), v) = B(\cdot, T^*(v)) \qed \end{aligned} $$
+
+#### 보조명제1.2
+다음을 증명하여라.
+$$ T^* \in \End(V) $$
+
+**Proof**
+
+$x,y_1,y_2 \in V, \enspace c \in \F$가 있을 때, 보조명제1.1에 의해 다음이 성립한다.
+$$ \begin{aligned} B(x, T^*(y_1 + cy_2)) &= B(T(x), y_1 + cy_2) \\&= B(T(x), y_1) + \bar c B(T(x),y_2) \\&= B(x, T^*(y_1)) + \bar c B(x, T^*(y_2)) \\&= B(x, T^*(y_1)) + B(x, cT^*(y_2)) \\&= B(x, T^*(y_1) +cT^*(y_2)) \end{aligned} $$
+
+따라서, $T^*(y_1 + cy_2) = T^*(y_1) + cT^*(y_2)$임으로 다음이 성립한다.
+$$ T^* \in \End(V) \qed $$
 
 ### 명제2
-$n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
+$n$차원 inner product space $V/\F$와 $T \in \End(V)$가 있다고 하자.
 
 $\beta$를 $V$의 orthonormal basis라 할 때, 다음을 증명하여라.
 $$ \frak m_\beta^\beta(T^*) = \frak m_\beta^\beta(T)^* $$
@@ -66,24 +86,24 @@ $$ \begin{aligned} T(\beta_j) &= B(T(\beta_j),\beta_i)\beta_i, \\ T^*(\beta_j) &
 $$ \begin{aligned} \frak m_\beta^\beta(T^*) &= \begin{bmatrix} \frak m_\beta(T^*(\beta_1)) & \cdots & \frak m_\beta(T^*(\beta_n)) \end{bmatrix} \\ &= \begin{bmatrix} \overline{B(T(\beta_1), \beta_1)} & \cdots &\overline{B(T(\beta_1), \beta_n)} \\ \vdots & & \vdots \\ \overline{B(T(\beta_n), \beta_1)} & \cdots &\overline{B(T(\beta_n), \beta_n)} \end{bmatrix} \\ &= \begin{bmatrix} B(T(\beta_1), \beta_1) & \cdots &B(T(\beta_n), \beta_1) \\ \vdots & & \vdots \\ B(T(\beta_1), \beta_n) & \cdots &B(T(\beta_n), \beta_n) \end{bmatrix}^* \\ &= \frak m_\beta^\beta(T)^* \end{aligned}  $$
 
 #### 따름명제
-$A \in M_{nn}(\mathbb F)$가 있을 때, 다음을 증명하여라.
+$A \in M_{nn}(\F)$가 있을 때, 다음을 증명하여라.
 $$ (L_A)^* = L_{A^*} $$
 
 #### 참고
 matrix representation이 adjoint matrix 형태로 나타나기 때문에 adjoint operator라고 표현한다.
 
 ### 명제3
-$n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
+$n$차원 inner product space $V/\F$와 $T \in \End(V)$가 있다고 하자.
 
 $x,y \in V$일 때, 다음을 증명하여라.
 $$B(T^*(x),y) = B(x, T(y))$$
 
 **Proof**
 
-$$\begin{aligned} B(T^*(x),y) &= \overline{B(y, T^*(x))} \\ &= \overline{B(T(y), x)} \\&= B(x, T(y)) \quad {_\blacksquare} \end{aligned} $$
+$$\begin{aligned} B(T^*(x),y) &= \overline{B(y, T^*(x))} \\ &= \overline{B(T(y), x)} \\&= B(x, T(y)) \qed \end{aligned} $$
 
 ### 명제4
-$n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
+$n$차원 inner product space $V/\F$와 $T \in \End(V)$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
 $$(T_1 \circ T_2)^* = T^*_2 \circ T^*_1$$
@@ -93,10 +113,10 @@ $$(T_1 \circ T_2)^* = T^*_2 \circ T^*_1$$
 $\forall x,y \in V$에 대해 다음이 성립한다. 
 $$ \begin{aligned} B(x, (T_1\circ T_2)^*(y)) &= B((T_1\circ T_2)(x), y) \\&= B(T_2(x), T_1^*(y)) \\&= B(x, T_2^*(T_1^*(y))) \\&= B(x, (T_2^* \circ T_1^*)(y)) \end{aligned} $$
 
-따라서 $(T_1 \circ T_2)^* = T^*_2 \circ T^*_1$이다. $\quad {_\blacksquare}$
+따라서 $(T_1 \circ T_2)^* = T^*_2 \circ T^*_1$이다. $\qed$
 
 ### 명제5
-$n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
+$n$차원 inner product space $V/\F$와 $T \in \End(V)$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
 $$(T^*)^* = T$$
@@ -106,10 +126,10 @@ $$(T^*)^* = T$$
 $\forall x,y \in V$에 대해 다음이 성립한다. 
 $$ B(x, (T^*)^*(y)) = B(T^*(x), y) = B(x, T(y)) $$
 
-따라서 $(T^*)^* = T$이다. $\quad {_\blacksquare}$
+따라서 $(T^*)^* = T$이다. $\qed$
 
 ### 명제6
-$n$차원 inner product space $V / \mathbb F$가 있다고 하자.
+$n$차원 inner product space $V/\F$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
 $$(id_V)^* = id_V$$
@@ -119,10 +139,10 @@ $$(id_V)^* = id_V$$
 $\forall x,y \in V$에 대해 다음이 성립한다. 
 $$ B(x, (id_V)^*(y)) = B(id_V(x), y) = B(x, id_V(y)) $$
 
-따라서 $(id_V)^* = id_V$이다. $\quad {_\blacksquare}$
+따라서 $(id_V)^* = id_V$이다. $\qed$
 
 ### 명제7
-$n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
+$n$차원 inner product space $V/\F$와 $T \in \End(V)$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
 $$ \lambda \text{ is an eigenvalue of } T \Rightarrow \overline\lambda \text{ is an eigenvalue of } T^* $$
@@ -132,10 +152,10 @@ $$ \lambda \text{ is an eigenvalue of } T \Rightarrow \overline\lambda \text{ is
 $\beta$가 $V$의 orthonormal baiss라고 하자.
 
 $\lambda$가 $T$의 eigenvalue 임으로 다음이 성립한다.
-$$ \begin{aligned} & \det(T - \lambda id) = 0 \\ \Rightarrow \enspace & \det(\frak m_\beta^\beta(T - \lambda id)) = 0 \\ \Rightarrow \enspace & \det(\frak m_\beta^\beta(T) - \lambda I) = 0 \\ \Rightarrow \enspace & \det(\frak m_\beta^\beta(T)^* - \overline\lambda I) = 0 \\ \Rightarrow \enspace & \det(\frak m_\beta^\beta(T^*) - \overline\lambda I) = 0 \\ \Rightarrow \enspace & \det(\frak m_\beta^\beta(T^*- \overline\lambda id)) = 0 \\ \Rightarrow \enspace & \det(T^*- \overline\lambda id) = 0 \quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} & \det(T - \lambda id) = 0 \\\implies& \det(\frak m_\beta^\beta(T - \lambda id)) = 0 \\\implies& \det(\frak m_\beta^\beta(T) - \lambda I) = 0 \\\implies& \det(\frak m_\beta^\beta(T)^* - \overline\lambda I) = 0 \\\implies& \det(\frak m_\beta^\beta(T^*) - \overline\lambda I) = 0 \\\implies& \det(\frak m_\beta^\beta(T^*- \overline\lambda id)) = 0 \\\implies& \det(T^*- \overline\lambda id) = 0 \qed \end{aligned} $$
 
 ### 명제8
-$n$차원 inner product space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
+$n$차원 inner product space $V/\F$와 $T \in \End(V)$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
 $$ v \text{ is an eigenvector of } T \Rightarrow v \text{ may not an eigenvector of } T^* $$
@@ -160,7 +180,7 @@ eigen vector를 계산해보면 $w = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$임을
 이 때, inner product $B$는 다음과 같이 정의된다.
 $$ B : \mathbb P^1(\R) \times \mathbb P^1(\R) \rightarrow \R \quad s.t. \quad (f,g) \mapsto \int_{-1}^1 fg \thinspace dx  $$
 
-다음과 같이 정의된 $T \in \text{End}(\mathbb P^1(\R))$이 있다고 하자.
+다음과 같이 정의된 $T \in \End(\mathbb P^1(\R))$이 있다고 하자.
 $$ T: \mathbb P^1(\R) \rightarrow \mathbb P^1(\R) \quad s.t. \quad f \mapsto 3f + f' $$
 
 이 떄, $T^*(4-2x)$를 구하여라.
@@ -187,11 +207,11 @@ $$ \begin{aligned} T^*(4-2x) &= B(T^*(4-2x), \beta_i)\beta_i \\&= B(4-2x, T(\bet
 # Self-adjoint Operator
 Inner product space $V/\mathbb{F}$가 있다고 하자.
 
-다음을 만족하는 $T \in \text{End}(V)$를 self-adjoint operator라고 한다.
+다음을 만족하는 $T \in \End(V)$를 self-adjoint operator라고 한다.
 $$ T = T^* $$
 
 ### 명제1
-Inner product space $V/\mathbb{F}$와 self-adjoint operator $T \in \text{End}(V)$가 있다고 하자.
+Inner product space $V/\mathbb{F}$와 self-adjoint operator $T \in \End(V)$가 있다고 하자.
 
 이 떄, 다음을 증명하여라.
 $$ \text{Every eigenvalue of } T \text{ is real.} $$
@@ -207,7 +227,7 @@ $$ T^*(v) = \bar\lambda v $$
 $$ \begin{aligned} & T(v) = T^*(v) \\ \Rightarrow\enspace& \lambda v = \bar\lambda v \\ \Rightarrow\enspace& (\lambda - \bar\lambda) v =  0_V \\ \Rightarrow\enspace& \lambda - \bar\lambda =  0 \\ \Rightarrow\enspace& \lambda \in \R \quad\tiny\blacksquare \end{aligned} $$
 
 ### 명제2
-Inner product space $V/\mathbb{R}$와 self-adjoint operator $T \in \text{End}(V)$가 있다고 하자.
+Inner product space $V/\mathbb{R}$와 self-adjoint operator $T \in \End(V)$가 있다고 하자.
 
 이 떄, 다음을 증명하여라.
 $$ \varphi_T \text{ is splits.} $$
@@ -216,7 +236,7 @@ $$ \varphi_T \text{ is splits.} $$
 
 $\beta$를 $V$의 orthonormal basis라고 하자.
 
-$\frak{m}_\beta^\beta(T) = A \in M_{nn}(\R)$라 할 떄, $L_{\hat{A}} \in \text{End}(\Complex^n)$을 다음과 같이 정의하자.
+$\frak{m}_\beta^\beta(T) = A \in M_{nn}(\R)$라 할 떄, $L_{\hat{A}} \in \End(\Complex^n)$을 다음과 같이 정의하자.
 $$ L_{\hat{A}} : \Complex^n \rightarrow \Complex^n \quad s.t. \quad x \mapsto Ax  $$
 
 $L_{\hat{A}}$는 complex위에서 정의되어 다음이 성립한다.
@@ -232,11 +252,11 @@ $\varphi_{L_{\hat{A}}}(\lambda) = \varphi_{L_{A}}(\lambda)$이고 $\varphi_{L_{\
 Q. $L_A$와 $T$의 characteristic polynomial...
 
 #### 보조명제2.1
-Inner product space $V/\mathbb{R}$와 self-adjoint operator $T \in \text{End}(V)$가 있다고 하자.
+Inner product space $V/\mathbb{R}$와 self-adjoint operator $T \in \End(V)$가 있다고 하자.
 
 $\beta$를 $V$의 orthonormal basis라고 하자.
 
-$\frak{m}_\beta^\beta(T) = A \in M_{nn}(\R)$라 할 떄, $L_{\hat{A}} \in \text{End}(\Complex^n)$을 다음과 같이 정의하자.
+$\frak{m}_\beta^\beta(T) = A \in M_{nn}(\R)$라 할 떄, $L_{\hat{A}} \in \End(\Complex^n)$을 다음과 같이 정의하자.
 $$ L_{\hat{A}} : \Complex^n \rightarrow \Complex^n \quad s.t. \quad x \mapsto Ax  $$
 
 이 떄, 다음을 증명하여라.
@@ -253,7 +273,7 @@ $$ \begin{aligned} & T = T^* \\ \Rightarrow\enspace& \frak{m}_\beta^\beta(T) = \
 따라서, $L_{\hat{A}}$는 self-adjoint operator이다. $\quad\tiny\blacksquare$
 
 ### 명제3
-$n$차원 Inner product space $V/\mathbb{R}$와 self-adjoint operator $T \in \text{End}(V)$가 있다고 하자.
+$n$차원 Inner product space $V/\mathbb{R}$와 self-adjoint operator $T \in \End(V)$가 있다고 하자.
 
 이 떄, 다음을 증명하여라.
 $$ T \text{ is a self-adjoint operator } \Leftrightarrow \exist \text{ an orthonormal basis } \beta \text{ consisting of eigenvectors} $$
@@ -287,17 +307,17 @@ $$ A \text{ is a symmetric matrix} \Leftrightarrow \exist \text{ orthogonal matr
 
 
 # Self-adjoint Matrix
-$A \in M_{nn}(\mathbb F)$가 있다고 하자.
+$A \in M_{nn}(\F)$가 있다고 하자.
 
 다음을 만족하는 $A$를 self-adjoint matrix라고 한다.
 $$ A = A^* $$
 
 ### 참고1
-$\mathbb F = \R$이면 다음이 성립한다.
+$\F = \R$이면 다음이 성립한다.
 $$ \text{self-adjoint matrix} \Leftrightarrow \text{symmetric matrix} $$
 
 ### 참고2
-$\mathbb F = \R$일 때, 다음이 성립한다.
+$\F = \R$일 때, 다음이 성립한다.
 $$ \text{symmetric matrix} \Rightarrow \text{normal matrix} $$
 
 하지만 그 역은 성립하지 않는다.
@@ -306,14 +326,14 @@ $$ \text{normal matrix} \nRightarrow \text{symmetric matrix} $$
 예를 들어, $A$가 skew-symmetric인 경우 ,i.e. $A^T = -A$, normal matrix이지만 symmetric matrix는 아니다.
 
 ### 참고3
-$\mathbb F = \Complex$이면 self-adjoint matrix를 Hermitian matrix라고 부르기도 한다.
+$\F = \Complex$이면 self-adjoint matrix를 Hermitian matrix라고 부르기도 한다.
 
 ### 참고4
-$\mathbb F = \Complex$일 떄, 다음이 성립한다.
+$\F = \Complex$일 떄, 다음이 성립한다.
 $$ \text{self-adjoint matrix} \Rightarrow \text{normal matrix} $$
 
 ### 참고5
-$\mathbb F = \Complex$일 떄, 다음이 성립한다.
+$\F = \Complex$일 떄, 다음이 성립한다.
 $$ \text{symmetric matrix} \nRightarrow \text{normal matrix} $$
 
 예를 들어 $A = \begin{bmatrix} i&i\\i&1 \end{bmatrix}$는 symmetric matrix이지만 normal matrix는 아니다.

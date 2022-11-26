@@ -1,10 +1,5 @@
 # 할 일
-- mssl 개발하기
-  - rfindnth 개발 & 테스트
-  - str to value 테스트
-- mssl 배포하기
-  - 라이브러리 배포하는 문서 작성하기
-- .Lib 파일 만드는 법 문서 작성
+
 
 solver를 개발하는게 가장 많은 plus alpha가 나오는가?
 
@@ -89,3 +84,13 @@ solver를 개발하는게 가장 많은 plus alpha가 나오는가?
 11.23
 54. msml 라이브러리 README 문서 작성
 55. msml 배포
+
+11.25
+56. rfindnth 개발 & 테스트
+57. str to value 테스트
+58. mssl 라이브러리 배포하는 문서 작성하기
+59. .Lib 파일 만드는 법 문서 작성
+
+11.26
+60. msml test 배포하기
+61. msml readme 수정하기

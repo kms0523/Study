@@ -1,8 +1,9 @@
 # 할 것
-* Eigen space가 T invariant임을 증명 
+* Reisz representation 복습
+* Adjoint operator의 uniqueness와 existence 복습
+* Adjoint operator 명제 증명
 * Normal operator 명제 증명
 * Unitary matrix 명제 증명
-* Adjoint operator 명제 증명
 * Self-Adjoint operator 명제 증명
 * Self-adjoint matrix 정리
 * 선형대수 41강
@@ -132,4 +133,9 @@
 74. Hausdroff space 복습
 75. Basis 복습
 76. Derivatives.md 정리
-77. 
+
+11.26
+77. Endomorphism 복습
+78. Riesz representation 복습
+79. Adjoint operator의 existence와 uniqueness 명제 증명
+80. Eigen space가 T invariant임을 증명 

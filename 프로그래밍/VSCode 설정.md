@@ -49,6 +49,7 @@ F1 >> "미리보기 새로 고침" 검색 >> 톱니바퀴 >> 키 바인딩에 ct
 # Markdwon Preview Enhanced
 
 * preview 화면 우클릭 >> preview theme >> monokai.css
+* Print Background >> check
 
 ## 바로가기 키 설정
 * 바로가기 키 설정 >> Markdown: open preview >> 키 바인딩 제거

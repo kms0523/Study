@@ -52,3 +52,20 @@ $$ L_A-3id = \begin{bmatrix} 1 & 0 & 1 \\ 2 & 0 & 2 \\ 1 & 0 & 1 \end{bmatrix}, 
 독립적인 row를 살펴보면 각각 rank가 $1,2$라는 것을 알 수 있다. 
 
 따라서 $\dim(E_3) = 2, \enspace \dim(E_5) = 1$이다.
+
+### 명제3
+Vector space $V/\F$와 $T \in \End(V)$가 있다고 하자.
+$$ \text{Eigen space is a } T \text{ invariant} $$
+
+**Proof**
+
+$T$의 eigenvalue를 $\lambda$하고 그에 따른 eigenspace를 $E_\lambda$라 하자.
+
+$E_\lambda$의 정의에 의해 다음이 성립한다.
+$$ x \in E_\lambda \implies T(x) = \lambda x $$
+
+이 떄, $T$는 linear map임으로 다음이 성립한다. 
+$$ T(\lambda x) = \lambda T(x) = \lambda(\lambda x) \in E_\lambda $$
+
+따라서 다음이 성립한다.
+$$ T|_{E_\lambda} = \End(E_\lambda) \qed $$
