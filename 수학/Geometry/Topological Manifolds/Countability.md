@@ -15,20 +15,21 @@ Metric space $M$이 있다고 하자.
 $x \in M$이 있을 때, collection $\mathcal{B_x}$를 다음과 같이 정의하자.
 $$ \mathcal{B_x} := \{ B_M(x,1/r) \enspace|\enspace r \in \N \} $$
 
-Metric space에서 open ball은 open set임으로 $\mathcal{B_x}$의 원소는 $\mathcal{N_x}$이다.
+Metric space에서 open ball은 open set임으로 다음이 성립한다.
+$$ B \in \mathcal{B_x} \implies B \in \Set{\mathcal{N_x}} $$
 
 Neighborhood의 정의에 의해 다음이 성립한다.
 $$ \forall\mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad \exist\epsilon \in \R^+ \quad s.t \quad B_M(x,\epsilon) \subseteq \mathcal{N_x} $$
 
 자연수의 성질에 의해 다음이 성립한다.
-$$ \exist r \quad s.t. \quad B_M(x,1/r) \subseteq B_M(x,\epsilon) $$
+$$ \forall \epsilon \in \R^+, \quad \exist r \quad s.t. \quad B_M(x,1/r) \subseteq B_M(x,\epsilon) $$
 
 따라서, 다음이 성립한다.
-$$ \exist B \in \mathcal{B_x} \quad s.t. \quad B \subseteq \mathcal{N_x} $$
+$$ \forall\mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad \exist B \in \mathcal{B_x} \quad s.t. \quad B \subseteq \mathcal{N_x} $$
 
 Neighborhood basis의 정의에 의해 $\mathcal{B_x}$는 neighborhood basis이며, 정의에 의해 countable하다.
 
-따라서, $\forall x\in M$마다 countable neighborhood basis가 존재함으로 first countable의 정의에 의해 $M$은 first countable하다. $\quad\tiny\blacksquare$
+따라서, $\forall x\in M$마다 countable neighborhood basis $\mathcal{B_x}$가 존재함으로 first countable의 정의에 의해 $M$은 first countable하다. $\quad\tiny\blacksquare$
 
 > Reference  
 > [Proofwiki](https://proofwiki.org/wiki/Metric_Space_is_First-Countable)
@@ -43,24 +44,54 @@ $$ \forall x \in X, \quad \exist\text{ a nested neighborhood basis at } x $$
 
 $x \in X$가 있다고 하자.
 
-$X$가 first countable space이기 때문에 $x$에서 $X$의 countable neighborhood basis를 $\mathcal{B_x} = \{ B_N|N\in\N \}$라 하자.
+$x$에서 $X$의 countable neighborhood basis를 $\mathcal{B_x} = \{ B_n|n\in\N \}$라 하자.
 
 이 떄, sequence $\mathcal{B_x}(n)$을 다음과 같이 정의하자.
 $$ \mathcal{B_x}(n) := \bigcap_{i=1}^n B_i $$
+
+$\forall i \in \N, \quad B_i \in \Set{\mathcal{N_x}}$임으로 다음이 성립한다.
+$$ \forall n \in \N, \quad \mathcal{B_x(n)} \in \Set{\mathcal{N_x}} $$
 
 $\mathcal{B_x}(n)$의 정의에 의해 다음이 성립한다.
 $$ \mathcal{B_x}(n+1) \subseteq \mathcal{B_x}(n) $$
 
 $\mathcal{B_x}$가 neighborhood basis이기 때문에 다음이 성립한다.
-$$ \forall \mathcal{N_x}, \quad \exist i \in \N \quad s.t. \quad B_i \subseteq \mathcal{N_x} $$
+$$ \forall \mathcal{N_x}, \quad \exist N \in \N \quad s.t. \quad B_N \subseteq \mathcal{N_x} $$
 
-따라서, 다음이 성립한다.
-$$ \forall \mathcal{N_x}, \quad \exist i \in \N \quad s.t. \quad \mathcal{B_x}(i) \subseteq \mathcal{N_x} $$
+따라서, $\mathcal{B_x}(n)$의 정의에 의해 다음이 성립한다.
+$$ \forall \mathcal{N_x}, \quad \exist N \in \N \quad s.t. \quad N \le n \implies  \mathcal{B_x}(n) \subseteq \mathcal{N_x} $$
 
 Nested neighborhood basis의 정의에 의해 $\mathcal{B_x}(n)$은 nested neighborhood basis이다. $\qed$
 
 ### 명제3
-First countable space $X$가 있다고 하자.
+First countable space $X$와 $X$의 subset $U$가 있다고 하자.
+
+$x \in X$에서 nested neighborhood basis를 $\mathcal{B_x(n)}$라 할 떄, 다음을 만족한다고 하자.
+$$ \forall n \in \N, \quad \mathcal{B_x}(n) \cap U \neq \empty \qed $$
+
+$U$위의 sequence $s(n)$을 다음과 같이 정의하자.
+$$ s(n) := \text{one of a point in } \mathcal{B_x}(n) \cap U$$
+
+이 때, 다음을 증명하여라.
+$$ \lim_{n\rightarrow\infty} s(n) = x $$
+
+**Proof**
+
+$\mathcal{B_x}(n)$가 nested neighborhood basis임으로 다음이 성립한다.
+$$ \forall \mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad \exist N \in \N \st N \le n \implies  \mathcal{B_x}(n) \subseteq \mathcal{N_x} $$
+
+이 때, $s(n)$의 정의에 의해 다음이 성립한다.
+$$ s(n) \in \mathcal{B_x}(n)  $$
+
+그럼으로, 다음이 성립한다.
+$$ \forall \mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad \exist N \in \N \st N \le n \implies s(n) \in \mathcal{N_x} $$
+
+Convergence의 정의에 의해 다음이 성립한다.
+$$ \lim_{n \rightarrow \infty} s(n) = x \qed $$
+
+
+### 명제4
+First countable space $X$와 $X$의 subset $U$가 있다고 하자.
 
 이 떄, 다음을 증명하여라.
 $$  \exist\text{ sequence } s \text{ on } U \st \text{ converge to } x \iff x \in \bar{U} $$
@@ -70,43 +101,33 @@ $$  \exist\text{ sequence } s \text{ on } U \st \text{ converge to } x \iff x \i
 convergence의 성질에 의해 성립한다.
 
 [$\impliedby$]
-$X$가 first countable space임으로 명제2에 의해 다음이 성립한다.
-$$ \exist\text{nested neighborhood basis } \mathcal{B_x}(n) $$
-
-$U$위의 sequence $s(n)$을 다음과 같이 정의하자.
+$x \in X$에서 nested neighborhood basis를 $\mathcal{B_x(n)}$라 할 때, $U$위의 sequence $s(n)$을 다음과 같이 정의하자.
 $$ s(n) := \text{one of a point in } \mathcal{B_x}(n) \cap U$$
 
-보조명제 3.1에 의해 $\mathcal{B_x}(n) \cap U \neq \empty$임으로, 위의 수열은 잘 정의된다.
+보조명제4.1에 의해 다음이 성립한다.
+$$ \forall n \in N, \quad \mathcal{B_x}(n) \cap U \neq \empty $$
 
-$\mathcal{B_x}(n)$가 nested neighborhood basis임으로 임의의 $\mathcal{N_x}$가 주어졌을 떄, 다음이 성립한다.
-$$ \exist j \in \N \st \mathcal{B_x}(j) \subseteq \mathcal{N_x} $$
+따라서, $s(n)$은 정의에 의해서 $U$위의 sequence이고, 명제3에 의해서 $x$로 수렴한다.
 
-$s(n)$의 정의에 의해  다음이 성립한다.
-$$ \begin{aligned} &s(n) \in \mathcal{B_x}(n) \cap U \\\implies& s(n) \in \mathcal{B_x}(n) \land s(n) \in U \\\implies& s(n) \in \mathcal{B_x}(n) \end{aligned}  $$
-
-$\mathcal{B_x}(n)$가 nested neighborhood basis임으로 $j \le n$에 대해 다음이 성립한다.
-$$ \begin{aligned} & \mathcal{B_x}(n) \subseteq \mathcal{B_x}(j) \\\implies& s(n) \in \mathcal{B_x}(j) \\\implies& s(n) \in \mathcal{N_x}  \end{aligned} $$
-
-따라서, convergence의 정의에 의해 $s(n)$은 $x$에 수렴한다.$\qed$
+그럼으로 $x$에 수렴하는 $U$위의 sequence가 존재한다. $\qed$
 
 
-#### 보조명제 3.1
+> Reference
+> [proofwiki](https://proofwiki.org/wiki/Sequence_Lemma)
+
+#### 보조명제4.1
 다음을 증명하여라.
 $$ \mathcal{B_x}(n) \cap U \neq \empty $$
-
 
 **Proof**
 
 $x \in \bar{U}$임으로 다음이 성립한다.
 $$ \forall\mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty $$
 
-$\mathcal{B_x}(n) \in \Set{\mathcal{N_x}}$임으로 다음이 성립한다.
+$\forall n \in \N, \quad \mathcal{B_x}(n) \in \Set{\mathcal{N_x}}$임으로 다음이 성립한다.
 $$ \forall n \in \N, \quad \mathcal{B_x}(n) \cap U \neq \empty \qed $$
 
-> Reference
-> [proofwiki](https://proofwiki.org/wiki/Sequence_Lemma)
-
-### 명제4
+### 명제5
 First countable space $X$와 $X$의 subset $U$가 있다고 하자.
 
 이 떄, 다음을 증명하여라.
@@ -115,14 +136,13 @@ $$ U \text{ is closed set of } X \iff \begin{gathered} U\text{ contains every li
 **Proof**
 
 [$\implies$]
-$x \in X$가 있을 떄, $x$로 수렴하는 $U$위의 convergent sequence $s(n)$이 있다고 하자.
-$$ \lim_{i\rightarrow\infty}s(i)=x $$
+$x \in X$와 $x$로 수렴하는 $U$위의 convergent sequence $s(n)$이 있다고 하자.
 
 Convergence의 정의에 의해 다음이 성립한다.
-$$ \forall\mathcal{N_x}, \quad \exist N \in \N \st N \le n \implies s(n) \in \mathcal{N_x} $$
+$$ \forall\mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad \exist N \in \N \st N \le n \implies s(n) \in \mathcal{N_x} $$
 
-따라서, $N \le n$에 대해서 다음이 성립한다.
-$$ s(n) \in U \cap \mathcal{N_x} $$
+따라서, 다음이 성립한다.
+$$ \forall\mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad N\le n \implies s(n) \in U \cap \mathcal{N_x} $$
 
 이 떄, 다음을 가정하자.
 $$ x \notin U $$
@@ -133,7 +153,7 @@ $$ x \notin U \iff \exist\mathcal{N_x} \st \mathcal{N_x} \cap U = \empty $$
 이는 $\forall\mathcal{N_x}$에 대해 $N \le n$일 떄, $s(n) \in U \cap \mathcal{N_x}$이라는 사실에 모순된다.
 
 따라서, proof by contradiction에 의해 다음이 성립한다.
-$$ x \in U $$
+$$ x \in U \qed $$
 
 [$\impliedby$]
 다음을 가정하자.
@@ -142,15 +162,17 @@ $$ U \text{ is not a closed set of } X $$
 그러면 $X-U$가 open set이 아님으로, open set의 성질에 의해 다음이 성립한다.
 $$ \begin{aligned} & \exist x \in X-U \st \forall\mathcal{N_x}, \quad \mathcal{N_x} \nsubseteq X-U \\\iff& \exist x \in X-U \st \forall\mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty \end{aligned} $$
 
-위를 만족하는 $x \in X-U$에 대해서, $X$가 first countable space임으로 다음이 성립한다.
-$$ \exist\text{nested neighborhood basis } \mathcal{B_x}(n) $$
+위를 만족하는 $x \in X-U$에서 명제2에 의한 nested neighborhood basis를 $\mathcal{B_x(n)}$라 할 때, $U$위의 sequence $s(n)$을 다음과 같이 정의하자.
+$$ s(n) := \text{one of a point in } \mathcal{B_x}(n) \cap U$$
 
-$U$위의 sequence $s(n)$을 다음과 같이 정의하자.
-$$ s(n) = \text{one of a point in } \mathcal{B_x}(n) \cap U $$
 
-보조명제4.1에 의해 $\mathcal{B_x}(n) \cap U \neq \empty$임으로 $s(n)$은 정의 될 수 있다.
+보조명제5.1에 의해 다음이 성립한다.
+$$ \forall n \in N, \quad \mathcal{B_x}(n) \cap U \neq \empty $$
 
-보조명제4.2에 의해 $\lim_{i\rightarrow\infty} s(i) = x$임으로 전제에 의해, $x \in U$이다.
+따라서, $s(n)$은 $U$위의 sequence이고, 명제3에 의해서 $x$로 수렴한다.
+
+그럼으로, 전제에 의해 다음이 성립한다.
+$$ x \in U $$
 
 하지만 이는 $x \in X-U$라는 사실에 모순된다.
 
@@ -161,7 +183,7 @@ $$ U \text{ is a closed set of } X \qed $$
 > [math.stackexchange](https://math.stackexchange.com/questions/3002079/what-is-the-proof-that-first-countable-is-sufficient-to-say-that-sequentially-cl)
 
 
-#### 보조명제4.1
+#### 보조명제5.1
 다음을 증명하여라.
 $$\mathcal{B_x}(n) \cap U \neq \empty$$
 
@@ -172,23 +194,6 @@ $$ \forall n \in \N, \quad \mathcal{B_x}(n) \in \Set{\mathcal{N_x}} $$
 
 따라서, $x$의 성질에 의해 다음이 성립한다.
 $$ \begin{aligned} & \forall\mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty \\\iff& \forall n \in \N, \quad \mathcal{B_x}(n) \cap U \neq \empty \qed \end{aligned} $$
-
-#### 보조명제4.2
-다음을 증명하여라.
-$$ \lim_{i\rightarrow\infty} s(i) = x $$
-
-**Proof**
-
-$\mathcal{B_x}(n)$가 nested neighborhood basis임으로 임의의 $\mathcal{N_x}$가 주어졌을 떄, 다음이 성립한다.
-$$ \exist j \in \N \st \mathcal{B_x}(j) \subseteq \mathcal{N_x} $$
-
-$s(n)$의 정의에 의해  다음이 성립한다.
-$$ \begin{aligned} &s(n) \in \mathcal{B_x}(n) \cap U \\\implies& s(n) \in \mathcal{B_x}(n) \land s(n) \in U \\\implies& s(n) \in \mathcal{B_x}(n) \end{aligned}  $$
-
-$\mathcal{B_x}(n)$가 nested neighborhood basis임으로 $j \le n$에 대해 다음이 성립한다.
-$$ \begin{aligned} & \mathcal{B_x}(n) \subseteq \mathcal{B_x}(j) \\\implies& s(n) \in \mathcal{B_x}(j) \\\implies& s(n) \in \mathcal{N_x}  \end{aligned} $$
-
-따라서, convergence의 정의에 의해 $s(n)$은 $x$에 수렴한다.$\qed$
 
 #### 참고1
 $U$가 다음을 만족할 때, $U$를 sequentially closed set이라고 한다.

@@ -12,10 +12,14 @@
 * Topology 복습하기
   * Countability
   * Eventually in
-* [Book] (Lee) Topological Manifolds, Bases and Countability 읽기
-  * [Book] (Lee) Topological Manifolds, Countability Properties 읽기    
-    * Second countable 공부
-* [Book] (Lee) smooth manifolds, Chap3 읽기
+* [Book] (Lee) Topological Manifolds
+  * Bases and Countability 읽기
+    * Countability Properties 읽기    
+      * Second countable 공부
+* [Book] (Lee) smooth manifolds
+  * Chap3 읽기
+    * Tangent Vectors p.51 읽기
+      * Gep,etroc Tamgemt Vectors p.51 읽기
 
 # 완료
 1. 교집합과의 차는 차의 합집임을 증명
