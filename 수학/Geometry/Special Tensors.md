@@ -121,16 +121,45 @@ $$ I = \delta_{ij}e_{ij} $$
 ## 4th order symmtric unit tensor
 $$ I_{sym} = \frac{1}{2}(\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk})e_{ijkl} $$
 
+### 명제
+$A$가 second order tensor일 때, 다음을 증명하여라
+$$ I_{sym}:A = \sym(A) $$
+
+**Proof**
+
+$$ \begin{aligned} I_{sym} : A &= \frac{1}{2}(\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk})A_{mn}\delta_{km}\delta_{ln} e_{ijmn} \\&= \frac{1}{2}(\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk})A_{kl} e_{ij} \\&= \frac{1}{2}(A_{ij} + A_{ji})e_{ij} \\&= \sym(A) \end{aligned} $$
+
+
 ## 4th order diffrential unit tensor
 $$ I_{diff} = \delta_{ik}\delta_{jl}e_{ijkl} $$
 
 ## Deviatoric Tensor
 $$ I_{dev} =  I_{sym} - \frac{1}{3}I \otimes I $$
 
-### 명제
+### 명제1
 다음을 증명하여라
 $$ I_{diff} : I_{dev} = I_{dev} $$
 
 **Proof**
 
 $$ \begin{aligned} I_{diff} : I_{dev} &= \delta_{ik}\delta_{jl}(\frac{1}{2}(\delta_{km}\delta_{ln} + \delta_{kn}\delta_{lm}) + \delta_{kl}\delta_{mn})e_{ijmn} \\&= (\frac{1}{2}(\delta_{im}\delta_{jn} + \delta_{in}\delta_{jm}) + \delta_{ij}\delta_{mn})e_{ijmn} \\&= I_{dev} \end{aligned} $$
+
+
+### 명제2
+$A$가 second order tensor일 떄, 다음을 증명하여라.
+$$ \tr(I_{diff}:A) = 0 $$
+
+**Proof**
+
+$$ \begin{aligned} \tr(I_{diff}:A) &= \tr(\sym(A) - \frac{1}{3}A_{kk}I) \\&= A_{ij}\delta_{ij} - \frac{1}{3}A_{kk}\delta_{ij}\delta_{ij} \\&= A_{ii} - A_{kk} \\&= 0  \end{aligned} $$
+
+
+
+
+
+
+
+
+
+
+-

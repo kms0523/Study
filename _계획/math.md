@@ -19,7 +19,8 @@
 * [Book] (Lee) smooth manifolds
   * Chap3 읽기
     * Tangent Vectors p.51 읽기
-      * Gep,etroc Tamgemt Vectors p.51 읽기
+      * Geometric Tangent Vectors p.51 읽기
+        * Derivatives.md 정리하기
 
 # 완료
 1. 교집합과의 차는 차의 합집임을 증명

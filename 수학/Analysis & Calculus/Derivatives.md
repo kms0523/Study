@@ -45,9 +45,9 @@ $$ f'(a) = \lim_{h \rightarrow 0} \frac{1}{|h|}(2ah + h^2) = \begin{cases} 2a & 
 $$ \lim_{h \rightarrow 0} \frac{1}{h} \Big( f(a + h) - f(a) - f'(a)h \Big) = 0 $$
 
 따라서, 위의 형태와 다차원으로 확장을 고려하여 다음과 같이 정의를 변경해보자.
-$$ \lim_{h \rightarrow 0} \frac{1}{|h|} \Big( f(a+h)-f(a)-L(a)h \Big) = 0 $$
+$$ \lim_{h \rightarrow 0} \frac{1}{|h|} \Big( f(a+h)-f(a)-L(h) \Big) = 0 $$
 
-이 때, 위의 식을 만족하는 함수 $L(a)$를 $f'(a)$라고 정의하면 Alternative form1과 다르게 부호 문제가 발생하지 않는다.
+이 때, 위의 식을 만족하는 함수 $L(h)$를 $hf'(a)$라고 정의하면 Alternative form1과 다르게 부호 문제가 발생하지 않는다.
 
 ##### 참고1
 $f(a + h) - f(a)$항은 $\Delta f$를 나타내고, $L(a)h$항은 $\Delta f$를 선형근사한 값으로 볼 수 있다.
@@ -102,7 +102,10 @@ $$ f = f^i\gamma_i $$
 $$ a = a^i\beta_i $$
 
 $a \in U$에서 $f$의 $i$번째 변수의 편미분은 다음과 같다.
-$$ \begin{aligned} D_i f(a) &:= \lim_{h \rightarrow 0}\frac{1}{h}(f(a + h \beta_i) -f (a)) \\&=\lim_{h \rightarrow 0} \frac{1}{h}(f(a^1, \cdots, a^i + h, \cdots, a^n) - f(a^1, \cdots, a^n)) \\&= \Big( \lim_{h \rightarrow 0} \frac{1}{h} (f^j(a^1, \cdots, a^i + h, \cdots, a^n) - f^j(a^1, \cdots, a^n)) \Big)\gamma_j \\&= D_if^j\gamma_j \\&= \begin{bmatrix} D_if^1(a) \\ \vdots \\ D_if^m(a) \end{bmatrix} \end{aligned} $$ 
+$$ \begin{aligned} D_i f(a) &:= \lim_{h \rightarrow 0}\frac{1}{h}(f(a + h \beta_i) -f (a)) \\&=\lim_{h \rightarrow 0} \frac{1}{h}(f(a^1, \cdots, a^i + h, \cdots, a^n) - f(a^1, \cdots, a^n)) \\&= \Big( \lim_{h \rightarrow 0} \frac{1}{h} (f^j(a^1, \cdots, a^i + h, \cdots, a^n) - f^j(a^1, \cdots, a^n)) \Big)\gamma_j \\&= D_if^j\gamma_j \end{aligned} $$ 
+
+따라서, 행렬표현은 다음과 같다.
+$$ \frak{m_\gamma}(D_if(a)) = \begin{bmatrix} D_if^1(a)\\\vdots\\D_if^m(a) \end{bmatrix} $$
 
 > Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach chap 1.7
@@ -110,62 +113,84 @@ $$ \begin{aligned} D_i f(a) &:= \lim_{h \rightarrow 0}\frac{1}{h}(f(a + h \beta_
 # Total Derivative
 open subset $U \subset \R^n$과 함수 $f : U \rightarrow \R^m$이 있다고 하자.
 
-$a \in U$와 다음과 같이 정의된 linear map $L$이 있다고 하자.
-$$ L : \R^n \rightarrow \R^m \st v \mapsto Av $$
+$a \in U$와 linear map $L: \R^n \rightarrow \R^m $이 있다고 하자.
 
-이 떄, $L$이 다음을 만족할 경우, $L$을 $a$에서 $f$의  `total derivative`라고 한다.
+$L$이 다음을 만족할 경우, $L$을 $a$에서 $f$의  `total derivative`라고 한다.
 $$ \lim_{h \rightarrow 0_n} \frac{1}{|h|}(f(a + h) - f(a) - L(h)) = 0 $$
 
 이런 $L$이 존재하는 경우, $f$가 $a$에서 `미분가능(differentiable)`하다고 한다.
 
-### 명제
-open subset $U \subset \R^n$과 함수 $\mathbf f : U \rightarrow \R^m$이 있다고 하자.
+### 명제1
+open subset $U \subset \R^n$과 함수 $f : U \rightarrow \R^m$이 있다고 하자.
 
-$\mathbf a \in U$에서 $\bf f$가 미분가능할 때, 다음을 증명하여라.
-$$ L : \R^n \rightarrow \R^m \st v \mapsto Av $$
-
-$$ \text{Where, } A = \begin{bmatrix} D_1f_1(\mathbf a) & \cdots & D_nf_1(\mathbf a) \\ \vdots & & \vdots \\ D_1f_m(\mathbf a) & \cdots & D_nf_m(\mathbf a) \end{bmatrix}$$
+$\R^n$과 $\R^m$의 basis가 각 각 $\beta,\gamma$이고 $a \in U$에서 $f$가 미분가능할 때, 다음을 증명하여라.
+$$ \frak{m}_\beta^\gamma(L) = \begin{bmatrix} D_1f^1(a) & \cdots & D_nf^1(a) \\ \vdots & & \vdots \\ D_1f^m(a) & \cdots & D_nf^m(a) \end{bmatrix}$$
 
 **Proof**
 
-$\mathbf h = t \mathbf e_i$라 하면 정의에 의해 다음이 성립한다.
-$$ \begin{aligned} & \bf \lim_{\mathit t \mathbf e_i \rightarrow 0} \frac{1}{| \mathit t \mathbf e_i|}(f(a + \mathit t \mathbf e_i) - f(a) - \mathit L(\mathit t \mathbf e_i)) = 0 \\ \Rightarrow \enspace & \bf \lim_{ \mathit t \mathbf e_i \rightarrow 0} \frac{1}{ \mathit t}(f(a + \mathit t \mathbf e_i) - f(a) - \mathit t \mathit L(\mathbf e_i)) = 0 \\ \Rightarrow \enspace & D_i \mathbf f(\mathbf a) = \mathit L(\mathbf e_i) \end{aligned} $$
+$h = t\beta_i$라 하면 정의에 의해 다음이 성립한다.
+$$ \begin{aligned} & \lim_{t \rightarrow 0} \frac{1}{\norm{t \beta_i}}(f(a+t\beta_i) - f(a) - L(t\beta_i)) = 0 \\\implies & \lim_{t\rightarrow 0} \frac{1}{t}(f(a + t \beta_i) - f(a)) -L(\beta_i) = 0 \\\implies & D_i f(a) = L(\beta_i) \end{aligned} $$
 
-이를 행렬 형태로 나타내면 다음과 같다.
-$$ L(\mathbf e_i) = A_{*i} = \begin{bmatrix} D_if_1(\mathbf a) \\ \vdots \\ D_if_m(\mathbf a) \end{bmatrix} $$
+따라서 행렬표현은 다음과 같다.
+$$ \frak{m_\gamma}(L(\beta_i)) = \frak{m_\gamma}(D_if(a)) = \begin{bmatrix} D_if_1(a) \\ \vdots \\ D_if_m(a) \end{bmatrix} $$
 
-따라서 다음이 성립한다.
-$$ A = \begin{bmatrix} A_{*1} & \cdots & A_{*n} \end{bmatrix} = \begin{bmatrix} D_1f_1(\mathbf a) & \cdots & D_nf_1(\mathbf a) \\ \vdots & & \vdots \\ D_1f_m(\mathbf a) & \cdots & D_nf_m(\mathbf a) \end{bmatrix} \quad {_\blacksquare} $$
+그럼으로 다음이 성립한다.
+$$ \frak{m}_\beta^\gamma(L) = \begin{bmatrix} \frak{m}_\gamma(L(\beta_1)) & \cdots & \frak{m}_\gamma(L(\beta_n)) \end{bmatrix} = \begin{bmatrix} D_1f_1(a) & \cdots & D_nf_1(a) \\ \vdots & & \vdots \\ D_1f_m(a) & \cdots & D_nf_m(a) \end{bmatrix} \qed $$
 
 #### 참고1
-행렬$A$를 $\mathbf f$의 `Jacobian matrix`라고 부르며 $J_f$로 표기한다.
-$$ \mathbf{Jf(a)} = \begin{bmatrix} D_1f_1(\mathbf a) & \cdots & D_nf_1(\mathbf a) \\ \vdots & & \vdots \\ D_1f_m(\mathbf a) & \cdots & D_nf_m(\mathbf a) \end{bmatrix}$$
+선형변환 $L$의 행렬표현을 $f$의 `Jacobian matrix`라고 부르며 $J_f$로 표기한다.
+$$ \frak{m}_\beta^\gamma(L) =J_f(a) = \begin{bmatrix} D_1f_1( a) & \cdots & D_nf_1( a) \\ \vdots & & \vdots \\ D_1f_m( a) & \cdots & D_nf_m( a) \end{bmatrix}$$
 
 #### 참고2
-$L = \mathbf{Jf}$이려면 $\mathbf f$가 differtiable해야 한다.
+$\frak{m}_\beta^\gamma(L) =J_f(a)$이려면 $f$가 differtiable해야 한다.
 
 ### 참고
-derivative의 의미는 함수 $\mathbf f$에 대한 best linear approximation이다.
+Total derivative의 의미는 $a\in\R^n$에서 함수 $f: \R^n \rightarrow \R^m$에 대한 best linear approximation이다.
 
-따라서 위 정의는 $\mathbf f$의 domain과 codomain이 Euclidean space일때 만 성립하는 것이 아니라, 임의의 vector space에 대해서도 성립한다.
+따라서 위 정의는 $f$의 domain과 codomain이 Euclidean vector space일때 만 성립하는 것이 아니라, 임의의 vector space에 대해서도 성립한다.
 
-domain과 codomain이 Euclidean space가 아닌 vector space인 경우에도 vector space isomorphism을 이용하여 Euclidean space에서 Jacobian matrix를 구하는 형태로 derivatve를 계산할 수 있지만, 이 방법이 최선의 선택이 아닌 경우도 있다.
+$f$의 total erivative를 계산하는데 있어서, 정의를 사용하는것보다 $J_f$를 사용하는 것이 더 간단한 경우가 많다. 
+
+하지만 domain과 codomain이 Euclidean vector space가 아닌 vector space인 경우에는 vector space isomorphism을 이용하여 Euclidean vector space에서 Jacobian matrix를 구하는 형태로 계산을 해야 되는데, 이 방법이 최선의 선택이 아닌 경우도 있다.
 
 #### 예시
-함수 $\mathbf f$가 다음과 같이 정의되었다고 하자.
-$$\mathbf f : M_{nn} \rightarrow M_{nn} \quad s.t. \quad A \mapsto A^2 $$
+함수 $f$가 다음과 같이 정의되었다고 하자.
+$$f : M_{nn} \rightarrow M_{nn} \st A \mapsto A^2 $$
 
-Jacobian을 이용하지 않고 미분의 정의를 통해 $\mathbf f'(A)$을 구해보자.
-$$ \begin{aligned} & \lim_{H \rightarrow 0_{M_{nn}}} \frac{1}{|H|}(f(A + H) - f(A) - \mathit L(H)) = 0_{M_{nn}} \\ \Rightarrow \enspace & \lim_{H \rightarrow 0_{M_{nn}}} \frac{1}{|H|}(AH + HA + H^2 - \mathit L(H)) = 0_{M_{nn}} \end{aligned} $$
+##### $J_f$를 사용하는 경우
+$M_{nn}$과 $\R^{nn}$은 다음 관계에 의해 vector space isomorphic이다.
+$$ \begin{CD} M_{nn} @>f>> M_{nn} \\ @V{\varphi}VV @VV{\varphi}V \\ \mathbb \R^{nn} @>>g> \mathbb \R^{nn}  \end{CD} $$
 
-$\mathbf f$가 $A$에서 미분가능하기 위해서는 위의 식이 만족되어야 함으로 $|H|$로 나눠주면 $0_{M_{nn}}$이 되지 않는 선형 항들을 제거하기 위해 linear map $L(H)$를 다음과 같이 정의하자.
-$$ L : M_{nn} \rightarrow M_{nn} \quad s.t. \quad H \mapsto AH + HA $$
+$f,g$의 total derivative를 각 각 $L_f,L_g$라하고 $M_{nn}$과 $\R^{nn}$의 basis를 각 각 $\beta, \gamma$라 할 때, $\varphi$의 성질에 의해 다음이 성립한다.
+$$ \frak{m_\beta^\beta}(L_f) = \frak{m_\gamma^\gamma}(L_g) $$
 
-$L$에 의해 다음이 만족된다.
-$$ \begin{aligned} \lim_{H \rightarrow 0_{M_{nn}}} \frac{1}{|H|}(AH + HA + H^2 - \mathit L(H)) &= \lim_{H \rightarrow 0_{M_{nn}}} \frac{1}{|H|}H^2 \\ &= \lim_{H \rightarrow 0_{M_{nn}}} \frac{1}{|H|}H^2 \\ &< \lim_{H \rightarrow 0_{M_{nn}}} \frac{1}{|H|}|H||H| \\ &= 0_{M_{nn}} \end{aligned} $$
+$f$의 정의에 의해 $a = a^{ij}\gamma_{ij} \in \R^{nn}$가 있을 떄, $g(v)$는 다음과 같다.
+$$ g(v) = a^{ik}a^{kj}\gamma_{ij} $$
 
-따라서, $\mathbf f$는 $A$에서 미분가능하며 그때 $\mathbf f'(A)$는 다음과 같다.
-$$ \mathbf  f'(A) : M_{nn} \rightarrow M_{nn} \quad s.t. \quad H \mapsto AH + HA $$
+따라서, 다음이 성립한다.
+$$ \frak{m_\gamma^\gamma}(L_g) = J_g(a) = \begin{bmatrix} D_{11}g^{11}( a) & \cdots & D_{nn}g^{11}(a) \\ \vdots & & \vdots \\ D_{11}g^{nn}( a) & \cdots & D_{nn}g^{nn}( a) \end{bmatrix} $$
+
+$$ \text{Where, }D_{ij}g^{kl}(a) = \frac{\partial a^{kr}a^{rl}}{\partial a^{ij}} $$
+
+그럼으로 $\frak{m_\beta^\beta}(L_f)$를 알고 있기 때문에 $L_f$에 대해 알 수 있다.
+
+예를 들어 $m \in M_{nn}$에 대해서, $L_f(m)$은 다음과 같다.
+$$ \begin{aligned} L_f(m) &= \varphi^{-1}(\frak{m_\beta}(L_f(m))) \\&= \varphi^{-1}(\frak{m_\beta^\beta}(L_f)\frak{m_\beta}(m)) \end{aligned} $$
+
+##### 정의를 사용하는 경우
+Total derivative의 정의를 통해 $L_f$을 구해보자.
+$$ \begin{aligned} & \lim_{H \rightarrow 0_{M_{nn}}} \frac{1}{\norm{H}}(f(A + H) - f(A) - \mathit L_f(H)) = 0_{M_{nn}} \\ \implies & \lim_{H \rightarrow 0_{M_{nn}}} \frac{1}{\norm{H}}(AH + HA + H^2 - \mathit L_f(H)) = 0_{M_{nn}} \end{aligned} $$
+
+$f$가 $A$에서 미분가능하기 위해서는 위의 식이 만족되어야 함으로 $\norm{H}$로 나눠주면 $0_{M_{nn}}$이 되지 않는 선형 항들을 제거하기 위해 linear map $L_f$를 다음과 같이 정의하자.
+$$ L_f : M_{nn} \rightarrow M_{nn} \st H \mapsto AH + HA $$
+
+위와 같이 정의한 $L_f$에 의해 다음이 만족된다.
+$$ \begin{aligned} \lim_{H \rightarrow 0_{M_{nn}}} \frac{1}{\norm{H}}(AH + HA + H^2 - \mathit L(H)) &= \lim_{H \rightarrow 0_{M_{nn}}} \frac{1}{\norm{H}}H^2 \\&\le \lim_{H \rightarrow 0_{M_{nn}}} \frac{1}{\norm{H}}\norm{H}\norm{H} \\ &= 0_{M_{nn}} \end{aligned} $$
+
+따라서, $f$의 total derivative는 $L_f(A)$이다.
+
+##### 결론
+두 경우를 비교해보면 알 수 있듯이, 정의를 사용하는 경우가 훨씬 간단할수도 있다.
 
 > Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach p.132
@@ -173,19 +198,34 @@ $$ \mathbf  f'(A) : M_{nn} \rightarrow M_{nn} \quad s.t. \quad H \mapsto AH + HA
 # Directional Derivative
 open subset $U \subset \R^n$과 함수 $f:U \rightarrow \R^m$이 있다고 하자.
 
-$f$의 $a\in U$에서 $v \in \R^n$방향으로의 `directional derivative`는 다음과 같이 정의된다.
-$$ D_v f(a) := \lim_{h \rightarrow 0}\frac{ f(a + h v) - f (a)}{h} $$
+$f$의 `directional derivative`는 다음과 같이 정의된 함수이다.
+$$ Df : U \times \R^n \rightarrow \R^m \st (a,v) \mapsto \lim_{h \rightarrow 0}\frac{ f(a + h v) - f (a)}{h} $$
+
+### 참고1(notation)
+$Df(a,v)$는 $D_vf(a)$와 같이 표기하는 것이 일반적이다.
+
+### 참고2
+$D_vf(a)$는 $a$에서 $v$방향으로 변화량과 그에 따른 $f$의 변화량의 비율의 극한을 의미한다.
 
 ### 명제
-open subset $U \subset \R^n$과 함수 $f : U \rightarrow \R^m$이 있다고 하자.
+open set $U \subset \R^n$과 함수 $f : U \rightarrow \R^m$이 있다고 하자.
 
-$a \in U$에서 $f$가 differentiable일 때 다음을 증명하여라.
-$$ \exist D_v f(a) \enspace \land \enspace D_v f(a) = Jf(a)v $$
+$\R^m$의 basis를 $\beta$하고 $\forall a \in U$에서 $f$가 differentiable일 때, 다음을 증명하여라.
+$$ Df\text{ is well-defined} \enspace\land\enspace \frak{m_\beta}(D_vf(a)) = \frak{m_\beta}(J_f(a)v) $$
 
 **Proof**
 
-$\mathbf f$가 differentiable 함으로 다음이 성립한다.
-$$ \begin{aligned} & \lim_{h \rightarrow 0}\frac{ \mathbf f(\mathbf a + h \mathbf v) - \mathbf f (\mathbf a) - L(h \mathbf v)}{|h\mathbf v|} = 0 \\ \Rightarrow \enspace & \lim_{h \rightarrow 0}\frac{ \mathbf f(\mathbf a + h \mathbf v) - \mathbf f (\mathbf a) - L(h \mathbf v)}{h|\mathbf v|} = 0 \\ \Rightarrow \enspace & \lim_{h \rightarrow 0}\frac{ \mathbf f(\mathbf a + h \mathbf v) - \mathbf f (\mathbf a) - L(h \mathbf v)}{h} = 0 \\ \Rightarrow \enspace & \lim_{h \rightarrow 0}\frac{ \mathbf f(\mathbf a + h \mathbf v) - \mathbf f (\mathbf a)}{h} = L(\mathbf v) \\ \Rightarrow \enspace & D_\mathbf v \mathbf f(\mathbf a) = \mathbf{Jf(a)}\mathbf v \end{aligned} $$
+$f$가 differentiable 함으로 다음이 성립한다.
+$$ \begin{aligned} & \lim_{h \rightarrow 0}\frac{f(a + hv) -f (a) - L_a(hv)}{\norm{hv}} = 0 \\\implies& \lim_{h \rightarrow 0}\frac{f(a + hv) -f (a) - hL_a(v)}{h\norm{v}} = 0 \\\implies& \lim_{h \rightarrow 0}\frac{f(a + hv) -f (a) - hL_a(v)}{h} = 0 \\\implies& \lim_{h \rightarrow 0}\frac{f(a + hv) -f (a)}{h} = L_a(v) \end{aligned} $$
+
+이 떄, $f$가 $a$에서 differentiable 함으로, 선형변환 $L_a$은 잘 정의된다. 
+
+따라서, 극한값이 $L_a(v)$로 존재함으로, 함수 $Df$는 잘 정의된다.
+
+또한, $D_vf(a) = L_a(v)$이고 Jacobian matrix의 정의에 따라 $L_a(v) = J_f(a)v$
+
+
 
 > Reference  
 > [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach Proposition 1.7.14.
+

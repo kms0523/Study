@@ -9,3 +9,5 @@ $\gdef\st{\quad s.t \quad}$
 $\gdef\qed{\quad\tiny\blacksquare}$
 $\gdef\preimg{\text{preimg}}$
 $\gdef\norm#1{\lVert #1 \rVert}$
+$\gdef\sym{\text{sym}}$
+$\gdef\tr{\text{tr}}$
