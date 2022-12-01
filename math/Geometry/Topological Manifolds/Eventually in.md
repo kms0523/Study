@@ -23,18 +23,18 @@ $$ x \in \Int(U) \iff \text{every sequence in } X \text{ convergeing to } x \tex
 **Proof**
 
 [$\implies$]
-$x$로 수렴하는 $X$위의 sequence $s(n)$이 있다고 하자.
+$x \in \Int(U)$가 있다고 하자.
 
-$s(n)$이 $x$로 수렴함으로, 수렴의 정의에 의해 다음이 성립한다.
+수렴의 정의에 의해, $x$로 수렴하는 $X$위의 모든 sequence $s(n)$에 대해 다음이 성립한다.
 $$ \forall\mathcal{N_x}, \quad \exist N \in \N \st N \le n \implies s(n) \in \mathcal{N_x} $$
 
-이 떄, 전제에 의해 $x \in \Int(U)$이고 $\Int(U) \in \Set{\mathcal{N_x}}$임으로 다음이 성립한다.
+이 떄, interior의 성질에 의해 $\Int(U) \in \Set{\mathcal{N_x}}$임으로 다음이 성립한다.
 $$ \exist N \in \N \st N \le n \implies s(n) \in \Int(U) $$
 
 그리고 $\Int(U) \subseteq U$임으로, 다음이 성립한다.
 $$ \exist N \in \N \st N \le n \implies s(n) \in U $$
 
-따라서, $s(n)$은 eventually in $U$이다. $\qed$
+따라서, 모든 $s(n)$은 eventually in $U$이다. $\qed$
 
 [$\impliedby$]
 다음을 가정하자.

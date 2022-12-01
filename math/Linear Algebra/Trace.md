@@ -13,7 +13,7 @@ $$ \tr(AB) = \sum_{i=1}^n \sum_{j=1}^n A_{ij}B_{ji} $$
 
 **Proof**
 
-직접 계산하면 동일함을 알 수 있다. $\quad {_\blacksquare}$
+직접 계산하면 동일함을 알 수 있다. $\qed$
 
 ### 명제2
 $A \in M_{nn}(\R)$이라 하자.
@@ -23,7 +23,7 @@ $$ A : A = \tr(A^2) $$
 
 **Proof**
 
-$$ \begin{aligned} A : A &= A_{ij}A_{ij} \\&= A_{ij}A_{ji} \\&= \tr(A^2) \quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} A : A &= A_{ij}A_{ij} \\&= A_{ij}A_{ji} \\&= \tr(A^2) \qed \end{aligned} $$
 
 #### 따름명제
 $A \in M_{nn}(\R)$가 symmetric metrix라 하자.
@@ -33,7 +33,7 @@ $$ A : A = B : B $$
 
 **Proof**
 
-$$ \begin{aligned} A : A &= \tr(A^2) \\ &= \tr(B^2) \\ &= B : B\quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} A : A &= \tr(A^2) \\ &= \tr(B^2) \\ &= B : B\qed \end{aligned} $$
 
 ### 명제4
 $A,B \in M_{nn}(\R)$이라 하자.
@@ -43,7 +43,7 @@ $$ \tr(AB) = \tr(BA) $$
 
 **Proof**
 
-$$ \begin{aligned} \tr(AB) &= \sum_{i=1}^n \sum_{j=1}^n A_{ij}B_{ji} \\ &= \sum_{j=1}^n \sum_{i=1}^n B_{ji}A_{ij} \\&= \tr(BA) \quad {_\blacksquare} \end{aligned} $$
+$$ \begin{aligned} \tr(AB) &= \sum_{i=1}^n \sum_{j=1}^n A_{ij}B_{ji} \\ &= \sum_{j=1}^n \sum_{i=1}^n B_{ji}A_{ij} \\&= \tr(BA) \qed \end{aligned} $$
 
 
 

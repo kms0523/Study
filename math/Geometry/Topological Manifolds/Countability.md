@@ -66,68 +66,40 @@ Nested neighborhood basis의 정의에 의해 $\mathcal{B_x}(n)$은 nested neigh
 ### 명제3
 First countable space $X$와 $X$의 subset $U$가 있다고 하자.
 
-$x \in X$에서 nested neighborhood basis를 $\mathcal{B_x(n)}$라 할 떄, 다음을 만족한다고 하자.
-$$ \forall n \in \N, \quad \mathcal{B_x}(n) \cap U \neq \empty \qed $$
+이 때, 다음을 증명하여라.
+$$ x \in \bar{U} \implies \exist\text{ sequence } s \text{ on } U \st \text{ converge to } x $$
+
+**Proof**
+
+$x \in \bar{U}$에서 nested neighborhood basis를 $\mathcal{B_x(n)}$라 하자.
 
 $U$위의 sequence $s(n)$을 다음과 같이 정의하자.
 $$ s(n) := \text{one of a point in } \mathcal{B_x}(n) \cap U$$
 
-이 때, 다음을 증명하여라.
-$$ \lim_{n\rightarrow\infty} s(n) = x $$
+Closure의 성질에 의해 $\mathcal{B_x(n)} \cap U \neq \empty$임으로 $s(n)$은 정의 할 수 있다.
 
-**Proof**
+$s(n)$의 정의에 의해 $s(n) \in \mathcal{B_x}(n)$임으로, nested neigborhood basis의 성질에 의해 다음이 성립한다.
+$$ \lim_{n \rightarrow \infty} s(n) = x $$
 
-$\mathcal{B_x}(n)$가 nested neighborhood basis임으로 다음이 성립한다.
-$$ \forall \mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad \exist N \in \N \st N \le n \implies  \mathcal{B_x}(n) \subseteq \mathcal{N_x} $$
+그럼으로 $x$에 수렴하는 $U$위의 sequence $s(n)$이 존재한다. $\qed$
 
-이 때, $s(n)$의 정의에 의해 다음이 성립한다.
-$$ s(n) \in \mathcal{B_x}(n)  $$
-
-그럼으로, 다음이 성립한다.
-$$ \forall \mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad \exist N \in \N \st N \le n \implies s(n) \in \mathcal{N_x} $$
-
-Convergence의 정의에 의해 다음이 성립한다.
-$$ \lim_{n \rightarrow \infty} s(n) = x \qed $$
-
-
-### 명제4
+#### 따름명제3.1
 First countable space $X$와 $X$의 subset $U$가 있다고 하자.
 
 이 떄, 다음을 증명하여라.
-$$  \exist\text{ sequence } s \text{ on } U \st \text{ converge to } x \iff x \in \bar{U} $$
+$$ x \in \bar{U} \iff \exist\text{ sequence } s \text{ on } U \st \text{ converge to } x $$
 
 **Proof**
 [$\implies$]
-convergence의 성질에 의해 성립한다.
+명제3에 의해 성립한다.
 
 [$\impliedby$]
-$x \in X$에서 nested neighborhood basis를 $\mathcal{B_x(n)}$라 할 때, $U$위의 sequence $s(n)$을 다음과 같이 정의하자.
-$$ s(n) := \text{one of a point in } \mathcal{B_x}(n) \cap U$$
-
-보조명제4.1에 의해 다음이 성립한다.
-$$ \forall n \in N, \quad \mathcal{B_x}(n) \cap U \neq \empty $$
-
-따라서, $s(n)$은 정의에 의해서 $U$위의 sequence이고, 명제3에 의해서 $x$로 수렴한다.
-
-그럼으로 $x$에 수렴하는 $U$위의 sequence가 존재한다. $\qed$
-
+convergence의 성질에 의해 성립한다.
 
 > Reference
 > [proofwiki](https://proofwiki.org/wiki/Sequence_Lemma)
 
-#### 보조명제4.1
-다음을 증명하여라.
-$$ \mathcal{B_x}(n) \cap U \neq \empty $$
-
-**Proof**
-
-$x \in \bar{U}$임으로 다음이 성립한다.
-$$ \forall\mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty $$
-
-$\forall n \in \N, \quad \mathcal{B_x}(n) \in \Set{\mathcal{N_x}}$임으로 다음이 성립한다.
-$$ \forall n \in \N, \quad \mathcal{B_x}(n) \cap U \neq \empty \qed $$
-
-### 명제5
+### 명제4
 First countable space $X$와 $X$의 subset $U$가 있다고 하자.
 
 이 떄, 다음을 증명하여라.
@@ -136,42 +108,22 @@ $$ U \text{ is closed set of } X \iff \begin{gathered} U\text{ contains every li
 **Proof**
 
 [$\implies$]
-$x \in X$와 $x$로 수렴하는 $U$위의 convergent sequence $s(n)$이 있다고 하자.
+$x \in X$가 있다고 하자.
 
-Convergence의 정의에 의해 다음이 성립한다.
-$$ \forall\mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad \exist N \in \N \st N \le n \implies s(n) \in \mathcal{N_x} $$
+따름명제3.1에 의해, $x$로 수렴하는 $U$위의 모든 convergent sequence $s(n)$에 대해 다음이 성립한다.
+$$ x \in \bar{U} $$
 
-따라서, 다음이 성립한다.
-$$ \forall\mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad N\le n \implies s(n) \in U \cap \mathcal{N_x} $$
-
-이 떄, 다음을 가정하자.
-$$ x \notin U $$
-
-전제에 의해 $U = \bar{U}$임으로, closure의 성질에 의해 다음이 성립한다.
-$$ x \notin U \iff \exist\mathcal{N_x} \st \mathcal{N_x} \cap U = \empty $$
-
-이는 $\forall\mathcal{N_x}$에 대해 $N \le n$일 떄, $s(n) \in U \cap \mathcal{N_x}$이라는 사실에 모순된다.
-
-따라서, proof by contradiction에 의해 다음이 성립한다.
+전제에 의해 $\bar{U} = U$임으로 다음이 성립한다.
 $$ x \in U \qed $$
 
 [$\impliedby$]
 다음을 가정하자.
 $$ U \text{ is not a closed set of } X $$
 
-그러면 $X-U$가 open set이 아님으로, open set의 성질에 의해 다음이 성립한다.
-$$ \begin{aligned} & \exist x \in X-U \st \forall\mathcal{N_x}, \quad \mathcal{N_x} \nsubseteq X-U \\\iff& \exist x \in X-U \st \forall\mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty \end{aligned} $$
+Closure의 성질에 의해 다음이 성립한다.
+$$ \exist x \in X-U \st x \in \bar{U} $$
 
-위를 만족하는 $x \in X-U$에서 명제2에 의한 nested neighborhood basis를 $\mathcal{B_x(n)}$라 할 때, $U$위의 sequence $s(n)$을 다음과 같이 정의하자.
-$$ s(n) := \text{one of a point in } \mathcal{B_x}(n) \cap U$$
-
-
-보조명제5.1에 의해 다음이 성립한다.
-$$ \forall n \in N, \quad \mathcal{B_x}(n) \cap U \neq \empty $$
-
-따라서, $s(n)$은 $U$위의 sequence이고, 명제3에 의해서 $x$로 수렴한다.
-
-그럼으로, 전제에 의해 다음이 성립한다.
+명제3에 의해 위를 만족하는 $x$로 수렴하는 $U$위의 sequence가 존재함으로, 전제에 의해 다음이 성립한다.
 $$ x \in U $$
 
 하지만 이는 $x \in X-U$라는 사실에 모순된다.
@@ -181,19 +133,6 @@ $$ U \text{ is a closed set of } X \qed $$
 
 > Reference
 > [math.stackexchange](https://math.stackexchange.com/questions/3002079/what-is-the-proof-that-first-countable-is-sufficient-to-say-that-sequentially-cl)
-
-
-#### 보조명제5.1
-다음을 증명하여라.
-$$\mathcal{B_x}(n) \cap U \neq \empty$$
-
-**Proof**
-
-Nested neighborhood basis의 성질에 의해 다음이 성립한다.
-$$ \forall n \in \N, \quad \mathcal{B_x}(n) \in \Set{\mathcal{N_x}} $$
-
-따라서, $x$의 성질에 의해 다음이 성립한다.
-$$ \begin{aligned} & \forall\mathcal{N_x}, \quad \mathcal{N_x} \cap U \neq \empty \\\iff& \forall n \in \N, \quad \mathcal{B_x}(n) \cap U \neq \empty \qed \end{aligned} $$
 
 #### 참고1
 $U$가 다음을 만족할 때, $U$를 sequentially closed set이라고 한다.

@@ -116,7 +116,7 @@ open subset $U \subset \R^n$과 함수 $f : U \rightarrow \R^m$이 있다고 하
 $a \in U$와 linear map $L: \R^n \rightarrow \R^m $이 있다고 하자.
 
 $L$이 다음을 만족할 경우, $L$을 $a$에서 $f$의  `total derivative`라고 한다.
-$$ \lim_{h \rightarrow 0_n} \frac{1}{|h|}(f(a + h) - f(a) - L(h)) = 0 $$
+$$ \lim_{h \rightarrow 0_n} \frac{1}{|h|}(f(a + h) - f(a) - L(h)) = 0_n $$
 
 이런 $L$이 존재하는 경우, $f$가 $a$에서 `미분가능(differentiable)`하다고 한다.
 
@@ -131,10 +131,10 @@ $$ \frak{m}_\beta^\gamma(L) = \begin{bmatrix} D_1f^1(a) & \cdots & D_nf^1(a) \\ 
 $h = t\beta_i$라 하면 정의에 의해 다음이 성립한다.
 $$ \begin{aligned} & \lim_{t \rightarrow 0} \frac{1}{\norm{t \beta_i}}(f(a+t\beta_i) - f(a) - L(t\beta_i)) = 0 \\\implies & \lim_{t\rightarrow 0} \frac{1}{t}(f(a + t \beta_i) - f(a)) -L(\beta_i) = 0 \\\implies & D_i f(a) = L(\beta_i) \end{aligned} $$
 
-따라서 행렬표현은 다음과 같다.
+행렬표현은 다음과 같다.
 $$ \frak{m_\gamma}(L(\beta_i)) = \frak{m_\gamma}(D_if(a)) = \begin{bmatrix} D_if_1(a) \\ \vdots \\ D_if_m(a) \end{bmatrix} $$
 
-그럼으로 다음이 성립한다.
+$L$이 linear map임으로, 다음이 성립한다.
 $$ \frak{m}_\beta^\gamma(L) = \begin{bmatrix} \frak{m}_\gamma(L(\beta_1)) & \cdots & \frak{m}_\gamma(L(\beta_n)) \end{bmatrix} = \begin{bmatrix} D_1f_1(a) & \cdots & D_nf_1(a) \\ \vdots & & \vdots \\ D_1f_m(a) & \cdots & D_nf_m(a) \end{bmatrix} \qed $$
 
 #### 참고1

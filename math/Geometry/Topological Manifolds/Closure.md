@@ -120,3 +120,25 @@ $$ \forall A \in C, \quad U \subseteq A$$
 
 따라서, 다음이 성립한다.
 $$ \begin{aligned} \bar{U} &= \bigcap_{A \in C} A \\&= U \qed \end{aligned} $$
+
+### 명제5
+Topological space $X$와 $X$의 subset $U$가 있다고 하자.
+
+이 떄, 다음을 증명하여라.
+$$ U \text{ is not a closed set of } X \implies \exist x \in X-U \st x \in \bar{U} $$
+
+**Proof**
+
+다음을 가정하자.
+$$ \forall x \in X-U, \quad x \in X - \bar{U} $$
+
+그러면 $U = \bar{U}$여야 함으로 다음이 성립한다.
+$$ U \text{ is a closed set of } X $$
+
+이는 전제에 모순됨으로 proof by contradiction에 의해 다음이 성립한다.
+$$ \exist x \in X-U \st x \in \bar{U} \qed $$
+
+
+
+
+-

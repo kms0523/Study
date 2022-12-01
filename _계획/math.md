@@ -10,8 +10,8 @@
 * 선형대수 42강
 * 선형대수 43강
 * Topology 복습하기
-  * Countability
   * Eventually in
+    * 명제1
 * [Book] (Lee) Topological Manifolds
   * Bases and Countability 읽기
     * Countability Properties 읽기    
@@ -22,7 +22,7 @@
       * Geometric Tangent Vectors p.51 읽기
         * Derivatives.md 정리하기
 
-# 완료
+# 한 일
 1. 교집합과의 차는 차의 합집임을 증명
 2. 합잡합과의 차는 차의 교집합임을 증명
 3. subset에 의한 subspace의 open set은 full space의 open set이 아닐수도 있음을 증명 
@@ -45,7 +45,6 @@
 20. Hausdorff space from continuous functions 증명  
 
 11.04
-
 19. infinite intersection of closed set이 closed set임을 증명
 20. Hausdorff space에서 one point set은 always closed임을 증명
 21. Hausdorff space에서 every finite subset이 closed임을 증명
@@ -53,12 +52,10 @@
 23. Finite set위의 Hausdorff topology는 idscrete topology가 유일함을 증명
 
 11.05
-
 24. 선형대수 40강 공부
 
 
 11.07
-
 25. Basis 공부하기
 26. Basis criterion 명제 증명하기
 27. Metric space에서 open ball은 open set임을 증명
@@ -66,17 +63,14 @@
 29. Metric topology의 basis는 open ball의 collection임을 증명 
 
 11.08
-
 30. Euclidean topology에서 open square가 basis임을 증명
 31. 공역 Basis의 preimg가 open set이면 연속함수임을 증명
 
 11.09
-
 32. Defining a Topology from a Basis 읽기
 33. Collection이 basis가 될 필요 충분조건 증명
 
 11.10
-
 34. Neighborhood basis 정리
 35. First countability 정리
 36. 모든 Metric space가 first countiable임을 증명
@@ -144,3 +138,9 @@
 78. Riesz representation 복습
 79. Adjoint operator의 existence와 uniqueness 명제 증명
 80. Eigen space가 T invariant임을 증명 
+
+12.01
+81. Countability 복습
+82. basis 복습
+83. eventually in 복습
+    

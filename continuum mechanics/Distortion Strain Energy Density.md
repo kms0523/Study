@@ -6,7 +6,7 @@ $$ U = \frac{1}{2} \sigma : \epsilon $$
 $$ \begin{aligned} U &= \frac{1}{2} \sigma : \epsilon \\ &= \frac{1}{2}(\tilde \sigma + \sigma_m I) : (\tilde \epsilon + \epsilon_m I) \\ &= \frac{1}{2} (\tilde \sigma : \tilde \epsilon + 3\sigma_m \epsilon_m) \end{aligned} $$
 
 Volume-chainging과 관련된 항을 제외한 strain energy density를 다음과 같이 정의한다.
-$$ U_d = \frac{1}{2}(\tilde \sigma : \tilde \epsilon ) $$
+$$ U_d := \frac{1}{2}(\tilde \sigma : \tilde \epsilon ) $$
 
 이 때, $U_d$를 `Distortion strain energy density`라 한다.
 
@@ -33,7 +33,6 @@ $$ \tilde \sigma = 2\mu \tilde \epsilon $$
 
 따라서 다음이 성립한다.
 $$ \begin{aligned} U_d &= \frac{1}{2}(\tilde \sigma : \tilde \epsilon ) \\ &= \mu(\tilde \epsilon : \tilde \epsilon) \quad\tiny\blacksquare \end{aligned} $$
-
 
 ### 명제3
 1D Tensile test에서 항복응력이 $\sigma_Y$라고 하자.
