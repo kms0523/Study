@@ -144,16 +144,21 @@ $$ I_{diff} : I_{dev} = I_{dev} $$
 
 $$ \begin{aligned} I_{diff} : I_{dev} &= \delta_{ik}\delta_{jl}(\frac{1}{2}(\delta_{km}\delta_{ln} + \delta_{kn}\delta_{lm}) + \delta_{kl}\delta_{mn})e_{ijmn} \\&= (\frac{1}{2}(\delta_{im}\delta_{jn} + \delta_{in}\delta_{jm}) + \delta_{ij}\delta_{mn})e_{ijmn} \\&= I_{dev} \end{aligned} $$
 
-
 ### 명제2
 $A$가 second order tensor일 떄, 다음을 증명하여라.
-$$ \tr(I_{diff}:A) = 0 $$
+$$ \tr(I_{dev}:A) = 0 $$
 
 **Proof**
 
-$$ \begin{aligned} \tr(I_{diff}:A) &= \tr(\sym(A) - \frac{1}{3}A_{kk}I) \\&= A_{ij}\delta_{ij} - \frac{1}{3}A_{kk}\delta_{ij}\delta_{ij} \\&= A_{ii} - A_{kk} \\&= 0  \end{aligned} $$
+$$ \begin{aligned} \tr(I_{dev}:A) &= \tr(\sym(A) - \frac{1}{3}A_{kk}I) \\&= A_{ij}\delta_{ij} - \frac{1}{3}A_{kk}\delta_{ij}\delta_{ij} \\&= A_{ii} - A_{kk} \\&= 0  \end{aligned} $$
 
+### 명제3
+$A$가 second order tensor일 떄, 다음을 증명하여라.
+$$ \frac{\partial I_{dev}:A}{\partial A} = I_{dev} $$
 
+**Proof**
+
+$$ \begin{aligned} \frac{\partial I_{dev}:A}{\partial A} &= \frac{\partial}{\partial A_{kl}} \bigg(\frac{1}{2}(A_{ij} + A_{ji}) - \frac{A_{kk}}{3}\delta_{ij}\bigg) e_{ijkl} \\&= \bigg( \frac{1}{2} (\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk}) - \frac{1}{3}\delta_{kl}\delta_{ij} \bigg)e_{ijkl} \\&= I_{dev}  \end{aligned} $$
 
 
 

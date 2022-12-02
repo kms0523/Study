@@ -47,7 +47,6 @@ $$ \epsilon_e = \sqrt {\frac{2}{3} \tilde \epsilon : \tilde \epsilon} $$
 명제1에 의해 다음이 성립한다.
 $$ \begin{aligned} \epsilon_e &= \sqrt {\frac{1}{6\mu^2} \tilde \sigma : \tilde \sigma} \\ &= \sqrt {\frac{2}{3} \tilde \epsilon : \tilde \epsilon} \qed\end{aligned} $$
 
-
 ### 명제3
 다음을 증명하여라.
 $$\epsilon_e = \sqrt{\frac{4}{3}J_2(\tilde{\epsilon})} $$
@@ -56,6 +55,10 @@ $$\epsilon_e = \sqrt{\frac{4}{3}J_2(\tilde{\epsilon})} $$
 
 명제2와 $\tilde{\epsilon}$의 성질에 의해 다음이 성립한다.
 $$ \begin{aligned} \epsilon_e &= \sqrt{\frac{2}{3}\tilde\epsilon:\tilde\epsilon} \\&= \sqrt{\frac{4}{3}J_2(\tilde{\epsilon})} \qed\end{aligned} $$
+
+#### 따름명제3.1
+다음을 증명하여라.
+$$ J_2(\tilde{\epsilon}) = \frac{3}{4}\epsilon_e^2 $$
 
 # Yield function
 Yield function은 $f$는 다음을 만족하는 함수이다.
