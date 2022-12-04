@@ -48,6 +48,11 @@ file.write('# Learn more at https://jupyterbook.org/customize/toc.html'+'\n')
 file.write('\n')
 file.write('format: jb-book'+'\n')
 file.write('root: index'+'\n')
+file.write("parts:"+"\n")
+
+
+
+
 file.write('chapters:'+'\n')
 
 file_dir_old = ''
