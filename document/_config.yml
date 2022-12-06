@@ -15,16 +15,25 @@ latex:
   latex_documents:
     targetname: book.tex
 
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - sources/References/_references.bib
+
 sphinx:
   config:
-    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    bibtex_reference_style: author_year
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+    # mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js
+    # mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/node-main.min.js
+    # https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     mathjax3_config:
-      tex:
+       tex:
         macros:
           "span": "\\text{span}"
           "End": "\\text{End}"
           "C" : "\\Complex"
           "F" : "\\mathbb{F}"
+          "R" : "\\mathbb{R}"
           "Ext" : "\\text{Ext}"
           "Int" : "\\text{Int}"
           "st" : "\\quad s.t \\quad"
@@ -33,31 +42,16 @@ sphinx:
           "norm" : ["\\lVert #1 \\rVert", 1]
           "sym" : "\\text{sym}"
           "tr" : "\\text{tr}"
+          "empty" : "\\emptyset"
+          "exist" : "\\exists"
+          "Set" : ["\\{ #1 \\}", 1]
 
     latex_elements:
         preamble: |
           \usepackage{kotex}
+
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js # for plotly
-
-# Add a bibtex file so that we can create citations
-bibtex_bibfiles:
-  - sources/References/_references.bib
-
-
-#$\gdef\span{\text{span}}$
-#$\gdef\End{\text{End}}$
-#$\gdef\C{\Complex}$
-#$\gdef\F{\mathbb{F}}$
-#$\gdef\Ext{\text{Ext}}$
-#$\gdef\Int{\text{Int}}$
-
-#"st" : "\quad s.t \quad"
-#"qed" : "\quad\tiny\blacksquare"
-#"preimg" : "\text{preimg}"
-#"norm" : ["\lVert #1 \rVert", 1]
-#"sym" : "\text{sym}"
-#"tr" : "\text{tr}"
 
 # Information about where the book exists on the web
 #repository:

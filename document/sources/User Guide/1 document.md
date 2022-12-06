@@ -53,6 +53,35 @@ source.md
 
 ```
 
+### 규칙4
+header는 순차적으로 내려가야 한다.
+
+만약 header의 순서가 아래의 예시처럼 되어 있다고 해보자.
+```
+# H1
+### H3
+##### H5
+...
+```
+
+그러면 html파일에는 다음 순서로 나온다
+```
+# H1
+## H3
+### H5
+...
+```
+
+단, 올라오는것은 순차적으로 올라올 필요는 없다
+```
+# H1
+## H2
+### H3
+#### H4
+## H2
+```
+
+
 ## Equation
 아래와 같이 $\LaTeX$ 표현을 사용한다. 
 ```
@@ -103,29 +132,23 @@ $$ y = x + 1 $$
 
 
 ## Citation
-
-`References/_reference.bib` 파일에 다음과 같이 입력
-```bibtex
-@book{Fung1965,
-  title     = "Foundations of solid mechanics",
-  author    = "Fung, Y C",
-  publisher = "Prentice Hall",
-  series    = "International Series in Dynamics",
-  month     =  jun,
-  year      =  1965,
-  address   = "Old Tappan, NJ"
-}
+* [ISBN to BibTeX converter](https://www.bibtex.com/c/isbn-to-bibtex-converter/) 사이트에서 ISBN으로부터 BibTeX를 얻는다.
+* `References/_reference.bib` 파일에 입력한다.
+* 문서에서 다음과 같이 인용한다.
+ 
 ```
-
-문서에서 다음과 같이 인용
+{cite}`Fung1965`
 ```
-Hook's law {cite}`Fung1965` (6.1 Generalized Hook's law)
-```
+{cite}`Fung1965`
 
-Hook's law {cite}`Fung1965` (6.1 Generalized Hook's law)
+### 주의사항
+#### 1
+'(single quote)가 아니라 `(back tick)으로 감싸줘야 한다.
 
+#### 2
+문서에서 인용이 되야지만 References 페이지에 나타난다.
 
-### 주의사항1
+#### 3
 아래 예시와 같이 url 인용 시 특수문자 있는 경우
 
 ```bibtex
@@ -142,20 +165,39 @@ Hook's law {cite}`Fung1965` (6.1 Generalized Hook's law)
 
 {cite}`Wiki-hooks-law`
 
-### 참고1
+### 참고사항
+#### 1
 추후, `Zotero`, `Mendeley` 등과 같은 전문 프로그램의 도움을 받아 `.bib` 파일 및 원본 파일들을 관리하는 것이 좋을 것 같다.
 
-### 참고2
-[ISBN to BibTeX converter](https://www.bibtex.com/c/isbn-to-bibtex-converter/) 사이트에서 ISBN으로부터 BibTeX를 얻을 수 있다.
-
-
-`0133299120`로 해보면, key 뒤에 `-hm`과 같이 랜덤한 문자가 추가되는데 이 부분은 지우고 사용하면 된다.
-```bibtex
-@book{Fung1965-hm,
-  title     = "Foundations of solid mechanics",
+#### 2
+BibTex가 다음과 같이 주어졌다고 하자.
+```Bibtex
+@book{LeeTM,
+  title     = "Introduction to Topological Manifolds",
+  author    = "Lee, John M",
+  publisher = "Springer",
+  series    = "Graduate texts in mathematics",
+  edition   =  2,
+  month     =  dec,
+  year      =  2010,
+  address   = "New York, NY",
+  language  = "en"
 }
 ```
 
+그러면 LeeTM이 name이 되며 name으로 인용이 가능하다.
+
+```
+{cite}`LeeTM`
+```
+
+{cite}`LeeTM`
+
+#### 3
+reference style을 설정할 수 있다.
+
+> Reference   
+> [Blog - Jupyterbook](https://jupyterbook.org/en/stable/tutorials/references.html?highlight=bibtex#create-a-bibtex-file)
 
 ## Image
 ### 파일로 첨부

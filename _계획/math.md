@@ -1,21 +1,35 @@
 # 할 것
-* Reisz representation 복습
-* Adjoint operator의 uniqueness와 existence 복습
-* Adjoint operator 명제 증명
-* Normal operator 명제 증명
-* Unitary matrix 명제 증명
-* Self-Adjoint operator 명제 증명
-* Self-adjoint matrix 정리
-* 선형대수 41강
-* 선형대수 42강
-* 선형대수 43강
-* Topology 복습하기
-  * Eventually in
-    * 명제1
+* Geometry 옮기기
+  * Topology 옮기면서 복습하기
+    * Closure.md
+    * Interior.md
+    * Exteriror.md    
+    * Boundary.md    
+    * Limit Point & Isolated Point.md    
+    * Convergence.md    
+    * Continuity.md
+    * Homeomorphism.md
+    * Hausdorff Space.md
+    * Basis.md
+    * Eventually in.md
+    * Countability.md
 * [Book] (Lee) Topological Manifolds
   * Bases and Countability 읽기
     * Countability Properties 읽기    
       * Second countable 공부
+
+* Linear Algebra 옮기기
+  * Reisz representation 복습
+  * Adjoint operator의 uniqueness와 existence 복습
+  * Adjoint operator 명제 증명
+  * Normal operator 명제 증명
+  * Unitary matrix 명제 증명
+  * Self-Adjoint operator 명제 증명
+  * Self-adjoint matrix 정리
+  * 선형대수 41강
+  * 선형대수 42강
+  * 선형대수 43강
+
 * [Book] (Lee) smooth manifolds
   * Chap3 읽기
     * Tangent Vectors p.51 읽기
@@ -144,3 +158,10 @@
 82. basis 복습
 83. eventually in 복습
     
+12.06
+84. Topological Spaces 복습 및 옮기기
+85. Open set.md 복습 및 옮기기
+86. Closed set.md 복습 및 옮기기
+87. Neighborhood.md 복습 및 옮기기
+88. Subspace.md 복습 및 옮기기
+89. Subspace Topology.md 복습 및 옮기기

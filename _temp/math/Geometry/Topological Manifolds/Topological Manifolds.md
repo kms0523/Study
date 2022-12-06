@@ -14,6 +14,8 @@ topological space $M$이 있을 때, 다음 조건을 만족하는 $M$을 topolo
 nonempty $n$ 차원 topological manifold $M_1$과 $m$ 차원 topological manifold $M_2$가 있다고 하자.
 
 $n \neq m$일 때, 다음을 증명하여라.
+
 $$ M_1 \text { can not be homeomorphic to } M_2 $$
+
 > Reference  
 > [Book] (John M Lee) Introduction to smooth manifolds Theorem 17.26

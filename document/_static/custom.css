@@ -1,19 +1,19 @@
 body
 {
-    line-height: 2.0;
+    line-height: 1.5;
 }
 
 /* paragraph */
 p 
 {
-    margin-bottom: 25px;    
-    font-size: 14.5px;        
+    margin-bottom: 20px;    
+    font-size: 14px;        
 }
 
 /* code */
 code 
 {
-    font-size: 17px !important;
+    font-size: 15px !important;
     font-weight: 600;
 }
 
@@ -63,4 +63,20 @@ h5
 h6	
 {
     font-size: 14px;
+}
+
+blockquote
+{
+    margin: 0px 0px 0px 0px;
+    border: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 10px;
+
+         /* border-top: 1px solid white;
+         border-bottom: 1px solid white;
+         border-left-style: hidden;
+         border-style: hidden;    
+         padding-left: 10px */
+
+         /* background: #292929;
+         color:#e2e2e2; */
 }
