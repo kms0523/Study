@@ -59,7 +59,7 @@ $$ \boldsymbol{\phi} = \mathbf N \boldsymbol{\hat\phi} $$
 
 
 
-##### 형상함수 성질
+#### 형상함수 성질
 1. $$ \sum_i n_i = 1 $$
 2. $$ n_i(x_j) = \delta_{ij} $$
 

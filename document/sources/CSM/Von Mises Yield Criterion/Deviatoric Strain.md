@@ -1,4 +1,5 @@
 # Deviatoric Strain
+## 정의
 미소 변위, 변형률을 가정하면 volume-chainging은 다음과 같이 정의된다.
 
 $$ \frac{\Delta V}{V} = \text{tr}(\epsilon) $$

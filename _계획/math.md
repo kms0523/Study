@@ -1,13 +1,14 @@
 # 할 것
+* Set 옮기기
+  * Function 옮기면서 복습하기
+    * 
+    * 
+    * 03 Relations.md
+    * 04 Equivalence Relation.md
+    * 05 Equivalence Class.md
+
 * Geometry 옮기기
-  * Topology 옮기면서 복습하기
-    * Closure.md
-    * Interior.md
-    * Exteriror.md    
-    * Boundary.md    
-    * Limit Point & Isolated Point.md    
-    * Convergence.md    
-    * Continuity.md
+  * Topology 옮기면서 복습하기    
     * Homeomorphism.md
     * Hausdorff Space.md
     * Basis.md
@@ -165,3 +166,14 @@
 87. Neighborhood.md 복습 및 옮기기
 88. Subspace.md 복습 및 옮기기
 89. Subspace Topology.md 복습 및 옮기기
+
+12.07
+90. Closure.md 복습 및 옮기기
+91. Interior.md 복습 및 옮기기
+92. Exteriror.md 복습 및 옮기기
+93. Boundary.md 복습 및 옮기기  
+94. Limit Point & Isolated Point.md 복습 및 옮기기
+95. Convergence.md 복습 및 옮기기
+96. Continuity.md 복습 및 옮기기
+97. Power Set.md 복습 및 옮기기
+98. Product Set.md 복습 및 옮기기

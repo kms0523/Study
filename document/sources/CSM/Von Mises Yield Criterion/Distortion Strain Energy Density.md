@@ -1,4 +1,5 @@
 # Distortion Strain Energy Density
+## 정의
 미소 변위, 변형률을 가정하고 선형 탄성재료의 경우 다음과 같은 strain energy function을 갖는다.
 
 $$ U = \frac{1}{2} \sigma : \epsilon $$

@@ -34,6 +34,7 @@ sphinx:
           "C" : "\\Complex"
           "F" : "\\mathbb{F}"
           "R" : "\\mathbb{R}"
+          "N" : "\\mathbb{N}"
           "Ext" : "\\text{Ext}"
           "Int" : "\\text{Int}"
           "st" : "\\quad s.t \\quad"

@@ -1,4 +1,6 @@
 # Function
+
+## 정의
 집합 $A,B$가 있다고 하자.
 
 다음과 같이 정의된 관계 $f$를 `함수(function)`라고 한다.
@@ -6,15 +8,14 @@ $$ f := \{ (a,b) \in A \times B | a \in A \Rightarrow \exist ! b \in B \} \subse
 
 이를 풀어서 설명하면 "$A$의 모든 원소에 대해 $B$에 속하는 원소가 유일하게 존재하고 그 순서쌍들을 원소로 갖는 $A \times B$의 부분집합"이다.
 
-간단하게 $f : A \rightarrow B$로 표현할 수 있다.
+### 참고1
+$f : A \rightarrow B$로 표현할 수 있다.
 
-이 때, 집합 $A$를 `정의역(domain)`이라고 하고 집합 $B$를 `공역(codomain)`이라고 한다.
+### 참고2
+$(a,b) \in f$에서 $b$는 $a$에 의존하여 $f$에 의해 유일하게 결정된다.
 
-$(a,b) \in f$에서 $b$는 $a$에 의존하여 유일하게 $f$에 의해 결정된다는 의미로 $f(a)$라는 표현을 사용한다.
+따라서 $b$를 $f(a)$로 표기하기도 한다.
 
-`치역(image, range)`은 다음과 같이 정의한다.
-
-$$ \text{img}(f) = f(A) := \{ f(a) \in B | a \in A \} $$
 
 ### 명제1
 
@@ -92,7 +93,46 @@ $$ f(A_1) \cap f(A_2) \not \subseteq f(A_1 \cap A_2). $$
 
 $$ f(A_1) \cap f(A_2) = \{ b \}, \\ f(A_1 \cap A_2) = \emptyset \quad (\because \text{proposition1}) \quad\tiny\blacksquare $$
 
-# Restirction
+## 정의역과 공역
+집합 $A,B$와 함수 $f : A \rightarrow B$가 있다고 하자.
+
+이 때, 집합 $A$를 `정의역(domain)`이라고 하고 집합 $B$를 `공역(codomain)`이라고 한다.
+
+## Image
+집합 $X,Y$와 함수 $f : X \rightarrow Y$가 있다고 하자.
+
+$U \subseteq X$가 있을 때, $f$에 의한 $U$의 `상(image)` $\img(U)$는 다음과 같이 정의된 집합이다.
+
+$$ \img(U) := \Set{f(x) \in Y | x \in U} $$
+
+## Preimage
+집합 $X,Y$와 함수 $f : X \rightarrow Y$가 있다고 하자.
+
+$V \subseteq Y$가 있을 때, $f$에 의한 $V$의 `원상(preimage)` $\preimg(V)$는 다음과 같이 정의된 집합이다.
+
+$$ \preimg(V) := \Set{x \in X | f(x) \in V} $$
+
+### 명제1
+집합 $X,Y$와 함수 $f : X \rightarrow Y$가 있다고 하자.
+
+$V_1,V_2 \subset Y$가 있을 때, 다음을 증명하여라.
+
+$$ \preimg(V_1) \cap \preimg(V_2) = \preimg(V_1 \cap V_2) $$
+
+**Proof**
+
+[$\preimg(V_1) \cap \preimg(V_2) \subseteq \preimg(V_1 \cap V_2)$]  
+$x \in \preimg(V_1) \cap \preimg(V_2)$라 하면 다음이 성립한다.
+
+$$\begin{aligned} & x \in \preimg(V_1) \enspace\land\enspace x \in \preimg(V_2) \\ \implies& f(x) \in V_1 \enspace\land\enspace f(x) \in V_2 \\ \implies& f(x) \in V_1 \cap V_2 \\ \implies& x \in \preimg(V_1 \cap V_2) \end{aligned} $$
+
+[$\preimg(V_1 \cap V_2) \subseteq \preimg(V_1) \cap \preimg(V_2)$]  
+$x \in \preimg(V_1 \cap V_2)$라 하면 다음이 성립한다.
+
+$$\begin{aligned} & f(x) \in V_1 \cap V_2 \\ \implies& f(x) \in V_1 \enspace \land \enspace f(x) \in V_2 \\ \implies& x \in \preimg(V_1) \enspace\land\enspace x \in \preimg(V_2) \\ \implies& x \in \preimg(V_1) \cap \preimg(V_2) \qed \end{aligned} $$
+
+
+## Restirction
 집합 $A,B$와 함수 $f : A \rightarrow B$가 있다고 하자.
 
 $U \subseteq A$가 있을 때, 함수 $f$의 $S$로의 `정의역 제한(domain restiriction)` $f|_U$는 다음과 같이 정의된 관계이다.
@@ -103,7 +143,7 @@ $$ f|_{U \times V} = \{ (x,y) \in f \enspace | \enspace x \in U  \enspace\land\e
 
 
 
-# 공집합 함수
+## 공집합 함수
 
 집합 $A,B$와 함수 $f : A \rightarrow B$가 있을 때, $A = \empty$인 경우를 생각해보자.
 
@@ -118,7 +158,7 @@ $A = \empty$면 $A \times B = \empty$임으로 $A \times B$의 유일한 부분�
 > [블로그 - 가정이 거짓이면 항상 명제가 참인 이유(집합론)](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=infinity7076&logNo=221328533139)  
 > [블로그 - 가정이 거짓이면 항상 명제가 참인 이유(논리학)](https://hoohaha.tistory.com/71)
 
-# 역상
+## 역상
 집합 $A,B$와 함수 $f : A \rightarrow B$가 있다고 하자.
 
 $f$의 `역상(inverse image)` $f^{-1}(B)$은 다음과 같이 정의된 집합이다.
@@ -183,7 +223,7 @@ $$ \begin{aligned} & y \in f(f^{-1}(B_1)) \\ \Rightarrow \enspace & \exist x \in
 
 전사함수가 아니기 때문에 함수를 거치면 작아진다.
 
-# 함수의 합성
+## 함수의 합성
 
 집합 $A,B,C$와 함수 $f : A \rightarrow B, g : B \rightarrow C$가 있을 때, 다음과 같이 정의된 집합 $g \circ f$를 함수의 `합성(composition)`이라고 한다.
 
@@ -191,7 +231,7 @@ $$ {g \circ f} := \{ (x,z) \in A \times C | x \in A, \quad z = g(f(x)) \} \subse
 
 즉, $(g \circ f)(x) = g(f(x))$이다.
 
-# 단사 함수
+## 단사 함수
 집합 $A,B$와 함수 $f : A \rightarrow B$가 있다고 하자.
 
 `단사 함수(injective function)` 혹은 `일대일 함수(one-to-one function)`은 다음을 만족하는 함수이다.
@@ -254,7 +294,7 @@ $x_1,x_2 \in U$라고 하자.
 $f$가 injective임으로 다음이 성립한다.
 $$ \begin{aligned} & f|_U(x_1) = f|_U(x_2) \\\Rightarrow\enspace& f(x_1) = f(x_2) \\\Rightarrow\enspace& x_1 = x_2 \quad\tiny\blacksquare \end{aligned}   $$
 
-# 전사 함수
+## 전사 함수
 
 집합 $A,B$와 함수 $f : A \rightarrow B$가 있다고 하자.
 
@@ -313,7 +353,7 @@ $$ f,g \text{ is surjective} \Rightarrow g \circ f : A \rightarrow C \text{ is s
 
 $$ \begin{aligned} & z \in C \\ \Rightarrow \enspace & \exist y \in B, \quad z = g(y) \quad (\because g \text{ is surjective}) \\ \Rightarrow \enspace & \exist x \in A, \quad y = f(x) \quad (\because f \text{ is surjective}) \\ \Rightarrow \enspace & \exist x \in A, \quad z = g(f(x)) \quad\tiny\blacksquare \end{aligned} $$
 
-# 전단사 함수
+## 전단사 함수
 
 집합 $A,B$와 함수 $f : A \rightarrow B$가 있다고 하자.
 
@@ -345,7 +385,7 @@ injective function의 성질에 의해 $f$가 injective임으로 $f|_{S \times f
 
 따라서 $f|_{S \times f(S)}$는 bijective이다. $\quad\tiny\blacksquare$
 
-# 역함수
+## 역함수
 
 집합 $A,B$와 bijective map $f : A \rightarrow B$가 있다고 하자.
 

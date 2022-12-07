@@ -1,4 +1,5 @@
 # Deviatoric Stress
+## 정의
 미소 변위, 변형률을 가정하고 등방성 선형 탄성재료의 경우 구성방정식은 다음과 같다.
 
 $$ \sigma = \lambda \text{tr}(\epsilon) I + 2\mu \epsilon $$

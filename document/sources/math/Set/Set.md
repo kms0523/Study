@@ -1,92 +1,10 @@
-# 들어가며
+# Set
 
-이 글은 다음을 정리한 글이다.
+## 들어가며
+이 내용은 [집합론 기초 - 수학의 즐거움 youtube](https://www.youtube.com/playlist?list=PL4m4z_pFWq2rboSAR7cvRLcCI36Fb8ruF)를 공부한 내용을 바탕으로 작성하였다.
 
-[집합론 기초 - 수학의 즐거움 youtube](https://www.youtube.com/playlist?list=PL4m4z_pFWq2rboSAR7cvRLcCI36Fb8ruF)
-
-# 집합론
-
+## 정의
 `집합(set = collection = family)`이란 서로 뚜렷이 구분되는 원소들의 모임이다.
-
-
-
-## 멱집합
-
-집합 $S$의 `멱집합(power set)`은 다음과 같이 정의한다.
-
-$$ P(S) = \{ A | A \subseteq S \}. $$
-
-$P(S)$는 $S$의 모든 부분 집합들로 구성된 집합으로 집합들의 집합이다.
-
-### 명제1
-
-집합 $A$의 원소가 $n$개일 때, $P(A)$는 $2^n$개의 원소를 갖음을 증명하라.
-
-**proof**
-
-$m \leq n$일 때, $m$개의 원소를 갖는 부분집합의 개수는 $_nC_m$이다.
-
-따라서 모든 부분집합의 개수는
-
-$$ \sum _{i=1}^n {_n C _i} = 2^n \quad {_\blacksquare} $$
-
-## 곱집합
-
-집합 $A,B$의 `곱집합(product set)`은 다음과 같이 정의한다.
-
-$$ A \times B = \{ (a,b) | a \in A, b \in B \}. $$
-
-
-
-
-
-## 동치류
-
-집합 $S$와 동치 관계 $R \subseteq S \times S$가 있을 때, $ s \in S$에 대해 `동치류(equivalence class)` $[ s ]_ R$는 다음과 같이 정의된 집합이다.
-
-$$ [s]_R = s/R = \{ t \in S | s \sim_R t \} $$
-
-### 명제1
-
-집합 $S$와 동치 관계 $R \subseteq S \times S$가 있을 때, $s \in S$에 대해 $[s]_ R \neq \empty$을 증명하여라.
-
-**proof**
-
-$$ s \in [s]_ R \quad (\because R \text { satisfy reflextive}) \quad {_\blacksquare} $$
-
-### 명제2
-
-집합 $S$와 동치 관계 $R \subseteq S \times S$가 있을 때, $x, y \in S$ 에 대해 $[x]_ R \cap [y]_ R \neq \empty \Leftrightarrow x \sim_R y$을 증명하여라.
-
-**proof**
-
-$$ \begin{aligned} & z \in [x]_ R \cap [y]_ R \\ \Leftrightarrow \enspace & x \sim_R z \land y \sim_R z \\ \Leftrightarrow \enspace & x \sim_R z \land z \sim_R y & \quad & (\because R \text{ satisfy symmetric}) \\ \Leftrightarrow \enspace & x \sim_R y & \quad & (\because R \text{ satisfy transitive}) \quad {_\blacksquare} \end{aligned} $$
-
-### 명제3
-
-집합 $S$와 동치 관계 $R \subseteq S \times S$가 있을 때, $x, y \in S$에 대해 $x \sim_R y \Rightarrow [x]_ R = [y]_ R$을 증명하여라.
-
-**proof**
-
-[ $[x]_ R \subseteq [y]_ R$ ]  
-$$ \begin{aligned} & z \in [x]_ R \\ \Rightarrow \enspace & x \sim_R z, \quad x \sim_R y \\ \Rightarrow \enspace & z \sim_R y \quad (\because R \text{ satisfy transitive}) \\ \Leftrightarrow \enspace & z \in [y]_ R \quad {_\blacksquare} \end{aligned} $$
-
-[ $[y]_ R \subseteq [x]_ R$ ]  
-$$ \begin{aligned} & z \in [y]_ R \\ \Rightarrow \enspace & z \sim_R y, \quad x \sim_R y \\ \Rightarrow \enspace & z \sim_R x \quad (\because R \text{ satisfy transitive}) \\ \Leftrightarrow \enspace & z \in [x]_ R \quad {_\blacksquare} \end{aligned} $$
-
-### 명제4
-
-집합 $S$와 동치 관계 $R \subseteq S \times S$가 있을 때, 에 대해 다음을 증명하여라.
-
-$$ [x]_ R \cap [y]_ R \neq \empty \Rightarrow [x]_ R = [y]_ R $$
-
-혹은
-
-$$ [x]_ R \neq [y]_ R \Rightarrow [x]_ R \cap [y]_ R = \empty $$
-
-**proof**
-
-위의 명제는 명제2와 명제3에의해 증명되며 아래 명제는 위의 명제의 대우명제이다. $\quad {_\blacksquare}$
 
 ## 상집합
 

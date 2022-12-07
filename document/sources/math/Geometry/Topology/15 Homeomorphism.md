@@ -1,4 +1,6 @@
 # Homeomorphism
+
+## 정의
 Topological space $X,Y$가 있다고 하자.
 
 함수 $f: X \rightarrow Y$가 다음 성질을 만족할 떄, $f$를 $X$에서 $Y$로의 `위상동형사상(homeomorphism)`이라 한다.
@@ -86,3 +88,4 @@ $f|_{U \times f(U)}$는 bijective이고 $f|_{U \times f(U)}$와 그 역함수가
 
 > Reference  
 > [Proof Wiki](https://proofwiki.org/wiki/Restriction_of_Homeomorphism_is_Homeomorphism)
+
