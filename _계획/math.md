@@ -1,11 +1,10 @@
 # 할 것
 * Set 옮기기
   * Function 옮기면서 복습하기
-    * 
-    * 
-    * 03 Relations.md
-    * 04 Equivalence Relation.md
-    * 05 Equivalence Class.md
+    * 5 image
+    * 6 preimage
+    * 94 Equivalence Relation.md
+    * 95 Equivalence Class.md
 
 * Geometry 옮기기
   * Topology 옮기면서 복습하기    
@@ -177,3 +176,9 @@
 96. Continuity.md 복습 및 옮기기
 97. Power Set.md 복습 및 옮기기
 98. Product Set.md 복습 및 옮기기
+
+
+12.08
+99. Relations.md 복습 및 옮기기
+100. preimage.md 복습
+101. image.md 복습

@@ -40,6 +40,7 @@ sphinx:
           "st" : "\\quad s.t \\quad"
           "qed" : "\\quad\\tiny\\blacksquare"
           "preimg" : "\\text{preimg}"
+          "img" : "\\text{img}"
           "norm" : ["\\lVert #1 \\rVert", 1]
           "sym" : "\\text{sym}"
           "tr" : "\\text{tr}"
