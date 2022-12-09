@@ -1,8 +1,6 @@
 # 할 것
 * Set 옮기기
   * Function 옮기면서 복습하기
-    * 5 image
-    * 6 preimage
     * 94 Equivalence Relation.md
     * 95 Equivalence Class.md
 
@@ -182,3 +180,12 @@
 99. Relations.md 복습 및 옮기기
 100. preimage.md 복습
 101. image.md 복습
+
+12.09
+* image 정리
+* preimage 정리
+* injective function 정리
+* surjective function 정리
+* bijective function 정리
+* inverse function 정리
+* Continuity 복습

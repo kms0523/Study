@@ -23,10 +23,6 @@ $$ \forall x \in X_1, \quad f(x) \in f(X_1) $$
 
 또한, preimage의 정의에 의해 다음이 성립한다.
 
-$$ X_1 \subseteq \preimg(f(X_1)) $$
-
-따라서, 위의 두 결과를 조합하면 다음이 성립한다.
-
 $$ \forall x \in X_1, \quad  x\in \preimg(f(X_1)) \qed  $$
 
 > Reference  
@@ -132,5 +128,16 @@ $$ \begin{aligned} & x \in \preimg(Y_1 \cap Y_2) \\ \iff& f(x) \in Y_1 \cap Y_2 
 > Reference  
 > [kocw 충북대 집합론](http://contents.kocw.or.kr/document/lec/2011/chungbuk/teaching/08_1.pdf)
 
+### 명제7
+집합 $X,Y$와 함수 $f : X \rightarrow Y$가 있다고 하자.
 
+$X_1 \subseteq X$와 $Y_1, Y_2 \subseteq Y$에 대해 다음을 증명하여라.
+
+$$ \preimg_{f|_{X_1 \times Y_1}}(Y_2) = X_1 \cap \preimg_f(Y_1) \cap \preimg_f(Y_2) $$
+
+**Proof**
+
+preimage의 정의에 의해 다음이 성립한다.
+
+$$ \begin{aligned} \preimg_{f|_{X_1 \times Y_1}}(Y_2) &= \Set{ x \in X_1 | f(x) \in Y_1 \cap Y_2} \\&= X_1 \cap \Set{ x \in X | f(x) \in Y_1 \cap Y_2} \\&= X_1 \cap \Set{ x \in X | f(x) \in Y_1} \cap \Set{ x \in X | f(x) \in Y_2}  \\&= X_1 \cap \preimg_f(Y_1) \cap \preimg_f(Y_2) \qed \end{aligned} $$
 

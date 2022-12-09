@@ -80,15 +80,15 @@ $$ \exist\text{open set } W \text{ of } Y \st V = f(U) \cap W $$
 
 따라서, $\preimg$의 성질에 의해 다음이 성립한다.
 
-$$ \preimg_{f|_{U \times f(U)}}(V) = U\cap\preimg_{f|_{U \times f(U)}}(W) $$
+$$ \begin{aligned} \preimg_{f|_{U \times f(U)}}(V) &= \preimg_{f|_{U \times f(U)}}(f(U))\cap\preimg_{f|_{U \times f(U)}}(W) \\&= U \cap U \cap \preimg_f(f(U)) \cap \preimg_f(W) \\&= U \cap \preimg_f(W)\end{aligned} $$
 
 $f$가 연속임으로 다음이 성립한다.
 
-$$ \preimg_{f|_{U \times f(U)}}(W) \text{ is open set of } X $$
+$$ \preimg_f(W) \text{ is open set of } X $$
 
 이 떄, $U$가 $X$의 subspace임으로 다음이 성립한다.
 
-$$ \preimg_{f|_{U \times f(U)}}(V) \text{ is open set of } U $$
+$$ \begin{aligned}& U \cap \preimg_f(W) \text{ is open set of } U \\\implies& \preimg_{f|_{U \times f(U)}}(V) \text{ is open set of } U \end{aligned} $$
 
 따라서, continuous function의 정의에 의해 다음이 성립한다.
 
@@ -135,7 +135,7 @@ open set $V \subset Y$라 하자.
 
 전제에 의해 다음이 성립한다.
 
-$$ \forall x \in \preimg(V), \quad \exist\mathcal{N_x} \in \Set{\mathcal{N_x}} \st f|_{\mathcal{N_x} \times f(\mathcal{N_x})} \text{ is continous} $$
+$$ \forall x \in \preimg_f(V), \quad \exist\mathcal{N_x} \in \Set{\mathcal{N_x}} \st f|_{\mathcal{N_x} \times f(\mathcal{N_x})} \text{ is continous} $$
 
 위를 만족하는 $\mathcal{N_x}$에 대해서 $\mathcal{N_x}$를 $X$의 subspace, $f(\mathcal{N_x})$를 $Y$의 subspace라고 할 떄, 다음이 성립한다.
 
@@ -143,23 +143,31 @@ $$ f(\mathcal{N_x}) \cap V \text{ is an open set of } f(\mathcal{N_x}) $$
 
 $f|_{\mathcal{N_x} \times f(\mathcal{N_x})}$가 continous함으로, 다음이 성립한다.
 
-$$ \preimg(f(\mathcal{N_x}) \cap V) \text{ is an open set of } \mathcal{N_x}  $$
+$$ \preimg_{f|_{\mathcal{N_x} \times f(\mathcal{N_x})}}(f(\mathcal{N_x}) \cap V) \text{ is an open set of } \mathcal{N_x}  $$
 
-함수의 성질에 의해 다음이 성립한다.
+Preimage의 성질에 의해 다음이 성립한다.
 
-$$ \mathcal{N_x} \cap \preimg(V) \text{ is an open set of } \mathcal{N_x} $$
+$$ \begin{aligned} \preimg_{f|_{\mathcal{N_x} \times f(\mathcal{N_x})}}(f(\mathcal{N_x}) \cap V) &= \preimg_{f|_{\mathcal{N_x} \times f(\mathcal{N_x})}}(f(\mathcal{N_x})) \cap \preimg_{f|_{\mathcal{N_x} \times f(\mathcal{N_x})}}(V) \\&= \mathcal{N_x} \cap \preimg_f(V) \end{aligned} $$
+
+따라서, 다음이 성립한다.
+
+$$ \mathcal{N_x} \cap \preimg_f(V) \text{ is an open set of } \mathcal{N_x} $$
 
 $\mathcal{N_x}$는 $X$의 open set임으로, subspace의 성질에 의해 다음이 성립한다.
 
-$$ \mathcal{N_x} \cap \preimg(V) \text{ is an open set of } X $$
+$$ \mathcal{N_x} \cap \preimg_f(V) \text{ is an open set of } X $$
 
-이 떄, $\mathcal{N_x} \cap \preimg(V) \subseteq \preimg(V)$임으로 다음이 성립한다.
+이 떄, $\mathcal{N_x} \cap \preimg_f(V) \subseteq \preimg_f(V)$임으로 다음이 성립한다.
 
-$$ \forall x \in \preimg(V), \quad \exist\mathcal{N_x} \st \mathcal{N_x} \subseteq \preimg(V) $$
+$$ \exist\mathcal{N_x} \in \Set{\mathcal{N_x}} \st \mathcal{N_x} \subseteq \preimg_f(V) $$
+
+위의 결과를 정리하면 다음과 같다.
+
+$$ \forall x \in \preimg_f(V), \quad \exist\mathcal{N_x} \st \mathcal{N_x} \subseteq \preimg_f(V) $$
 
 따라서, neighborhood의 성질에 의해 다음이 성립한다.
 
-$$ \preimg(V) \text{ is an open set of } X $$
+$$ \preimg_f(V) \text{ is an open set of } X $$
 
 그럼으로, continuous function의 정의에 의해 다음이 성립한다.
 
