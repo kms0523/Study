@@ -83,7 +83,7 @@ global config file --> 모든 git repository
   1. 리모트 저장소에 로컬의 저장소가 갖고 있지 않은 새로운 정보(커밋, 브랜치)를 모두 내려받는다.
   2. 리모트 저장소의 새로운 브랜치를 받았다면 레퍼런스인 리모트 브랜치를 "remote name/branch name"이라는 이름으로 만든다.
   3. 기존에 리모트 브랜치가 있었던 경우 리모트 브랜치가 최신 커밋을 가르키게 한다.  
-* `git remote [old name] [new name]`  
+* `git remote rename [old name] [new name]`  
 리모트 저장소의 이름을 변경
 * `git merge [remote-name]/[branch-name]`
 

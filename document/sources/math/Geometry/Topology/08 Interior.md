@@ -65,6 +65,10 @@ $$ x \notin \Int(U) \iff \nexists\mathcal{N_x} \st \mathcal{N_x} \subseteq U $$
 
 $$ x \notin \Int(U) \iff \forall\mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad \exist y \in \mathcal{N_x} \st y \in  X-U $$
 
+또한 다음과도 동치이다.
+
+$$ x \notin \Int(U) \iff \forall\mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad \mathcal{N_x}-U \neq \empty $$
+
 
 ### 명제3
 Topological space $X$가 있다고 하자.

@@ -4,13 +4,6 @@
     * 94 Equivalence Relation.md
     * 95 Equivalence Class.md
 
-* Geometry 옮기기
-  * Topology 옮기면서 복습하기    
-    * Homeomorphism.md
-    * Hausdorff Space.md
-    * Basis.md
-    * Eventually in.md
-    * Countability.md
 * [Book] (Lee) Topological Manifolds
   * Bases and Countability 읽기
     * Countability Properties 읽기    
@@ -189,3 +182,15 @@
 * bijective function 정리
 * inverse function 정리
 * Continuity 복습
+
+
+12.12
+* Geometry 옮기기
+  * Topology 옮기면서 복습하기    
+    * Homeomorphism.md
+    * Hausdorff Space.md
+    * Basis.md
+    * Neighborhood basis.md
+    * nested neighborhood basis.md
+    * Countability.md    
+    * Eventually in.md
