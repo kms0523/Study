@@ -206,27 +206,25 @@ $$ \exist! v_g \in V \st g(\cdot) = B(\cdot, v_g)$$
 $\beta$를 $V$의 orthonormal basis라 하자.
 
 [uniquness]  
-$g \in V^*$가 있다고 하자.
-
-이 떄, 다음을 가정하자.
-$$ \exist v_g \in V \st \forall x \in V, \quad  g(x) = B(x, v_g)$$
+다음을 가정하자.
+$$ \forall g \in V^*, \quad \exist v_g \in V \st g(\cdot) = B(\cdot, v_g)$$
 
 그러면 Orthonormal basis의 성질에 의해 다음이 성립한다.
 $$ \begin{aligned} v_g &= B(v_g,\beta_i)\beta_i \\&= \overline{B(\beta_i, v_g)}\beta_i \\&= \overline{g(\beta_i)}\beta_i \end{aligned} $$
 
-이 때, $g$는 $V^*$의 원소로 well-defined 함수임으로, $\overline{g(\beta_i)}$가 유일한 값을 갖는다. 
+이 때, $g$는 $V^*$의 원소로 well-defined 함수임으로, 각각의 $\beta_i$마다 $\overline{g(\beta_i)}$가 유일한 값을 갖는다. 
 
 따라서, $v_g$가 존재한다면 반드시 $v_g=\overline{g(\beta_i)}\beta_i$ 형태로 유일하게 결정된다. $\qed$
 
 [existence]  
-$g \in V^*$에 대해 $v_g \in V$를 다음과 같이 정의하자.
-$$ v_g = \overline{g(\beta_i)}\beta_i $$
+$v_g \in V$를 다음과 같이 정의하자.
+$$ \forall g \in V^*, \quad v_g := \overline{g(\beta_i)}\beta_i $$
 
 $x = a^i\beta_i \in V$이 있을 때, Orthonormal basis의 성질에 의해 다음이 성립한다.
-$$ \begin{aligned} B(x,v_g) &= a^i g(\beta_j) B(\beta_i,\beta_j) \\&= a^i g(\beta_i) \\&= g(w) \end{aligned}$$
+$$ \begin{aligned} B(x,v_g) &= a^i g(\beta_j) B(\beta_i,\beta_j) \\&= a^i g(\beta_i) \\&= g(x) \end{aligned}$$
 
-즉, $\forall g \in V^*$에 대해 다음이 성립한다.
-$$ \exist v_g \in V \st \forall x \in V, \quad g(x) = B(x,v_g) \qed $$
+위의 두 결과를 조합하면, 다음과 같다.
+$$ \forall g \in V^*, \quad \exist v_g \in V \st g(\cdot) = B(\cdot,v_g) \qed $$
 
 #### 참고1
 $g \in V^*$가 있을 때, Reisz representation theorem에 의해 결정되는 $v_g$를 $g$에 대한 Reisz representation이라고 한다.
@@ -239,58 +237,6 @@ $$ \forall x \in V, \quad f(x) = B(v_f, x) $$
 
 따라서, $f \notin V^*$이 되는 모순이 발생한다.
 
-
----
-
-### 명제2(Riesz representation)
-$n$차원 inner product space $V/\F$가 있다고 하자.
-
-$v \in V$가 있을 때, $f_v \in V^*$를 다음과 같이 정의하자.
-$$ f_v : V \rightarrow \F \st w \mapsto B(w,v) $$
-
-$\forall g \in V^*$에 대해 다음을 증명하여라.
-$$ \exist! v_g \in V \st g = f_{v_g}$$
-
-**Proof**
-
-$\beta$를 $V$의 orthonormal basis라 하자.
-
-[uniquness]  
-$g \in V^*$에 대해 다음이 성립한다고 가정하자.
-$$ \exist v_g \in V \st g = f_{v_g} $$
-
-그러면 $x \in V$에 대해, 다음이 성립한다.
-$$ \begin{aligned} g(x) &= f_{v_g}(x) \\&= B(x, v_g) \end{aligned} $$
-
-이 때, Orthonormal basis의 성질에 의해 다음이 성립한다.
-$$ \begin{aligned} x &= B(x, \beta_i)\beta_i \\ v_g &= B(v_g,\beta_i)\beta_i \\&= \overline{B(\beta_i, v_g)}\beta_i \\&= \overline{g(\beta_i)}\beta_i \end{aligned} $$
-
-이 때, $g$는 $V^*$의 원소로 well-defined 함수임으로, $\overline{g(\beta_i)}$가 유일한 값을 갖는다. 
-
-따라서, $v_g$가 존재한다면 반드시 $v_g=\overline{g(\beta_i)}\beta_i$ 형태로 유일하게 결정된다. $\qed$
-
-[existence]  
-$g \in V^*$에 대해 $v_g \in V$를 다음과 같이 정의하자.
-$$ v_g = \overline{g(\beta_i)}\beta_i $$
-
-$w = b^i\beta_i \in V$에 대해 다음이 성립한다.
-$$ \begin{aligned} f_{v_g}(w) &= B(w,v_g) \\&= b^ig(\beta_j) B(\beta_i,\beta_j) \end{aligned}$$
-
-Orthonormal basis의 성질에 의해 다음이 성립한다.
-$$ \begin{aligned} f_{v_g}(w) &= b^i g(\beta_j) B(\beta_i,\beta_j) \\&= b^i g(\beta_i) \\&= g(w) \end{aligned}$$
-
-즉, 임의의 $g$에 대해 $f_{v_g} = g$가 되는 $v_g$는 반드시 하나 이상 존재한다. $\qed$
-
-#### 참고1
-$g \in V^*$가 있을 때, Reisz representation theorem에 의해 결정되는 $v_g$를 $g$에 대한 Reisz representation이라고 한다.
-
-#### 참고2
-$f_v$의 정의를 다음과 같이 변경해보자.
-$$ f_v : V \rightarrow \F \st w \mapsto B(v,w) $$
-
-inner product는 두번째 component에 대해서 conjugate linear이기 때문에 $f_v$는 conjugate linear map이 된다.
-
-따라서, $f_v \notin V^*$이 된다.
 
 ### 명제3(Schur's theorem)
 $n$차원 inner product space $V/\F$와 $T \in \End(V)$가 있다고 하자.

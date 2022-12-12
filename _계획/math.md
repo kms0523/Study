@@ -17,7 +17,8 @@
       * Second countable 공부
 
 * Linear Algebra 옮기기
-  * Reisz representation 복습
+  * Inner product 옮기기
+    * Reisz representation 복습 및 옮기기
   * Adjoint operator의 uniqueness와 existence 복습
   * Adjoint operator 명제 증명
   * Normal operator 명제 증명
@@ -189,3 +190,6 @@
 * bijective function 정리
 * inverse function 정리
 * Continuity 복습
+
+12.11
+* Reisz representation 복습
