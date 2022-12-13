@@ -10,14 +10,6 @@
       * Chapter 2.13
       * Chapter 2.14
     * Chapter 3
-      * Chapter 3.1
-      * Chapter 3.2
-      * Chapter 3.3
-      * Chapter 3.4
-      * Chapter 3.5
-      * Chapter 3.6
-      * Chapter 3.7
-      * Chapter 3.8
       * Chapter 3.9
       * Chapter 3.10
       * Chapter 3.11
@@ -62,3 +54,10 @@
       * Chapter 3.4
       * Chapter 3.5
       * Chapter 3.6
+
+12.13
+* [Book] (LeVeque) FVM for Hyperbolic Problems 
+  * 읽기
+    * Chapter 3
+      * Chapter 3.7
+      * Chapter 3.8
