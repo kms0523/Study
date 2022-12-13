@@ -35,6 +35,7 @@ sphinx:
           "F" : "\\mathbb{F}"
           "R" : "\\mathbb{R}"
           "N" : "\\mathbb{N}"
+          "Q" : "\\mathbb{Q}"
           "Ext" : "\\text{Ext}"
           "Int" : "\\text{Int}"
           "st" : "\\quad s.t \\quad"

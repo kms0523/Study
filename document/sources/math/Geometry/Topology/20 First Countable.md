@@ -2,7 +2,7 @@
 ## 정의
 Topological space $X$가 있다고 하자.
 
-$X$가 다음을 만족할 때, $X$가 `first countable`하다고 한다.
+$X$가 다음을 만족할 때, $X$를 `first countable` topological space라고 한다.
 
 $$ \forall x \in X, \quad \exist\text{ countable neighborhood basis} $$
 

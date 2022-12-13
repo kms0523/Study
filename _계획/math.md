@@ -4,10 +4,13 @@
     * 94 Equivalence Relation.md
     * 95 Equivalence Class.md
 
+* Analysis & Calculus 옮기면서 복습하기
+
 * [Book] (Lee) Topological Manifolds
-  * Bases and Countability 읽기
-    * Countability Properties 읽기    
-      * Second countable 공부
+  * Second countable 공부
+    * Theorem 2.50(b)
+    * Theorem 2.50(c)
+    * 
 
 * Linear Algebra 옮기기
   * Inner product 옮기기
@@ -197,3 +200,14 @@
     * nested neighborhood basis.md
     * Countability.md    
     * Eventually in.md
+
+12.13
+* [Book] (Lee) Topological Manifolds
+  * Second countable 공부
+    * Second countable 정의
+    * Example 2.49
+    * Cover
+      * Open Cover
+      * Closed cover
+      * subcover
+    * Theorem 2.50(a)
