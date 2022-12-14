@@ -7,10 +7,9 @@
 * Analysis & Calculus 옮기면서 복습하기
 
 * [Book] (Lee) Topological Manifolds
+  * Dense 공부
   * Second countable 공부
-    * Theorem 2.50(b)
     * Theorem 2.50(c)
-    * 
 
 * Linear Algebra 옮기기
   * Inner product 옮기기
@@ -211,3 +210,10 @@
       * Closed cover
       * subcover
     * Theorem 2.50(a)
+
+12.13
+* [Book] (Lee) Topological Manifolds
+  * Second countable 공부
+    * Theorem 2.50(b)
+  * Dense 공부
+  * Seperable 공부

@@ -205,7 +205,7 @@ reference style을 설정할 수 있다.
 * 아래와 같이 md파일에 입력해서 image 파일을 사용한다.
 
 ````
-```{figure}_image/Stress-strain_curve.svg
+```{figure} _image/Stress-strain_curve.svg
 ```
 ````
 
@@ -235,6 +235,9 @@ Stress-strain curve
 {ref}`ss-curve`는 재료의 Stress-strain curve이다.
 ```
 {ref}`ss-curve`는 재료의 Stress-strain curve이다.
+
+#### 주의사항
+파일 이름에 띄어쓰기 있으면 인식하지 못한다.
 
 ### 직접 첨부
 ```

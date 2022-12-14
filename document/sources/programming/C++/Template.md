@@ -1,4 +1,5 @@
-# User define deduction guide
+# Template
+## User define deduction guide
 ```cpp
 //user-defined deduction guides
 template <typename... Args>
@@ -6,7 +7,7 @@ EuclideanVector(Args... args)->EuclideanVector<sizeof...(Args)>;
 EuclideanVector(const std::vector<double>& vec)->EuclideanVector<0>;
 ```
 
-# default template type
+## default template type
 ```cpp
 template <typename T1, typename T2>
 void func1(T1 val);
@@ -17,7 +18,7 @@ void func2(T1 val);
 func1(1) // instantiation fail! because T2 = ??
 func2(1) // instantiation success! T1 = int T2 = int
 ```
-# Sepcialization
+## Sepcialization
 ```cpp
 // A.h
 template<size_t N>
@@ -68,7 +69,7 @@ void A<2>::func2(void) {
 }
 ```
 
-## Nested template call
+### Nested template call
 ```cpp
 template<typename T> 
 struct Base{
@@ -92,7 +93,7 @@ struct X : Base<T>
 ```
 https://docs.microsoft.com/ko-kr/cpp/error-messages/compiler-errors-2/compiler-error-c7510?view=msvc-160
 
-## typename
+### typename
 ``` cpp
 //Polynomial<DomainDim>::SimplePolyTerm이 변수인지 type인지 명확하게 하기 위해
 //typename을 붙여 타입임을 명시해야한다.
@@ -102,12 +103,12 @@ typename Polynomial<DomainDim>::SimplePolyTerm& Polynomial<DomainDim>::SimplePol
 
 <br><br>
 
-## Template Parameter Pack (Variadic Template)
-### 기본문법
+### Template Parameter Pack (Variadic Template)
+#### 기본문법
 https://en.cppreference.com/w/cpp/language/parameter_pack
 
-### Fold Expression
-#### Example1
+#### Fold Expression
+##### Example1
 ```cpp
 template <typename... Args>
 bool contains_icase(const std::string& str, const Args... args) {		
@@ -119,10 +120,10 @@ bool contains_icase(const std::string& str, const Args... args) {
 > Reference
 > [cppreference](https://en.cppreference.com/w/cpp/language/fold)
 
-### Parameter pack expansion
+#### Parameter pack expansion
 A pattern followed by an ellipsis is expanded into ***zero or more comma-separated instantiations of the pattern***, where the name of the parameter pack is replaced by each of the elements from the pack, in order.
 
-#### Example1
+##### Example1
 ```cpp
 template<typename... Us> void f(Us... pargs) {}
 template<typename... Ts> void g(Ts... args) { f(&args...); }
@@ -133,8 +134,8 @@ g(1, 0.2, "a");
 // Us... pargs expand to int* E1, double* E2, const char** E3
 ```
 
-### Recursive call
-#### Example1
+#### Recursive call
+##### Example1
 ```cpp
 template <typename T, typename... Args>
 std::vector<T>& merge(std::vector<T>& vec1, std::vector<T>&& vec2, Args&&... args) {
@@ -150,7 +151,7 @@ std::vector<T>& merge(std::vector<T>& vec1, std::vector<T>&& vec2, Args&&... arg
 }
 ```
 
-### non type template parameter pack
+#### non type template parameter pack
 ```cpp
 template<int... x>
 void f(){ //인자로 x... xs를 쓰면 compile이 안됨
@@ -164,7 +165,7 @@ int main(void) {
 }
 ```
 
-### Locaton of template parameter pack
+#### Locaton of template parameter pack
 ```cpp
 //In a primary class template, the template parameter pack must be the final parameter in the template parameter list.
 template<typename... Ts, typename U> struct Invalid; //Error
@@ -177,7 +178,7 @@ template<typename ...Ts, typename U, typename=void>
 void invalid(Ts..., U);  // Error: cna not deduce U 
 ```
 
-### Issue1 - resolved
+#### Issue1 - resolved
     struct A {
         template <typename... Args, std::enable_if_t<(...&&std::is_arithmetic_v<Args>), bool> = true>
         A(Args... args) {};
@@ -196,7 +197,7 @@ void invalid(Ts..., U);  // Error: cna not deduce U
 
     // resolve issue when use c++ language standard c++latest 
 
-# SFINAE
+## SFINAE
 만일 템플릿 인자 치환이 올바르지 않는 타입이나 구문을 생성한다면 인자 치환에 실패한다. 올바르지 않는 타입이나 구문이라 하면, 치환된 인자로 썼을 때 문법상 틀린 것을 의미한다. 이 때, `즉각적인 맥락(immediate context)`의 타입이나 구문만이 고려되고, 여기에서 발생한 오류 만이 인자 치환을 실패시킬 수 있다. 만약 인자 치환에 실패하게 되면 이를 오버로딩 목록에서 제외한다.
 
 아래 예재 코드를 보자.
@@ -220,7 +221,7 @@ int main(void){
 
 SFINAE를 이용해서 템플릿 인자에 따라 오버로딩 목록에 들어갈지 빠질지 결정하는 컴파일 타임 스위치를 만들 수 있다. 
 
-## Immediate context
+### Immediate context
 즉각적인 맥락이 무엇인지 아래 예제 코드들을 살펴보자.
 
 #### Example1
@@ -281,7 +282,7 @@ Test2<int, int> t1;
 [c-template-instantations-using-enable-if... - StackoverFlow](https://stackoverflow.com/questions/28985936/c-template-instantations-using-enable-if-directly-or-with-an-auxiliary-class)
 
 
-# std::enable_if
+## std::enable_if
 SFINAE로 컴파일 타임 스위치를 만들 때 자주 사용하는 도구로 std::enable_if가 있다. std::enable_if는 아래처럼 구현되어 있다.
 ```cpp
 template <bool B, class T = void>
@@ -303,7 +304,7 @@ using enable_if_t = typename enable_if<B, T>::type;
 [씹어먹는 C ++ 토막글 3 - SFINAE 와 enable_if - 모두의 코드](https://modoocode.com/255)  
 
 
-## Alias
+### Alias
 enable_if_t를 이용해서 코드가 단순해 지기는 했지만 아직도 SINAE문법은 매우 복잡하다. 이 떄, using keyword를 사용해서 Alias를 만듬으로써 가독성을 크게 향상시킬 수 있다.
 ```cpp
 #include <type_traits>
@@ -336,7 +337,7 @@ int main(void)
 }
 ```
 
-## 사용 예시
+### 사용 예시
 #### example1
 ```cpp
 #include <type_traits>
@@ -401,8 +402,8 @@ void func(const Args&... args) {std::cout << "only int\n";};
 [checking type of parameter pack ... - StackoverFlow](https://stackoverflow.com/questions/29671643/checking-type-of-parameter-pack-using-enable-if)  
 [type trait to check that all types ... - stackoverFlow](https://stackoverflow.com/questions/29603364/type-trait-to-check-that-all-types-in-a-parameter-pack-are-copy-constructible)
 
-## Warning
-### common mistake
+### Warning
+#### common mistake
 ```cpp
 // Declare two function templates that differ only in their default template arguments.
 // This does not work because the declarations are treated as redeclarations of the same function template.
@@ -430,7 +431,7 @@ struct T {
 ```
 https://en.cppreference.com/w/cpp/types/enable_if
 
-### Issue
+#### Issue
 ``` cpp
 // case 1 Fail! but I don't know why
 template <size_t Va, size_t Vb, size_t Max = std::max(Va,Vb)> 

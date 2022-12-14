@@ -1,4 +1,4 @@
-# Publish
+# 배포
 ## Guide
 ### 환경 설정
 Github에 public repository를 만든다.
@@ -16,7 +16,7 @@ pip install ghp-import
 ### 라이브러리 사용
 ghp-import library를 사용한다.
 ```
-ghp-import -n -p -f (빌드된 html 파일)
+ghp-import -n -p -f (빌드된 html 파일이 있는 폴더 경로)
 ```
 
 예를들면 다음과 같다

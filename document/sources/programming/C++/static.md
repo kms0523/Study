@@ -50,7 +50,7 @@ int main(void)
 {
 	modify1();  //TU1의 g_static_value는 1로 바뀜
 	tell1();    //1 출력
-	tell2();	//TU2의 g_static_value는 3임 >> 3 출력
+    tell2();	//TU2의 g_static_value는 3임 >> 3 출력
 }
 ```
 
@@ -95,7 +95,7 @@ void main(void)
 ```
 s_val은 정적 변수이기 때문에 내부링크 방식을 사용하고 A.cpp의 TU에서만 사용할 수 있으며 다른 TU에서는 사용할 수 없다. 하지만 g_val과 func은 외부링크 방식을 사용함으로 다른 TU에서 사용할 수 있다.
 
-> Reference  
+> Reference
 > {cite}`FundamentalC++`
 
 ## static 멤버 변수

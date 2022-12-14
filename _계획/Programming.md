@@ -1,5 +1,8 @@
 # 할 일
 
+* 문서 옮기기
+  * 실행파일
+  * 유일 정의 규칙
 
 solver를 개발하는게 가장 많은 plus alpha가 나오는가?
 
@@ -94,3 +97,10 @@ solver를 개발하는게 가장 많은 plus alpha가 나오는가?
 11.26
 60. msml test 배포하기
 61. msml readme 수정하기
+
+
+12.14
+* 문서 옮기기
+  * Build
+  * Class
+  * Template

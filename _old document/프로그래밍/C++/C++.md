@@ -1,78 +1,3 @@
-- [Extern](#extern)
-- [Test Class](#test-class)
-- [STL Container](#stl-container)
-	- [Queue](#queue)
-	- [Set](#set)
-		- [멤버 함수](#멤버-함수)
-			- [insert](#insert)
-			- [erase](#erase)
-- [Multi Thread](#multi-thread)
-	- [기본](#기본)
-		- [작동방식1](#작동방식1)
-		- [Join](#join)
-		- [작동방식2 with join](#작동방식2-with-join)
-	- [STL Container](#stl-container-1)
-		- [std::vector](#stdvector)
-	- [Performance](#performance)
-		- [False Sharing](#false-sharing)
-- [I/O](#io)
-	- [std::cin](#stdcin)
-		- [operator>>](#operator)
-		- [std::getline](#stdgetline)
-	- [iomanip](#iomanip)
-- [Integral Type](#integral-type)
-- [constexpr](#constexpr)
-	- [class](#class)
-	- [this](#this)
-- [local static variable](#local-static-variable)
-	- [performance degrade](#performance-degrade)
-- [함수 포인터](#함수-포인터)
-	- [기본 함수 포인터](#기본-함수-포인터)
-	- [멤버 함수 포인터](#멤버-함수-포인터)
-- [배열](#배열)
-	- [원형](#원형)
-	- [배열의 참조](#배열의-참조)
-	- [배열을 반환하는 함수](#배열을-반환하는-함수)
-	- [배열의 참조를 반환하는 함수](#배열의-참조를-반환하는-함수)
-	- [배열의 주소](#배열의-주소)
-- [decltype](#decltype)
-	- [auto와의 차이점](#auto와의-차이점)
-- [Comma operator](#comma-operator)
-- [static assert](#static-assert)
-		- [예시](#예시)
-		- [static assert vs SFINAE](#static-assert-vs-sfinae)
-			- [static assert](#static-assert-1)
-			- [SFINAE](#sfinae)
-- [inline](#inline)
-	- [static constexpr member function](#static-constexpr-member-function)
-	- [inline constexpr vs constexpr](#inline-constexpr-vs-constexpr)
-	- [constexpr function](#constexpr-function)
-- [filesystem](#filesystem)
-- [Chrono](#chrono)
-- [Header only magic](#header-only-magic)
-- [stream manipulators](#stream-manipulators)
-- [auto return](#auto-return)
-- [User-Define Conversion function](#user-define-conversion-function)
-- [Mixin](#mixin)
-- [명시적으로 삭제된 함수](#명시적으로-삭제된-함수)
-	- [참고](#참고)
-- [초기화, 할당](#초기화-할당)
-- [코드](#코드)
-- [미리 정의된 매크로](#미리-정의된-매크로)
-	- [C++ 표준에서 지원하는 매크로](#c-표준에서-지원하는-매크로)
-	- [MSVC에서 지원하는 매크로](#msvc에서-지원하는-매크로)
-	- [참고](#참고-1)
-- [컴파일러 옵션](#컴파일러-옵션)
-	- [/MTd](#mtd)
-	- [/MDd](#mdd)
-	- [참고](#참고-2)
-- [Namespace](#namespace)
-- [Cmake](#cmake)
-
-
-
-<br><br>
-
 # Extern
 C++에서 C 함수를 호출하려면, extern "C"로 감싸줘야 한다.
 
@@ -102,31 +27,6 @@ public:
 	A& operator=(const A& a) { std::cout << "A copy operator\n"; return *this; };
 	A& operator=(A&& a) noexcept { std::cout << "move operator\n"; return *this; };
 };
-```
-# STL Container
-
-## Queue
-FIFO(First in first out) container.
-
-pop시 앞의 메모리를 낭비하거나, 모든 데이터를 옮기는 경우를 방지하기 위해 원형 큐를 사용해서 구현
-
-## Set
-
-### 멤버 함수
-#### insert
-``` cpp
-std::set<size_t> s;
-s.insert(3);
-s.insert(4);
-s.insert(3);    // nothing happen!
-```
-
-#### erase
-```cpp
-std::set<size_t> s = {1, 3};
-
-const auto result1 = s.erase(2); // fail erase return size_t 0
-const auto result2 = s.erase(3); // success erase return size_t 1
 ```
 
 # Multi Thread
@@ -233,72 +133,6 @@ int main(void)
 ### False Sharing
 > 참고  
 > [C++ false sharing이란? - HwanShell](https://hwan-shell.tistory.com/230)
-
-
-# I/O
-
-## std::cin
-
-### operator>>
-```cpp
-#include <iostream>
-#include <string>
-
-int main() 
-{
-	size_t num = 0;
-	std::cin >> num;	//std::cin>>는 변수에 '\n'을 담지 않는다.
-						//std::cin의 buffer에는 '\n'이 남아있음.
-
-	std::string input_string;
-	std::getline(std::cin, input_string) 	//std::getline은 변수에 '\n'을 담음
-											//buffer에 남아있는 '\n'이 담김
-}
-```
-
-### std::getline
-```cpp
-#include <iostream>
-#include <string>
-
-int main() 
-{
-	std::string input_string;
-	while (std::getline(std::cin, input_string))
-	{		
-		std::cout << input_string << "\n";
-	}
-	//ctrl + z (window)를 입력하면 EOF가 입력됨.
-	//이 경우 static_cast<bool>(std::cin)는 false가 됨
-	return 0;
-}
-```
-
-## iomanip
-```cpp
-int main(){
-	size_t b = 1;	
-    std::cout << std::setw(9) << b  //기본으로 std::right
-	std::cout << std::left;         //한번 설정하면 계속 유지
-	std::cout << std::setw(9) << b << b << b << "\n"; //setw는 바로 다음 입력에만 영향을 줌	
-
-    double d = 1.2345;
-    std::fixed << std::setprecision(2) // 2자리 고정소수점으로 출력, 한번 설정으로 계속 유지
-    std::cout << d << "\n";
-	std::cout << std::defaultfloat << std::setprecision(6); //initial precision
-	std::cout << d << "\n";
-}
-```
-
-
-
-
-
-
-
-
-
-
 
 # Integral Type
 ```cpp
@@ -492,61 +326,7 @@ https://stackoverflow.com/questions/38043442/how-do-inline-variables-work/538967
 
 <br><br>
 
-# filesystem
-```cpp
-#include <iostream>
-#include <filesystem>
 
-int main() {
-	std::filesystem::path p("RSC");
-	std::cout << "current  path  : " << std::filesystem::current_path() << "\n";
-	std::cout << "relative path  : " << p.relative_path() << "\n";
-	std::cout << "absolute path  : " << std::filesystem::absolute(p) << "\n";
-	std::cout << "canonical path : " << std::filesystem::canonical(p) << "\n";
-}
-// current  path  : "C:\\Users\\KimMinSeok\\source\\repos\\MS_Test\\GoogleTest"
-// relative path  : "RSC"
-// absolute path  : "C:\\Users\\KimMinSeok\\source\\repos\\MS_Test\\GoogleTest\\RSC"
-// canonical path : "C:\\Users\\KimMinSeok\\source\\repos\\MS_Test\\GoogleTest\\RSC"
-```
-
-# Chrono
-```cpp
-int main() {
-	std::vector<size_t> vec;
-
-	const auto time_point1 = std::chrono::steady_clock::now();
-	for (size_t i = 0; i < 10000000; ++i)
-		vec.resize(i, i);
-	const auto time_point2 = std::chrono::steady_clock::now();
-
-	std::chrono::nanoseconds nanosec = time_point2 - time_point1;
-
-	//기본 시간 단위는 암시적 형변환 안됨
-	//std::chrono::microseconds microsec = time_point2 - time_point1;	//signed integer 55bits
-	//std::chrono::milliseconds milisec = time_point2 - time_point1;	//signed integer 45bits
-	//std::chrono::seconds sec = time_point2 - time_point1;				//signed integer 35bits
-
-	//기본 시간 단위는 duration_cast로 형변환 해야됨
-	const auto microsec = std::chrono::duration_cast<std::chrono::microseconds>(nanosec);	
-	const auto millisec = std::chrono::duration_cast<std::chrono::milliseconds>(nanosec);	
-	const auto sec		= std::chrono::duration_cast<std::chrono::seconds>(nanosec);		
-
-	std::cout << "nanosec: \t" << nanosec.count() << "\n";
-	std::cout << "microsec: \t" << microsec.count() << "\n";
-	std::cout << "milisec: \t" << millisec.count() << "\n";
-	std::cout << "sec: \t\t" << sec.count() << "\n";
-
-	//사용자 정의 시간 단위는 암시적 형변한 됨
-	std::chrono::duration<double, std::micro>	d_microsec	= time_point2 - time_point1;
-	std::chrono::duration<double, std::milli>	d_millisec	= time_point2 - time_point1;
-	std::chrono::duration<double>				d_sec		= time_point2 - time_point1;
-
-	std::cout << "d_microsec: \t" << d_microsec.count() << "\n";
-	std::cout << "d_milisec: \t" << d_millisec.count() << "\n";
-	std::cout << "d_sec: \t\t" << d_sec.count() << "\n";
-}
-```
 
 
 
@@ -693,30 +473,6 @@ new 는 new_scalar.cpp에 있다.
 
 ## 참고
 [/MD, /MT, /LD](https://docs.microsoft.com/ko-kr/cpp/build/reference/md-mt-ld-use-run-time-library?view=msvc-170)
-
-
-# Namespace
-:: 연산자 앞에 namespace를 선언하지 않으면 전역 namespace에 있는 함수를 호출하도록 한다.
-
-standard library를 활용한 표준 함수를 사용할 때 매번 네이밍을 붙이는 것이 귀찮을 수 있다. 이때는 using이라는 keyword를 사용하면 된다. using 선언 같은 경우 해당 이름의 함수를 현재 scope로 가져온다라는 의미이다.
-
-```
-void my_code (vector<int>& x, vector<int>& y) {
-	using std::swap;
-
-	swap(x,y);
-}
-```
-위의 코드를 보면 standard library의 swap 함수를 using과 함께 사용한 것을 볼 수 있다. using을 사용할 경우 현재 scope로 변환되기 때문에 std:: namespace를 붙일 필요가 없다.
-
-만약, 특정함수 뿐만아니라 library 내 모든 함수를 해당 scope로 변경하고 싶다면 아래의 코드를 추가하자.
-
-```
-using namespace std;
-```
-해당 코드를 코드 선언부에 작성해준다면 scope를 해당 코드 scope로 변경함으로 namespace를 추가해 줄 필요가 없어진다. 하지만, 위와 같은 방법을 한다면 언제 name 충돌이 발생할지 모르고 또 프로그램이 커지면 버그도 찾기 어려워 진다. 따라서, 간단한 코드가 아니라면 namespace를 다 적어주는 습관을 기르도록 하자.
-
-[참고 블로그](https://nerdooit.github.io/2020/09/08/cpp_book_2.html)
 
 # Cmake
 [참고 블로그](https://gist.github.com/luncliff/6e2d4eb7ca29a0afd5b592f72b80cb5c)

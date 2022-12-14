@@ -84,6 +84,33 @@ $$ x \in \bar{U} \qed $$
 > Reference  
 > [northeastern.edu](https://web.northeastern.edu/suciu/MATH4565/MATH4565-fa21-handout2.pdf)
 
+#### 따름명제2.1
+Topological space $X$가 있다고 하자.
+
+$X$의 subset $A$가 있을 때, 다음을 증명하여라.
+
+$$ X = \bar{A} \iff \text{Every nonempty open subset of } X \text{ contains a point of } A $$
+
+**Proof**
+
+[$\implies$]  
+전제에 의해 $\bar{A} = X$임으로, 명제2에 의해 다음이 성립한다.
+
+$$ \begin{aligned} & \forall x \in \bar{A},  \forall\mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad \mathcal{N_x} \cap A \neq \empty \\\implies& \forall x \in X,  \forall\mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad \mathcal{N_x} \cap A \neq \empty  \end{aligned} $$
+
+즉, 다음이 성립한다.
+
+$$ \text{Every nonempty open subset of } X \text{ contains a point of } A \qed $$
+
+[$\impliedby$]  
+전제에 의해서 다음이 성립한다.
+
+$$ x \in X \implies \forall\mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad \mathcal{N_x} \cap A \neq \empty $$
+
+따라서, closure의 성질에 의해 다음이 성립한다.
+
+$$ \begin{aligned} & x \in \bar{A} \\ \implies& X = \bar{A} \end{aligned}  $$
+
 ### 명제3
 Topological space $X$와 $X$의 subset $U$가 있다고 하자.
 
