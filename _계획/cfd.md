@@ -1,19 +1,16 @@
 # 할 것
 * [Book] (LeVeque) FVM for Hyperbolic Problems 
-  * 정리
-    * Chapter2
-      * Chapter 2.1
-        * Chapter 2.1.1
   * 읽기
     * Chapter2
       * Chapter 2.12
       * Chapter 2.13
       * Chapter 2.14
     * Chapter 3
-      * Chapter 3.9
-      * Chapter 3.10
       * Chapter 3.11
-
+  * 정리
+    * Chapter2
+      * Chapter 2.1
+        * Chapter 2.1.1
 
 # 완료
 
@@ -61,3 +58,10 @@
     * Chapter 3
       * Chapter 3.7
       * Chapter 3.8
+12.14
+* [Book] (LeVeque) FVM for Hyperbolic Problems 
+  * 읽기
+    * Chapter 3
+      * Chapter 3.9
+        * Chapter 3.9.1
+      * Chapter 3.10
