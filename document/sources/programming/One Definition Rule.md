@@ -1,3 +1,4 @@
+# One Definition Rule
 `유일 정의 규칙(one definition rule, ODR)`이란 "각 `해석유닛(translation unit, TU)`에 존재하는 모든 변수, 함수, 클래스, enum, 템플릿 등등의 `정의(definition)`은 유일해야 하고 inline 이 아닌 정의는 전체 프로그램에서 유일해야 한다" 는 규칙이다.
 
 유일 정의 규칙을 알아보기 전에 먼저 정의가 무엇인지 보자.
@@ -10,7 +11,7 @@
 
 선언과 정의의 예시를 보면 다음과 같다.
 
-```
+```cpp
 int f();                //함수를 선언
 int f() { return 0; }   //함수를 정의, 정의하기 위해서는 반드시 함수의 몸체를 제공해야 함
 class A;                //클래스를 선언
@@ -33,7 +34,7 @@ int S::i;               // S::i 를 정의
 
 먼저 첫 번째 문장은 "각 TU에 존재하는 모든 변수, 함수, 클래스 등등의 정의는 유일해야 한다" 이다. 이 말은 TU 안에 같은 선언은 여러개 있어도 괜찮다는 의미이다.
 
-```
+```cpp
 int f();  // f 의 선언
 int f();  // f 의 선언
 int f();  // f 의 선언
@@ -53,7 +54,7 @@ int main() {}
 
 그렇다면 아래의 코드를 보자.
 
-```
+```cpp
 //Common.h
 int g_common_value;
 void common_function(void) {};
@@ -77,7 +78,7 @@ static int g_static_value;
 
 이와 반대로 inline이 아닌 함수의 경우 사용하기 위해서 반드시 TU에 해당 함수의 정의가 있을 필요는 없지만, 대신 전체 TU에 정의가 반드시 단 한개만 있어야 한다. 예를 들어서 inline 함수는 헤더파일에 정의해도 상관 없다. 한 가지 재미있는 점은 클래스 내부에 정의되어 있는 함수들은 자동으로 inline이라는 점이다.
 
-```
+```cpp
 class A 
 {
 public:

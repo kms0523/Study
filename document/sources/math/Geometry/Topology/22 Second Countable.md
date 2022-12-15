@@ -2,14 +2,14 @@
 ## 정의
 Topological space $X$가 있다고 하자.
 
-$X$가 다음을 만족할 때, $X$를 `second countable` topological space라고 한다.
+$X$가 다음을 만족할 때, $X$를 `second countable` space라고 한다.
 
 $$ \mathcal{T_X} \text{ has countable basis} $$
 
 ### 명제1
 다음을 증명하여라.
 
-$$ \text{Every Euclidean space is second countable topological space} $$
+$$ \text{Every Euclidean space is a second countable space} $$
 
 **Proof**
 

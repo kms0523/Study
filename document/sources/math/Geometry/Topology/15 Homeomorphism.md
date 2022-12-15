@@ -84,16 +84,16 @@ $$ f|_{U \times f(U)} \text{ is a homeomorphism}$$
 bijective function의 domain & codomain restriction은 bijective function이다.
 
 [$f|_{U \times f(U)}$ is continuous]  
-continuous function의 domain restriction과 관련된 성질에 의해 다음이 성립한다.
+$f$가 continous function임으로, continuous function의 성질에 의해 다음이 성립한다.
 
 $$ f|_{U \times f(U)} \text{ is a continuous} $$
 
 [$(f|_{U \times f(U)})^{-1}$ is continuous]  
-inverse function의 domain & codomian restriction과 관련된 성질에 의해 다음이 성립한다.
+inverse function의 성질에 의해 다음이 성립한다.
 
 $$ (f|_{U \times f(U)})^{-1} = f^{-1}|_{f(U) \times U} $$
 
-$f$가 homeomorphism임으로 $f^{-1}$은 continuous function이다. 따라서, continuous function의 domain restriction과 관련된 성질에 의해 다음이 성립한다.
+$f$가 homeomorphism임으로 $f^{-1}$은 continuous function이다. 따라서, continuous function의 성질에 의해 다음이 성립한다.
 
 $$ \begin{aligned} & f^{-1}|_{f(U) \times U} \text{ is a continuous} \\ \iff\enspace& (f|_{U \times f(U)})^{-1} \text{ is a continuous} \end{aligned} $$
 

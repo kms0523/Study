@@ -20,4 +20,3 @@ $X$의 closed set의 collection $\mathcal{U}$가 cover일 때, $\mathcal{U}$를 
 Topological space $X$와 $X$의 cover $\mathcal{U}$가 있다고 하자.
 
 이 때, $\mathcal{U}$의 subcollection $\mathcal{U'} \subseteq \mathcal{U}$가 $X$의 cover일 경우, $\mathcal{U'}$을 $\mathcal{U}$의 `subcover`라고 한다.
-

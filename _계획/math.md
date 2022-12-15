@@ -7,9 +7,17 @@
 * Analysis & Calculus 옮기면서 복습하기
 
 * [Book] (Lee) Topological Manifolds
-  * Dense 공부
-  * Second countable 공부
-    * Theorem 2.50(c)
+  * Manifold 공부
+    * Locally Euclidean 공부
+    * Lemma 2.52
+      * (b)
+        * Continuity & Homeomorphism 공부
+    * coordinate 공부
+      * coordinate domain
+      * coordinate map
+      * coordinate chart
+      * coordinate ball
+      * coordinate neighborhood
 
 * Linear Algebra 옮기기
   * Inner product 옮기기
@@ -217,3 +225,13 @@
     * Theorem 2.50(b)
   * Dense 공부
   * Seperable 공부
+
+12.15
+* [Book] (Lee) Topological Manifolds
+  * Second countable 공부
+    * Theorem 2.50(c)
+  * Lindelof space 정리하기
+  * Manifold 공부
+    * Locally Euclidean 공부
+    * Lemma 2.52
+      * (a)
