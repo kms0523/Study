@@ -1,8 +1,7 @@
-import os
-from mslib import mspath
+from Jupyterbook.TOC_Writer import TOC_Writer
 
-path = "Test/"
-# print(mspath.extract_target_extension_filenames('.txt',path))
-name_extension_tuples = mspath.extract_name_extension_tuples(path)
 
-print(name_extension_tuples)
+writer = TOC_Writer()
+
+source_folder_path = "Jupyterbook/test/"
+writer.write(source_folder_path)

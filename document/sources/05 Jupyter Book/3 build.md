@@ -15,10 +15,6 @@ conda activate jupyterbook
 conda update --all
 ```
 * Jupyterbook을 설치합니다.
-  * conda에서 설치 - 가장 간단한 방법인데 왜 인지 안된다
-```
-conda install -c conda-forge jupyter-book
-```  
   * mamba를 사용하여 설치 - 현재 되는 방법
 ```
 conda install -c conda-forge mamba
@@ -27,6 +23,18 @@ mamba install -c conda-forge jupyter-book
 
 > Reference  
 > [jupyterbook](https://jupyterbook.org/en/stable/start/overview.html)
+
+### 주의사항1
+경로에 한글이 있는 경우 mamba install이 안될 수 있다.
+
+예를 들어 `C/User/(계정명)`에서 계정명이 한글이면 install이 안된다.
+
+### 주의사항2
+Jupyter book을 설취하기 위해 conda를 사용하면 왜 인지 안된다
+```
+conda install -c conda-forge jupyter-book
+```  
+
 
 ## 빌드 환경
 

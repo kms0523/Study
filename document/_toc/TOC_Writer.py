@@ -1,10 +1,6 @@
 from .mslib import mspath
 
 class TOC_Writer:
-	def __init__(self) -> None:
-		pass
-
-
 	def write(self, source_folder_path) -> None:
 		mspath.check_path_format(source_folder_path)
 		mspath.check_path_existence(source_folder_path)		
@@ -28,6 +24,11 @@ class TOC_Writer:
 
 
 
+	def __init__(self) -> None:
+		pass
+
+
+
 	def __write_header(self, file) -> None:
 		file.write( '# Table of contents'+'\n'
 					+ '# Learn more at https://jupyterbook.org/customize/toc.html'+'\n\n'
@@ -43,7 +44,7 @@ class TOC_Writer:
 		mspath.check_path_existence(current_path)
 
 		indent = '  '
-		caption = mspath.current_folder_name(current_path) #convention
+		caption = mspath.current_folder_name(current_path)[3:] #convention
 		file.write(indent + '- caption: \'' + caption + '\'\n')
 		
 		name_extension_tuples = mspath.extract_name_extension_tuples(current_path)
@@ -63,7 +64,7 @@ class TOC_Writer:
 		name_extension_tuples = mspath.extract_name_extension_tuples(current_path)
 		
 		# Processing main document
-		main_file_name = mspath.current_folder_name(current_path) #convention
+		main_file_name = mspath.current_folder_name(current_path)[3:] #convention
 		main_file_path = current_path + main_file_name
 		self.__write_file(file, indent, main_file_path)
 		
@@ -77,8 +78,13 @@ class TOC_Writer:
 
 
 
+
+
 	def __write_file(self, file, indent, path) -> None:
 		file.write(indent + '- file: ' + path + '\n')
+
+
+
 
 
 	def __write_in_TOC_format(self, file, indent, current_path, name_extension_tuples) -> None:
@@ -92,6 +98,10 @@ class TOC_Writer:
 			elif extension == '.md':
 				path = current_path + name				
 				self.__write_file(file,indent,path)	
+
+
+
+
 
 
 	def __relative_path(self, path) :

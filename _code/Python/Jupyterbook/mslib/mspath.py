@@ -10,14 +10,24 @@ def check_path_existence(path):
 	if not os.path.isdir(path):	
 		mserror.error_invalid_input('"' + path + '" is not exist')
 
+def extract_name_extension_tuples(path='./'):
+	check_path_format(path)
+	check_path_existence(path)
+
+	name_lists = os.listdir(path)
+	
+	name_extension_tuples = []
+	for name in name_lists:
+		name_extension_tuples.append(os.path.splitext(name))
+				
+	return name_extension_tuples
+
+
 def extract_names(path='./'):
 	names = os.listdir(path)
 	for i in range(len(names)):
 		names[i] = remove_filename_extension(names[i])
 	return names
-
-def is_folder(path):	
-	return os.path.isdir(path)
 
 def extract_foldernames(path='./'):
 	check_path_format(path)
@@ -31,6 +41,22 @@ def extract_foldernames(path='./'):
 			folder_names.append(name)
 				
 	return folder_names
+
+def extract_target_extension_filenames(target_extension, path='./'):
+	check_path_format(path)
+	check_path_existence(path)
+
+	name_lists = os.listdir(path)
+	
+	file_names = []
+	for name in name_lists:
+		[splited_name, extension] = os.path.splitext(name)
+		
+		if extension == target_extension:
+			file_names.append(splited_name)
+				
+	return file_names
+	
 
 def extract_foldernames_filenames(path='./'):	
 	check_path_format(path)
@@ -49,6 +75,9 @@ def extract_foldernames_filenames(path='./'):
 			filenames.append(filename)
 				
 	return [foldernames, filenames]
+
+def is_folder(path):	
+	return os.path.isdir(path)
 
 def remove_filename_extension(filename):
 	return pathlib.Path(filename).stem
