@@ -16,11 +16,15 @@
 * 창,다음문서창으로 이동 : ctrl + tab
 * 창.이전탭 : alt + $\leftarrow$
 * 창.다음탭 : alt + $\rightarrow$ 
+* 편집.아래로줄스크롤 >> alt + $\downarrow$
+  * 편집.선택한줄아래로이동 >> 제거
+* 편집.위로줄스크롤 >> alt + $\uparrow$
+  * 편집.선택한줄위로이동 >> 제거
+* 편집.한줄아래까지열확장선택 >> ctrl + alt + $\downarrow$
+* 편집.한줄위까지열확장선택 >> ctrl + alt + $\uparrow$ 
 * 편집.문서서식(정렬) : ctrl + k, ctrl + d
 * 편집.선택영역을주석으로처리 >> ctrl + /, ctrl +/
 * 편집.선택영역의주석처리제거 >> alt + /, alt +/
-* 편집.아래로줄스크롤 >> ctrl + $\downarrow$
-* 편집.위로줄스크롤 >> ctrl + $\uparrow$
 * 개요 확장 축소 : ctrl M M
 * 개요 전체 확장 축소: ctrl M L
 * 개요 전체 삭제 : ctrl M P

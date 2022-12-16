@@ -34,7 +34,7 @@ $$ \preimg(B) \in \Set{\mathcal{N_x}} $$
 
 $$ \phi|_{\preimg(B) \times B} \text{ is a homeomorphism} $$
 
-따라서 이를 정리하면 다음과 같다.
+위의 결과를 종합하면 다음과 같다.
 
 $$ \forall x \in X, \quad \exist\mathcal{N_x} \in \Set{\mathcal{N_x}} \st \text{homeomorphic to an open ball of } \R^n \qed $$
 
@@ -52,7 +52,7 @@ $$ \preimg(B) \in \Set{\mathcal{N_x}} $$
 
 $B$는 $\R^n$의 open set임으로 subspace의 정의에 의해 다음이 성립한다.
 
-$$ B \text{ is open set of } V $$
+$$ B \text{ is an open set of } V $$
 
 $\phi$가 continuous 함으로 다음이 성립한다.
 
@@ -60,11 +60,11 @@ $$ \text{Preimage of every open set of } V \text{ is open set of } \mathcal{N_x}
 
 따라서, 다음이 성립한다.
 
-$$ \preimg(B) \text{ is open set of } \mathcal{N_x} $$
+$$ \preimg(B) \text{ is an open set of } \mathcal{N_x} $$
 
 $\mathcal{N_x}$는 $X$의 open set임으로 subspace의 성질에 의해 다음이 성립한다.
 
-$$ \preimg(B) \text{ is open set of } X $$
+$$ \preimg(B) \text{ is an open set of } X $$
 
 따라서, Neighborhood의 정의에 의해 다음이 성립한다.
 
@@ -76,6 +76,29 @@ Topological space $X$가 있다고 하자.
 이 때, 다음을 증명하여라.
 
 $$ X \text{ is locally Euclidean of dimension } n \iff \forall x \in X, \quad \exist\mathcal{N_x} \in \Set{\mathcal{N_x}} \st \text{homeomorphic to } \R^n $$
+
+**Proof**
+
+명제1에 의해 다음이 성립한다.
+
+$$ X \text{ is locally Euclidean of dimension } n \iff \forall x \in X, \quad \exist\mathcal{N_x} \in \Set{\mathcal{N_x}} \st \text{homeomorphic to an open ball of } \R^n $$
+
+이 때의, homeomorphism을 $\varphi_1$이라 하자.
+
+다음으로, homeomorphism의 성질에 의해 다음이 성립한다.
+
+$$ \text{Any open ball in } \R^n \text{ and } \R^n \text{ are homeomorphic} $$
+
+이 때의, homeomorphism을 $\varphi_2$이라 하자.
+
+homeomorphism의 성질에 의해 다음이 성립한다.
+
+$$ \varphi_2 \circ \varphi_1 \text{ is a homeomorphism} $$
+
+따라서, 다음이 성립한다.
+
+$$ X \text{ is locally Euclidean of dimension } n \iff \forall x \in X, \quad \exist\mathcal{N_x} \in \Set{\mathcal{N_x}} \st \text{homeomorphic to } \R^n \qed $$
+
 
 > Reference  
 > [math.stackexchange](https://math.stackexchange.com/questions/1072741/is-an-open-n-ball-homeomorphic-to-mathbbrn)

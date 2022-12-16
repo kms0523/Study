@@ -8,43 +8,106 @@ sources 내부에 폴더 구성을 어떻게 하냐에 따라 페이지 왼쪽�
 폴더 구성이 다음과 같이 되어 있다고 하자.
 
 ```
-sources
-│
-├─Chapter1
-│  │  document1.md
-│  │  document2.md
-│  │  zebra.md
+├─01 math
+│  ├─01 Set
+│  │      Set.md
+│  │      01 Power Set.md
+│  │      02 Product Set.md
+│  │      03 Relations.md
+│  │	  ...
 │  │
-│  └─section
-│      │  related1.md
-│      │  related2.md
-│      │  section.md
+│  ├─02 Analysis
+│  │  │  Analysis.md
+│  │  │
+│  │  └─01 Metric Space
+│  │      │  Metric Space.md
+│  │      │  ...
+│  │
+│  └─03 Geometry
+│      │  Geometry.md
 │      │
-│      └─section in section
-│              related1.md
-│              section in section.md
+│      └─01 Topology
+│              Topology.md
+│              ...
 │
-├─Chapter2
-│      document1.md
+├─02 programming
+│  │  CMake.md
+│  │  git.md
+│  │  One Definition Rule.md
+│  │
+│  ├─01 C++
+│  │      C++.md
+│  │      ...
+│  │
+│  ├─02 Build
+│  │  │  Build.md
+│  │  │	 ...
+│  │  │
+
+...
+
 ```
 
 이 경우 TOC는 다음과 같이 구성된다.
 
-```{figure} _image/toc.png
+```{figure} _image/0201.png
 ```
 
-## 주의사항1
-section 폴더 안에는 section 이름과 동일한 .md 파일이 반드시 존재해야된다.
+## 규칙
 
-위 예시에서도 section 폴더안에 `section.md` 파일이 section in section 폴더안에 `section in section.md` 파일이 존재하는걸 볼 수 있다.
+### 1
+TOC에 나타나는 순서를 정해주기 위해서 폴더나 md파일 이름을 `## [name]` 형태로 작성한다.
+
+예를들면 `01 math`, `01 Power Set.md`와 같다.
+
+#### 주의사항1
+순서가 상관없을 경우, 파일 이름은 저 형태를 지키지 않아도 된다.
+
+하지만 폴더명은 항상 `## [name]` 형태로 작성한다.
+
+또한 반드시 띄어쓰기가 있어야 한다. 
+```
+01math 	(X) 
+01 math (O)
+```
+
+
+#### 주의사항2
+TOC에 표시되는 이름은 md파일의 파일명으로 생성되는것이 아니다.
+
+TOC는 md파일 안에 있는 H1 header(#)의 이름으로 생성이 된다.
+
+##### Example1
+현재 document1.md파일은 다음과 같다.
+```
+document1.md
+
+# document1.md
+```
+
+만약 document1.md의 내용을 다음과 같이 바꿨다고 가정해보자
+```
+document1.md
+
+# document123.md
+```
+
+그러면 TOC에는 document123으로 표시된다.
+
+### 2
+section 폴더 안에는 section 이름과 동일한 .md 파일이 반드시 존재해야된다.
 
 `section.md` 파일은 아래와 같이 TOC에서 section을 눌렀을 때 나타날 페이지 이다.
 ```{figure} _image/section.png
 ```
 
-## 주의사항2
+#### 주의사항1
+section의 이름은 section.md 파일 안에 있는 H1 header의 이름으로 생성된다.
+
+### 3
 파일이 하나만 있는 경우 section 폴더로 만들지 않는다.
 
+#### Example
 아래와 같이 section 안에 section.md만 있는 경우를 생각해보자.
 ```
 (bad example)
@@ -65,73 +128,3 @@ section 폴더 안에는 section 이름과 동일한 .md 파일이 반드시 존
 │  document1.md
 │  document2.md
 ```
-
-## 주의사항3
-TOC에 표시되는 이름들은 .md파일의 파일명으로 생성되는것이 아니다.
-
-TOC는 .md파일 안에 있는 H1 header(#)의 이름으로 생성이 된다.
-
-section의 이름은 `section.md` 파일 안에 있는 H1 header의 이름으로 생성된다.
-
-### Example1
-현재 document1.md파일은 다음과 같다.
-```
-document1.md
-
-# document1.md
-```
-
-만약 document1.md의 내용을 다음과 같이 바꿨다고 가정해보자
-```
-document1.md
-
-# document123.md
-```
-
-그러면 TOC에는 document123으로 표시된다.
-
-
-## 주의사항4
-TOC에 표시되는 순서는 파일명 alphabet 순서로 생성된다.
-
-### Example
-현재 파일이 다음과 같다고 해보자
-```
-document1.md
-
-# document1.md
-
---------------------
-
-document2.md
-
-# document2.md
-```
-
-그러면 TOC는 다음과 같이 구성된다
-```
-document1
-document2
-```
-
-이 떄 내용을 다음과 같이 바꾼다고 해보자
-```
-document1.md
-
-# document99.md
-
---------------------
-
-document2.md
-
-# document2.md
-```
-
-그러면 TOC는 다음과 같이 구성된다
-```
-document99
-document2
-```
-
-
-

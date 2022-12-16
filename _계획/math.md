@@ -5,13 +5,10 @@
     * 95 Equivalence Class.md
 
 * Analysis & Calculus 옮기면서 복습하기
+  * Calculus
 
 * [Book] (Lee) Topological Manifolds
   * Manifold 공부
-    * Locally Euclidean 공부
-    * Lemma 2.52
-      * (b)
-        * Continuity & Homeomorphism 공부
     * coordinate 공부
       * coordinate domain
       * coordinate map
@@ -235,3 +232,28 @@
     * Locally Euclidean 공부
     * Lemma 2.52
       * (a)
+
+12.16
+* Analysis & Calculus 옮기면서 복습하기
+  * Metric Space
+    * Metric subspace
+    * Open ball
+    * Open set
+    * Closed set
+    * Neighborhood
+    * Closure
+    * Interior
+    * Boundary
+    * Continuous Function
+    * Bounded set
+    * Compact Set
+    * Convergent Sequence
+    * Limit of Function
+    * Continuous
+
+* [Book] (Lee) Topological Manifolds
+  * Manifold 공부
+    * Locally Euclidean 공부
+    * Lemma 2.52
+      * (b)
+        * Continuity & Homeomorphism 공부

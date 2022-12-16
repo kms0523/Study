@@ -9,15 +9,19 @@ $$ f^{-1} := \Set{(y,x) \in Y \times X | y = f(x)}  $$
 ### 명제1
 집합 $X,Y$와 함수 $f : X \rightarrow Y$가 있을 때 다음을 증명하여라.
 
-$$ f \text{ is bijective} \implies \exist! f^{-1} $$
+$$ f \text{ is bijective} \iff \exist! f^{-1} $$
 
 **proof**
 
+[$\implies$]  
 $f$ 전사 함수이기 때문에 임의의 $y \in Y$에 대해 반드시 $f(x)=y$를 만족하는 $x$가 존재한다.
 
 동시에 단사 함수이기 때문에 이런 관계를 만족하는 $x$는 유일하다.
 
 즉 임의의 $y$에 대해서 $x$가 유일하게 존재함으로 함수의 정의를 만족시키는 $f^{-1}$는 유일하게 존재한다. $\qed$
+
+[$\impliedby$]  
+$f^{-1}$는 정의상 $f$가 bijective function일 떄, 정의됨으로 자명하다. $\qed$
 
 ### 명제2
 집합 $X,Y$와 함수 $f : X \rightarrow Y$가 있을 때 다음을 증명하여라.

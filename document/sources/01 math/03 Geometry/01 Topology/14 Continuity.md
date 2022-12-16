@@ -48,13 +48,21 @@ $$ f|_{U} \text{ is a continuous function} $$
 
 **Proof**
 
-$V \subseteq f(U)$를 만족하는 $Y$의 open set을 $V$라 하자.
+$Y$의 open set을 $V$라 하자.
 
 $f$가 연속임으로 다음이 성립한다.
 
 $$ \preimg_{f|_{U}}(V) \text{ is open set of } X $$
 
-또한, $\preimg_{f|_{U}}(V) \subseteq U$이기 때문에 다음이 성립한다.
+또한, Preimage의 성질에 의해 다음이 성립한다.
+
+$$ \preimg_{f|_{U}}(V) = U \cap \preimg(V) \subseteq U $$
+
+위의 결과를 종합하면 다음과 같다.
+
+$$ \preimg_{f|_{U}}(V) \text{ is open set of } X \text{ in } U $$
+
+따라서, subspace의 성질에 의해 다음이 성립한다.
 
 $$ \preimg_{f|_{U}}(V) \text { is open set of } U $$
 
@@ -176,3 +184,18 @@ $$ f \text{ is continuous} \qed $$
 > Referece  
 > {cite}`LeeTM` 2.19
 
+### 명제7
+다음을 증명하여라.
+
+$$\text{metric space continuity definition } \iff \text{topological space continuity definition} $$
+
+**Proof**
+
+metric space에서 다음이 성립한다.
+
+$$ f \text{ is a continuous function } \iff \text{preimage of every open subset is open} $$
+
+따라서 topological space의 definition과 동치이다. $\qed$
+
+#### 참고
+명제7에 의해 metric space에서 $\epsilon-\delta$ 논법에 의해 continuous function인 함수들은 topological space에서 continous function이다.
