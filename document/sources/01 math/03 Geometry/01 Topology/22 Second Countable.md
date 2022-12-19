@@ -90,3 +90,32 @@ $$ \forall x \in X, \quad \exist\text{countable neighborhood basis} $$
 그럼으로, first countable space의 정의에 의해 다음이 성립한다.
 
 $$ X \text{ is first countable space } \qed $$
+
+### 명제3
+다음을 증명하여라.
+
+$$ \text{Any open set of a second countable space is second countable} $$
+
+**Proof**
+
+Second countable space $X$가 있다고 하자.
+
+Second countable space의 정의에 의해 다음이 성립한다.
+
+$$ \mathcal{T_X} \text{ has countable basis } \mathcal{B} $$
+
+$U$가 $X$의 open set이라고 할 때, $\mathcal{B_U}$를 다음과 같이 정의하자.
+
+$$ \mathcal{B_U} := \Set{ B \in \mathcal{B} | B \subseteq U } $$
+
+Basis의 성질에 의해 다음이 성립한다.
+
+$$ \mathcal{B_U} \text{ is a basis of } \mathcal{T_U} $$
+
+또한 countable set의 subset은 countable임으로 다음이 성립한다.
+
+$$ \mathcal{B_U} \text{ is countable }$$
+
+따라서, $\mathcal{T_U}$가 countable basis를 갖음으로 second countable의 정의에 의해 다음이 성립한다.
+
+$$ U \text{ is second countable } \qed $$

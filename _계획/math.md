@@ -7,15 +7,6 @@
 * Analysis & Calculus 옮기면서 복습하기
   * Calculus
 
-* [Book] (Lee) Topological Manifolds
-  * Manifold 공부
-    * coordinate 공부
-      * coordinate domain
-      * coordinate map
-      * coordinate chart
-      * coordinate ball
-      * coordinate neighborhood
-
 * Linear Algebra 옮기기
   * Inner product 옮기기
     * Reisz representation 복습 및 옮기기
@@ -29,7 +20,10 @@
   * 선형대수 42강
   * 선형대수 43강
 
+
 * [Book] (Lee) smooth manifolds
+  * Chapter1
+    * Topological Manifolds
   * Chap3 읽기
     * Tangent Vectors p.51 읽기
       * Geometric Tangent Vectors p.51 읽기
@@ -257,3 +251,17 @@
     * Lemma 2.52
       * (b)
         * Continuity & Homeomorphism 공부
+
+12.19
+* [Book] (Lee) Topological Manifolds
+  * Basis의 복습
+  * Second Countable 복습
+  * Manifold 공부
+    * coordinate 공부
+      * coordinate domain
+      * coordinate map
+      * coordinate chart
+      * coordinate ball
+      * coordinate neighborhood
+    * manifold 정의
+    * Proposition 2.53.

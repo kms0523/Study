@@ -194,7 +194,7 @@ Set $X$와 $X$의 subset의 collection $\mathcal{B}$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
 
-$$ \begin{array}{} & \mathcal{B} \text{ is a basis for some topology on } X & \iff & \begin{aligned} 1.& \bigcup_{B \in \mathcal{B}} B = X \\ 2. & B_1, B_2 \in \mathcal{B} \enspace\land\enspace x \in B_1 \cap B_2 \\& \implies \exist B \in \mathcal{B} \quad s.t. \quad x \in B \subseteq B_1 \cap B_2 \end{aligned} \end{array} $$
+$$ \begin{array}{} & \mathcal{B} \text{ is a basis for some topology on } X & \iff & \begin{aligned} 1.& \bigcup_{B \in \mathcal{B}} B = X \\ 2. & B_1, B_2 \in \mathcal{B} \implies \forall x \in B_1 \cap B_2, \quad \exist B \in \mathcal{B} \quad s.t. \quad x \in B \subseteq B_1 \cap B_2 \end{aligned} \end{array} $$
 
 **Proof**
 
@@ -213,44 +213,59 @@ $$ B_1 \cap B_2 \text{ is an open set of } X $$
 
 $B_1 \cap B_2$가 open set임으로 basis의 성질에 의해 다음이 성립한다.
 
-$$ \exist\text{index set } I \st B_1 \cap B_2 = \bigcup_{i\in I} B_i $$
+$$ \exist \mathcal{B'} \subseteq \mathcal{B} \st B_1 \cap B_2 = \bigcup \mathcal{B'} $$
 
-따라서, $\forall x \in B_1 \cap B_2$에 대해 다음이 성립한다.
+따라서, 다음이 성립한다.
 
-$$ \exist j \in I \st x \in B_j \subseteq B_1 \cap B_2 \qed $$
+$$ \forall x \in B_1 \cap B_2, \quad \exist B \in \mathcal{B'} \st x \in B \subseteq B_1 \cap B_2 $$
+
+그리고 $\mathcal{B'} \subseteq \mathcal{B}$임으로 다음이 성립한다.
+
+$$ \forall x \in B_1 \cap B_2, \quad  \exist B \in \mathcal{B} \st x \in B \subseteq B_1 \cap B_2 \qed $$
 
 [$\impliedby$]  
-$\mathcal{T_X}$가 $\mathcal{B}$의 원소를 0을 포함한 임의의 개수를 뽑아 union한 집합의 collection이라고 하자.
+$\mathcal{T_X}$를 다음과 같이 정의하자.
+
+$$ \mathcal{T_X} := \Set{ \bigcup \mathcal{B'} | \mathcal{B'} \subseteq \mathcal{B}} $$
 
 보조명제5.1에 의해 $\mathcal{T_X}$는 $X$의 topology이다.
 
-이 떄, $\mathcal{T}_X$의 정의에 의해 $\mathcal{B}$의 원소는 $\mathcal{T}_X$의 원소이며, $\mathcal{T}_X$의 원소는 $\mathcal{B}$의 어떤 원소들의 union이다.
+이 떄, $\mathcal{T_X}$의 정의에 의해 $\mathcal{B}$의 원소는 $\mathcal{T_X}$의 원소이며, $\mathcal{T_X}$의 원소는 $\mathcal{B}$의 어떤 원소들의 union이다.
 
-따라서, basis의 정의에 의해 $\mathcal{B}$는 $\mathcal{T}_X$의 basis이다. $\qed$
+따라서, basis의 정의에 의해 $\mathcal{B}$는 $\mathcal{T_X}$의 basis이다. $\qed$
 
 #### 보조명제5.1
 다음을 증명하여라.
 
-$$ \mathcal{T}_X \text{ is topology of } X  $$
+$$ \mathcal{T_X} \text{ is topology of } X  $$
 
 **Proof**
 
--[$\empty \in \mathcal{T}_X$]  
-$\mathcal{B}$에서 0개의 원소를 뽑아 union하면 $\empty$가 됨으로 $\empty \in \mathcal{T}_X$이다.
+[$\empty \in \mathcal{T_X}$]  
+$\empty \subseteq \mathcal{B}$임으로, $\mathcal{T_X}$의 정의에 의해 다음이 성립한다.
 
--[$X \in \mathcal{T}_X$]  
-$\mathcal{B}$의 모든 원소를 뽑아 union하면 1번 성질에 의해 $X$가 됨으로 $X \in \mathcal{T}_X$이다.
+$$ \empty \in \mathcal{T_X} \qed $$
 
--[finite intersection]  
+
+[$X \in \mathcal{T_X}$]  
+$\mathcal{B}\subseteq\mathcal{B}$임으로 전제1에 의해 다음이 성립한다.
+
+$$ X = \bigcup \mathcal{B} $$
+
+따라서, $\mathcal{T_X}$의 정의에 의해 다음이 성립한다.
+
+$$ X \in \mathcal{T_X} \qed $$
+
+[finite intersection]  
 $U_i \in \mathcal T_X, \enspace i = 1, \cdots, n$이라 하자.
 
-$\forall j \in \N$에 대해 $B_j \in \mathcal{B}$라 하고 임의의 index set을 $I$라 할 떄, $\mathcal{T_X}$의 정의에 의해 다음이 성립한다.
+basis의 정의에 의해 다음이 성립한다.
 
-$$ \exist I_i \st U_i = \bigcup_{j \in I_i} B_j $$
+$$ \forall U_i \in \mathcal{T_X}, \quad\exist \mathcal{B_i} \subseteq \mathcal{B} \quad U_i = \bigcup \mathcal{B_i} $$
 
 그러면 다음이 성립한다.
 
-$$ \forall x \in U_i, \quad \exist j \in \N \st x \in B_j \subseteq U_i $$
+$$ \forall x \in U_i, \quad \exist B \in \mathcal{B_i} \st x \in B \subseteq U_i $$
 
 이 떄, 집합 $U$를 다음과 같이 정의하자.
 
@@ -258,30 +273,70 @@ $$ U = \bigcap_{i=1}^n U_i $$
 
 그러면, 다음이 성립한다.
 
-$$ \begin{aligned} x \in U \implies& x \in U_1 \land \cdots \land x \in U_n \\\implies& \exist j_1 \in \N \st x \in B_{j_1} \subseteq U_1 \land\cdots \\&\land \exist j_n \in \N \st x \in B_{j_n} \subseteq U_n \\\implies& x \in \bigcap_{k=1}^n B_{j_k} \subseteq U \end{aligned} $$
+$$ \begin{aligned} x \in U \implies& x \in U_1 \land \cdots \land x \in U_n \\\implies& \exist B_1 \in \mathcal{B_1} \st x \in B_1 \subseteq U_1  \\ \land\cdots\land& \exist B_n \in \mathcal{B_n} \st x \in B_n \subseteq U_n \\\implies& x \in \bigcap_{k=1}^n B_k \subseteq U \end{aligned} $$
 
-이 떄, $\mathcal{B}$의 2번 성질에 의해 다음이 성립한다.
+이 떄, $\mathcal{B}$의 2번전제에 의해 다음이 성립한다.
 
-$$  \exist B_x \in \mathcal{B} \quad s.t. \quad x \in B_x \subseteq \bigcap_{k=1}^n B_{j_k} \subseteq U $$
+$$  \exist B_x \in \mathcal{B} \quad s.t. \quad x \in B_x \subseteq \bigcap_{k=1}^n B_{k} \subseteq U $$
 
 따라서, 다음이 성립한다.
 
 $$ U = \bigcup_{x \in U}B_x $$
 
-이 때, $\mathcal{T}_X$의 정의에 의해 $\mathcal{B}$의 원소들의 union은 $\mathcal{T}_X$의 원소임으로 다음이 성립한다.
+이 때, $\mathcal{T_X}$의 정의에 의해 $\mathcal{B}$의 원소들의 union은 $\mathcal{T_X}$의 원소임으로 다음이 성립한다.
 
-$$ U \in \mathcal{T}_X \qed$$
+$$ U \in \mathcal{T_X} \qed$$
 
 -[infinite union]  
 집합 $U$를 다음과 같이 정의하자.
 
-$$ U = \bigcup_{{U_i \in \mathcal{T}_X}} U_i $$
+$$ U = \bigcup_{{U_i \in \mathcal{T_X}}} U_i $$
 
 $U_i$는 $\mathcal{B}$의 어떤 원소들의 union임으로 $U$는 $\mathcal{B}$의 어떤 원소들의 union으로 귀결된다.
 
-이 때, $\mathcal{T}_X$의 정의에 의해 $\mathcal{B}$의 원소들의 union을 포함함으로 다음이 성립한다.
+이 때, $\mathcal{T_X}$의 정의에 의해 $\mathcal{B}$의 원소들의 union을 포함함으로 다음이 성립한다.
 
-$$ U \in \mathcal{T}_X $$
+$$ U \in \mathcal{T_X} $$
 
 > Reference  
 > {cite}`LeeTM` p.35
+
+
+### 명제6
+Topological space $X$와 $\mathcal{T_X}$의 basis $\mathcal{B}$가 있다고 하자.
+
+$U$가 $X$의 open set일 때, $\mathcal{B_U}$를 다음과 같이 정의하자.
+
+$$ \mathcal{B_U} := \Set{B \in \mathcal{B} | B \subseteq U} $$
+
+$U$를 $X$의 subspace라 할 때, 다음을 증명하여라.
+
+$$ \mathcal{B_U} \text{ is basis of } \mathcal{T_U} $$
+
+**Proof**
+
+$U$의 임의의 open set을 $U'$이라하자.
+
+subspace의 성질에 의해 다음이 성립한다.
+
+$$ U' \text{ is an open set of } X $$
+
+따라서, basis의 성질에 의해 다음이 성립한다.
+
+$$ \exist \mathcal{B'} \subseteq \mathcal{B} \st U' = \bigcup \mathcal{B'} $$
+
+이 때, $\mathcal{B_U}$의 subset $\mathcal{B_{U'}}$을 다음과 같이 정의하자.
+
+$$ \mathcal{B_{U'}} := \Set{B \in \mathcal{B} | B \subseteq U'} $$
+
+$\mathcal{B_{U'}}$의 정의상 다음이 성립한다.
+
+$$ \begin{aligned} & \mathcal{B'} \subseteq \mathcal{B_{U'}} \\\implies& \mathcal{B'} \subseteq \mathcal{B_U}  \end{aligned} $$
+
+따라서, 위의 결과를 정리하면 다음과 같다.
+
+$$ \forall U' \in \mathcal{T_U}, \quad \exist\mathcal{B'} \subseteq \mathcal{B_{U}} \st U' = \bigcup\mathcal{B'}  $$
+
+그럼으로, basis의 정의에 의해 다음이 성립한다.
+
+$$ \mathcal{B_U} \text{ is basis of } \mathcal{T_U} \qed $$

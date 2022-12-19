@@ -91,7 +91,7 @@ $$ \text{Any open ball in } \R^n \text{ and } \R^n \text{ are homeomorphic} $$
 
 이 때의, homeomorphism을 $\varphi_2$이라 하자.
 
-homeomorphism의 성질에 의해 다음이 성립한다.
+$\varphi_{1,2}$ 모두 homeomorphism임으로, homeomorphism의 성질에 의해 다음이 성립한다.
 
 $$ \varphi_2 \circ \varphi_1 \text{ is a homeomorphism} $$
 
@@ -99,6 +99,51 @@ $$ \varphi_2 \circ \varphi_1 \text{ is a homeomorphism} $$
 
 $$ X \text{ is locally Euclidean of dimension } n \iff \forall x \in X, \quad \exist\mathcal{N_x} \in \Set{\mathcal{N_x}} \st \text{homeomorphic to } \R^n \qed $$
 
-
 > Reference  
 > [math.stackexchange](https://math.stackexchange.com/questions/1072741/is-an-open-n-ball-homeomorphic-to-mathbbrn)
+
+
+### 명제3
+$n$차원 locally Euclidean space $X$가 있다고 하자.
+
+이 때, 다음을 증명하여라.
+
+$$ \text{Every open set of X is an } n \text{ dimensional locally Euclidean space } $$
+
+**Proof**
+
+$U$가 $X$의 open set이라고 하자.
+
+$X$가 locally Euclidean space임으로 다음이 성립한다.
+
+$$ \forall x \in U, \quad \exist\mathcal{N_x} \in \Set{\mathcal{N_x}} \st \text{homeomorphic to an open subset of } \R^n $$
+
+이떄의, homeomorphism을 $\varphi$라고 하자.
+
+각 $x$에서 위를 만족하는 $\mathcal{N_x}$에 대해, subspace의 성질에 의해 다음이 성립한다.
+
+$$ \forall x \in U, \quad U \cap \mathcal{N_x} \text{ is an open set of } U $$
+
+$U_x' = U \cap \mathcal{N_x}$이라 할 때, subspace의 성질에 의해 다음이 성립한다.
+
+$$ U_x' \text{ is an open set of } X$$
+
+$\varphi$가 homeomorphism임으로 다음이 성립한다.
+
+$$ \varphi(U_x') \text{ is an open set of } \R^n $$
+
+또한, homeomorphism의 성질에 의해 다음이 성립한다.
+
+$$ \varphi|_{U_x' \times \varphi(U_x')} \text{ is an homeomorphism} $$
+
+즉, 위의 결과를 종합하면 다음과 같다.
+
+$$ \forall x \in U, \quad \exist\mathcal{N_x} \in \Set{\mathcal{N^U_x}} \st \text{homeomorphic to an open subset of } \R^n $$
+
+따라서, locally Euclidean space의 정의에 의해 다음이 성립한다.
+
+$$ U \text{ is an locally Euclidean space of dimension } n $$
+
+그럼으로, 다음이 성립한다.
+
+$$ \text{Every open set of X is an } n \text{ dimensional locally Euclidean space } \qed $$

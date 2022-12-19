@@ -73,6 +73,11 @@ $$ f(U) \in \mathcal T_2 $$
 
 즉, $X_1$ 위의 임의의 open set에 대한 $f^{-1}$의 preimage가 $X_2$위의 open set임으로 $f^{-1}$는 continous이다. $\quad\tiny\blacksquare$
 
+#### 참고
+명제1에 의해 $f$가 homeomorphism이면 다음이 성립한다.
+
+$$ U \text{ is an open set of } X \iff f(U) \text { is an open set of } Y $$
+
 ### 명제2
 Topological space $X,Y$와 homeomorphism $f: X \rightarrow Y$가 있다고 하자.
 
