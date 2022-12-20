@@ -1,11 +1,21 @@
 # 할 일
-1. (Bathe) FE Procedure chapter 4 공부
-2. (Bathe) FE Procedure chapter 4.1 공부
-3. (Bathe) FE Procedure chapter 4.2 공부
-4. **(Bathe) FE Procedure Example 4.3 공부**
-5. **(Bathe) FE Procedure chapter 4.2.1 FE equations 공부**
-6. **(Fung et al) Classical and Computational Solid Mechanics Chap 18 공부**
-7. constitutive equation.md 작성
+* Beam Theory 공부
+  * [book] (kelly) An Introduction to Solid Mechanics 
+    * Chapter 7.4
+      * Chapter 7.4.2
+      * Chapter 7.4.3
+      * Chapter 7.4.4
+      * Chapter 7.4.5
+      * Chapter 7.4.6
+      * Chapter 7.4.7
+      * 
+  * [Note] (Gavin) Beam Element Stiffness Matrices
+
+* (Bathe) FE Procedure 읽기
+  * Chapter 4
+    * Chatper 4.2
+    * Chatper 4.3
+    * Chatper 4.4
 
 # 완료
 1. chapter 4.2.1 problem statmenet 공부
@@ -28,3 +38,13 @@
 
 10. Direct Stiffness Method.md 작성
 11. FE formulation.md 작성
+
+12.20
+* (Bathe) FE Procedure 읽기
+  * Chapter 4
+    * Chatper 4.1
+
+* Beam Theory 공부
+  * [book] (kelly) An Introduction to Solid Mechanics 
+    * Chapter 7.4
+      * Chapter 7.4.1

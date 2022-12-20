@@ -23,7 +23,12 @@
 
 * [Book] (Lee) smooth manifolds
   * Chapter1
-    * Topological Manifolds
+    * Examples of Topological Manifolds
+    * Topological properties of Manifolds
+    * Connectivity
+    * Local Compactness and Paracompactness
+    * Fundamental Groups of Manifolds
+    * Smooth Structures
   * Chap3 읽기
     * Tangent Vectors p.51 읽기
       * Geometric Tangent Vectors p.51 읽기
@@ -265,3 +270,9 @@
       * coordinate neighborhood
     * manifold 정의
     * Proposition 2.53.
+
+12.20
+* [Book] (Lee) smooth manifolds
+  * Chapter1
+    * Topological Manifolds
+    * Coordinate Charts
