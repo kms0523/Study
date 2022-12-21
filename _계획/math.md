@@ -34,6 +34,16 @@
       * Geometric Tangent Vectors p.51 읽기
         * Derivatives.md 정리하기
 
+* [Book] (Lee) Topological Manifolds
+  * Chatper3
+    * Product Spaces
+      * Exercise 3.26 - product topology의 명제2
+      * Theorem 3.27
+
+* [Book] (munkers) Topology
+  * Lemma 13.3 복습
+  * Lemma 20.2
+
 # 한 일
 1. 교집합과의 차는 차의 합집임을 증명
 2. 합잡합과의 차는 차의 교집합임을 증명
@@ -276,3 +286,16 @@
   * Chapter1
     * Topological Manifolds
     * Coordinate Charts
+
+12.21
+* [Book] (Lee) Topological Manifolds
+  * Chatper3
+    * Product Spaces
+      * product topology
+      * Exercise 3.25
+      * product space
+      * product open subset
+      * open rectangle
+
+* [Book] (munkers) Topology
+  * Lemma 13.3
