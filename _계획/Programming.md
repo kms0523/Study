@@ -104,3 +104,13 @@ solver를 개발하는게 가장 많은 plus alpha가 나오는가?
   * Build
   * Class
   * Template
+
+12.22
+* mssl
+  * remove_after 추가
+  * str_to_value boolean인 경우 코드 작성
+  * 새로 작성한 코드 테스트 추가
+
+* Configuration V0.0
+  * 코드구현 완료
+  * 테스트 완료
