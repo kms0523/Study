@@ -59,6 +59,7 @@ F1 >> "미리보기 새로 고침" 검색 >> 톱니바퀴 >> 키 바인딩에 ct
 F1 >> Markdwon Preview Enhanced: Customize CSS >> 아래 내용 입력
 ```
 .markdown-preview.markdown-preview 
+.markdown-preview.markdown-preview 
 {
     font-size: 14.5px;     
 
@@ -78,9 +79,10 @@ F1 >> Markdwon Preview Enhanced: Customize CSS >> 아래 내용 입력
     }
     h2	
     {
-        margin: 60px 0px 10px 5px;
+        margin: 60px 0px 30px 5px;
         border-left: 8px solid #f79400;
-        padding: 0px 0px 0px 10px;        
+        padding: 0px 0px 0px 10px;       
+        text-align: center;
         font-size: 30px;
     }
     h3	
@@ -115,11 +117,11 @@ F1 >> Markdwon Preview Enhanced: Customize CSS >> 아래 내용 입력
         font-size: 14.5px !important;
     }
 
-    pre > code //code block ```
-    {
-        color: #e1e1e1;	        
-        font-size: 14.5px !important;
-    }
+    // pre > code //code block ```
+    // {
+    //     color: #e1e1e1;	        
+    //     font-size: 14.5px !important;
+    // }
     
     // blockquote // 인용문 >
     // {

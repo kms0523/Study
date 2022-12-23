@@ -98,12 +98,126 @@ s_val은 정적 변수이기 때문에 내부링크 방식을 사용하고 A.cpp
 > Reference  
 > {cite}`FundamentalC++`
 
-## static 멤버 변수
+## Static Data Members
 class 내부에서 static keyword를 사용하는 경우, 저장 방식 지정자를 나타낼때와는 별개로 class 객체와는 무관한 멤버 함수나 변수가 됨을 의미한다.
 
-static 멤버 변수들은 어떤 객체와도 연관되어 있지 않으며 클래스의 객체가 정의 되기 전에 존재한다. static 멤버 변수는 thread_local이 아닌 이상 static 저장 기간을 가지고 있으며 프로그램 전체를 통틀어 단 하나만 존재한다. thread local인 경우 thread local 저장 기간을 갖으며 각 쓰레드마다 하나씩 존재한다.
+static data member들은 어떤 객체와도 연관되어 있지 않으며 클래스의 객체가 정의 되기 전에 존재한다. 
 
-static 멤버 변수는 const 멤버 함수에 의해 보호받을 수 없으며 mutable 또한 될 수 없다.
+static data member는 static storage duration을 가지고 있으며 프로그램 전체를 통틀어 단 하나만 존재한다. 
+
+단, static data member가 thread local인 경우 thread local storage duration을 갖으며 각 쓰레드마다 하나씩 존재한다.
+
+namespace scope을 갖는 클래스의 static data member는 클래스가 외부 링크 방식을 갖을 경우 외부 링크 방식을 갖는다. 
+
+local 클래스(함수 내부에 정의된 클래스) 그리고 unnamed 클래스, unnamed 클래스에 속한 멤버 클래스등은 static data member를 갖지 못한다. 
+
+> Reference  
+[cppreference](https://en.cppreference.com/w/cpp/language/static)
+
+### static data member
+
+```cpp
+class X
+{
+public:
+	static int val1;
+	//static int val2 = 1;	// compile error!
+};
+
+//.cpp
+int X::val = 1;	
+```
+
+`static int val1;`은 static member변수를 선언만 하고 정의를 하지 않은것이다.
+
+따라서, 추가적으로 정의해주지 않으면 변수의 정의를 찾지 못해 link error가 발생한다.
+
+이를 해결하기 위해 일반적으로, 아래와같이 .cpp 파일에서 변수를 정의해주며 이 때는 static keyword를 사용하지 않는다.
+```cpp
+//.cpp
+int X::val = 1;	
+```
+
+만약, 아래와같이 .h 파일에서 정의할 경우, 여러 .cpp 파일에서 이 .h를 inclue할 경우 OCR위반이 발생한다.
+```cpp
+//.h
+int X::val = 1;	
+```
+
+참고로, 아래와 같이 static member 변수를 in-class initialization 시도하면 compile error가 발생한다.
+```cpp
+//static int val2 = 1;				// compile error!
+```
+
+> Reference  
+[cppreference](https://en.cppreference.com/w/cpp/language/static)
+
+### Const static data member
+static data member는 const로 선언될 수 있다.
+
+만약 const static data member가 integral type이거나 enumeration type인 경우 class 내부에서 정의 및 초기화 될 수 있다.
+
+```cpp
+//.h
+class X
+{
+public:
+    const static int n = 1;
+    const static int m{2}; // since C++11
+    const static int k;
+};
+//.cpp
+const int X::k = 3;
+```
+
+`X::k`를 보면 알 수 있듯이, const static data member는 class 내부에서 반드시 정의 및 초기화가 이뤄저야 되는것은 아니다.
+
+> Reference  
+[cppreference](https://en.cppreference.com/w/cpp/language/static)
+
+### Constexpr static data member(since C++11)
+LiterType의 static data member는 constexpr로 선언될 수 있다.
+
+Constexpr static data member는 class 내부에서 정의 및 초기화 되어야 한다.
+
+```cpp
+class X
+{
+    constexpr static int arr[] = { 1, 2, 3 };        	// OK
+    constexpr static std::complex<double> n = {1,2}; 	// OK
+	//constexpr static int k; 							// compile Error
+};
+```
+
+`X::k`를 보면 알 수 있듯이, constexpr static data member는 반드시 class 내부에서 정의 및 초기화가 이뤄저야 한다.
+
+
+> Reference  
+[cppreference](https://en.cppreference.com/w/cpp/language/static)  
+> [stackoverflow - redeclaration](https://stackoverflow.com/questions/45019980/redefinitions-of-constexpr-static-data-members-are-allowed-now-but-not-inline)
+
+### Inline static data member(since C++17)
+static data member는 lnline으로 선언될 수 있다.
+
+Inline static data member의 경우, 다음과 같이 class 내부에서 정의 및 초기화 될 수 있다.
+
+```cpp
+class X
+{
+public:
+    inline static int n = 1;
+};
+```
+
+이 경우에는 class 외부에 따로 정의를 할 필요가 없다.
+
+> Reference  
+[cppreference](https://en.cppreference.com/w/cpp/language/static)
+
+### In const member function
+static data member는 const 함수의 보호를 받지 못한다.
+
+아래 예시 코드를 보자.
 
 ```cpp
 
@@ -114,53 +228,26 @@ class A
 public:
 	void func(void) const
 	{
-		this->static_val = 5; //const 함수 내에서 static 멤버 변수는 변경이 가능하다.
+		this->static_val = 5; 
 		std::cout << this->static_val << "\n";
 	}
 
 private:
 	static inline int static_val = 3;
 };
-
-int main() {
-	A a;
-	a.func();
-}
-
 ```
 
-namespace scope을 갖는 클래스의 static 멤버 변수는 클래스가 외부 링크 방식을 갖을 경우 외부 링크 방식을 갖는다. local 클래스(함수 내부에 정의된 클래스) 그리고 unnamed 클래스, unnamed 클래스에 속한 멤버 클래스등은 static 멤버 변수를 갖지 못한다`(?)`. 
+static_val은 member variable로 취급되지 않기 때문에 const member function에서도 수정이 가능하다.
 
-static 멤버 변수는 inline으로 선언될 수 있는데 inline static 멤버변수는 class 정의에서 정의될 수 있으며 initializer를 명시할 수 있다. 이 경우에는 class 밖 정의가 필요 없다.
-
-```cpp
-struct X
-{
-	static size_t val1;						// 선언만 한것
-											// cpp에서 정의해주지 않으면 link error!
-											// 만약 header에서 정의하고 여러 TU에서 include하면 ODR 위반!
-	
-	static size_t val2 = 1;					// compile error!
-											// static 변수는 in-class initialization 불가능
-	
-	static const size_t val3 = 1;			// const static 변수는 in-class initializtion 가능
-	
-	inline size_t val4;						// 정의한것	
-											// 초기화되지 않은 전역 변수로 BSS 영역에 저장
-											// 0으로 초기화됨
-											
-	inline static size_t vals5 = 1;			// inline static 변수는 in-class initialization 가능
-
-	inline const static size_t vals6 = 1;	// const inline static 변수는 in-class initialization 가능    
-};
-
-//.cpp
-size_t X::val = 1;	
-
-```
+따라서, 이와 같은 맥락때문에 static data member는 mutable 또한 될 수 없다.
 
 > Reference  
 [cppreference](https://en.cppreference.com/w/cpp/language/static)
+
+
+---
+
+
 
 ## static 멤버 함수
 

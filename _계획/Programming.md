@@ -2,7 +2,6 @@
 
 * 문서 옮기기
   * 실행파일
-  * 유일 정의 규칙
 
 solver를 개발하는게 가장 많은 plus alpha가 나오는가?
 
@@ -105,7 +104,7 @@ solver를 개발하는게 가장 많은 plus alpha가 나오는가?
   * Class
   * Template
 
-12.22
+12.21
 * mssl
   * remove_after 추가
   * str_to_value boolean인 경우 코드 작성
@@ -114,3 +113,6 @@ solver를 개발하는게 가장 많은 plus alpha가 나오는가?
 * Configuration V0.0
   * 코드구현 완료
   * 테스트 완료
+
+12.22
+* Static 정리

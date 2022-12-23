@@ -26,17 +26,13 @@ $$\mathcal{B} \text{ is a basis for some topology on } \prod_{i=1}^n X_i $$
 **Proof**
 
 [$\bigcup\mathcal{B} = \prod_{i=1}^n X_i$]  
-$\forall U_i \in X_i$임으로 다음이 성립한다.
+Topology의 성질에 의해 다음이 성립한다.
 
-$$ \forall B \in \mathcal{B}, \quad B \subseteq \prod_{i=1}^n X_i $$
+$$ \bigcup\mathcal{T_{X_i}} = X_i $$
 
-그리고 $X_i$는 $X_i$의 open set임으로, 다음이 성립한다.
+따라서, $\mathcal{B}$의 정의에 의해 다음이 성립한다.
 
-$$ \prod_{i=1}^n X_i \in \mathcal{B} $$
-
-따라서, 다음이 성립한다.
-
-$$ \bigcup\mathcal{B} = \prod_{i=1}^n X_i \qed $$ 
+$$ \begin{aligned} \bigcup\mathcal{B} &= \bigcup\Set{\prod_{i=1}^n U_i | U_i \text{ is an open set of } X_i, i=1,\cdots,n} \\&= \prod_{i=1}^n \left(\bigcup \Set{U_i | U_i \text{ is an open set of } X_i}\right) \\&= \prod_{i=1}^n \left(\bigcup\mathcal{T_{X_i}}\right) \\&= \prod_{i=1}^n X_i \qed \end{aligned} $$
 
 [$B_1, B_2 \in \mathcal{B} \implies \forall x \in B_1 \cap B_2, \quad \exist B \in \mathcal{B} \quad s.t. \quad x \in B \subseteq B_1 \cap B_2 $]  
 $B_1,B_2 \in \mathcal{B}$를 다음과 같이 정의하자.
@@ -47,11 +43,11 @@ $$ B_i := \prod_{j=1}^n U_j^i, i=1,2 $$
 
 $$ \forall x\in B_1 \cap B_2, \quad x \in \prod_{i=1}^n (U^1_i \cap U^2_i) $$
 
-$U^1_i, U^2_i, i=1\cdots,n$가 open set임으로 open set의 성질에 의해 다음이 성립한다.
+$U^1_i, U^2_i, i=1\cdots,n$이 $X_i$의 open set임으로 open set의 성질에 의해 다음이 성립한다.
 
 $$ U_i^1 \cap U_i^j \text{ is open set of } X_i, i=1,\cdots,n $$
 
-따라서, product topology의 정의에 의해 다음이 성립한다.
+따라서, $\mathcal{B}$의 정의에 의해 다음이 성립한다.
 
 $$ \exist B \in \mathcal{B} \st B = \prod_{i=1}^n (U^1_i \cap U^2_i) $$
 

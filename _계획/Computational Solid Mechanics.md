@@ -1,4 +1,7 @@
 # 할 일
+* Bar Theory 공부
+  * 김용협교수님 강의자료
+
 * Beam Theory 공부
   * [book] (kelly) An Introduction to Solid Mechanics 
     * Chapter 7.4
@@ -48,3 +51,6 @@
   * [book] (kelly) An Introduction to Solid Mechanics 
     * Chapter 7.4
       * Chapter 7.4.1
+
+12.23
+* FE formulation 복습 및 이동

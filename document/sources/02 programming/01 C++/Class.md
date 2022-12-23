@@ -436,3 +436,13 @@ namespace ms {
 }
 
 ```
+
+## Member variable
+```cpp
+struct X
+{
+	inline int val4;	// 정의한것	
+						// 초기화되지 않은 전역 변수로 BSS 영역에 저장
+						// 0으로 초기화됨								
+};
+```

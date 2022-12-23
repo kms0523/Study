@@ -1,6 +1,6 @@
 # Weighted Residual Methods
 ## Strong formulation
-`경계값 문제(boudnary value problem)`가 다음과 같이 주어졌다고 하자.  
+`경계값 문제(boudnary value problem; BVP)`가 다음과 같이 주어졌다고 하자.  
 
 $$ \begin{equation} \text{find } u \in \mathcal U \quad s.t. \quad \mathcal P(u) + f(\mathbf x) = 0 \quad \text{in } \Omega \subset \R^d \end{equation} $$
 
@@ -15,22 +15,22 @@ $$ \text{Where, } \mathcal U := \{ u \in C^m(\Omega) \enspace | \enspace u \text
 > Reference    
 > [Function space - Wiki](https://en.wikipedia.org/wiki/Function_space#Functional_analysis)
 
-## Weighted residual formulation
-식(1)의 weighted residual formulation은 다음과 같이 주어진다.  
+## Weighted Residual Formulation
+식(1)의 weighted residual formulation은 다음과 같다.  
 
-$$ \begin{equation} \text{find } u \in \mathcal U \quad s.t. \quad \forall w \in  \mathcal W, \quad \int_\Omega w r \thinspace dV = 0 \end{equation} $$
+$$ \begin{equation} \text{find } u \in \mathcal U \quad s.t. \quad \forall w \in  C^\infty_c(\Omega), \quad \int_\Omega w r \thinspace dV = 0 \end{equation} $$
 
-$$ \text{Where, } C^\infty_c(\Omega) \subseteq \mathcal W, \quad  r(\mathbf x) = \mathcal P(u) + f(\mathbf x) $$
+$$ \text{Where, } r(\mathbf x) = \mathcal P(u) + f(\mathbf x) $$
 
-이 떄, $\mathcal W$는 `테스트 함수공간(test function space)`, $w$는 `테스트 함수(test function)`, $r$은 `residual`이라한다.
+이 떄, $C^\infty_c(\Omega)$는 `테스트 함수공간(test function space)`, $w$는 `테스트 함수(test function)`, $r$은 `residual`이라한다.
 
 이를 weighted residual formulation이라고 부르는 이유는 식(2)가 residual의 가중평균이 0이 되는 것과 같은 형태를 가지고 있기 때문이다. 
 
-그렇다고 식(2)의 해가 $r = 0$을 만족하는게 아니라 가중평균만 $0$으로 보낸다고 오해하면 안된다. 식(2)는 식(1)과 동치이며 이는 `변분법(variation calculus)`의 기본 보조정리에 의해 증명된다.
+그렇다고 식(2)의 해가 $r = 0$을 만족하는게 아니라 가중평균만 $0$으로 보낸다고 오해하면 안된다. Fundamental lemma of variation calculus에 의해 식(2)는 식(1)과 동치이다.
 
 일반적으로 weighted residual formulation은 functional $B_r,l_r$을 이용해 다음과 같이 간단하게 나타낼 수 있다.
 
-$$ \begin{equation} \text{find } u \in \mathcal U \quad s.t. \quad \forall w \in \mathcal W, \quad B_r(w,u) = l_r(w) \end{equation} $$
+$$ \begin{equation} \text{find } u \in \mathcal U \quad s.t. \quad \forall w \in C^\infty_c(\Omega), \quad B_r(w,u) = l_r(w) \end{equation} $$
 
 $$ \text{Where, } B_r(w,u) :=  \int_\Omega w\mathcal P(u) \thinspace dV, \quad l_r(w) := -\int_\Omega wf \thinspace dV $$
 
@@ -41,12 +41,16 @@ $$ \text{Where, } B_r(w,u) :=  \int_\Omega w\mathcal P(u) \thinspace dV, \quad l
 > Reference  
 > [Note - M. J. Zahr](https://mjzahr.github.io/content/ame40541/spr20/ch03-wres-solo.pdf)
 
-### Dimensional Reduction
-무한차원 함수공간인 $\mathcal W$에 있는 모든 함수에 대해 식(3)를 만족하는 $u$를 무한차원 함수공간인 $\mathcal U$에서 찾는 일은 너무 어렵다.
+## Dimensional Reduction
+무한차원 함수공간인 $C^\infty_c(\Omega)$에 있는 모든 함수에 대해 식(3)를 만족하는 $u$를 무한차원 함수공간인 $\mathcal U$에서 찾는 일은 너무 어렵다.
 
 따라서 test function space와 solution function space를 각 각 유한차원 함수 공간으로 축소하여 문제를 단순화해보자.
 
-먼저 test function space를 $\mathcal{W}_h := \text{span}(\{ w_1, \cdots, w_n \})$로 축소하면 식(3)은 다음과 같이 간단해 진다.
+먼저, test function의 compact support 조건을 유한차원 함수공간에도 강제하지 않기 위해 test function space의 regularity를 완화함으로써 test function space를 $C^\infty(\Omega)$로 넓힌다.
+
+이 떄, $ C^\infty_c(\Omega) \subseteq C^\infty(\Omega)$이기 때문에 test function space를 넓히더라도 여전히 strong formulation과 동치이다.
+
+다음으로 test function space를 $\mathcal{W}_h := \text{span}(\{ w_1, \cdots, w_n \})$로 축소하면 식(3)은 다음과 같이 간단해 진다.
 
 $$ \begin{equation} \begin{aligned} & \text{find } u \in \mathcal U \quad s.t. \quad \forall w \in \mathcal W_h, \quad B_r(w,u) = l_r(w) \\ \Leftrightarrow \enspace & \text{find } u \in \mathcal U \quad s.t. \quad \forall c_i \in \R, \quad c_i B_r(w_i,u) = c_il_r(w_i) \\ \Leftrightarrow \enspace & \text{find } u \in \mathcal U \quad s.t. \quad B_r(w_i,u) = l_r(w_i), \enspace i = 1, \cdots, n \end{aligned} \end{equation} $$
 
@@ -77,7 +81,7 @@ $$ \begin{bmatrix} B(w_1,u_1) & \cdots & B(w_1,u_n) \\ \vdots & \ddots & \vdots 
 > Reference  
 > [Note - M. J. Zahr](https://mjzahr.github.io/content/ame40541/spr20/ch03-wres-solo.pdf)
 
-#### 명제1
+### 명제1
 $\mathcal{U}$가 다음과 같은 affine space임을 증명하여라.
 
 $$ \mathcal{U} = \phi + \mathcal{U}_L $$
@@ -102,7 +106,7 @@ $$ \mathcal{U} = \phi + \mathcal{U}_L \quad\tiny\blacksquare $$
 > Reference  
 > [Note - M. J. Zahr](https://mjzahr.github.io/content/ame40541/spr20/ch03-wres-solo.pdf)
 
-#### 명제2
+### 명제2
 $\mathcal U$를 축소한 $\mathcal U_h$가 다음과 같음을 증명하여라. 
 
 $$ \mathcal U_h := \phi + \mathcal U_{L_h} $$
@@ -123,13 +127,13 @@ $$ \mathcal U_h := \phi + \mathcal U_{L_h} \quad\tiny\blacksquare $$
 > Reference  
 > [Note - M. J. Zahr](https://mjzahr.github.io/content/ame40541/spr20/ch03-wres-solo.pdf)
 
-### Petrov-Galerkin method
+## Petrov-Galerkin method
 
 축소된 선형공간 $\mathcal W_h, \mathcal U_h$의 기저함수 $\{ w_1, \cdots, w_n \}, \{ u_1, \cdots, u_n \}$를 독립적으로 정의하는 방법을 `Petrov-Galerkin method`라고 한다.
 
 결론적으로 Petrov-Galerkin method는 독립적으로 정의된 $\mathcal W_h$공간에서 weighted residual method를 만족하는 $u$를 $\mathcal U_h$ 공간에서 찾는 방법이다.
 
-### Bubnov-Galerkin method
+## Bubnov-Galerkin method
 
 축소된 선형공간 $\mathcal W_h, \mathcal U_h$의 기저함수 $\{ w_1, \cdots, w_n \}, \{ u_1, \cdots, u_n \}$를 동일하게 정의하는 방법을 `Bubnov-Galerkin method`라고 한다.  
 
@@ -143,7 +147,7 @@ $$ \text{Where, } r = \mathcal P(a_ju_j) + f(\mathbf x) $$
 
 즉, $r$이 모든 $u_i$와 내적이 0이 되게 하는 $\mathbf a$를 찾는 것임으로, 이렇게 찾은 solution $u$는 $r$을 solution function space에 orthogonal하게 만드는 solution이다.
 
-### Least square method
+## Least square method
 
 축소된 선형공간 $\mathcal W_h, \mathcal U_h$의 기저함수 $\{ w_1, \cdots, w_n \}, \{ u_1, \cdots, u_k \}$를 독립적으로 정의하되 $\mathcal W_h$의 기저함수로 다음과 같이 정의된 값을 쓰는 방법을 `least square method`라고 한다.  
 
@@ -157,7 +161,7 @@ $$ \text{Where, } r = \mathcal P(a_ju_j) + f(\mathbf x) $$
 
 즉, residual 제곱의 합이 최소가 되게 하는 $\mathbf a$을 찾는 것임으로 least square method라고 한다.
 
-### Point collocation method
+## Point collocation method
 
 축소된 선형공간 $\mathcal W_h, \mathcal U_h$의 기저함수 $\{ w_1, \cdots, w_n \}, \{ u_1, \cdots, u_k \}$를 독립적으로 정의하되 $\mathcal W_h$의 기저함수로 Dirac-delta 함수를 사용하는 방법을 `point collocation method`라고 한다.  
 
@@ -171,7 +175,7 @@ $$ \text{Where, } r = \mathcal P(a_ju_j) + f(\mathbf x) $$
 
 Dirac-delta 함수의 성질에 의해 $\mathcal W_h$공간에서 weighted residual formulation을 만족하는 solution은 collocation node로 불리는 $\mathbf x_i$점에서 residual을 0으로 만드는 즉, strong formulation을 만족시키는 solution이다.
 
-### Subdomain collocation method
+## Subdomain collocation method
 
 축소된 선형공간 $\mathcal W_h, \mathcal U_h$의 기저함수 $\{ w_1, \cdots, w_n \}, \{ u_1, \cdots, u_k \}$를 독립적으로 정의하되 $\mathcal W_h$의 기저함수로 계단 함수를 사용하는 방법을 `subdomain collocation method`라고 한다.  
 
