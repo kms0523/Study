@@ -23,7 +23,7 @@
 
 * [Book] (Lee) smooth manifolds
   * Chapter1
-    * Examples of Topological Manifolds
+    * **Examples of Topological Manifolds**
     * Topological properties of Manifolds
     * Connectivity
     * Local Compactness and Paracompactness
@@ -34,15 +34,6 @@
       * Geometric Tangent Vectors p.51 읽기
         * Derivatives.md 정리하기
 
-* [Book] (Lee) Topological Manifolds
-  * Chatper3
-    * Product Spaces
-      * Exercise 3.26 - product topology의 명제2
-      * Theorem 3.27
-
-* [Book] (munkers) Topology
-  * Lemma 13.3 복습
-  * Lemma 20.2
 
 # 한 일
 1. 교집합과의 차는 차의 합집임을 증명
@@ -299,3 +290,14 @@
 
 * [Book] (munkers) Topology
   * Lemma 13.3
+
+12.26
+* [Book] (munkers) Topology
+  * Lemma 13.3 복습
+  * Lemma 20.2
+
+* [Book] (Lee) Topological Manifolds
+  * Chatper3
+    * Product Spaces
+      * Exercise 3.26 - product topology의 명제2
+      * Theorem 3.27
