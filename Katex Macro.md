@@ -13,3 +13,4 @@ $\gdef\preimg{\text{preimg}}$
 $\gdef\norm#1{\lVert #1 \rVert}$
 $\gdef\sym{\text{sym}}$
 $\gdef\tr{\text{tr}}$
+$\gdef\pdiff#1#2{\frac{\partial #1}{\partial #2}}$
