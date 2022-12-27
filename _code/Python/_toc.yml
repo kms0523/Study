@@ -13,11 +13,4 @@ parts:
         sections: 
     - file: Jupyterbook/test/01 folder1/03
     - file: Jupyterbook/test/01 folder1/04
-  - caption: 'folder3'
-    chapters: 
-    - file: Jupyterbook/test/02 folder3/folder3
-  - caption: 'folder2'
-    chapters: 
-    - file: Jupyterbook/test/03 folder2/f22
-    - file: Jupyterbook/test/03 folder2/f23
-    - file: Jupyterbook/test/03 folder2/folder2
+    - file: Jupyterbook/test/01 folder1/05 folder123/folder123

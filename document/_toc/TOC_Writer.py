@@ -68,7 +68,13 @@ class TOC_Writer:
 		main_file_path = current_path + main_file_name
 		self.__write_file(file, indent, main_file_path)
 		
-		name_extension_tuples.remove((main_file_name, '.md'))
+		main_file_tuple = (main_file_name, '.md')
+		if main_file_tuple in name_extension_tuples:
+			name_extension_tuples.remove((main_file_name, '.md'))
+		else:
+			print("Section main document missing Error")
+			print("Location : " + current_path)
+			exit()
 
 		# Processing other documents
 		indent = indent + '  '
