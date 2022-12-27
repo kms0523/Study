@@ -1,6 +1,7 @@
 # 할 일
 * Bar Theory 공부
   * 김용협교수님 강의자료
+  * FE formulation 정리
 
 * Beam Theory 공부
   * [book] (kelly) An Introduction to Solid Mechanics 

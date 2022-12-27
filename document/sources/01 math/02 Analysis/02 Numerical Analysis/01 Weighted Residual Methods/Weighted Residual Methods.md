@@ -2,7 +2,7 @@
 ## Strong formulation
 `경계값 문제(boudnary value problem; BVP)`가 다음과 같이 주어졌다고 하자.  
 
-$$ \begin{equation} \text{find } u \in \mathcal U \quad s.t. \quad \mathcal P(u) + f(\mathbf x) = 0 \quad \text{in } \Omega \subset \R^d \end{equation} $$
+$$ \begin{equation} \text{find } u \in \mathcal U \st \mathcal P(u) + f(\mathbf x) = 0 \quad \text{in } \Omega \subset \R^d \end{equation} $$
 
 $$ \text{Where, } \mathcal U := \{ u \in C^m(\Omega) \enspace | \enspace u \text{ satisfies boundary condition on } \partial\Omega \} $$
 
@@ -18,7 +18,7 @@ $$ \text{Where, } \mathcal U := \{ u \in C^m(\Omega) \enspace | \enspace u \text
 ## Weighted Residual Formulation
 식(1)의 weighted residual formulation은 다음과 같다.  
 
-$$ \begin{equation} \text{find } u \in \mathcal U \quad s.t. \quad \forall w \in  C^\infty_c(\Omega), \quad \int_\Omega w r \thinspace dV = 0 \end{equation} $$
+$$ \begin{equation} \text{find } u \in \mathcal U \st \forall w \in  C^\infty_c(\Omega), \quad \int_\Omega w r \thinspace dV = 0 \end{equation} $$
 
 $$ \text{Where, } r(\mathbf x) = \mathcal P(u) + f(\mathbf x) $$
 
@@ -30,7 +30,7 @@ $$ \text{Where, } r(\mathbf x) = \mathcal P(u) + f(\mathbf x) $$
 
 일반적으로 weighted residual formulation은 functional $B_r,l_r$을 이용해 다음과 같이 간단하게 나타낼 수 있다.
 
-$$ \begin{equation} \text{find } u \in \mathcal U \quad s.t. \quad \forall w \in C^\infty_c(\Omega), \quad B_r(w,u) = l_r(w) \end{equation} $$
+$$ \begin{equation} \text{find } u \in \mathcal U \st \forall w \in C^\infty_c(\Omega), \quad B_r(w,u) = l_r(w) \end{equation} $$
 
 $$ \text{Where, } B_r(w,u) :=  \int_\Omega w\mathcal P(u) \thinspace dV, \quad l_r(w) := -\int_\Omega wf \thinspace dV $$
 
@@ -46,21 +46,27 @@ $$ \text{Where, } B_r(w,u) :=  \int_\Omega w\mathcal P(u) \thinspace dV, \quad l
 
 따라서 test function space와 solution function space를 각 각 유한차원 함수 공간으로 축소하여 문제를 단순화해보자.
 
-먼저, test function의 compact support 조건을 유한차원 함수공간에도 강제하지 않기 위해 test function space의 regularity를 완화함으로써 test function space를 $C^\infty(\Omega)$로 넓힌다.
+유한차원 함수 공간 $\mathcal{W_c}$를 다음과 같이 정의하자.
 
-이 떄, $ C^\infty_c(\Omega) \subseteq C^\infty(\Omega)$이기 때문에 test function space를 넓히더라도 여전히 strong formulation과 동치이다.
+$$ \mathcal{W_c} := \Set{w \in \span(\Set{w_1,\cdots,w_n})| w =0 \text{ on } \partial\Omega } $$
 
-다음으로 test function space를 $\mathcal{W}_h := \text{span}(\{ w_1, \cdots, w_n \})$로 축소하면 식(3)은 다음과 같이 간단해 진다.
+그리고 $\R^n_c \subseteq \R^n$을 다음과 같이 정의하자.
 
-$$ \begin{equation} \begin{aligned} & \text{find } u \in \mathcal U \quad s.t. \quad \forall w \in \mathcal W_h, \quad B_r(w,u) = l_r(w) \\ \Leftrightarrow \enspace & \text{find } u \in \mathcal U \quad s.t. \quad \forall c_i \in \R, \quad c_i B_r(w_i,u) = c_il_r(w_i) \\ \Leftrightarrow \enspace & \text{find } u \in \mathcal U \quad s.t. \quad B_r(w_i,u) = l_r(w_i), \enspace i = 1, \cdots, n \end{aligned} \end{equation} $$
+$$ \R^n_c := \Set{x \in \R^n | x^iw_i = 0 \text{ on } \partial\Omega} $$
+
+Test function space를 $\mathcal{W}_c$로 축소하면 weighted residual formulation은 다음과 같이 간단해 진다.
+
+$$ \begin{aligned} & \text{find } u \in \mathcal U \st \forall w \in \mathcal W_c, \quad B_r(w,u) = l_r(w) \\ \iff \enspace & \text{find } u \in \mathcal U \st \forall x \in \R^n_c, \quad x^i B_r(w_i,u) = x^il_r(w_i), \enspace i = 1, \cdots, n \\ \iff \enspace & \text{find } u \in \mathcal U \st B_r(w_i,u) = l_r(w_i), \enspace i = 1, \cdots, n \end{aligned} $$
+
+$\forall x \in \R^n_c$에서 성립해야 됨으로, 결론적으로 다음이 성립하면 된다.
 
 Test function space을 $\mathcal W_h$로 축소함으로써 $n$개의 `기저함수(basis function)`에 대해서만 확인하면 되는 문제로 단순화 하였지만 아직 무한차원 함수공간인 $\cal U$를 탐색해야 되는 어려움이 남아있다. 
 
 이 어려움을 해결하기 위해 이번에는 solution function space를 유한차원 함수공간인 $\cal U_h < U$로 축소하자.
 
-이 떄, 명제2에 따라 $\mathcal U_h := \phi + \text{span}(\{ u_1, \cdots, u_k \})$로 축소하면 식(4)는 다음과 같이 간단해진다.
+이 떄, 명제2에 따라 $\mathcal U_h := \phi + \span(\{ u_1, \cdots, u_k \})$로 축소하면 식(4)는 다음과 같이 간단해진다.
 
-$$ \begin{equation} \begin{aligned} & \text{find } u \in \mathcal U_h \quad s.t. \quad B_r(w_i,u) = l_r(w_i), \enspace (i = 1,\cdots,n) \\ \Leftrightarrow \enspace & \text{find } \mathbf a \in \R^k \quad s.t. \quad B_r(w_i,\phi + a_j u_j) = l_r(w_i), \quad (i = 1,\cdots,n, \enspace j = 1,\cdots,k) \end{aligned} \end{equation} $$
+$$ \begin{equation} \begin{aligned} & \text{find } u \in \mathcal U_h \st B_r(w_i,u) = l_r(w_i), \enspace (i = 1,\cdots,n) \\ \iff \enspace & \text{find } \mathbf a \in \R^k \st B_r(w_i,\phi + a_j u_j) = l_r(w_i), \quad (i = 1,\cdots,n, \enspace j = 1,\cdots,k) \end{aligned} \end{equation} $$
 
 이 때, 주의할 점은 탐색하는 공간을 축소하였기 때문에 식(5)는 더 이상 식(1)과 동치가 아니다.
 
@@ -68,7 +74,7 @@ $$ \begin{equation} \begin{aligned} & \text{find } u \in \mathcal U_h \quad s.t.
 
 만약, $\mathcal P$가 linear operator면 $B_r$은 bilinear map이 되며 식(5)는 다음과 같이 단순해 진다.
 
-$$ \text{find } \mathbf a \in \R^n \quad s.t. \quad B_r(w_i, u_j) a_j = l_r(w_i) - B_r(w_i,\phi), \enspace i = 1, \cdots, n  $$
+$$ \text{find } \mathbf a \in \R^n \st B_r(w_i, u_j) a_j = l_r(w_i) - B_r(w_i,\phi), \enspace i = 1, \cdots, n  $$
 
 이를 행렬 형태로 나타내면 다음과 같다.
 
@@ -111,7 +117,7 @@ $\mathcal U$를 축소한 $\mathcal U_h$가 다음과 같음을 증명하여라.
 
 $$ \mathcal U_h := \phi + \mathcal U_{L_h} $$
 
-$$ \text{Where, } \mathcal U_{L_h} = \text{span}(\{ u_1, \cdots, u_k \}) \le \mathcal U_L $$
+$$ \text{Where, } \mathcal U_{L_h} = \span(\{ u_1, \cdots, u_k \}) \le \mathcal U_L $$
 
 **Proof**
 
@@ -141,7 +147,7 @@ $$ w_i = u_i $$
 
 식(5)에 Bubnov-Galerkin method를 적용하고 functional을 풀어서 다시 정리하면 다음과 같다.
 
-$$ \text{find } \mathbf a \in \mathcal \R^n \quad s.t. \quad \int_\Omega u_ir \thinspace dV = 0  $$
+$$ \text{find } \mathbf a \in \mathcal \R^n \st \int_\Omega u_ir \thinspace dV = 0  $$
 
 $$ \text{Where, } r = \mathcal P(a_ju_j) + f(\mathbf x) $$
 
@@ -155,7 +161,7 @@ $$ w_i = \frac{\partial r}{\partial a_i}, \quad (i = 1, \cdots, n)$$
 
 식(5)에 least square method를 적용하고 functional을 풀어서 다시 정리하면 다음과 같다.
 
-$$ \begin{aligned} & \text{find } \mathbf a \in \R^k \quad s.t. \quad \int_{\Omega_i} \frac{\partial r}{\partial a_i} r \thinspace dV = 0 \quad \forall i \in (1, \cdots, n) \\ \Leftrightarrow \enspace & \text{find } \mathbf a \in \R^k \quad s.t. \quad \frac{\partial}{\partial a_i} \int_{\Omega_i} r^2 \thinspace dV = 0 \quad \forall i \in (1, \cdots, n)\end{aligned} $$  
+$$ \begin{aligned} & \text{find } \mathbf a \in \R^k \st \int_{\Omega_i} \frac{\partial r}{\partial a_i} r \thinspace dV = 0 \quad \forall i \in (1, \cdots, n) \\ \iff \enspace & \text{find } \mathbf a \in \R^k \st \frac{\partial}{\partial a_i} \int_{\Omega_i} r^2 \thinspace dV = 0 \quad \forall i \in (1, \cdots, n)\end{aligned} $$  
 
 $$ \text{Where, } r = \mathcal P(a_ju_j) + f(\mathbf x) $$
 
@@ -169,7 +175,7 @@ $$ w_i = \delta(\mathbf x - \mathbf x_i) $$
 
 식(5)에 point collocation method를 적용하고 functional을 풀어서 다시 정리하면 다음과 같다.
 
-$$ \text{find } \mathbf a \in \R^k \quad s.t. \quad \mathcal r(\mathbf x_i) = 0, \quad i = 1, \cdots, n $$
+$$ \text{find } \mathbf a \in \R^k \st \mathcal r(\mathbf x_i) = 0, \quad i = 1, \cdots, n $$
 
 $$ \text{Where, } r = \mathcal P(a_ju_j) + f(\mathbf x) $$
 

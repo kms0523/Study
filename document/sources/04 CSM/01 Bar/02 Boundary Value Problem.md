@@ -1,4 +1,4 @@
-# BVP
+# Boundary Value Problem
 Bar의 displacement based governing equation은 다음과 같다.
 
 $$ \frac{\partial}{\partial x}\left(EA\frac{\partial u}{\partial x}\right) + p(x) = 0 $$
@@ -7,7 +7,7 @@ Displacement based governing equation는 $u$의 2계 미분방정식임으로 �
 
 다음과 같은 model을 고려해보자.
 
-```{figure} _image/0201
+```{figure} _image/0201.png
 ```
 
 그림에 나타난 model의 경계조건은 다음과 같다.

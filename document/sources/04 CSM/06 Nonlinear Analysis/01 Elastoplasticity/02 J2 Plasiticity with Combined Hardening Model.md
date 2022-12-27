@@ -2,7 +2,9 @@
 먼저, Internal plastic variable $q$를 다음과 같이 정의한다.
 $$ q := \{ \alpha, \epsilon_e^p \} $$
 
-이 떄, $\alpha$는 back stress로 symmetric & deviatoric tensor라고 가정한다. 그리고 $\epsilon_e^p$는 equivalent plastic strain이라고 한다.
+이 떄, $\alpha$는 back stress로 symmetric & deviatoric tensor라고 가정한다. 
+
+그리고 $\epsilon_e^p$는 equivalent plastic strain이라고 한다.
 
 다음으로 Yield function $f(\sigma,q)$는 다음과 같이 정의한다.
 $$ f(\sigma, \alpha, \epsilon_e^p) := \lVert \eta(\sigma,\alpha) \rVert - \sqrt{\frac{2}{3}}K(\epsilon_e^p) $$

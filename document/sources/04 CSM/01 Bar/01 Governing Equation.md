@@ -20,9 +20,11 @@ $$ \frac{\partial}{\partial x}(\sigma A) + p(x) = 0 $$
 
 ### 명제1
 다음과 같이 식이 주어졌다고 하자.
+
 $$ (\sigma A)(x+\Delta x) - (\sigma A)(x) + \int_x^{x+\Delta x} p(x)\thinspace dx = 0 $$
 
 $\Delta x$가 충분히 작아 선형 근사할 수 있을 때, 위 식을 선형근사하여 정리하면 다음과 같음을 증명하여라.
+
 $$ \frac{\partial}{\partial x}(\sigma A) + p(x) = 0 $$
 
 **Proof**
@@ -36,6 +38,7 @@ $$ \begin{aligned} (\sigma A)(x+\Delta x) &= (\sigma A)(x) + \frac{\partial}{\pa
 $$ \frac{\partial}{\partial x}(\sigma A)\Delta x + p(x)\Delta x = 0 $$
 
 양변을 $\Delta x$로 나눠주면 다음과 같다.
+
 $$ \frac{\partial}{\partial x}(\sigma A) + p(x) = 0 \qed $$
 
 ## Displacement Based Governing Equation

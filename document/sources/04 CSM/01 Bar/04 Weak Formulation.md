@@ -21,6 +21,12 @@ $$ \mathcal{W} := \Set{w \in C^\infty(\Omega) | w = 0 \text{ on } \partial\Omega
 
 $$ \mathcal U_W := \Set{u \in C^1(\Omega) | u \text{ satisfies essential BC}} $$
 
-따라서, 최종 weak formulation은 다음과 같다.
+
+## Weak Form
+확장된 function space를 적용하면 다음과 같다.
 
 $$ \text{find } u \in \mathcal{U}_W \st \forall w \in \mathcal{W}, \quad \int_\Omega EA\pdiff{u}{x}\pdiff{w}{x}\thinspace dV = fw(L) -EA\pdiff{u}{x}w\bigg|_{x = 0} + \int_\Omega p(x)w \thinspace dV $$
+
+이 때, test function space가 $\partial\Omega_E$에서 항상 $0$임으로 최종 weak formulation은 다음과 같다.
+
+$$ \text{find } u \in \mathcal{U}_W \st \forall w \in \mathcal{W}, \quad \int_\Omega EA\pdiff{u}{x}\pdiff{w}{x}\thinspace dV = fw(L) + \int_\Omega p(x)w \thinspace dV $$
