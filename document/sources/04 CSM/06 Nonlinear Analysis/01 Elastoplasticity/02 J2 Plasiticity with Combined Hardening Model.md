@@ -1,3 +1,4 @@
+
 # J2 Plasticity Model with Hardening
 먼저, Internal plastic variable $q$를 다음과 같이 정의한다.
 $$ q := \{ \alpha, \epsilon_e^p \} $$

@@ -4,6 +4,7 @@ from sympy import integrate as integ
 from sympy import exp as exp
 from sympy.plotting import plot
 
+import numpy as np
 from numpy import mat as mat
 from numpy import zeros as zeros
 from numpy.linalg import inv as inv
@@ -14,13 +15,7 @@ from math import pi as pi
 x = sympy.symbols("x")
 exact_solution = 2 * exp(x**2)
 
-plt1 = plot(exact_solution, (x, 0, 2), show = False)
-
-
-
-# def B_WRF(w,u):    
-#     dudx = diff(u, x)
-#     return integ(w*(dudx - 2*x*u), (x, 0, 2))
+plt1 = plot(exact_solution, (x, 0, 2), show = False, legend=True, label='exact')
 
 def B_WF(w,u):
     dwdx = diff(w, x)
@@ -34,7 +29,7 @@ def B_WF(w,u):
 
     return wu2 - integ(u*(dwdx + 2*x*w), (x, 0, 2))
 
-n = 2
+n = 7
 u = sympy.symarray("u", n)
 for i in range(0,n):
     u[i] = pow(x,i)
@@ -44,49 +39,54 @@ for i in range(0,n):
     w[i] = u[i]
 
 
-# # Weighted Residual Formulation(Galerkin Method)
-# Bm_WRF = mat(zeros((n,n)))
-# for i in range(0,n):
-#     for j in range(0,n):
-#         Bm_WRF[i,j] = B_WRF(w[i], u[j])
-
-# l_WRF = mat(zeros((n,1)))
-# for i in range(0,n):
-#     l_WRF[i,0] = -B_WRF(w[i], phi)
-
-# a_WRF = inv(Bm_WRF) * l_WRF
-
-# solution_WRF = phi
-# for i in range(0,n):
-#     solution_WRF += a_WRF[i,0]*u[i]
-
 # Weak Formulation (Galerkin Method)
-
-# BC
-u[0] = 2
-
-Bm_WF = mat(zeros((n-1,n-1)))
-for i in range(1,n):
-    for j in range(1,n):
+Bm_WF = mat(zeros((n,n)))
+for i in range(0,n):
+    for j in range(0,n):
         Bm_WF[i,j] = B_WF(w[i], u[j])
 
-l_WF = mat(zeros((n-1,1)))
+# consider BC
+a0 = 2
+
+B_BC = Bm_WF[:,1:]
+l_BC = -a0*Bm_WF[:,:1]
+
+# remove 1eq
+row = 0
+B1 = np.delete(B_BC,0,row)
+l1 = np.delete(l_BC,0,row)
+a1 = inv(B1) * l1
+
+sol1 = a0 * u[0]
 for i in range(1,n):
-    l_WF[i,0] = -B_WF(w[i], u[0])*u[0]
+    sol1 += a1[i-1,0]*u[i]
 
-a_WF = inv(Bm_WF) * l_WF
+plt_sol1 = plot(sol1, (x,0,2), show = False, label = "sol1")
 
-solution_WF = u[0]
+# remove 2eq
+row = 0
+B2 = np.delete(B_BC,1,row)
+l2 = np.delete(l_BC,1,row)
+a2 = inv(B2)*l2
+
+sol2 = a0 * u[0]
 for i in range(1,n):
-    solution_WF += a_WF[i,0]*u[i]
+    sol2 += a2[i-1,0]*u[i]
 
+plt_sol2 = plot(sol2, (x,0,2), show = False, label='sol2')
 
-# print(solution_WRF)
-print(solution_WF)
+# remove 3eq
+B3 = np.delete(B_BC,2,row)
+l3 = np.delete(l_BC,2,row)
+a3 = inv(B3)*l3
 
-# plt2 = plot(solution_WRF, (x,0,2), show = False)
-plt3 = plot(solution_WF, (x,0,2), show = False)
+sol3 = a0 * u[0]
+for i in range(1,n):
+    sol3 += a3[i-1,0]*u[i]
 
-# plt1.extend(plt2)
-plt1.extend(plt3)
+plt_sol3 = plot(sol3, (x,0,2), show = False, label='sol3')
+
+plt1.extend(plt_sol1)
+plt1.extend(plt_sol2)
+plt1.extend(plt_sol3)
 plt1.show()
