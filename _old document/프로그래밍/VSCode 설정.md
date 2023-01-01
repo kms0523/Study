@@ -18,33 +18,33 @@ Markdown All in One
 
 ## 바로가기 키 설정
 #### 편집기 간 이동  
-* 바로 가기 키 설정 >> "그룹에서 이전 편집기 열기" 검색 >> alt + $\leftarrow$   
-* 바로 가기 키 설정 >> "그룹에서 다음 편집기 열기" 검색 >> alt + $\rightarrow$ 
-* 바로 가기 키 설정 >> "scrollLineup" 검색 >> alt + $\uparrow$ 
+* "그룹에서 이전 편집기 열기" 검색 >> alt + $\leftarrow$   
+* "그룹에서 다음 편집기 열기" 검색 >> alt + $\rightarrow$ 
+* "scrollLineup" 검색 >> alt + $\uparrow$ 
   * "줄 위로 이동" 검색 >> 키 바인딩 제거
-* 바로 가기 키 설정 >> "scrollLineDown" 검색 >> alt + $\downarrow$ 
+* "scrollLineDown" 검색 >> alt + $\downarrow$ 
   * "줄 아래로 이동" 검색 >> 키 바인딩 제거
 
 #### 일치항목
-* 바로 가기 키 설정 >> 다음 일치 항목 찾기에 선택 항목 추가 >> ctrl + e  
-* 바로 가기 키 설정 >> 일치 항목 찾기의 모든 항목 선택 >> ctrl + d  
+* 다음 일치 항목 찾기에 선택 항목 추가 >> ctrl + e  
+* 일치 항목 찾기의 모든 항목 선택 >> ctrl + d  
 
 # Markdown All in One
-## 설정
+<!-- ## 설정
 #### css 설정하기
 F1 >> 사용자 설정 열기(JSON) >> 아래 내용 입력
 ```
 "markdown.styles": [
     "./css/ms_dark.css"
     ]
-```
+``` -->
 
-## 바로가기 키 설정
+<!-- ## 바로가기 키 설정
 #### 미리보기 새로 고침 키 설정하기  
 F1 >> "미리보기 새로 고침" 검색 >> 톱니바퀴 >> 키 바인딩에 ctrl + R 입력
 
 ## 단축키
-* ctrl k, ctrl v : 마크다운 미리보기
+* ctrl k, ctrl v : 마크다운 미리보기 -->
 
 # Markdwon Preview Enhanced
 
@@ -52,13 +52,14 @@ F1 >> "미리보기 새로 고침" 검색 >> 톱니바퀴 >> 키 바인딩에 ct
 * Print Background >> check
 
 ## 바로가기 키 설정
-* 바로가기 키 설정 >> Markdown: open preview >> 키 바인딩 제거
-* 바로가기 키 설정 >> Markdown: open preview to the side >> 키 바인딩 제거
+* Markdwon: 측면에서 미리보기 열기 >> 키 바인딩 제거
+* 
+* Markdown: open preview >> 키 바인딩 제거
+* Markdown: open preview to the side >> 키 바인딩 제거
 
 ## Customize css
 F1 >> Markdwon Preview Enhanced: Customize CSS >> 아래 내용 입력
 ```
-.markdown-preview.markdown-preview 
 .markdown-preview.markdown-preview 
 {
     font-size: 14.5px;     
@@ -117,11 +118,11 @@ F1 >> Markdwon Preview Enhanced: Customize CSS >> 아래 내용 입력
         font-size: 14.5px !important;
     }
 
-    // pre > code //code block ```
-    // {
-    //     color: #e1e1e1;	        
-    //     font-size: 14.5px !important;
-    // }
+    pre > code //code block ```
+    {
+        color: #e1e1e1;	        
+        font-size: 14.5px !important;
+    }
     
     // blockquote // 인용문 >
     // {

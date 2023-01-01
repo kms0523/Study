@@ -1,20 +1,24 @@
 # Weak Formulation
-Weak formulation은 Weighted residumal formulation에서 integration part 혹은 divergence theorem을 통해 solution function에 있는 미분항을 test function으로 옮겨 solution function space의 regularity를 약화시키고, 문제에 주어진 natural BC를 식에 포함시킴으로 써 solution function space가 더이상 natural BC를 만족시킬 필요 없게 만듬으로써 더 많은 공간을 solution space로 포함 시킬 수 있게 해준다.
+Weak formulation은 WRF에서 integration part 혹은 divergence theorem을 통해 solution function에 있는 미분항을 test function으로 옮겨 solution function space의 regularity를 약화시키고, 문제에 주어진 natural BC를 식에 포함시킴으로 써 solution function space가 더이상 natural BC를 만족시킬 필요 없게 만듬으로써 더 많은 공간을 solution space로 포함 시킬 수 있게 해준다.
 
 Weak formulation을 다음 예제를 통해 구체적으로 알아보자.
 
 ## Strong formulation
 
-`경계값 문제(boudnary value problem)`가 $\Omega := [0,L] \subset \R$위에서 다음과 같이 주어졌다고 해보자.  
+BVP가 $\Omega := [0,L] \subset \R$위에서 다음과 같이 주어졌다고 해보자.  
 
 $$ \begin{equation} \text{find } u \in \mathcal U \quad s.t. \quad -\frac{d}{dx}(a\frac{du}{dx}) + cu -f = 0 \end{equation} $$
 
-$$ \text{Where, } \mathcal U := \left\{ u \in C^2(\Omega) \enspace \bigg| \enspace u(0) = u_0 \land \left( a\frac{du}{dx} \right)_{x=L} = Q_L \right\} $$
+$$ \text{Where, } \mathcal U := \Set{ u \in C^2(\Omega) | u \text{ satisfy BC} } $$
 
-이 때, 함수 $a,c,f : \Omega \rightarrow \R$와 $u_0, Q_L \in \R$은 주어졌다고 하자.
+
+이 떄, BC는 다음과 같다.
+$$ u(0) = u_0 \\ \left( a\frac{du}{dx} \right)_{x=L} = Q_L $$
+
+함수 $a,c,f : \Omega \rightarrow \R$와 $u_0, Q_L \in \R$은 주어졌다고 하자.
 
 ## Weighted residual formulation
-식(1)의 weighted residual formulation은 다음과 같다.  
+주어진 BVP의 WRF은 다음과 같다.  
 
 $$ \text{find } u \in \mathcal U \quad s.t. \quad \forall w \in C^\infty_c(\Omega), \quad \int_\Omega -w\frac{d}{dx}(a\frac{du}{dx}) \thinspace dV + \int_\Omega wcu \thinspace dV = \int_\Omega wf \thinspace dV $$
 
