@@ -3,16 +3,31 @@
   * Function 옮기면서 복습하기
     * 94 Equivalence Relation.md
     * 95 Equivalence Class.md
+    * Partially Ordered Set
+      * **명제1 증명**
+
+<<<<<<< HEAD
+* Analysis
+  * Numerical Analaysis  
+    * Weak Formualtion
+    * Model Problem
+
+=======
 
 * Analysis
   * Numerical Analaysis  
     * Weak Formualtion
     * Model Problem
 
+>>>>>>> 7e448f5baabbdae86ac17923c9c154564537bb13
 * Calculus
 
 * Linear Algebra
   * Basis
+<<<<<<< HEAD
+=======
+    * **명제1 증명**
+>>>>>>> 7e448f5baabbdae86ac17923c9c154564537bb13
   * Inner product 옮기기
     * Reisz representation 복습 및 옮기기
   * Adjoint operator의 uniqueness와 existence 복습
@@ -311,11 +326,19 @@
 * Set 
   * Partial Order
   * Partially Ordered Set
+<<<<<<< HEAD
     * 명제1 증명
+=======
+
+>>>>>>> 7e448f5baabbdae86ac17923c9c154564537bb13
 * Linear Algebra
   * Vector space
   * Span
   * Linearly Independent Set
+<<<<<<< HEAD
   * Basis
     * 명제1 증명
 
+=======
+  * Basis
+>>>>>>> 7e448f5baabbdae86ac17923c9c154564537bb13

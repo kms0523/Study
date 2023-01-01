@@ -15,6 +15,7 @@
 집합 $A$와 $P(A)$가 있을 때, $(P(A), \subseteq)$는 부분순서집합이다.
 
 ### 명제
+<<<<<<< HEAD
 공집합이 아닌 임의의 집합의 collection $C$가 있다고 하자.
 
 이 떄, 다음을 증명하여라.
@@ -50,3 +51,10 @@ $$ A_1 \subseteq A_3 \qed $$
 임의의 집합에 대해서 $\subseteq$는 partial order임으로, 다음이 성립한다.
 
 $$ (C,\subseteq) \text{ is a poset } \qed $$ 
+=======
+임의의 집합의 collection $C$가 있다고 하자.
+
+이 떄, 다음을 증명하여라.
+
+$$(C,\subseteq) \text{ is a poset }$$ 
+>>>>>>> 7e448f5baabbdae86ac17923c9c154564537bb13

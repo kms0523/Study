@@ -12,6 +12,7 @@ $$F := \{ A \subseteq V | S \subseteq A \land A \text{ is linearly independent}\
 이 때, $(F,\subseteq)$가 극대원소 $M$을 갖음을 증명하여라.
 
 **Proof**  
+<<<<<<< HEAD
 $S \in F$임으로 다음이 성립한다.
 
 $$ F \neq \empty $$
@@ -29,6 +30,13 @@ $C_i$는 전순서집합임으로 `일반성을 잃지 않고(without loss of ge
 그러면 $C_i$는 항상 상계 $A_{in}$을 갖는다.
 
 부분순서집합 $(F,\subseteq)$의 모든 사슬이 상계를 갖음으로, Zorn's lemma에 의해 $F$는 극대원소 $M$을 갖는다. $\qed$
+=======
+$S \in F$임으로 $F \neq \empty$이고 $(F,\subseteq)$은 partially ordered set이다. 
+
+$(F,\subseteq)$의 임의의 사슬 $C_i = \{ A_{i1}, \cdots, A_{in} \} \subseteq F$에 대해, $C$는 전순서집합임으로 `일반성을 잃지 않고(without loss of generality, WLOG)` $A_{i1} \subseteq \cdots \subseteq A_{in}$라 가정할 수 있다. 따라서 $C_i$는 항상 상계 $A_{in}$을 갖는다.
+
+부분순서집합 $(F,\subseteq)$의 모든 사슬이 상계를 갖음으로, `초른의 보조정리(Zorn's lemma)`에 의해 $F$는 극대원소 $M$을 갖는다. $\qed$
+>>>>>>> 7e448f5baabbdae86ac17923c9c154564537bb13
 
 ### 명제2
 정리 1의 극대원소 $M$이 $span(M)=V$을 만족함을 증명하여라.
