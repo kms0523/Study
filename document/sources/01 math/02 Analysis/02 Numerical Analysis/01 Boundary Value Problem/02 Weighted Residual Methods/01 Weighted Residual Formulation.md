@@ -1,9 +1,9 @@
 # Weighted Residual Formulation
-strong formulation의 `weighted residual formulation(WRF)`은 다음과 같다.  
+Strong formulation의 `weighted residual formulation(WRF)`은 다음과 같다.  
 
 $$ \text{find } u \in \mathcal U \st \forall w \in  C^\infty_c(\Omega), \quad \int_\Omega w r \thinspace dV = 0 $$
 
-$$ \text{Where, } r(\mathbf x) = \mathcal P(u) + f(\mathbf x) $$
+$$ \text{Where, } r(x) = \mathcal P(u) + f(x) $$
 
 이 떄, $C^\infty_c(\Omega)$는 `테스트 함수공간(test function space)`, $w$는 `테스트 함수(test function)`, $r$은 `residual`이라한다.
 

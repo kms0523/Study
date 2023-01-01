@@ -1,13 +1,22 @@
 # 할 것
-* Set 옮기기
+* Set 
   * Function 옮기면서 복습하기
     * 94 Equivalence Relation.md
     * 95 Equivalence Class.md
+    * Partially Ordered Set
+      * **명제1 증명**
 
-* Analysis & Calculus 옮기면서 복습하기
-  * Calculus
 
-* Linear Algebra 옮기기
+* Analysis
+  * Numerical Analaysis  
+    * Weak Formualtion
+    * Model Problem
+
+* Calculus
+
+* Linear Algebra
+  * Basis
+    * **명제1 증명**
   * Inner product 옮기기
     * Reisz representation 복습 및 옮기기
   * Adjoint operator의 uniqueness와 existence 복습
@@ -301,3 +310,14 @@
     * Product Spaces
       * Exercise 3.26 - product topology의 명제2
       * Theorem 3.27
+
+01.01
+* Set 
+  * Partial Order
+  * Partially Ordered Set
+
+* Linear Algebra
+  * Vector space
+  * Span
+  * Linearly Independent Set
+  * Basis

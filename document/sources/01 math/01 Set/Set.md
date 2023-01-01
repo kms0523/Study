@@ -102,23 +102,6 @@ $$ \begin{aligned} & (x,y) \in R \\ \Leftrightarrow \enspace & \exist t \in S \q
 
 명제 1-4에 의해 동치 관계와 분할 사이에는 일대일 대응 관계가 존재함을 알 수 있다.
 
-## 부분순서
-
-집합 $A$와 관계 $R \in A \times A$ 있을 떄, `부분순서(partial order)` $\le(\sim_ R)$는 다음을 만족하는 $R$이다.
-
-$$ \begin{aligned} & \text{반사관계(reflexive relation)} & \qquad & x \in A \Rightarrow (x,x) \in R & \qquad & x \le x \\ & \text{반대칭관계(anti-symmetric relation)} & \qquad & (x,y) \in R \land (y,x) \in R \Rightarrow x = y & \qquad & x \le y \land y \le x \Rightarrow x=y \\ & \text{추이관계(transitive relation)} & \qquad & (x,y) \in R \land (y,z) \in R \Rightarrow (x,z) \in R & \qquad & x \le y \land y \le z \Rightarrow x \le z \\ \end{aligned} $$
-
-## 부분순서집합
-
-집합 $A$와 부분순서 $\le$가 있을 때, 부분순서가 주어진 집합 $(A, \le)$를 `부분순서집합(partially ordered set, poset)`이라고 한다.
-
-### 참고
-
-부분순서 집합은 부분순서의 정의에 따라 모든 원소에 대해서 반사관계를 만족해야하지만 반대칭관계나 추이관계는 모든 원소에 대해 만족할 필요가 없다. 그저 비교가능한 원소들에 대해서만 반대칭관계와 추이관계를 만족하면 된다.
-
-### 예시
-
-집합 $A$와 $P(A)$가 있을 때, $(P(A), \subseteq)$는 부분순서집합이다.
 
 ## 극대,극소 원소
 
