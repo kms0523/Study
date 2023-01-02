@@ -5,8 +5,6 @@ Github에 public repository를 만든다.
 
 원격 repository 이름을 `origin`으로 설정한다.
 
-origin/master branch에 관련된 자료를 전부 push한다.
-
 ### 라이브러리 설치
 손쉬운 배포를 위해 ghp-import library를 설치한다.
 ```
@@ -24,7 +22,7 @@ ghp-import -n -p -f (빌드된 html 파일이 있는 폴더 경로)
 ghp-import -n -p -f _build/html
 ```
 
-그러면 자동으로 gh-pages branch가 생기고, 배포용 자료가 origin에 push된다.
+그러면 자동으로 gh-pages branch가 생기고 빌드된 파일들이 push된다.
 
 ### Repository 설정
 github repository로 들어간 다음 다음 설정 페이지를 연다.
