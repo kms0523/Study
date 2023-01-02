@@ -45,6 +45,7 @@ sphinx:
           "empty" : "\\emptyset"
           "exist" : "\\exists"
           "Set" : ["\\left\\{ #1 \\right\\}", 1]
+          "pdiff": ["\\frac{\\partial #1}{\\partial #2}", 2]
 
     latex_elements:
         preamble: |
