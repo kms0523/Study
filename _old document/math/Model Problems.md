@@ -1,30 +1,4 @@
-# Model Problem1
-$$ \text{find } u \in \mathcal U_s \quad s.t. \quad \frac{du}{dx} - 2xu = 0 \quad \text{in} \enspace \Omega := [0,2] \subset \R $$
 
-$$ \text{Where, } \mathcal U_s := \{ u \in C^2(\Omega) \enspace | \enspace u(0) = 2 \} $$
-
-exact solution은 $u = 2e^{x^2}$이다.
-
-## Weighted residual formulation
-$$ \text{find } a \in \R^k \quad s.t. \quad B(w_i,\phi + a_ju_j) = 0 $$
-
-$$ \begin{aligned} \text{Where, } & i = 1,\cdots,n, \enspace j = 1,\cdots,k \\& \phi \in \mathcal{U}_s \\& u_i \in \{ u \in C^1(\Omega) \enspace | \enspace u=0 \text{ on } \partial\Omega \}  \\& B(w,u) := \int_\Omega w \bigg( \frac{du}{dx} -2xu \bigg) \thinspace dV \end{aligned} $$
-
-## Weak formulation
-$$ \text{find } a \in \R^k \quad s.t. \quad B(w_i,\phi + a_ju_j) = 0 $$
-
-$$ \begin{aligned} \text{Where, } & i = 1,\cdots,n, \enspace j = 1,\cdots,k \\& \phi \in \{ u \in C^0(\Omega) \enspace | \enspace u \text{ staisfy essential BC } \} \\& u_i \in \{ u \in C^0(\Omega) \enspace | \enspace u=0 \text{ on } \partial\Omega_E \}  \\& B(w,u) := wu \Big|_0^2 - \int_\Omega \bigg( \frac{dw}{dx} + 2xw \bigg) u \thinspace dV \\&  \end{aligned} $$
-
-## Matrix form
-$B$가 bi-linear 임으로
-$$ \text{find } a \in \mathcal \R^k \quad s.t. \quad a_jB(w_i,u_j) = - B(w_i, \phi) $$
-
-행렬식으로 나타내면
-$$ \begin{bmatrix} B(w_1,u_1) & \cdots & B(w_1,u_n) \\ \vdots & \ddots & \vdots \\ B(w_n,u_1) & \cdots & B(w_n,u_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \begin{bmatrix} b - B(w_1, \phi) \\ \vdots \\ b - B(w_n, \phi) \end{bmatrix} $$
-
-## 참고
-* WRF_Galerkin method의 경우 $\phi = 2, \enspace u_i = x^i$라 하면 $n=7$정도 되면 비슷함
-* WRF_Galerkin method랑 WF_Galerkin method랑 같은 결과가 나옴
 
 # Model Problem2
 $$ \text{find } u \in \mathcal U_s \quad s.t. \quad \frac{d^2u}{dx^2} = 0 \quad \text{in} \enspace \Omega := [0,2] \subset \R $$
@@ -160,36 +134,7 @@ essential BC를 적용하면 다음과 같다.
 $$ a_1 + 5a_2 = 1 $$
 
 
-# Model Problem4
-$$ \text{find } u \in \mathcal U_s \quad s.t. \quad \frac{d^2u}{dx^2} + 1 = 0 \quad \text{in} \enspace \Omega := [0,2] \subset \R $$
 
-$$ \text{Where, } \mathcal U_s := \{ u \in C^2(\Omega) \enspace | \enspace u(0) = 1 \enspace \land \enspace u'(2) = 1 \} $$
-
-exact solution은 $u = 1 + 3x - 0.5x^2$이다.
-
-> 참고  
-> [book] (Kelly) An Introduction to the FEM chapter 2.3.2
-
-## Weighted residual formulation
-$$ \text{find } a \in \R^k \quad s.t. \quad B(w_i,\phi + a_ju_j) = l(w_i) $$
-
-$$ \begin{aligned} \text{Where, } & i = 1,\cdots,n, \enspace j = 1,\cdots,k \\& \phi \in \mathcal{U}_s \\& u_i \in \{ u \in C^2(\Omega) \enspace | \enspace u=0 \text{ on } \partial\Omega_E, \enspace u'(2) = 0 \}  \\& B(w,u) := \int_\Omega w \bigg( \frac{d^2u}{dx^2}\bigg) \thinspace dV \\& l(w) := -\int_\Omega w \thinspace dV\end{aligned} $$
-
-## Weak formulation
-$$ \text{find } a \in \R^k \quad s.t. \quad B(w_i,\phi + a_ju_j) = 0 $$
-
-$$ \begin{aligned} \text{Where, } & i = 1,\cdots,n, \enspace j = 1,\cdots,k \\& \exist w_i \quad s.t. \quad w(2) \neq 0 \\& \phi \in \{ u \in C^1(\Omega) \enspace | \enspace u \text{ staisfy essential BC } \} \\& u_i \in \{ u \in C^1(\Omega) \enspace | \enspace u=0 \text{ on } \partial\Omega_E \} \\& B(w,u) := \int_\Omega \frac{dw}{dx}\frac{du}{dx} \thinspace dV \\& l(w) := \int_\Omega w \thinspace dV + w\frac{du}{dx} \bigg |_{x=2} \end{aligned} $$
-
-## Matrix form
-$B$가 bi-linear 임으로
-$$ \text{find } a \in \mathcal \R^k \quad s.t. \quad a_jB(w_i,u_j) = l(w_i) - B(w_i, \phi) $$
-
-행렬식으로 나타내면
-$$ \begin{bmatrix} B(w_1,u_1) & \cdots & B(w_1,u_n) \\ \vdots & \ddots & \vdots \\ B(w_n,u_1) & \cdots & B(w_n,u_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \begin{bmatrix} l(w_1) - B(w_1, \phi) \\ \vdots \\ l(w_n) - B(w_n, \phi) \end{bmatrix} $$
-
-## 참고
-* WF_Galerkin method에서 $n=1, \enspace \phi=1, \enspace u_1 = x$로 하면 natural BC를 만족하지 않는것을 알 수 있다. 즉, natural BC가 식에 포함된 형태로 약하게 적용되어있기 때문에 solution space가 충분히 크지 않을 경우 natural BC를 만족하지 않을 수 있다.
-* WF_Galerkin method에서 $n=2, \enspace \phi=1, \enspace u_i = x^i$로 하면 exact solution을 얻는다.
 
 # Model Problem5
 $$ \text{find } u \in \mathcal U_s \quad s.t. \quad \frac{d^2u}{dx^2} + u -1 = 0 \quad \text{in} \enspace \Omega := [0,1] \subset \R $$
@@ -225,29 +170,7 @@ $$ \text{find } a \in \R \quad s.t. \quad a_1\int_\Omega \frac{du_1}{dx}\frac{du
 $$ u \in \mathcal U_{W_h} \Rightarrow u = b_1n_1 + b_2n_2 $$
 
 
-# Model Problem6
-$$ \text{find } u \in \mathcal U_s \quad s.t. \quad \frac{d^2u}{dx^2} + u - x = 0 \quad \text{in} \enspace \Omega := [0,2] \subset \R $$
 
-$$ \text{Where, } \mathcal U_s := \{ u \in C^2(\Omega) \enspace | \enspace u(0) = 0 \enspace \land \enspace u(2) = 5 \} $$
-
-exact solution은 $u = \frac{3}{\sin 2}\sin  x + x$이다.
-
-## Weighted residual formulation
-$$ \text{find } a \in \R^k \quad s.t. \quad B(w_i,\phi + a_ju_j) = l(w_i) $$
-
-$$ \begin{aligned} \text{Where, } & i = 1,\cdots,n, \enspace j = 1,\cdots,k \\& \phi \in \mathcal{U}_s \\& u_i \in \{ u \in C^2(\Omega) \enspace | \enspace u=0 \text{ on } \partial\Omega_E \} \\& B(w,u) := \int_\Omega w \bigg( \frac{d^2u}{dx^2} + u \bigg) \thinspace dV \\& l(w) := \int_\Omega wx \thinspace dV\end{aligned} $$
-
-## Weak formulation
-$$ \text{find } a \in \R^k \quad s.t. \quad B(w_i,\phi + a_ju_j) = 0 $$
-
-$$ \begin{aligned} \text{Where, } & i = 1,\cdots,n, \enspace j = 1,\cdots,k \\& \exist w_i \quad s.t. \quad w(2) \neq 0 \\& \phi \in \{ u \in C^1(\Omega) \enspace | \enspace u \text{ staisfy essential BC } \} \\& u_i \in \{ u \in C^1(\Omega) \enspace | \enspace u=0 \text{ on } \partial\Omega_E \} \\& B(w,u) := \int_\Omega wu -\frac{dw}{dx}\frac{du}{dx} \thinspace dV + w\frac{du}{dx} \bigg |^{2}_{x=0} \\& l(w) := \int_\Omega wx \thinspace dV \end{aligned} $$
-
-## Matrix form
-$B$가 bi-linear 임으로
-$$ \text{find } a \in \mathcal \R^k \quad s.t. \quad a_jB(w_i,u_j) = l(w_i) - B(w_i, \phi) $$
-
-행렬식으로 나타내면
-$$ \begin{bmatrix} B(w_1,u_1) & \cdots & B(w_1,u_n) \\ \vdots & \ddots & \vdots \\ B(w_n,u_1) & \cdots & B(w_n,u_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a_n \end{bmatrix} = \begin{bmatrix} l(w_1) - B(w_1, \phi) \\ \vdots \\ l(w_n) - B(w_n, \phi) \end{bmatrix} $$
 
 # Model Problem7
 $$ \text{find } u \in \mathcal U_s \quad s.t. \quad \frac{d^2u}{dx^2} - u - x = 0 \quad \text{in} \enspace \Omega := [0,1] \subset \R $$

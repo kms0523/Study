@@ -6,7 +6,7 @@
 ## Test Function Space Reduction
 유한차원 함수 공간 $\mathcal{W_f}$를 다음과 같이 정의하자.
 
-$$ \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) $$
+$$ \mathcal{W_f} := \span(\set{w_1,\cdots,w_n} \subset C^\infty(\Omega)) $$
 
 $\mathcal{W_f}$의 subspace $\mathcal{W_c}$를 다음과 같이 정의하자.
 
@@ -38,7 +38,7 @@ Test function space을 $\mathcal W_c$로 축소함으로써 $n$개의 `기저함
 ## Solution Function Space Reduction
 유한차원 함수 공간 $\mathcal{U_f}$를 다음과 같이 정의하자.
 
-$$ \mathcal{U_f} := \span(\set{u_1,\cdots,u_n}) $$
+$$ \mathcal{U_f} := \span(\set{u_1,\cdots,u_n} \subset C^m(\Omega)) $$
 
 $\mathcal{U_f}$의 subset $\mathcal{U_{b}}$를 다음과 같이 정의하자.
 
@@ -109,13 +109,13 @@ $$ \text{find } x \in \R_b^n \st B_r(w_i,x^j u_j) = l_r(w_i), \enspace i = 1,\cd
 
 #### Related function spaces
 
-$$ \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_f} := \span(\set{u_1,\cdots,u_n}) \\ \R^n_b := \Set{x \in \R^n | x^iu_i \text{ satisfy BC}} $$
+$$ \begin{gathered} \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_f} := \span(\set{u_1,\cdots,u_n}) \\ \R^n_b := \Set{x \in \R^n | x^iu_i \text{ satisfy BC}} \end{gathered} $$
 
 ### Affien form
 $$ \text{find } x \in \R^n \st B_r(w_i,\phi + x^ju^0_j) = l_r(w_i), \enspace i = 1,\cdots,n $$
 
 #### Related function spaces
-$$ \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_b} := \Set{ u\in\mathcal{U_f}| u \text{ satisfies BC}} \\ \mathcal{U_0} := \Set{ u\in\mathcal{U_f}| u=0 \text{ on } \partial\Omega} = \span(\Set{u_i^0}) $$
+$$ \begin{gathered} \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_b} := \Set{ u\in\mathcal{U_f}| u \text{ satisfies BC}} \\ \mathcal{U_0} := \Set{ u\in\mathcal{U_f}| u=0 \text{ on } \partial\Omega} = \span(\Set{u_i^0}) \end{gathered} $$
 
 ### 참고
 Dimensional reduction된 WRF는 탐색하는 function space가 축소됐기 때문에 더이상 strong formulation과 동치가 아니다.
@@ -133,7 +133,7 @@ Dimensional reduction된 WRF의 해는 strong formulation의 approximated soluti
 $$ \text{find } x \in \R_b^n \st B_r(w_i,u_j) x^j = l_r(w_i), \enspace i = 1,\cdots,n $$
 
 #### Related function spaces
-$$ \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_f} := \span(\set{u_1,\cdots,u_n}) \\ \R^n_b := \Set{x \in \R^n | x^iu_i \text{ satisfy BC}} $$
+$$ \begin{gathered} \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_f} := \span(\set{u_1,\cdots,u_n}) \\ \R^n_b := \Set{x \in \R^n | x^iu_i \text{ satisfy BC}} \end{gathered} $$
 
 #### Matrix form
 $$ \begin{bmatrix} B(w_1,u_1) & \cdots & B(w_1,u_n) \\ \vdots & \ddots & \vdots \\ B(w_n,u_1) & \cdots & B(w_n,u_n) \end{bmatrix} \begin{bmatrix} x^1 \\ \vdots \\ x^n \end{bmatrix} = \begin{bmatrix} l(w_1) \\ \vdots \\ l(w_n) \end{bmatrix} $$
@@ -142,7 +142,7 @@ $$ \begin{bmatrix} B(w_1,u_1) & \cdots & B(w_1,u_n) \\ \vdots & \ddots & \vdots 
 $$ \text{find } x \in \R^n \st B_r(w_i,u^0_j)x^j = l_r(w_i) - B_r(w_i,\phi), \enspace i = 1,\cdots,n $$
 
 #### Related function spaces
-$$ \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_b} := \Set{ u\in\mathcal{U_f}| u \text{ satisfies BC}} \\ \mathcal{U_0} := \Set{ u\in\mathcal{U_f}| u=0 \text{ on } \partial\Omega} = \span(\Set{u_i^0}) $$
+$$ \begin{gathered} \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_b} := \Set{ u\in\mathcal{U_f}| u \text{ satisfies BC}} \\ \mathcal{U_0} := \Set{ u\in\mathcal{U_f}| u=0 \text{ on } \partial\Omega} = \span(\Set{u_i^0}) \end{gathered} $$
 
 #### Matrix form
 $$ \begin{bmatrix} B(w_1,u^0_1) & \cdots & B(w_1,u^0_n) \\ \vdots & \ddots & \vdots \\ B(w_n,u^0_1) & \cdots & B(w_n,u^0_n) \end{bmatrix} \begin{bmatrix} x^1 \\ \vdots \\ x^n \end{bmatrix} = \begin{bmatrix} l(w_1) - B(w_1, \phi) \\ \vdots \\ l(w_n) - B(w_n, \phi) \end{bmatrix} $$

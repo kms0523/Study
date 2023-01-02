@@ -30,7 +30,7 @@ def l_WF(w):
 
     return w2*u2 + integ(w, (x, 0, 2))
 
-n = 3
+n = 2
 u = sympy.symarray("u", n)
 u[0] = x-1
 u[1] = x**2+x+1

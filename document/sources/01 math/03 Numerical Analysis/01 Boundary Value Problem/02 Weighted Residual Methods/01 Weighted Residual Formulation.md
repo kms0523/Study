@@ -7,18 +7,15 @@ $$ \text{Where, } r(x) = \mathcal P(u) + f(x) $$
 
 이 떄, $C^\infty_c(\Omega)$는 `테스트 함수공간(test function space)`, $w$는 `테스트 함수(test function)`, $r$은 `residual`이라한다.
 
-이를 WRF이라고 부르는 이유는 WRF가 residual의 가중평균이 0이 되는 것과 같은 형태를 가지고 있기 때문이다. 
 
-그렇다고 WRF의 해가 $r = 0$을 만족하는게 아니라 가중평균만 $0$으로 보낸다고 오해하면 안된다. 
-
-Fundamental Lemma of Variation Calculus에 의해 WRF는 strong formulation과 동치이다.
-
+## Functional Form
 일반적으로 WRF은 functional $B_r,l_r$을 이용해 다음과 같이 간단하게 나타낼 수 있다.
 
 $$ \text{find } u \in \mathcal U \st \forall w \in C^\infty_c(\Omega), \quad B_r(w,u) = l_r(w) $$
 
 $$ \text{Where, } B_r(w,u) :=  \int_\Omega w\mathcal P(u) \thinspace dV, \quad l_r(w) := -\int_\Omega wf \thinspace dV $$
 
+### 참고
 이 때, $B_r$은 첫번째 원소에 대해서 linear map이며, $l_r$은 linear map이다.
 
 만약, $\mathcal P$가 linear operator라면, $B_r$은 bilinear map이 된다.
@@ -26,8 +23,16 @@ $$ \text{Where, } B_r(w,u) :=  \int_\Omega w\mathcal P(u) \thinspace dV, \quad l
 > Reference  
 > [Note - M. J. Zahr](https://mjzahr.github.io/content/ame40541/spr20/ch03-wres-solo.pdf)
 
+## 참고
+WRF이라고 부르는 이유는 WRF가 residual의 가중평균이 0이 되는 것과 같은 형태를 가지고 있기 때문이다. 
 
-## Fundamental Lemma of Variation Calculus
+그렇다고 WRF의 해가 $r = 0$을 만족하는게 아니라 가중평균만 $0$으로 보낸다고 오해하면 안된다. 
+
+Fundamental Lemma of Variation Calculus에 의해 WRF는 strong formulation과 동치이다.
+
+
+
+### Fundamental Lemma of Variation Calculus
 $\Omega \subset \R^d$와 $f \in C^0(\Omega)$가 있다고 할 때 다음을 증명하여라. 
 
 $$ f = 0 \text{ on } \Omega \iff \forall w \in C^\infty_c(\Omega), \int_\Omega w f \thinspace dV = 0 $$

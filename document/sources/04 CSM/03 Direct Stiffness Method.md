@@ -2,7 +2,7 @@
 Direct stiffness method가 무엇인지 다음 예제를 통해 살펴보자.
 
 ## Problem
-``` {figure} _image/0401.png
+``` {figure} _image/0301.png
 ```
 
 위 그림과 같이 3개의 강체와 5개의 linear spring으로 이루어진 system이 equilibrium 상태에 있다고 하자.
