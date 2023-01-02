@@ -1,0 +1,1652 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Abstract Function &#8212; MS Study Documents</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Class" href="Class.html" />
+    <link rel="prev" title="Virtual Memory Structure" href="02%20Memory/05%20Virtual%20Memory%20Structure.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MS Study Documents</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../cover.html">
+                    MS Study Documents
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01%20math/01%20Set/Set.html">
+   Set
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/01%20Power%20Set.html">
+     Power Set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/02%20Product%20Set.html">
+     Product Set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/03%20Relations.html">
+     Relation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/04%20Function.html">
+     Function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/05%20Image.html">
+     Image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/06%20Preimage.html">
+     Preimage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/07%20Injective%20Function.html">
+     Injective Function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/08%20Surjective%20Function.html">
+     Surjective Function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/09%20Bijective%20Function.html">
+     Bijective Function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/10%20Inverse%20Function.html">
+     Inverse Function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/95%20Equivalence%20Relation.html">
+     Equivalence Relation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/96%20Equivalence%20Class.html">
+     Equivalence Class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/97%20Partial%20Order.html">
+     Partial Order
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/98%20Partially%20Order%20Set.html">
+     Partially Ordered Set
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01%20math/02%20Analysis/Analysis.html">
+   Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/02%20Analysis/01%20Metric%20Space/Metric%20Space.html">
+     Metric Space
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Analysis/01%20Metric%20Space/01%20Metric%20Subspace.html">
+       Metric Subspace
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Analysis/01%20Metric%20Space/02%20Open%20Ball.html">
+       Open ball
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Analysis/01%20Metric%20Space/03%20Open%20Set.html">
+       Open set
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Analysis/01%20Metric%20Space/04%20Closed%20set.html">
+       Closed set
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Analysis/01%20Metric%20Space/05%20Neighborhood.html">
+       Neighborhood
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Analysis/01%20Metric%20Space/06%20Closure.html">
+       Closure
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Analysis/01%20Metric%20Space/07%20Interior.html">
+       Interior
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Analysis/01%20Metric%20Space/08%20Boudnary.html">
+       Boundary
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Analysis/01%20Metric%20Space/09%20Bounded%20set.html">
+       Bounded Set
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Analysis/01%20Metric%20Space/10%20Compact%20Set.html">
+       Compact Set
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Analysis/01%20Metric%20Space/11%20Convergent%20Sequence.html">
+       Convergent Sequence
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Analysis/01%20Metric%20Space/12%20Limit%20of%20Function.html">
+       Limit of Function
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Analysis/01%20Metric%20Space/13%20Continuous.html">
+       Continuous
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Analysis/01%20Metric%20Space/14%20Continuous%20Function.html">
+       Continuous Function
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01%20math/03%20Numerical%20Analysis/Numerical%20Analysis.html">
+   Numerical Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/03%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/Boundary%20Value%20Problem.html">
+     Boundary Value Problem
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/03%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/01%20Strong%20formulation.html">
+       Strong formulation
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../01%20math/03%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/02%20Weighted%20Residual%20Methods/Weighted%20Residual%20Methods.html">
+       Weighted Residual Methods
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/03%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/02%20Weighted%20Residual%20Methods/01%20Weighted%20Residual%20Formulation.html">
+         Weighted Residual Formulation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/03%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/02%20Weighted%20Residual%20Methods/02%20Dimensional%20Reduction.html">
+         Dimensional Reduction
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/03%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/02%20Weighted%20Residual%20Methods/03%20Reduced%20Function%20Space.html">
+         Reduced Function Space
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../01%20math/03%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/Weak%20Formulation.html">
+       Weak Formulation
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/03%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/01%20Strong%20Formulation.html">
+         Strong Formulation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/03%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/02%20Weighted%20Residual%20Formulation.html">
+         Weighted Residual Formulation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/03%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/03%20Weak%20Formulation.html">
+         Weak Formulation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/03%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/04%20Dimensional%20Reduction.html">
+         Dimensional Reduction
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/03%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/05%20Reduced%20Function%20Space.html">
+         Reduced Function Space
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../01%20math/03%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/04%20Model%20Problems/Model%20Problems.html">
+       Model Problems
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/03%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/04%20Model%20Problems/01%20Model%20Problem1.html">
+         Model Problem1
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/03%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/04%20Model%20Problems/02%20Model%20Problem2.html">
+         Model Problem2
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/03%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/04%20Model%20Problems/03%20Model%20Problem3.html">
+         Model Problem3
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01%20math/04%20Linear%20Algebra/Linear%20Algebra.html">
+   Linear Algebra
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01%20math/05%20Geometry/Geometry.html">
+   Geometry
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/Topology.html">
+     Topology
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/01%20Topologies/Topologies.html">
+       Topologies
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/01%20Topologies/01%20Topological%20Spaces.html">
+         Topological Space
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/01%20Topologies/02%20Open%20Set.html">
+         Open Set
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/01%20Topologies/03%20Closed%20set.html">
+         Closed set
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/01%20Topologies/04%20Neighborhood.html">
+         Neighborhood
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/01%20Topologies/05%20Subspace%20Topology.html">
+         Subspace Topology
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/01%20Topologies/06%20Subspace.html">
+         Subspace
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/01%20Topologies/07%20Closure.html">
+         Closure
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/01%20Topologies/08%20Interior.html">
+         Interior
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/01%20Topologies/09%20Exteriror.html">
+         Exteriror
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/01%20Topologies/10%20Boundary.html">
+         Boundary
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/01%20Topologies/11%20Limit%20Point.html">
+         Limit Point
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/01%20Topologies/12%20Isolated%20Point.html">
+         Isolated Point
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/01%20Topologies/13%20Dense.html">
+         Dense
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/02%20Convergence%20and%20Continuity/Convergence%20and%20Continuity.html">
+       Convergence and Continuity
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+      <label for="toctree-checkbox-12">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/02%20Convergence%20and%20Continuity/1%20Convergence.html">
+         Convergence
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/02%20Convergence%20and%20Continuity/2%20Continuity.html">
+         Continuity
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/02%20Convergence%20and%20Continuity/3%20Homeomorphism.html">
+         Homeomorphism
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/03%20Hausdorff%20Space.html">
+       Hausdorff Space
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/04%20Bases/Bases.html">
+       Bases
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/04%20Bases/01%20Basis.html">
+         Basis
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/04%20Bases/02%20Neighborhood%20Basis.html">
+         Neighborhood Basis
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/04%20Bases/03%20Nested%20Neighborhood%20Basis.html">
+         Nested Neighborhood Basis
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/05%20Countability%20Properties/Countability%20Properties.html">
+       Countability Properties
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/05%20Countability%20Properties/20%20First%20Countable.html">
+         First Countable
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/05%20Countability%20Properties/21%20Eventually%20in.html">
+         Eventually in
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/05%20Countability%20Properties/22%20Second%20Countable.html">
+         Second Countable
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/05%20Countability%20Properties/23%20Cover.html">
+         Cover
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/05%20Countability%20Properties/24%20Seperable.html">
+         Seperable
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/05%20Countability%20Properties/25%20Lindelof%20Space.html">
+         Lindelof Space
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/06%20Manifolds/Manifolds.html">
+       Manifolds
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+      <label for="toctree-checkbox-15">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/06%20Manifolds/26%20Locally%20Euclidean.html">
+         Locally Euclidean
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/06%20Manifolds/27%20Coordinate.html">
+         Coordinate
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/06%20Manifolds/28%20Topological%20Manifold.html">
+         Topological Manifold
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/07%20Product%20Spaces/Product%20Spaces.html">
+       Product Spaces
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+      <label for="toctree-checkbox-16">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/07%20Product%20Spaces/01%20Product%20Topology.html">
+         Product Topology
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/07%20Product%20Spaces/02%20Product%20Space.html">
+         Product Space
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/05%20Geometry/01%20Topology/07%20Product%20Spaces/03%20Product%20Open%20Set.html">
+         Product Open Set
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/05%20Geometry/02%20Smooth%20Manifold/Smooth%20Manifold.html">
+     Smooth Manifold
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Geometry/02%20Smooth%20Manifold/01%20Ambient%20Space.html">
+       Ambient space
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  programming
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="C%2B%2B.html">
+   C++
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="01%20Build/Build.html">
+     Build
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="01%20Build/01%20PreProcessing.html">
+       Preprocessing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="01%20Build/02%20Compile.html">
+       Compile
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="01%20Build/03%20Linking/Linking.html">
+       Linking
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+      <label for="toctree-checkbox-20">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="01%20Build/03%20Linking/01%20Storage%20Class%20Specifier.html">
+         Storage Class Specifier
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="01%20Build/03%20Linking/02%20Name%20Mangling.html">
+         Name Mangling
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="01%20Build/03%20Linking/03%20Link/Link.html">
+         Link
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="02%20Memory/Memory.html">
+     Memory
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+    <label for="toctree-checkbox-21">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02%20Memory/01%20Virtual%20Memory.html">
+       Virtual Memory
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02%20Memory/02%20Paging%20system.html">
+       Paging system
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02%20Memory/03%20Virtual%20Memory%20Size.html">
+       Virtual Memory Size
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02%20Memory/04%20Virtual%20Memory%20Management%20in%20Window.html">
+       Virtual Memory Management in Window
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02%20Memory/05%20Virtual%20Memory%20Structure.html">
+       Virtual Memory Structure
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Abstract Function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Class.html">
+     Class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Enum.html">
+     Enum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Initialization.html">
+     initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Name%20Space.html">
+     Namespace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="One%20Definition%20Rule.html">
+     One Definition Rule
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="static.html">
+     Static
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="STD.html">
+     STD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Template.html">
+     Template
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CMake.html">
+   Cmake
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../git.html">
+   Git
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  CFD
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../03%20CFD/CFD.html">
+   Computational Fluid Dynamics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  CSM
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../04%20CSM/01%20Bar/Bar.html">
+   Bar
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+  <label for="toctree-checkbox-22">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../04%20CSM/01%20Bar/01%20Governing%20Equation.html">
+     Governing Equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../04%20CSM/01%20Bar/02%20Boundary%20Value%20Problem.html">
+     Boundary Value Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../04%20CSM/01%20Bar/03%20Strong%20Formualation.html">
+     Strong Formualation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../04%20CSM/01%20Bar/04%20Weak%20Formulation.html">
+     Weak Formulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../04%20CSM/01%20Bar/05%20FE%20Formulation.html">
+     FE Formulation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../04%20CSM/02%20Beam%20Theory/Beam%20Theory.html">
+   Beam
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+  <label for="toctree-checkbox-23">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../04%20CSM/02%20Beam%20Theory/01%20Element%20Beam%20Theory.html">
+     Element Beam Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../04%20CSM/02%20Beam%20Theory/02%20Neutral%20Surface.html">
+     Neutral Surface
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../04%20CSM/02%20interpolation.html">
+   Interpolation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../04%20CSM/03%20Direct%20Stiffness%20Method.html">
+   Direct Stiffness Method
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../04%20CSM/04%20Finite%20Element%20Formulation/Finite%20Element%20Formulation.html">
+   Finite Element Formulation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+  <label for="toctree-checkbox-24">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../04%20CSM/04%20Finite%20Element%20Formulation/02%20Mechanical%20Equilibrium/Mechanical%20Equilibrium.html">
+     Mechanical Equilibrium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../04%20CSM/04%20Finite%20Element%20Formulation/02%20Mechanical%20Equilibrium/01%20Governing%20Equation.html">
+       Governing Equation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../04%20CSM/04%20Finite%20Element%20Formulation/02%20Mechanical%20Equilibrium/02%20Weak%20Formulation.html">
+       Weak Formulation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../04%20CSM/04%20Finite%20Element%20Formulation/02%20Mechanical%20Equilibrium/03%20FE%20Formulation.html">
+       FE Formulation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../04%20CSM/06%20Nonlinear%20Analysis/Nonlinear%20Analysis.html">
+   Non Linear Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+  <label for="toctree-checkbox-26">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../04%20CSM/06%20Nonlinear%20Analysis/01%20Elastoplasticity/Elastoplasticity.html">
+     Elastoplasticity
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+    <label for="toctree-checkbox-27">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../04%20CSM/06%20Nonlinear%20Analysis/01%20Elastoplasticity/01%20Classical%20Elastoplasticity%20Model.html">
+       Classical Elastoplasticity Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../04%20CSM/06%20Nonlinear%20Analysis/01%20Elastoplasticity/02%20J2%20Plasiticity%20with%20Combined%20Hardening%20Model.html">
+       J2 Plasticity Model with Hardening
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../04%20CSM/06%20Nonlinear%20Analysis/01%20Elastoplasticity/03%20Stress%20Calculation%20Algorithm.html">
+       Prerequisite
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../04%20CSM/06%20Nonlinear%20Analysis/01%20Elastoplasticity/04%20Elastoplasticity%20Algorithm.html">
+       Assumption
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Jupyter Book
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../05%20Jupyter%20Book/1%20document.html">
+   문서작성법
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../05%20Jupyter%20Book/2%20folder.html">
+   폴더구성법
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../05%20Jupyter%20Book/3%20build.html">
+   빌드
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../05%20Jupyter%20Book/4%20Publish.html">
+   배포
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../99%20References/references.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/sources/02 programming/01 C++/Abstract Function.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   가상 함수의 호출
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     가상 함수 테이블
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       참고
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     가상 함수 테이블 포인터
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       참고
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     다형성과 가상 함수
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     가상 소멸자
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       소멸자와 파괴자
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     생성자와 소멸자에서 가상 함수 호출
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Abstract Function</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   가상 함수의 호출
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     가상 함수 테이블
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       참고
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     가상 함수 테이블 포인터
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       참고
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     다형성과 가상 함수
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     가상 소멸자
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       소멸자와 파괴자
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     생성자와 소멸자에서 가상 함수 호출
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="abstract-function">
+<h1>Abstract Function<a class="headerlink" href="#abstract-function" title="Permalink to this headline">#</a></h1>
+<p>가상 함수란 derived 클래스에서 override 될 것으로 기대하는 함수이다. 가상 함수를 통해 동일한 의미의 함수이지만 객체의 타입에 따라 다른 로직을 실행하는 능력인 다형성이 구현된다.</p>
+<section id="id1">
+<h2>가상 함수의 호출<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>비가상 멤버 함수나 가상 함수는 함수 그 자체로서는 큰 차이가 없다. 메모리 코드 영역의 어딘가에 위치할 뿐이다. 하지만 가상함수는 추가적인 구조를 가지고 있다. 가상함수를 가지고 있는 클래스 객체의 시작 위치에 가상 함수 테이블 포인터(virtual function table pointer, vfptr)가 생성된다. 말 그대로 가상 함수 테이블(virtual function table)을 가리키는 역할을 한다. 가상 함수 테이블의 각 항목은 실제 함수들의 메모리 시작 주소가 기록되어 있다.</p>
+<p>아래의 어셈블리 코드를 보면서 함수 호출 과정을 살펴보자. 참고로 아래 어셈블리는 필요한 부분만 작성한 것이다.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Test</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">func</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vfunc1</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vfunc2</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Test</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">Test</span><span class="o">*</span><span class="w"> </span><span class="n">pt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">pt</span><span class="o">-&gt;</span><span class="n">func</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">call</span><span class="w"> </span><span class="n">Test</span><span class="o">::</span><span class="n">func</span><span class="w">         </span><span class="c1">//비가상 멤버 함수의 경우 컴파일러는 직접 해당 함수의 메모리 주소로  </span>
+<span class="w">                            </span><span class="c1">//call을 수행하게 어셈블리 코드를 작성한다.</span>
+
+<span class="w">    </span><span class="n">pt</span><span class="o">-&gt;</span><span class="n">vfunc1</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">mov</span><span class="w"> </span><span class="n">eax</span><span class="p">,</span><span class="n">dword</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="p">[</span><span class="n">pt</span><span class="p">]</span><span class="w">  </span><span class="c1">//pt의 값 4바이트를 eax에 넣어라.</span>
+
+<span class="w">                            </span><span class="c1">//pt는 t객체의 주소를 값으로 가지고 있음으로 eax에는 t객체의 주소가 들어있다.</span>
+<span class="w">                            </span><span class="c1">//레지스터가 아닌 변수 이름이 직접 사용될 경우는 변수의 값 자체를 읽게 된다.</span>
+
+<span class="w">    </span><span class="n">mov</span><span class="w"> </span><span class="n">edx</span><span class="p">,</span><span class="n">dword</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="p">[</span><span class="n">eax</span><span class="p">]</span><span class="w"> </span><span class="c1">//eax에 저장된 주소에서 4바이트 값을 읽어서 edx에 넣어라.</span>
+
+<span class="w">                            </span><span class="c1">//eax에는 t객체의 주소가 들어가 있다. </span>
+<span class="w">                            </span><span class="c1">//즉, t객체의 vfptr의 값을 읽어 edx에 넣게 된다.</span>
+<span class="w">                            </span><span class="c1">//결과적으로 edx에는 가상함수 테이블의 주소가 들어있다.</span>
+
+<span class="w">    </span><span class="n">mov</span><span class="w"> </span><span class="n">eax</span><span class="p">,</span><span class="n">dword</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="p">[</span><span class="n">edx</span><span class="p">]</span><span class="w"> </span><span class="c1">//edx에 저장된 주소에서 4바이트 값을 읽어서 eax에 넣어라.</span>
+
+<span class="w">                            </span><span class="c1">//edx에는 가상함수 테이블의 주소가 들어있다.</span>
+<span class="w">                            </span><span class="c1">//즉, 가상함수 테이블의 첫번째 항목에 저장된 함수의 주소를 eax에 넣게 된다.</span>
+<span class="w">                            </span><span class="c1">//결과적으로 eax는 가상함수의 테이블의 첫번째 항목에 있는 함수의 주소가 들어있다.</span>
+
+<span class="w">    </span><span class="n">call</span><span class="w"> </span><span class="n">eax</span><span class="w">                </span><span class="c1">//eax가 가리키는 곳으로 점프하여 실행하여라.</span>
+
+<span class="w">                            </span><span class="c1">//가상함수 테이블 첫번째 항목에 있는 함수를 실행하게 된다.</span>
+
+<span class="w">    </span><span class="n">pt</span><span class="o">-&gt;</span><span class="n">vfunc2</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">mov</span><span class="w"> </span><span class="n">eax</span><span class="p">,</span><span class="n">dword</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="p">[</span><span class="n">pt</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">mov</span><span class="w"> </span><span class="n">edx</span><span class="p">,</span><span class="n">dword</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="p">[</span><span class="n">eax</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">mov</span><span class="w"> </span><span class="n">eax</span><span class="p">,</span><span class="n">dword</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="p">[</span><span class="n">edx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">4</span><span class="p">]</span><span class="w">     </span><span class="c1">//가상함수 테이블의 두번째 항목을 가르키게 이부분만 바뀐다.</span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>정리하면 비가상 멤버함수와 가상 함수는 호출하는 방식이 다른것 뿐이다. 비가상 멤버함수는 컴파일러에 의해 직접 해당 함수를 호출하지만 가상 함수는 객체가 가지고 있는 가상 함수 테이블 포인터를 이용해 가상 함수 테이블에 접근하여 함수를 호출한다.</p>
+<section id="id2">
+<h3>가상 함수 테이블<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>그렇다면 이런 가상함수 테이블은 언제 생성되는 것일까?</p>
+<p>컴파일러는 컴파일 시점에 소스 코드에 정의된 모든 클래스에 대해서 가상 함수가 하나라도 있을 경우 그 클래스에 대한 가상 함수 테이블을 생성한다. 그리고 각 클래스의 객체가 생성될 때 객체의 시작 주소에 vfptr을 생성하고 해당 클래스의 가상 함수 테이블의 주소값을 갖게 한다.</p>
+<p>같은 클래스의 객체의 경우 당연히 같은 가상 함수를 가지게 된다. 따라서 똑같은 테이블을 객체마다 생성할 필요가 없고 클래스 별로 하나의 가상 함수 테이블을 생성하고 객체들이 고유의 vfptr을 통해 이를 공유하며 접근할 수 있게 한다.</p>
+<section id="id3">
+<h4>참고<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
+<p>컴파일러는 가상 함수 테이블을 생성할 때 함수마다 고유의 인덱스를 부여하고 이 인덱스를 이용해서 가상 함수 호출을 처리한다. 예를 들어 가상함수 vfunc의 인덱스가 0번이라면, vfunc가 호출될 시 vfptr이 가리키는 가상 함수 테이블의 0번 인덱스에 접근하여 함수를 호출하도록 어셈블리 코드를 작성한다. 즉, 가상 함수는 오직 vfptr이 가리키는 가상 함수 테이블과 가상 함수에 해당하는 인덱스만으로 주소를 찾아내서 호출될 수 있다.</p>
+</section>
+</section>
+<section id="id4">
+<h3>가상 함수 테이블 포인터<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>이번에는 가상 함수 테이블 포인터가 언제 어떤 값을 가지게 되는지 살펴보자.</p>
+<p>클래스의 생성자와 소멸자는 각각 선처리 영역과 후처리 영역을 가지고 있다. 이를 간단하게 정리하면 다음과 같다.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(...)</span><span class="w"></span>
+<span class="p">[</span><span class="c1">// 선처리 영역 시작</span>
+<span class="mf">1.</span><span class="w"> </span><span class="n">부모</span><span class="w"> </span><span class="n">클래스의</span><span class="w"> </span><span class="n">생성자</span><span class="w"> </span><span class="n">호출</span><span class="w"></span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">vfptr</span><span class="w"> </span><span class="n">설정</span><span class="w"></span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">클래스</span><span class="w"> </span><span class="n">타입</span><span class="w"> </span><span class="n">멤버의</span><span class="w"> </span><span class="n">생성자</span><span class="w"> </span><span class="n">호출</span><span class="w"></span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">기타</span><span class="w"> </span><span class="n">선처리</span><span class="p">..</span><span class="w"></span>
+<span class="p">]</span><span class="c1">// 선처리 영역 끝</span>
+<span class="p">{</span><span class="c1">// 생성자 블록 시작</span>
+<span class="p">}</span><span class="c1">// 생성자 블록 끝</span>
+
+<span class="o">~</span><span class="n">A</span><span class="p">(...)</span><span class="w"></span>
+<span class="p">{</span><span class="c1">// 소멸자 블록 시작    </span>
+<span class="mf">1.</span><span class="w"> </span><span class="n">vfptr</span><span class="w"> </span><span class="n">설정</span><span class="w"></span>
+<span class="p">}</span><span class="c1">// 소멸자 블록 끝</span>
+<span class="p">[</span><span class="c1">// 후처리 영역 시작</span>
+<span class="mf">1.</span><span class="w"> </span><span class="n">클래스</span><span class="w"> </span><span class="n">타입</span><span class="w"> </span><span class="n">멤버의</span><span class="w"> </span><span class="n">소멸자</span><span class="w"> </span><span class="n">호출</span><span class="w"></span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">부모</span><span class="w"> </span><span class="n">클래스</span><span class="w"> </span><span class="n">소멸자</span><span class="w"> </span><span class="n">호출</span><span class="w"></span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">기타</span><span class="w"> </span><span class="n">후처리</span><span class="p">..</span><span class="w"></span>
+<span class="p">]</span><span class="c1">// 후처리 영역 끝</span>
+</pre></div>
+</div>
+<section id="id5">
+<h4>참고<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
+<p>가상함수 vfptr은 복사 생성자나 연산자에 의해서 복사되지 않는다. 그렇다면 왜 C++에서는 복사되지 못하게 막아놓은 것일까? 그 이유를 아래 코드를 보면서 이해해보자.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">	</span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vfunc</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Derive</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="n">vfunc</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">d_val_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+
+<span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">d_val_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="n">Base</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="w">	</span><span class="n">Derive</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">	</span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"></span>
+<span class="w">	</span><span class="n">b</span><span class="p">.</span><span class="n">vfunc</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>만약 <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">d;</span></code> 코드에서 vfptr이 복사가 일어난다고 생각해보자. 그러면 b의 vfptr은 Derive 클래스의 가상 함수 테이블을 가리키고 있다. 다음에 vfunc()를 호출했다면 멤버변수 d_val_에 5를 대입해야 하지만 문제가 있다. b 객체는 멤버변수 d_val_이 없다! 존재하지도 않는 멤버변수에 접근하는 것은 미정의 동작을 일으킬 수 밖에 없으며 컴파일러는 복사 생성자에서 절대 vfptr을 복사하지 않는다.</p>
+<p>가끔 자식 클래스 객체에서 부모 클래스 객체로 단순 값 복사를 위해 memcpy를 사용하기도 하는데 memcpy는 강제로 vfptr을 복사하기 때문에 사용에 주의를 기울여야 한다.</p>
+</section>
+</section>
+<section id="id6">
+<h3>다형성과 가상 함수<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<p>이제 가상 함수 테이블과 vftpr을 사용하는 가상 함수의 호출방식이 어떻게 다형성을 구현하는지 아래의 코드를 통해 알아보자.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">vfunc</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;function in base</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Derive</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">vfunc</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;function in derive</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Derive</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">Base</span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">ptr</span><span class="o">-&gt;</span><span class="n">vfunc</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>먼저 컴파일러는 각 클래스에 가상 함수가 있음을 확인하고 각 클래스의 가상 함수 테이블을 생성한다. Base 클래스의 가상 함수 테이블에는 항목 한 개가 있고 Base::vfunc의 주소가 들어간다. Derive 클래스의 가상 함수 테이블도 항목 한개가 있고 재정의한 Derive::vfunc의 주소가 들어간다. Derive 클래스는 Base 클래스에서 상속받은 가상 함수를 제정의한 것 뿐이고 새롭게 정의한 가상 함수는 없기 때문에 테이블 항목이 하나이다.</p>
+<p>Derive 객체를 생성하는 과정을 보기 전에 주목해야 될 점이 있다. 바로 Base 클래스도 가상함수 테이블을 가지고 있고 Derive 클래스도 가상 함수 테이블을 가지고 있지만 객체 d는 하나의 vfptr을 가진다는 점이다. 상식적으로 따진다면 Base 클래스의 vfptr이 하나 있고, Derive 클래스의 vfptr이 하나 있어야 될것 같다. 그러나 실제로는 하나의 vfptr만 잇으며 두 클래스에서 동시에 사용하는 공용 vfptr이다. 공용으로 사용할 경우 혼돈이 생길 수 있을것 같은데 어떤 방식으로 vfptr을 사용하는지 살펴보자.</p>
+<p>Derive 클래스의 d 객체를 생성하기 위해 생성자를 호출한다. Derive 클래스 생성자의 선처리 영역에서 Base 클래스의 생성자를 호출한다. Base 클래스의 생성자 호출의 선처리 영역에서 vfptr이 Base 클래스의 가상 함수 테이블을 가르키게 된다. 그리고 Base 클래스 생성자 호출이 끝나면 바로 vfptr은 Derive 클래스의 가상 함수 테이블을 가르키게 된다. 즉 여러 과정을 거쳐 결론적으로 vfptr이 Derive 클래스의 가상 함수 테이블을 가르키게 된다.</p>
+<p>ptr이 가르키는 객체는 d 객체의 Base 클래스의 해당하는 영역뿐이다. 하지만 객체 d의 vfptr은 이미 Derive 클래스의 가상 함수 테이블을 가르키고 있기 때문에 ptr을 이용하여 함수를 호출하더라도 원래 객체 d의 타입에 맞는 가상 함수가 호출이 될 수 있다.</p>
+<p>결론적으로 vfptr이 최종적으로 실제 클래스의 가상 함수 테이블을 가르키게 설계가 되어있기 때문에 가상 함수가 제대로 동작할 수 있으며 가상 함수를 이용해 다형성을 구현할 수 있게 된다.</p>
+</section>
+<section id="id7">
+<h3>가상 소멸자<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<p>먼저 아래 코드를 보자.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">A_Base</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="o">~</span><span class="n">A_Base</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;A_Base destructor</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">A_Derive</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">A_Base</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="o">~</span><span class="n">A_Derive</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;A_Derive destructor</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">B_Base</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">B_Base</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;B_Base destructor</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">B_Derive</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">B_Base</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="o">~</span><span class="n">B_Derive</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;B_Derive destructor</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">A_Base</span><span class="o">*</span><span class="w"> </span><span class="n">ptr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">A_Derive</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">B_Base</span><span class="o">*</span><span class="w"> </span><span class="n">ptr2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">B_Derive</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">ptr1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">ptr2</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>코드 실행 결과를 보면 A_ 관련 클래스의 경우 Derive의 소멸자가 호출되지 않았지만 B_ 관련 클래스의 경우 정상적으로 Derive의 소멸자와 Base의 소멸자가 호출된 것을 알 수 있다. 다형성의 구현 원리를 배웠음으로 ptr2를 delete할 때 “vfptr과 가상 함수 테이블을 이용해서 B_Derive 클래스의 소멸자를 호출해서 아무런 문제가 없구나” 라고 이해해 볼 수 있다.</p>
+<p>근데 곰곰히 생각해보면 뭔가 이상하다. 엄연히 소멸자는 상속되지 않는다. 상속되지 않기 때문에 재정의도 불가능하다. 상식적으로 함수의 이름만 봐도 다르지 않은가? 즉, Base 클래스의 소멸자와 Derive 클래스의 소멸자는 별 상관 없는 멤버 함수라고 보는 것이 더 합당하다. 그러나 소멸자가 가상 함수로 지정될 때는 마치 소멸자가 상속되면서 재정의되는 함수처럼 여겨진다. override 키워드도 사용할 수 있다. C++는 어떤 원리로 이런 이상한 현상을 용인 하는 것일까? 이를 이해하기 위해서는 소멸자의 진정한 모습을 살펴 볼 필요가 있다.</p>
+<section id="id8">
+<h4>소멸자와 파괴자<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
+<p>먼저 아래의 어셈블리 코드를 보자. 참고로 아래 어셈블리는 필요한 부분만 작성한것이다.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>class A 
+{
+public:
+    ~A(){};
+};
+
+int main(void)
+{
+    auto* ptr = new A;
+    delete ptr;
+    call        A::&#39;scalar deleting destructor&#39;
+
+    A a;    
+    call        A::~A
+}
+</pre></div>
+</div>
+<p>delete를 사용할 경우 scalar deleting destructor 함수를 호출하고 스택에서 객체가 해제될 경우에는 바로 A::~A를 호출한다. 즉, delete 연산은 직접적으로 소멸자를 호출하는 것이 아니라 파괴자(destructor)를 호출하고 그 안에서 A::~A를 호출함으로써 소멸자를 간접 호출한다. 파괴자는 클래스의 소멸자를 호출해준 뒤 바로 heap에 생성된 클래스 객체 메모리를 해제하는 역할을 한다.</p>
+<p>소멸자를 영어로 쓰면 destructor이기 때문에 소멸자와 파괴자를 구분하는데 불명확한 부분이 있따. 그러나 객체의 소멸 과정을 명확하게 이해하기 위해서는 두 함수를 분리해서 이해할 필요가 있다. 소멸자는 메모리 해제를 하지 않는다. 소멸자는 객체가 메모리에서 해제되기 직전에 정리할 것이 있다면 정리를 하는 것이다. 파괴자는 소멸자를 먼저 호출해 준 후에 실제 메모리 영역을 힙으로부터 반환해주는 역할을 수행한다.</p>
+<p>파괴자에 대해 조금더 자세히 알아보자. 컴파일러는 모든 클래스에 대하여 파괴자를 멤버 함수로서 암시적으로 추가하며, 각 파괴자는 자신이 소속된 클래스의 소멸자를 호출하도록 정의된다. 따라서 상속된 클래스 관계에서 본다면 자식 클래스의 파괴자는 부모 클래스의 파괴자를 상속받은 후에 재정의한 것으로 볼 수 있다. 이것이 C++에서 사용하는 트릭의 핵심이다.</p>
+<p>소멸자에 virtual 키워드를 붙일 때 실제로는 파괴자를 가상 함수로 지정하는 것이다. 따라서 실제 가상 함수 테이블에 소멸자의 주소를 넣는 것이 아니라 소멸자를 내부적으로 호출하는 파괴자의 주소를 넣는 것이다. 그래서 부모 클래스의 소멸자와 자식 클래스의 소멸자가 이름이 다르더라도 실제 가상 함수 테이블에 들어가는 파괴자의 이름은 같기 때문에 마치 소멸자들이 일반 멤버 함수가 가상 함수에 의해 동작하듯이 동작할 수 있는 것이다.</p>
+<p>결론적으로 delete ptr1을 할때는 A_Base 클래스의 파괴자를 바로 호출하지만 delete ptr2를 할 때는 vfptr과 가상 함수 테이블을 이용해 B_Derive 클래스의 파괴자를 호출하여 B_Derive 소멸자와 B_Base 소멸자가 둘 다 정상적으로 호출 된다.</p>
+</section>
+</section>
+<section id="id9">
+<h3>생성자와 소멸자에서 가상 함수 호출<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<p>먼저 아래 코드를 보자.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">Base</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">vfunc</span><span class="p">();</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="o">~</span><span class="n">Base</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">vfunc</span><span class="p">();</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vfunc</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;function in base</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Derive</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vfunc</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;function in derive</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Derive</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>위의 코드를 실행하면 “function in base” 문구만 2번 출력된다. 가상 함수의 성질에 의하면 가상 함수는 실제 타입 클래스의 함수가 호출되어야 한다. 따라서 d 객체의 타입은 Derive임으로 Derive의 생성자에서 Base의 생성자를 호출하고 Base의 생성자에서 호출하는 vfunc는 Derive::vfunc가 되어야만 할 것 같다. 그러나 Base의 생성자 안에서 호출된 vfunc는 Base::vfunc이다. 이렇게 의도와는 다르게 동작하니 주의가 필요하다.</p>
+<p>그렇다면 이제 왜 이렇게 작동하는지 한단계씩 살펴보자.</p>
+<p>먼저 생성자를 살펴보자. Derive 클래스의 d 객체를 생성하기 위해 생성자를 호출한다. 생성자 블록이 시작하기 전에 Derive 클래스의 생성자의 선처리 영역이 시작된다. 가장 먼저 Base 클래스의 생성자가 호출된다. Base 클래스의 생성자의 선처리 영역에서는 더이상 부모 클래스가 없음으로 바로 vfptr이 Base 클래스의 가상 함수 테이블을 가르키게 한다. 기타 선처리가 끝나고 이제 생성자 블록안에 vfunc이 실행된다. 이때 vfptr은 Base 클래스의 가상 함수 테이블을 가르키고 있음으로 Base::vfunc이 실행된다.</p>
+<p>이제 소멸자를 살펴보자. Derive 클래스의 d 객체를 소멸시키기 위해 소멸자를 호출한다. d 객체의 암시적 소멸자가 호출되며 vfptr이 Derive 클래스의 가상 함수 테이블을 가르킨다. 그다음 후처리 영역이 시작되면서 Base 클래스의 소멸자를 호출한다. Base 클래스의 소멸자가 호출되면 이제 vfptr이 Base 클래스의 가상 함수 테이블을 가르키게 되고 그 이후에 vfunc이 호출 됨으로 Base::vfunc이 실행된다.</p>
+<p>결론적으로 생성자나 소멸자에서 호출하는 가상 함수는 비가상 멤버 함수처럼 호출되게 되어있다. 이를 활용할 수도 있겠지만 오해의 소지가 큼으로 의도를 명확히 표현하기 위해서는 주석을 충분히 써넣거나 범위 연산자를 사용해서 Base/Derive::vfunc 식으로 가상 함수를 호출하는 것이 바람직하다.</p>
+<blockquote>
+<div><p>Reference<br />
+<span id="id10">[<a class="reference internal" href="../../99%20References/references.html#id10" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span></p>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./sources\02 programming\01 C++"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="02%20Memory/05%20Virtual%20Memory%20Structure.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Virtual Memory Structure</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Class.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By MS<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
