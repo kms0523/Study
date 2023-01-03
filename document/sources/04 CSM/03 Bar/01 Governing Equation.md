@@ -10,7 +10,7 @@ Bar의 한 단면을 잘라 free body diagram을 그리면 다음과 같다.
 ```{figure} _image/0102.png
 ```
 
-위의 free body diagram의 force equilibrium equation은 다음과 같다.
+Force equilibrium equation은 다음과 같다.
 
 $$ (\sigma A)(x+\Delta x) - (\sigma A)(x) + \int_x^{x+\Delta x} p\thinspace dx = 0 $$
 
@@ -42,8 +42,12 @@ $$ \frac{\partial}{\partial x}(\sigma A)\Delta x + p\Delta x = 0 $$
 $$ \frac{\partial}{\partial x}(\sigma A) + p = 0 \qed $$
 
 ## Displacement Based Governing Equation
+Displacement를 $u$라고 할 때, stress-strain-displacement relation은 다음과 같다.
+
+$$ \sigma = E\pdiff{u}{x} $$
+
 Governing equation에 stress-strain-displacement relation을 적용하면 다음과 같다.
 
-$$ \frac{\partial}{\partial x}\left(EA\frac{\partial u}{\partial x}\right) + p = 0 $$
+$$ \pdiff{}{x}\left(EA\pdiff{u}{x}\right) + p = 0 $$
 
 이 식이 1D bar의 `displacement based governing equation`이다.

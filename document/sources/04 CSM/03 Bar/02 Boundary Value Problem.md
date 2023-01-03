@@ -1,9 +1,5 @@
 # Boundary Value Problem
-Bar의 displacement based governing equation은 다음과 같다.
-
-$$ \frac{\partial}{\partial x}\left(EA\frac{\partial u}{\partial x}\right) + p(x) = 0 $$
-
-Displacement based governing equation는 $u$의 2계 미분방정식임으로 이를 풀기 위해서는 두개의 `경계조건(boundary condition; BC)`이 필요하다.
+1D Bar의 displacement based governing equation는 $u$의 2계 미분방정식임으로 이를 풀기 위해서는 두개의 `경계조건(boundary condition; BC)`이 필요하다.
 
 다음과 같은 model을 고려해보자.
 
