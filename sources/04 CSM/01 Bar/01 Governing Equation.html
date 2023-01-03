@@ -1269,40 +1269,37 @@ title="Print to PDF"
 <figure class="align-default">
 <img alt="../../../_images/0102.png" src="../../../_images/0102.png" />
 </figure>
-<p>Force equilibrium equation은 다음과 같다.</p>
+<p>위의 free body diagram의 force equilibrium equation은 다음과 같다.</p>
 <div class="math notranslate nohighlight">
-\[ (\sigma A)(x+\Delta x) - (\sigma A)(x) + \int_x^{x+\Delta x} p\thinspace dx = 0 \]</div>
+\[ (\sigma A)(x+\Delta x) - (\sigma A)(x) + \int_x^{x+\Delta x} p(x)\thinspace dx = 0 \]</div>
 <p>이 때, <span class="math notranslate nohighlight">\(\Delta x\)</span>가 충분히 작아 선형 근사할 수 있다고 하면 명제1에 의해 다음과 같이 간단해진다.</p>
 <div class="math notranslate nohighlight">
-\[ \frac{\partial}{\partial x}(\sigma A) + p = 0 \]</div>
+\[ \frac{\partial}{\partial x}(\sigma A) + p(x) = 0 \]</div>
 <section id="id1">
 <h3>명제1<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>다음과 같이 식이 주어졌다고 하자.</p>
 <div class="math notranslate nohighlight">
-\[ (\sigma A)(x+\Delta x) - (\sigma A)(x) + \int_x^{x+\Delta x} p\thinspace dx = 0 \]</div>
+\[ (\sigma A)(x+\Delta x) - (\sigma A)(x) + \int_x^{x+\Delta x} p(x)\thinspace dx = 0 \]</div>
 <p><span class="math notranslate nohighlight">\(\Delta x\)</span>가 충분히 작아 선형 근사할 수 있을 때, 위 식을 선형근사하여 정리하면 다음과 같음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
-\[ \frac{\partial}{\partial x}(\sigma A) + p = 0 \]</div>
+\[ \frac{\partial}{\partial x}(\sigma A) + p(x) = 0 \]</div>
 <p><strong>Proof</strong></p>
 <p>이 때, <span class="math notranslate nohighlight">\(\Delta x\)</span>가 충분히 작아 선형 근사할 수 있다고 하면 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{aligned} (\sigma A)(x+\Delta x) &amp;= (\sigma A)(x) + \frac{\partial}{\partial x}(\sigma A)\Delta x \\ \int_x^{x+\Delta x} p\thinspace dx &amp;= P(x+\Delta x) - P(x) \\&amp;= P(x) + \frac{\partial P}{\partial x} \Delta x - P(x) \\&amp;= p\Delta x \end{aligned} \end{split}\]</div>
+\[\begin{split} \begin{aligned} (\sigma A)(x+\Delta x) &amp;= (\sigma A)(x) + \frac{\partial}{\partial x}(\sigma A)\Delta x \\ \int_x^{x+\Delta x} p(x)\thinspace dx &amp;= P(x+\Delta x) - P(x) \\&amp;= P(x) + \frac{\partial P}{\partial x} \Delta x - P(x) \\&amp;= p(x)\Delta x \end{aligned} \end{split}\]</div>
 <p>이를 원래식에 대입하면 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \frac{\partial}{\partial x}(\sigma A)\Delta x + p\Delta x = 0 \]</div>
+\[ \frac{\partial}{\partial x}(\sigma A)\Delta x + p(x)\Delta x = 0 \]</div>
 <p>양변을 <span class="math notranslate nohighlight">\(\Delta x\)</span>로 나눠주면 다음과 같다.</p>
 <div class="math notranslate nohighlight">
-\[ \frac{\partial}{\partial x}(\sigma A) + p = 0 \qed \]</div>
+\[ \frac{\partial}{\partial x}(\sigma A) + p(x) = 0 \qed \]</div>
 </section>
 </section>
 <section id="displacement-based-governing-equation">
 <h2>Displacement Based Governing Equation<a class="headerlink" href="#displacement-based-governing-equation" title="Permalink to this headline">#</a></h2>
-<p>Displacement를 <span class="math notranslate nohighlight">\(u\)</span>라고 할 때, stress-strain-displacement relation은 다음과 같다.</p>
-<div class="math notranslate nohighlight">
-\[ \sigma = E\pdiff{u}{x} \]</div>
 <p>Governing equation에 stress-strain-displacement relation을 적용하면 다음과 같다.</p>
 <div class="math notranslate nohighlight">
-\[ \pdiff{}{x}\left(EA\pdiff{u}{x}\right) + p = 0 \]</div>
+\[ \frac{\partial}{\partial x}\left(EA\frac{\partial u}{\partial x}\right) + p(x) = 0 \]</div>
 <p>이 식이 1D bar의 <code class="docutils literal notranslate"><span class="pre">displacement</span> <span class="pre">based</span> <span class="pre">governing</span> <span class="pre">equation</span></code>이다.</p>
 </section>
 </section>

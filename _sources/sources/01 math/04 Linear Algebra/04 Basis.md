@@ -1,23 +1,28 @@
 # Basis
 ## 정의
-Vector space $V/F$와 $\beta \subseteq V$가 있을 때, `기저(basis)`란 다음을 만족하는 부분집합이다.
+Vector space $V/\F$와 $V$의 subset $\beta$가 있다고 하자.
+
+$\beta$가 다음을 만족할 떄, $\beta$를 `기저(basis)`라고 한다.
 
 $$ \beta \text{ is linearly independent set} \land \span(\beta) = V $$
 
 ### 명제1
-Vector space $V/F$와 linearly independent set $S \subseteq V$가 있을 때, 집합 $F$를 다음과 같이 정의하자.
+Vector space $V/\F$와 $V$의 linearly independent subset $S$가 있다고 하자.
+
+그리고 집합 $F$를 다음과 같이 정의하자.
 
 $$F := \{ A \subseteq V | S \subseteq A \land A \text{ is linearly independent}\}$$ 
 
-이 때, $(F,\subseteq)$가 극대원소 $M$을 갖음을 증명하여라.
+이 때, 다음을 증명하여라.
+
+$$ (F,\subseteq) \text{ has maximal element} $$
 
 **Proof**  
-<<<<<<< HEAD
 $S \in F$임으로 다음이 성립한다.
 
 $$ F \neq \empty $$
 
-따라서, poset의 성질에 의해 다음이 성립한다.
+따라서, set inclusion의 성질에 의해 다음이 성립한다.
 
 $$ (F,\subseteq) \text{ is a poset} $$
 
@@ -25,25 +30,53 @@ $(F,\subseteq)$의 임의의 chain $C_i$를 다음과 같이 표현하자.
 
 $$ C_i = \Set{A_{i1}, \cdots, A_{in}} \subseteq F $$
 
-$C_i$는 전순서집합임으로 `일반성을 잃지 않고(without loss of generality, WLOG)` $A_{i1} \subseteq \cdots \subseteq A_{in}$라 가정하자. 
+$C_i$는 전순서집합임으로 `일반성을 잃지 않고(without loss of generality, WLOG)` 다음을 가정할 수 있다.
+
+$$ A_{i1} \subseteq \cdots \subseteq A_{in} $$
 
 그러면 $C_i$는 항상 상계 $A_{in}$을 갖는다.
 
-부분순서집합 $(F,\subseteq)$의 모든 사슬이 상계를 갖음으로, Zorn's lemma에 의해 $F$는 극대원소 $M$을 갖는다. $\qed$
-=======
-$S \in F$임으로 $F \neq \empty$이고 $(F,\subseteq)$은 partially ordered set이다. 
+부분순서집합 $(F,\subseteq)$의 모든 사슬이 상계를 갖음으로, Zorn's lemma에 의해 다음이 성립한다.
 
-$(F,\subseteq)$의 임의의 사슬 $C_i = \{ A_{i1}, \cdots, A_{in} \} \subseteq F$에 대해, $C$는 전순서집합임으로 `일반성을 잃지 않고(without loss of generality, WLOG)` $A_{i1} \subseteq \cdots \subseteq A_{in}$라 가정할 수 있다. 따라서 $C_i$는 항상 상계 $A_{in}$을 갖는다.
+$$ (F,\subseteq) \text{ has maximal element} \qed $$
 
-부분순서집합 $(F,\subseteq)$의 모든 사슬이 상계를 갖음으로, `초른의 보조정리(Zorn's lemma)`에 의해 $F$는 극대원소 $M$을 갖는다. $\qed$
->>>>>>> 7e448f5baabbdae86ac17923c9c154564537bb13
 
 ### 명제2
-정리 1의 극대원소 $M$이 $span(M)=V$을 만족함을 증명하여라.
+Vector space $V/\F$와 $V$의 linearly independent subset $S$가 있다고 하자.
+
+그리고 집합 $F$를 다음과 같이 정의하자.
+
+$$F := \{ A \subseteq V | S \subseteq A \land A \text{ is linearly independent}\}$$ 
+
+$F$의 maximal element를 $M$이라고 할 때, 다음을 증명하여라.
+
+$$ V = \span(M) $$
 
 **Proof**
 
-$$ \begin{aligned} & V \neq span(M) \\ \Leftrightarrow \enspace & V - span(M) \neq \empty \\ \Leftrightarrow \enspace & \exist v \in V - span(M), \quad v \neq 0_V \\ \Rightarrow \enspace &  M \cup \{v\} \in F \enspace \land \enspace M \subseteq M \cup \{v\} \\ \Rightarrow \enspace & \Rightarrow \!\! \Leftarrow \text{maximality of } M \quad {_\blacksquare} \end{aligned} $$
+다음을 가정하자.
+
+$$ V \neq \span(M) $$
+
+그러면 다음이 성립한다.
+
+$$ \begin{aligned} & V - \span(M) \neq \empty \\ \iff \enspace & \exist v \in V - \span(M) \end{aligned} $$
+
+위를 만족하는 $v$가 있을 떄, linearly independent set의 성질에 의해 다음이 성립한다.
+
+$$ M \cup \Set{v} \text{ is linearly independent set } $$
+
+또한 $S \subseteq M$임으로 다음이 성립한다. 
+
+$$ S \subseteq (M \cup \Set{v}) $$
+
+따라서, 다음이 성립한다.
+
+$$ M \cup \{v\} \in F \enspace \land \enspace M \subseteq (M \cup \{v\}) $$
+
+하지만, 이는 $M$이 maximal element라는 전제에 모순됨으로 proof by contradiction에 의해 다음이 성립한다.
+
+$$ V = \span(M) \qed $$
 
 ### 명제3 (기저의 존재 정리)
 모든 벡터공간 $V/F$이 기저를 갖음을 증명하여라.
