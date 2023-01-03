@@ -1275,13 +1275,13 @@ title="Print to PDF"
 <h1>FE Formulation<a class="headerlink" href="#fe-formulation" title="Permalink to this headline">#</a></h1>
 <section id="finite-elements">
 <h2>Finite Elements<a class="headerlink" href="#finite-elements" title="Permalink to this headline">#</a></h2>
-<p><span class="math notranslate nohighlight">\(\Omega\)</span>의 collection <span class="math notranslate nohighlight">\(\Omega_E\)</span>를 다음과 같이 정의하자.</p>
+<p><span class="math notranslate nohighlight">\(\Omega\)</span>의 subset collection <span class="math notranslate nohighlight">\(\Omega_E\)</span>를 다음과 같이 정의하자.</p>
 <div class="math notranslate nohighlight">
 \[ \Omega_E := \Set{\Omega_i\subseteq\Omega | i \in [1,N_E]} \]</div>
-<p><span class="math notranslate nohighlight">\(\Omega_E\)</span>는 <span class="math notranslate nohighlight">\(\Omega\)</span>를 근사하기 위한 <span class="math notranslate nohighlight">\(\Omega\)</span>의 subset의 collection 이다.</p>
+<p><span class="math notranslate nohighlight">\(\Omega_E\)</span>는 <span class="math notranslate nohighlight">\(\Omega\)</span>를 근사하기 위한 collection이다.</p>
 <div class="math notranslate nohighlight">
 \[ \Omega \approx \bigcup \Omega_E \]</div>
-<p><span class="math notranslate nohighlight">\(\Omega_i \in \Omega_E\)</span>를 <code class="docutils literal notranslate"><span class="pre">요소(element)</span></code>라고 부르며, element는 다음 성질을 만족한다.</p>
+<p>이 때, <span class="math notranslate nohighlight">\(\Omega_i \in \Omega_E\)</span>를 <code class="docutils literal notranslate"><span class="pre">요소(element)</span></code>라고 부르며 element는 다음 성질을 만족한다.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} \forall \Omega_i \in \Omega_E, \quad \Omega_i \neq \empty \\ \forall \Omega_j,\Omega_k \in \Omega_E, \quad \Omega_j \neq \Omega_k \implies \Omega_j \cap \Omega_k = \empty \end{split}\]</div>
 <section id="id1">
@@ -1291,7 +1291,7 @@ title="Print to PDF"
 </section>
 <section id="weak-formulation-on-fes">
 <h2>Weak Formulation on FEs<a class="headerlink" href="#weak-formulation-on-fes" title="Permalink to this headline">#</a></h2>
-<p><span class="math notranslate nohighlight">\(\Omega_E\)</span>에서 weak formulation은 다음과 같다.</p>
+<p><span class="math notranslate nohighlight">\(\forall \Omega_i \in \Omega_E\)</span>에서 1D bar의 governing equation에 대한 weak formulation은 다음과 같다.</p>
 <div class="math notranslate nohighlight">
 \[ \text{find } u \in \mathcal{U}_W \st \forall w \in \mathcal{W}, \quad \sum_{i=1}^{N_E}\int_{\Omega_i} EA\pdiff{u}{x}\pdiff{w}{x}\thinspace dV = fw(L) + \sum_{i=1}^{N_E}\int_{\Omega_i} p(x)w \thinspace dV \]</div>
 <section id="bodunov-galerkin-method">

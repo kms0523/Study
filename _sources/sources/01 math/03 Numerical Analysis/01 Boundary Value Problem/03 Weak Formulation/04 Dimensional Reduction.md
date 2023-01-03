@@ -119,7 +119,7 @@ $$ \text{find } x \in \R_b^n \st B_r(w_i,x^j u_j) = l_r(w_i), \enspace i = 1,\cd
 
 $$ \begin{gathered} \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_f} := \span(\set{u_1,\cdots,u_n}) \subset C^1(\Omega)) \\ \R^n_b := \Set{x \in \R^n | x^iu_i \text{ satisfy essential BC}} \end{gathered} $$
 
-### Affien form
+### Affine form
 $$ \text{find } x \in \R^n \st B_r(w_i,\phi + x^ju^0_j) = l_r(w_i), \enspace i = 1,\cdots,n $$
 
 #### Related function spaces

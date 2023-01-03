@@ -1327,19 +1327,25 @@ title="Print to PDF"
 <h3><span class="math notranslate nohighlight">\(\phi : \R^d \rightarrow \R\)</span><a class="headerlink" href="#phi-r-d-rightarrow-r" title="Permalink to this headline">#</a></h3>
 <p>함수 <span class="math notranslate nohighlight">\(\phi : \R^d \rightarrow \R\)</span>가 있을 때, 서로 다른 <span class="math notranslate nohighlight">\(n\)</span>개의 <span class="math notranslate nohighlight">\(\mathbf x_i\)</span>에서 <span class="math notranslate nohighlight">\(\phi(\mathbf x_i)\)</span>값을 알고 있다고 하자.</p>
 <p>이 때, <span class="math notranslate nohighlight">\(\phi\)</span>를 <code class="docutils literal notranslate"><span class="pre">다항식(polynomial)</span></code>으로 근사해보자.</p>
-<p><span class="math notranslate nohighlight">\(\phi\)</span>를 <span class="math notranslate nohighlight">\(n\)</span>개의 <code class="docutils literal notranslate"><span class="pre">단항식(monomial)</span></code> <span class="math notranslate nohighlight">\(m_i\)</span>으로 이루어진 다항식으로 근사하면 다음과 같이 표현할 수 있다.
-$<span class="math notranslate nohighlight">\( \phi(x) \approx \phi_h(x) = a_i m_i(\mathbf x) \)</span>$</p>
-<p>이를 행렬 형태로 표현하면 다음과 같다.
-$<span class="math notranslate nohighlight">\( \phi_h = \mathbf a \cdot \mathbf m \)</span>$</p>
+<p><span class="math notranslate nohighlight">\(\phi\)</span>를 <span class="math notranslate nohighlight">\(n\)</span>개의 <code class="docutils literal notranslate"><span class="pre">단항식(monomial)</span></code> <span class="math notranslate nohighlight">\(m_i\)</span>으로 이루어진 다항식으로 근사하면 다음과 같이 표현할 수 있다.</p>
+<div class="math notranslate nohighlight">
+\[ \phi(x) \approx \phi_h(x) = a_i m_i(\mathbf x) \]</div>
+<p>이를 행렬 형태로 표현하면 다음과 같다.</p>
+<div class="math notranslate nohighlight">
+\[ \phi_h = \mathbf a \cdot \mathbf m \]</div>
 <p>이 때, 벡터함수 <span class="math notranslate nohighlight">\(\mathbf m : \R \rightarrow \R^n\)</span>을 <code class="docutils literal notranslate"><span class="pre">monomial</span> <span class="pre">vector</span> <span class="pre">function</span></code>이라 한다.</p>
-<p>위 다항식이 서로 다른 n개의 점에서 <span class="math notranslate nohighlight">\(\phi(\mathbf x_i) = \phi_h(\mathbf x_i)\)</span>을 만족해야하며 이를 성분으로 나타내면 다음과 같다.
-$<span class="math notranslate nohighlight">\( \phi_h(\mathbf x_i) = a_j m_j(\mathbf x_i) \)</span>$</p>
-<p>이를 다시 행렬 형태로 나타내면 다음과 같다.
-$<span class="math notranslate nohighlight">\( \boldsymbol{\hat{\phi}} = \mathbf M^T \mathbf a \\ \text{where,} \quad \mathbf M =  \begin{bmatrix} \mathbf m(x_1) &amp; \cdots &amp; \mathbf m(x_n) \end{bmatrix}, \quad \hat{\phi}_i = \phi(\mathbf x_i) \)</span>$</p>
-<p>따라서 <span class="math notranslate nohighlight">\(\bf a = (M^T)^{-1} \boldsymbol{\hat{\phi}}\)</span>이고 이를 원래 식에 대입하면 다음과 같다.
-$<span class="math notranslate nohighlight">\( \begin{aligned} \phi_h &amp;= \mathbf {a \cdot m} \\ &amp;= \mathbf {m \cdot a} \\ &amp;= \mathbf m^T (\mathbf M^T)^{-1} \boldsymbol{\hat{\phi}} \\ &amp;= \mathbf n \cdot \boldsymbol{\hat{\phi}} \quad  \end{aligned} \)</span>$</p>
-<p>만약, <span class="math notranslate nohighlight">\(d = 1\)</span>이고 <span class="math notranslate nohighlight">\(\mathbf m\)</span>이 다음과 같이 주어졌다고 하자.
-$<span class="math notranslate nohighlight">\( m_i = x^{i-1} \)</span>$</p>
+<p>위 다항식이 서로 다른 n개의 점에서 <span class="math notranslate nohighlight">\(\phi(\mathbf x_i) = \phi_h(\mathbf x_i)\)</span>을 만족해야하며 이를 성분으로 나타내면 다음과 같다.</p>
+<div class="math notranslate nohighlight">
+\[ \phi_h(\mathbf x_i) = a_j m_j(\mathbf x_i) \]</div>
+<p>이를 다시 행렬 형태로 나타내면 다음과 같다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{gathered} \boldsymbol{\hat{\phi}} = \mathbf M^T \mathbf a \\ \text{where,} \quad \mathbf M =  \begin{bmatrix} \mathbf m(x_1) &amp; \cdots &amp; \mathbf m(x_n) \end{bmatrix}, \quad \hat{\phi}_i = \phi(\mathbf x_i) \end{gathered} \end{split}\]</div>
+<p>따라서 <span class="math notranslate nohighlight">\(\bf a = (M^T)^{-1} \boldsymbol{\hat{\phi}}\)</span>이고 이를 원래 식에 대입하면 다음과 같다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} \phi_h &amp;= \mathbf {a \cdot m} \\ &amp;= \mathbf {m \cdot a} \\ &amp;= \mathbf m^T (\mathbf M^T)^{-1} \boldsymbol{\hat{\phi}} \\ &amp;= \mathbf n \cdot \boldsymbol{\hat{\phi}} \quad  \end{aligned} \end{split}\]</div>
+<p>만약, <span class="math notranslate nohighlight">\(d = 1\)</span>이고 <span class="math notranslate nohighlight">\(\mathbf m\)</span>이 다음과 같이 주어졌다고 하자.</p>
+<div class="math notranslate nohighlight">
+\[ m_i = x^{i-1} \]</div>
 <p>이 때, <span class="math notranslate nohighlight">\(\mathbf n = \mathbf M^{-1} \mathbf m\)</span>은 형상함수 벡터이고 <span class="math notranslate nohighlight">\(n_i\)</span>는 다음과 같은 Lagrange 다항식 형태로 주어진다.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} n_i = \prod_{\substack{j = 1 \\ j \neq i}}^n \frac{x_j - x}{x_j - x_i} \end{split}\]</div>
@@ -1351,17 +1357,21 @@ $<span class="math notranslate nohighlight">\( m_i = x^{i-1} \)</span>$</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} \boldsymbol{\phi}\mathbf{(x)} = \mathbf {Am(x)} \\ \mathbf A \in \R^{r \times n}\end{split}\]</div>
 <p>이 때, 서로 다른 <span class="math notranslate nohighlight">\(n\)</span>개의 <span class="math notranslate nohighlight">\(\mathbf x_i\)</span>에서 <span class="math notranslate nohighlight">\(\boldsymbol{\phi}(\mathbf x_i)\)</span> 값을 알고 있다면 <span class="math notranslate nohighlight">\(\boldsymbol{\phi}(\mathbf x_i) = \mathbf {Am(x}_i)\)</span>를 만족하도록 <span class="math notranslate nohighlight">\(\bf A\)</span>를 결정할 수 있다.</p>
-<p><span class="math notranslate nohighlight">\(\boldsymbol{\phi}\)</span>의 <span class="math notranslate nohighlight">\(i\)</span>번째 원소 <span class="math notranslate nohighlight">\(\phi_i\)</span>는 다음과 같이 표현된다.
-$<span class="math notranslate nohighlight">\( \begin{equation} \phi_i(\mathbf x) = \mathbf A_{i*} \cdot \mathbf m(\mathbf x) \end{equation} \)</span>$</p>
-<p><span class="math notranslate nohighlight">\(i\)</span>번째 원소가 만족해야 하는 조건을 행렬 형태로 나타내면 다음과 같다.
-$<span class="math notranslate nohighlight">\( \hat{ \boldsymbol \phi_i} = \mathbf M^T \mathbf A_{i*} \\ \text{where,} \quad \mathbf M =  \begin{bmatrix} \bf m(x_1) &amp; \cdots &amp; \bf m(x_n) \end{bmatrix}, \quad \hat{\phi}_{i,j} = \phi_i(\mathbf x_j)\)</span>$</p>
+<p><span class="math notranslate nohighlight">\(\boldsymbol{\phi}\)</span>의 <span class="math notranslate nohighlight">\(i\)</span>번째 원소 <span class="math notranslate nohighlight">\(\phi_i\)</span>는 다음과 같이 표현된다.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{equation} \phi_i(\mathbf x) = \mathbf A_{i*} \cdot \mathbf m(\mathbf x) \end{equation} \]</div>
+<p><span class="math notranslate nohighlight">\(i\)</span>번째 원소가 만족해야 하는 조건을 행렬 형태로 나타내면 다음과 같다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \hat{ \boldsymbol \phi_i} = \mathbf M^T \mathbf A_{i*} \\ \text{where,} \quad \mathbf M =  \begin{bmatrix} \bf m(x_1) &amp; \cdots &amp; \bf m(x_n) \end{bmatrix}, \quad \hat{\phi}_{i,j} = \phi_i(\mathbf x_j)\end{split}\]</div>
 <p>따라서 <span class="math notranslate nohighlight">\(\mathbf A_{i*} = (\mathbf M^T)^{-1} \hat{ \boldsymbol \phi_i}\)</span>이고 식(5)에 대입하면 다음과 같다.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} \begin{aligned} \phi_i &amp;= \mathbf A_{i*} \cdot \mathbf m \\ &amp;= \mathbf m \cdot \mathbf A_{i*} \\ &amp;= \mathbf m^T (\mathbf M^T)^{-1} \boldsymbol{\hat{\phi}}_i \\ &amp;= \mathbf n \cdot \boldsymbol{\hat{\phi}}_i \end{aligned} \end{split}\]</div>
-<p>모든 원소가 만족해야 하는 조건은 다음과 같다.
-$<span class="math notranslate nohighlight">\( \phi_i = \sum_{j=1}^n n_j\hat{\phi}_i(\mathbf x_j) \quad (i = 1, \cdots, r) \)</span>$</p>
-<p>이를 하나의 행렬식으로 나타내면 다음과 같다.
-$<span class="math notranslate nohighlight">\( \boldsymbol{\phi} = \begin{bmatrix} n_1 \enspace \underbrace{0 \cdots 0}_{r-1}  &amp;&amp; n_2 \enspace \underbrace{0 \cdots 0}_{r-1} &amp;&amp; \cdots &amp;&amp; n_n \enspace \underbrace{0 \cdots 0}_{r-1} \\ 0 \enspace n_1 \enspace \underbrace{0 \cdots 0}_{r-2} &amp;&amp; 0 \enspace n_2 \enspace \underbrace{0 \cdots 0}_{r-2} &amp;&amp; \cdots &amp;&amp; 0 \enspace n_n \enspace \underbrace{0 \cdots 0}_{r-2} \\ &amp;&amp; \qquad  \vdots \\ \underbrace{0 \cdots 0}_{r-1} \enspace  n_1 &amp;&amp; \underbrace{0 \cdots 0}_{r-1} \enspace n_2 &amp;&amp; \cdots &amp;&amp; \underbrace{0 \cdots 0}_{r-1} \enspace n_n \end{bmatrix} \begin{bmatrix} \boldsymbol{\phi}(\mathbf x_1) \\ \vdots \\ \boldsymbol{\phi}(\mathbf x_r) \end{bmatrix} \)</span>$</p>
+<p>모든 원소가 만족해야 하는 조건은 다음과 같다.</p>
+<div class="math notranslate nohighlight">
+\[ \phi_i = \sum_{j=1}^n n_j\hat{\phi}_i(\mathbf x_j) \quad (i = 1, \cdots, r) \]</div>
+<p>이를 하나의 행렬식으로 나타내면 다음과 같다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \boldsymbol{\phi} = \begin{bmatrix} n_1 \enspace \underbrace{0 \cdots 0}_{r-1}  &amp;&amp; n_2 \enspace \underbrace{0 \cdots 0}_{r-1} &amp;&amp; \cdots &amp;&amp; n_n \enspace \underbrace{0 \cdots 0}_{r-1} \\ 0 \enspace n_1 \enspace \underbrace{0 \cdots 0}_{r-2} &amp;&amp; 0 \enspace n_2 \enspace \underbrace{0 \cdots 0}_{r-2} &amp;&amp; \cdots &amp;&amp; 0 \enspace n_n \enspace \underbrace{0 \cdots 0}_{r-2} \\ &amp;&amp; \qquad  \vdots \\ \underbrace{0 \cdots 0}_{r-1} \enspace  n_1 &amp;&amp; \underbrace{0 \cdots 0}_{r-1} \enspace n_2 &amp;&amp; \cdots &amp;&amp; \underbrace{0 \cdots 0}_{r-1} \enspace n_n \end{bmatrix} \begin{bmatrix} \boldsymbol{\phi}(\mathbf x_1) \\ \vdots \\ \boldsymbol{\phi}(\mathbf x_r) \end{bmatrix} \end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[ \boldsymbol{\phi} = \mathbf N \boldsymbol{\hat\phi} \]</div>
 <section id="id1">
@@ -1384,13 +1394,16 @@ $<span class="math notranslate nohighlight">\( \boldsymbol{\phi} = \begin{bmatri
 <h2><span class="math notranslate nohighlight">\(C^1\)</span> 보간<a class="headerlink" href="#c-1" title="Permalink to this headline">#</a></h2>
 <section id="phi-r-rightarrow-r">
 <h3><span class="math notranslate nohighlight">\(\phi : \R \rightarrow \R\)</span><a class="headerlink" href="#phi-r-rightarrow-r" title="Permalink to this headline">#</a></h3>
-<p>함수 <span class="math notranslate nohighlight">\(\phi : \R \rightarrow \R\)</span>를 <span class="math notranslate nohighlight">\(2n\)</span>개의 <code class="docutils literal notranslate"><span class="pre">단항식(monomial)</span></code>을 갖는 <code class="docutils literal notranslate"><span class="pre">다항식(polynomial)</span></code>으로 근사하면 다음과 같이 표현할 수 있다.
-$<span class="math notranslate nohighlight">\( \phi(x) \approx \mathbf a \cdot \mathbf m(x) \)</span>$</p>
+<p>함수 <span class="math notranslate nohighlight">\(\phi : \R \rightarrow \R\)</span>를 <span class="math notranslate nohighlight">\(2n\)</span>개의 <code class="docutils literal notranslate"><span class="pre">단항식(monomial)</span></code>을 갖는 <code class="docutils literal notranslate"><span class="pre">다항식(polynomial)</span></code>으로 근사하면 다음과 같이 표현할 수 있다.</p>
+<div class="math notranslate nohighlight">
+\[ \phi(x) \approx \mathbf a \cdot \mathbf m(x) \]</div>
 <p>이 떄, 서로 다른 <span class="math notranslate nohighlight">\(n\)</span>개의 <span class="math notranslate nohighlight">\(x_i\)</span>에서 <span class="math notranslate nohighlight">\(\phi(x_i), \phi'(x_i)\)</span>값을 알고 있다면 <span class="math notranslate nohighlight">\(\phi(x_i) = \mathbf a \cdot \mathbf m(x_i)\)</span>와 <span class="math notranslate nohighlight">\(\phi'(x_i) = \mathbf a \cdot \mathbf m'(x_i)\)</span>를 만족하도록 <span class="math notranslate nohighlight">\(\mathbf a\)</span>를 결정할 수 있다.</p>
-<p>위의 조건을 행렬 형태로 나타내면 다음과 같다.
-$<span class="math notranslate nohighlight">\( \boldsymbol{\hat{\phi}} = \mathbf M^T \mathbf a \\ \text{where,} \quad \mathbf M =  \begin{bmatrix} \mathbf m(x_1) &amp; \mathbf m'(x_1) &amp; \cdots &amp; \mathbf m(x_n) &amp; \mathbf m'(x_n) \end{bmatrix}, \quad \boldsymbol{\hat{\phi}} = \begin{bmatrix} \phi(x_1) \\ \phi'(x_1) \\ \vdots \\ \phi(x_n) \\ \phi'(x_n) \end{bmatrix} \)</span>$</p>
-<p>따라서 <span class="math notranslate nohighlight">\(\bf a = (M^T)^{-1} \boldsymbol{\hat{\phi}}\)</span>이고 이를 원래 식에 대입하면 다음과 같다.
-$<span class="math notranslate nohighlight">\( \begin{aligned} \phi &amp;= \mathbf {a \cdot m} \\ &amp;= \mathbf {m \cdot a} \\ &amp;= \mathbf m^T (\mathbf M^T)^{-1} \boldsymbol{\hat{\phi}} \\ &amp;= \mathbf n \cdot \boldsymbol{\hat{\phi}} \quad  \end{aligned} \)</span>$</p>
+<p>위의 조건을 행렬 형태로 나타내면 다음과 같다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \boldsymbol{\hat{\phi}} = \mathbf M^T \mathbf a \\ \text{where,} \quad \mathbf M =  \begin{bmatrix} \mathbf m(x_1) &amp; \mathbf m'(x_1) &amp; \cdots &amp; \mathbf m(x_n) &amp; \mathbf m'(x_n) \end{bmatrix}, \quad \boldsymbol{\hat{\phi}} = \begin{bmatrix} \phi(x_1) \\ \phi'(x_1) \\ \vdots \\ \phi(x_n) \\ \phi'(x_n) \end{bmatrix} \end{split}\]</div>
+<p>따라서 <span class="math notranslate nohighlight">\(\bf a = (M^T)^{-1} \boldsymbol{\hat{\phi}}\)</span>이고 이를 원래 식에 대입하면 다음과 같다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} \phi &amp;= \mathbf {a \cdot m} \\ &amp;= \mathbf {m \cdot a} \\ &amp;= \mathbf m^T (\mathbf M^T)^{-1} \boldsymbol{\hat{\phi}} \\ &amp;= \mathbf n \cdot \boldsymbol{\hat{\phi}} \quad  \end{aligned} \end{split}\]</div>
 <p>이와 같이 각 점에서 값과 기울기 값을 만족하게 보간하는 방법을 <code class="docutils literal notranslate"><span class="pre">에르미트</span> <span class="pre">보간(Hermitian</span> <span class="pre">interpolation)</span></code>이라고 한다.</p>
 </section>
 </section>
