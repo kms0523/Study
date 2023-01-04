@@ -1,108 +1,12 @@
-# 들어가며
+# Abstract Algebra
 이 글은 다음을 정리한 글이다.
 
 [선형대수 - 수학의 즐거움 youtube](https://www.youtube.com/playlist?list=PL4m4z_pFWq2oWmDtNvdy5GYP68dOsGV64)  
 [추상대수학 - 수학의 즐거움 youtube](https://www.youtube.com/playlist?list=PL4m4z_pFWq2rDUPj_TPi1IQUgubY3-PtI)
 
-# 대수구조
-추상대수학에서 `대수 구조(algebraic structure)`는 일련의 연산들이 주어진 집합이다.
 
-## 이항연산
 
-집합 $S$가 있을 때, $S$ 위의 `이항연산(binary operation)`은 다음과 같이 정의된 함수다.
 
-$$ *:S \times S \rightarrow S $$ 
-
-$T \subseteq S$에 대해, $a,b \in T \Rightarrow a*b \in T$면 $T$은 $*$에 대해 `닫혀있다`(`closed` under $*$)고 표현한다.
-
-## 결합법칙
-
-집합 $S$와 $S$위의 이항연산 $*$이 있을 때, 다음을 만족하는 $*$을 `결합법칙(associative property)`을 만족한다고 한다.
-
-$$  x,y,z \in S, \quad (x*y)*z=x*(y*z)$$   
-
-즉, 결합법칙은 이항연산이 가질 수 있는 성질이다. 
-
-## 반군
-집합 $S$와 $S$위의 결합법칙을 만족하는 이항연산 $*$이 있을 때, `반군(semi-group)` $(S,*)$은 결합법칙을 만족하는 이항연산이 주어진 대수구조이다. 
-
-### 예시
-$(\N,+)$은 반군이다.
-
-$(\N,-)$은 반군이 아니다. ($\because -$은 $\N$ 위에서 이항연산이 아니다)
-
-$(\{0,1\},\times)$은 반군이다.
-
-### 참고
-반군의 여부는 어떤 연산을 주는지 뿐만아니라 어떤 집합을 주는지에도 영향을 받는다.
-
-## 모노이드
-반군 $(M,*)$이 있을 때, `모노이드(monoid)`는 다음을 만족하는 반군이다.
-
-$$ \exist e \in M \quad s.t \quad \forall a \in M, \quad a*e = e*a = a $$  
-
-이 때, $e$를 `항등원(identity)`이라고 한다. 
-
-즉, 모노이드란 항등원을 갖는 반군이다. 
-
-### 예시
-$(\N,+)$은 모노이드가 아니다. $(\because 0 \notin \N)$.  
-
-$(\N,\times),(\Z,\times)$는 모노이드다.
-
-### 명제1
-모노이드 $(M,*)$의 항등원은 유일함을 증명하여라.
-
-**proof**
-
-$e_1, e_2 \in M$이 항등원이라고 하자.
-$$e_1 = e_1*e_2 = e_2*e_1 = e_2 \quad {_\blacksquare}$$
-
-## 군
-
-모노이드 $(G,*)$가 있을 때, `군(group)`은 다음을 만족하는 모노이드이다.
-
-$$ \forall x \in G, \quad \exist x^{-1} \in G \quad s.t. \quad x * x^{-1} = x^{-1} * x = e $$ 
-
-이 때, $x^{-1}$를 $x$의 `역원(inverse element)`이라고 한다.
-
-즉, 군이란 각 원소의 역원이 존재하는 모노이드이다. 
-
-### 예시
-$(\N,\times)$은 군이 아니다. $\left( \because x\in \N-\{1\}, \quad \frac{1}{x} \notin \N \right)$  
-
-$(\Z,+),(\mathbb{Q},+),(\R,+)$은 군이다.
-
-$(\mathbb{Q}-\{0\},\times),(\R-\{0\}, \times)$은 군이다.
-
-$(\{A \in \R^{n \times n} | \det(A) \neq 0\}, \times)$은 군이다.
-
-$(\{f:A \rightarrow A | f \text{는 전단사함수} \},\circ)$은 군이다.
-
-### 명제1 
-군 $(G,*)$이 있을 때, $x \in G$에 대해 $x$의 역원이 유일함을 증명하여라.
-
-**proof**  
-역원을 $y,z \in G$라 하자.  
-$$ y = y * e = y * x * y = y * x * z = z \quad {_ \blacksquare} $$
-
-### 명제2
-군 $(G,*)$가 있을 때, $x,y,z \in G$에 대해 $x*z = y*z \Rightarrow x=y$을 증명하여라.
-
-**proof**  
-$$x=x*e=x*z*z^{-1}=y*z*z^{-1}=y \quad {_ \blacksquare}$$
-
-## 가환군
-군 $(G,*)$이 있을 때, `가환군(commutative group)`은 다음을 만족하는 군이다.
-$$x,y \in G \Rightarrow x*y=y*x$$  
-
-즉, `교환법칙(commutative property)`이 성립하는 군이다.
-
-## 아벨 군 
-가환군 $(G,*)$이 있을 때, $*=+$라면 `아벨 군(Abelian group)`이라 한다.
-
-### 참고
-$x \in G - \{e\}$에 대해 $nx$는 $x$끼리 n번 연산했다는 것을 나타낸다. 즉, $nx \equiv x + \cdots + x$이다. 그리고 $0x$ 혹은 $0$은 항등원을 나타낸다. 즉, $e \equiv 0x \equiv 0$이다. 또한 $-x$는 $x$의 역원을 나타내며 $-nx$는 위와같이 $-x$를 $n$번 연산했다는것을 나타낸다. 
 
 ## 분배법칙
 집합 $S$와 두 이항연산 $+:S \times S \rightarrow S$, $\cdot : S \times S \rightarrow S$이 있을 때, 다음을 만족할 경우  $\cdot$이 $+$에 대해 `분배법칙(distributive property)`을 만족한다고 한다.
@@ -165,7 +69,9 @@ $(R,R)-$`쌍가군(bimodule)` ${_RM_R}$은 두 환의 작용 $\cdot_1: R\times M
 
 1. $r_1,r_2 \in R, \quad m \in M \Rightarrow (r_1 \cdot_1 m) \cdot_2 r_2 = r_1 \cdot_1 (m \cdot_2 r_2)$
 
-$R$이 가환환일 때, 좌우 구분을 생략하고 그냥 단순히 `R-가군(R-module)`이라고 한다. 왜냐하면 왼쪽 가군일 때, $r \in R, m \in M$에 대해 $\cdot_2 : M \times R \rightarrow M$를 $r \cdot_1 m = m \cdot_2 r$를 만족하게 정의하면 오른쪽 가군이 된다. 반대로 오른쪽 가군일 때에도 같은 맥락으로 왼쪽 가군이 된다. 즉, 좌우 구분이 의미가 없어지기 때문이다. 
+$R$이 가환환일 때, 좌우 구분을 생략하고 그냥 단순히 `R-가군(R-module)`이라고 한다. 
+
+왜냐하면 왼쪽 가군일 때, $r \in R, m \in M$에 대해 $\cdot_2 : M \times R \rightarrow M$를 $r \cdot_1 m = m \cdot_2 r$를 만족하게 정의하면 오른쪽 가군이 된다. 반대로 오른쪽 가군일 때에도 같은 맥락으로 왼쪽 가군이 된다. 즉, 좌우 구분이 의미가 없어지기 때문이다. 
 
 결론적으로 가군은 어떤 환의 작용이 주어진 아벨 군이다. 아벨 군의 구조와 환의 원소에 대한 곱셈이 주어지며, 이 두 구조가 분배 법칙을 통해 서로 호환되는 대수 구조이다. 
 
@@ -173,7 +79,7 @@ $R$이 가환환일 때, 좌우 구분을 생략하고 그냥 단순히 `R-가�
 
 R-가군 $(M,+,\cdot)/R$이 있을 때, $x \in M$에 대해 $0_Rx =0_M$을 증명하여라.
 
-*proof*
+**Proof**
 
 $$ \begin{aligned} 0_Rx  & = (0_R + 0_R)x = 0_Rx + 0_Rx \\ 0_Rx & = 0_Rx + 0_M \\ \therefore 0_Rx & = 0_M \end{aligned}   $$
 

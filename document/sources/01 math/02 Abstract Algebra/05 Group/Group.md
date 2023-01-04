@@ -1,17 +1,15 @@
-# 들어가며
-이 글은 다음을 정리한 글이다.
+# Group
+## 정의
+Monoid $G$가 있다고 하자.
 
-[선형대수 - 수학의 즐거움 youtube](https://www.youtube.com/playlist?list=PL4m4z_pFWq2oWmDtNvdy5GYP68dOsGV64)  
-[추상대수학 - 수학의 즐거움 youtube](https://www.youtube.com/playlist?list=PL4m4z_pFWq2rDUPj_TPi1IQUgubY3-PtI)
-
-## 군
-모노이드 $(G,*)$가 있을 때, `군(group)`은 다음을 만족하는 모노이드이다.
+$G$가 다음을 만족할 떄, $G$를 `군(group)`이라고 한다.
 
 $$ \forall x \in G, \quad \exist x^{-1} \in G \quad s.t. \quad x * x^{-1} = x^{-1} * x = e $$ 
 
+### 참고
 이 때, $x^{-1}$를 $x$의 `역원(inverse element)`이라고 한다.
 
-즉, 군이란 항등원과 각 원소의 역원을 갖으면서 결합 법칙을 따르는 이항 연산을 갖춘 대수 구조이다. 
+즉, group이란 각 원소의 inverse element를 갖는 monoid이다.
 
 ### 예시
 $(\N,\times)$은 군이 아니다. $\left( \because x\in \N-\{1\}, \quad \frac{1}{x} \notin \N \right)$  
@@ -25,92 +23,86 @@ $(\{A \in \R^{n \times n} | \det(A) \neq 0\}, \times)$은 군이다.
 $(\{f:A \rightarrow A | f \text{는 전단사함수} \},\circ)$은 군이다.
 
 ### 명제1 
-군 $(G,*)$이 있을 때, $x \in G$에 대해 $x$의 역원이 유일함을 증명하여라.
+Group $G$가 있을 때, 다음을 증명하여라.
 
-**proof**  
-역원을 $y,z \in G$라 하자.  
-$$ y = y * e = y * x * y = y * x * z = z \quad {_ \blacksquare} $$
-
-### 명제2
-군 $(G,*)$가 있을 때, $x,y,z \in G$에 대해 $x*z = y*z \Rightarrow x=y$을 증명하여라.
-
-**proof**  
-$$x=x*e=x*z*z^{-1}=y*z*z^{-1}=y \quad {_ \blacksquare}$$
-
-## 가환군
-군 $(G,*)$이 있을 때, `가환군(commutative group)`은 다음을 만족하는 군이다.
-$$x,y \in G \Rightarrow x*y=y*x$$  
-
-즉, `교환법칙(commutative property)`이 성립하는 군이다.
-
-## 아벨 군 
-가환군 $(G,*)$이 있을 때, $*=+$라면 `아벨 군(Abelian group)`이라 한다.
-
-### 참고
-$x \in G - \{e\}$에 대해 $nx$는 $x$끼리 n번 연산했다는 것을 나타낸다. 즉, $nx \equiv x + \cdots + x$이다. 그리고 $0x$ 혹은 $0$은 항등원을 나타낸다. 즉, $e \equiv 0x \equiv 0$이다. 또한 $-x$는 $x$의 역원을 나타내며 $-nx$는 위와같이 $-x$를 $n$번 연산했다는것을 나타낸다. 
-
-## 부분군
-군 $(G,*)$와 $H\subseteq G$가 있을 때 $(H,*)$가 군이 되면 $H$를 $G$의 `부분군(subgroup)`이라고 하고 $H\le G$로 표기한다.  
-
-### 명제1
-군 $(G,*)$이 있을 때, $H \subseteq G$에 대해 다음을 증명하여라.
-
-$$ H\le G \Leftrightarrow ( a,b\in H \Rightarrow a*b\in H ) \land ( c \in H \Rightarrow c^{-1} \in H ) $$
-
-**proof**
-
-[$\Rightarrow$]
-
-$H$는 군이기 때문에, $*$에 닫혀있고 모든 원소에 역원이 존재해야된다. $\quad {_\blacksquare}$
-
-[$\Leftarrow$]
-
-역원이 존재하고 연산에 닫혀있기 때문에 $e_H \in H$이다. $\quad {_\blacksquare}$
-
-### 참고1
-군 $(G,*)$에 대해 $(H,*) \le (G,*)$면 항등원의 유일성에 의해 $e_H=e_G$이다.  
-
-### 예시
-$$(\mathbb{Q},+) \le (\R,+) \\ (\mathbb{Q}-\{0\},\times) \le (\R-\{0\},\times)$$
-
-## 생성
-군 $(G,*)$와 $H \subseteq G$가 있을 때, $H$에 의한 `생성(span)`은 다음과 같이 정의된 집합이다.
-
-$$span(H) := \cap S \\ \text{where,} \quad S := \{ W | H \subseteq W \land W \le G \}$$
-
-$span(H)$는 $H$를 포함하는 $G$의 최소 부분군이며 이를 $H$에 의해 생성된 부분군이라고도 한다.
-
-### 명제1
-군 $(G,*)$와 $H \subseteq G$이 있을 때 $span(H) \le G$임을 증명하여라.
-
-**proof**  
-[연산에 닫힘]  
-$a,b \in H, W \in S$에 대해 $a,b \in W$이고 $a*b \in W$임으로 $a,b \in \bigcap H$이고 $a*b \in \bigcap S$이다. $\quad {_\blacksquare}$
-
-[역원의 존재성]  
-$x \in H, W \in S$에 대해 $x \in W$이고 $\exist x^{-1} \in W$임으로 $x \in \bigcap H$이고 $\exist x^{-1} \in \bigcap S$이다. $\quad {_\blacksquare}$
-
-따라서, 부분군의 명제 1에의해 $span(H)$는 $(G,*)$의 부분군이다.
-
-### 명제2
-아벨 군 $(G,+)$가 있을 때, $x \in G$에 대해 $span(\{ x \}) = \{ nx | n \in \Z \}$을 증명하여라.
-
-이 때, $nx = \begin{cases} \underbrace{x + \cdots + x}_{n} & 0 < n \\ 0_G & n= 0 \\ \underbrace{ x^{-1} + \cdots + x^{-1} } _ {|n|} & n < 0 \end{cases}$ 를 의미한다.
+$$ \forall x \in G,\quad !x^{-1} $$
 
 **Proof**  
 
-[$\{ nx | n \in \Z \}$ is group ]  
-$\{ nx | n \in \Z \}$은 $+$ 연산에 닫혀있고 임의의 $mx$의 역원은 $-mx$임으로 역원도 가지고 있다. $\quad {_\blacksquare}$
+$x\in G$가 있을 떄, $x$의 inverse element를 $y,z \in G$라 하자.  
 
-[ $\{ nx|n \in \Z\}$ is smallest ]  
-$H := \{ W | \{x\} \subseteq W \land W \le G \}$과 $W \in H$에 대해, $\{ nx|n \in \Z\}$는 연산에 닫혀있고 항등원과 각 원소의 역원이 존재할 최소 집합임으로, $\{ nx|n \in \Z\} \in W$이다. $\quad {_\blacksquare}$
+Group의 성질에 의해 다음이 성립한다.
 
-#### 따름명제
-아벨 군 $(G,+)$과 $x,y \in G$에 대해 $span( \{ x,y\})=\{nx + my | n,m \in \Z \}$을 증명하여라. 
+$$ \exist e \st y = y*e $$
 
-**proof**
+이 때, inverse element의 정의에 의해 다음이 성립한다.
 
-명제 2와 동일하게 증명 가능하다.
+$$ y * x * y = y * x * z $$
+
+$y$가 inverse element임으로 다음이 성립한다.
+
+$$ \begin{aligned} y * x * y &= y * x * z \\ e*y &= e*z \\ y&=z \end{aligned} $$
+
+임의의 $x \in G$에 두개의 inverse element가 있다면 반드시 같아야 함으로 다음이 성립한다.
+
+$$ \forall x \in G,\quad !x^{-1} \qed $$
+
+### 명제2(Cancellation Law)
+Group $G$가 있을 때, 다음을 증명하여라.
+
+$$ \forall x,y,z, \in G, \quad x*z = y*z \implies x=y $$
+
+**Proof**  
+
+$x\in G$가 있다고 하자.
+
+Group의 성질에 의해 다음이 성립한다.
+
+$$ \exist e \st x = x*e $$
+
+이 때, inverse element의 정의에 의해 다음이 성립한다.
+
+$$ x * e = x * z * z^{-1} $$
+
+전제에 의해 다음이 성립한다.
+
+$$ x * z * z^{-1} = y * z * z^{-1} = y $$
+
+따라서, 위를 종합하면 다음이 성립한다.
+
+$$ x = y \qed $$
+
+### 명제3
+집합 $S$가 있을 떄, 다음을 증명하여라.
+
+$$ S \text{ is a group} \iff \begin{gathered} \exist * \st S \text{ is closed under }* \\ \forall x \in S, \quad \exist x^{-1} \in S \end{gathered}  $$
+
+**Proof**
+
+[$\implies$]  
+$S$는 group이기 때문에, semi-group의 성질 또한 만족한다.
+
+따라서 semi-group의 정의에 의해 다음이 성립한다.
+
+$$ \exist * \st S \text{ is closed under }* $$
+
+또한, group의 정의에 의해 inverse element가 존재해야 함으로 다음이 성립한다.
+
+$$ \forall x \in S, \quad  x^{-1} \in S \qed $$
+
+[$\impliedby$]  
+첫번째 전제에 의해 $*$가 $S$위의 binary operation임으로 다음이 성립한다.
+
+$$ S \text{ is a semi group} $$
+
+두번째 전제에 의해 inverse element가 존재함으로, inverse element의 정의에 의해 다음이 성립한다.
+
+$$ \exist e \in S \st e \text{ is an indentity element of } S $$ 
+
+따라서 $H$는 monoid이고, 두번째 전제에 의해 모든 원소에 inverse element가 존재함으로 다음이 성립한다.
+
+$$ S \text{ is a group} \qed $$
+
 
 ## 군 준동형 사상
 군 $(G,*),(H,\cdot)$이 있을 때, `군 준동형 사상(group homomorphism)` $f:G \rightarrow H$은 다음을 만족하는 함수이다.
