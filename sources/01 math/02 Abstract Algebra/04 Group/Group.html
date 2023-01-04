@@ -1,0 +1,2123 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Group &#8212; MS Study Documents</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"span": "\\text{span}", "End": "\\text{End}", "C": "\\Complex", "F": "\\mathbb{F}", "R": "\\mathbb{R}", "N": "\\mathbb{N}", "Q": "\\mathbb{Q}", "Ext": "\\text{Ext}", "Int": "\\text{Int}", "st": "\\quad s.t \\quad", "qed": "\\quad\\tiny\\blacksquare", "preimg": "\\text{preimg}", "img": "\\text{img}", "norm": ["\\lVert #1 \\rVert", 1], "sym": "\\text{sym}", "tr": "\\text{tr}", "empty": "\\emptyset", "exist": "\\exists", "Set": ["\\left\\{ #1 \\right\\}", 1], "pdiff": ["\\frac{\\partial #1}{\\partial #2}", 2]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Commutative Group" href="01%20Commutative%20Group.html" />
+    <link rel="prev" title="Monoid" href="../03%20Monoid.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MS Study Documents</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../cover.html">
+                    MS Study Documents
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  math
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01%20Set/Set.html">
+   Set
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/01%20Power%20Set.html">
+     Power Set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/02%20Product%20Set.html">
+     Product Set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/03%20Relations.html">
+     Relation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/04%20Function.html">
+     Function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/05%20Image.html">
+     Image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/06%20Preimage.html">
+     Preimage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/07%20Injective%20Function.html">
+     Injective Function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/08%20Surjective%20Function.html">
+     Surjective Function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/09%20Bijective%20Function.html">
+     Bijective Function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/10%20Inverse%20Function.html">
+     Inverse Function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/95%20Equivalence%20Relation.html">
+     Equivalence Relation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/96%20Equivalence%20Class.html">
+     Equivalence Class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/97%20Partial%20Order.html">
+     Partial Order
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/98%20Partially%20Order%20Set.html">
+     Partially Ordered Set
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Abstract%20Algebra.html">
+   들어가며
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../03%20Analysis/Analysis.html">
+   Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../03%20Analysis/01%20Metric%20Space/Metric%20Space.html">
+     Metric Space
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../03%20Analysis/01%20Metric%20Space/01%20Metric%20Subspace.html">
+       Metric Subspace
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../03%20Analysis/01%20Metric%20Space/02%20Open%20Ball.html">
+       Open ball
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../03%20Analysis/01%20Metric%20Space/03%20Open%20Set.html">
+       Open set
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../03%20Analysis/01%20Metric%20Space/04%20Closed%20set.html">
+       Closed set
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../03%20Analysis/01%20Metric%20Space/05%20Neighborhood.html">
+       Neighborhood
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../03%20Analysis/01%20Metric%20Space/06%20Closure.html">
+       Closure
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../03%20Analysis/01%20Metric%20Space/07%20Interior.html">
+       Interior
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../03%20Analysis/01%20Metric%20Space/08%20Boudnary.html">
+       Boundary
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../03%20Analysis/01%20Metric%20Space/09%20Bounded%20set.html">
+       Bounded Set
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../03%20Analysis/01%20Metric%20Space/10%20Compact%20Set.html">
+       Compact Set
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../03%20Analysis/01%20Metric%20Space/11%20Convergent%20Sequence.html">
+       Convergent Sequence
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../03%20Analysis/01%20Metric%20Space/12%20Limit%20of%20Function.html">
+       Limit of Function
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../03%20Analysis/01%20Metric%20Space/13%20Continuous.html">
+       Continuous
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../03%20Analysis/01%20Metric%20Space/14%20Continuous%20Function.html">
+       Continuous Function
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../04%20Numerical%20Analysis/Numerical%20Analysis.html">
+   Numerical Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../04%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/Boundary%20Value%20Problem.html">
+     Boundary Value Problem
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../04%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/01%20Strong%20formulation.html">
+       Strong formulation
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../04%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/02%20Weighted%20Residual%20Methods/Weighted%20Residual%20Methods.html">
+       Weighted Residual Methods
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../04%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/02%20Weighted%20Residual%20Methods/01%20Weighted%20Residual%20Formulation.html">
+         Weighted Residual Formulation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../04%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/02%20Weighted%20Residual%20Methods/02%20Dimensional%20Reduction.html">
+         Dimensional Reduction
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../04%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/02%20Weighted%20Residual%20Methods/03%20Reduced%20Function%20Space.html">
+         Reduced Function Space
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../04%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/Weak%20Formulation.html">
+       Weak Formulation
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../04%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/01%20Strong%20Formulation.html">
+         Strong Formulation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../04%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/02%20Weighted%20Residual%20Formulation.html">
+         Weighted Residual Formulation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../04%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/03%20Weak%20Formulation.html">
+         Weak Formulation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../04%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/04%20Dimensional%20Reduction.html">
+         Dimensional Reduction
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../04%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/05%20Reduced%20Function%20Space.html">
+         Reduced Function Space
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../04%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/04%20Model%20Problems/Model%20Problems.html">
+       Model Problems
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../04%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/04%20Model%20Problems/01%20Model%20Problem1.html">
+         Model Problem1
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../04%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/04%20Model%20Problems/02%20Model%20Problem2.html">
+         Model Problem2
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../04%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/04%20Model%20Problems/03%20Model%20Problem3.html">
+         Model Problem3
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../05%20Linear%20Algebra/Linear%20Algebra.html">
+   Linear Algebra
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../05%20Linear%20Algebra/01%20Vector%20Space.html">
+     Vector Space
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../05%20Linear%20Algebra/02%20Span.html">
+     Span
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../05%20Linear%20Algebra/03%20Linearly%20Independet%20Set.html">
+     Linearly Independet Set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../05%20Linear%20Algebra/04%20Basis.html">
+     Basis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../06%20Geometry/Geometry.html">
+   Geometry
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../06%20Geometry/01%20Topology/Topology.html">
+     Topology
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../06%20Geometry/01%20Topology/01%20Topologies/Topologies.html">
+       Topologies
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+      <label for="toctree-checkbox-12">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/01%20Topologies/01%20Topological%20Spaces.html">
+         Topological Space
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/01%20Topologies/02%20Open%20Set.html">
+         Open Set
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/01%20Topologies/03%20Closed%20set.html">
+         Closed set
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/01%20Topologies/04%20Neighborhood.html">
+         Neighborhood
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/01%20Topologies/05%20Subspace%20Topology.html">
+         Subspace Topology
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/01%20Topologies/06%20Subspace.html">
+         Subspace
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/01%20Topologies/07%20Closure.html">
+         Closure
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/01%20Topologies/08%20Interior.html">
+         Interior
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/01%20Topologies/09%20Exteriror.html">
+         Exteriror
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/01%20Topologies/10%20Boundary.html">
+         Boundary
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/01%20Topologies/11%20Limit%20Point.html">
+         Limit Point
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/01%20Topologies/12%20Isolated%20Point.html">
+         Isolated Point
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/01%20Topologies/13%20Dense.html">
+         Dense
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../06%20Geometry/01%20Topology/02%20Convergence%20and%20Continuity/Convergence%20and%20Continuity.html">
+       Convergence and Continuity
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/02%20Convergence%20and%20Continuity/1%20Convergence.html">
+         Convergence
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/02%20Convergence%20and%20Continuity/2%20Continuity.html">
+         Continuity
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/02%20Convergence%20and%20Continuity/3%20Homeomorphism.html">
+         Homeomorphism
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../06%20Geometry/01%20Topology/03%20Hausdorff%20Space.html">
+       Hausdorff Space
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../06%20Geometry/01%20Topology/04%20Bases/Bases.html">
+       Bases
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/04%20Bases/01%20Basis.html">
+         Basis
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/04%20Bases/02%20Neighborhood%20Basis.html">
+         Neighborhood Basis
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/04%20Bases/03%20Nested%20Neighborhood%20Basis.html">
+         Nested Neighborhood Basis
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../06%20Geometry/01%20Topology/05%20Countability%20Properties/Countability%20Properties.html">
+       Countability Properties
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+      <label for="toctree-checkbox-15">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/05%20Countability%20Properties/20%20First%20Countable.html">
+         First Countable
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/05%20Countability%20Properties/21%20Eventually%20in.html">
+         Eventually in
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/05%20Countability%20Properties/22%20Second%20Countable.html">
+         Second Countable
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/05%20Countability%20Properties/23%20Cover.html">
+         Cover
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/05%20Countability%20Properties/24%20Seperable.html">
+         Seperable
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/05%20Countability%20Properties/25%20Lindelof%20Space.html">
+         Lindelof Space
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../06%20Geometry/01%20Topology/06%20Manifolds/Manifolds.html">
+       Manifolds
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+      <label for="toctree-checkbox-16">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/06%20Manifolds/26%20Locally%20Euclidean.html">
+         Locally Euclidean
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/06%20Manifolds/27%20Coordinate.html">
+         Coordinate
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/06%20Manifolds/28%20Topological%20Manifold.html">
+         Topological Manifold
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../06%20Geometry/01%20Topology/07%20Product%20Spaces/Product%20Spaces.html">
+       Product Spaces
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+      <label for="toctree-checkbox-17">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/07%20Product%20Spaces/01%20Product%20Topology.html">
+         Product Topology
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/07%20Product%20Spaces/02%20Product%20Space.html">
+         Product Space
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../06%20Geometry/01%20Topology/07%20Product%20Spaces/03%20Product%20Open%20Set.html">
+         Product Open Set
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../06%20Geometry/02%20Smooth%20Manifold/Smooth%20Manifold.html">
+     Smooth Manifold
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../06%20Geometry/02%20Smooth%20Manifold/01%20Ambient%20Space.html">
+       Ambient space
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  programming
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/C%2B%2B.html">
+   C++
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label for="toctree-checkbox-19">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/01%20Build/Build.html">
+     Build
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/01%20Build/01%20PreProcessing.html">
+       Preprocessing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/01%20Build/02%20Compile.html">
+       Compile
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/01%20Build/03%20Linking/Linking.html">
+       Linking
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/01%20Build/03%20Linking/01%20Storage%20Class%20Specifier.html">
+         Storage Class Specifier
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/01%20Build/03%20Linking/02%20Name%20Mangling.html">
+         Name Mangling
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/01%20Build/03%20Linking/03%20Link/Link.html">
+         Link
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/02%20Memory/Memory.html">
+     Memory
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/02%20Memory/01%20Virtual%20Memory.html">
+       Virtual Memory
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/02%20Memory/02%20Paging%20system.html">
+       Paging system
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/02%20Memory/03%20Virtual%20Memory%20Size.html">
+       Virtual Memory Size
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/02%20Memory/04%20Virtual%20Memory%20Management%20in%20Window.html">
+       Virtual Memory Management in Window
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/02%20Memory/05%20Virtual%20Memory%20Structure.html">
+       Virtual Memory Structure
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/Abstract%20Function.html">
+     Abstract Function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/Class.html">
+     Class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/Enum.html">
+     Enum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/Initialization.html">
+     initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/Name%20Space.html">
+     Namespace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/One%20Definition%20Rule.html">
+     One Definition Rule
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/static.html">
+     Static
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/STD.html">
+     STD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/Template.html">
+     Template
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../02%20programming/CMake.html">
+   Cmake
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../02%20programming/git.html">
+   Git
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  CFD
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../03%20CFD/CFD.html">
+   Computational Fluid Dynamics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  CSM
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../04%20CSM/01%20Shape%20Function.html">
+   Function Approximation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../04%20CSM/02%20Direct%20Stiffness%20Method.html">
+   Direct Stiffness Method
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../04%20CSM/03%20Bar/Bar.html">
+   Bar
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+  <label for="toctree-checkbox-23">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../04%20CSM/03%20Bar/01%20Governing%20Equation.html">
+     Governing Equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../04%20CSM/03%20Bar/02%20Boundary%20Value%20Problem.html">
+     Boundary Value Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../04%20CSM/03%20Bar/03%20Strong%20Formualation.html">
+     Strong Formualation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../04%20CSM/03%20Bar/04%20Weak%20Formulation.html">
+     Weak Formulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../04%20CSM/03%20Bar/05%20FE%20Formulation.html">
+     FE Formulation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../04%20CSM/04%20Beam/Beam.html">
+   Beam
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+  <label for="toctree-checkbox-24">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../04%20CSM/04%20Beam/01%20Element%20Beam%20Theory.html">
+     Element Beam Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../04%20CSM/04%20Beam/02%20Neutral%20Surface.html">
+     Neutral Surface
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../04%20CSM/05%20Finite%20Element%20Formulation/Finite%20Element%20Formulation.html">
+   Finite Element Formulation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+  <label for="toctree-checkbox-25">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../04%20CSM/05%20Finite%20Element%20Formulation/02%20Mechanical%20Equilibrium/Mechanical%20Equilibrium.html">
+     Mechanical Equilibrium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../04%20CSM/05%20Finite%20Element%20Formulation/02%20Mechanical%20Equilibrium/01%20Governing%20Equation.html">
+       Governing Equation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../04%20CSM/05%20Finite%20Element%20Formulation/02%20Mechanical%20Equilibrium/02%20Weak%20Formulation.html">
+       Weak Formulation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../04%20CSM/05%20Finite%20Element%20Formulation/02%20Mechanical%20Equilibrium/03%20FE%20Formulation.html">
+       FE Formulation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../04%20CSM/06%20Nonlinear%20Analysis/Nonlinear%20Analysis.html">
+   Non Linear Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+  <label for="toctree-checkbox-27">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../04%20CSM/06%20Nonlinear%20Analysis/01%20Elastoplasticity/Elastoplasticity.html">
+     Elastoplasticity
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../04%20CSM/06%20Nonlinear%20Analysis/01%20Elastoplasticity/01%20Classical%20Elastoplasticity%20Model.html">
+       Classical Elastoplasticity Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../04%20CSM/06%20Nonlinear%20Analysis/01%20Elastoplasticity/02%20J2%20Plasiticity%20with%20Combined%20Hardening%20Model.html">
+       J2 Plasticity Model with Hardening
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../04%20CSM/06%20Nonlinear%20Analysis/01%20Elastoplasticity/03%20Stress%20Calculation%20Algorithm.html">
+       Prerequisite
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../04%20CSM/06%20Nonlinear%20Analysis/01%20Elastoplasticity/04%20Elastoplasticity%20Algorithm.html">
+       Assumption
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Jupyter Book
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../05%20Jupyter%20Book/1%20document.html">
+   문서작성법
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../05%20Jupyter%20Book/2%20folder.html">
+   폴더구성법
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../05%20Jupyter%20Book/3%20build.html">
+   빌드
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../05%20Jupyter%20Book/4%20Publish.html">
+   배포
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../99%20References/references.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../../_sources/sources/01 math/02 Abstract Algebra/04 Group/Group.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   정의
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     참고
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     예시
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     명제1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cancellation-law">
+     명제2(Cancellation Law)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   군 준동형 사상
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     명제1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     명제2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     명제3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     예시
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   핵
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     명제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     참고
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id13">
+   군 단사준동형 사상
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     명제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   군 전사준동형 사상
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id16">
+   군 동형 사상
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id17">
+   순환군
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     예시
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     명제1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     참고1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     참고2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id22">
+     명제2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id23">
+   순환군의 차수
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id24">
+     보조정리1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id25">
+     라그랑지 정리의 역
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id26">
+       따름정리1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id27">
+       따름정리2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id28">
+     명제1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id29">
+     명제2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id30">
+     참고
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id31">
+   왼쪽 잉여류
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id32">
+     명제1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id33">
+     명제2
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id34">
+       예시
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id35">
+     명제3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id36">
+     명제4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id37">
+     라그랑지 정리
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id38">
+       따름정리
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id39">
+   오른쪽 잉여류
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Group</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   정의
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     참고
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     예시
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     명제1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cancellation-law">
+     명제2(Cancellation Law)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   군 준동형 사상
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     명제1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     명제2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     명제3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     예시
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   핵
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     명제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     참고
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id13">
+   군 단사준동형 사상
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     명제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   군 전사준동형 사상
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id16">
+   군 동형 사상
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id17">
+   순환군
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     예시
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     명제1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     참고1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     참고2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id22">
+     명제2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id23">
+   순환군의 차수
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id24">
+     보조정리1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id25">
+     라그랑지 정리의 역
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id26">
+       따름정리1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id27">
+       따름정리2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id28">
+     명제1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id29">
+     명제2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id30">
+     참고
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id31">
+   왼쪽 잉여류
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id32">
+     명제1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id33">
+     명제2
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id34">
+       예시
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id35">
+     명제3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id36">
+     명제4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id37">
+     라그랑지 정리
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id38">
+       따름정리
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id39">
+   오른쪽 잉여류
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="group">
+<h1>Group<a class="headerlink" href="#group" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2>정의<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Monoid <span class="math notranslate nohighlight">\(G\)</span>가 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(G\)</span>가 다음을 만족할 떄, <span class="math notranslate nohighlight">\(G\)</span>를 <code class="docutils literal notranslate"><span class="pre">군(group)</span></code>이라고 한다.</p>
+<div class="math notranslate nohighlight">
+\[ \forall x \in G, \quad \exist x^{-1} \in G \quad s.t. \quad x * x^{-1} = x^{-1} * x = e \]</div>
+<section id="id2">
+<h3>참고<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>이 때, <span class="math notranslate nohighlight">\(x^{-1}\)</span>를 <span class="math notranslate nohighlight">\(x\)</span>의 <code class="docutils literal notranslate"><span class="pre">역원(inverse</span> <span class="pre">element)</span></code>이라고 한다.</p>
+<p>즉, group이란 각 원소의 inverse element를 갖는 monoid이다.</p>
+</section>
+<section id="id3">
+<h3>예시<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\((\N,\times)\)</span>은 군이 아니다. <span class="math notranslate nohighlight">\(\left( \because x\in \N-\{1\}, \quad \frac{1}{x} \notin \N \right)\)</span></p>
+<p><span class="math notranslate nohighlight">\((\Z,+),(\mathbb{Q},+),(\R,+)\)</span>은 군이다.</p>
+<p><span class="math notranslate nohighlight">\((\mathbb{Q}-\{0\},\times),(\R-\{0\}, \times)\)</span>은 군이다.</p>
+<p><span class="math notranslate nohighlight">\((\{A \in \R^{n \times n} | \det(A) \neq 0\}, \times)\)</span>은 군이다.</p>
+<p><span class="math notranslate nohighlight">\((\{f:A \rightarrow A | f \text{는 전단사함수} \},\circ)\)</span>은 군이다.</p>
+</section>
+<section id="id4">
+<h3>명제1<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>Group <span class="math notranslate nohighlight">\(G\)</span>가 있을 때, 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ \forall x \in G,\quad !x^{-1} \]</div>
+<p><strong>Proof</strong></p>
+<p><span class="math notranslate nohighlight">\(x\in G\)</span>가 있을 떄, <span class="math notranslate nohighlight">\(x\)</span>의 inverse element를 <span class="math notranslate nohighlight">\(y,z \in G\)</span>라 하자.</p>
+<p>Group의 성질에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \exist e \st y = y*e \]</div>
+<p>이 때, inverse element의 정의에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ y * x * y = y * x * z \]</div>
+<p><span class="math notranslate nohighlight">\(y\)</span>가 inverse element임으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} y * x * y &amp;= y * x * z \\ e*y &amp;= e*z \\ y&amp;=z \end{aligned} \end{split}\]</div>
+<p>임의의 <span class="math notranslate nohighlight">\(x \in G\)</span>에 두개의 inverse element가 있다면 반드시 같아야 함으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \forall x \in G,\quad !x^{-1} \qed \]</div>
+</section>
+<section id="cancellation-law">
+<h3>명제2(Cancellation Law)<a class="headerlink" href="#cancellation-law" title="Permalink to this headline">#</a></h3>
+<p>Group <span class="math notranslate nohighlight">\(G\)</span>가 있을 때, 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ \forall x,y,z, \in G, \quad x*z = y*z \implies x=y \]</div>
+<p><strong>Proof</strong></p>
+<p><span class="math notranslate nohighlight">\(x\in G\)</span>가 있다고 하자.</p>
+<p>Group의 성질에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \exist e \st x = x*e \]</div>
+<p>이 때, inverse element의 정의에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ x * e = x * z * z^{-1} \]</div>
+<p>전제에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ x * z * z^{-1} = y * z * z^{-1} = y \]</div>
+<p>따라서, 위를 종합하면 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ x = y \qed \]</div>
+</section>
+</section>
+<section id="id5">
+<h2>군 준동형 사상<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<p>군 <span class="math notranslate nohighlight">\((G,*),(H,\cdot)\)</span>이 있을 때, <code class="docutils literal notranslate"><span class="pre">군</span> <span class="pre">준동형</span> <span class="pre">사상(group</span> <span class="pre">homomorphism)</span></code> <span class="math notranslate nohighlight">\(f:G \rightarrow H\)</span>은 다음을 만족하는 함수이다.</p>
+<div class="math notranslate nohighlight">
+\[ g_1,g_2 \in G \Rightarrow f(g_1 * g_2)=f(g_1) \cdot f(g_2) \]</div>
+<section id="id6">
+<h3>명제1<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<p>군 <span class="math notranslate nohighlight">\((G,*),(H,\cdot)\)</span>과 준동형 사상 <span class="math notranslate nohighlight">\(f:G \rightarrow H\)</span>가 있을 때 <span class="math notranslate nohighlight">\(f(e_G)=e_H\)</span>를 증명하여라.</p>
+<p><strong>proof</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} f(e_G) &amp;= f(e_G*e_G) =f(e_G) \cdot f(e_G) \\ &amp;= f(e_G) \cdot e_H \\ \therefore  f(e_G)  &amp;= e_H \quad {_\blacksquare}  \end{aligned} \end{split}\]</div>
+</section>
+<section id="id7">
+<h3>명제2<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<p>군 <span class="math notranslate nohighlight">\((G,*),(H,\cdot)\)</span>과 준동형 사상 <span class="math notranslate nohighlight">\(f:G \rightarrow H\)</span>가 있을 때, <span class="math notranslate nohighlight">\(g \in G\)</span>에 대해 <span class="math notranslate nohighlight">\(f(g^{-1})=(f(g))^{-1}\)</span>를 증명하여라.</p>
+<p><strong>proof</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} f(e_G) &amp;= f(g*g^{-1}) = f(g) \cdot f(g^{-1}) \\ &amp;= e_H \\ \therefore  f(g^{-1})  &amp;= (f(g))^{-1} \quad {_\blacksquare}  \end{aligned} \end{split}\]</div>
+</section>
+<section id="id8">
+<h3>명제3<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<p>군 <span class="math notranslate nohighlight">\((G,*),(H,\cdot)\)</span>과 준동형 사상 <span class="math notranslate nohighlight">\(f:G \rightarrow H\)</span>가 있을 때 <span class="math notranslate nohighlight">\(f(G) \le H\)</span>를 증명하여라.</p>
+<p><strong>proof</strong></p>
+<p><span class="math notranslate nohighlight">\(f(G)\)</span>는 상임으로 <span class="math notranslate nohighlight">\(f(G) \subseteq H\)</span>이다.</p>
+<p>[연산에 닫혀있다]
+$<span class="math notranslate nohighlight">\( \begin{aligned} &amp; h_1, h_2 \in f(G) \\ \Rightarrow \enspace &amp; \exist g_1,g_2 \in G, \quad f(g_1)=h_1, f(g_2)=h_2 \\ \Rightarrow \enspace &amp; h_1 \cdot h_2 = f(g_1) \cdot f(g_2) = f(g_1 * g_2) \in f(G) \quad (\because g_1 * g_2 \in G) \quad {_\blacksquare}  \end{aligned} \)</span>$</p>
+<p>[역원이 존재한다]
+$<span class="math notranslate nohighlight">\( \begin{aligned} &amp; h \in f(G) \\ \Rightarrow \enspace &amp; \exist g \in G, \quad f(g)=h \\ \Rightarrow \enspace &amp; h^{-1} = f(g^{-1}) \in f(G) \quad (\because 명제2) \quad {_\blacksquare}  \end{aligned} \)</span>$</p>
+</section>
+<section id="id9">
+<h3>예시<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<p>군 <span class="math notranslate nohighlight">\((\R,+),(\R_{&gt;0},\times)\)</span>과 함수 <span class="math notranslate nohighlight">\(\exp(x) : \R \rightarrow \R_{&gt;0}, \quad x \mapsto e^x\)</span>.가 있을 때, 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\exp(x+y)=\exp(x) \times \exp(y)\]</div>
+<p>따라서, 명제 1,2,3에 의해 <span class="math notranslate nohighlight">\(\exp(x)\)</span>함수는 군 준동형 사상이며 이에 의해 <strong>군 구조가 보존된다.</strong></p>
+</section>
+</section>
+<section id="id10">
+<h2>핵<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<p>군 <span class="math notranslate nohighlight">\((G,*),(H,\cdot)\)</span>과 군 준동형 사상 <span class="math notranslate nohighlight">\(f:G \rightarrow H\)</span>가 있을 때, <span class="math notranslate nohighlight">\(f\)</span>의 <code class="docutils literal notranslate"><span class="pre">핵(kernel)</span></code> <span class="math notranslate nohighlight">\(\ker(f)\)</span>은 다음과 같이 정의된 집합이다.
+$<span class="math notranslate nohighlight">\(\ker(f):=\{ g \in G | f(g) = e_H \}\)</span>$</p>
+<section id="id11">
+<h3>명제<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<p>군 <span class="math notranslate nohighlight">\((G,*),(H,\cdot)\)</span>과 군 준동형 사상 <span class="math notranslate nohighlight">\(f:G \rightarrow H\)</span>이 있을 때, <span class="math notranslate nohighlight">\(\ker(f) \le G\)</span>를 증명하여라.</p>
+<p><strong>proof</strong></p>
+<p>[연산에 닫혀있다]
+$<span class="math notranslate nohighlight">\( \begin{aligned} &amp; g_1, g_2 \in \ker (f) \\ \Rightarrow \enspace &amp; f(g_1 * g_2) = f(g_1) \cdot f(g_2) = e_H \\ \Rightarrow \enspace &amp; g_1 * g_2 \in \ker(f) \quad {_\blacksquare}  \end{aligned} \)</span>$</p>
+<p>[역원이 존재한다]
+$<span class="math notranslate nohighlight">\( \begin{aligned} &amp; g \in \ker (f) \\ \Leftrightarrow \enspace &amp; f(g) = e_H \\ \Leftrightarrow \enspace &amp; (f(g))^{-1} = f(g^{-1}) =e_H \\ \Leftrightarrow \enspace &amp; g^{-1} \in \ker(f) \quad {_\blacksquare}  \end{aligned} \)</span>$</p>
+</section>
+<section id="id12">
+<h3>참고<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<p>벡터 공간 <span class="math notranslate nohighlight">\(V,W/F\)</span>와 선형변환 <span class="math notranslate nohighlight">\(\Phi: V \rightarrow W\)</span>이 있을 때 다음이 성립한다.
+$<span class="math notranslate nohighlight">\(\ker(\Phi)=\{v \in V | \Phi(v) = 0 \} \le V \\ \mathrm{img}(\Phi) \le W \)</span>$</p>
+<p>이 때, 벡터 공간은 초른의 보조정리에의해 기저가 존재하고 차원을 정의할 수 있다. 따라서 <span class="math notranslate nohighlight">\(\dim(\ker(\Phi))\)</span>를 <span class="math notranslate nohighlight">\(\Phi\)</span>의 <code class="docutils literal notranslate"><span class="pre">퇴화차수(nullity)</span></code>라고 하고 <span class="math notranslate nohighlight">\(\dim(\mathrm{img}(\Phi))\)</span>를 <span class="math notranslate nohighlight">\(\Phi\)</span>의 <code class="docutils literal notranslate"><span class="pre">계수(rank)</span></code>라고 한다.</p>
+</section>
+</section>
+<section id="id13">
+<h2>군 단사준동형 사상<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
+<p>군 <span class="math notranslate nohighlight">\((G,*),(H,\cdot)\)</span>이 있을때, <code class="docutils literal notranslate"><span class="pre">군</span> <span class="pre">단사준동형</span> <span class="pre">사상(group</span> <span class="pre">monomorphism)</span></code> <span class="math notranslate nohighlight">\(f: G \rightarrow H\)</span>은 군 준동형 사상이고 단사인 함수이다.</p>
+<section id="id14">
+<h3>명제<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<p>군 <span class="math notranslate nohighlight">\((G,*),(H,\cdot)\)</span>과 군 준동형 사상 <span class="math notranslate nohighlight">\(f:G \rightarrow H\)</span>이 있을 때, <span class="math notranslate nohighlight">\(\ker(f)=\{e_G\} \Leftrightarrow f \text{ is injective}\)</span>를 증명하여라.</p>
+<p>[<span class="math notranslate nohighlight">\(\Rightarrow\)</span>]<br />
+<span class="math notranslate nohighlight">\(g_1,g_2 \in G\)</span>에 대해,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; f(g_1) = f(g_2) \\ \Rightarrow \enspace &amp; f(g_1) \cdot f(g_1^{-1}) = f(g_2) \cdot f(g_1^{-1}) \\ \Rightarrow \enspace &amp; f(e_G) = f(g_2 * g_1^{-1}) \\ \Rightarrow \enspace &amp; e_G = g_2 *g_1^{-1} \quad (\because \ker(f) = \{ e_g \}) \\ \Rightarrow \enspace &amp; g_1 = g_2 \quad {_\blacksquare} \end{aligned} \end{split}\]</div>
+<p>[<span class="math notranslate nohighlight">\(\Leftarrow\)</span>]<br />
+<span class="math notranslate nohighlight">\(f(e_G) =e_H\)</span>이고, <span class="math notranslate nohighlight">\(f\)</span>가 단사함수임으로 <span class="math notranslate nohighlight">\(\ker(f)=\{e_G\}\)</span>이다. <span class="math notranslate nohighlight">\(\quad {_\blacksquare}\)</span></p>
+</section>
+</section>
+<section id="id15">
+<h2>군 전사준동형 사상<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
+<p>군 <span class="math notranslate nohighlight">\((G,*)\)</span>와 <span class="math notranslate nohighlight">\((H,\cdot)\)</span>가 있을때, <code class="docutils literal notranslate"><span class="pre">군</span> <span class="pre">전사준동형</span> <span class="pre">사상(group</span> <span class="pre">epimorphism)</span></code> <span class="math notranslate nohighlight">\(f: G \rightarrow H\)</span>은 군 준동형 사상이고 전사인 함수이다.</p>
+</section>
+<section id="id16">
+<h2>군 동형 사상<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
+<p>군 <span class="math notranslate nohighlight">\((G,*)\)</span>와 <span class="math notranslate nohighlight">\((H,\cdot)\)</span>가 있을때, <code class="docutils literal notranslate"><span class="pre">군</span> <span class="pre">동형</span> <span class="pre">사상(group</span> <span class="pre">isomorphism)</span></code> <span class="math notranslate nohighlight">\(f: G \rightarrow H\)</span>은 군 준동형 사상이고 전단사인 함수이다.</p>
+<p>이떄 <span class="math notranslate nohighlight">\(G\)</span>를 <span class="math notranslate nohighlight">\(F\)</span>와 <span class="math notranslate nohighlight">\(f\)</span>에 의해 <code class="docutils literal notranslate"><span class="pre">군</span> <span class="pre">동형(group</span> <span class="pre">isomorphic)</span></code>이라 하고 <span class="math notranslate nohighlight">\(G \overset{f\;}{\cong} H\)</span>로 표기한다. 다시 말해, <span class="math notranslate nohighlight">\(G\)</span>와 <span class="math notranslate nohighlight">\(F\)</span>는 같은 군 구조를 가지고 있다.</p>
+</section>
+<section id="id17">
+<h2>순환군<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h2>
+<p>군 <span class="math notranslate nohighlight">\((G,*)\)</span>와 <span class="math notranslate nohighlight">\(x \in G\)</span>이 있을 때, <span class="math notranslate nohighlight">\(x\)</span>에 의해 생성된 <code class="docutils literal notranslate"><span class="pre">순환군(cyclic</span> <span class="pre">group)</span></code>이란 <span class="math notranslate nohighlight">\(span(\{ x \}) = \lang x \rang = \{ x^n | n \in \Z \}\)</span>이다.</p>
+<p>이 때, <span class="math notranslate nohighlight">\(x^n = \begin{cases} \underbrace{x * \cdots * x}_{n} &amp; 0 &lt; n \\ 0_G &amp; n= 0 \\ \underbrace{ x^{-1} * \cdots * x^{-1} } _ {|n|} &amp; n &lt; 0 \end{cases}\)</span> 를 의미한다.</p>
+<section id="id18">
+<h3>예시<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\((\Z,+) = \lang 1 \rang = \lang -1 \rang\)</span><br />
+<span class="math notranslate nohighlight">\((\Z / n\Z,+)\)</span> 는 순환군이다. 왜냐하면 <span class="math notranslate nohighlight">\(\Z / n\Z= \{ [0], \cdots, [n-1] \}\)</span>이고 <span class="math notranslate nohighlight">\([a]+[b] = [a+b])\)</span>임으로,
+<span class="math notranslate nohighlight">\((\Z / n\Z,+) = \lang [1] \rang\)</span>이다.</p>
+</section>
+<section id="id19">
+<h3>명제1<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h3>
+<p>군 <span class="math notranslate nohighlight">\((G,*)\)</span>과 <span class="math notranslate nohighlight">\(x \in G\)</span>가 있을 때, <span class="math notranslate nohighlight">\(\lang x \rang\)</span>은 <span class="math notranslate nohighlight">\((\Z, +)\)</span>나 <span class="math notranslate nohighlight">\(n \in \N\)</span>에 대해 <span class="math notranslate nohighlight">\((\Z / n\Z, +)\)</span>와 군 동형임을 증명하여라.</p>
+<p><strong>proof</strong><br />
+<span class="math notranslate nohighlight">\(\lang x \rang\)</span>은 <span class="math notranslate nohighlight">\(x^i, x^j \in \lang x \rang\)</span>에 대해 <span class="math notranslate nohighlight">\(x^i = x^j\)</span>을 만족하는 서로 다른 <span class="math notranslate nohighlight">\(i,j\)</span>가 존재하는 경우와 존재하지 않는 경우이다.</p>
+<p>[존재하지 않는 경우]<br />
+함수 <span class="math notranslate nohighlight">\(\Phi := \lang x \rang \rightarrow \Z, \quad x^n \mapsto n\)</span>는 <span class="math notranslate nohighlight">\(x^i = x^j\)</span>를 만족하는 경우가 없기 때문에 <span class="math notranslate nohighlight">\(x^n = x^m \Rightarrow n = m\)</span>이고 잘 정의된다(well defined).</p>
+<p>-[<span class="math notranslate nohighlight">\(\Phi\)</span> is group isomorphism]<br />
+–[<span class="math notranslate nohighlight">\(\Phi\)</span> is group homorphism]<br />
+<span class="math notranslate nohighlight">\(x^n, x^m \in \lang x \rang\)</span>에 대해,</p>
+<div class="math notranslate nohighlight">
+\[ \Phi(x^n * x^m) = \Phi(x^{n+m}) = n+m = \Phi(x^n) + \Phi(x^m) \quad {_\blacksquare} \]</div>
+<p>–[<span class="math notranslate nohighlight">\(\Phi\)</span> is injective]<br />
+<span class="math notranslate nohighlight">\(x^n, x^m \in \lang x \rang\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \Phi(x^n) = \Phi(x^m) \\ \Rightarrow \enspace &amp; n = m \\ \Rightarrow \enspace &amp; x^n = x^m \quad {_\blacksquare}  \end{aligned}\end{split}\]</div>
+<p>–[<span class="math notranslate nohighlight">\(\Phi\)</span> is surjective]<br />
+<span class="math notranslate nohighlight">\(z \in \Z\)</span>에 대해, <span class="math notranslate nohighlight">\(x^z \in \lang x \rang\)</span>임으로, <span class="math notranslate nohighlight">\(\exist x^z \in \lang x \rang, \quad \Phi(x^z) = z\)</span>이다.
+<span class="math notranslate nohighlight">\(\quad {_\blacksquare}\)</span></p>
+<p>[존재하는 경우]<br />
+일반성을 잃지 않고 <span class="math notranslate nohighlight">\(j &lt; i\)</span>라고 할 수 있다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; x^i = x^j \\ \Leftrightarrow \enspace &amp;  x^i * (x^j)^{-1} = e_G \\ \Leftrightarrow \enspace &amp; x^{i-j} = e_G, \quad i-j \in \N \end{aligned} \end{split}\]</div>
+<p>따라서 <span class="math notranslate nohighlight">\(S = \{ n \in \N | x^n = e \}\)</span>는 공집합이 아니며, well-ordering principle에 의해 <span class="math notranslate nohighlight">\(\exist n_0 = \min S\)</span>이다.</p>
+<p>이제 함수 <span class="math notranslate nohighlight">\(\Phi := \lang x \rang \rightarrow \Z / n_0\Z, \quad x^n \mapsto [n]\)</span>를 정의하자.</p>
+<p>-[보조정리]<br />
+<span class="math notranslate nohighlight">\(S = \{ kn_0 | k \in \Z \}\)</span>임을 증명하여라.</p>
+<p><strong>proof</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \exist n_0 + l \in S, \quad l &lt; n_0 \\ \Rightarrow \enspace &amp; x^{n_0 + l} = e_G \\ \Rightarrow \enspace &amp; x^l = e_G \quad \Rightarrow \!\! \Leftarrow (\text{minimality of } n_0)    \end{aligned} \end{split}\]</div>
+<p>-[<span class="math notranslate nohighlight">\(\Phi\)</span> is well defined]</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; x^n = x^m \\ \Leftrightarrow \enspace &amp; n-m = n_0k \\ \Leftrightarrow \enspace &amp; [n] = [m] \quad (\because \text{definition of } \Z / n_0\Z) \\ \Leftrightarrow \enspace &amp; \Phi(x^n) = \Phi(x^m) \end{aligned} \end{split}\]</div>
+<p>-[<span class="math notranslate nohighlight">\(\Phi\)</span> is group isomorphism]<br />
+–[<span class="math notranslate nohighlight">\(\Phi\)</span> is group homorphism]</p>
+<div class="math notranslate nohighlight">
+\[ \Phi(x^n * x^m) = \Phi(x^{n+m}) = [n + m] = [n] + [m] = \Phi(x^n) + \Phi(x^m) \quad {_\blacksquare} \]</div>
+<p>–[<span class="math notranslate nohighlight">\(\Phi\)</span> is injective]<br />
+<span class="math notranslate nohighlight">\(x^n, x^m \in \lang x \rang\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \Phi(x^n) = \Phi(x^m) \\ \Rightarrow \enspace &amp; [n] = [m] \\ \Leftrightarrow \enspace &amp; n - m = n_0k \\ \Leftrightarrow \enspace &amp; x^n = x^{m+n_0k} = x^m \quad {_\blacksquare}  \end{aligned}\end{split}\]</div>
+<p>–[<span class="math notranslate nohighlight">\(\Phi\)</span> is surjective]<br />
+<span class="math notranslate nohighlight">\([z] \in \Z / n_0\Z\)</span>에 대해, <span class="math notranslate nohighlight">\(x^z \in \lang x \rang\)</span>임으로, <span class="math notranslate nohighlight">\(\exist x^z \in \lang x \rang, \quad \Phi(x^z) = [z]\)</span>이다.
+<span class="math notranslate nohighlight">\(\quad {_\blacksquare}\)</span></p>
+</section>
+<section id="id20">
+<h3>참고1<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h3>
+<p>순환군은 무한집할일 경우 <span class="math notranslate nohighlight">\(\Z\)</span>와 군 동형이고 무한집합이 아닐 경우 적절한 <span class="math notranslate nohighlight">\(n_0\)</span>에 대해서 <span class="math notranslate nohighlight">\(\Z / n_0\Z\)</span>와 군 동형이어야 한다.</p>
+</section>
+<section id="id21">
+<h3>참고2<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h3>
+<p>군 동형인 경우에는 같다고 분류할 경우, 정리1에 의해 모든 순환군이 <span class="math notranslate nohighlight">\(\Z, \Z/n\Z\)</span>로 분류된다.</p>
+</section>
+<section id="id22">
+<h3>명제2<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h3>
+<p>군 <span class="math notranslate nohighlight">\((G,*)\)</span>과 <span class="math notranslate nohighlight">\(x \in G\)</span>가 있을 때, <span class="math notranslate nohighlight">\(H \le \lang x \rang \Rightarrow H\)</span> is cyclic group을 증명하여라.</p>
+<p><strong>proof</strong></p>
+<p>집합 <span class="math notranslate nohighlight">\(S = \{ n \in \N | x^n \in H \}\)</span>와 well-ordering principle에 의해 <span class="math notranslate nohighlight">\(\min S = n_0\)</span>가 있다.</p>
+<p>이 때, <span class="math notranslate nohighlight">\(H = \lang x^{n_0} \rang\)</span>임을 보여 <span class="math notranslate nohighlight">\(H\)</span>가 순환군임을 증명하려고 한다.</p>
+<p>[<span class="math notranslate nohighlight">\(H \subseteq \lang x^{n_0} \rang\)</span>]<br />
+<span class="math notranslate nohighlight">\(x^n \in H\)</span>에 대해 division algorithm에 의해 <span class="math notranslate nohighlight">\(\exist q \in \Z, r \in \{ 0, \cdots, n_0 -1 \}, \quad n = n_0q +r\)</span>이다.</p>
+<div class="math notranslate nohighlight">
+\[ x^r = x^{n-n_0q} = x^n * x^{-n_0q} \in H \]</div>
+<p>이 때, <span class="math notranslate nohighlight">\(r\)</span>이 0이 아닌경우 <span class="math notranslate nohighlight">\(n_0\)</span>가 최소라는 가정에 문제가 발생함으로 <span class="math notranslate nohighlight">\(r=0\)</span>이다.</p>
+<div class="math notranslate nohighlight">
+\[ x^n = x^{n_0q} \in \lang x^{n_0} \rang \quad {_\blacksquare} \]</div>
+<p>[<span class="math notranslate nohighlight">\(\lang x^{n_0} \rang \subseteq H\)</span>]<br />
+<span class="math notranslate nohighlight">\(x^{n_0q} \in \lang x^{n_0} \rang\)</span>에 대해, <span class="math notranslate nohighlight">\(x^{n_0} \in H\)</span>이고 <span class="math notranslate nohighlight">\(H\)</span>는 군 구조를 가지고 있음으로 연산에 닫혀 있어야 함으로 <span class="math notranslate nohighlight">\(x^{n_0q} \in H\)</span>이다. <span class="math notranslate nohighlight">\(\quad {_\blacksquare}\)</span></p>
+</section>
+</section>
+<section id="id23">
+<h2>순환군의 차수<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h2>
+<p>군 <span class="math notranslate nohighlight">\((G,*)\)</span>와 <span class="math notranslate nohighlight">\(x \in G\)</span>이 있을 때, x의해 생성되는 순환군 <span class="math notranslate nohighlight">\(\lang x \rang\)</span>의 <code class="docutils literal notranslate"><span class="pre">차수(order)</span></code> <span class="math notranslate nohighlight">\(ord(x)\)</span>는 다음과 같이 정의된다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} ord(x) = | \lang x \rang | =  \begin{cases} \min \{ n \in \N | x^n = e_G \} &amp; \exist n \quad s.t. \quad x^n = e_G \\ \infty &amp; \not\exist n \quad s.t. \quad x^n = e_G   \end{cases} \end{split}\]</div>
+<section id="id24">
+<h3>보조정리1<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h3>
+<p>군 <span class="math notranslate nohighlight">\((G,*)\)</span>와 <span class="math notranslate nohighlight">\(x \in G\)</span>에 대한 <span class="math notranslate nohighlight">\(|\lang x \rang| = n\)</span>인 <span class="math notranslate nohighlight">\(\lang x \rang\)</span>이 있을 때, <span class="math notranslate nohighlight">\(| \lang x^a \rang | = \frac{n}{\gcd (n,a)}\)</span>를 증명하여라.</p>
+<p><strong>proof</strong></p>
+<p><span class="math notranslate nohighlight">\(x^a\)</span>를 <span class="math notranslate nohighlight">\(\frac{n}{\gcd (n,a)}\)</span>번 연산한것이 <span class="math notranslate nohighlight">\(e_G\)</span>가 되고 <span class="math notranslate nohighlight">\(\frac{n}{\gcd (n,a)}\)</span>이 가장 작은 자연수임을 보이려고한다.</p>
+<p>[step1]</p>
+<div class="math notranslate nohighlight">
+\[(x^a)^{\frac{n}{\gcd (n,a)}} = (x^n)^{\frac{a}{\gcd (n,a)}} = e_G \quad {_\blacksquare}\]</div>
+<p>[가장 작은 자연수]<br />
+이를 보이려면 아래를 증명하면 된다.
+$<span class="math notranslate nohighlight">\((x^a)^m = e \Rightarrow  \frac{n}{\gcd (n,a)} \le m\)</span>$</p>
+<p>division algorithm에 의해 <span class="math notranslate nohighlight">\(am = nq + r, \quad 0 \le r \le n-1\)</span>이 성립한다.</p>
+<p>이 때, <span class="math notranslate nohighlight">\(r = am - nq\)</span>임으로 <span class="math notranslate nohighlight">\(x^r = e_G\)</span>인데 <span class="math notranslate nohighlight">\(n\)</span>이 가장 작은 자연수라는 가정에 모순이 발생한다.</p>
+<p>즉, <span class="math notranslate nohighlight">\(r=0\)</span>이고 <span class="math notranslate nohighlight">\(am = nq\)</span>이다.</p>
+<p>이를 통해 <span class="math notranslate nohighlight">\(n | am\)</span>이고 <span class="math notranslate nohighlight">\(n' = \frac{n}{\gcd(n,a)}\)</span>, <span class="math notranslate nohighlight">\(a' = \frac{a}{\gcd(n,a)}\)</span>라 할때 <span class="math notranslate nohighlight">\(n' | a'm\)</span>이다.</p>
+<p>따라서 <span class="math notranslate nohighlight">\(n' | m\)</span>이고 <span class="math notranslate nohighlight">\(n' = \frac{n}{\gcd(n,a)} \le m\)</span>이다. <span class="math notranslate nohighlight">\(\quad {_\blacksquare}\)</span></p>
+</section>
+<section id="id25">
+<h3>라그랑지 정리의 역<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h3>
+<p>군 <span class="math notranslate nohighlight">\((G,*)\)</span>와 <span class="math notranslate nohighlight">\(x \in G\)</span>에 대한 <span class="math notranslate nohighlight">\(|\lang x \rang| &lt; \infty\)</span>인 <span class="math notranslate nohighlight">\(\lang x \rang\)</span>이 있을 때, 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ \forall d | n, \quad \exist! H \le \lang x \rang \quad s.t. \quad d = |H| \]</div>
+<p><strong>proof</strong></p>
+<p>[<span class="math notranslate nohighlight">\(\exist\)</span>]<br />
+$<span class="math notranslate nohighlight">\( \begin{aligned} &amp; \frac{n}{d} \in \Z \\ \Rightarrow \enspace &amp; x^\frac{n}{d} \in G \\ \Rightarrow \enspace &amp;  \lang x^\frac{n}{d} \rang \le G \\ \Rightarrow \enspace &amp; | \lang x^\frac{n}{d} \rang | = \frac{n}{\gcd (n,\frac{n}{d})} = \frac{n}{\frac{n}{d}} = d \quad {_\blacksquare} \end{aligned} \)</span>$</p>
+<p>[!]<br />
+<span class="math notranslate nohighlight">\(m \in \Z\)</span>에 대해 <span class="math notranslate nohighlight">\(|\lang x^m \rang|=d\)</span>인 <span class="math notranslate nohighlight">\(\lang x^m \rang \le \lang x \rang\)</span>가 있다고 하자.</p>
+<p>보조정리에 의해 <span class="math notranslate nohighlight">\(d= \frac{n}{\gcd (n,m)} \Leftrightarrow \frac{n}{d} = \gcd (n,m)\)</span>이 성립한다.</p>
+<p>[<span class="math notranslate nohighlight">\(\lang x ^{\frac{n}{d}} \rang \subseteq \lang x^m \rang\)</span>]<br />
+<span class="math notranslate nohighlight">\(s,t \in \Z\)</span>에 대해 <span class="math notranslate nohighlight">\(\gcd (n,m) = ns + mt\)</span> 임으로 <span class="math notranslate nohighlight">\(y \in \lang x ^{\frac{n}{d}} \rang = \lang x ^{ns+mt} \rang\)</span>에 대해</p>
+<div class="math notranslate nohighlight">
+\[ y = x^{k(ns+mt)} = (x^n)^{ks} * (x^m)^{kt} = (x^m)^{kt} \in \lang x^m \rang \quad {_\blacksquare}\]</div>
+<p>[<span class="math notranslate nohighlight">\(\lang x^m \rang \subseteq \lang x ^{\frac{n}{d}} \rang\)</span>]<br />
+<span class="math notranslate nohighlight">\(m' \in \Z\)</span>에 대해 <span class="math notranslate nohighlight">\(m = \gcd(n,m) \times m' = \frac{n}{d} \times m'\)</span>임으로 <span class="math notranslate nohighlight">\(y \in \lang x^m \rang\)</span>에 대해</p>
+<div class="math notranslate nohighlight">
+\[ y = x^{km}=  x^{k \frac{d}{n} m'} =  (x^{\frac{d}{n}})^{km'} \in \lang x ^{\frac{n}{d}} \rang  \quad {_\blacksquare}\]</div>
+<section id="id26">
+<h4>따름정리1<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h4>
+<p>소수 <span class="math notranslate nohighlight">\(P\)</span>가 있을 때, <span class="math notranslate nohighlight">\(\Z / P\Z\)</span>는 <span class="math notranslate nohighlight">\(\{ e_G \}\)</span>를 제외한 <code class="docutils literal notranslate"><span class="pre">진부분군(proper</span> <span class="pre">subgroup)</span></code>을 갖지 않는다.</p>
+</section>
+<section id="id27">
+<h4>따름정리2<a class="headerlink" href="#id27" title="Permalink to this headline">#</a></h4>
+<p><span class="math notranslate nohighlight">\(\Z / n\Z\)</span>의 <code class="docutils literal notranslate"><span class="pre">생성자(genrator)</span></code>의 수는 <span class="math notranslate nohighlight">\(\varphi(n)\)</span>과 같다.</p>
+<p>이 때, <span class="math notranslate nohighlight">\(\varphi(n)\)</span> <code class="docutils literal notranslate"><span class="pre">오일러</span> <span class="pre">파이</span> <span class="pre">함수(Euler's</span> <span class="pre">phi</span> <span class="pre">function)</span></code>는 다음과 같다.</p>
+<div class="math notranslate nohighlight">
+\[ \varphi : \Z \rightarrow \Z , \quad n \mapsto \varphi(n) := \{ k \in \{ 0, \cdots, n \} | \gcd(n,k)=1 \} \]</div>
+<p><strong>proof</strong></p>
+<p>군 <span class="math notranslate nohighlight">\((G,*)\)</span>와 <span class="math notranslate nohighlight">\(x \in G\)</span>가 있을 때, 보조정리에 의해서 <span class="math notranslate nohighlight">\(| \lang x^k \rang | = \frac{n}{\gcd(n,k)}\)</span>이다.</p>
+<p>이 때, <span class="math notranslate nohighlight">\(x^k\)</span>가 생성자가 되기 위해서는 <span class="math notranslate nohighlight">\(| \lang x^k \rang | = n\)</span>이어야 하고 즉, <span class="math notranslate nohighlight">\(\gcd(n,k) = 1\)</span>이어야 한다. <span class="math notranslate nohighlight">\(\quad {_\blacksquare}\)</span></p>
+</section>
+</section>
+<section id="id28">
+<h3>명제1<a class="headerlink" href="#id28" title="Permalink to this headline">#</a></h3>
+<p>소수 <span class="math notranslate nohighlight">\(P\)</span>가 있을 때, <span class="math notranslate nohighlight">\(k \in \N\)</span>에 대해 <span class="math notranslate nohighlight">\(\varphi(P^k) = P^k - P^{k-1}\)</span>임을 증명하여라.</p>
+</section>
+<section id="id29">
+<h3>명제2<a class="headerlink" href="#id29" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(m,n \in \Z\)</span>가 있을 때, <span class="math notranslate nohighlight">\(\gcd(m,n) = 1 \Rightarrow \varphi(mn) = \varphi(m) \varphi(n)\)</span>를 증명하여라.</p>
+</section>
+<section id="id30">
+<h3>참고<a class="headerlink" href="#id30" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(k \in \N\)</span>에 대해 소인수분해와 명제 2에의해 <span class="math notranslate nohighlight">\(\varphi(k) = \varphi(P_1^{m_1}) \cdots \varphi(P_r^{m_r})\)</span>가 되고 명제 1에 의해 <span class="math notranslate nohighlight">\((P_1^{m_1} - P_1^{m_1 - 1}) \cdots (P_r^{m_1} - P_r^{m_1 - 1}) = P_1^{m_1} \cdots P_r^{m_r} \Pi _{i=1}^r (1 - \frac{1}{P_i}) = k \Pi _{i=1}^r (1 - \frac{1}{P_i})\)</span>이다.</p>
+</section>
+</section>
+<section id="id31">
+<h2>왼쪽 잉여류<a class="headerlink" href="#id31" title="Permalink to this headline">#</a></h2>
+<p>군 <span class="math notranslate nohighlight">\((G,*)\)</span>이 있을 때, <span class="math notranslate nohighlight">\(H \le G\)</span>과 <span class="math notranslate nohighlight">\(g \in G\)</span>에 대해 관계 <span class="math notranslate nohighlight">\(L \subseteq G \times G\)</span>이 다음과 같이 주어졌다고 하자.</p>
+<div class="math notranslate nohighlight">
+\[ (g,g') \in L \Leftrightarrow g^{-1}g' \in H \]</div>
+<p><span class="math notranslate nohighlight">\(L\)</span>에 의해 정의되는 <span class="math notranslate nohighlight">\(g\)</span>의 동치류 <span class="math notranslate nohighlight">\([g]_L\)</span>의 정의를 보면 다음과 같다.
+$<span class="math notranslate nohighlight">\( \begin{aligned} [g]_L &amp;= \{ g' \in G | g \sim_L g' \} \\ &amp;= \{ g' \in G | g^{-1}g' = h \in H \} \\ &amp;= \{ g' \in G | h \in H, \quad g' = gh \} \\ &amp;= \{ gh | h \in H \} \end{aligned} \)</span>$</p>
+<p>이 때, <span class="math notranslate nohighlight">\(g\)</span>의 <code class="docutils literal notranslate"><span class="pre">왼쪽</span> <span class="pre">잉여류(left</span> <span class="pre">coset)</span></code> <span class="math notranslate nohighlight">\(gH\)</span>는 <span class="math notranslate nohighlight">\(L\)</span>에 의해 정의되는 동치류 <span class="math notranslate nohighlight">\([g]_L\)</span>이다.</p>
+<p>그리고 <span class="math notranslate nohighlight">\(G/H = \{ gH | g \in G \}\)</span>이다.</p>
+<section id="id32">
+<h3>명제1<a class="headerlink" href="#id32" title="Permalink to this headline">#</a></h3>
+<p>왼쪽 잉여류를 정의하는 관계 <span class="math notranslate nohighlight">\(L\)</span>이 동치 관계임을 증명하여라.</p>
+</section>
+<section id="id33">
+<h3>명제2<a class="headerlink" href="#id33" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(f : G/\{e_G\} \rightarrow G\)</span>가 군 동형 사상임을 증명하여라.</p>
+<section id="id34">
+<h4>예시<a class="headerlink" href="#id34" title="Permalink to this headline">#</a></h4>
+<p><span class="math notranslate nohighlight">\(n\Z \le \Z\)</span>임으로 <span class="math notranslate nohighlight">\(\Z / n\Z\)</span>, 잉여류는 정수에서 봤던 성질의 일반화이다.</p>
+</section>
+</section>
+<section id="id35">
+<h3>명제3<a class="headerlink" href="#id35" title="Permalink to this headline">#</a></h3>
+<p>군 <span class="math notranslate nohighlight">\((G,*)\)</span>이 있을 때, <span class="math notranslate nohighlight">\(H \le G\)</span>과 <span class="math notranslate nohighlight">\(g_1, g_2 \in G\)</span>에 대해 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ g_1H = g_2H \Leftrightarrow g_1^{-1}g_2 \in H \Leftrightarrow g_2^{-1}g_1 \in H \]</div>
+<p><strong>proof</strong></p>
+<p>[<span class="math notranslate nohighlight">\(\Rightarrow\)</span>]<br />
+<span class="math notranslate nohighlight">\(e \in H\)</span> 임으로, <span class="math notranslate nohighlight">\(g_1e \in g_2H \Rightarrow g_1 \in g_2H \Rightarrow \exist h \in H, \quad  g_1 = g_2h \Rightarrow g_2^{-1}g_1 = h \in H \Rightarrow g_1^{-1}g_2 = h^{-1} \in H\)</span></p>
+<p>[<span class="math notranslate nohighlight">\(\Leftarrow\)</span>]<br />
+<span class="math notranslate nohighlight">\(g_1^{-1}g_2 \in H \Rightarrow \exist h \in H, \quad  g_1^{-1}g_2 = h \Rightarrow g_2 = g_1h \Rightarrow g_2H = \{ g_2h | h \in H \} = \{ g_1h | h \in H \} = g_1H\)</span></p>
+</section>
+<section id="id36">
+<h3>명제4<a class="headerlink" href="#id36" title="Permalink to this headline">#</a></h3>
+<p>군 <span class="math notranslate nohighlight">\((G,*)\)</span>이 있을 때, <span class="math notranslate nohighlight">\(H \le G\)</span>과 <span class="math notranslate nohighlight">\(g \in G\)</span>에 대해 <span class="math notranslate nohighlight">\(|gH|=|H|\)</span>를 증명하여라.</p>
+<p><strong>proof</strong></p>
+<p><span class="math notranslate nohighlight">\(f:gH \rightarrow H\)</span>가 전단사함수임을 보여 증명하려고 한다.</p>
+<p>[injective]<br />
+<span class="math notranslate nohighlight">\(f(gh_1)=f(gh_2) \Rightarrow h_1 = h2 \Rightarrow gh_1 =gh_2\)</span></p>
+<p>[surjective]<br />
+<span class="math notranslate nohighlight">\(h \in H \Rightarrow f(gh) = h\)</span></p>
+</section>
+<section id="id37">
+<h3>라그랑지 정리<a class="headerlink" href="#id37" title="Permalink to this headline">#</a></h3>
+<p>군 <span class="math notranslate nohighlight">\((G,*)\)</span>가 있을 때, <span class="math notranslate nohighlight">\(H \le G\)</span>에 대해 <span class="math notranslate nohighlight">\(|H| \enspace | \enspace |G|\)</span>임을 증명하여라.</p>
+<p><strong>proof</strong></p>
+<p><span class="math notranslate nohighlight">\(G = \bigcup gH \rightarrow |G| = \sum_{k=1}^r |g_kH| = r|H|\)</span></p>
+<section id="id38">
+<h4>따름정리<a class="headerlink" href="#id38" title="Permalink to this headline">#</a></h4>
+<p>소수 <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(|G|=P\)</span>면 <span class="math notranslate nohighlight">\(G\)</span>는 순환군이다.</p>
+<p><strong>proof</strong></p>
+<p><span class="math notranslate nohighlight">\(g \in G - \{e\} \rightarrow \lang g \rang \le G \Rightarrow | \lang g \rang | \enspace | \enspace |G| \Rightarrow | \lang g \rang | = |G| \Rightarrow \lang g \rang = G\)</span></p>
+</section>
+</section>
+</section>
+<section id="id39">
+<h2>오른쪽 잉여류<a class="headerlink" href="#id39" title="Permalink to this headline">#</a></h2>
+<p>군 <span class="math notranslate nohighlight">\((G,*)\)</span>이 있을 때, <span class="math notranslate nohighlight">\(H \le G\)</span>과 <span class="math notranslate nohighlight">\(g \in G\)</span>에 대해 관계 <span class="math notranslate nohighlight">\(R \subseteq G \times G\)</span>이 다음과 같이 주어졌다고 하자.</p>
+<div class="math notranslate nohighlight">
+\[ (g,g') \in R \Leftrightarrow g'g^{-1} \in H \]</div>
+<p><span class="math notranslate nohighlight">\(R\)</span>에 의해 정의되는 <span class="math notranslate nohighlight">\(g\)</span>의 동치류 <span class="math notranslate nohighlight">\([g]_R\)</span>의 정의를 보면 다음과 같다.
+$<span class="math notranslate nohighlight">\( \begin{aligned} [g]_R &amp;= \{ g' \in G | g \sim_L g' \} \\ &amp;= \{ g' \in G | g'g^{-1} = h \in H \} \\ &amp;= \{ g' \in G | h \in H, \quad g' = hg \} \\ &amp;= \{ hg | h \in H \} \end{aligned} \)</span>$</p>
+<p>이 때, <span class="math notranslate nohighlight">\(g\)</span>의 <code class="docutils literal notranslate"><span class="pre">오른쪽</span> <span class="pre">잉여류(right</span> <span class="pre">coset)</span></code> <span class="math notranslate nohighlight">\(Hg\)</span>는 <span class="math notranslate nohighlight">\(R\)</span>에 의해 정의되는 동치류 <span class="math notranslate nohighlight">\([g]_R\)</span>이다.</p>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./sources\01 math\02 Abstract Algebra\04 Group"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../03%20Monoid.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Monoid</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="01%20Commutative%20Group.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Commutative Group</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By MS<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -160,13 +160,13 @@ $$\varphi_A(t) = (-1)^n(t^n + a_1t^{n-1} + \cdots + a_{n-1}t + a_n) \quad a_n =\
 
 
 
-## 대칭행렬
+# 대칭행렬
 symmetric matrix일 때, eigenvector는 서로 수직한다.
 
 > 참고  
 > [book] (Lai et al) Introduction to Continuum Mechanics Chapter 2.23
 
-## Definite Matrix
+# Definite Matrix
 $\mathbf M \in Mat_{nn}(\R)$라 할 때, 다음을 만족하는 행렬을 `positive-definite`라고 한다.
 $$ \mathbf x \in \R^n - \{ 0 \} \Rightarrow \mathbf x^T \mathbf M \mathbf x > 0 $$
 

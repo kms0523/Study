@@ -1200,14 +1200,33 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#relaxation">
-   Relaxation
+  <a class="reference internal nav-link" href="#id1">
+   Weak Formulation
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#related-funtion-space">
+     Related Funtion Space
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#weak-form">
-   Weak Form
+  <a class="reference internal nav-link" href="#dimensional-reduced-weak-form">
+   Dimensional Reduced Weak Form
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#related-function-spaces">
+     Related function spaces
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrix-form">
+     Matrix form
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1234,14 +1253,33 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#relaxation">
-   Relaxation
+  <a class="reference internal nav-link" href="#id1">
+   Weak Formulation
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#related-funtion-space">
+     Related Funtion Space
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#weak-form">
-   Weak Form
+  <a class="reference internal nav-link" href="#dimensional-reduced-weak-form">
+   Dimensional Reduced Weak Form
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#related-function-spaces">
+     Related function spaces
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrix-form">
+     Matrix form
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1257,33 +1295,38 @@ title="Print to PDF"
 <h1>Weak Formulation<a class="headerlink" href="#weak-formulation" title="Permalink to this headline">#</a></h1>
 <section id="weighted-residual-formulation">
 <h2>Weighted Residual Formulation<a class="headerlink" href="#weighted-residual-formulation" title="Permalink to this headline">#</a></h2>
-<p>Bar의 weighted residual formlation은 다음과 같다.</p>
+<p>Bar의 WRF은 다음과 같다.</p>
 <div class="math notranslate nohighlight">
-\[ \text{find } u \in \mathcal{U} \st \forall w \in C^\infty_0(\Omega), \quad \int_\Omega \left( \frac{\partial}{\partial x}\left(EA\pdiff{u}{x}\right) + p(x) \right) w \thinspace dV = 0 \]</div>
+\[ \text{find } u \in \mathcal{U} \st \forall w \in C^\infty_c(\Omega), \quad \int_\Omega \left( \frac{\partial}{\partial x}\left(EA\pdiff{u}{x}\right) + p(x) \right) w \thinspace dV = 0 \]</div>
 </section>
-<section id="relaxation">
-<h2>Relaxation<a class="headerlink" href="#relaxation" title="Permalink to this headline">#</a></h2>
-<p>Bar의 weighted residual formlation의 첫번째 항에 부분적분법을 적용하면 다음과 같다.</p>
+<section id="id1">
+<h2>Weak Formulation<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Bar의 weak formulation은 다음과 같다.</p>
 <div class="math notranslate nohighlight">
-\[ \text{find } u \in \mathcal{U} \st \forall w \in C^\infty_0(\Omega), \quad EA\pdiff{u}{x}w\bigg|_{\partial\Omega} - \int_\Omega EA\pdiff{u}{x}\pdiff{w}{x}\thinspace dV + \int_\Omega p(x)w \thinspace dV = 0 \]</div>
-<p>Natural BC를 적용하면 다음과 같다.</p>
+\[ \text{find } u \in \mathcal{U_w} \quad s.t. \quad \forall w \in \mathcal W, \quad B(w,u) = l(w) \]</div>
 <div class="math notranslate nohighlight">
-\[ \text{find } u \in \mathcal{U} \st \forall w \in C^\infty_0(\Omega), \quad \int_\Omega EA\pdiff{u}{x}\pdiff{w}{x}\thinspace dV = fw(L) -EA\pdiff{u}{x}w\bigg|_{x = 0} + \int_\Omega p(x)w \thinspace dV \]</div>
-<p>Natural BC가 적용되기 위해서 test function space를 <span class="math notranslate nohighlight">\(\mathcal{W}\)</span>로 확장한다.</p>
+\[\begin{split} \begin{aligned} \text{Where, } B(w,u) &amp;:= \int_\Omega \pdiff{w}{x}EA\pdiff{u}{x}\thinspace dV \\ l(w) &amp;:= fw(L) + \int_\Omega pw \thinspace dV \end{aligned} \end{split}\]</div>
+<section id="related-funtion-space">
+<h3>Related Funtion Space<a class="headerlink" href="#related-funtion-space" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
-\[ \mathcal{W} := \Set{w \in C^\infty(\Omega) | w = 0 \text{ on } \partial\Omega_E} \]</div>
-<p>그리고 부분적분법에 의해서 미분항이 test function으로옮겨가고 natural BC가 문제에 적용되어 있음으로 solution function space 또한 <span class="math notranslate nohighlight">\(\mathcal U_W\)</span>로 확장한다.</p>
-<div class="math notranslate nohighlight">
-\[ \mathcal U_W := \Set{u \in C^1(\Omega) | u \text{ satisfies essential BC}} \]</div>
+\[\begin{split} \begin{gathered} \mathcal{W} := \Set{w \in C^\infty(\Omega) | w = 0 \text{ on } \partial\Omega_E} \\ \mathcal{U_w} := \Set{u \in C^1(\Omega) | u \text{ satisfies essential BC}} \end{gathered} \end{split}\]</div>
 </section>
-<section id="weak-form">
-<h2>Weak Form<a class="headerlink" href="#weak-form" title="Permalink to this headline">#</a></h2>
-<p>확장된 function space를 적용하면 다음과 같다.</p>
+</section>
+<section id="dimensional-reduced-weak-form">
+<h2>Dimensional Reduced Weak Form<a class="headerlink" href="#dimensional-reduced-weak-form" title="Permalink to this headline">#</a></h2>
+<p>정의에 의해 <span class="math notranslate nohighlight">\(B\)</span>가 bilinear임으로 Bar의 dimensional reduction된 weak formulation은 다음과 같다.</p>
 <div class="math notranslate nohighlight">
-\[ \text{find } u \in \mathcal{U}_W \st \forall w \in \mathcal{W}, \quad \int_\Omega EA\pdiff{u}{x}\pdiff{w}{x}\thinspace dV = fw(L) -EA\pdiff{u}{x}w\bigg|_{x = 0} + \int_\Omega p(x)w \thinspace dV \]</div>
-<p>이 때, test function space가 <span class="math notranslate nohighlight">\(\partial\Omega_E\)</span>에서 항상 <span class="math notranslate nohighlight">\(0\)</span>임으로 최종 weak formulation은 다음과 같다.</p>
+\[ \text{find } x \in \R_b^n \st B_r(w_i,u_j) x^j = l_r(w_i), \enspace i = 1,\cdots,n \]</div>
+<section id="related-function-spaces">
+<h3>Related function spaces<a class="headerlink" href="#related-function-spaces" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
-\[ \text{find } u \in \mathcal{U}_W \st \forall w \in \mathcal{W}, \quad \int_\Omega EA\pdiff{u}{x}\pdiff{w}{x}\thinspace dV = fw(L) + \int_\Omega p(x)w \thinspace dV \]</div>
+\[\begin{split} \begin{gathered} \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_f} := \span(\set{u_1,\cdots,u_n}) \subset C^1(\Omega))  \\ \R^n_b := \Set{a \in \R^n | a^iu_i \text{ satisfy essential BC}} \end{gathered} \end{split}\]</div>
+</section>
+<section id="matrix-form">
+<h3>Matrix form<a class="headerlink" href="#matrix-form" title="Permalink to this headline">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{bmatrix} B_r(w_1,u_1) &amp; \cdots &amp; B_r(w_1,u_n) \\ \vdots &amp; \ddots &amp; \vdots \\ B_r(w_n,u_1) &amp; \cdots &amp; B_r(w_n,u_n) \end{bmatrix} \begin{bmatrix} a^1 \\ \vdots \\ a^n \end{bmatrix} = \begin{bmatrix} l_r(w_1) \\ \vdots \\ l_r(w_n) \end{bmatrix} \end{split}\]</div>
+</section>
 </section>
 </section>
 

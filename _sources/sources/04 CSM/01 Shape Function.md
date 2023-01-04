@@ -1,15 +1,15 @@
-# Approximation
+# Function Approximation
 함수 $\phi : \R^d \rightarrow \R$가 있을 떄, 서로 다른 $n$개의 점 $x_i \in \R^n$에서 $\phi$의 값 $\phi(x_i)$을 알고 있다고 하자.
 
 $$ \phi(x_i) \text{ is known}, \enspace i=1,\cdots,n $$
 
-이 때, $\phi$의 approximation function $\phi_h$를 구해보자.
+이 때, $\phi$의 approximate function $\phi_h$를 구해보자.
 
-$\phi_h$는 $\phi$의 approximation function임으로 approximation의 기준을 정해야 되는데, 이 때 한가지 타당한 기준은 다음과 같다.
+$\phi_h$는 $\phi$의 approximate function임으로 approximation의 기준을 정해야 되는데, 이 때 한가지 타당한 기준은 다음과 같다.
 
 $$ \phi(x_i) = \phi_h(x_i), \enspace i=1,\cdots,n $$
 
-즉, 값이 주어진 점들에서 approximation 함수가 원래 함수와 정확히 일치하는 것을 approximation의 기준으로 삼는것이다.
+즉, 값이 주어진 점들에서 approximate function이 원래 function과 정확히 일치하는 것을 approximation의 기준으로 삼는것이다.
 
 이제, 기준이 결정되었으니 기준을 만족하게 approximation을 해보자.
 
