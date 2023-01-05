@@ -11,33 +11,79 @@ $$ \phi(x_i) = \phi_h(x_i), \enspace i=1,\cdots,n $$
 
 즉, 값이 주어진 점들에서 approximate function이 원래 function과 정확히 일치하는 것을 approximation의 기준으로 삼는것이다.
 
-이제, 기준이 결정되었으니 기준을 만족하게 approximation을 해보자.
+이제, 기준이 결정되었으니 기준을 만족하는 $\phi_h$를 찾아보자.
 
-선형대수의 성질에 의해, $\R^d \rightarrow \R$로 가는 함수들의 모임은 $\R$위의 vector space가 된다.
+## Search
 
-먼저, 탐색할 function space $\mathcal{M}$의 basis가 될 linearly independent한 function들을 다음과 같이 정의하자.
+집합 $V$를 다음과 같이 정의하자.
+
+$$ V := \Set{f :\R^d \rightarrow \R} $$
+
+선형대수의 성질에 의해, $V/\R$은 vector space이다.
+
+이 떄, infinite dimension vector space $V$를 탐색할 수 없음으로 탐색할 $V$의 finite subspace $\mathcal{M}$을 결정하자.
+
+$\mathcal{M}$의 basis가 될 linearly independent한 function들을 다음과 같이 정의하자.
 
 $$ m_i : \R^d \rightarrow \R, \enspace i=1,\cdots,k $$
 
-그러면, $m_i$는 $\mathcal{M}$의 basis function임으로 다음이 성립한다.
+그러면, $m_i$는 $\mathcal{M}$의 basis임으로 다음이 성립한다.
 
 $$ \mathcal{M} = \span(\Set{m_i}) $$
 
 그리고 다음을 가정하자.
 
-$$ \phi_h \in \mathcal{M} $$
+$$ \exist \phi_h \in \mathcal{M} \st \phi(x_i) = \phi_h(x_i), \enspace i=1,\cdots,n $$
+
+$\phi_h \in \mathcal{M}$임으로 다음이 성립한다.
+
+$$ \exist a_1, \cdots, a_k \in \R \st \phi_h = a^im_i $$
+
+이 때, $\phi_h$는 $\phi(x_i) = \phi_h(x_i), \enspace i=1,\cdots,n$ 조건을 만족함으로 이를 matrix form으로 쓰면 다음과 같다.
+
+$$ \begin{gathered} \begin{bmatrix} m_1(x_1) &\cdots& m_k(x_1) \\ \vdots && \vdots \\ m_1(x_n) &\cdots& m_k(x_n) \end{bmatrix} \begin{bmatrix} a^1 \\ \vdots \\ a^k \end{bmatrix} = \begin{bmatrix} \phi(x_1) \\ \vdots \\ \phi(x_n) \end{bmatrix} \\ Ma =\hat{\phi} \end{gathered}  $$
+
+만약 $M$이 invertible matrix면 다음이 성립한다.
+
+$$ \begin{gathered} a = M^{-1}\hat{\phi} \\ k=n \end{gathered}  $$
+
+## Shape Function
+계산의 편의성을 위해 행렬 $m$을 다음과 같이 정의하자.
+
+$$ m = \begin{bmatrix} m_1(x) \\ \vdots \\ m_n(x)  \end{bmatrix} $$  
 
 그러면 다음이 성립한다.
 
-$$ \phi_h = a^im_i $$
+$$ \begin{aligned} \phi_h &= m^Ta \\&= m^TM^{-1}\hat{\phi} \end{aligned} $$
 
+이 때, 행렬 $n$을 다음과 같이 정의하자.
 
+$$ n = (M^{-1})^Tm $$
 
-basis function $m_i$를 결정할 때 중
+그러면 다음이 성립한다.
+
+$$ \begin{aligned} \phi_h &= n^T\hat{\phi} \\&= \phi(x_i)n_i \end{aligned} $$
+
+이 때, $n_i, \enspace i=1,\cdots,n$을 `shape function`이라고 한다.
+
+### 명제1
+Shape function $n_i, \enspace i=1,\cdots,n$가 있다고 하자.
+
+이 때, 다음을 증명하여라.
+$$ \sum_{i=1}^n n_i = 1 $$
+
+**Proof**
+
+$\phi(x) = 1$라고 하자.
+
+그러면 $$
 
 > Reference  
-> [blog](http://what-when-how.com/the-finite-element-method/fundamentals-for-finite-element-method-part-1/)  
-> [blog](http://what-when-how.com/the-finite-element-method/fundamentals-for-finite-element-method-part-2/)  
+> [blog1](http://what-when-how.com/the-finite-element-method/fundamentals-for-finite-element-method-part-1/)  
+> [blog2](http://what-when-how.com/the-finite-element-method/fundamentals-for-finite-element-method-part-2/)  
+
+
+
 
 # Interpolation
 ## $C^0$ interpolation
