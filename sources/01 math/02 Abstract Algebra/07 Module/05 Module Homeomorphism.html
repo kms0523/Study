@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Module &#8212; MS Study Documents</title>
+    <title>Module Homeomorphism &#8212; MS Study Documents</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,10 +52,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"span": "\\text{span}", "End": "\\text{End}", "C": "\\Complex", "F": "\\mathbb{F}", "R": "\\mathbb{R}", "N": "\\mathbb{N}", "Q": "\\mathbb{Q}", "Ext": "\\text{Ext}", "Int": "\\text{Int}", "st": "\\quad s.t \\quad", "qed": "\\quad\\tiny\\blacksquare", "preimg": "\\text{preimg}", "img": "\\text{img}", "norm": ["\\lVert #1 \\rVert", 1], "sym": "\\text{sym}", "tr": "\\text{tr}", "empty": "\\emptyset", "exist": "\\exists", "Set": ["\\left\\{ #1 \\right\\}", 1], "pdiff": ["\\frac{\\partial #1}{\\partial #2}", 2]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Left Module" href="01%20Left%20Module.html" />
-    <link rel="prev" title="Ring Homeomorphism" href="../06%20Ring/05%20Ring%20Homeomorphism.html" />
+    <link rel="next" title="Field" href="../08%20Field.html" />
+    <link rel="prev" title="R-Module" href="04%20R-Module.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -320,7 +322,7 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toctree-l2 current active has-children">
-    <a class="current reference internal" href="#">
+    <a class="reference internal" href="Module.html">
      Module
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -328,7 +330,7 @@ const thebe_selector_output = ".output, .cell_output"
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
+    <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="01%20Left%20Module.html">
        Left Module
@@ -349,8 +351,8 @@ const thebe_selector_output = ".output, .cell_output"
        R-Module
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="05%20Module%20Homeomorphism.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        Module Homeomorphism
       </a>
      </li>
@@ -1062,7 +1064,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../04%20CSM/01%20Function%20Approximation.html">
+  <a class="reference internal" href="../../../04%20CSM/01%20Shape%20Function.html">
    Function Approximation
   </a>
  </li>
@@ -1325,7 +1327,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../../_sources/sources/01 math/02 Abstract Algebra/07 Module/Module.md"
+        <a href="../../../../_sources/sources/01 math/02 Abstract Algebra/07 Module/05 Module Homeomorphism.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1374,7 +1376,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Module</h1>
+                <h1>Module Homeomorphism</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1386,10 +1388,14 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="module">
-<h1>Module<a class="headerlink" href="#module" title="Permalink to this headline">#</a></h1>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="module-homeomorphism">
+<h1>Module Homeomorphism<a class="headerlink" href="#module-homeomorphism" title="Permalink to this headline">#</a></h1>
+<p>환 <span class="math notranslate nohighlight">\(R\)</span>과 <span class="math notranslate nohighlight">\(R-\)</span>가군 <span class="math notranslate nohighlight">\((M_1,+_1,\cdot_1),(M_2,+_2,\cdot_2)\)</span>이 있을 때, <code class="docutils literal notranslate"><span class="pre">가군</span> <span class="pre">준동형</span> <span class="pre">사상(modoule</span> <span class="pre">homomorphism)</span></code>
+<span class="math notranslate nohighlight">\(f:M_1 \rightarrow M_2\)</span>은 <span class="math notranslate nohighlight">\(m_1,m_2 \in M_1, r \in R\)</span>에 대해 다음을 만족하는 함수이다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f(m_1 +_1 m_2)=f(m_1) +_2 f(m_2) \\ f(r \cdot_1 m_1)=r \cdot_2 f(m_1)\end{split}\]</div>
+<p>가군 준동형 사상의 경우 <span class="math notranslate nohighlight">\(f(rm_1+m_2) = r_1f(m_1)+f(m_2)\)</span>를 만족하며 <span class="math notranslate nohighlight">\(f\)</span>가 <code class="docutils literal notranslate"><span class="pre">선형성(linearlity)</span></code>를 갖고있다고 한다.</p>
+<p>이 개념이 선형변환의 일반화이다. 즉, 선형변환읜 대수적 구조를 보존하는 함수의 한 형태이다.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1419,17 +1425,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../06%20Ring/05%20Ring%20Homeomorphism.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="04%20R-Module.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Ring Homeomorphism</p>
+            <p class="prev-next-title">R-Module</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="01%20Left%20Module.html" title="next page">
+    <a class='right-next' id="next-link" href="../08%20Field.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Left Module</p>
+        <p class="prev-next-title">Field</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

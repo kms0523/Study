@@ -52,8 +52,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"span": "\\text{span}", "End": "\\text{End}", "C": "\\Complex", "F": "\\mathbb{F}", "R": "\\mathbb{R}", "N": "\\mathbb{N}", "Q": "\\mathbb{Q}", "Ext": "\\text{Ext}", "Int": "\\text{Int}", "st": "\\quad s.t \\quad", "qed": "\\quad\\tiny\\blacksquare", "preimg": "\\text{preimg}", "img": "\\text{img}", "norm": ["\\lVert #1 \\rVert", 1], "sym": "\\text{sym}", "tr": "\\text{tr}", "empty": "\\emptyset", "exist": "\\exists", "Set": ["\\left\\{ #1 \\right\\}", 1], "pdiff": ["\\frac{\\partial #1}{\\partial #2}", 2]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Binary Operation" href="01%20Binary%20Operation/Binary%20Operation.html" />
@@ -230,6 +228,11 @@ const thebe_selector_output = ".output, .cell_output"
        Associative Property
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="01%20Binary%20Operation/03%20Commutative%20Property.html">
+       Commutative Property
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2">
@@ -309,6 +312,11 @@ const thebe_selector_output = ".output, .cell_output"
        Commutative Ring
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="06%20Ring/05%20Ring%20Homeomorphism.html">
+       Ring Homeomorphism
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -322,11 +330,36 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="07%20Module/01%20Module%20Homeomorphism.html">
+      <a class="reference internal" href="07%20Module/01%20Left%20Module.html">
+       Left Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="07%20Module/02%20Right%20Module.html">
+       Right Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="07%20Module/03%20Bimodule.html">
+       Bimodule
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="07%20Module/04%20R-Module.html">
+       R-Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="07%20Module/05%20Module%20Homeomorphism.html">
        Module Homeomorphism
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08%20Field.html">
+     Field
+    </a>
    </li>
   </ul>
  </li>
@@ -1329,102 +1362,12 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   분배법칙
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   환
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     명제1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     명제2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
-   환 준동형 사상
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
-   체
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     예시
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     참고
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id9">
-   가군
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     명제1
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id11">
-   가군 준동형 사상
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id12">
-   벡터공간
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id13">
-   선형 변환
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
@@ -1436,85 +1379,6 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   분배법칙
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   환
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     명제1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     명제2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
-   환 준동형 사상
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
-   체
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     예시
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     참고
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id9">
-   가군
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     명제1
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id11">
-   가군 준동형 사상
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id12">
-   벡터공간
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id13">
-   선형 변환
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -1527,100 +1391,6 @@ title="Print to PDF"
 <p>이 글은 다음을 정리한 글이다.</p>
 <p><a class="reference external" href="https://www.youtube.com/playlist?list=PL4m4z_pFWq2oWmDtNvdy5GYP68dOsGV64">선형대수 - 수학의 즐거움 youtube</a><br />
 <a class="reference external" href="https://www.youtube.com/playlist?list=PL4m4z_pFWq2rDUPj_TPi1IQUgubY3-PtI">추상대수학 - 수학의 즐거움 youtube</a></p>
-<section id="id1">
-<h2>분배법칙<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>집합 <span class="math notranslate nohighlight">\(S\)</span>와 두 이항연산 <span class="math notranslate nohighlight">\(+:S \times S \rightarrow S\)</span>, <span class="math notranslate nohighlight">\(\cdot : S \times S \rightarrow S\)</span>이 있을 때, 다음을 만족할 경우  <span class="math notranslate nohighlight">\(\cdot\)</span>이 <span class="math notranslate nohighlight">\(+\)</span>에 대해 <code class="docutils literal notranslate"><span class="pre">분배법칙(distributive</span> <span class="pre">property)</span></code>을 만족한다고 한다.</p>
-<div class="math notranslate nohighlight">
-\[ x,y,z \in S, \quad (x+y)\cdot z = x \cdot z + y \cdot z \enspace \land \enspace x \cdot (y+z) = x \cdot y + x \cdot z\]</div>
-</section>
-<section id="id2">
-<h2>환<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<p>집합 <span class="math notranslate nohighlight">\(R\)</span>과 두 이항연산 <span class="math notranslate nohighlight">\(+:R \times R \rightarrow R\)</span>, <span class="math notranslate nohighlight">\(\cdot : R \times R \rightarrow R\)</span>이 있을 때, <code class="docutils literal notranslate"><span class="pre">환(ring)</span></code> <span class="math notranslate nohighlight">\((R,+,\cdot)\)</span>이란 다음을 만족하는 대수 구조이다.</p>
-<div class="math notranslate nohighlight">
-\[ (R,+) \text{ is an Abelian group} \enspace \land \enspace (R,\cdot) \text { is a monoid } \enspace \land \enspace \cdot \text { is distributive w.r.t. } + \]</div>
-<section id="id3">
-<h3>명제1<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
-<p>환 <span class="math notranslate nohighlight">\((R,+,\cdot)\)</span>이 있을 때, <span class="math notranslate nohighlight">\(0_R \equiv e_{(R,+)}, x \in R\)</span>에 대해 <span class="math notranslate nohighlight">\(0_Rx =0_R\)</span>을 증명하여라.</p>
-<p><strong>proof</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split} 0_Rx  = (0_R + 0_R)x = 0_Rx + 0_Rx \quad \land \quad 0_Rx = 0_Rx + 0_R \\ \therefore 0_Rx = 0_R \quad {_\blacksquare} \end{split}\]</div>
-</section>
-<section id="id4">
-<h3>명제2<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
-<p>환 <span class="math notranslate nohighlight">\((R,+,\cdot)\)</span>이 있을 때, <span class="math notranslate nohighlight">\(x,y \in R\)</span>에 대해 <span class="math notranslate nohighlight">\((xy)^{-1}=x^{-1}y\)</span>을 증명하여라.</p>
-<p><strong>proof</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split} (x + x^{-1})y = xy + x^{-1}y = 0_R \\ \therefore (xy)^{-1} = x^{-1}y \end{split}\]</div>
-</section>
-</section>
-<section id="id5">
-<h2>환 준동형 사상<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
-<p>환 <span class="math notranslate nohighlight">\((R_1,+_1,\times_1),(R_2,+_2,\times_2)\)</span>이 있을 때, <code class="docutils literal notranslate"><span class="pre">환</span> <span class="pre">준동형</span> <span class="pre">사상(ring</span> <span class="pre">homomorphism)</span></code> <span class="math notranslate nohighlight">\(f:R_1 \rightarrow R_2\)</span>은 <span class="math notranslate nohighlight">\(r_1,r_2 \in R_1\)</span>에 대해 다음을 만족하는 함수이다</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}f(r_1 +_1 r_2)=f(r_1) +_2 f(r_2) \\ f(r_1 \times_1 r_2)=f(r_1) \times_2 f(r_2)\end{split}\]</div>
-</section>
-<section id="id6">
-<h2>체<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
-<p>환 <span class="math notranslate nohighlight">\((F,+,\cdot)\)</span>이 있을 때, <code class="docutils literal notranslate"><span class="pre">체(field)</span></code>란 다음을 만족하는 환이다.</p>
-<div class="math notranslate nohighlight">
-\[(F-\{e_+\},\cdot) \text{ is a commutative group}  \]</div>
-<p>즉, 체는 체는 사칙연산이 자유로이 시행될 수 있고 산술의 잘 알려진 규칙들을 만족하는 대수 구조이다.</p>
-<section id="id7">
-<h3>예시<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\((\R,+,\times), (\mathbb{Q},+,\times)\)</span>은 체이다.</p>
-</section>
-<section id="id8">
-<h3>참고<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
-<p>모든 체는 가환환이지만 그 역은 성립하지 않는다.</p>
-</section>
-</section>
-<section id="id9">
-<h2>가군<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
-<p>아벨 군 <span class="math notranslate nohighlight">\((M,+)\)</span>과 환 <span class="math notranslate nohighlight">\((R,+,\cdot)\)</span>이 있을 때,</p>
-<p><code class="docutils literal notranslate"><span class="pre">왼쪽</span> <span class="pre">가군(left</span> <span class="pre">module)</span></code> <span class="math notranslate nohighlight">\({_RM}\)</span>은 환의 작용 <span class="math notranslate nohighlight">\(\cdot: R\times M \rightarrow M\)</span>에 대해 다음을 만족하는 아벨 군이다.</p>
-<ol class="simple">
-<li><p><span class="math notranslate nohighlight">\(r_1,r_2 \in R, \quad m_1,m_2\in M \Rightarrow (r_1 + r_2)(m_1+m_2) = r_1m_1+r_1m_2+r_2m_1+r_2m_2\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(r_1,r_2 \in R, \quad m\in M \Rightarrow (r_1r_2)m = r_1(r_2m)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(m \in M \Rightarrow 1_Rm = m\)</span></p></li>
-</ol>
-<p><code class="docutils literal notranslate"><span class="pre">오른쪽</span> <span class="pre">가군(right</span> <span class="pre">module)</span></code> <span class="math notranslate nohighlight">\(M_R\)</span>은 환의 작용 <span class="math notranslate nohighlight">\(\cdot: M \times R \rightarrow M\)</span>에 대해 다음을 만족하는 아벨 군이다.</p>
-<ol class="simple">
-<li><p><span class="math notranslate nohighlight">\(r_1,r_2 \in R, \quad m_1,m_2\in M \Rightarrow (m_1+m_2)(r_1 + r_2) = r_1m_1+r_1m_2+r_2m_1+r_2m_2\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(r_1,r_2 \in R, \quad m\in M \Rightarrow m(r_1r_2) = (mr_1)r_2\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(m \in M \Rightarrow m1_R = m\)</span></p></li>
-</ol>
-<p><span class="math notranslate nohighlight">\((R,R)-\)</span><code class="docutils literal notranslate"><span class="pre">쌍가군(bimodule)</span></code> <span class="math notranslate nohighlight">\({_RM_R}\)</span>은 두 환의 작용 <span class="math notranslate nohighlight">\(\cdot_1: R\times M \rightarrow M\)</span>, <span class="math notranslate nohighlight">\(\cdot_2: M \times R \rightarrow M\)</span>에 대해 각각 왼쪽 가군, 오른쪽 가군이면서 추가적으로 다음을 만족하는 아벨 군이다.</p>
-<ol class="simple">
-<li><p><span class="math notranslate nohighlight">\(r_1,r_2 \in R, \quad m \in M \Rightarrow (r_1 \cdot_1 m) \cdot_2 r_2 = r_1 \cdot_1 (m \cdot_2 r_2)\)</span></p></li>
-</ol>
-<p><span class="math notranslate nohighlight">\(R\)</span>이 가환환일 때, 좌우 구분을 생략하고 그냥 단순히 <code class="docutils literal notranslate"><span class="pre">R-가군(R-module)</span></code>이라고 한다.</p>
-<p>왜냐하면 왼쪽 가군일 때, <span class="math notranslate nohighlight">\(r \in R, m \in M\)</span>에 대해 <span class="math notranslate nohighlight">\(\cdot_2 : M \times R \rightarrow M\)</span>를 <span class="math notranslate nohighlight">\(r \cdot_1 m = m \cdot_2 r\)</span>를 만족하게 정의하면 오른쪽 가군이 된다. 반대로 오른쪽 가군일 때에도 같은 맥락으로 왼쪽 가군이 된다. 즉, 좌우 구분이 의미가 없어지기 때문이다.</p>
-<p>결론적으로 가군은 어떤 환의 작용이 주어진 아벨 군이다. 아벨 군의 구조와 환의 원소에 대한 곱셈이 주어지며, 이 두 구조가 분배 법칙을 통해 서로 호환되는 대수 구조이다.</p>
-<section id="id10">
-<h3>명제1<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
-<p>R-가군 <span class="math notranslate nohighlight">\((M,+,\cdot)/R\)</span>이 있을 때, <span class="math notranslate nohighlight">\(x \in M\)</span>에 대해 <span class="math notranslate nohighlight">\(0_Rx =0_M\)</span>을 증명하여라.</p>
-<p><strong>Proof</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \begin{aligned} 0_Rx  &amp; = (0_R + 0_R)x = 0_Rx + 0_Rx \\ 0_Rx &amp; = 0_Rx + 0_M \\ \therefore 0_Rx &amp; = 0_M \end{aligned}   \end{split}\]</div>
-</section>
-</section>
-<section id="id11">
-<h2>가군 준동형 사상<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
-<p>환 <span class="math notranslate nohighlight">\(R\)</span>과 <span class="math notranslate nohighlight">\(R-\)</span>가군 <span class="math notranslate nohighlight">\((M_1,+_1,\cdot_1),(M_2,+_2,\cdot_2)\)</span>이 있을 때, <code class="docutils literal notranslate"><span class="pre">가군</span> <span class="pre">준동형</span> <span class="pre">사상(modoule</span> <span class="pre">homomorphism)</span></code>
-<span class="math notranslate nohighlight">\(f:M_1 \rightarrow M_2\)</span>은 <span class="math notranslate nohighlight">\(m_1,m_2 \in M_1, r \in R\)</span>에 대해 다음을 만족하는 함수이다.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}f(m_1 +_1 m_2)=f(m_1) +_2 f(m_2) \\ f(r \cdot_1 m_1)=r \cdot_2 f(m_1)\end{split}\]</div>
-<p>가군 준동형 사상의 경우 <span class="math notranslate nohighlight">\(f(rm_1+m_2) = r_1f(m_1)+f(m_2)\)</span>를 만족하며 <span class="math notranslate nohighlight">\(f\)</span>가 <code class="docutils literal notranslate"><span class="pre">선형성(linearlity)</span></code>를 갖고있다고 한다.</p>
-<p>이 개념이 선형변환의 일반화이다. 즉, 선형변환읜 대수적 구조를 보존하는 함수의 한 형태이다.</p>
-</section>
-<section id="id12">
-<h2>벡터공간<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
-<p>Abelian group <span class="math notranslate nohighlight">\((V,+)\)</span>와 field <span class="math notranslate nohighlight">\((F,+,\cdot)\)</span>가 있을 때, <code class="docutils literal notranslate"><span class="pre">벡터공간(vector</span> <span class="pre">space)</span></code> <span class="math notranslate nohighlight">\(V/F\)</span>란, <span class="math notranslate nohighlight">\(F-\)</span>module이다.</p>
-</section>
-<section id="id13">
-<h2>선형 변환<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
-<p>체 <span class="math notranslate nohighlight">\(F\)</span>와 벡터공간 <span class="math notranslate nohighlight">\(V,W/F\)</span>이 있을 때, <code class="docutils literal notranslate"><span class="pre">선형변환(linear</span> <span class="pre">transformation)</span></code> <span class="math notranslate nohighlight">\(\Phi:V \rightarrow W\)</span>은 <span class="math notranslate nohighlight">\(F-\)</span>가군 준동형 사상이다.</p>
-</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>

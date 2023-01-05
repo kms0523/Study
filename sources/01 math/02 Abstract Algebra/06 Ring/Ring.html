@@ -52,8 +52,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"span": "\\text{span}", "End": "\\text{End}", "C": "\\Complex", "F": "\\mathbb{F}", "R": "\\mathbb{R}", "N": "\\mathbb{N}", "Q": "\\mathbb{Q}", "Ext": "\\text{Ext}", "Int": "\\text{Int}", "st": "\\quad s.t \\quad", "qed": "\\quad\\tiny\\blacksquare", "preimg": "\\text{preimg}", "img": "\\text{img}", "norm": ["\\lVert #1 \\rVert", 1], "sym": "\\text{sym}", "tr": "\\text{tr}", "empty": "\\emptyset", "exist": "\\exists", "Set": ["\\left\\{ #1 \\right\\}", 1], "pdiff": ["\\frac{\\partial #1}{\\partial #2}", 2]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="Distributive Property" href="01%20Distributive%20Property.html" />
@@ -230,6 +228,11 @@ const thebe_selector_output = ".output, .cell_output"
        Associative Property
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../01%20Binary%20Operation/03%20Commutative%20Property.html">
+       Commutative Property
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2">
@@ -309,6 +312,11 @@ const thebe_selector_output = ".output, .cell_output"
        Commutative Ring
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="05%20Ring%20Homeomorphism.html">
+       Ring Homeomorphism
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -322,11 +330,36 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../07%20Module/01%20Module%20Homeomorphism.html">
+      <a class="reference internal" href="../07%20Module/01%20Left%20Module.html">
+       Left Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../07%20Module/02%20Right%20Module.html">
+       Right Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../07%20Module/03%20Bimodule.html">
+       Bimodule
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../07%20Module/04%20R-Module.html">
+       R-Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../07%20Module/05%20Module%20Homeomorphism.html">
        Module Homeomorphism
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08%20Field.html">
+     Field
+    </a>
    </li>
   </ul>
  </li>
@@ -1029,7 +1062,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../04%20CSM/01%20Shape%20Function.html">
+  <a class="reference internal" href="../../../04%20CSM/01%20Function%20Approximation.html">
    Function Approximation
   </a>
  </li>
@@ -1329,36 +1362,12 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   환 준동형 사상
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
@@ -1370,19 +1379,6 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   환 준동형 사상
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -1392,12 +1388,6 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="ring">
 <h1>Ring<a class="headerlink" href="#ring" title="Permalink to this headline">#</a></h1>
-<section id="id1">
-<h2>환 준동형 사상<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>환 <span class="math notranslate nohighlight">\((R_1,+_1,\times_1),(R_2,+_2,\times_2)\)</span>이 있을 때, <code class="docutils literal notranslate"><span class="pre">환</span> <span class="pre">준동형</span> <span class="pre">사상(ring</span> <span class="pre">homomorphism)</span></code> <span class="math notranslate nohighlight">\(f:R_1 \rightarrow R_2\)</span>은 <span class="math notranslate nohighlight">\(r_1,r_2 \in R_1\)</span>에 대해 다음을 만족하는 함수이다</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}f(r_1 +_1 r_2)=f(r_1) +_2 f(r_2) \\ f(r_1 \times_1 r_2)=f(r_1) \times_2 f(r_2)\end{split}\]</div>
-</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
