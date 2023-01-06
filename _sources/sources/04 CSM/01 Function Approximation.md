@@ -47,10 +47,37 @@ $$ \begin{gathered} \begin{bmatrix} m_1(x_1) &\cdots& m_k(x_1) \\ \vdots && \vdo
 
 $$ \begin{gathered} a = M^{-1}\hat{\phi} \\ k=n \end{gathered}  $$
 
+### 명제1
+다음을 증명하여라.
+
+$$ \phi \in \mathcal{M} \iff \phi = \phi_h $$
+
+**Proof**
+
+[$\implies$]  
+$\phi \in \mathcal{M}$임으로 다음이 성립한다.
+
+$$ \phi = b^im_i $$
+
+$b := \begin{bmatrix} b^1 &\cdots& b^n \end{bmatrix}^T$라고 할 때, $\phi(x_i) \enspace i=1,\cdots,n$를  matrix form으로 쓰면 다음과 같다.
+
+$$ Mb = \hat{\phi} $$
+
+$M$이 invertible matrix이면 다음이 성립한다.
+
+$$ b = M^{-1}\hat{\phi} = a $$
+
+따라서, 다음이 성립한다.
+
+$$ \phi = \phi_h \qed $$
+
+[$\impliedby$]  
+자명하다.$\qed$
+
 ## Shape Function
 계산의 편의성을 위해 행렬 $m$을 다음과 같이 정의하자.
 
-$$ m = \begin{bmatrix} m_1(x) \\ \vdots \\ m_n(x)  \end{bmatrix} $$  
+$$ m := \begin{bmatrix} m_1(x) \\ \vdots \\ m_n(x)  \end{bmatrix} $$  
 
 그러면 다음이 성립한다.
 
@@ -58,7 +85,7 @@ $$ \begin{aligned} \phi_h &= m^Ta \\&= m^TM^{-1}\hat{\phi} \end{aligned} $$
 
 이 때, 행렬 $n$을 다음과 같이 정의하자.
 
-$$ n = (M^{-1})^Tm $$
+$$ n := (M^{-1})^Tm $$
 
 그러면 다음이 성립한다.
 
@@ -70,13 +97,78 @@ $$ \begin{aligned} \phi_h &= n^T\hat{\phi} \\&= \phi(x_i)n_i \end{aligned} $$
 Shape function $n_i, \enspace i=1,\cdots,n$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
-$$ \sum_{i=1}^n n_i = 1 $$
+$$ \Set{n_i} \text{ is an linearly independent set} $$
 
 **Proof**
 
-$\phi(x) = 1$라고 하자.
+다음을 만족하는 $c_i, i=1,\cdots, n$을 찾아보자.
 
-그러면 $$
+$$ c_in_i = 0_V $$
+
+Shape function의 정의에 의해 다음이 성립한다.
+
+$$ c_i((M^{-1})_{ji}m_j ) = 0_V  $$
+
+이 떄, $c'_i, \enspace i=1,\cdots,n$을 다음과 같이 정의하자.
+
+$$ c'_i := c_j(M^{-1})ij $$
+
+그러면 다음이 성립한다.
+
+$$ c_i'm_i = 0 $$
+
+$\Set{m_i}$는 linearly independet set임으로 다음이 성립한다.
+
+$$ c_i' = 0, \enspace i=1,\cdots,n $$
+
+이를 행렬식으로 나타내면 다음과 같다.
+
+$$ \begin{bmatrix} M^{-1}_{11} & \cdots & M^{-1}_{1n} \\ \vdots && \vdots \\ M_{n1}^{-1} &\cdots&  M_{nn}^{-1} \end{bmatrix} \begin{bmatrix} c_1 \\ \vdots \\ c_n \end{bmatrix} = 0_n $$
+
+따라서, $c := \begin{bmatrix} c_1 & \cdots& c_n \end{bmatrix}^T$일 떄, 다음이 성립한다.
+
+$$ \begin{aligned} M^{-1}c &= 0_n \\ c &= 0_n \\ c_i &= 0, \enspace i=1,\cdots,n \end{aligned}  $$
+
+따라서, linearly independent set의 정의에 의해 다음이 성립한다.
+
+$$ \Set{n_i} \text{ is an linearly independent set} \qed $$
+
+### 명제2
+Shape function $n_i, \enspace i=1,\cdots,n$가 있다고 하자.
+
+이 때, 다음을 증명하여라.
+$$ n_i(x_j) = \delta_{ij}, \enspace i,j
+=1,\cdots,n $$
+
+**Proof**
+
+임의의 $i \in [1,n]$가 있을 때, 다음을 가정하자.
+
+$$ \phi = n_i $$
+
+$\phi \in \mathcal{M}$임으로, $\phi = \phi_h$이다.
+
+그러면, 다음이 성립한다.
+
+$$ \begin{aligned} \phi &= \phi(x_j)n_j \\ n_i &= n_i(x_j)n_j \end{aligned} $$
+
+이 떄, $c_j$를 다음과 같이 정의하자.
+
+$$ c_j = \begin{cases} n_i(x_j) & j \neq i \\ n_i(x_j) - 1 & j = i \end{cases} $$
+
+그러면 다음이 성립한다.
+
+$$ c_jn_j = 0_V $$
+
+이 때, 명제1에 의해 $\Set{n_j}$는 linearly independent set임으로 다음이 성립한다.
+
+$$ c_j = 0, \enspace j=1,\cdots,n $$
+
+따라서, $c_j$의 정의에 의해 다음이 성립한다
+
+$$ n_i(x_j) = \delta_{ij} \qed $$
+
+
 
 > Reference  
 > [blog1](http://what-when-how.com/the-finite-element-method/fundamentals-for-finite-element-method-part-1/)  

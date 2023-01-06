@@ -180,6 +180,9 @@ $$ \begin{bmatrix} u_1(0) & \cdots & u_n(0) \\ B_r(w_1,u_1) & \cdots & B_r(w_1,u
 
 Overdetermined system을 풀기위해서 식 하나를 제거해야 되며, 첫번째 식은 BC를 고려하기 위한 식임으로, 나머지 $n$개의 식중에 하나를 제거해야 된다.
 
+##### 참고
+BC를 고려하기 위해 식을 제거하는 경우, 그 식에 해당하는 solution function space의 basis를 고려하지 못하게 된다.
+
 ### Affine form
 $$ \text{find } x \in \R^n \st B_r(w_i,u^0_j)x^j = l_r(w_i) - B_r(w_i,\phi), \enspace i = 1,\cdots,n $$
 
