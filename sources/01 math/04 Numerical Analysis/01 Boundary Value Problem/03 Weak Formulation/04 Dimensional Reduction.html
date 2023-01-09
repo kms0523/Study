@@ -1094,17 +1094,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../../04%20CSM/03%20Bar/03%20Strong%20Formualation.html">
-     Strong Formualation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../../04%20CSM/03%20Bar/04%20Weak%20Formulation.html">
-     Weak Formulation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../../04%20CSM/03%20Bar/05%20FE%20Formulation.html">
+    <a class="reference internal" href="../../../../04%20CSM/03%20Bar/03%20FE%20Formulation.html">
      FE Formulation
     </a>
    </li>
@@ -1697,34 +1687,34 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="dimensional-reduction">
 <h1>Dimensional Reduction<a class="headerlink" href="#dimensional-reduction" title="Permalink to this headline">#</a></h1>
-<p>무한차원 함수공간인 <span class="math notranslate nohighlight">\(C^\infty_c(\Omega)\)</span>에 있는 모든 함수에 대해 weak formulation를 만족하는 <span class="math notranslate nohighlight">\(u\)</span>를 무한차원 함수공간인 <span class="math notranslate nohighlight">\(\mathcal U\)</span>에서 찾는 일은 너무 어렵다.</p>
+<p>무한차원 함수공간인 <span class="math notranslate nohighlight">\(\mathcal{W_{relax}}\)</span>에 있는 모든 함수에 대해 weak formulation를 만족하는 <span class="math notranslate nohighlight">\(u\)</span>를 무한차원 함수공간인 <span class="math notranslate nohighlight">\(\mathcal{U_{relax}}\)</span>에서 찾는 일은 너무 어렵다.</p>
 <p>따라서 test function space와 solution function space를 각 각 유한차원 함수 공간으로 축소하여 dimensional reduction된 weak formulation를 살펴보자.</p>
 <section id="test-function-space-reduction">
 <h2>Test Function Space Reduction<a class="headerlink" href="#test-function-space-reduction" title="Permalink to this headline">#</a></h2>
 <p>유한차원 함수 공간 <span class="math notranslate nohighlight">\(\mathcal{W_f}\)</span>를 다음과 같이 정의하자.</p>
 <div class="math notranslate nohighlight">
 \[ \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \subset C^\infty(\Omega)) \]</div>
-<p><span class="math notranslate nohighlight">\(\mathcal{W_f}\)</span>의 subspace <span class="math notranslate nohighlight">\(\mathcal{W_c}\)</span>를 다음과 같이 정의하자.</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{W_f}\)</span>의 subspace <span class="math notranslate nohighlight">\(\mathcal{W_{reduc}}\)</span>를 다음과 같이 정의하자.</p>
 <div class="math notranslate nohighlight">
-\[ \mathcal{W_c} := \Set{w \in \mathcal{W_f}| w =0 \text{ on } \partial\Omega_E } \]</div>
-<p><span class="math notranslate nohighlight">\(\mathcal{W_c}\)</span>의 정의에 의해 다음이 성립한다.</p>
+\[ \mathcal{W_{reduc}} := \Set{w \in \mathcal{W_f}| w =0 \text{ on } \partial\Omega_E } \]</div>
+<p><span class="math notranslate nohighlight">\(\mathcal{W_{reduc}}\)</span>의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \mathcal{W_c} \text{ is subspace of } \mathcal{W} \]</div>
-<p>그리고 <span class="math notranslate nohighlight">\(\R^n_c \subseteq \R^n\)</span>을 다음과 같이 정의하자.</p>
+\[ \mathcal{W_{reduc}} \text{ is subspace of } \mathcal{W_{relax}} \]</div>
+<p>그리고 <span class="math notranslate nohighlight">\(\R^n_t \subseteq \R^n\)</span>을 다음과 같이 정의하자.</p>
 <div class="math notranslate nohighlight">
-\[ \R^n_c := \Set{x \in \R^n | x^iw_i = 0 \text{ on } \partial\Omega_E} \]</div>
-<p><span class="math notranslate nohighlight">\(\mathcal{W}\)</span>를 <span class="math notranslate nohighlight">\(\mathcal{W}_c\)</span>로 축소하면 weak formulation는 다음과 같이 간단해 진다.</p>
+\[ \R^n_t := \Set{a \in \R^n | a^iw_i = 0 \text{ on } \partial\Omega_E} \]</div>
+<p><span class="math notranslate nohighlight">\(\mathcal{W_{relax}}\)</span>를 <span class="math notranslate nohighlight">\(\mathcal{W_{reduc}}\)</span>로 축소하면 weak formulation는 다음과 같이 간단해 진다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{aligned} &amp; \text{find } u \in \mathcal U \st \forall w \in \mathcal W_c, \quad B_r(w,u) = l_r(w) \\ \iff \enspace &amp; \text{find } u \in \mathcal U \st \forall x \in \R^n_c, \quad  B_r(x^iw_i,u) = l_r(x^iw_i) \end{aligned} \end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(B_r\)</span>은 첫번째 원소에 linear map이고, <span class="math notranslate nohighlight">\(l_r\)</span>은 linear map임으로 다음이 성립한다.</p>
+\[\begin{split} \begin{aligned} &amp; \text{find } u \in \mathcal U \st \forall w \in \mathcal{W_{reduc}}, \quad B(w,u) = l(w) \\ \iff \enspace &amp; \text{find } u \in \mathcal U \st \forall a \in \R^n_t, \quad  B(a^iw_i,u) = l(a^iw_i) \end{aligned} \end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(B\)</span>은 첫번째 원소에 linear map이고, <span class="math notranslate nohighlight">\(l\)</span>은 linear map임으로 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \text{find } u \in \mathcal U \st \forall x \in \R^n_c, \quad  x^iB_r(w_i,u) = x^il_r(w_i) \]</div>
-<p><span class="math notranslate nohighlight">\(\forall x \in \R^n_c\)</span>에서 성립해야 됨으로, 결론적으로 다음이 성립하면 된다.</p>
+\[ \text{find } u \in \mathcal U \st \forall a \in \R^n_t, \quad  a^iB(w_i,u) = a^il(w_i) \]</div>
+<p><span class="math notranslate nohighlight">\(\forall a \in \R^n_t\)</span>에서 성립해야 됨으로 결론적으로 다음이 성립하면 된다.</p>
 <div class="math notranslate nohighlight">
-\[ \text{find } u \in \mathcal U \st B_r(w_i,u) = l_r(w_i), \enspace i = 1, \cdots, n \]</div>
+\[ \text{find } u \in \mathcal U \st B(w_i,u) = l(w_i), \enspace i = 1, \cdots, n \]</div>
 <section id="id1">
 <h3>참고<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<p>Test function space을 <span class="math notranslate nohighlight">\(\mathcal W_c\)</span>로 축소함으로써 <span class="math notranslate nohighlight">\(n\)</span>개의 <code class="docutils literal notranslate"><span class="pre">기저함수(basis</span> <span class="pre">function)</span></code>에 대해서만 확인하면 되는 문제로 단순화 됐다.</p>
+<p>Test function space을 <span class="math notranslate nohighlight">\(\mathcal{W_{reduc}}\)</span>로 축소함으로써 <span class="math notranslate nohighlight">\(n\)</span>개의 <code class="docutils literal notranslate"><span class="pre">기저함수(basis</span> <span class="pre">function)</span></code>에 대해서만 확인하면 되는 문제로 단순화 됐다.</p>
 </section>
 </section>
 <section id="solution-function-space-reduction">
@@ -1732,54 +1722,54 @@ title="Print to PDF"
 <p>유한차원 함수 공간 <span class="math notranslate nohighlight">\(\mathcal{U_f}\)</span>를 다음과 같이 정의하자.</p>
 <div class="math notranslate nohighlight">
 \[ \mathcal{U_f} := \span(\set{u_1,\cdots,u_n}) \subset C^1(\Omega)) \]</div>
-<p><span class="math notranslate nohighlight">\(\mathcal{U_f}\)</span>의 subset <span class="math notranslate nohighlight">\(\mathcal{U_{b}}\)</span>를 다음과 같이 정의하자.</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{U_f}\)</span>의 subset <span class="math notranslate nohighlight">\(\mathcal{U_{reduc}}\)</span>를 다음과 같이 정의하자.</p>
 <div class="math notranslate nohighlight">
-\[ \mathcal{U_b} := \Set{ u\in\mathcal{U_f}| u \text{ satisfies essential BC}} \]</div>
-<p>그러면 <span class="math notranslate nohighlight">\(\mathcal{U_b}\)</span>의 정의에 의해 다음이 성립한다.</p>
+\[ \mathcal{U_{reduc}} := \Set{ u\in\mathcal{U_f}| u \text{ satisfies essential BC}} \]</div>
+<p>그러면 <span class="math notranslate nohighlight">\(\mathcal{U_{reduc}}\)</span>의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \mathcal{U_b} \text{ is subset of } \mathcal{U_w} \]</div>
-<p>이 때, <span class="math notranslate nohighlight">\(\mathcal{U_w}\)</span>를 <span class="math notranslate nohighlight">\(\mathcal{U_b}\)</span>로 축소하자.</p>
+\[ \mathcal{U_{reduc}} \text{ is subset of } \mathcal{U_{relax}} \]</div>
+<p>이 때, <span class="math notranslate nohighlight">\(\mathcal{U_{relax}}\)</span>를 <span class="math notranslate nohighlight">\(\mathcal{U_{reduc}}\)</span>로 축소하자.</p>
 <section id="restriction-form">
 <h3>Restriction form<a class="headerlink" href="#restriction-form" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(\R^n_b \subseteq \R^n\)</span>을 다음과 같이 정의하자</p>
+<p><span class="math notranslate nohighlight">\(\R^n_s \subseteq \R^n\)</span>을 다음과 같이 정의하자</p>
 <div class="math notranslate nohighlight">
-\[ \R^n_b := \Set{x \in \R^n | x^iu_i \text{ satisfy essential BC}} \]</div>
+\[ \R^n_s := \Set{x \in \R^n | a^iu_i \text{ satisfy essential BC}} \]</div>
 <p>그러면 test function space가 축소된 weak formulation는 다음과 같이 더 간단해 진다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{aligned} &amp; \text{find } u \in \mathcal U_b \st B_r(w_i,u) = l_r(w_i), \enspace i = 1,\cdots,n \\ \iff \enspace &amp; \text{find } x \in \R_b^n \st B_r(w_i,x^j u_j) = l_r(w_i), \enspace i = 1,\cdots,n \end{aligned} \end{split}\]</div>
+\[\begin{split} \begin{aligned} &amp; \text{find } u \in \mathcal{U_{reduc}} \st B(w_i,u) = l(w_i), \enspace i = 1,\cdots,n \\ \iff \enspace &amp; \text{find } a \in \R^n_s \st B(w_i,a^j u_j) = l(w_i), \enspace i = 1,\cdots,n \end{aligned} \end{split}\]</div>
 </section>
 <section id="affine-form">
 <h3>Affine form<a class="headerlink" href="#affine-form" title="Permalink to this headline">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\mathcal{U_f}\)</span>의 subspace <span class="math notranslate nohighlight">\(\mathcal{U_0}\)</span>를 다음과 같이 정의하자.</p>
 <div class="math notranslate nohighlight">
 \[ \mathcal{U_0} := \Set{ u\in\mathcal{U_f}| u = 0 \text{ on } \partial\Omega_E} \]</div>
-<p><span class="math notranslate nohighlight">\(\phi \in \mathcal{U_b}\)</span>라 할 때, 다음이 성립한다.</p>
+<p><span class="math notranslate nohighlight">\(\phi \in \mathcal{U_{reduc}}\)</span>라 할 때, 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall u \in \mathcal{U_b}, \quad \exist u_0 \in \mathcal{U_0} \st u = \phi + \mathcal{u_0} \]</div>
+\[ \forall u \in \mathcal{U_{reduc}}, \quad \exist u_0 \in \mathcal{U_0} \st u = \phi + \mathcal{u_0} \]</div>
 <p><span class="math notranslate nohighlight">\(\mathcal{U_0}\)</span>의 basis를 <span class="math notranslate nohighlight">\(\Set{u^0_i}\)</span>라고 하면, test function space가 축소된 weak formulation는 다음과 같이 간단해 진다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{aligned} &amp; \text{find } u \in \mathcal U_b \st B_r(w_i,u) = l_r(w_i), \enspace i = 1,\cdots,n \\ \iff \enspace &amp; \text{find } x \in \R^n \st B_r(w_i,\phi + x^ju^0_j) = l_r(w_i), \enspace i = 1,\cdots,n \end{aligned} \end{split}\]</div>
+\[\begin{split} \begin{aligned} &amp; \text{find } u \in \mathcal{U_{reduc}} \st B(w_i,u) = l(w_i), \enspace i = 1,\cdots,n \\ \iff \enspace &amp; \text{find } a \in \R^n \st B(w_i,\phi + a^ju^0_j) = l(w_i), \enspace i = 1,\cdots,n \end{aligned} \end{split}\]</div>
 <section id="id2">
 <h4>참고<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
-<p>명제1을 통해 알 수 있듯이 <span class="math notranslate nohighlight">\(\mathcal{U_b}\)</span>는 vector space가 아니다.</p>
-<p>Affine form라고 부르는 이유는  위의 형태를 보면 알 수 있듯이 <span class="math notranslate nohighlight">\(\mathcal{U_b}\)</span>가 affine space이기 때문이다.</p>
+<p>명제1을 통해 알 수 있듯이 <span class="math notranslate nohighlight">\(\mathcal{U_{reduc}}\)</span>는 vector space가 아니다.</p>
+<p>Affine form라고 부르는 이유는  위의 형태를 보면 알 수 있듯이 <span class="math notranslate nohighlight">\(\mathcal{U_{reduc}}\)</span>가 affine space이기 때문이다.</p>
 </section>
 <section id="id3">
 <h4>명제1<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <p>다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
-\[\mathcal{U_b} \text{ is not a vector space }\]</div>
+\[\mathcal{U_{reduc}} \text{ is not a vector space }\]</div>
 <p><strong>Proof</strong></p>
 <p><span class="math notranslate nohighlight">\(\partial\Omega_E\)</span>에서 0이 아닌 BC <span class="math notranslate nohighlight">\(g\)</span>가 주어졌다고 가정하자.</p>
 <div class="math notranslate nohighlight">
 \[ u = g \neq 0 \quad \text{on } \partial\Omega_E \]</div>
-<p>그러면 <span class="math notranslate nohighlight">\(u_1, u_2 \in \mathcal{U_b}\)</span>가 있을 때, <span class="math notranslate nohighlight">\(\forall x \in \partial\Omega\)</span>에서 다음이 성립한다.</p>
+<p>그러면 <span class="math notranslate nohighlight">\(u_1, u_2 \in \mathcal{U_{reduc}}\)</span>가 있을 때, <span class="math notranslate nohighlight">\(\forall a \in \partial\Omega\)</span>에서 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ (u_1 + u_2)(x) = u_1(x) + u_2(x) = 2g(x) \]</div>
 <p>따라서, 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ u_1 + u_2 \notin \mathcal{U_b} \]</div>
-<p>즉 <span class="math notranslate nohighlight">\(\mathcal{U_b}\)</span>는 덧셈에 대해 닫혀있지 않기 때문에 vector space가 될 수 없다.</p>
+\[ u_1 + u_2 \notin \mathcal{U_{reduc}} \]</div>
+<p>즉 <span class="math notranslate nohighlight">\(\mathcal{U_{reduc}}\)</span>는 덧셈에 대해 닫혀있지 않기 때문에 vector space가 될 수 없다.</p>
 <blockquote>
 <div><p>Reference<br />
 <a class="reference external" href="https://mjzahr.github.io/content/ame40541/spr20/ch03-wres-solo.pdf">Note - M. J. Zahr</a></p>
@@ -1790,7 +1780,7 @@ title="Print to PDF"
 <h3>참고<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>Dimensional reduction한 solution function space가 충분히 넓지 않은경우 weak formulation을 통해 구한 solution은 natural BC를 만족하지 않는다.</p>
 <p>즉, 약하게 적영된 natural BC는 만족되지 않을 수도 있다.</p>
-<p>그 예시는 model problem 4,8번을 통해 확인해 볼 수 있다.</p>
+<p>그 예시는 model problem2번을 통해 확인해 볼 수 있다.</p>
 </section>
 </section>
 <section id="final-form">
@@ -1799,45 +1789,45 @@ title="Print to PDF"
 <section id="restrition-form">
 <h3>Restrition form<a class="headerlink" href="#restrition-form" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
-\[ \text{find } x \in \R_b^n \st B_r(w_i,x^j u_j) = l_r(w_i), \enspace i = 1,\cdots,n \]</div>
+\[ \text{find } a \in \R^n_s \st B(w_i,a^j u_j) = l(w_i), \enspace i = 1,\cdots,n \]</div>
 <section id="related-function-spaces">
 <h4>Related function spaces<a class="headerlink" href="#related-function-spaces" title="Permalink to this headline">#</a></h4>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{gathered} \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_f} := \span(\set{u_1,\cdots,u_n}) \subset C^1(\Omega)) \\ \R^n_b := \Set{x \in \R^n | x^iu_i \text{ satisfy essential BC}} \end{gathered} \end{split}\]</div>
+\[\begin{split} \begin{gathered} \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_f} := \span(\set{u_1,\cdots,u_n}) \subset C^1(\Omega)) \\ \R^n_s := \Set{x \in \R^n | a^iu_i \text{ satisfy essential BC}} \end{gathered} \end{split}\]</div>
 </section>
 </section>
 <section id="id5">
 <h3>Affine form<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
-\[ \text{find } x \in \R^n \st B_r(w_i,\phi + x^ju^0_j) = l_r(w_i), \enspace i = 1,\cdots,n \]</div>
+\[ \text{find } a \in \R^n \st B(w_i,\phi + a^ju^0_j) = l(w_i), \enspace i = 1,\cdots,n \]</div>
 <section id="id6">
 <h4>Related function spaces<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{gathered} \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_b} := \Set{ u\in\mathcal{U_f}| u \text{ satisfies essential BC}} \\ \mathcal{U_0} := \Set{ u\in\mathcal{U_f}| u=0 \text{ on } \partial\Omega_E} = \span(\Set{u_i^0}) \end{gathered} \end{split}\]</div>
+\[\begin{split} \begin{gathered} \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_{reduc}} := \Set{ u\in\mathcal{U_f}| u \text{ satisfies essential BC}} \\ \mathcal{U_0} := \Set{ u\in\mathcal{U_f}| u=0 \text{ on } \partial\Omega_E} = \span(\Set{u_i^0}) \end{gathered} \end{split}\]</div>
 </section>
 </section>
 </section>
 <section id="linear-case">
 <h2>Linear Case<a class="headerlink" href="#linear-case" title="Permalink to this headline">#</a></h2>
-<p>만약, <span class="math notranslate nohighlight">\(\mathcal P\)</span>가 linear operator면 <span class="math notranslate nohighlight">\(B_r\)</span>은 bilinear map이 된다.</p>
+<p>만약, <span class="math notranslate nohighlight">\(\mathcal P\)</span>가 linear operator면 <span class="math notranslate nohighlight">\(B\)</span>은 bilinear map이 된다.</p>
 <p>따라서, dimensional reduction한 weak fomrulation는 다음과 같이 단순해 진다.</p>
 <section id="id7">
 <h3>Restrition form<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
-\[ \text{find } x \in \R_b^n \st B_r(w_i,u_j) x^j = l_r(w_i), \enspace i = 1,\cdots,n \]</div>
+\[ \text{find } a \in \R^n_s \st B(w_i,u_j) a^j = l(w_i), \enspace i = 1,\cdots,n \]</div>
 <section id="id8">
 <h4>Related function spaces<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{gathered} \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_f} := \span(\set{u_1,\cdots,u_n}) \subset C^1(\Omega))  \\ \R^n_b := \Set{a \in \R^n | a^iu_i \text{ satisfy essential BC}} \end{gathered} \end{split}\]</div>
+\[\begin{split} \begin{gathered} \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_f} := \span(\set{u_1,\cdots,u_n}) \subset C^1(\Omega))  \\ \R^n_s := \Set{a \in \R^n | a^iu_i \text{ satisfy essential BC}} \end{gathered} \end{split}\]</div>
 </section>
 <section id="matrix-form">
 <h4>Matrix form<a class="headerlink" href="#matrix-form" title="Permalink to this headline">#</a></h4>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{bmatrix} B_r(w_1,u_1) &amp; \cdots &amp; B_r(w_1,u_n) \\ \vdots &amp; \ddots &amp; \vdots \\ B_r(w_n,u_1) &amp; \cdots &amp; B_r(w_n,u_n) \end{bmatrix} \begin{bmatrix} a^1 \\ \vdots \\ a^n \end{bmatrix} = \begin{bmatrix} l_r(w_1) \\ \vdots \\ l_r(w_n) \end{bmatrix} \end{split}\]</div>
+\[\begin{split} \begin{bmatrix} B(w_1,u_1) &amp; \cdots &amp; B(w_1,u_n) \\ \vdots &amp; \ddots &amp; \vdots \\ B(w_n,u_1) &amp; \cdots &amp; B(w_n,u_n) \end{bmatrix} \begin{bmatrix} a^1 \\ \vdots \\ a^n \end{bmatrix} = \begin{bmatrix} l(w_1) \\ \vdots \\ l(w_n) \end{bmatrix} \end{split}\]</div>
 </section>
 <section id="consider-bc">
 <h4>Consider BC<a class="headerlink" href="#consider-bc" title="Permalink to this headline">#</a></h4>
-<p>Essential BC를 만족하기 위해 <span class="math notranslate nohighlight">\(a \in \R^n_b\)</span>여야 한다.</p>
+<p>Essential BC를 만족하기 위해 <span class="math notranslate nohighlight">\(a \in \R^n_s\)</span>여야 한다.</p>
 <p>이를 위해 2가지 방식을 취할 수 있다.</p>
 <section id="predefined-dof">
 <h5>Predefined DOF<a class="headerlink" href="#predefined-dof" title="Permalink to this headline">#</a></h5>
@@ -1849,10 +1839,10 @@ title="Print to PDF"
 \[ a^1 = u_0 \]</div>
 <p>그러면 matrix form은 다음과 같아진다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{bmatrix} B_r(w_1,u_1) &amp; \cdots &amp; B_r(w_1,u_n) \\ \vdots &amp; \ddots &amp; \vdots \\ B_r(w_n,u_1) &amp; \cdots &amp; B_r(w_n,u_n) \end{bmatrix} \begin{bmatrix} u_0 \\ \vdots \\ a^n \end{bmatrix} = \begin{bmatrix} l_r(w_1) \\ \vdots \\ l_r(w_n) \end{bmatrix} \end{split}\]</div>
+\[\begin{split} \begin{bmatrix} B(w_1,u_1) &amp; \cdots &amp; B(w_1,u_n) \\ \vdots &amp; \ddots &amp; \vdots \\ B(w_n,u_1) &amp; \cdots &amp; B(w_n,u_n) \end{bmatrix} \begin{bmatrix} u_0 \\ \vdots \\ a^n \end{bmatrix} = \begin{bmatrix} l(w_1) \\ \vdots \\ l(w_n) \end{bmatrix} \end{split}\]</div>
 <p><span class="math notranslate nohighlight">\(u_0\)</span>는 이미 알고 있는 값임으로, 관련된 항을 우측으로 옮기면 다음과 같아진다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{bmatrix} B_r(w_1,u_2) &amp; \cdots &amp; B_r(w_1,u_n) \\ \vdots &amp; \ddots &amp; \vdots \\ B_r(w_n,u_2) &amp; \cdots &amp; B_r(w_n,u_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a^n \end{bmatrix} = \begin{bmatrix} l_r(w_1) \\ \vdots \\ l_r(w_n) \end{bmatrix} - u_0 \begin{bmatrix} B_r(w_1,u_1) \\ \vdots \\ B_r(w_n,u_1) \end{bmatrix} \end{split}\]</div>
+\[\begin{split} \begin{bmatrix} B(w_1,u_2) &amp; \cdots &amp; B(w_1,u_n) \\ \vdots &amp; \ddots &amp; \vdots \\ B(w_n,u_2) &amp; \cdots &amp; B(w_n,u_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a^n \end{bmatrix} = \begin{bmatrix} l(w_1) \\ \vdots \\ l(w_n) \end{bmatrix} - u_0 \begin{bmatrix} B(w_1,u_1) \\ \vdots \\ B(w_n,u_1) \end{bmatrix} \end{split}\]</div>
 <p>이렇게 되면, 식은 <span class="math notranslate nohighlight">\(n\)</span>개 미지수는 <span class="math notranslate nohighlight">\(n-1\)</span>개인 overdetermined system이 된다.</p>
 <p>Overdetermined system을 풀기위해서 식 하나를 제거해야 된다.</p>
 <p>예를 들어, <span class="math notranslate nohighlight">\(n\)</span>번째 식을 제거하는 경우, 미지수를 나타내는 <span class="math notranslate nohighlight">\(\begin{bmatrix} a_1 &amp; \cdots &amp; a^n \end{bmatrix}^T\)</span>를 제외하고 전부 <span class="math notranslate nohighlight">\(n\)</span>번째 행을 제거하면 된다.</p>
@@ -1864,7 +1854,7 @@ title="Print to PDF"
 \[ a^iu_i|_{x=0} = u_0 \]</div>
 <p>따라서 이를 matrix form에 추가하면 다음과 같다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{bmatrix} u_1(0) &amp; \cdots &amp; u_n(0) \\ B_r(w_1,u_1) &amp; \cdots &amp; B_r(w_1,u_n) \\ \vdots &amp; \ddots &amp; \vdots \\ B_r(w_n,u_1) &amp; \cdots &amp; B_r(w_n,u_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a^n \end{bmatrix} = \begin{bmatrix} u_0 \\ l_r(w_1) \\ \vdots \\ l_r(w_n) \end{bmatrix} \end{split}\]</div>
+\[\begin{split} \begin{bmatrix} u_1(0) &amp; \cdots &amp; u_n(0) \\ B(w_1,u_1) &amp; \cdots &amp; B(w_1,u_n) \\ \vdots &amp; \ddots &amp; \vdots \\ B(w_n,u_1) &amp; \cdots &amp; B(w_n,u_n) \end{bmatrix} \begin{bmatrix} a_1 \\ \vdots \\ a^n \end{bmatrix} = \begin{bmatrix} u_0 \\ l(w_1) \\ \vdots \\ l(w_n) \end{bmatrix} \end{split}\]</div>
 <p>이렇게 되면, 식은 <span class="math notranslate nohighlight">\(n+1\)</span>개 미지수는 <span class="math notranslate nohighlight">\(n\)</span>개인 overdetermined system이 된다.</p>
 <p>Overdetermined system을 풀기위해서 식 하나를 제거해야 되며, 첫번째 식은 BC를 고려하기 위한 식임으로, 나머지 <span class="math notranslate nohighlight">\(n\)</span>개의 식중에 하나를 제거해야 된다.</p>
 </section>
@@ -1877,16 +1867,16 @@ title="Print to PDF"
 <section id="id10">
 <h3>Affine form<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
-\[ \text{find } x \in \R^n \st B_r(w_i,u^0_j)x^j = l_r(w_i) - B_r(w_i,\phi), \enspace i = 1,\cdots,n \]</div>
+\[ \text{find } a \in \R^n \st B(w_i,u^0_j)a^j = l(w_i) - B(w_i,\phi), \enspace i = 1,\cdots,n \]</div>
 <section id="id11">
 <h4>Related function spaces<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{gathered} \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_b} := \Set{ u\in\mathcal{U_f}| u \text{ satisfies essential BC}} \\ \mathcal{U_0} := \Set{ u\in\mathcal{U_f}| u=0 \text{ on } \partial\Omega_E} = \span(\Set{u_i^0}) \end{gathered} \end{split}\]</div>
+\[\begin{split} \begin{gathered} \mathcal{W_f} := \span(\set{w_1,\cdots,w_n}) \\ \mathcal{U_{reduc}} := \Set{ u\in\mathcal{U_f}| u \text{ satisfies essential BC}} \\ \mathcal{U_0} := \Set{ u\in\mathcal{U_f}| u=0 \text{ on } \partial\Omega_E} = \span(\Set{u_i^0}) \end{gathered} \end{split}\]</div>
 </section>
 <section id="id12">
 <h4>Matrix form<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{bmatrix} B_r(w_1,u^0_1) &amp; \cdots &amp; B_r(w_1,u^0_n) \\ \vdots &amp; \ddots &amp; \vdots \\ B_r(w_n,u^0_1) &amp; \cdots &amp; B_r(w_n,u^0_n) \end{bmatrix} \begin{bmatrix} x^1 \\ \vdots \\ x^n \end{bmatrix} = \begin{bmatrix} l_r(w_1) - B_r(w_1, \phi) \\ \vdots \\ l_r(w_n) - B_r(w_n, \phi) \end{bmatrix} \end{split}\]</div>
+\[\begin{split} \begin{bmatrix} B(w_1,u^0_1) &amp; \cdots &amp; B(w_1,u^0_n) \\ \vdots &amp; \ddots &amp; \vdots \\ B(w_n,u^0_1) &amp; \cdots &amp; B(w_n,u^0_n) \end{bmatrix} \begin{bmatrix} a^1 \\ \vdots \\ a^n \end{bmatrix} = \begin{bmatrix} l(w_1) - B(w_1, \phi) \\ \vdots \\ l(w_n) - B(w_n, \phi) \end{bmatrix} \end{split}\]</div>
 </section>
 </section>
 </section>
