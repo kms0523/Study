@@ -49,7 +49,7 @@ for i in range(0,n):
 
 
 # Weighted Residual Formulation(Galerkin Method)
-Bm_WRF = mat(zeros((n,n)))
+Bm_WRF = zeros((n,n))
 for i in range(0,n):
     for j in range(0,n):
         Bm_WRF[i,j] = B_WRF(w[i], u[j])
