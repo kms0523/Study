@@ -1,13 +1,6 @@
 # Template
-## User define deduction guide
-```cpp
-//user-defined deduction guides
-template <typename... Args>
-EuclideanVector(Args... args)->EuclideanVector<sizeof...(Args)>;
-EuclideanVector(const std::vector<double>& vec)->EuclideanVector<0>;
-```
 
-## default template type
+## Default Template Type
 ```cpp
 template <typename T1, typename T2>
 void func1(T1 val);
@@ -18,6 +11,7 @@ void func2(T1 val);
 func1(1) // instantiation fail! because T2 = ??
 func2(1) // instantiation success! T1 = int T2 = int
 ```
+
 ## Sepcialization
 ```cpp
 // A.h
@@ -69,7 +63,7 @@ void A<2>::func2(void) {
 }
 ```
 
-### Nested template call
+## Template Disambiguation for Depedent Type
 ```cpp
 template<typename T> 
 struct Base{
@@ -82,45 +76,57 @@ struct X : Base<T>
 {
     void example()
     {
-        // Base<T>::example<int>(); // C7510: 'example': use of dependent
-                                    // template name must be prefixed with 'template'
-                                    // note: see reference to class template instantiation
-                                    // 'X<T>' being compiled
+        // Base<T>::example<int>(); 
+        // C7510: Error!
                
-        Base<T>::template example<int>();   // Add template keyword here
+        Base<T>::template example<int>();   
     }
 };
 ```
-https://docs.microsoft.com/ko-kr/cpp/error-messages/compiler-errors-2/compiler-error-c7510?view=msvc-160
+기본적으로 c++에서는 `Base<T>::example`이 템플릿이 아니고 따라서 컴파일러에서 `<`를 less-than으로 해석한다고 가정하기 때문에 오류를 발생시킨다.
 
-### typename
+이를 해결하기 위해 `example`가 template이라는 것을 인지시켜 `<`을 꺽쇠로 올바르게 구문 분석할 수 있도록 `template` keyword를 추가해야 한다.
+
+> Reference  
+> [MSDN1](https://learn.microsoft.com/ko-kr/cpp/cpp/name-resolution-for-dependent-types?view=msvc-160)  
+> [MSDN2](https://learn.microsoft.com/ko-kr/cpp/error-messages/compiler-errors-2/compiler-error-c7510?view=msvc-160)  
+
+## Name Resolution for Depedent Type
+
 ``` cpp
-//Polynomial<DomainDim>::SimplePolyTerm이 변수인지 type인지 명확하게 하기 위해
-//typename을 붙여 타입임을 명시해야한다.
-template <size_t DomainDim> 
-typename Polynomial<DomainDim>::SimplePolyTerm& Polynomial<DomainDim>::SimplePolyTerm::operator+=(const SimplePolyTerm& other) {...}
+template <typename T>
+struct Foo {
+	//T::mytype a;
+    //Error!
+
+	typename T::mytype a;
+};
+
+struct Boo {
+	struct mytype {};
+};
+
+
+int main() {
+	Foo<Boo> foo;
+}
 ```
+
+기본적으로 C++에서는 `T`는 template parameter에 depend하는 dependent name이기 때문에 `T::mytpe`이 한정자를 사용하는 정규화된 이름으로 본다.
+
+따라서, `T::mytpe`가 type이라는 것을 인지시켜 올바르게 구문 분석할 수 있도록 `typename` keyword를 추가해야 한다.
 
 <br><br>
 
-### Template Parameter Pack (Variadic Template)
-#### 기본문법
-https://en.cppreference.com/w/cpp/language/parameter_pack
+## Template Parameter Pack 
+`Template parameter pack`은 0개 또는 그 이상의 인자를 받는 template parameter이다.
 
-#### Fold Expression
-##### Example1
-```cpp
-template <typename... Args>
-bool contains_icase(const std::string& str, const Args... args) {		
-	static_require((... && std::is_same_v<Args, const char*>), "every arguments should be array of char");
-	return (ms::contains_icase(str, args) && ...);
-};
-```
+하나 이상의 parameter pack을 갖는 template을 `variadic template`이라고 한다.
 
-> Reference
-> [cppreference](https://en.cppreference.com/w/cpp/language/fold)
+> Reference  
+[cppreference](https://en.cppreference.com/w/cpp/language/parameter_pack)
 
-#### Parameter pack expansion
+### Pack expansion
 A pattern followed by an ellipsis is expanded into ***zero or more comma-separated instantiations of the pattern***, where the name of the parameter pack is replaced by each of the elements from the pack, in order.
 
 ##### Example1
@@ -196,6 +202,20 @@ void invalid(Ts..., U);  // Error: cna not deduce U
     }
 
     // resolve issue when use c++ language standard c++latest 
+
+## Fold Expression
+##### Example1
+```cpp
+template <typename... Args>
+bool contains_icase(const std::string& str, const Args... args) {		
+	static_require((... && std::is_same_v<Args, const char*>), "every arguments should be array of char");
+	return (ms::contains_icase(str, args) && ...);
+};
+```
+
+> Reference
+> [cppreference](https://en.cppreference.com/w/cpp/language/fold)
+
 
 ## SFINAE
 만일 템플릿 인자 치환이 올바르지 않는 타입이나 구문을 생성한다면 인자 치환에 실패한다. 올바르지 않는 타입이나 구문이라 하면, 치환된 인자로 썼을 때 문법상 틀린 것을 의미한다. 이 때, `즉각적인 맥락(immediate context)`의 타입이나 구문만이 고려되고, 여기에서 발생한 오류 만이 인자 치환을 실패시킬 수 있다. 만약 인자 치환에 실패하게 되면 이를 오버로딩 목록에서 제외한다.
