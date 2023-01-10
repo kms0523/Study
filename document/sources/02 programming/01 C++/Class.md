@@ -231,6 +231,13 @@ int main(void)
   A d = { a,b,c }; // A(A arg1, A arg2, A arg3) copy is occur here
 }
 ```
+### User define deduction guide
+```cpp
+//user-defined deduction guides
+template <typename... Args>
+EuclideanVector(Args... args)->EuclideanVector<sizeof...(Args)>;
+EuclideanVector(const std::vector<double>& vec)->EuclideanVector<0>;
+```
 
 
 ### Precautions

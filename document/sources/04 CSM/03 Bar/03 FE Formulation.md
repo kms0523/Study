@@ -27,17 +27,11 @@ $\Set{x^i}$를 $\Omega_i$의 절점들의 set이라고 하자.
 ```{figure} _image/0302.png
 ```
 
-이 때, $x^i_{1,2}$에 가해지는 force $f^i_{1,2}$는 다음과 같이 정의된다.
+$f^{int}_{i,j}$는 $i$ element가 $j$ element에 가하는 내력(internal force)일 때, $x^i_{1,2}$에 가해지는 force $f^i_{1,2}$를 다음과 같이 정의하자.
 
 $$ f^i_1 = \begin{cases} 0 & i=1 \\ f^{int}_{i,i-1}(x^i_1) & i=2,\cdots,N_E \end{cases}, \enspace f^i_2 = \begin{cases} f^{int}_{i,i+1}(x^i_2) & i=1,\cdots,N_E-1 \\ f^{ext} & i=N_E \end{cases} $$
 
-이 떄, $x^1_1$은 essentail BC가 주어져있기 때문에 $f^i_i=0$으로 두며, $f^{int}_{i,j}$는 $i$ element가 $j$ element에 가하는 내력이다.
-
-$$ f^{int}_{i,j} : \partial\Omega_i \cap \partial\Omega_j \rightarrow \R $$
-
-$f^{int}_{i,j}$는 Newton's 3rd law of motion에 의해 다음을 만족한다.
-
-$$ \forall x \in \partial\Omega_i \cap \partial\Omega_j, \quad f^{int}_{i,j}(x) + f^{int}_{j,i}(x) = 0 $$
+이 떄, $x^1_1$은 기존문제에서 essential BC가 주어져있는 절점이기 때문에 별도의 natural BC를 줄 필요가 없어 $f^1_1=0$으로 정의한다.
 
 기존의 문제를 Element 단위로 나눠 free body diagram을 그리면 다음과 같다.
 
@@ -62,6 +56,16 @@ $$ x = x^1_1, \enspace u=0 $$
 
 이로써 기존의 문제가 서로 다른 BC를 갖는 $N_E$개의 BVP로 나뉘게 된다.
 
+### Internal force
+$f^{int}_{i,j}$는 $i$ element가 $j$ element에 가하는 내력이다.
+
+$$ f^{int}_{i,j} : \partial\Omega_i \cap \partial\Omega_j \rightarrow \R $$
+
+$f^{int}_{i,j}$는 Newton's 3rd law of motion에 의해 다음을 만족한다.
+
+$$ \forall x \in \partial\Omega_i \cap \partial\Omega_j, \quad f^{int}_{i,j}(x) + f^{int}_{j,i}(x) = 0 $$
+
+
 ## Weak Formulation on FEs
 Function space $\mathcal{U^i_{relax}}, \mathcal{W^i_{relax}}$를 다음과 같이 정의하자.
 
@@ -80,7 +84,7 @@ Finite function space $\mathcal{U^i_f},\mathcal{W^i_f}, \R^k_s$를 다음과 같
 
 $$ \begin{gathered} \mathcal{U^i_f} := \span(\Set{u_1,\cdots,u_k}) \subset C^1(\Omega_i) \\ \mathcal{W^i_f} := \span(\Set{w_1,\cdots,w_k}) \subset C^\infty(\Omega_i) \\ \R^k_s := \Set{a \in \R^k | a^ju_j \text{ satisfy essential BCs}} \end{gathered} $$
 
-정의에 의해 $B^i$는 bilinear map이 됨으로 $\Omega_i$에서 dimensional reduced weak formulation은 다음과 같다.
+정의에 의해 $B^i$는 bilinear map임으로 $\Omega_i$에서 dimensional reduced weak formulation은 다음과 같다.
 
 $$ \text{find } a \in \R^n_s \st B^i(w_j,u_m)a^m = l^i(w_j) \enspace j=1,\cdots,k $$
 
@@ -115,21 +119,19 @@ $$ \begin{bmatrix} K^1_{11} & K^1_{12} && \\ K^1_{21} & K^1_{22} + K^2_{11} & K^
 
 $$ K d = f $$
 
-이 떄, $f^{int}$의 성질에 의해 미지수이던 내부력들이 전부 상쇄되어 다음이 성립한다.
+이 떄, $f^{int}$의 성질에 의해 미지수이던 내력들이 전부 상쇄되어 다음이 성립한다.
 
 $$ f = \begin{bmatrix} \int_{\Omega_1}Pn^1_1 \thinspace dV \\ \int_{\Omega_1}Pn^1_2 \thinspace dV + \int_{\Omega_2}Pn^2_1 \thinspace dV \\ \vdots \\ \int_{\Omega_1}Pn^{N_E-1}_2 \thinspace dV + \int_{\Omega_2}Pn^{N_E}_1 \thinspace dV \\ f^{ext}  \end{bmatrix} $$
 
 ### Considering essential BC
-행렬 $K',d'$을 다음과 같이 정의하자.
+$K$의 첫번째 열을 제거한 행렬을 $K'$ 첫번째 행을 제거한 $d$를 $d_E$라고 하자.
 
-$$ K' = \begin{bmatrix} K_{22} & \cdots & K_{1,N_E+1} \\ &\vdots& \\ K_{N_E+1,1} & \cdots & K_{N_E+1,N_E+1} \end{bmatrix}, \enspace d' = \begin{bmatrix} d_2 \\ \vdots \\ d_{N_E+1} \end{bmatrix}, \enspace f' = \begin{bmatrix} f_2 \\ \vdots \\ f_{N_E+1} \end{bmatrix} $$
+Essential BC에 의해서 결정된 $d_1 = u^1_1 = 0$을 고려하면 다음과 같다.
 
-Essential BC에 의해서 $d_1 = u^1_1 = 0$을 반영하고 무의미한 식인 첫번째 행을 제거하면 다음과 같다.
+$$ K'd_E = f - d_1K_{*1} $$
 
-$$ K'd' = f - d_1K_{*1} $$
+다음으로 첫번째 행을 제거한 $K'$를 $K_E$ 첫번째 행을 제거한 $f-d_1K_{*1}$를 $f_E$라고 하자.
 
-무의미한 식인 첫번째 행을 제거한 행렬을 $K'',f'$을 다음과 같이 정의하자.
+무의미한 첫번째 식을 제거한 최종형태는 다음과 같다. 
 
-$$ K'' = \begin{bmatrix} K_{22} & \cdots & K_{2,N_E+1} \\ &\vdots& \\ K_{N_E+1,1} & \cdots & K_{N_E+1,N_E+1} \end{bmatrix}, \enspace f' = \begin{bmatrix} f_2 \\ \vdots \\ f_{N_E+1} \end{bmatrix} $$
-
-그러면 최종식은 다음과 같다.
+$$ K_Ed_E = f_E $$
