@@ -17,9 +17,11 @@ $$ \exist L^{-1} $$
 
 이 떄, 다음과 같은 composite function을 생각해보자.
 
-$$ L^{-1}\circ f : \R^n \rightarrow \R^n $$
+$$ g :=L^{-1}\circ f : \R^n \rightarrow \R^n $$
 
+$\R^n$의 임의의 basis를 $\beta,\gamma$라하면 linear algebra에 의해 다음이 성립한다.
 
+$$ \begin{aligned} J_{g}(a) &= \mathfrak{m}_\beta^\gamma(Dg(a)) \\&= \end{aligned}  $$
 
 
 ### 보조정리1

@@ -12,11 +12,11 @@ $$ a = a^i\beta_i $$
 
 $a \in U$에서 $f$의 $i$번째 변수의 편미분은 다음과 같다.
 
-$$ \begin{aligned} D_i f(a) &:= \lim_{h \rightarrow 0}\frac{1}{h}(f(a + h \beta_i) -f (a)) \\&=\lim_{h \rightarrow 0} \frac{1}{h}(f(a^1, \cdots, a^i + h, \cdots, a^n) - f(a^1, \cdots, a^n)) \\&= \Big( \lim_{h \rightarrow 0} \frac{1}{h} (f^j(a^1, \cdots, a^i + h, \cdots, a^n) - f^j(a^1, \cdots, a^n)) \Big)\gamma_j \\&= D_if^j\gamma_j \end{aligned} $$ 
+$$ \begin{aligned} D_i^{f(a)} &:= \lim_{h \rightarrow 0}\frac{1}{h}(f(a + h \beta_i) -f (a)) \\&=\lim_{h \rightarrow 0} \frac{1}{h}(f(a^1, \cdots, a^i + h, \cdots, a^n) - f(a^1, \cdots, a^n)) \\&= \Big( \lim_{h \rightarrow 0} \frac{1}{h} (f^j(a^1, \cdots, a^i + h, \cdots, a^n) - f^j(a^1, \cdots, a^n)) \Big)\gamma_j \\&= D_i^{f^j(a)}\gamma_j \end{aligned} $$ 
 
 따라서, 행렬표현은 다음과 같다.
 
-$$ \mathfrak{m_\gamma}(D_if(a)) = \begin{bmatrix} D_if^1(a)\\\vdots\\D_if^m(a) \end{bmatrix} $$
+$$ \mathfrak{m_\gamma}(D_i^{f(a)}) = \begin{bmatrix} D_i^{f^1}(a)\\\vdots\\D_i^{f^m}(a) \end{bmatrix} $$
 
 > Reference  
 > {cite}`hubbard` chap 1.7

@@ -8,38 +8,197 @@ $L$이 다음을 만족할 경우, $L$을 $a$에서 $f$의  `total derivative`�
 
 $$ \lim_{h \rightarrow 0_n} \frac{1}{|h|}(f(a + h) - f(a) - L(h)) = 0_n $$
 
-이런 $L$이 존재하는 경우, $f$가 $a$에서 `미분가능(differentiable)`하다고 한다.
+### 참고1
+$a$에서 $f$의 total derivative를 $D^{f(a)} : \R^n \rightarrow \R^m$로 표기한다.
+
+### 참고2
+$D^{f(a)}$가 존재할 떄 $f$는 $a$에서 `미분가능(differentiable)`하다고 한다.
+
 
 ### 명제1
-open subset $U \subset \R^n$과 함수 $f : U \rightarrow \R^m$이 있다고 하자.
+$\R^n$의 open subset $U$와 함수 $f : U \rightarrow \R^m$가 있다고 하자.
 
-$\R^n$과 $\R^m$의 basis가 각 각 $\beta,\gamma$이고 $a \in U$에서 $f$가 미분가능할 때, 다음을 증명하여라.
+$\R^n$과 $\R^m$의 basis가 각 각 $\beta,\gamma$이고 $a \in U$일 때, 다음을 증명하여라.
 
-$$ \mathfrak{m}_\beta^\gamma(L) = \begin{bmatrix} D_1f^1(a) & \cdots & D_nf^1(a) \\ \vdots & & \vdots \\ D_1f^m(a) & \cdots & D_nf^m(a) \end{bmatrix}$$
+$$ \exist D^{f(a)} : \R^n \rightarrow \R^m \implies  \mathfrak{m}_\beta^\gamma(D^{f(a)}) = \begin{bmatrix} \mathfrak{m}_\gamma(D_1^{f(a)}) &\cdots& \mathfrak{m}_\gamma(D_n^{f(a)}) \end{bmatrix}$$
 
 **Proof**
 
-$h = t\beta_i$라 하면 정의에 의해 다음이 성립한다.
+$D^{f(a)}$이 linear map 임으로 행렬표현은 다음과 같다.
 
-$$ \begin{aligned} & \lim_{t \rightarrow 0} \frac{1}{\norm{t \beta_i}}(f(a+t\beta_i) - f(a) - L(t\beta_i)) = 0 \\\implies & \lim_{t\rightarrow 0} \frac{1}{t}(f(a + t \beta_i) - f(a)) -L(\beta_i) = 0 \\\implies & D_i f(a) = L(\beta_i) \end{aligned} $$
+$$ \mathfrak{m}_\beta^\gamma(D^{f(a)}) = \begin{bmatrix} \mathfrak{m}_\gamma(D^{f(a)}(\beta_1)) & \cdots & \mathfrak{m}_\gamma(D^{f(a)}(\beta_n)) \end{bmatrix} $$
 
-행렬표현은 다음과 같다.
+보조명제1.1에 의해 다음이 성립한다.
 
-$$ \mathfrak{m_\gamma}(L(\beta_i)) = \mathfrak{m_\gamma}(D_if(a)) = \begin{bmatrix} D_if_1(a) \\ \vdots \\ D_if_m(a) \end{bmatrix} $$
+$$ \begin{aligned} \begin{bmatrix} \mathfrak{m}_\gamma(D^{f(a)}(\beta_1)) & \cdots & \mathfrak{m}_\gamma(D^{f(a)}(\beta_n)) \end{bmatrix} &= \begin{bmatrix} \mathfrak{m}_\gamma(D_1^{f(a)}) &\cdots& \mathfrak{m}_\gamma(D_n^{f(a)}) \end{bmatrix} \qed \end{aligned} $$
 
-$L$이 linear map임으로, 다음이 성립한다.
+#### 보조명제1.1
+다음을 증명하여라.
 
-$$ \mathfrak{m}_\beta^\gamma(L) = \begin{bmatrix} \mathfrak{m}_\gamma(L(\beta_1)) & \cdots & \mathfrak{m}_\gamma(L(\beta_n)) \end{bmatrix} = \begin{bmatrix} D_1f_1(a) & \cdots & D_nf_1(a) \\ \vdots & & \vdots \\ D_1f_m(a) & \cdots & D_nf_m(a) \end{bmatrix} \qed $$
+$$ D^{f(a)}(\beta_i) = D_i^{f(a)} $$
+
+**Proof**
+
+$h = t\beta_i$라 하면 total derivative의 정의에 의해 다음이 성립한다.
+
+$$ \begin{aligned} & \lim_{t \rightarrow 0} \frac{1}{\norm{t \beta_i}}(f(a+t\beta_i) - f(a) - D^{f(a)}(t\beta_i)) = 0_n \\\implies & \lim_{t\rightarrow 0} \frac{1}{t}(f(a + t \beta_i) - f(a)) -D^{f(a)}(\beta_i) = 0_n \\\implies & D_i^{f(a)} = D^{f(a)}(\beta_i) \qed \end{aligned} $$
+
 
 #### 참고1
-선형변환 $L$의 행렬표현을 $f$의 `Jacobian matrix`라고 부르며 $J_f$로 표기한다.
+$L$의 형태가 결정되어 있음으로 $L$이 존재한다면 유일함을 알 수 있다.
 
-$$ \mathfrak{m}_\beta^\gamma(L) =J_f(a) = \begin{bmatrix} D_1f_1( a) & \cdots & D_nf_1( a) \\ \vdots & & \vdots \\ D_1f_m( a) & \cdots & D_nf_m( a) \end{bmatrix}$$
+즉, uniqueness가 보장된다.
 
 #### 참고2
-$\mathfrak{m}_\beta^\gamma(L) =J_f(a)$이려면 $f$가 differtiable해야 한다.
+Total derivative $Df$의 행렬표현을 $f$의 `Jacobian matrix`라고 부르며 $J_f$로 표기한다.
 
-### 참고
+$$ J_f(a) := \mathfrak{m}_\beta^\gamma(D^{f(a)}) = \begin{bmatrix} \mathfrak{m}_\gamma(D_1^{f(a)}) &\cdots& \mathfrak{m}_\gamma(D_n^{f(a)}) \end{bmatrix}$$
+
+#### 참고3
+$\mathfrak{m}_\beta^\gamma(D^{f(a)}) =J_f(a)$이려면 $f$가 differtiable해야 한다.
+
+### 명제2
+$\R^n$의 open set $U$와 linear map $f : U \rightarrow \R^m$가 있다고 하자.
+
+$\R^n$과 $\R^m$의 basis가 각 각 $\beta,\gamma$이고 $a \in U$에서 $f$가 미분가능할 때, 다음을 증명하여라.
+
+$$ D^{f(a)} = f $$
+
+**Proof**
+
+명제1에 의해 다음이 성립한다.
+
+$$ \mathfrak{m}_\beta^\gamma(D^{f(a)}) = \begin{bmatrix} \mathfrak{m}_\gamma(D_1^{f(a)}) &\cdots& \mathfrak{m}_\gamma(D_n^{f(a)}) \end{bmatrix} $$
+
+Partial derivative의 성질에 의해 다음이 성립한다.
+
+$$ \begin{aligned} \begin{bmatrix} \mathfrak{m}_\gamma(D_1^{f(a)}) &\cdots& \mathfrak{m}_\gamma(D_n^{f(a)}) \end{bmatrix} &= \begin{bmatrix} \mathfrak{m}_\gamma(f(\beta_1)) &\cdots& \mathfrak{m}_\gamma(f(\beta_n)) \end{bmatrix} \\&= \mathfrak{m}_\beta^\gamma(f) \end{aligned} $$
+
+위의 결과를 종합하면 $\mathfrak{m}_\beta^\gamma(D^{f(a)}) = \mathfrak{m}_\beta^\gamma(f)$임으로 linear algebra에 의해 다음이 성립한다.
+
+$$ D^{f(a)} = f \qed $$
+
+### 명제3(Chain Rule)
+$\R^n$의 open set $U$와 $\R^m$의 open set $V$가 있다고 하자.
+
+$f:U \rightarrow V$과 $g:V \rightarrow\R^p$가 있을 때, $a \in U$에서 $f$가 differentiable하고 $f(a) \in V$에서 $g$가 differentiable하다고 하자.
+
+이 때, 다음을 증명하여라.
+
+$$ \begin{gathered} f \circ g \text{ is diffrentiable at } a \\ D^{(g \circ f)(a)} = D^{g(f(a))} \circ D^{f(a)} \end{gathered} $$
+
+**Proof**
+
+함수 $r : \R^n \rightarrow \R^m$과 함수 $s : \R^m\rightarrow\R^p$를 다음과 같이 정의하자.
+
+$$ \begin{gathered} r(h) = f(a+h) - f(a) - D^{f(a)}(h) \\ s(h) = g(f(a)+h) - g(f(a)) - D^{g(f(a))}(h) \end{gathered} $$
+
+따라서, 다음이 성립한다.
+
+$$ \begin{aligned} g(f(a+h)) &= g(f(a) + r(h) + D^{f(a)}(h)) \\&= g(f(a) + \Delta f) \\&= g(f(a)) + D^{g(f(a))}(\Delta f) + s(\Delta f)  \end{aligned} $$
+
+Total derivative의 정의에 의해 $D^{g(f(a))}$는 linear map임으로 다음이 성립한다.
+
+$$ \begin{aligned} D^{g(f(a))}(\Delta f) &= D^{g(f(a))}(r(h) + D^{f(a)}(h))) \\&= D^{g(f(a))}(r(h)) + D^{g(f(a))}(D^{f(a)}(h)) \end{aligned} $$
+
+따라서, 다음이 성립한다.
+
+$$ g(f(a+h)) - g(f(a)) - D^{g(f(a))}(D^{f(a)}(h)) = D^{g(f(a))}(r(h)) + s(\Delta f) $$
+
+이 때, 보조명제3.1에 의해 다음이 성립한다.
+
+$$ \lim_{\norm{h}\rightarrow 0} \frac{1}{\norm{h}} \left( g(f(a+h)) - g(f(a)) - D^{g(f(a))}(D^{f(a)}(h)) \right) = 0_n $$
+
+$D^{g(f(a))}$와 $D^{f(a)}$ 모두 linear map임으로 다음이 성립한다.
+
+$$ D^{g(f(a))} \circ D^{f(a)} \text{ is an linear map} $$
+
+따라서, total derivative의 정의에 의해 다음이 성립한다.
+
+$$ \begin{gathered} f \circ g \text{ is diffrentiable at } a \\ D^{(g \circ f)(a)} = D^{g(f(a))} \circ D^{f(a)} \end{gathered} \qed $$
+
+#### 보조명제3.1
+다음을 증명하여라.
+
+$$ \lim_{\norm{h}\rightarrow 0} \frac{1}{\norm{h}} \left( g(f(a+h)) - g(f(a)) - D^{g(f(a))}(D^{f(a)}(h)) \right) = 0_n $$
+
+**Proof**
+
+$g(f(a+h)) - g(f(a)) - D^{g(f(a))}(D^{f(a)}(h)) = D^{g(f(a))}(r(h)) + s(\Delta f)$임으로 다음을 증명하자.
+
+$$ \lim_{\norm{h}\rightarrow 0} \frac{1}{\norm{h}} \left( D^{g(f(a))}(r(h)) + s(\Delta f) \right) = 0_n $$
+
+[첫번째 항]  
+다음이 성립한다. 
+
+$$ \lim_{\norm{h}\rightarrow 0} \frac{1}{\norm{h}}\norm{D^{g(f(a))}(r(h))} \le \norm{D^{g(f(a))}}\lim_{\norm{h}\rightarrow 0} \frac{1}{\norm{h}}\norm{r(h)} $$
+
+전제에 의해 $f$는 $a$에서 differentiable함으로 다음이 성립한다.
+
+$$ \lim_{\norm{h}\rightarrow 0} \frac{r(h)}{\norm{h}} = 0_n \iff \lim_{\norm{h}\rightarrow 0} \frac{\norm{r(h)}}{\norm{h}} = 0 $$
+
+따라서, 위의 결과를 종합하면 다음이 성립한다.
+
+$$ \lim_{\norm{h}\rightarrow 0} \frac{1}{\norm{h}}D^{g(f(a))}(r(h)) = 0_n \qed $$
+
+[두번째 항]  
+$\Delta f$를 풀어 쓰면 다음과 같다.
+
+$$ s(\Delta f) = s(r(h) + D^{f(a)}(h))) $$
+
+전제에 의해 $\lim_{\norm{h}\rightarrow 0} \frac{r(h)}{\norm{h}} = 0_n$임으로 보조명제3.1.1에 의해 다음이 성립한다.
+
+$$ \exist \delta_1 \in \R^+ \st \norm{h} < \delta_1 \implies \norm{r(h)} < \norm{h} $$
+
+따라서, $\norm{h}<\delta_1$일 떄, 다음이 성립한다.
+
+$$ \begin{aligned} \norm{r(h) + D^{f(a)}(h)} &\le \norm{r(h)} + \norm{D^{f(a)}(h)} \\&\le \norm{r(h)} + \norm{D^{f(a)}}\norm{h} \\&< \left(\norm{D^{f(a)}}+1\right)\norm{h} \end{aligned} $$
+
+이 떄, 전제에 의해 $\lim_{\norm{h}\rightarrow 0} \frac{s(h)}{\norm{h}} = 0_n$임으로 metric space의 limt의 정의에 의해 다음이 성립한다.
+
+$$ \forall \epsilon \in \R^+, \quad \delta \in \R^+ \st \norm{h} < \delta \implies \norm{s(h)}<\epsilon\norm{h}$$
+
+그럼으로 다음도 성립한다.
+
+$$ \forall \epsilon \in \R^+, \quad \delta_\epsilon \in (0, \delta_1) \st \norm{h} < \delta \implies \norm{s(h)}<\epsilon\norm{h}$$
+
+따라서, $\norm{h}<\delta_\epsilon$일 때, $\delta_\epsilon$의 정의에 의해 다음이 성립한다.
+
+$$ \begin{aligned} s(r(h) + D^{f(a)}(h)) &\le \epsilon\norm{D^{f(a)}+r(h)} \\&< \epsilon\left(\norm{D^{f(a)}}+1\right)\norm{h} \\ \frac{s(r(h) + D^{f(a)}(h))}{\norm{h}} &< \epsilon\left(\norm{D^{f(a)}}+1\right) \end{aligned} $$
+
+$\epsilon'$을 다음과 같이 정의하자.
+
+$$ \epsilon' := \epsilon\left(\norm{D^{f(a)}}+1\right) $$
+
+그러면 $\epsilon'$의 정의에 의해 다음이 성립한다.
+
+$$ \forall \epsilon' \in \R^+, \quad \delta_\epsilon \st \norm{h} < \delta_\epsilon \implies \frac{s(r(h) + D^{f(a)}(h))}{\norm{h}}<\epsilon' $$
+
+따라서, Metric space에서 limt의 정의에 의해 다음이 성립한다.
+
+$$ \lim_{\norm{h}\rightarrow0} \frac{s(r(h) + D^{f(a)}(h))}{\norm{h}} =0_n \qed $$
+
+
+##### 보조명제3.1.1
+$\lim_{\norm{h}\rightarrow0} \frac{f(h)}{\norm{(h)}} = 0$일 때, 다음을 증명하여라.
+
+$$ \forall\epsilon \in \R^+, \quad \exist \delta \st \norm{h} < \delta \implies \norm{f(h)} < \epsilon\norm{h} $$
+
+**Proof**
+
+Metric space에서 limt의 정의에 의해 $\lim_{\norm{h}\rightarrow0} \frac{f(h)}{\norm{(h)}} = 0$면 다음이 성립한다.
+
+$$ \forall\epsilon \in \R^+, \quad \exist \delta \st \norm{h} < \delta \implies \frac{\norm{f(h)}}{\norm{h}} < \epsilon $$
+
+따라서, 다음이 성립한다.
+
+$$ \forall\epsilon \in \R^+, \quad \exist \delta \st \norm{h} < \delta \implies \norm{f(h)} < \epsilon\norm{h} \qed $$
+
+> Reference  
+> {cite}`hubbard` Appendix4
+> [Note](https://faculty.math.illinois.edu/~carty/ChainRuleNotesSlides.pdf)
+
+### 참고2
 Total derivative의 의미는 $a\in\R^n$에서 함수 $f: \R^n \rightarrow \R^m$에 대한 best linear approximation이다.
 
 따라서 위 정의는 $f$의 domain과 codomain이 Euclidean vector space일때 만 성립하는 것이 아니라, 임의의 vector space에 대해서도 성립한다.
@@ -98,4 +257,4 @@ $$ \begin{aligned} \lim_{H \rightarrow 0_{M_{nn}}} \frac{1}{\norm{H}}(AH + HA + 
 두 경우를 비교해보면 알 수 있듯이, 정의를 사용하는 경우가 훨씬 간단할수도 있다.
 
 > Reference  
-> [Book] (Hubbard & Hubbard) Vector Calculus, Linear Algebra, and Differential Forms_ A Unified Approach p.132
+> {cite}`hubbard` p.132
