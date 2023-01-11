@@ -78,6 +78,15 @@ $$ \begin{aligned} \begin{bmatrix} \mathfrak{m}_\gamma(D_1^{f(a)}) &\cdots& \mat
 
 $$ D^{f(a)} = f \qed $$
 
+#### 따름명제2.1
+다음을 증명하여라.
+
+$$ J_f(a) = \mathfrak{m}_\beta^\gamma(f) $$
+
+**Proof**
+
+명제2와 Jacobian의 정의에 의해 자명하다.
+
 ### 명제3(Chain Rule)
 $\R^n$의 open set $U$와 $\R^m$의 open set $V$가 있다고 하자.
 
