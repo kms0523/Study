@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Linking &#8212; MS Study Documents</title>
+    <title>Link &#8212; MS Study Documents</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="Storage Class Specifier" href="01%20Storage%20Class%20Specifier.html" />
-    <link rel="prev" title="Compile" href="../02%20Compile.html" />
+    <link rel="next" title="Relocation" href="04%20Relocation.html" />
+    <link rel="prev" title="Name Mangling" href="02%20Name%20Mangling.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -989,7 +989,7 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3 current active has-children">
-      <a class="current reference internal" href="#">
+      <a class="reference internal" href="Linking.html">
        Linking
       </a>
       <input checked="" class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
@@ -997,7 +997,7 @@ const thebe_selector_output = ".output, .cell_output"
        <i class="fas fa-chevron-down">
        </i>
       </label>
-      <ul>
+      <ul class="current">
        <li class="toctree-l4">
         <a class="reference internal" href="01%20Storage%20Class%20Specifier.html">
          Storage Class Specifier
@@ -1008,8 +1008,8 @@ const thebe_selector_output = ".output, .cell_output"
          Name Mangling
         </a>
        </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="03%20Link.html">
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
          Link
         </a>
        </li>
@@ -1421,7 +1421,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../../../_sources/sources/02 programming/01 C++/01 Build/03 Linking/Linking.md"
+        <a href="../../../../../_sources/sources/02 programming/01 C++/01 Build/03 Linking/03 Link.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1470,7 +1470,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Linking</h1>
+                <h1>Link</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1482,15 +1482,67 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="linking">
-<h1>Linking<a class="headerlink" href="#linking" title="Permalink to this headline">#</a></h1>
-<p>마지막으로 링킹 단계에서는 컴파일러가 생성한 목적 파일들과 외부 라이브러리 파일들을 모아서 실행 파일을 생성한다.</p>
-<p>링크란 수많은 목적 코드들이 프로세스 메모리 가상 공간에 적재되었을 때 서로가 맞물릴 수 있도록 각각의 주소를 변경해주는 것을 의미한다.</p>
-<p>이 링킹 과정이 끝나게 되면 사용하는 시스템에 따라서 각기 다른 형식으로 파일들을 생성하게 된다. 윈도우즈 계열의 시스템의 경우 <code class="docutils literal notranslate"><span class="pre">portable</span> <span class="pre">executable</span> <span class="pre">(PE)</span></code>이라 불리는 PE 형식으로 실행 파일을 생성하고, 리눅스 계열의 시스템의 경우 <code class="docutils literal notranslate"><span class="pre">executable</span> <span class="pre">and</span> <span class="pre">linkable</span> <span class="pre">format</span> <span class="pre">(ELF)</span></code>이라 불리는 ELF 형식으로 실행 파일을 생성한다.</p>
-<p>이 두 실행 파일은 파일 형식이 다르기 때문에 같은 코드를 컴파일 하더라도 윈도우즈의 PE 파일을 리눅스에서 일반적으로 실행할 수 없고, 반대로 윈도우즈에서 리눅스의 ELF 파일을 실행할 수 없다.</p>
-<p>링킹 과정에서 목적 코드들에 정의된 심볼들 (함수들이나 객체들)의 위치를 확정 시킨다. 이 때 C++에서 심볼들의 위치들을 정할 때 어떠한 방식으로 정할지 알려주는 키워들이 있는데 이를 <code class="docutils literal notranslate"><span class="pre">저장</span> <span class="pre">방식</span> <span class="pre">지정자</span> <span class="pre">(storage</span> <span class="pre">class</span> <span class="pre">specifier)</span></code>라고 한다.</p>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="link">
+<h1>Link<a class="headerlink" href="#link" title="Permalink to this headline">#</a></h1>
+<p>위 단계에서 아무런 문제가 없었더라면 이제 비로소 진짜 링킹을 수행할 수 있다. 링킹이란, 각각의 TU들에서 생성된 목적 코드들을 한데 모아서 하나의 실행 파일을 만들어내는 작업이다. 물론 단순히 목적 코드들을 이어 붙이는 작업만 하는 것은 아니다.</p>
+<p>링킹 과정이 끝나기 전 까지 변수들과 함수, 그리고 데이터들의 위치를 확정시킬 수 없다. 따라서 TU들이 생성한 목적 코드들에게는 각각의 심볼들의 저장 방식과 링크 방식에 따라서 여기 여기에 배치했으면 좋겠다라는 희망 사항이 작성되어 있다.</p>
+<p>예를 들어서 아래의 코드를 보자.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">static</span> <span class="nb">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="n">static</span> <span class="n">const</span> <span class="nb">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="n">static</span> <span class="nb">int</span> <span class="n">d</span><span class="p">;</span>
+
+<span class="nb">int</span> <span class="n">func</span><span class="p">()</span> <span class="p">{}</span>
+<span class="n">static</span> <span class="nb">int</span> <span class="n">func2</span><span class="p">()</span> <span class="p">{}</span>
+</pre></div>
 </div>
+<p>이 코드에 정의된 심볼들의 희망 위치들은 아래와 같이 나타난다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nm test.o
+0000000000000004 D b
+0000000000000000 T _Z4funcv
+0000000000000000 d _ZL1a
+0000000000000000 r _ZL1c
+0000000000000000 b _ZL1d
+000000000000000b t _ZL5func2v
+</pre></div>
+</div>
+<p>nm 프로그램은 심볼들의 이름들 왼쪽에 어떠한 방식으로 링크시에 심볼을 배치할지에 대한 정보를 보여준다.</p>
+<p>대문자 알파벳의 경우 해당 심볼은 외부 링크 방식으로 선언된 심볼이란 의미이다. 즉 해당 심볼은 다른 TU에서 접근할 수 있는 심볼이다. 반면에 소문자 알파벳의 경우 해당 심볼은 내부 링크 방식으로 선언된 심볼이란 의미이다. 따라서 해당 심볼은 이 TU 안에서만 접근이 가능하다.</p>
+<p>위 대문자로 된 심볼들을 보면 b, func 을 볼 수 있는데 모두 외부 링크 방식임을 알 수 있다. 반면에 나머지 a, c, d, func2는 모두 static 이므로 내부 링크 방식이다.</p>
+<p>그 다음에 알파벳 자체는 어떤 방식으로 해당 심볼들을 배치할 지 알려준다. <a class="reference external" href="https://linux.die.net/man/1/nm">nm의 man 페이지</a>에서 전체 알파벳들에 대한 설명을 볼 수 있으며 그 중 일부는 다음과 같다.</p>
+<ul class="simple">
+<li><p>B, b : 초기화 되지 않은 데이터 섹션 (BSS 섹션)</p></li>
+<li><p>D, d : 초기화 된 데이터 섹션</p></li>
+<li><p>T, t : 텍스트 (코드) 섹션</p></li>
+<li><p>R, r : 읽기 전용 (read only) 섹션</p></li>
+</ul>
+<p>맨 앞에 오는 정수값은 섹션의 시작으로부터 해당 심볼이 어디에 위치해 있는지 알려준다. 예를 들어서 func함수의 경우 텍스트 섹션 시작 부분에 있다는 의미 이고 (오프셋이 0 이니까), func2 의 경우 b 만큼 떨어진 부분에 위치해있다는 의미다.</p>
+<p>실제로 objdump 로 코드를 살펴보면</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">objdump</span> <span class="o">-</span><span class="n">S</span> <span class="n">s</span><span class="o">.</span><span class="n">o</span> 
+
+<span class="n">s</span><span class="o">.</span><span class="n">o</span><span class="p">:</span>     <span class="n">file</span> <span class="nb">format</span> <span class="n">elf64</span><span class="o">-</span><span class="n">x86</span><span class="o">-</span><span class="mi">64</span>
+
+
+<span class="n">Disassembly</span> <span class="n">of</span> <span class="n">section</span> <span class="o">.</span><span class="n">text</span><span class="p">:</span>
+
+<span class="mi">0000000000000000</span> <span class="o">&lt;</span><span class="n">_Z4funcv</span><span class="o">&gt;</span><span class="p">:</span>
+   <span class="mi">0</span><span class="p">:</span>    <span class="n">f3</span> <span class="mi">0</span><span class="n">f</span> <span class="mi">1</span><span class="n">e</span> <span class="n">fa</span>              <span class="n">endbr64</span> 
+   <span class="mi">4</span><span class="p">:</span>    <span class="mi">55</span>                       <span class="n">push</span>   <span class="o">%</span><span class="n">rbp</span>
+   <span class="mi">5</span><span class="p">:</span>    <span class="mi">48</span> <span class="mi">89</span> <span class="n">e5</span>                 <span class="n">mov</span>    <span class="o">%</span><span class="n">rsp</span><span class="p">,</span><span class="o">%</span><span class="n">rbp</span>
+   <span class="mi">8</span><span class="p">:</span>    <span class="mi">90</span>                       <span class="n">nop</span>
+   <span class="mi">9</span><span class="p">:</span>    <span class="mi">5</span><span class="n">d</span>                       <span class="n">pop</span>    <span class="o">%</span><span class="n">rbp</span>
+   <span class="n">a</span><span class="p">:</span>    <span class="n">c3</span>                       <span class="n">retq</span>   
+
+<span class="mi">000000000000000</span><span class="n">b</span> <span class="o">&lt;</span><span class="n">_ZL5func2v</span><span class="o">&gt;</span><span class="p">:</span>
+   <span class="n">b</span><span class="p">:</span>    <span class="n">f3</span> <span class="mi">0</span><span class="n">f</span> <span class="mi">1</span><span class="n">e</span> <span class="n">fa</span>              <span class="n">endbr64</span> 
+   <span class="n">f</span><span class="p">:</span>    <span class="mi">55</span>                       <span class="n">push</span>   <span class="o">%</span><span class="n">rbp</span>
+  <span class="mi">10</span><span class="p">:</span>    <span class="mi">48</span> <span class="mi">89</span> <span class="n">e5</span>                 <span class="n">mov</span>    <span class="o">%</span><span class="n">rsp</span><span class="p">,</span><span class="o">%</span><span class="n">rbp</span>
+  <span class="mi">13</span><span class="p">:</span>    <span class="mi">90</span>                       <span class="n">nop</span>
+  <span class="mi">14</span><span class="p">:</span>    <span class="mi">5</span><span class="n">d</span>                       <span class="n">pop</span>    <span class="o">%</span><span class="n">rbp</span>
+  <span class="mi">15</span><span class="p">:</span>    <span class="n">c3</span>                       <span class="n">retq</span>   
+</pre></div>
+</div>
+<p>정확히 0xb 부분에 func2 가 자리하고 있음을 알 수 있습니다. 여기서 0x는 뒤에 오는 숫자가 16진수임을 말한다.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1520,17 +1572,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../02%20Compile.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="02%20Name%20Mangling.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Compile</p>
+            <p class="prev-next-title">Name Mangling</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="01%20Storage%20Class%20Specifier.html" title="next page">
+    <a class='right-next' id="next-link" href="04%20Relocation.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Storage Class Specifier</p>
+        <p class="prev-next-title">Relocation</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

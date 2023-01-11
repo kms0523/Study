@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Linking &#8212; MS Study Documents</title>
+    <title>Relocation &#8212; MS Study Documents</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="Storage Class Specifier" href="01%20Storage%20Class%20Specifier.html" />
-    <link rel="prev" title="Compile" href="../02%20Compile.html" />
+    <link rel="next" title="Linking Method" href="05%20LinkingMethod.html" />
+    <link rel="prev" title="Link" href="03%20Link.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -989,7 +989,7 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3 current active has-children">
-      <a class="current reference internal" href="#">
+      <a class="reference internal" href="Linking.html">
        Linking
       </a>
       <input checked="" class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
@@ -997,7 +997,7 @@ const thebe_selector_output = ".output, .cell_output"
        <i class="fas fa-chevron-down">
        </i>
       </label>
-      <ul>
+      <ul class="current">
        <li class="toctree-l4">
         <a class="reference internal" href="01%20Storage%20Class%20Specifier.html">
          Storage Class Specifier
@@ -1013,8 +1013,8 @@ const thebe_selector_output = ".output, .cell_output"
          Link
         </a>
        </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="04%20Relocation.html">
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
          Relocation
         </a>
        </li>
@@ -1421,7 +1421,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../../../_sources/sources/02 programming/01 C++/01 Build/03 Linking/Linking.md"
+        <a href="../../../../../_sources/sources/02 programming/01 C++/01 Build/03 Linking/04 Relocation.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1470,7 +1470,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Linking</h1>
+                <h1>Relocation</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1482,15 +1482,162 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="linking">
-<h1>Linking<a class="headerlink" href="#linking" title="Permalink to this headline">#</a></h1>
-<p>마지막으로 링킹 단계에서는 컴파일러가 생성한 목적 파일들과 외부 라이브러리 파일들을 모아서 실행 파일을 생성한다.</p>
-<p>링크란 수많은 목적 코드들이 프로세스 메모리 가상 공간에 적재되었을 때 서로가 맞물릴 수 있도록 각각의 주소를 변경해주는 것을 의미한다.</p>
-<p>이 링킹 과정이 끝나게 되면 사용하는 시스템에 따라서 각기 다른 형식으로 파일들을 생성하게 된다. 윈도우즈 계열의 시스템의 경우 <code class="docutils literal notranslate"><span class="pre">portable</span> <span class="pre">executable</span> <span class="pre">(PE)</span></code>이라 불리는 PE 형식으로 실행 파일을 생성하고, 리눅스 계열의 시스템의 경우 <code class="docutils literal notranslate"><span class="pre">executable</span> <span class="pre">and</span> <span class="pre">linkable</span> <span class="pre">format</span> <span class="pre">(ELF)</span></code>이라 불리는 ELF 형식으로 실행 파일을 생성한다.</p>
-<p>이 두 실행 파일은 파일 형식이 다르기 때문에 같은 코드를 컴파일 하더라도 윈도우즈의 PE 파일을 리눅스에서 일반적으로 실행할 수 없고, 반대로 윈도우즈에서 리눅스의 ELF 파일을 실행할 수 없다.</p>
-<p>링킹 과정에서 목적 코드들에 정의된 심볼들 (함수들이나 객체들)의 위치를 확정 시킨다. 이 때 C++에서 심볼들의 위치들을 정할 때 어떠한 방식으로 정할지 알려주는 키워들이 있는데 이를 <code class="docutils literal notranslate"><span class="pre">저장</span> <span class="pre">방식</span> <span class="pre">지정자</span> <span class="pre">(storage</span> <span class="pre">class</span> <span class="pre">specifier)</span></code>라고 한다.</p>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="relocation">
+<h1>Relocation<a class="headerlink" href="#relocation" title="Permalink to this headline">#</a></h1>
+<p>TU에서 생성된 목적 코드들은 링킹 과정 전까지 심볼들의 위치를 확정할 수 없기 때문에 추후에 심볼들의 위치가 확정이 되면 값을 바꿔야 할 부분들을 적어놓은 <code class="docutils literal notranslate"><span class="pre">재배치</span> <span class="pre">테이블</span> <span class="pre">(Relocation</span> <span class="pre">Table)</span></code>을 생성한다.</p>
+<p>예를 들어서 아래와 같은 코드를 보자.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">static</span> <span class="nb">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="n">static</span> <span class="nb">int</span> <span class="n">c</span><span class="p">;</span>
+
+<span class="n">static</span> <span class="nb">int</span> <span class="n">func2</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">c</span> <span class="o">+=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">c</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nb">int</span> <span class="n">func3</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">b</span> <span class="o">+=</span> <span class="n">c</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nb">int</span> <span class="n">func</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">a</span> <span class="o">+=</span> <span class="n">func2</span><span class="p">();</span>
+  <span class="n">a</span> <span class="o">+=</span> <span class="n">func3</span><span class="p">();</span>
+  <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 </div>
+<p>objdump 에 -r 옵션을 주면 재배치가 필요한 부분들을 보여준다.</p>
+<p>예를 들어서 func2 의 목적 코드가 어떤 식으로 생겼는지 살펴보자.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">objdump</span> <span class="o">-</span><span class="n">Sr</span> <span class="n">s</span><span class="o">.</span><span class="n">o</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">o</span><span class="p">:</span>     <span class="n">file</span> <span class="nb">format</span> <span class="n">elf64</span><span class="o">-</span><span class="n">x86</span><span class="o">-</span><span class="mi">64</span>
+
+
+<span class="n">Disassembly</span> <span class="n">of</span> <span class="n">section</span> <span class="o">.</span><span class="n">text</span><span class="p">:</span>
+
+<span class="mi">0000000000000000</span> <span class="o">&lt;</span><span class="n">_ZL5func2v</span><span class="o">&gt;</span><span class="p">:</span>
+<span class="n">static</span> <span class="nb">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="n">static</span> <span class="nb">int</span> <span class="n">c</span><span class="p">;</span>
+
+<span class="n">static</span> <span class="nb">int</span> <span class="n">func2</span><span class="p">()</span> <span class="p">{</span>
+   <span class="mi">0</span><span class="p">:</span>    <span class="n">f3</span> <span class="mi">0</span><span class="n">f</span> <span class="mi">1</span><span class="n">e</span> <span class="n">fa</span>              <span class="n">endbr64</span> 
+   <span class="mi">4</span><span class="p">:</span>    <span class="mi">55</span>                       <span class="n">push</span>   <span class="o">%</span><span class="n">rbp</span>
+   <span class="mi">5</span><span class="p">:</span>    <span class="mi">48</span> <span class="mi">89</span> <span class="n">e5</span>                 <span class="n">mov</span>    <span class="o">%</span><span class="n">rsp</span><span class="p">,</span><span class="o">%</span><span class="n">rbp</span>
+  <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+   <span class="mi">8</span><span class="p">:</span>    <span class="mi">8</span><span class="n">b</span> <span class="mi">15</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="n">mov</span>    <span class="mh">0x0</span><span class="p">(</span><span class="o">%</span><span class="n">rip</span><span class="p">),</span><span class="o">%</span><span class="n">edx</span>        <span class="c1">## e &lt;_ZL5func2v+0xe&gt;</span>
+            <span class="n">a</span><span class="p">:</span> <span class="n">R_X86_64_PC32</span>    <span class="o">.</span><span class="n">data</span><span class="o">-</span><span class="mh">0x4</span>
+   <span class="n">e</span><span class="p">:</span>    <span class="mi">8</span><span class="n">b</span> <span class="mi">05</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="n">mov</span>    <span class="mh">0x0</span><span class="p">(</span><span class="o">%</span><span class="n">rip</span><span class="p">),</span><span class="o">%</span><span class="n">eax</span>        <span class="c1">## 14 &lt;_ZL5func2v+0x14&gt;</span>
+            <span class="mi">10</span><span class="p">:</span> <span class="n">R_X86_64_PC32</span>    <span class="n">b</span><span class="o">-</span><span class="mh">0x4</span>
+  <span class="mi">14</span><span class="p">:</span>    <span class="mi">01</span> <span class="n">d0</span>                    <span class="n">add</span>    <span class="o">%</span><span class="n">edx</span><span class="p">,</span><span class="o">%</span><span class="n">eax</span>
+  <span class="mi">16</span><span class="p">:</span>    <span class="mi">89</span> <span class="mi">05</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="n">mov</span>    <span class="o">%</span><span class="n">eax</span><span class="p">,</span><span class="mh">0x0</span><span class="p">(</span><span class="o">%</span><span class="n">rip</span><span class="p">)</span>        <span class="c1">## 1c &lt;_ZL5func2v+0x1c&gt;</span>
+            <span class="mi">18</span><span class="p">:</span> <span class="n">R_X86_64_PC32</span>    <span class="o">.</span><span class="n">bss</span><span class="o">-</span><span class="mh">0x4</span>
+  <span class="k">return</span> <span class="n">c</span><span class="p">;</span>
+  <span class="mi">1</span><span class="n">c</span><span class="p">:</span>    <span class="mi">8</span><span class="n">b</span> <span class="mi">05</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="n">mov</span>    <span class="mh">0x0</span><span class="p">(</span><span class="o">%</span><span class="n">rip</span><span class="p">),</span><span class="o">%</span><span class="n">eax</span>        <span class="c1">## 22 &lt;_ZL5func2v+0x22&gt;</span>
+            <span class="mi">1</span><span class="n">e</span><span class="p">:</span> <span class="n">R_X86_64_PC32</span>    <span class="o">.</span><span class="n">bss</span><span class="o">-</span><span class="mh">0x4</span>
+<span class="p">}</span>
+  <span class="mi">22</span><span class="p">:</span>    <span class="mi">5</span><span class="n">d</span>                       <span class="n">pop</span>    <span class="o">%</span><span class="n">rbp</span>
+  <span class="mi">23</span><span class="p">:</span>    <span class="n">c3</span>                       <span class="n">retq</span>   
+</pre></div>
+</div>
+<p>내부 및 외부 링크 방식인 a, b, c 들은 데이터 섹션과 BSS 섹션의 위치가 확정되기 전까지 어디에 위치할 지 모르기 때문에 추후에 재배치 시켜야만 한다.</p>
+<p>먼저, a 의 값을 읽어들이는 부분부터 보자.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mi">8</span><span class="p">:</span>    <span class="mi">8</span><span class="n">b</span> <span class="mi">15</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="n">mov</span>    <span class="mh">0x0</span><span class="p">(</span><span class="o">%</span><span class="n">rip</span><span class="p">),</span><span class="o">%</span><span class="n">edx</span>        <span class="c1">## e &lt;_ZL5func2v+0xe&gt;</span>
+</pre></div>
+</div>
+<p>먼저 <code class="docutils literal notranslate"><span class="pre">0x0(%rip),%edx</span></code> 어셈블리는 C 코드로 바꿔서 생각했을 때 <code class="docutils literal notranslate"><span class="pre">%edx</span> <span class="pre">=</span> <span class="pre">*(int*)(%rip</span> <span class="pre">+</span> <span class="pre">0x0)</span></code> 이라고 보면 된다. 즉 RIP 레지스터에다 0만큼 더한 주소값에 있는 데이터를 읽으라는 의미이다. 여기서 a 의 상대적 위치가 결정되지 않았기 때문에 일단 0으로 대체되어 있다.</p>
+<p>만일 a 가 어디에 배치되는지 위치가 확정이 된다면,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ readelf -r s.o
+  Offset          Info           Type           Sym. Value    Sym. Name + Addend
+00000000000a  000300000002 R_X86_64_PC32     0000000000000000 .data - 4
+</pre></div>
+</div>
+<p>위와 같이 해당 부분을 R_X86_64_PC32의 형태로 재배치 하라고 써져 있다. (위 objdump 출력에도 나와있다.) 레퍼런스에 따르면 R_X86_64_PC32은 해당 부분 4 바이트 영역을 S + A - P를 계산한 값으로 치환해라 라는 의미이다.</p>
+<p>이 때 S, A, P 는 각각</p>
+<ul class="simple">
+<li><p>S : 재배치 후에 해당 심볼의 실제 위치</p></li>
+<li><p>P : 재배치 해야하는 부분의 위치</p></li>
+<li><p>A : 더해지는 값으로, 재배치 테이블에서 그 값을 확인할 수 있다.</p></li>
+</ul>
+<p>일단 readelf를 통해 확인했을 때 일단 A 의 값은 -4 임을 알 수 있다(Addend 부분). 나머지 부분은 링킹 후에 심볼들의 위치가 정해져야지 알 수 있다.</p>
+<p>따라서 간단히 int main{} 만 있는 파일과 같이 링크해보도록 하자. nm 을 통해서 우리의 경우 a는 4010에 위치 되어 있는 것을 확인할 수 있다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nm s
+0000000000004010 d _ZL1a
+</pre></div>
+</div>
+<p>따라서 S는 0x4010이 된다.</p>
+<p>func2 는 1138 에 위치해있으므로 (마찬가지로 nm 을 통해서 확인 가능)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nm s
+0000000000001138 t _ZL5func2v
+</pre></div>
+</div>
+<p>P에서 A를 더한값이 재배치 해야 되는 부분 즉 func2의 위치인 0x1138이 되어야 함으로 P는 4를 더한 만큼인 0x1142가 된다. 따라서 P는 0x1142 이므로, S + A - P = 0x4010 - 0x4 - 0x1142 = 0x2ECA가 된다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0000000000001138</span> <span class="o">&lt;</span><span class="n">_ZL5func2v</span><span class="o">&gt;</span><span class="p">:</span>
+<span class="n">static</span> <span class="nb">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="n">static</span> <span class="nb">int</span> <span class="n">c</span><span class="p">;</span>
+
+<span class="n">static</span> <span class="nb">int</span> <span class="n">func2</span><span class="p">()</span> <span class="p">{</span>
+    <span class="mi">1138</span><span class="p">:</span>    <span class="n">f3</span> <span class="mi">0</span><span class="n">f</span> <span class="mi">1</span><span class="n">e</span> <span class="n">fa</span>              <span class="n">endbr64</span> 
+    <span class="mi">113</span><span class="n">c</span><span class="p">:</span>    <span class="mi">55</span>                       <span class="n">push</span>   <span class="o">%</span><span class="n">rbp</span>
+    <span class="mi">113</span><span class="n">d</span><span class="p">:</span>    <span class="mi">48</span> <span class="mi">89</span> <span class="n">e5</span>                 <span class="n">mov</span>    <span class="o">%</span><span class="n">rsp</span><span class="p">,</span><span class="o">%</span><span class="n">rbp</span>
+  <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+    <span class="mi">1140</span><span class="p">:</span>    <span class="mi">8</span><span class="n">b</span> <span class="mi">15</span> <span class="n">ca</span> <span class="mi">2</span><span class="n">e</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="n">mov</span>    <span class="mh">0x2eca</span><span class="p">(</span><span class="o">%</span><span class="n">rip</span><span class="p">),</span><span class="o">%</span><span class="n">edx</span>        <span class="c1">## 4010 &lt;_ZL1a&gt;</span>
+    <span class="mi">1146</span><span class="p">:</span>    <span class="mi">8</span><span class="n">b</span> <span class="mi">05</span> <span class="n">c8</span> <span class="mi">2</span><span class="n">e</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="n">mov</span>    <span class="mh">0x2ec8</span><span class="p">(</span><span class="o">%</span><span class="n">rip</span><span class="p">),</span><span class="o">%</span><span class="n">eax</span>        <span class="c1">## 4014 &lt;b&gt;</span>
+    <span class="mi">114</span><span class="n">c</span><span class="p">:</span>    <span class="mi">01</span> <span class="n">d0</span>                    <span class="n">add</span>    <span class="o">%</span><span class="n">edx</span><span class="p">,</span><span class="o">%</span><span class="n">eax</span>
+    <span class="mi">114</span><span class="n">e</span><span class="p">:</span>    <span class="mi">89</span> <span class="mi">05</span> <span class="n">c8</span> <span class="mi">2</span><span class="n">e</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="n">mov</span>    <span class="o">%</span><span class="n">eax</span><span class="p">,</span><span class="mh">0x2ec8</span><span class="p">(</span><span class="o">%</span><span class="n">rip</span><span class="p">)</span>        <span class="c1">## 401c &lt;_ZL1c&gt;</span>
+  <span class="k">return</span> <span class="n">c</span><span class="p">;</span>
+    <span class="mi">1154</span><span class="p">:</span>    <span class="mi">8</span><span class="n">b</span> <span class="mi">05</span> <span class="n">c2</span> <span class="mi">2</span><span class="n">e</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="n">mov</span>    <span class="mh">0x2ec2</span><span class="p">(</span><span class="o">%</span><span class="n">rip</span><span class="p">),</span><span class="o">%</span><span class="n">eax</span>        <span class="c1">## 401c &lt;_ZL1c&gt;</span>
+<span class="p">}</span>
+    <span class="mi">115</span><span class="n">a</span><span class="p">:</span>    <span class="mi">5</span><span class="n">d</span>                       <span class="n">pop</span>    <span class="o">%</span><span class="n">rbp</span>
+    <span class="mi">115</span><span class="n">b</span><span class="p">:</span>    <span class="n">c3</span>                       <span class="n">retq</span>   
+</pre></div>
+</div>
+<p>실제로 해당 부분이 ca 2e 00 00 으로 바뀐 것을 확인할 수 있다. 리틀 엔디언임을 고려하면 해당 값이 0x2ECA 임을 알 수 있다. <code class="docutils literal notranslate"><span class="pre">0x2eca(%rip)</span></code>의 의미는 RIP 레지스터에서 0x2ECA만큼 떨어진 곳에서 4 바이트 만큼 읽어서 EDX 레지스터에 저장하라는 의미 이다. 해당 명령어를 실행할 때 RIP에는 다음에 실행할 명령어의 위치가 들어가 있으니,  0x1146 + 0x2ECA = 0x4010 에 위치한 곳의 4바이트를 읽어들인다. 즉 정확히 변수 a가 위치해있는 곳을 읽게 된다.</p>
+<p>이번에는 func3를 보자.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mi">45</span><span class="p">:</span>    <span class="mi">48</span> <span class="mi">89</span> <span class="n">e5</span>                 <span class="n">mov</span>    <span class="o">%</span><span class="n">rsp</span><span class="p">,</span><span class="o">%</span><span class="n">rbp</span>
+  <span class="n">a</span> <span class="o">+=</span> <span class="n">func2</span><span class="p">();</span>
+  <span class="mi">48</span><span class="p">:</span>    <span class="n">e8</span> <span class="n">b3</span> <span class="n">ff</span> <span class="n">ff</span> <span class="n">ff</span>           <span class="n">callq</span>  <span class="mi">0</span> <span class="o">&lt;</span><span class="n">_ZL5func2v</span><span class="o">&gt;</span>
+  <span class="mi">4</span><span class="n">d</span><span class="p">:</span>    <span class="mi">8</span><span class="n">b</span> <span class="mi">15</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="n">mov</span>    <span class="mh">0x0</span><span class="p">(</span><span class="o">%</span><span class="n">rip</span><span class="p">),</span><span class="o">%</span><span class="n">edx</span>        <span class="c1">## 53 &lt;_Z4funcv+0x13&gt;</span>
+            <span class="mi">4</span><span class="n">f</span><span class="p">:</span> <span class="n">R_X86_64_PC32</span>    <span class="o">.</span><span class="n">data</span><span class="o">-</span><span class="mh">0x4</span>
+  <span class="mi">53</span><span class="p">:</span>    <span class="mi">01</span> <span class="n">d0</span>                    <span class="n">add</span>    <span class="o">%</span><span class="n">edx</span><span class="p">,</span><span class="o">%</span><span class="n">eax</span>
+  <span class="mi">55</span><span class="p">:</span>    <span class="mi">89</span> <span class="mi">05</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="n">mov</span>    <span class="o">%</span><span class="n">eax</span><span class="p">,</span><span class="mh">0x0</span><span class="p">(</span><span class="o">%</span><span class="n">rip</span><span class="p">)</span>        <span class="c1">## 5b &lt;_Z4funcv+0x1b&gt;</span>
+            <span class="mi">57</span><span class="p">:</span> <span class="n">R_X86_64_PC32</span>    <span class="o">.</span><span class="n">data</span><span class="o">-</span><span class="mh">0x4</span>
+  <span class="n">a</span> <span class="o">+=</span> <span class="n">func3</span><span class="p">();</span>
+  <span class="mi">5</span><span class="n">b</span><span class="p">:</span>    <span class="n">e8</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>           <span class="n">callq</span>  <span class="mi">60</span> <span class="o">&lt;</span><span class="n">_Z4funcv</span><span class="o">+</span><span class="mh">0x20</span><span class="o">&gt;</span>
+            <span class="mi">5</span><span class="n">c</span><span class="p">:</span> <span class="n">R_X86_64_PLT32</span>    <span class="n">_Z5func3v</span><span class="o">-</span><span class="mh">0x4</span>
+  <span class="mi">60</span><span class="p">:</span>    <span class="mi">8</span><span class="n">b</span> <span class="mi">15</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="n">mov</span>    <span class="mh">0x0</span><span class="p">(</span><span class="o">%</span><span class="n">rip</span><span class="p">),</span><span class="o">%</span><span class="n">edx</span>        <span class="c1">## 66 &lt;_Z4funcv+0x26&gt;</span>
+            <span class="mi">62</span><span class="p">:</span> <span class="n">R_X86_64_PC32</span>    <span class="o">.</span><span class="n">data</span><span class="o">-</span><span class="mh">0x4</span>
+  <span class="mi">66</span><span class="p">:</span>    <span class="mi">01</span> <span class="n">d0</span>                    <span class="n">add</span>    <span class="o">%</span><span class="n">edx</span><span class="p">,</span><span class="o">%</span><span class="n">eax</span>
+  <span class="mi">68</span><span class="p">:</span>    <span class="mi">89</span> <span class="mi">05</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="n">mov</span>    <span class="o">%</span><span class="n">eax</span><span class="p">,</span><span class="mh">0x0</span><span class="p">(</span><span class="o">%</span><span class="n">rip</span><span class="p">)</span>        <span class="c1">## 6e &lt;_Z4funcv+0x2e&gt;</span>
+            <span class="mi">6</span><span class="n">a</span><span class="p">:</span> <span class="n">R_X86_64_PC32</span>    <span class="o">.</span><span class="n">data</span><span class="o">-</span><span class="mh">0x4</span>
+  <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+  <span class="mi">6</span><span class="n">e</span><span class="p">:</span>    <span class="mi">8</span><span class="n">b</span> <span class="mi">05</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>        <span class="n">mov</span>    <span class="mh">0x0</span><span class="p">(</span><span class="o">%</span><span class="n">rip</span><span class="p">),</span><span class="o">%</span><span class="n">eax</span>        <span class="c1">## 74 &lt;_Z4funcv+0x34&gt;</span>
+            <span class="mi">70</span><span class="p">:</span> <span class="n">R_X86_64_PC32</span>    <span class="o">.</span><span class="n">data</span><span class="o">-</span><span class="mh">0x4</span>
+<span class="p">}</span>
+  <span class="mi">74</span><span class="p">:</span>    <span class="mi">5</span><span class="n">d</span>                       <span class="n">pop</span>    <span class="o">%</span><span class="n">rbp</span>
+  <span class="mi">75</span><span class="p">:</span>    <span class="n">c3</span>                       <span class="n">retq</span>   
+</pre></div>
+</div>
+<p>먼저 static 함수인 func2 를 호출하는 부분부터 보자.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+=</span> <span class="n">func2</span><span class="p">();</span>
+  <span class="mi">48</span><span class="p">:</span>    <span class="n">e8</span> <span class="n">b3</span> <span class="n">ff</span> <span class="n">ff</span> <span class="n">ff</span>           <span class="n">callq</span>  <span class="mi">0</span> <span class="o">&lt;</span><span class="n">_ZL5func2v</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>놀랍게도 이 부분의 경우 재배치가 지정되지 않고 실제 func2의 위치가 그대로 들어가 있음을 알 수 있다. 왜냐하면 이 callq의 경우 현재의 RIP에서 상대 위치를 받는데, 0xFFFFFFB3 가 2 의 보수 표현법으로 -0x4D 이므로, 정확히 주소값 0을 의미한다(0x4D - 0x4D = 0). 그리고 실제로 0번에 func2 함수가 위치하고 있다. 그 이유는 static 함수의 경우 내부 링크 방식이기 때문에 TU밖에서 참조될 일이 없기 때문이다. 이 때문에 컴파일 타임에 함수의 위치를 확정시킬 수 있다.</p>
+<p>반면에 외부 링크 방식으로 된 일반적인 func3 함수를 호출하는 부분을 보자.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+=</span> <span class="n">func3</span><span class="p">();</span>
+  <span class="mi">5</span><span class="n">b</span><span class="p">:</span>    <span class="n">e8</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span> <span class="mi">00</span>           <span class="n">callq</span>  <span class="mi">60</span> <span class="o">&lt;</span><span class="n">_Z4funcv</span><span class="o">+</span><span class="mh">0x20</span><span class="o">&gt;</span>
+            <span class="mi">5</span><span class="n">c</span><span class="p">:</span> <span class="n">R_X86_64_PLT32</span>    <span class="n">_Z5func3v</span><span class="o">-</span><span class="mh">0x4</span>
+</pre></div>
+</div>
+<p>이 경우 R_X86_64_PLT32의 형태로 링크를 하고 있다. R_X86_64_PLT32의 경우 <code class="docutils literal notranslate"><span class="pre">프로시져</span> <span class="pre">링크</span> <span class="pre">테이블(procedure</span> <span class="pre">linkage</span> <span class="pre">table)</span></code>을 사용한 링킹 방식으로 <code class="docutils literal notranslate"><span class="pre">동적</span> <span class="pre">링크</span> <span class="pre">방식(dynamic</span> <span class="pre">linking)</span></code>에서 사용된다. 하지만 동적 링크 방식을 사용하지 않았을 경우, 그냥 R_X86_64_PC32 와 동일하다고 보면 된다. 이 예제에서는 실행 파일을 생성하기 위해 동적 링크 방식을 사용하지 않았으므로 그냥 R_X86_64_PC32 와 같은 식으로 계산된다.</p>
+<p>실제로 완성된 코드를 살펴보자면</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="mi">1194</span><span class="p">:</span>    <span class="n">e8</span> <span class="n">c4</span> <span class="n">ff</span> <span class="n">ff</span> <span class="n">ff</span>           <span class="n">callq</span>  <span class="mi">115</span><span class="n">d</span> <span class="o">&lt;</span><span class="n">_Z5func3v</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>와 같이 되어 있는데, 00 00 00 00 부분이 현재의 RIP 로 부터 상대적 위치값으로 변경되어 있음을 알 수 있다.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1520,17 +1667,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../02%20Compile.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="03%20Link.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Compile</p>
+            <p class="prev-next-title">Link</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="01%20Storage%20Class%20Specifier.html" title="next page">
+    <a class='right-next' id="next-link" href="05%20LinkingMethod.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Storage Class Specifier</p>
+        <p class="prev-next-title">Linking Method</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

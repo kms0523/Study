@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Linking &#8212; MS Study Documents</title>
+    <title>Static Library &#8212; MS Study Documents</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="Storage Class Specifier" href="01%20Storage%20Class%20Specifier.html" />
-    <link rel="prev" title="Compile" href="../02%20Compile.html" />
+    <link rel="next" title="Shared Library" href="07%20Shared%20Library.html" />
+    <link rel="prev" title="Linking Method" href="05%20LinkingMethod.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -989,7 +989,7 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3 current active has-children">
-      <a class="current reference internal" href="#">
+      <a class="reference internal" href="Linking.html">
        Linking
       </a>
       <input checked="" class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
@@ -997,7 +997,7 @@ const thebe_selector_output = ".output, .cell_output"
        <i class="fas fa-chevron-down">
        </i>
       </label>
-      <ul>
+      <ul class="current">
        <li class="toctree-l4">
         <a class="reference internal" href="01%20Storage%20Class%20Specifier.html">
          Storage Class Specifier
@@ -1023,8 +1023,8 @@ const thebe_selector_output = ".output, .cell_output"
          Linking Method
         </a>
        </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="06%20Static%20Library.html">
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
          Static Library
         </a>
        </li>
@@ -1421,7 +1421,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../../../_sources/sources/02 programming/01 C++/01 Build/03 Linking/Linking.md"
+        <a href="../../../../../_sources/sources/02 programming/01 C++/01 Build/03 Linking/06 Static Library.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1458,23 +1458,60 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   정적 라이브러리 만들기
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Linking</h1>
+                <h1>Static Library</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   정적 라이브러리 만들기
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -1482,15 +1519,121 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="linking">
-<h1>Linking<a class="headerlink" href="#linking" title="Permalink to this headline">#</a></h1>
-<p>마지막으로 링킹 단계에서는 컴파일러가 생성한 목적 파일들과 외부 라이브러리 파일들을 모아서 실행 파일을 생성한다.</p>
-<p>링크란 수많은 목적 코드들이 프로세스 메모리 가상 공간에 적재되었을 때 서로가 맞물릴 수 있도록 각각의 주소를 변경해주는 것을 의미한다.</p>
-<p>이 링킹 과정이 끝나게 되면 사용하는 시스템에 따라서 각기 다른 형식으로 파일들을 생성하게 된다. 윈도우즈 계열의 시스템의 경우 <code class="docutils literal notranslate"><span class="pre">portable</span> <span class="pre">executable</span> <span class="pre">(PE)</span></code>이라 불리는 PE 형식으로 실행 파일을 생성하고, 리눅스 계열의 시스템의 경우 <code class="docutils literal notranslate"><span class="pre">executable</span> <span class="pre">and</span> <span class="pre">linkable</span> <span class="pre">format</span> <span class="pre">(ELF)</span></code>이라 불리는 ELF 형식으로 실행 파일을 생성한다.</p>
-<p>이 두 실행 파일은 파일 형식이 다르기 때문에 같은 코드를 컴파일 하더라도 윈도우즈의 PE 파일을 리눅스에서 일반적으로 실행할 수 없고, 반대로 윈도우즈에서 리눅스의 ELF 파일을 실행할 수 없다.</p>
-<p>링킹 과정에서 목적 코드들에 정의된 심볼들 (함수들이나 객체들)의 위치를 확정 시킨다. 이 때 C++에서 심볼들의 위치들을 정할 때 어떠한 방식으로 정할지 알려주는 키워들이 있는데 이를 <code class="docutils literal notranslate"><span class="pre">저장</span> <span class="pre">방식</span> <span class="pre">지정자</span> <span class="pre">(storage</span> <span class="pre">class</span> <span class="pre">specifier)</span></code>라고 한다.</p>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="static-library">
+<h1>Static Library<a class="headerlink" href="#static-library" title="Permalink to this headline">#</a></h1>
+<p>라이브러리란 프로그램이 동작하기 위해 필요한 외부 목적 코드들이다.예를 들어서 C++에서 iostream 헤더파일을 include 했다면, 이 프로그램이 실행하기 위해서는 iostream 라이브러리가 있어야 한다.</p>
+<p>이 때 정적 라이브러리는 우리가 필요로 하는 라이브러리가 링킹 후에 완성된 프로그램 안에 포함된다고 이해할 수 있다. 쉽게 말해 실행 파일 자체에 해당 라이브러리 코드가 딱 박혀서 있기 때문에 정적(static)이라고 하는 것이다. 예를 들어서 어떤 프로그램이 A라는 라이브러리와 B라는 라이브러리를 사용하고 있다면 프로그램의 어셈블리를 출력하였을 때 A와 B 라이브러리의 모든 코드들이 들어있게 된다.</p>
+<p>어떻게 생각하면 당연한 일이다. 프로그램을 실행하기 위해선 당연히 해당 프로그램이 필요로 하는 코드들이 프로그램 안에 있어야 되기 때문이다. 정적 라이브러리가 어떻게 링크 되는지 GCC 컴파일러를 사용해서 간단한 정적 라이브러리를 만들어보면서 확인해보자.</p>
+<section id="id1">
+<h2>정적 라이브러리 만들기<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>예를 들어서 foo 라는 함수를 제공하는 <a class="reference external" href="http://foo.cc">foo.cc</a> 파일과 bar 라는 함수를 제공하는 <a class="reference external" href="http://bar.cc">bar.cc</a> 파일이 있다고 하자.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// bar.h</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">bar</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span>
+<span class="c1">// bar.cc</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">bar</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="w"> </span>
+<span class="c1">// foo.h</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="p">();</span><span class="w"></span>
+<span class="w"> </span>
+<span class="c1">// foo.cc</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;bar.h&quot;</span><span class="cp"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">bar</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">x</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
 </div>
+<p>이 두 파일들을 각각 컴파일 하면 foo.o 와 bar.o 라는 목적 코드가 생성이 된다. 만일 이 두 함수를 제공하는 정적 라이브러리를 만들기 위해서는, 이 두 목적 파일들을 하나로 묶어주기만 하면 된다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ar crf libfoobar.a foo.o bar.o
+</pre></div>
+</div>
+<p>다음 명령어를 통해 libfoobar.a 라는 정적 라이브러리 파일이 만들 수 있다. 리눅스에선 통상적으로 정적 라이브러리 파일은 .a 의 확장자를 가진다. 이 libfoobar.a 은 거창한 것이 아니고 그냥 foo.o의 내용과 bar.o의 내용을 하나로 합쳐놓은 것이다. 실제로 objdump 로 libfoobar.a 의 내용을 열어보면 foo.o와 bar.o가 하나로 합쳐진 파일인걸 알 수 있다. (마치 리눅스에서 tar 로 파일들을 합친 것과 비슷하다)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>objdump -S libfoobar.a
+In archive libfoobar.a:
+
+foo.o:     file format elf64-x86-64
+
+Disassembly of section .text:
+
+0000000000000000 &lt;_Z3foov&gt;:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	e8 00 00 00 00       	callq  d &lt;_Z3foov+0xd&gt;
+   d:	8b 05 00 00 00 00    	mov    0x0(%rip),%eax        ## 13 &lt;_Z3foov+0x13&gt;
+  13:	83 c0 01             	add    $0x1,%eax
+  16:	89 05 00 00 00 00    	mov    %eax,0x0(%rip)        ## 1c &lt;_Z3foov+0x1c&gt;
+  1c:	b8 01 00 00 00       	mov    $0x1,%eax
+  21:	5d                   	pop    %rbp
+  22:	c3                   	retq   
+
+bar.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 &lt;_Z3barv&gt;:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	55                   	push   %rbp
+   5:	48 89 e5             	mov    %rsp,%rbp
+   8:	90                   	nop
+   9:	5d                   	pop    %rbp
+   a:	c3                   	retq   
+</pre></div>
+</div>
+<p>이 정적 라이브러리를 사용하는 방법은 간단하다.</p>
+<p>예를 들어서 <a class="reference external" href="http://main.cc">main.cc</a> 라는 파일에서 foo 함수를 사용하고 싶다고 하자. 그렇다면 우리가 필요한 것은 foo 함수가 선언 되어 있는 헤더파일 하나 뿐이다.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;foo.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">foo</span><span class="p">();</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>통상적인 상황이라면 main 을 컴파일 하면서 실행파일을 생성할 때, <a class="reference external" href="http://foo.cc">foo.cc</a> 코드와 <a class="reference external" href="http://bar.cc">bar.cc</a> 코드를 같이 컴파일 해서 링킹해야 한다. 하지만 우리는 이미 <a class="reference external" href="http://foo.cc">foo.cc</a> 와 <a class="reference external" href="http://bar.cc">bar.cc</a> 가 이미 컴파일 되어 있는 libfoobar.a 라는 라이브러리가 있기 때문에 굳이 이들을 다시 컴파일 할 필요가 없다.</p>
+<p>따라서 실행 파일을 생성 시에 링크만 해주면 된다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ g++ main.cc libfoobar.a -o main 
+</pre></div>
+</div>
+<p>실제 main 의 내용을 objdump 로 살펴보면</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>objdump -S main
+... (생략) ...
+0000000000001129 &lt;main&gt;:
+    1129:	f3 0f 1e fa          	endbr64 
+    112d:	55                   	push   %rbp
+    112e:	48 89 e5             	mov    %rsp,%rbp
+    1131:	e8 07 00 00 00       	callq  113d &lt;_Z3foov&gt;
+    1136:	b8 00 00 00 00       	mov    $0x0,%eax
+    113b:	5d                   	pop    %rbp
+    113c:	c3                   	retq   
+
+000000000000113d &lt;_Z3foov&gt;:
+    113d:	f3 0f 1e fa          	endbr64 
+    1141:	55                   	push   %rbp
+    1142:	48 89 e5             	mov    %rsp,%rbp
+    1145:	e8 16 00 00 00       	callq  1160 &lt;_Z3barv&gt;
+    114a:	8b 05 c0 2e 00 00    	mov    0x2ec0(%rip),%eax        ## 4010 &lt;x&gt;
+    1150:	83 c0 01             	add    $0x1,%eax
+    1153:	89 05 b7 2e 00 00    	mov    %eax,0x2eb7(%rip)        ## 4010 &lt;x&gt;
+    1159:	b8 01 00 00 00       	mov    $0x1,%eax
+    115e:	5d                   	pop    %rbp
+    115f:	c3                   	retq   
+
+0000000000001160 &lt;_Z3barv&gt;:
+    1160:	f3 0f 1e fa          	endbr64 
+    1164:	55                   	push   %rbp
+    1165:	48 89 e5             	mov    %rsp,%rbp
+    1168:	90                   	nop
+    1169:	5d                   	pop    %rbp
+    116a:	c3                   	retq   
+    116b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+</pre></div>
+</div>
+<p>위 처럼 libfoobar.a의 내용이 그대로 포함되어 있는것을 볼 수 있다.</p>
+<p>이렇게 정적 라이브러리는 링크 타임에 바인딩 된다.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1520,17 +1663,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../02%20Compile.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="05%20LinkingMethod.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Compile</p>
+            <p class="prev-next-title">Linking Method</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="01%20Storage%20Class%20Specifier.html" title="next page">
+    <a class='right-next' id="next-link" href="07%20Shared%20Library.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Storage Class Specifier</p>
+        <p class="prev-next-title">Shared Library</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

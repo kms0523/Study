@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Linking &#8212; MS Study Documents</title>
+    <title>Linking Method &#8212; MS Study Documents</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="Storage Class Specifier" href="01%20Storage%20Class%20Specifier.html" />
-    <link rel="prev" title="Compile" href="../02%20Compile.html" />
+    <link rel="next" title="Static Library" href="06%20Static%20Library.html" />
+    <link rel="prev" title="Relocation" href="04%20Relocation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -989,7 +989,7 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3 current active has-children">
-      <a class="current reference internal" href="#">
+      <a class="reference internal" href="Linking.html">
        Linking
       </a>
       <input checked="" class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
@@ -997,7 +997,7 @@ const thebe_selector_output = ".output, .cell_output"
        <i class="fas fa-chevron-down">
        </i>
       </label>
-      <ul>
+      <ul class="current">
        <li class="toctree-l4">
         <a class="reference internal" href="01%20Storage%20Class%20Specifier.html">
          Storage Class Specifier
@@ -1018,8 +1018,8 @@ const thebe_selector_output = ".output, .cell_output"
          Relocation
         </a>
        </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="05%20LinkingMethod.html">
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
          Linking Method
         </a>
        </li>
@@ -1421,7 +1421,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../../../_sources/sources/02 programming/01 C++/01 Build/03 Linking/Linking.md"
+        <a href="../../../../../_sources/sources/02 programming/01 C++/01 Build/03 Linking/05 LinkingMethod.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1470,7 +1470,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Linking</h1>
+                <h1>Linking Method</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1482,15 +1482,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="linking">
-<h1>Linking<a class="headerlink" href="#linking" title="Permalink to this headline">#</a></h1>
-<p>마지막으로 링킹 단계에서는 컴파일러가 생성한 목적 파일들과 외부 라이브러리 파일들을 모아서 실행 파일을 생성한다.</p>
-<p>링크란 수많은 목적 코드들이 프로세스 메모리 가상 공간에 적재되었을 때 서로가 맞물릴 수 있도록 각각의 주소를 변경해주는 것을 의미한다.</p>
-<p>이 링킹 과정이 끝나게 되면 사용하는 시스템에 따라서 각기 다른 형식으로 파일들을 생성하게 된다. 윈도우즈 계열의 시스템의 경우 <code class="docutils literal notranslate"><span class="pre">portable</span> <span class="pre">executable</span> <span class="pre">(PE)</span></code>이라 불리는 PE 형식으로 실행 파일을 생성하고, 리눅스 계열의 시스템의 경우 <code class="docutils literal notranslate"><span class="pre">executable</span> <span class="pre">and</span> <span class="pre">linkable</span> <span class="pre">format</span> <span class="pre">(ELF)</span></code>이라 불리는 ELF 형식으로 실행 파일을 생성한다.</p>
-<p>이 두 실행 파일은 파일 형식이 다르기 때문에 같은 코드를 컴파일 하더라도 윈도우즈의 PE 파일을 리눅스에서 일반적으로 실행할 수 없고, 반대로 윈도우즈에서 리눅스의 ELF 파일을 실행할 수 없다.</p>
-<p>링킹 과정에서 목적 코드들에 정의된 심볼들 (함수들이나 객체들)의 위치를 확정 시킨다. 이 때 C++에서 심볼들의 위치들을 정할 때 어떠한 방식으로 정할지 알려주는 키워들이 있는데 이를 <code class="docutils literal notranslate"><span class="pre">저장</span> <span class="pre">방식</span> <span class="pre">지정자</span> <span class="pre">(storage</span> <span class="pre">class</span> <span class="pre">specifier)</span></code>라고 한다.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="linking-method">
+<h1>Linking Method<a class="headerlink" href="#linking-method" title="Permalink to this headline">#</a></h1>
+<p>컴파일러가 여러 목적 파일들을 링킹하는 방식은 <code class="docutils literal notranslate"><span class="pre">정적</span> <span class="pre">링킹(static</span> <span class="pre">linking)</span></code>과 <code class="docutils literal notranslate"><span class="pre">동적</span> <span class="pre">링킹(dynamic</span> <span class="pre">linking)</span></code> 두 가지로 구분된다. 정적 링킹은 <code class="docutils literal notranslate"><span class="pre">정적</span> <span class="pre">라이브러리(static</span> <span class="pre">library)</span></code>를 링킹하는 방식이고, 동적 링킹은 <code class="docutils literal notranslate"><span class="pre">동적</span> <span class="pre">라이브러리(dynamic</span> <span class="pre">library)</span></code>, 다른 말로 <code class="docutils literal notranslate"><span class="pre">공유</span> <span class="pre">라이브러리(shared</span> <span class="pre">library)</span></code>를 링킹하는 방식이다.</p>
+<p>이 두 라이브러리의 차이를 이해하기 위해서 먼저 정적 라이브러리가 뭔지 알아보자.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1520,17 +1515,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../02%20Compile.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="04%20Relocation.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Compile</p>
+            <p class="prev-next-title">Relocation</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="01%20Storage%20Class%20Specifier.html" title="next page">
+    <a class='right-next' id="next-link" href="06%20Static%20Library.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Storage Class Specifier</p>
+        <p class="prev-next-title">Static Library</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
