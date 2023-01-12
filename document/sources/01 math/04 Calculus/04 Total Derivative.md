@@ -94,7 +94,7 @@ $f:U \rightarrow V$과 $g:V \rightarrow\R^p$가 있을 때, $a \in U$에서 $f$�
 
 이 때, 다음을 증명하여라.
 
-$$ \begin{gathered} f \circ g \text{ is diffrentiable at } a \\ D^{(g \circ f)(a)} = D^{g(f(a))} \circ D^{f(a)} \end{gathered} $$
+$$ \begin{gathered} g \circ f \text{ is diffrentiable at } a \\ D^{(g \circ f)(a)} = D^{g(f(a))} \circ D^{f(a)} \end{gathered} $$
 
 **Proof**
 
@@ -102,7 +102,7 @@ $$ \begin{gathered} f \circ g \text{ is diffrentiable at } a \\ D^{(g \circ f)(a
 
 $$ \begin{gathered} r(h) = f(a+h) - f(a) - D^{f(a)}(h) \\ s(h) = g(f(a)+h) - g(f(a)) - D^{g(f(a))}(h) \end{gathered} $$
 
-따라서, 다음이 성립한다.
+따라서, $r,s$의 정의에 의해 다음이 성립한다.
 
 $$ \begin{aligned} g(f(a+h)) &= g(f(a) + r(h) + D^{f(a)}(h)) \\&= g(f(a) + \Delta f) \\&= g(f(a)) + D^{g(f(a))}(\Delta f) + s(\Delta f)  \end{aligned} $$
 

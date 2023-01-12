@@ -10,7 +10,7 @@ $$ f'(a) := \lim_{h \rightarrow 0} \frac{1}{h}(f(a + h) - f(a)) $$
 > {cite}`hubbard` chap 1.7
 
 ### 참고1
-극한값이 존재하는 경우 미분가능하다고 한다.
+극한값이 존재하는 경우 `미분가능(differentiable)`하다고 한다.
 
 ### 참고2
 $f'$은 $U$의 변화량과 그에 따른 $f$의 변화량의 비율의 극한이다.
@@ -79,22 +79,84 @@ $$ \lim_{h \rightarrow 0} \frac{1}{|h|} \Big( f(a+h)-f(a)-D(h) \Big) = \lim_{h \
 즉, 차이가 선형보다 작은 경우 위의 식을 만족시킨다.
 
 ### 명제1(Chain Rule)
-미분 가능한 두 함수 $f(x),g(x)$가 있을 때, 다음을 증명하여라.
+$\R$의 open set $U,V$와 함수 $f : U \rightarrow V, g : V \rightarrow \R$이 있다고 하자.
 
-$$ \frac{d(f \circ g)(x)}{dx} = (f' \circ g)(x)g'(x)  $$
+$f$가 $a \in U$에서 differentiable하고 $g$가 $f(a) \in V$에서 differentiable할 때, 다음을 증명하여라.
 
-
-$$ \frac{d(f \circ g)}{dx} = \frac{df}{dg}\frac{dg}{dx} $$
+$$ \begin{gathered} g \circ f \text{ is diffrentiable at } a \\ (g \circ f)'(a) =g'(f(a))f'(a) \end{gathered} $$
 
 **Proof**
 
-Taylor series expansion에 의해 다음이 성립한다.
+함수 $r,s : \R \rightarrow \R$를 다음과 같이 정의하자.
 
-$$ \begin{aligned} g(x+h) &= g(x) + hg'(x) + O(h^2) \\&= g(x) + h(g'(x) + O(h)) \\&= g(x) + \Delta g \\ f(g(x+h)) &= f(g(x) + \Delta g) \\&= f(g(x)) + \Delta gf'(g(x)) + O(\Delta g^2) \end{aligned}  $$
+$$ \begin{gathered} r(h) = f(a+h) - f(a) - f'(a)h \\ s(h) = g(f(a)+h) - g(f(a)) - g'(f(a))h \end{gathered} $$
 
-따라서, 미분의 정의에 의해 다음이 성립한다.
+$r$의 정의에 의해 다음이 성립한다.
 
-$$ \begin{aligned} \frac{d}{dx} f(g(x)) &= \lim_{h \rightarrow 0} \frac{f(g(x+h)) - f(g(x))}{h} \\&= \lim_{h \rightarrow 0} \frac{\Delta gf'(g(x)) + O(\Delta g^2)}{h} \\&= \lim_{h \rightarrow 0} f'(g(x))(g'(x)+O(h)) + h(g'(x) + O(h))^2 \\&= f'(g(x))g'(x) \qed \end{aligned} $$
+$$ \begin{aligned} (g\circ f)(a+h) &= g(f(a+h)) \\&= g(f(a) + r(h) + f'(a)h) \\&= g(f(a) + \Delta f) \end{aligned} $$
+
+$s$의 정의에 의해 다음이 성립한다.
+
+$$ \begin{aligned} g(f(a) + \Delta f) = g(f(a)) + g'(f(a))\Delta f + s(\Delta f)  \end{aligned} $$
+
+이를 정리하면 다음이 성립한다.
+
+$$ \frac{(g\circ f)(a+h) - (g\circ f)(a)}{h}  = g'(f(a))\frac{\Delta f}{h} + \frac{s(\Delta f)}{h} $$
+
+이 때, 보조명제1.1,1.2에 의해 다음이 성립한다.
+
+$$ \lim_{h\rightarrow0}\frac{\Delta f}{h} = f'(a), \enspace \lim_{h\rightarrow0}\frac{s(\Delta f)}{h} = 0 $$
+
+따라서, 다음이 성립한다.
+
+$$ \lim_{h\rightarrow0}\frac{(g\circ f)(a+h) - (g\circ f)(a)}{h}  = g'(f(a))f'(a) $$
+
+미분의 정의에 의한 극한값이 존재함으로 다음이 성립한다.
+
+$$ \begin{gathered} g \circ f \text{ is diffrentiable at } a \\ (g \circ f)'(a) =g'(f(a))f'(a) \end{gathered} \qed $$
+
+
+#### 보조명제1.1
+다음을 증명하여라.
+
+$$ \lim_{h\rightarrow0}\frac{\Delta f}{h} = f'(a) $$
+
+**Proof**
+
+$\Delta f$를 풀어 쓰면 다음과 같다.
+
+$$ \Delta f = f(a+h) - f(a) $$
+
+$f$가 $a$에서 미분 가능함으로 다음이 성립한다.
+
+$$ \lim_{h\rightarrow0}\frac{\Delta f}{h} = f'(a) \qed $$
+
+#### 보조명제1.2
+다음을 증명하여라.
+
+$$ \lim_{h\rightarrow0}\frac{s(\Delta f)}{h} = 0 $$
+
+**Proof**
+
+다음과 같이 수식을 변경하자.
+
+$$ \begin{aligned} \frac{s(\Delta f)}{h} &= \frac{s(\Delta f)}{\Delta f}\frac{\Delta f}{h} \end{aligned}  $$
+
+$s$의 정의에 의해 다음이 성립한다.
+
+$$ \frac{s(\Delta f)}{\Delta f} = \frac{g(f(a)+\Delta f) - g(f(a))}{\Delta f}  - g'(f(a)) $$
+
+이 때, $\Delta f$의 정의에 의해 다음이 성립한다.
+
+$$ \lim_{h\rightarrow0} \Delta f = \lim_{h\rightarrow0} (f(a+h) - f(a)) = 0$$
+
+따라서 다음이 성립한다.
+
+$$ \begin{aligned} \lim_{h\rightarrow0}\frac{s(\Delta f)}{\Delta f} &= \lim_{h\rightarrow0}\left(\frac{g(f(a)+\Delta f) - g(f(a))}{\Delta f}  - g'(f(a))\right) \\&= \lim_{\Delta f \rightarrow0} \frac{g(f(a)+\Delta f) - g(f(a))}{\Delta f} - g'(f(a)) \\&= 0 \end{aligned} $$
+
+그럼으로, 다음이 성립한다.
+
+$$ \lim_{h\rightarrow0}\frac{s(\Delta f)}{h} = 0f'(a) = 0 \qed $$
 
 ### 명제2
 미분 가능한 두 함수 $f,g$가 있다고 하자.
