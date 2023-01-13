@@ -78,6 +78,15 @@ $$ \begin{aligned} \begin{bmatrix} \mathfrak{m}_\gamma(D_1^{f(a)}) &\cdots& \mat
 
 $$ D^{f(a)} = f \qed $$
 
+#### 따름명제2.1
+다음을 증명하여라.
+
+$$ J_f(a) = \mathfrak{m}_\beta^\gamma(f) $$
+
+**Proof**
+
+명제2와 Jacobian의 정의에 의해 자명하다.
+
 ### 명제3(Chain Rule)
 $\R^n$의 open set $U$와 $\R^m$의 open set $V$가 있다고 하자.
 
@@ -85,7 +94,7 @@ $f:U \rightarrow V$과 $g:V \rightarrow\R^p$가 있을 때, $a \in U$에서 $f$�
 
 이 때, 다음을 증명하여라.
 
-$$ \begin{gathered} f \circ g \text{ is diffrentiable at } a \\ D^{(g \circ f)(a)} = D^{g(f(a))} \circ D^{f(a)} \end{gathered} $$
+$$ \begin{gathered} g \circ f \text{ is diffrentiable at } a \\ D^{(g \circ f)(a)} = D^{g(f(a))} \circ D^{f(a)} \end{gathered} $$
 
 **Proof**
 
@@ -93,7 +102,7 @@ $$ \begin{gathered} f \circ g \text{ is diffrentiable at } a \\ D^{(g \circ f)(a
 
 $$ \begin{gathered} r(h) = f(a+h) - f(a) - D^{f(a)}(h) \\ s(h) = g(f(a)+h) - g(f(a)) - D^{g(f(a))}(h) \end{gathered} $$
 
-따라서, 다음이 성립한다.
+따라서, $r,s$의 정의에 의해 다음이 성립한다.
 
 $$ \begin{aligned} g(f(a+h)) &= g(f(a) + r(h) + D^{f(a)}(h)) \\&= g(f(a) + \Delta f) \\&= g(f(a)) + D^{g(f(a))}(\Delta f) + s(\Delta f)  \end{aligned} $$
 
@@ -107,7 +116,7 @@ $$ g(f(a+h)) - g(f(a)) - D^{g(f(a))}(D^{f(a)}(h)) = D^{g(f(a))}(r(h)) + s(\Delta
 
 이 때, 보조명제3.1에 의해 다음이 성립한다.
 
-$$ \lim_{\norm{h}\rightarrow 0} \frac{1}{\norm{h}} \left( g(f(a+h)) - g(f(a)) - D^{g(f(a))}(D^{f(a)}(h)) \right) = 0_n $$
+$$ \lim_{h\rightarrow 0_n} \frac{1}{\norm{h}} \left( g(f(a+h)) - g(f(a)) - D^{g(f(a))}(D^{f(a)}(h)) \right) = 0_n $$
 
 $D^{g(f(a))}$와 $D^{f(a)}$ 모두 linear map임으로 다음이 성립한다.
 
@@ -120,33 +129,33 @@ $$ \begin{gathered} f \circ g \text{ is diffrentiable at } a \\ D^{(g \circ f)(a
 #### 보조명제3.1
 다음을 증명하여라.
 
-$$ \lim_{\norm{h}\rightarrow 0} \frac{1}{\norm{h}} \left( g(f(a+h)) - g(f(a)) - D^{g(f(a))}(D^{f(a)}(h)) \right) = 0_n $$
+$$ \lim_{h\rightarrow 0_n} \frac{1}{\norm{h}} \left( g(f(a+h)) - g(f(a)) - D^{g(f(a))}(D^{f(a)}(h)) \right) = 0_n $$
 
 **Proof**
 
 $g(f(a+h)) - g(f(a)) - D^{g(f(a))}(D^{f(a)}(h)) = D^{g(f(a))}(r(h)) + s(\Delta f)$임으로 다음을 증명하자.
 
-$$ \lim_{\norm{h}\rightarrow 0} \frac{1}{\norm{h}} \left( D^{g(f(a))}(r(h)) + s(\Delta f) \right) = 0_n $$
+$$ \lim_{h\rightarrow 0_n} \frac{1}{\norm{h}} \left( D^{g(f(a))}(r(h)) + s(\Delta f) \right) = 0_n $$
 
 [첫번째 항]  
 다음이 성립한다. 
 
-$$ \lim_{\norm{h}\rightarrow 0} \frac{1}{\norm{h}}\norm{D^{g(f(a))}(r(h))} \le \norm{D^{g(f(a))}}\lim_{\norm{h}\rightarrow 0} \frac{1}{\norm{h}}\norm{r(h)} $$
+$$ \lim_{h\rightarrow 0_n} \frac{1}{\norm{h}}\norm{D^{g(f(a))}(r(h))} \le \norm{D^{g(f(a))}}\lim_{h\rightarrow 0_n} \frac{1}{\norm{h}}\norm{r(h)} $$
 
 전제에 의해 $f$는 $a$에서 differentiable함으로 다음이 성립한다.
 
-$$ \lim_{\norm{h}\rightarrow 0} \frac{r(h)}{\norm{h}} = 0_n \iff \lim_{\norm{h}\rightarrow 0} \frac{\norm{r(h)}}{\norm{h}} = 0 $$
+$$ \lim_{h\rightarrow 0_n} \frac{r(h)}{\norm{h}} = 0_n \iff \lim_{h\rightarrow 0_n} \frac{\norm{r(h)}}{\norm{h}} = 0 $$
 
 따라서, 위의 결과를 종합하면 다음이 성립한다.
 
-$$ \lim_{\norm{h}\rightarrow 0} \frac{1}{\norm{h}}D^{g(f(a))}(r(h)) = 0_n \qed $$
+$$ \lim_{h\rightarrow 0_n} \frac{1}{\norm{h}}D^{g(f(a))}(r(h)) = 0_n \qed $$
 
 [두번째 항]  
 $\Delta f$를 풀어 쓰면 다음과 같다.
 
 $$ s(\Delta f) = s(r(h) + D^{f(a)}(h))) $$
 
-전제에 의해 $\lim_{\norm{h}\rightarrow 0} \frac{r(h)}{\norm{h}} = 0_n$임으로 보조명제3.1.1에 의해 다음이 성립한다.
+전제에 의해 $\lim_{h\rightarrow 0_n} \frac{r(h)}{\norm{h}} = 0_n$임으로 보조명제3.1.1에 의해 다음이 성립한다.
 
 $$ \exist \delta_1 \in \R^+ \st \norm{h} < \delta_1 \implies \norm{r(h)} < \norm{h} $$
 
@@ -154,7 +163,7 @@ $$ \exist \delta_1 \in \R^+ \st \norm{h} < \delta_1 \implies \norm{r(h)} < \norm
 
 $$ \begin{aligned} \norm{r(h) + D^{f(a)}(h)} &\le \norm{r(h)} + \norm{D^{f(a)}(h)} \\&\le \norm{r(h)} + \norm{D^{f(a)}}\norm{h} \\&< \left(\norm{D^{f(a)}}+1\right)\norm{h} \end{aligned} $$
 
-이 떄, 전제에 의해 $\lim_{\norm{h}\rightarrow 0} \frac{s(h)}{\norm{h}} = 0_n$임으로 metric space의 limt의 정의에 의해 다음이 성립한다.
+이 떄, 전제에 의해 $\lim_{h\rightarrow 0_n} \frac{s(h)}{\norm{h}} = 0_n$임으로 metric space의 limt의 정의에 의해 다음이 성립한다.
 
 $$ \forall \epsilon \in \R^+, \quad \delta \in \R^+ \st \norm{h} < \delta \implies \norm{s(h)}<\epsilon\norm{h}$$
 
@@ -176,17 +185,17 @@ $$ \forall \epsilon' \in \R^+, \quad \delta_\epsilon \st \norm{h} < \delta_\epsi
 
 따라서, Metric space에서 limt의 정의에 의해 다음이 성립한다.
 
-$$ \lim_{\norm{h}\rightarrow0} \frac{s(r(h) + D^{f(a)}(h))}{\norm{h}} =0_n \qed $$
+$$ \lim_{h\rightarrow0_n} \frac{s(r(h) + D^{f(a)}(h))}{\norm{h}} =0_n \qed $$
 
 
 ##### 보조명제3.1.1
-$\lim_{\norm{h}\rightarrow0} \frac{f(h)}{\norm{(h)}} = 0$일 때, 다음을 증명하여라.
+$\lim_{h\rightarrow0_n} \frac{f(h)}{\norm{(h)}} = 0$일 때, 다음을 증명하여라.
 
 $$ \forall\epsilon \in \R^+, \quad \exist \delta \st \norm{h} < \delta \implies \norm{f(h)} < \epsilon\norm{h} $$
 
 **Proof**
 
-Metric space에서 limt의 정의에 의해 $\lim_{\norm{h}\rightarrow0} \frac{f(h)}{\norm{(h)}} = 0$면 다음이 성립한다.
+Metric space에서 limt의 정의에 의해 $\lim_{h\rightarrow0_n} \frac{f(h)}{\norm{(h)}} = 0$면 다음이 성립한다.
 
 $$ \forall\epsilon \in \R^+, \quad \exist \delta \st \norm{h} < \delta \implies \frac{\norm{f(h)}}{\norm{h}} < \epsilon $$
 
@@ -195,8 +204,8 @@ $$ \forall\epsilon \in \R^+, \quad \exist \delta \st \norm{h} < \delta \implies 
 $$ \forall\epsilon \in \R^+, \quad \exist \delta \st \norm{h} < \delta \implies \norm{f(h)} < \epsilon\norm{h} \qed $$
 
 > Reference  
-> {cite}`hubbard` Appendix4
-> [Note](https://faculty.math.illinois.edu/~carty/ChainRuleNotesSlides.pdf)
+> {cite}`hubbard` Appendix4  
+> [illinois note](https://faculty.math.illinois.edu/~carty/ChainRuleNotesSlides.pdf)
 
 ### 참고2
 Total derivative의 의미는 $a\in\R^n$에서 함수 $f: \R^n \rightarrow \R^m$에 대한 best linear approximation이다.

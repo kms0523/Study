@@ -1,27 +1,43 @@
 # Inverse Function Theorem
 함수 $f: \R^n \rightarrow \R^n$가 있다고 하자.
 
-$a \in \R^n$이 있을 때, 다음을 만족하는 $\R^n$의 open set $U$가 있다고 하자.
-
-$$ a \in U $$
-
-$f$가 $U$에서 continuously differentiable할 때, 다음을 증명하여라.
+$a \in \R^n$을 포함하는 $\R^n$의 open set $U$에서 $f$가 continuously differentiable할 때, 다음을 증명하여라.
 
 $$ \det(J_f(a)) \neq 0 \implies \exist  V,W \subseteq \R^n \st \begin{gathered} a \in V \subseteq U \\ f(a) \in W \subseteq \R^n \\ f|_{V \times W} \text{ is bijective} \\ \forall y \in W, (f|_{V \times W})^{-1} \text{ is differentiable} \end{gathered} $$
 
 **Proof**
 
-$L = J_f(a)$라고 하면 전제에 의해 다음이 성립한다.
+$\R^n$의 임의의 basis를 $\beta,\gamma$라할 때, 행렬 $L$을 다음과 같이 정의하자.
+
+$$ L := J_f(a) = \mathfrak{m}_{\beta}^{\gamma}(D^{f(a)}) $$
+
+그러면 전제에 의해 다음이 성립한다.
 
 $$ \exist L^{-1} $$
 
 이 떄, 다음과 같은 composite function을 생각해보자.
 
-$$ g :=L^{-1}\circ f : \R^n \rightarrow \R^n $$
+$$ L^{-1}\circ f : \R^n \rightarrow \R^n $$
 
-$\R^n$의 임의의 basis를 $\beta,\gamma$라하면 linear algebra에 의해 다음이 성립한다.
+Chain rule에 의해 다음이 성립한다.
 
-$$ \begin{aligned} J_{g}(a) &= \mathfrak{m}_\beta^\gamma(Dg(a)) \\&= \end{aligned}  $$
+$$ D^{(L^{-1}\circ f)(a)} = D^{L^{-1}(f(a))}\circ D^{f(a)}  $$
+
+Jacobian의 정의에 의해 다음이 성립한다.
+
+$$ J_{L^{-1}\circ f}(a) = J_{L^{-1}}(f(a))J_{f}(a) $$
+
+$L^{-1}$은 linear map임으로 total derivative의 성질에 의해 다음이 성립한다.
+
+$$ J_{L^{-1}}(f(a))J_{f}(a) = \mathfrak{m}_\beta^\gamma(L^{-1})L = I_n $$
+
+---
+
+$$ \lim_{h \rightarrow 0_n} \frac{1}{|h|}(g(a + h) - g(a) - D^{g(a)}(h)) = 0_n $$
+
+$$g := L^{-1}\circ f$$
+
+$$ g(a+h) \neq g(a) $$
 
 
 ### 보조정리1

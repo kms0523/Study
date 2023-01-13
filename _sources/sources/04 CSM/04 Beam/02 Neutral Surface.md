@@ -19,5 +19,15 @@
 ## Axis of the beam
 Neutral surface와 longituidnal plane of symmetry의 교선을 `axis of the beam`이라고 한다.
 
+Tranver load가 작용하면 neutral surface가 변형고 axis도 변형된다. 
+
+이 때, 변형된 axis를 `deflection curve`라고 부르기도 한다.
+
+일반적으로 beam의 coordinate system은 $x$축을 axis of the beam으로 두고 $y$축을 transverse direction으로 둔다. 
+
+이 경우에 $x-y$평면은 longitudinal plane of symmetry가 된다.
+
 > Reference  
 > {cite}`kelly` chap7.4.1
+
+
