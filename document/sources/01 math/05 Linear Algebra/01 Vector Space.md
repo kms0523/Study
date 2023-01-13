@@ -26,7 +26,7 @@ $$ F \text{ is a vector space over } \F $$
 **Proof**
 
 [$F$ is an Abellian group]  
--[commutative]
+-[commutative]  
 $F$의 정의에 의해 다음이 성립한다.
 
 $$ \forall f,g \in F, \quad \forall s \in S, \quad f(s), g(s) \in \F $$
@@ -37,7 +37,7 @@ $$ \forall f,g \in F, \quad \forall s \in S, \quad (f+g)(s) = f(s) + g(s) = g(s)
 
 따라서, $+_F$는 commtative binary operation이다. $\qed$
 
--[closed]
+-[closed]  
 $F$의 정의에 의해 다음이 성립한다.
 
 $$ \forall f,g \in F, \quad \forall s \in S, \quad f(s), g(s) \in \F $$
@@ -50,7 +50,7 @@ $$ \forall f,g \in F, \quad \forall s \in S, \quad (f+g)(s) \in \F $$
 
 $$ (f+g) \in F \qed $$
 
--[identity element]
+-[identity element]  
 $0_F$를 다음과 같이 정의하자
 
 $$ 0_F : S \rightarrow \F \st s \mapsto 0_\F $$
@@ -67,8 +67,7 @@ $$ \forall f \in F, \quad f + 0_\F = f $$
 
 $$ 0_F \text{ is an identity element of } F $$
 
--[inverse element]
-
+-[inverse element]  
 $f \in F$가 있다고 하자.
 
 이 떄, $-f$를 다음과 같이 정의하자.
@@ -83,7 +82,7 @@ $$ \forall s \in S, \quad (f+(-f))(s) = f(s) + (-f(s)) = 0_\F $$
 
 $$ \forall f \in F, \quad -f \text{ is an inverse element} \qed $$
 
-[결론]
+[결론]  
 $F$가 Abelian group이고 $\F$는 commutative ring임으로 다음이 성립한다.
 
 $$ F \text{ is a } \F-\text{module} $$

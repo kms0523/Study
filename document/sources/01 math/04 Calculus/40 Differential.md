@@ -6,6 +6,9 @@ diffrential $dx$를 independent variable이라고 할 때, differential $dy$는 
 
 $$ dy = f'(x)dx $$
 
+> Reference  
+> {cite}`stewart` Chapter 2.9  
+
 ## Multi Variable
 함수 $y = f(x_1, \cdots, x_n)$가 있다고 하자.
 
@@ -16,4 +19,4 @@ $$ dy = \frac{\partial f}{\partial x_i}dx_i $$
 이 때, $dy$를 total differential이라고도 한다.
 
 > Reference  
-> [book] (J. Stewart) Calculus p.972
+> {cite}`stewart` p.972
