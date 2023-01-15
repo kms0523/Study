@@ -7,11 +7,11 @@ Vector valued function $r : U \rightarrow\R^n$이 있을 때, 다음과 같이 �
 $$ C:= \img(r) $$
 
 ## Parametric Equations & Parameter
-$\R^n$의 임의의 basis를 $\beta$라 할 때, $r$은 다음과 같이 표현할 수 있다.
+$r$은 다음과 같다.
 
-$$ r = r^i\beta_i $$
+$$ r = (r^1, \cdots, r^n) $$
 
-$\beta$에 의존하여 결정되는 $r$의 componenet functions는 다음과 같다.
+$r$의 componenet functions는 다음과 같다.
 
 $$ r^i : U \rightarrow \R, \enspace i=1,\cdots,n $$
 

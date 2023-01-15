@@ -60,7 +60,7 @@ $$ \begin{gathered} \exist f:U\rightarrow V \st f\text{ is bijective} \\ \forall
 
 $m(x) = \norm{r'(x)}, n(y) = \norm{s'(y)} $으로 두면 substitution rule에 의해 다음이 성립한다.
 
-$$ \begin{aligned} \int^t_{\inf(V)} \norm{s'(y)}\thinspace dy &= \int^t_{\inf(V)} n(y)\thinspace dy \\&= \int^{f^{-1}(t)}_{f^{-1}(\inf(V))} n(f(x)) f'(x)\thinspace dx \\&= \int^t_{\inf(U)} \norm{r'(x)}\thinspace dx \qed \end{aligned}   $$
+$$ \begin{aligned} \int^t_{\inf(V)} \norm{s'(y)}\thinspace dy &= \int^t_{\inf(V)} n(y)\thinspace dy \\&= \int^{f^{-1}(t)}_{f^{-1}(\inf(V))} n(f(x)) f'(x)\thinspace dx \\&= \int^{f^{-1}(t)}_{f^{-1}(\inf(V))} \norm{s'(f(x))} f'(x)\thinspace dx \\&= \int^t_{\inf(U)} \norm{r'(x)}\thinspace dx \qed \end{aligned}   $$
 
 #### 참고
 즉, $s$는 parametric independent 하다.

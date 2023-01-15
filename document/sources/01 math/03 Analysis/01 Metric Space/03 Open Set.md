@@ -1,10 +1,10 @@
 # Open set
 ## 정의
-Metric space $M$과 $S \le M$이 있다고 하자.
+Metric space $M$과 submetric space $S$가 있다고 하자.
 
-$\forall x \in S$에 대해서 다음을 만족하면 $S$를 $M$에서의 `open set`이라고 한다.
+다음을 만족하면 $S$를 $M$에서의 `open set`이라고 한다.
 
-$$ \exist r \in \R^+ \quad s.t. \quad B_M(x,r) \le S $$
+$$ \forall x \in S, \quad \exist r \in \R^+ \quad s.t. \quad B_M(x,r) \le S $$
 
 > Reference  
 > {cite}`hubbard` chap 1.5  
