@@ -12,6 +12,11 @@ $x \in X$이기 때문에 $x$는 $U$에 원소일수도 있고 아닐 수도 있
 ### 참고2
 limit points는 `accumulation points` 또는 `cluster points`라고 부르기도 한다.
 
+### 참고3
+모든 limit point는 adherent point이다.
+
+하지만 그 역은 성립하지 않는다.
+
 ### 명제1
 Topological space $X$와 $X$의 subset $U$가 있다고 하자.
 
@@ -21,21 +26,11 @@ $$ U \text{ is closed} \iff U \text{ contains all of its limit points} $$
 
 **Proof**
 [$\implies$]  
-$x \in X$가 $U$의 limit point라고 할 때, 다음을 가정하자.
+adherent point의 성질에 의해 다음이 성립한다.
 
-$$ x \notin U $$
+$$ U \text{ is closed} \iff U \text{ contains all of its adherent points} $$
 
-$U$가 $X$의 closed set이고 $x \notin U$임으로, 다음이 성립한다.
-
-$$ \begin{aligned} & X-U \text{ is open set of } X \land x \in X-U \\\iff& X-U \in \Set{\mathcal{N_x}} \end{aligned}  $$
-
-이 때, $x$가 $U$의 limit point임으로 다음이 성립한다.
-
-$$ X-U \text{ contains a point of } U \text{ other than }x $$
-
-$X-U$가 $U$의 원소를 갖을 수는 없음으로 모순이 발생한다.
-
-따라서, proof by contradiction에 의해 $x \in U$이다.
+모든 limit point는 adherent point임으로, $U$가 모든 adherent point를 가지고 있다는 말은 모든 limit point를 가지고 있다는 말과 동치이다. $\qed$
 
 [$\impliedby$]  
 다음을 가정하자.
@@ -48,7 +43,8 @@ $$ \begin{aligned} & X-U \text{ is not a open set of } X \\\iff& \exist x \in X-
 
 위를 만족하는 $x\in X-U$에 대해 다음이 성립한다.
 
-$$ \begin{aligned} & \forall\mathcal{N_x}, \quad \mathcal{N_x} \cap U \text{ contains a point of } U \text{ other than } x \\\iff& x \text{ is a limit point of } U  \end{aligned} $$
+$$ \begin{aligned} & \forall\mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad \mathcal{N_x} \text{ contains a point of } U \text{ other than } x \\\iff& x \text{ is ab limit point of } U  \end{aligned} $$
+
 
 하지만 이는, $U$의 모든 limit point가 $U$에 포함된다는 전제에 모순이 된다.
 

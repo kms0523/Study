@@ -69,4 +69,78 @@ $d \neq 0$라 가정하자.
 따라서, proof by contradiction에 의해 $d =0$이다. $\quad\tiny\blacksquare$
 
 > Reference  
-> {cite}`apstol` 4.2.
+> {cite}`apostol` Theorem4.2.
+
+### 명제3
+Metric space $M$와 $x\in M$이 있다고 하자.
+
+$M$위의 sequnece $s$가 있다고 할 때, 다음을 증명하여라.
+
+$$ s \text{ converge to } x \implies s \text{ is bounded sequnece} $$
+
+**Proof**
+
+$\epsilon_0 \in \R^+$가 있다고 하자.
+
+전제에 의해 다음이 성립한다.
+
+$$ \exist N_0 \in \N \st \forall n \ge N_0, \quad s(n) \in B_M(x, \epsilon_0) $$
+
+이 때, $r$을 다음과 같이 정의하자.
+
+$$ r := \max(d(x,s(1)), \cdots, d(x,s(N_0-1)),\epsilon_0) $$
+
+그러면 다음이 성립한다.
+
+$$ \forall n \in \N, \quad s(n) \in B_M(x,r) \qed $$
+
+> Reference  
+> {cite}`apostol` Theorem4.3.
+
+
+### 명제4
+Metric space $M$과 $M$의 subset $U$가 있다고 하자.
+
+$x \in M$이 있을 때, 다음을 증명하여라.
+
+$$ x \text{ is an adherent point of } U \iff \exist\text{squence } s \text{ on } U \st \lim_{n\rightarrow\infty}s(n) = x $$
+
+**Proof**
+
+[$\implies$]  
+$x$가 $U$의 adherent point임으로 다음이 성립한다.
+
+$$ \forall \epsilon \in \R^+, \quad B(x,\epsilon) \cap U \neq \empty $$
+
+따라서, 다음이 성립한다.
+
+$$ \forall n \in \N, \quad \exist s_n \in U \st d(s_n,x) \le \frac{1}{n} $$
+
+이 떄, $U$위의 sequence $s$를 다음과 같이 정의하자.
+
+$$ s(i) = s_i $$
+
+Rationale number는 dense in real임으로 다음이 성립한다.
+
+$$ \forall \epsilon \in \R^+, \quad \exist N \in \N \st \frac{1}{N} \le \epsilon $$
+
+따라서, 다음이 성립한다.
+
+$$ \forall \epsilon \in \R^+, \quad \exist N \in \N \st  \forall n \ge N, \quad d(s(n),x) < \epsilon \qed $$
+
+[$\impliedby$]
+Convergent sequece의 정의에 의해 다음이 성립한다.
+
+$$ \forall \epsilon \in \R^+, \quad \exist N \in \N \st  \forall n \ge N, \quad d(s(n),x) < \epsilon $$
+
+따라서, 다음이 성립한다.
+
+$$ \forall \epsilon \in \R^+, \quad  B(x,\epsilon) \cap U \neq \empty \implies \forall \mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad \mathcal{N_x} \cap U \neq \empty $$
+
+Adherent point의 정의에 의해 다음이 성립한다.
+
+$$ x \text{ is an adherent point of } U \qed $$
+
+
+> Reference  
+> {cite}`apostol` Theorem4.4.
