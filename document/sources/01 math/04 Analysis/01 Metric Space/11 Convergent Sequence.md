@@ -2,7 +2,7 @@
 ## 정의
 Metric space $M$과 $M$위의 sequnece $s$가 있다고 하자.
 
-sequence가 $a$에 `수렴(convergence)`한다는 말은 다음과 동치이다.
+$s$가 $a \in M$에 `수렴(convergence)`한다는 말은 다음과 동치이다.
 
 $$ \forall \epsilon \in \R^+, \quad \exist N \in \N \quad s.t. \quad \forall n > N, \quad d(s(n), a) < \epsilon $$
 
@@ -32,7 +32,7 @@ $$ \begin{aligned} & \forall \epsilon \in \R^+, \quad d(s(n),y) < \epsilon \\ \R
 
 하지만 $\epsilon < r$일 경우, 수렴의 정의를 만족할 수 없게 된다. 
 
-즉, 수렴한다는 가정에 모순이 발생함으로 proof by contradiction에 의해 $s$는 $x$에 수렴한다.$\quad\tiny\blacksquare$
+즉, 수렴한다는 가정에 모순이 발생함으로 proof by contradiction에 의해 $s$는 $x$에 수렴한다.$\qed$
 
 ### 명제2
 Metric space $M$이 있다고 하자. 
@@ -49,7 +49,7 @@ $s$가 $x,y \in M$에 수렴한다고 하자.
 
 $$ \begin{aligned} & 0 \le d(x,y) \le d(s(N),x) + d(s(N), y) \\ \Rightarrow \enspace &  0 \le d(x,y) \le 2\epsilon \end{aligned}  $$
 
-보조명제2.1에 의해 $d(x,y) = 0$이고 따라서, $x = y$이다. $\quad\tiny\blacksquare$
+보조명제2.1에 의해 $d(x,y) = 0$이고 따라서, $x = y$이다. $\qed$
 
 #### 보조명제2.1
 $\forall \epsilon \in \R^+$에 대해 다음이 성립한다고 하자.
@@ -66,7 +66,7 @@ $d \neq 0$라 가정하자.
 
 가정에 의해 $0 < d$이고 그러면 $\epsilon < d/2$에서 조건 $0  \le d \le \epsilon$가 성립하지 않는 모순이 발생한다.
 
-따라서, proof by contradiction에 의해 $d =0$이다. $\quad\tiny\blacksquare$
+따라서, proof by contradiction에 의해 $d =0$이다. $\qed$
 
 > Reference  
 > {cite}`apostol` Theorem4.2.
@@ -141,6 +141,38 @@ Adherent point의 정의에 의해 다음이 성립한다.
 
 $$ x \text{ is an adherent point of } U \qed $$
 
-
 > Reference  
 > {cite}`apostol` Theorem4.4.
+
+### 명제5
+Metric space $M$과 $M$위의 sequence $s$가 있다고 하자.
+
+이 때, 다음을 증명하여라.
+
+$$ s \text{ is converges to } x \in M \iff \text{every subsequence of } s \text{ converges to } x $$
+
+**Proof**
+
+[$\implies$]  
+$s$가 convergent sequence임으로 다음이 성립한다.
+
+$$ \forall \epsilon \in \R^+, \quad \exist N \in \N \st  \forall n \ge N, \quad d(s(n),x) < \epsilon $$
+
+$s$의 임의의 subsequence를 $s(k(n))$이라할 때, 다음이 성립한다.
+
+$$ \forall N \in \N, \quad \exist M \in \N \st \forall n \ge M, \quad N \le k(n) $$
+
+따라서, 이를 종합하면 다음이 성립한다.
+
+$$ \forall \epsilon \in \R^+, \quad \exist M \in \N \st  \forall n \ge M, \quad d(s(k(n)),x) < \epsilon $$
+
+그럼으로 다음이 성립한다. 
+
+$$ \text{every subsequence of } s \text{ converges to } x \qed $$
+
+[$\impliedby$]  
+$s$는 $s$의 subsequence 중에 하나임으로 자명하게 성립한다. $\qed$
+
+
+
+
