@@ -83,7 +83,7 @@ $\R^3$공간의 임의의 기저 $\beta$가 있다고 하자.
 
 $\frak m^\beta_\beta(\sigma) = T$라 할 떄, 다음을 증명하여라.
 
-$$ t_{\beta_i} = T^j_i\beta_j $$
+$$ \sigma(\beta_i) = t_{\beta_i} = T^j_i\beta_j $$
 
 **Proof**
 
@@ -96,24 +96,30 @@ $$ \frak m^\beta_\beta(\sigma) = \begin{bmatrix} \frak m_\beta(\sigma(\beta_1)) 
 $$ t_{\beta_i} = \sigma^j_i\beta_j $$
 
 #### 참고
-$\sigma^j_i$는 $\beta_i$를 normal vector로 갖는 평면에 작용하는 stress vector의 $\beta_j$방향의 크기다.
+기저 $\beta_{1,2,3}$를 축으로 갖는 정육면체에 $\sigma$가 주어져 있다고 하자.
 
-### 명제3
-주어진 $x,t$에서 응력텐서 $\sigma$가 주어졌다고 하자.
+그러면 $T^j_i$는 $\beta_i$를 normal vector로 갖는 평면에 작용하는 stress vector의 $\beta_j$방향의 coordinate다.
 
-$\R^3$공간의 standard basis를 $\epsilon$이라 하고 $\frak m^\epsilon_\epsilon(\sigma) = \sigma$라 할 떄, 다음을 증명하여라.
-
-$$ \sigma \text{ is symmetric.}$$
-
-**Proof**
-
-$\sigma$가 아래 그림과 같이 정육면체 미소요소에 작용하고 있다고 하자.
+이를 그림으로 표현하면 다음과 같다.
 
 ```{figure} _image/0302.png
 ```
 
+### 명제3
+주어진 $x,t$에서 stress tensor $\sigma$가 주어졌다고 하자.
 
-중앙점에서 모멘트와 회전관성을 계산하면 다음과 같다.
+$\R^3$공간의 임의의 basis를 $\beta$라 하고 $\frak m^\beta_\beta(\sigma) = T$라 할 떄, 다음을 증명하여라.
+
+$$ T \text{ is symmetric.}$$
+
+**Proof**
+
+아래 그림과 같이 $\beta$를 축으로 하는 정육면체의 중심점에 $\sigma$가 작용하고 있다고 하자.
+
+```{figure} _image/0303.png
+```
+
+중심점에서 torque와 angular momentum을 계산하면 다음과 같다.
 
 $$ \begin{aligned} (M_A)_3 &= \sigma^2_1(\Delta x^2)(\Delta x^3)(\Delta x^1 / 2) + (\sigma^2_1 + \Delta \sigma^2_1)(\Delta x^2)(\Delta x^3)(\Delta x^1 / 2) \\ &- \sigma^1_2(\Delta x^1)(\Delta x^3)(\Delta x^2 / 2) - (\sigma^1_2 + \Delta \sigma^1_2)(\Delta x^1)(\Delta x^3)(\Delta x^2 / 2) \\ I_{33} &= \Delta x^1 \Delta x^2 \Delta x^3((\Delta x^1)^2 + (\Delta x^2)^2) \end{aligned} $$
 
