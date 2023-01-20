@@ -109,3 +109,11 @@ $$ \sup(A) \in \bigcap_{n=1}^{\infty} I_n \implies \bigcap_{n=1}^{\infty} I_n \n
 
 > Reference  
 > {cite}`abbott` Theorem 1.4.1
+
+### 명제3
+다음을 증명하여라
+
+$$ \forall x \in \R \quad \exist n \in \N \st n \le x \le n+1 $$
+
+> Reference  
+> [math.stackexchange](https://math.stackexchange.com/questions/3601551/every-real-number-lies-between-n-and-n1)

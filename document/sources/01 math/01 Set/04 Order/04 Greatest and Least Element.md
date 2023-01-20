@@ -28,8 +28,8 @@ $$ \begin{gathered} M_1 \le M_2 \\ M_2 \le M_1 \end{gathered} $$
 
 $$ M_1 = M_2 \qed $$
 
-## Minimal Element
-$m \in U$가 다음을 만족할 때, $m$을 $U$의 minimal element라고 한다.
+## Least Element
+$m \in U$가 다음을 만족할 때, $m$을 $U$의 least element라고 한다.
 
 $$ \forall u \in U, \quad m \le u $$
 
@@ -41,7 +41,7 @@ Poset $X$와 $X$의 subset $U$가 있다고 하자.
 
 이 떄, 다음을 증명하여라.
 
-$$ \text{Greatest element of } U \text{ is unique.} $$
+$$ \text{Least element of } U \text{ is unique.} $$
 
 **Proof**
 
