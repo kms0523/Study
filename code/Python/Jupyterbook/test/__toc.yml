@@ -1,0 +1,24 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: cover
+parts:
+  - caption: folder1
+    chapters: 
+    - file: folder1/t4/t4
+      sections: 
+      - file: folder1/t4/tt1/tt1
+        sections: 
+        - file: folder1/t4/tt1/tt2
+    - file: folder1/t1
+    - file: folder1/t2
+    - file: folder1/t3
+  - caption: folder2
+    chapters: 
+    - file: folder2/f22
+    - file: folder2/f23
+    - file: folder2/folder2
+  - caption: folder3
+    chapters: 
+    - file: folder3/folder3

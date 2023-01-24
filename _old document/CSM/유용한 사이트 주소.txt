@@ -1,8 +1,0 @@
-Abaqus Theory Guide 
- https://abaqus-docs.mit.edu/2017/English/SIMACAETHERefMap/simathe-c-ov.htm#simathe-c-ov
-
-Kelly Mechanics Lecture Notes
- https://pkel015.connect.amazon.auckland.ac.nz/SolidMechanicsBooks/index.html
-
-Computation Mechanics and Optimization Laboratory
- https://mjzahr.github.io/teach-nd-ame40541-spr21.html

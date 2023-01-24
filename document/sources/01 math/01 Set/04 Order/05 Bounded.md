@@ -19,6 +19,13 @@ $U$의 greatest element는 $U$의 element이지만 $U$의 upper bound는 $X$의 
 
 즉, upper bound는 $U$의 element가 아닐 수 있다.
 
+### 참고3
+$U = \empty$인 경우, $\forall u \in U$가 항상 거짓임으로 공허하게 참인 명제가 된다.
+
+따라서, 다음이 성립한다.
+
+$$ \forall x \in X, \quad x \text{ is an upper bound of } U $$
+
 ### 명제1
 POSET $X$와 $X$의 부분집합 $U$가 있다고 하자.
 

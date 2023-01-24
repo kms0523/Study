@@ -25,25 +25,26 @@ POSET $X$와 $X$의 bounded from above subset $U$가 있다고 하자.
 
 이 떄, 다음을 증명하여라.
 
-$$ \begin{gathered} \exist\sup(U) \\ u \text{ is greatest element of } U \end{gathered} \implies u = \sup(U) $$
+$$ u_M \text{ is greatest element of } U \implies u_M = \sup(U) $$
 
 **Proof**
 
-supremum은 upper bound임으로 다음이 성립한다.
+다음을 가정하자.
 
-$$ \forall u \in U, \quad u \le \sup(U) $$
+$$ u_M \neq \sup(U) $$
 
-또한 Greatest element의 성질에 의해 다음이 성립한다.
+그러면 다음이 성립한다.
 
-$$ u \text{ is an upper bound of } U $$
+$$ \exist M \in X \st \begin{gathered} M < u_M \\ \forall u \in U, \quad u \le M \end{gathered}  $$
 
-그러면 supremum의 정의에 의해 다음이 성립한다.
+Greatest element의 정의에 의해 $u_M \in U$임으로 다음이 성립한다.
 
-$$ \sup(U) \le u $$
+$$ u_M \le M \land M < u_M $$
 
-위의 결과를 종합하면 partial order의 antisymmetric 성질에 의해 다음이 성립한다.
+이는 모순임으로 proof by contradiction에 의해 다음이 성립한다.
 
-$$ u = \sup(U) \qed $$
+$$ u_M = \sup(U) \qed $$
+
 
 ## Infimum
 $U$가 bounded from below일 때, $U$의 least bound의 집합을 $S$라고 하자.
@@ -69,22 +70,22 @@ POSET $X$와 $X$의 bounded from below subset $U$가 있다고 하자.
 
 이 떄, 다음을 증명하여라.
 
-$$ \begin{gathered} \exist\inf(U) \\ u \text{ is least element of } U \end{gathered} \implies u = \inf(U) $$
+$$ u_m \text{ is least element of } U \implies u_m = \inf(U) $$
 
 **Proof**
 
-infimum은 lower bound임으로 다음이 성립한다.
+다음을 가정하자.
 
-$$ \forall u \in U, \quad \inf(U) \le u $$
+$$ u_m \neq \inf(U) $$
 
-또한 least element의 성질에 의해 다음이 성립한다.
+그러면 다음이 성립한다.
 
-$$ u \text{ is an lower bound of } U $$
+$$ \exist m \in X \st \begin{gathered} u_m < m \\ \forall u \in U, \quad m \le u \end{gathered}  $$
 
-그러면 infimum의 정의에 의해 다음이 성립한다.
+Greatest element의 정의에 의해 $u_M \in U$임으로 다음이 성립한다.
 
-$$ u \le \inf(U) $$
+$$ u_m < m \land m \le u_m $$
 
-위의 결과를 종합하면 partial order의 antisymmetric 성질에 의해 다음이 성립한다.
+이는 모순임으로 proof by contradiction에 의해 다음이 성립한다.
 
-$$ u = \inf(U) \qed $$
+$$ u_M = \inf(U) \qed $$

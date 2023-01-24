@@ -1,2 +1,0 @@
-> Reference  
-> [Mathematics - conceptual-difference-between-covariant-and-contravariant-tensors](https://math.stackexchange.com/questions/4297246/conceptual-difference-between-covariant-and-contravariant-tensors)  
