@@ -151,6 +151,16 @@ $$ f(x),f^{-1}(y) \text{ are continous functions on topological space } $$
 
 $$ \text{Any open ball in } \R^n \text{ and } \R^n \text{ are homeomorphic} \qed $$
 
+#### 참고
+Open ball과 $\R^n$은 homeomorphic하다.
+
+하지만 open ball은 bounded되어 있지만 $\R^n$은 bounded 되어 있지 않다. 즉, open ball의 boundedness는 homoemorphism에 의해 보존되지 않았다.
+
+따라서, boundedness는 topological property가 아니다.
+
+> Reference  
+> {cite}`LeeTM` Example2.25.
+
 ### 명제4
 Topological space $X,Y,Z$와 homeomorphism $f: X \rightarrow Y, g: Y \rightarrow Z$가 있다고 하자.
 

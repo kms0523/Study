@@ -350,3 +350,28 @@ $$ \begin{aligned} & \forall x_{1,2} \in \R \st x_1 < x_2, \quad \exist n \in \N
 
 #### 참고
 분모는 실수의 completeness 공리로부터 증명되었고 분자는 자연수의 well ordering 공리와 completeness 공리로부터 증명되었다.
+
+### 명제7
+$x_1,x_2 \in \R$이 있다고 하자.
+
+이 때, 다음을 증명하여라.
+
+$$ \forall \epsilon \in \R^+, \quad |x_1-x_2| < \epsilon \implies x_1 = x_2 $$
+
+**Proof**
+
+다음을 가정하자.
+
+$$ x_1 \neq x_2 $$
+
+그러면 다음이 성립한다.
+
+$$ \exist d \in \R^+ \st |x_1 - x_2| = d $$
+
+이 때, $d/2 \in \R^+$임으로 전제에 의해 다음이 성립한다.
+
+$$ |x_1-x_2| < \frac{d}{2} $$
+
+이는 $|x_1-x_2|=d$라는 사실에 모순임으로 proof by contradiction에 의해 다음이 성립한다.
+
+$$ x_1 = x_2 \qed $$
