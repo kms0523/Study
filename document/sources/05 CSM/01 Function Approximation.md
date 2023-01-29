@@ -97,6 +97,7 @@ $$ \begin{aligned} \phi_h &= n^T\hat{\phi} \\&= \phi(x_i)n_i \end{aligned} $$
 Shape function $n_i, \enspace i=1,\cdots,n$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
+
 $$ \Set{n_i} \text{ is an linearly independent set} $$
 
 **Proof**
@@ -137,8 +138,8 @@ $$ \Set{n_i} \text{ is an linearly independent set} \qed $$
 Shape function $n_i, \enspace i=1,\cdots,n$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
-$$ n_i(x_j) = \delta_{ij}, \enspace i,j
-=1,\cdots,n $$
+
+$$ n_i(x_j) = \delta_{ij}, \enspace i,j=1,\cdots,n $$
 
 **Proof**
 
