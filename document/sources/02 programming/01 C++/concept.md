@@ -19,7 +19,7 @@ The definition of a concept has the form
 > Reference  
 > [cppreference](https://en.cppreference.com/w/cpp/language/constraints#Concepts)
 
-## Require clauses
+## Require Clauses
 require-clauses는 template argument의 제약조건을 특정하는 구문이다.
 
 require-clauses는 `requires` keyword와 compile time bool type primary expression으로 구성되어 있다.
@@ -88,6 +88,16 @@ bool type primary expression간의 연산의 결과도 bool type primary express
 > [cppreference - require clauses](https://en.cppreference.com/w/cpp/language/constraints#Requires_clauses)  
 > [cppreference - primary expression](https://en.cppreference.com/w/cpp/language/expressions#Primary_expressions)  
 
+## Requires Expression
+
+### Example
+``` cpp
+template <typename T>
+concept Tuple = requires(T t) { t[0]; };
+```
+
+> Reference  
+> [cppreference](https://en.cppreference.com/w/cpp/language/requires)  
 
 ## 참고할만한 사이트
 

@@ -9,36 +9,61 @@
 import numpy as np
 import sympy as sp
 
-m = np.matrix(([-1,0,0],[2,-1,0],[-1,2,-1],[0,-1,1]))
-q = np.matrix(([-1],[-2],[-2],[-1]))
+def make_T1_VCF(X):
+    VCP = np.matrix(([-1,1,-1,0,0,-1],
+                     [-1,-1,1,-1,0,0]))
+
+    r =sp.symbols("r")
+    s =sp.symbols("s")
+    basis = [1, r, s, r**2, r*s, s**2]
+
+    M= np.ones((6,6))
+    for i in range(1,6):
+        for j in range(0,6):
+            r_value = VCP[0,j]
+            s_value = VCP[1,j]
+            M[i,j] = basis[i].subs([(r,r_value),(s,s_value)])
+
+    C = X * np.linalg.inv(M)
 
 
+    VCF = sp.symarray('VCF',3)
 
-x = sp.symbols("x")
-u_ext = x**2 - 2*x
+    for i in range(0,3):
+        VCF[i] = 0
+        for j in range(0,6):
+            VCF[i] += C[i,j]*basis[j]
 
-sol_ext = np.zeros((3,1))
-sol_ext[0,0] = u_ext.subs(x,1/3)
-sol_ext[1,0] = u_ext.subs(x,2/3)
-sol_ext[2,0] = u_ext.subs(x,1)
+    return VCF
 
-print("exact sol:")
-print(sol_ext)
+X = np.matrix(( [1,3,1,2,2,1],
+                [1,1,3,1,2,2],
+                [2,3,2,1,4,0]))
 
-# print(m)
+r =sp.symbols("r")
+s =sp.symbols("s")
 
-for i in range(0,4):
-	print("rmove " + str(i+1) + " equation")
-	m_removed = np.delete(m,i,0)
+VCF = make_T1_VCF(X)
 
-	if np.linalg.det(m_removed) == 0:
-		print("cause singular matrix")
-		continue
+import matplotlib.pyplot as plt
+import mslib.msplot as msplt
 
-	q_removed = np.delete(q,i,0)
+num_point = 21
+delta = 2/(num_point-1)
 
-	sol = np.linalg.inv(m_removed)*q_removed
-	sol = sol / 9
-	print("sol:")
-	print(sol)
+fig = plt.figure()
+ax1 = fig.add_subplot(1,1,1, projection = '3d')
 
+
+for i in range(0,num_point):
+    s_value = -1 + delta*i
+    for j in range(0, num_point -i):
+        r_value = -1 + delta*j
+
+        x = VCF[0].subs([(r,r_value),(s,s_value)])
+        y = VCF[1].subs([(r,r_value),(s,s_value)])
+        z = VCF[2].subs([(r,r_value),(s,s_value)])
+
+        msplt.plot_point(ax1,x,y,z)
+
+plt.show()      

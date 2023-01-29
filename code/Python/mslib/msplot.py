@@ -29,3 +29,16 @@ def plot_sphere(ax, r, c = 'black', transeparancy = 1.0, label_string = ''):
 
     ax.plot_surface(X, Y, Z, color = c, alpha = transeparancy)    
     ax.plot(0, 0, color = c, label = label_string)
+
+def plot_point(ax,x,y,z,m='o',ms = 5,c='black'):
+
+    marker_style = dict(marker = m,
+                        markersize = ms,
+                        color = c)
+
+    ax.plot(x,y,z,**marker_style)
+
+
+
+# Marker reference  
+# https://matplotlib.org/stable/gallery/lines_bars_and_markers/marker_reference.html
