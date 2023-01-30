@@ -11,7 +11,10 @@ $x,y,z \in M$에 대해, $d$가 다음 성질들을 만족할 때,
 집합 $M$에 함수 $d$가 주어진 구조인 $(M,d)$를 `metric space`라고 한다.
 
 ### 참고1
-$x \in M$을 point, $d$를 metric of the space라고 부른다.
+$x \in M$을 point, $d$를 `metric` 또는 `distance function`이라고 부른다.
+
+> Reference  
+> [wiki](https://en.wikipedia.org/wiki/Metric_space)  
 
 ### 참고2
 $M = \R^n$이고 $d(x,y) = |x-y|$로 주어진 metric space를 $n$ 차원 `Euclidean metric space`라고 한다.

@@ -2,7 +2,7 @@
 ## 정의
 $\R^n$의 open set $U$가 있다고 하자.
 
-$\R^m$의 임의의 basis를 $\gamma$라 할 떄, $f : U \rightarrow \R^m$는 다음과 같이 표현된다.
+$f : U \rightarrow \R^m$는 다음과 같이 표현된다.
 
 $$ (f^1,\cdots,f^m) $$
 

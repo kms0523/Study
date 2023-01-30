@@ -7,18 +7,21 @@
 
 #include "Çì´õ2.h"
 
-void func(const std::vector<double*>& val)
-{
-	*(val[0]) = 4;
-}
+void func(const std::vector<double*>& val) { *(val[0]) = 4; }
 
 int main(void) {
-	std::vector<double*> val;
+  if (0) {
+    std::cout << "true";
+  } else {
+    std::cout << "false";
+  }
 
-	double d1 = 1;
-	val.push_back(&d1);
+  std::vector<double*> val;
 
-	func(val);
+  double d1 = 1;
+  val.push_back(&d1);
+
+  func(val);
 
   for (const auto& elem : val) {
     std::cout << *elem;

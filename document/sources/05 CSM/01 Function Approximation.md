@@ -1,99 +1,104 @@
 # Function Approximation
-함수 $\phi : \R^d \rightarrow \R$가 있을 떄, 서로 다른 $n$개의 점 $x_i \in \R^n$에서 $\phi$의 값 $\phi(x_i)$을 알고 있다고 하자.
+함수 $\phi : \R^n \rightarrow \R^m$와 $\phi$의 component functions $\phi^i, \enspace i=1,\cdots,m$가 있다고 하자.
 
-$$ \phi(x_i) \text{ is known}, \enspace i=1,\cdots,n $$
+$$ \phi^i : \R^n \rightarrow \R, \enspace i=1,\cdots,m $$
 
-이 때, $\phi$의 approximate function $\phi_h$를 구해보자.
+이 떄, 서로 다른 $k$개의 점 $x_1, \cdots x_k \in \R^n$에서 $\phi$의 값을 알고 있을 때, $\phi$의 approximate function $\phi_h$를 구해보자.
+
+## $C^0$ Approximation
 
 $\phi_h$는 $\phi$의 approximate function임으로 approximation의 기준을 정해야 되는데, 이 때 한가지 타당한 기준은 다음과 같다.
 
-$$ \phi(x_i) = \phi_h(x_i), \enspace i=1,\cdots,n $$
+$$ \phi(x_i) = \phi_h(x_i), \enspace i=1,\cdots,k $$
 
 즉, 값이 주어진 점들에서 approximate function이 원래 function과 정확히 일치하는 것을 approximation의 기준으로 삼는것이다.
 
 이제, 기준이 결정되었으니 기준을 만족하는 $\phi_h$를 찾아보자.
 
-## Search
-
+### Search
 집합 $V$를 다음과 같이 정의하자.
 
 $$ V := \Set{f :\R^d \rightarrow \R} $$
 
-선형대수의 성질에 의해, $V/\R$은 vector space이다.
+Vector space의 정의에 의해, $V/\R$은 vector space이다.
 
 이 떄, infinite dimension vector space $V$를 탐색할 수 없음으로 탐색할 $V$의 finite subspace $\mathcal{M}$을 결정하자.
 
-$\mathcal{M}$의 basis가 될 linearly independent한 function들을 다음과 같이 정의하자.
+$\mathcal{M}$의 basis가 될 $l$개의 linearly independent한 function들을 다음과 같이 정의하자.
 
-$$ m_i : \R^d \rightarrow \R, \enspace i=1,\cdots,k $$
+$$ m_i : \R^n \rightarrow \R, \enspace i=1,\cdots,l $$
 
 그러면, $m_i$는 $\mathcal{M}$의 basis임으로 다음이 성립한다.
 
 $$ \mathcal{M} = \span(\Set{m_i}) $$
 
-그리고 다음을 가정하자.
+그리고 $\phi_h$의 각각의 component function $\phi_h^i$에 대해 다음을 가정하자.
 
-$$ \exist \phi_h \in \mathcal{M} \st \phi(x_i) = \phi_h(x_i), \enspace i=1,\cdots,n $$
+$$ \exist \phi_h^i \in \mathcal{M} \st \phi^i(x_j) = \phi_h^i(x_j), \enspace i=1,\cdots,m, \enspace j=1,\cdots,k $$
 
 $\phi_h \in \mathcal{M}$임으로 다음이 성립한다.
 
-$$ \exist a_1, \cdots, a_k \in \R \st \phi_h = a^im_i $$
+$$ \exist a_i^1, \cdots, a_i^l \in \R \st \phi_h^i = a_i^jm_j, \enspace i=1,\cdots,m $$
 
-이 때, $\phi_h$는 $\phi(x_i) = \phi_h(x_i), \enspace i=1,\cdots,n$ 조건을 만족함으로 이를 matrix form으로 쓰면 다음과 같다.
+이 때, $\phi_h$는 $\phi(x_i) = \phi_h(x_i), \enspace i=1,\cdots,k$ 조건을 만족함으로 이를 matrix form으로 쓰면 다음과 같다.
 
-$$ \begin{gathered} \begin{bmatrix} m_1(x_1) &\cdots& m_k(x_1) \\ \vdots && \vdots \\ m_1(x_n) &\cdots& m_k(x_n) \end{bmatrix} \begin{bmatrix} a^1 \\ \vdots \\ a^k \end{bmatrix} = \begin{bmatrix} \phi(x_1) \\ \vdots \\ \phi(x_n) \end{bmatrix} \\ Ma =\hat{\phi} \end{gathered}  $$
+$$ \begin{gathered} \begin{bmatrix} a_1^1 &\cdots& a_1^l \\ \vdots \\ a_m^1 &\cdots& a_m^l \end{bmatrix} \begin{bmatrix} m_1(x_1) &\cdots& m_1(x_k) \\ \vdots && \vdots \\ m_l(x_1) &\cdots& m_l(x_k) \end{bmatrix}  = \begin{bmatrix} \phi^1(x_1) &\cdots& \phi^1(x_k) \\ \vdots \\ \phi^m(x_1) &\cdots& \phi^m(x_k) \end{bmatrix} \\ AM =\Phi \end{gathered}  $$
 
 만약 $M$이 invertible matrix면 다음이 성립한다.
 
-$$ \begin{gathered} a = M^{-1}\hat{\phi} \\ k=n \end{gathered}  $$
+$$ \begin{gathered} A = \Phi M^{-1} \\ l=k \end{gathered}  $$
 
-### 명제1
+#### 명제1
 다음을 증명하여라.
 
-$$ \phi \in \mathcal{M} \iff \phi = \phi_h $$
+$$ f \in \mathcal{M} \iff f = f_h $$
 
 **Proof**
 
 [$\implies$]  
-$\phi \in \mathcal{M}$임으로 다음이 성립한다.
+$f_h = a^im_i$라고 하고 $\hat{f} := \begin{bmatrix} f(x_1) &\cdots& f(x_k) \end{bmatrix}$라고 하면 다음이 성립한다.
 
-$$ \phi = b^im_i $$
+$$ a = \hat{f}M^{-1} $$
 
-$b := \begin{bmatrix} b^1 &\cdots& b^n \end{bmatrix}^T$라고 할 때, $\phi(x_i) \enspace i=1,\cdots,n$를  matrix form으로 쓰면 다음과 같다.
+$f \in \mathcal{M}$임으로 다음이 성립한다.
 
-$$ Mb = \hat{\phi} $$
+$$ f = b^im_i $$
+
+$b := \begin{bmatrix} b^1 &\cdots& b^k \end{bmatrix}$라고 할 때, $f(x_i) \enspace i=1,\cdots,k$를 matrix form으로 쓰면 다음과 같다.
+
+$$ bM = \begin{bmatrix} f(x_1) &\cdots& f(x_k) \end{bmatrix} $$
 
 $M$이 invertible matrix이면 다음이 성립한다.
 
-$$ b = M^{-1}\hat{\phi} = a $$
+$$ b = \hat{f} M^{-1} = a $$
 
 따라서, 다음이 성립한다.
 
-$$ \phi = \phi_h \qed $$
+$$ f = f_h \qed $$
 
 [$\impliedby$]  
 자명하다.$\qed$
 
-## Shape Function
+### Shape Function
 계산의 편의성을 위해 행렬 $m$을 다음과 같이 정의하자.
 
-$$ m := \begin{bmatrix} m_1(x) \\ \vdots \\ m_n(x)  \end{bmatrix} $$  
+$$ m := \begin{bmatrix} m_1(x) \\ \vdots \\ m_k(x)  \end{bmatrix} $$  
 
 그러면 다음이 성립한다.
 
-$$ \begin{aligned} \phi_h &= m^Ta \\&= m^TM^{-1}\hat{\phi} \end{aligned} $$
+$$ \begin{aligned} \phi_h &= Am \\&= \Phi M^{-1} m \end{aligned} $$
 
 이 때, 행렬 $n$을 다음과 같이 정의하자.
 
-$$ n := (M^{-1})^Tm $$
+$$ n := M^{-1}m $$
 
 그러면 다음이 성립한다.
 
-$$ \begin{aligned} \phi_h &= n^T\hat{\phi} \\&= \phi(x_i)n_i \end{aligned} $$
+$$ \begin{aligned} \phi_h &= \Phi n \\&= \phi(x_i)n_i \end{aligned} $$
 
-이 때, $n_i, \enspace i=1,\cdots,n$을 `shape function`이라고 한다.
+이 때, $n_i, \enspace i=1,\cdots,k$을 `shape function`이라고 한다.
 
-### 명제1
+#### 명제1
 Shape function $n_i, \enspace i=1,\cdots,n$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
@@ -134,7 +139,7 @@ $$ \begin{aligned} M^{-1}c &= 0_n \\ c &= 0_n \\ c_i &= 0, \enspace i=1,\cdots,n
 
 $$ \Set{n_i} \text{ is an linearly independent set} \qed $$
 
-### 명제2
+#### 명제2
 Shape function $n_i, \enspace i=1,\cdots,n$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
@@ -169,94 +174,20 @@ $$ c_j = 0, \enspace j=1,\cdots,n $$
 
 $$ n_i(x_j) = \delta_{ij} \qed $$
 
-
-
 > Reference  
 > [blog1](http://what-when-how.com/the-finite-element-method/fundamentals-for-finite-element-method-part-1/)  
 > [blog2](http://what-when-how.com/the-finite-element-method/fundamentals-for-finite-element-method-part-2/)  
 
+#### 참고
+$\phi_h = \Phi n$에서 $\Phi$를 벡터 형태로 쓰면 다음과 같은 형태를 갖는다.
 
+$$ \phi_h = \begin{bmatrix} n_1 \enspace \underbrace{0 \cdots 0}_{m-1}  && n_2 \enspace \underbrace{0 \cdots 0}_{m-1} && \cdots && n_n \enspace \underbrace{0 \cdots 0}_{m-1} \\ 0 \enspace n_1 \enspace \underbrace{0 \cdots 0}_{m-2} && 0 \enspace n_2 \enspace \underbrace{0 \cdots 0}_{m-2} && \cdots && 0 \enspace n_n \enspace \underbrace{0 \cdots 0}_{m-2} \\ && \qquad  \vdots \\ \underbrace{0 \cdots 0}_{m-1} \enspace  n_1 && \underbrace{0 \cdots 0}_{m-1} \enspace n_2 && \cdots && \underbrace{0 \cdots 0}_{m-1} \enspace n_n \end{bmatrix} \begin{bmatrix} \phi^1(x_1) \\\vdots\\ \phi^m(x_1) \\\vdots\\ \phi^1(x_k) \\\vdots\\ \phi^m(x_k) \end{bmatrix} $$
+
+$$ \phi_h = N {\hat\phi} $$
 
 
 # Interpolation
-## $C^0$ interpolation
-### $\phi : \R^d \rightarrow \R$
-함수 $\phi : \R^d \rightarrow \R$가 있을 때, 서로 다른 $n$개의 $\mathbf x_i$에서 $\phi(\mathbf x_i)$값을 알고 있다고 하자.
 
-이 때, $\phi$를 `다항식(polynomial)`으로 근사해보자.
-
-$\phi$를 $n$개의 `단항식(monomial)` $m_i$으로 이루어진 다항식으로 근사하면 다음과 같이 표현할 수 있다.
-
-$$ \phi(x) \approx \phi_h(x) = a_i m_i(\mathbf x) $$
-
-이를 행렬 형태로 표현하면 다음과 같다.
-
-$$ \phi_h = \mathbf a \cdot \mathbf m $$
-
-이 때, 벡터함수 $\mathbf m : \R \rightarrow \R^n$을 `monomial vector function`이라 한다. 
-
-위 다항식이 서로 다른 n개의 점에서 $\phi(\mathbf x_i) = \phi_h(\mathbf x_i)$을 만족해야하며 이를 성분으로 나타내면 다음과 같다.
-
-$$ \phi_h(\mathbf x_i) = a_j m_j(\mathbf x_i) $$
-
-이를 다시 행렬 형태로 나타내면 다음과 같다.
-
-$$ \begin{gathered} \boldsymbol{\hat{\phi}} = \mathbf M^T \mathbf a \\ \text{where,} \quad \mathbf M =  \begin{bmatrix} \mathbf m(x_1) & \cdots & \mathbf m(x_n) \end{bmatrix}, \quad \hat{\phi}_i = \phi(\mathbf x_i) \end{gathered} $$
-
-따라서 $\bf a = (M^T)^{-1} \boldsymbol{\hat{\phi}}$이고 이를 원래 식에 대입하면 다음과 같다. 
-
-$$ \begin{aligned} \phi_h &= \mathbf {a \cdot m} \\ &= \mathbf {m \cdot a} \\ &= \mathbf m^T (\mathbf M^T)^{-1} \boldsymbol{\hat{\phi}} \\ &= \mathbf n \cdot \boldsymbol{\hat{\phi}} \quad  \end{aligned} $$
-
-만약, $d = 1$이고 $\mathbf m$이 다음과 같이 주어졌다고 하자.
-
-$$ m_i = x^{i-1} $$
-
-이 때, $\mathbf n = \mathbf M^{-1} \mathbf m$은 형상함수 벡터이고 $n_i$는 다음과 같은 Lagrange 다항식 형태로 주어진다.
-
-
-$$ n_i = \prod_{\substack{j = 1 \\ j \neq i}}^n \frac{x_j - x}{x_j - x_i} $$
-
-따라서 이를 `라그랑지 보간(Lagrangian interpolation)`이라고 한다.
-
-### $\boldsymbol{\phi} : \R^d \rightarrow \R^r$
-벡터 함수 $\boldsymbol{\phi} : \R^d \rightarrow \R^r$를 $n$개의 단항식을 갖는 다항식으로 근사하면 다음과 같이 표현할 수 있다.
-
-
-$$ \boldsymbol{\phi}\mathbf{(x)} = \mathbf {Am(x)} \\ \mathbf A \in \R^{r \times n}$$
-
-이 때, 서로 다른 $n$개의 $\mathbf x_i$에서 $\boldsymbol{\phi}(\mathbf x_i)$ 값을 알고 있다면 $\boldsymbol{\phi}(\mathbf x_i) = \mathbf {Am(x}_i)$를 만족하도록 $\bf A$를 결정할 수 있다. 
-
-$\boldsymbol{\phi}$의 $i$번째 원소 $\phi_i$는 다음과 같이 표현된다.
-
-$$ \begin{equation} \phi_i(\mathbf x) = \mathbf A_{i*} \cdot \mathbf m(\mathbf x) \end{equation} $$
-
-$i$번째 원소가 만족해야 하는 조건을 행렬 형태로 나타내면 다음과 같다.
-
-$$ \hat{ \boldsymbol \phi_i} = \mathbf M^T \mathbf A_{i*} \\ \text{where,} \quad \mathbf M =  \begin{bmatrix} \bf m(x_1) & \cdots & \bf m(x_n) \end{bmatrix}, \quad \hat{\phi}_{i,j} = \phi_i(\mathbf x_j)$$
-
-따라서 $\mathbf A_{i*} = (\mathbf M^T)^{-1} \hat{ \boldsymbol \phi_i}$이고 식(5)에 대입하면 다음과 같다.
-
-
-$$ \begin{aligned} \phi_i &= \mathbf A_{i*} \cdot \mathbf m \\ &= \mathbf m \cdot \mathbf A_{i*} \\ &= \mathbf m^T (\mathbf M^T)^{-1} \boldsymbol{\hat{\phi}}_i \\ &= \mathbf n \cdot \boldsymbol{\hat{\phi}}_i \end{aligned} $$
-
-모든 원소가 만족해야 하는 조건은 다음과 같다.
-
-$$ \phi_i = \sum_{j=1}^n n_j\hat{\phi}_i(\mathbf x_j) \quad (i = 1, \cdots, r) $$
-
-이를 하나의 행렬식으로 나타내면 다음과 같다.
-
-$$ \boldsymbol{\phi} = \begin{bmatrix} n_1 \enspace \underbrace{0 \cdots 0}_{r-1}  && n_2 \enspace \underbrace{0 \cdots 0}_{r-1} && \cdots && n_n \enspace \underbrace{0 \cdots 0}_{r-1} \\ 0 \enspace n_1 \enspace \underbrace{0 \cdots 0}_{r-2} && 0 \enspace n_2 \enspace \underbrace{0 \cdots 0}_{r-2} && \cdots && 0 \enspace n_n \enspace \underbrace{0 \cdots 0}_{r-2} \\ && \qquad  \vdots \\ \underbrace{0 \cdots 0}_{r-1} \enspace  n_1 && \underbrace{0 \cdots 0}_{r-1} \enspace n_2 && \cdots && \underbrace{0 \cdots 0}_{r-1} \enspace n_n \end{bmatrix} \begin{bmatrix} \boldsymbol{\phi}(\mathbf x_1) \\ \vdots \\ \boldsymbol{\phi}(\mathbf x_r) \end{bmatrix} $$
-
-
-$$ \boldsymbol{\phi} = \mathbf N \boldsymbol{\hat\phi} $$
-
-
-
-#### 형상함수 성질
-1. $$ \sum_i n_i = 1 $$
-2. $$ n_i(x_j) = \delta_{ij} $$
-
-> Q. 2번 성질이 왜 만족할까?
 
 ## $C^1$ 보간
 ### $\phi : \R \rightarrow \R$
