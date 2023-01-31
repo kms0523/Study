@@ -10,22 +10,26 @@
 void func(const std::vector<double*>& val) { *(val[0]) = 4; }
 
 int main(void) {
-  if (0) {
-    std::cout << "true";
-  } else {
-    std::cout << "false";
-  }
+  std::multimap<int, int> m;
+  m.emplace(1, 1);
+  m.emplace(1, 2);
+  m.emplace(1, 3);
 
-  std::vector<double*> val;
+	if (not m.empty()) {
+		std::cout << "m is not empty";
+	}
 
-  double d1 = 1;
-  val.push_back(&d1);
+	std::vector<double> v = { 1 };
 
-  func(val);
+	if (not v.empty()) {
+		//...
+	}
 
-  for (const auto& elem : val) {
-    std::cout << *elem;
-  }
+	if (v.size() > 0 and v.front() == 1) {
+		std::cout << "이게 되네?";
+	}
+
+  std::cout << "Debug";
 }
 
 // int main(void) {

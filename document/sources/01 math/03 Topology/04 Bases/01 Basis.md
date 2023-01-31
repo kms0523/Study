@@ -2,30 +2,30 @@
 ## 정의
 Topological space $X$가 있다고 하자.
 
-$X$의 subset collection $\mathcal{B}$가 다음을 만족할 때, $\mathcal{B}$를 topology $\mathcal{T_X}$의 basis라고 한다.
-1. Every element of $\mathcal{B}$ is an open subset of $X$
-2. Every open subset of $X$ is the union of some collection of elements of $\mathcal{B}$
+$\mathcal{T_X}$의 subset $\mathcal{B}$가 다음을 만족할 때, $\mathcal{B}$를 topology $\mathcal{T_X}$의 basis라고 한다.
+
+$$ \forall S \in \mathcal{T_X}, \quad \exist \mathcal{B_S} \subseteq \mathcal{B} \st S = \bigcup \mathcal{B_S}$$
 
 ### 참고
 $X$의 open set $\empty$는 $\mathcal{B}$의 empty collection의 union이다.
 
 ### 명제1(Basis criterion)
-Topological sapce $X$와 $X$의 basis $\mathcal{B}$가 있다고 하자.
+Topological sapce $X$와 $\mathcal{T_X}$의 basis $\mathcal{B}$가 있다고 하자.
 
 $X$의 subset $U$가 있을 떄, 다음을 증명하여라.
 
-$$ U \text{ is an open set of } X \iff \forall x \in U, \quad  \exist B \in \mathcal{B} \quad s.t. \quad x \in B \subseteq U $$
+$$ U \text{ is an open set of } X \iff \forall x \in U, \quad  \exist B_x \in \mathcal{B} \quad s.t. \quad x \in B \subseteq U $$
 
  **Proof**
 
 [$\implies$]  
-전제에 의해 $U$가 open set임으로 basis의 성질에 의해 어떤 $B_i \in \mathcal{B}, \enspace(i = 1,\cdots,k)$에 대해 다음이 성립한다.
+전제에 의해 $U$가 open set임으로 basis의 정의에 의해 다음이 성립한다.
 
-$$ U = \bigcup_{i=1}^k B_i $$
+$$ \begin{aligned} & \exist \mathcal{B_U} \subseteq \mathcal{B} \st U = \bigcup \mathcal{B_U} \\ \implies& \forall x \in U, \quad \exist B_x \in \mathcal{B_U} \st x \in B_x \subseteq U \end{aligned}  $$
 
-따라서 $\forall x \in U$에 대해 다음이 성립한다.
+$\mathcal{B_U} \subseteq \mathcal{B}$임으로 다음이 성립한다.
 
-$$ \exist j \in [1,k] \quad s.t. \quad x \in B_j \subseteq U $$
+$$ \forall x \in U, \quad  \exist B_x \in \mathcal{B} \quad s.t. \quad x \in B_x \subseteq U \qed $$
 
 [$\impliedby$]  
 전제에 의해, 다음이 성립한다.
@@ -201,17 +201,17 @@ $$ f \text{ is an continuous function.} $$
 
 
 ### 명제5(Topology from a basis)
-Set $X$와 $X$의 subset의 collection $\mathcal{B}$가 있다고 하자.
+Set $X$와 $X$의 subset collection $\mathcal{B}$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
 
-$$ \begin{array}{} & \mathcal{B} \text{ is a basis for some topology on } X & \iff & \begin{aligned} 1.& \bigcup_{B \in \mathcal{B}} B = X \\ 2. & B_1, B_2 \in \mathcal{B} \implies \forall x \in B_1 \cap B_2, \quad \exist B \in \mathcal{B} \quad s.t. \quad x \in B \subseteq B_1 \cap B_2 \end{aligned} \end{array} $$
+$$ \begin{array}{} & \mathcal{B} \text{ is a basis for some topology on } X & \iff & \begin{aligned} 1.& \bigcup \mathcal{B} = X \\ 2. & B_1, B_2 \in \mathcal{B}, \enspace \forall x \in B_1 \cap B_2, \quad \exist B \in \mathcal{B} \quad s.t. \quad x \in B \subseteq B_1 \cap B_2 \end{aligned} \end{array} $$
 
 **Proof**
 
 [$\implies$]  
 -[1]  
-$X$는 $X$의 가장 큰 open set이기 때문에 basis의 성질에 의해 다음이 성립한다.
+$X$는 $X$의 가장 큰 open set이기 때문에 basis의 정의에 의해 자명하게 성립한다. $\qed$
 
 $$ \bigcup_{B \in \mathcal{B}} B = X \qed $$
 
@@ -222,17 +222,10 @@ $B_{1,2}$는 $X$의 open set임으로 다음이 성립한다.
 
 $$ B_1 \cap B_2 \text{ is an open set of } X $$
 
-$B_1 \cap B_2$가 open set임으로 basis의 성질에 의해 다음이 성립한다.
+따라서 명제1에 의해 다음이 성립한다.
 
-$$ \exist \mathcal{B'} \subseteq \mathcal{B} \st B_1 \cap B_2 = \bigcup \mathcal{B'} $$
+$$ \forall x \in B_1 \cap B_2, \quad \exist B \in \mathcal{B} \quad s.t. \quad x \in B \subseteq B_1 \cap B_2 \qed $$
 
-따라서, 다음이 성립한다.
-
-$$ \forall x \in B_1 \cap B_2, \quad \exist B \in \mathcal{B'} \st x \in B \subseteq B_1 \cap B_2 $$
-
-그리고 $\mathcal{B'} \subseteq \mathcal{B}$임으로 다음이 성립한다.
-
-$$ \forall x \in B_1 \cap B_2, \quad  \exist B \in \mathcal{B} \st x \in B \subseteq B_1 \cap B_2 \qed $$
 
 [$\impliedby$]  
 $\mathcal{T_X}$를 다음과 같이 정의하자.
@@ -258,7 +251,7 @@ $\empty \subseteq \mathcal{B}$임으로, $\mathcal{T_X}$의 정의에 의해 다
 $$ \empty \in \mathcal{T_X} \qed $$
 
 
-[$X \in \mathcal{T_X}$]  
+[$X \in \mathcal{T_X}$]    
 $\mathcal{B}\subseteq\mathcal{B}$임으로 전제1에 의해 다음이 성립한다.
 
 $$ X = \bigcup \mathcal{B} $$
@@ -267,36 +260,28 @@ $$ X = \bigcup \mathcal{B} $$
 
 $$ X \in \mathcal{T_X} \qed $$
 
-[finite intersection]  
-$U_i \in \mathcal T_X, \enspace i = 1, \cdots, n$이라 하자.
+[finite intersection]    
+$U_i \in \mathcal{T_X}, \enspace i = 1, \cdots, n$이라 하자.
 
-basis의 정의에 의해 다음이 성립한다.
+$\mathcal{T_X}$의 정의에 의해 다음이 성립한다.
 
-$$ \forall U_i \in \mathcal{T_X}, \quad\exist \mathcal{B_i} \subseteq \mathcal{B} \quad U_i = \bigcup \mathcal{B_i} $$
-
-그러면 다음이 성립한다.
-
-$$ \forall x \in U_i, \quad \exist B \in \mathcal{B_i} \st x \in B \subseteq U_i $$
-
-이 떄, 집합 $U$를 다음과 같이 정의하자.
-
-$$ U = \bigcap_{i=1}^n U_i $$
+$$ \begin{aligned} & \forall U_i \in \mathcal{T_X}, \quad\exist \mathcal{B_i} \subseteq \mathcal{B} \quad U_i = \bigcup \mathcal{B_i} \\\implies& \forall x \in U_i, \quad \exist B \in \mathcal{B_i} \st x \in B \subseteq U_i \end{aligned}  $$
 
 그러면, 다음이 성립한다.
 
-$$ \begin{aligned} x \in U \implies& x \in U_1 \land \cdots \land x \in U_n \\\implies& \exist B_1 \in \mathcal{B_1} \st x \in B_1 \subseteq U_1  \\ \land\cdots\land& \exist B_n \in \mathcal{B_n} \st x \in B_n \subseteq U_n \\\implies& x \in \bigcap_{k=1}^n B_k \subseteq U \end{aligned} $$
+$$ \forall x \in \bigcap_{i=1}^n U_i, \quad x \in \bigcap_{i=1}^n B_i  $$
 
-이 떄, $\mathcal{B}$의 2번전제에 의해 다음이 성립한다.
+따라서, 2번전제에 의해 다음이 성립한다.
 
-$$  \exist B_x \in \mathcal{B} \quad s.t. \quad x \in B_x \subseteq \bigcap_{k=1}^n B_{k} \subseteq U $$
+$$ \forall x \in \bigcap_{i=1}^n U_i, \quad \exist B_x \in \mathcal{B} \quad s.t. \quad x \in B_x \subseteq \bigcap_{i=1}^n U_i  $$
 
-따라서, 다음이 성립한다.
+$B_x$의 collection을 $\mathcal{B_x}$라 하면 다음이 성립한다.
 
-$$ U = \bigcup_{x \in U}B_x $$
+$$ \bigcap_{i=1}^n U_i = \bigcup \mathcal{B_x} $$
 
-이 때, $\mathcal{T_X}$의 정의에 의해 $\mathcal{B}$의 원소들의 union은 $\mathcal{T_X}$의 원소임으로 다음이 성립한다.
+따라서, $\mathcal{T_X}$의 정의에 의해 다음이 성립한다.
 
-$$ U \in \mathcal{T_X} \qed$$
+$$ \bigcap_{i=1}^n U_i \in \mathcal{T_X} \qed$$
 
 -[infinite union]  
 집합 $U$를 다음과 같이 정의하자.
