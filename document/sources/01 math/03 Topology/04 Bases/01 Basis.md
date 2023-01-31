@@ -46,7 +46,7 @@ Metric topology $M$이 있다고 하자.
 
 이 떄, 다음을 증명하여라.
 
-$$ \text{Collection of open ball in } M \text{ is a basis for } M $$
+$$ \text{Collection of open ball in } M \text{ is a basis for } \mathcal{T_M} $$
 
 **Proof**
 
@@ -296,6 +296,34 @@ $$ U \in \mathcal{T_X} $$
 
 > Reference  
 > {cite}`LeeTM` p.35
+
+#### 따름명제5.2
+$\R$의 subset collection $\mathcal{B}$를 다음과 같이 정의하자.
+
+$$ \mathcal{B} := \Set{[a,b) | a,b \in \R \land a \le b} $$
+
+이 떄, 다음을 증명하여라.
+
+$$ \mathcal{B} \text{ is an basis of some topology on } \R $$
+
+**Proof**
+
+$\R$의 Archimedean property에 의해 다음이 성립한다.
+
+$$ \forall x \in \R, \quad \exist n \in \N \st -n < x < n $$
+
+실수의 조밀성에 의해 다음이 성립한다.
+
+$$ \begin{aligned} & \forall x \in \R, \quad \exist a,b \in \R \st -a \le x < b \\ \implies& \forall x \in \R , \quad \exist B_x \in \mathcal{B} \st x \in B_x \\\implies& \R = \bigcup \mathcal{B} \end{aligned}  $$
+
+그리고 $[a_1,b_1),[a_2,b_2) \in \mathcal{B}$가 있을 때, $a_2 \le b_1$이라고 하면 다음이 성립한다.
+
+$$ \forall x \in [a_1,b_1) \cap [a_2,b_2), \quad x \in [a_2,b_1) \in \mathcal{B} $$
+
+따라서, 명제5에 의해 다음이 성립한다.
+
+$$ \mathcal{B} \text{ is an basis of some topology on } \R \qed $$
+
 
 
 ### 명제6
