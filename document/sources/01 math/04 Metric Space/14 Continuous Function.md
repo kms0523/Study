@@ -1,15 +1,16 @@
 # Continuous Function
-open subsset $X \subset \R^n$과 함수 $\mathbf f : X \rightarrow \R^m$이 있다고 하자.
+## 정의
+Metric space $M_1,M_2$와 함수 $f : M_1 \rightarrow M_2$가 있다고 하자.
 
-$f$가 `연속 함수(continuous function)`라는 말은 다음과 동치이다.
+$f$가 `연속 함수(continuous function)`이라는 말은 다음과 동치이다.
 
-$$ \forall \mathbf x \in X, \quad f \text { is continuous at } \mathbf x $$
+$$ \forall x \in M_1, \quad f \text{is continuous at } x $$
 
 > Reference  
 > {cite}`hubbard` Chapter 1.5
 
 ### 명제
-metric spaces $(M_1,d_1),$ $(M_2,d_2)$와 함수 $f : M_1 \rightarrow M_2$가 있다고 하자.
+Metric space $M_1,M_2$와 함수 $f : M_1 \rightarrow M_2$가 있다고 하자.
 
 이 때, 다음을 증명하여라
 

@@ -1,22 +1,25 @@
-# Limit of Function
+# Convergence of Function
 ## 정의
 Metric space $M_1,M_2$과 함수 $f : M_1 \rightarrow M_2$가 있다고 하자.
 
-$x_0 \in \overline{M_1}$가 있을 때, $x \rightarrow x_0$일 때, $f(x)$의 극한값이 $L$이라는 말은 다음과 동치이다.
+$x_0 \in \overline{M_1}, y_0 \in \overline{M_2}$가 있을 때, $x \in M_1$이 $x_0$로 갈 떄, $f(x)$가 $y_0$로 수렴한다는 말은 다음과 동치이다.
 
-$$ \forall \epsilon > 0, \quad \exist  \delta \quad s.t. \quad d_1(x,x_0) < \delta \implies d_2(f(x),L) < \epsilon. $$
-
-### 참고1
-open ball을 이용해서 표현하면 다음과 같다.
-
-$$ \forall \epsilon > 0, \quad \exist \delta>0 \quad s.t. \quad x \in B(x_0,\delta) - \{x_0\} \implies f(x) \in B(L,\epsilon) $$
-
-### 참고2
-$x \rightarrow x_0$일 때, $f(x)$의 극한값이 $L$이라는 말은 다음과 같이 표현한다.
-$$\lim_{x \rightarrow x_0} f(x) = L$$
+$$ \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st 0 < d_1(x,x_0) < \delta \implies d_2(f(x),y_0) < \epsilon $$
 
 > Reference  
-> {cite}`hubbard` Chapter 1.5
+> {cite}`hubbard` p.92
+
+### 참고1
+$x \rightarrow x_0$일 때, $f(x)$가 $y_0$로 수렴한다는 말은 다음과 같이 표현하기도 한다.
+
+$$ \lim_{x \rightarrow x_0}f(x) = y_0 $$
+
+이 떄, $y_0$를 $x \rightarrow x_0$일 때 $f(x)$의 극한값이라고 한다.
+
+### 참고2
+open ball을 이용해서 표현하면 다음과 같다.
+
+$$ \forall \epsilon \in \R^+, \quad \exist \delta \in \R \st x \in B_{M_1}(x_0,\delta) - \Set{x_0} \implies f(x) \in B_{M_2}(y_0,\epsilon) $$
 
 ### 참고3
 $x$는 $x_0$와 항상 $\delta$만큼 떨어져 있기 때문에 극한을 정의하는데 있어 함수 $f(x)$는 $x = x_0$에서 반드시 정의되어 있을 필요는 없다.
@@ -25,7 +28,7 @@ $x$는 $x_0$와 항상 $\delta$만큼 떨어져 있기 때문에 극한을 정�
 > {cite}`stewart` 1.7   
 
 ### 참고4
-함수의 극한값이 $L$이기 위해서는 $d(x,x_0) < \delta$을 만족하는 모든 $x$에 대해서 $d(f(x),L) < \epsilon$을 만족해야 된다.
+함수의 극한값이 $L$이기 위해서는 $0 < d(x,x_0) < \delta$을 만족하는 모든 $x$에 대해서 $d(f(x),L) < \epsilon$을 만족해야 된다.
 
 $d(x,x_0) < \delta$을 만족하는 특정 $x$에 대해 $d(f(x),L') < \epsilon$을 만족하는 $L'$은 극한값이 될 수 없다.
 
@@ -62,7 +65,7 @@ $$ \text{find } \delta \enspace \text{satisfying} \quad 0 < |x-3| < \delta \impl
 
 만약 임의의 양수 $\epsilon$에 대해서 위 문제에 해가 존재한다면, $x$가 3에 충분히 가까이만 간다면 $f(x)$는 얼마든지 5에 가까워 질 수 있다는 의미를 갖게되고 이러한 논의를 통해 $x$가 $3$으로 갈 때 $f(x)$의 극한값이 $5$라는 말은 다음과 같이 표현할 수 있다.
 
-$$ \forall \epsilon > 0, \quad \exist \delta \enspace \text{satisfying} \quad 0 < |x-3| < \delta \implies |f(x) - 5| < \epsilon $$
+$$ \forall \epsilon \in \R^+ , \quad \exist \delta \enspace \text{satisfying} \quad 0 < |x-3| < \delta \implies |f(x) - 5| < \epsilon $$
 
 다음은 실제로 $\delta$가 존재하는지를 확인해보자. $|f(x) - 5| = 2|x -3|$임으로, $|x-3| < 0.5\epsilon$면 $|f(x) - 5| < \epsilon$임을 알 수 있다. 따라서 $\delta$는 $0.5 \epsilon$보다 작은 임의의 양수면 되고 이로써 $\delta$는 존재함을 알 수 있다. $\delta$의 존재성을 보였음으로 $x$가 $3$으로 갈 때 $f(x)$의 극한값은 $5$다.
 
@@ -84,15 +87,15 @@ $$ \lim_{\mathbf x \rightarrow \mathbf x_0} (\mathbf g \circ \mathbf f)(\mathbf 
 
 $\lim_{\mathbf y \rightarrow \mathbf y_0} \mathbf g(\mathbf y) = \mathbf z_0$임으로 다음이 성립한다.
 
-$$ \forall \epsilon >0, \quad \exist \delta_1 \quad s.t. \quad |\mathbf y - \mathbf y_0| < \delta_1 \implies |\mathbf g(\mathbf y) - \mathbf z_0| < \epsilon $$
+$$ \forall \epsilon >0, \quad \exist \delta_1 \st |\mathbf y - \mathbf y_0| < \delta_1 \implies |\mathbf g(\mathbf y) - \mathbf z_0| < \epsilon $$
 
 또한, $\lim_{\mathbf x \rightarrow \mathbf x_0} \mathbf f(\mathbf x) = \mathbf y_0$임으로 다음이 성립한다.
 
-$$ \exist \delta \quad s.t. \quad |\mathbf x - \mathbf x_0| < \delta \implies |\mathbf f(\mathbf x) - \mathbf y_0| < \delta_1 $$
+$$ \exist \delta \st |\mathbf x - \mathbf x_0| < \delta \implies |\mathbf f(\mathbf x) - \mathbf y_0| < \delta_1 $$
 
 두 결과를 통해 다음이 성립함을 알 수 있다.
 
-$$ \forall \epsilon >0, \quad \exist \delta \quad s.t. \quad|\mathbf x - \mathbf x_0| < \delta \implies |(\mathbf g \circ \mathbf f)(\mathbf x) - \mathbf z_0| < \epsilon $$
+$$ \forall \epsilon >0, \quad \exist \delta \st|\mathbf x - \mathbf x_0| < \delta \implies |(\mathbf g \circ \mathbf f)(\mathbf x) - \mathbf z_0| < \epsilon $$
 
 따라서, 함수의 극한의 정의에 의해 다음이 성립한다.
 

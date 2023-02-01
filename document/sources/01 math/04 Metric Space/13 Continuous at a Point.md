@@ -1,4 +1,4 @@
-# Continuous
+# Continuous at a Point
 ## 정의
 Metric space $M_1,M_2$와 함수 $f : M_1 \rightarrow M_2$가 있다고 하자.
 
@@ -10,9 +10,13 @@ $$ \lim_{x \rightarrow x_0} f(x) = f(x_0) $$
 > {cite}`hubbard` Chapter 1.5
 
 ### 참고1
-연속의 정의를 풀어 쓰면 다음과 같다.
+연속의 정의를 풀어 쓰면 다음이 성립한다.
 
-$$ \forall \epsilon > 0, \quad \exist  \delta \quad s.t. \quad x \in  B_\delta(x_0) \implies f(x) \in B_\epsilon(f(x_0)) $$
+$$ \begin{aligned} & \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st 0 < d_1(x,x_0) < \delta \implies d_2(f(x),f(x_0)) < \epsilon \\ \implies& \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st d_1(x,x_0) < \delta \implies d_2(f(x),f(x_0)) < \epsilon \end{aligned} $$
+
+이를 Open ball을 이용해 표현하면 다음과 같다.
+
+$$ \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st x \in B_{M_1}(x_0,\delta) \implies f(x) \in B_{M_2}(f(x_0),\epsilon) $$
 
 ### 참고2
 연속의 정의는 다음 세가지를 요구한다.
@@ -45,11 +49,11 @@ $$ \lim_{\mathbf x \rightarrow \mathbf x_0} \mathbf f(\mathbf x) = \mathbf f(\ma
 [$\implies$]  
 $\mathbf f$가 $\mathbf x_0$에서 연속임으로, 다음이 성립한다.
 
-$$ \forall \epsilon >0, \quad \exist \delta \quad s.t. \quad |\mathbf x - \mathbf x_0| < \delta \implies |\mathbf {f(x) - f(x_0)}| < \epsilon$$
+$$ \forall \epsilon >0, \quad \exist \delta \st |\mathbf x - \mathbf x_0| < \delta \implies |\mathbf {f(x) - f(x_0)}| < \epsilon$$
 
 이 때, $s \in S$가 $\mathbf x_0$에 수렴하는 수열임으로 다음이 성립한다.
 
-$$ \exist N \quad s.t. \quad N < n \implies |s(n) - \mathbf x_0| < \delta $$
+$$ \exist N \st N < n \implies |s(n) - \mathbf x_0| < \delta $$
 
 즉, 이러한 $N$에 대해서는 다음이 성립한다.
 
@@ -64,11 +68,11 @@ $$\forall s \in S, \quad \lim_{n \rightarrow \infty} (\mathbf f \circ s)(n) = \m
 
 그러면 다음이 성립한다.
 
-$$ \forall \delta, \quad \exist \epsilon \quad s.t. \quad |\mathbf x - \mathbf x_0| < \delta \text{ but } \epsilon \le |\mathbf {f(x) - f(x_0)}|   $$
+$$ \forall \delta, \quad \exist \epsilon \st |\mathbf x - \mathbf x_0| < \delta \text{ but } \epsilon \le |\mathbf {f(x) - f(x_0)}|   $$
 
 이 때, $s \in S$가 $\mathbf x_0$에 수렴하는 수열임으로 다음이 성립한다.
 
-$$ \exist N \quad s.t. \quad N < n \implies |s(n) - \mathbf x_0| < \delta $$
+$$ \exist N \st N < n \implies |s(n) - \mathbf x_0| < \delta $$
 
 즉, 이러한 $N$에 대해서는 다음이 성립한다.
 

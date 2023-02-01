@@ -1,21 +1,10 @@
 # Open Set
-
 ## 정의
 Topological space $X$가 있다고 하자.
 
 $X$의 subset $S$가 다음을 만족할 때, $S$를 $X$의 `open subset` 또는 `open set`이라고 한다.
 
 $$ S \in \mathcal{T_X} $$
-
-### 참고
-Topology의 정의를 보면 알 수 있듯이, $\mathcal{T_X}$가 metric space에 open set collection의 성질을 만족한다.
-
-따라서, $\mathcal{T_X}$는 open set의 collection이라 보고 $S \in \mathcal{T_X}$를 open set이라 정의 한다.
-
-즉, Topology는 거리의 개념 없이 open set을 정의함으로써 open set의 개념을 한층 더 추상화 했다고 할 수 있다.
-
-> Referece  
-> {cite}`LeeTM` p.20
 
 ### 명제1
 Topological space $X$가 있다고 하자.
