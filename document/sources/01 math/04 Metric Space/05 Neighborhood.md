@@ -4,13 +4,15 @@ Metric space $M$이 있다고 하자.
 
 $x \in M$의 `neighborhood`는 다음을 만족하는 $N_x \subseteq M$이다.
 
-$$ \exist \epsilon > 0, \quad  B(x,\epsilon) \subseteq N_x $$
+$$ \exist \epsilon \in \R^+, \quad  B(x,\epsilon) \subseteq N_x $$
 
 > Reference  
 > {cite}`hubbard` chap 1.5 
 
 ### 참고1
-정의에서 알 수 있듯이, neighborhood는 $x$를 중심으로 하는 어떤 open ball을 포함하는 집합일 뿐이다. 즉, neighborhood 자체가 반드시 open set일 필요는 없다. 
+정의에서 알 수 있듯이, neighborhood는 $x$를 중심으로 하는 어떤 open ball을 포함하는 집합일 뿐이다. 
+
+즉, neighborhood 자체가 반드시 open set일 필요는 없다. 
 
 > Reference  
 > {cite}`hubbard` chap 1.5 
