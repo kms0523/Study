@@ -18,6 +18,11 @@ $$ \begin{aligned} & \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st
 
 $$ \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st f (B_{M_1}(x,\delta)) \subseteq B_{M_2}(f(x),\epsilon) $$
 
+혹은 다음과 같이 표현할 수 있다.
+
+$$ \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st B_{M_1}(x,\delta) \subseteq \preimg(B_{M_2}(f(x),\epsilon)) $$
+
+
 즉, $x \in M_1$에서 continuous하다는 말은 $f(x)$를 중심으로 하는 open ball $B$마다 $f$에 의해서 $B$에 포함되는 $x$를 중심으로 하는 open ball이 존재한다는 말이다.
 
 
