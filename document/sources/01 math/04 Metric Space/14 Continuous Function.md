@@ -19,7 +19,11 @@ $$ f \text{ is a continuous function } \iff \text{preimage of every open subset 
 **Proof**
 
 [$\implies$]  
-$U$가 $M_2$의 open set이라 하자.
+$V$가 $M_2$의 open set이라 하면 다음이 성립한다.
+
+$$ \forall y \in V, \quad \exist r \in \R^+ \st B_{M_2}(y,r) \subseteq V $$
+
+그러면 임의의 $y\in V$
 
 $x \in \preimg(U)$면 $U$가 open set임으로 다음이 성립한다.
 

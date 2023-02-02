@@ -2,9 +2,9 @@
 ## 정의
 Metric space $M_1,M_2$와 함수 $f : M_1 \rightarrow M_2$가 있다고 하자.
 
-$x_0 \in M_1$에서 $f$가 `연속(continuous)`이라는 말은 다음과 동치이다.
+$x \in M_1$에서 $f$가 `연속(continuous)`이라는 말은 다음과 동치이다.
 
-$$ \lim_{x \rightarrow x_0} f(x) = f(x_0) $$
+$$ \lim_{t \rightarrow x} f(t) = f(x) $$
 
 > Reference  
 > {cite}`hubbard` Chapter 1.5
@@ -12,11 +12,15 @@ $$ \lim_{x \rightarrow x_0} f(x) = f(x_0) $$
 ### 참고1
 연속의 정의를 풀어 쓰면 다음이 성립한다.
 
-$$ \begin{aligned} & \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st 0 < d_1(x,x_0) < \delta \implies d_2(f(x),f(x_0)) < \epsilon \\ \implies& \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st d_1(x,x_0) < \delta \implies d_2(f(x),f(x_0)) < \epsilon \end{aligned} $$
+$$ \begin{aligned} & \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st 0 < d_1(x,t) < \delta \implies d_2(f(x),f(t)) < \epsilon \\ \implies& \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st d_1(x,t) < \delta \implies d_2(f(x),f(t)) < \epsilon \end{aligned} $$
 
 이를 Open ball을 이용해 표현하면 다음과 같다.
 
-$$ \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st x \in B_{M_1}(x_0,\delta) \implies f(x) \in B_{M_2}(f(x_0),\epsilon) $$
+$$ \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st f (B_{M_1}(x,\delta)) \subseteq B_{M_2}(f(x),\epsilon) $$
+
+즉, $x \in M_1$에서 continuous하다는 말은 $f(x)$를 중심으로 하는 open ball $B$마다 $f$에 의해서 $B$에 포함되는 $x$를 중심으로 하는 open ball이 존재한다는 말이다.
+
+
 
 ### 참고2
 연속의 정의는 다음 세가지를 요구한다.
