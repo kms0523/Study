@@ -1,36 +1,36 @@
 # Convergence of Function
 ## 정의
-Metric space $M_1,M_2$과 함수 $f : M_1 \rightarrow M_2$가 있다고 하자.
+Metric space $M_1,M_2$가 있다고 하자.
 
-$x_0 \in \overline{M_1}, y_0 \in \overline{M_2}$가 있을 때, $x \in M_1$이 $x_0$로 갈 떄, $f(x)$가 $y_0$로 수렴한다는 말은 다음과 동치이다.
+$X$가 $M_1$의 open set이고 $x \in \overline{X}, y \in M_2$가 있을 때, $t \in X$가 $x$로 갈 떄, $f(t)$가 $y$로 수렴한다는 말은 다음과 동치이다.
 
-$$ \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st 0 < d_1(x,x_0) < \delta \implies d_2(f(x),y_0) < \epsilon $$
+$$ \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st 0 < d_1(x,t) < \delta \implies d_2(y,f(t)) < \epsilon $$
 
 > Reference  
 > {cite}`hubbard` p.92
 
 ### 참고1
-$x \rightarrow x_0$일 때, $f(x)$가 $y_0$로 수렴한다는 말은 다음과 같이 표현하기도 한다.
+$t \rightarrow x$일 때, $f(t)$가 $y$로 수렴한다는 말은 다음과 같이 표현하기도 한다.
 
-$$ \lim_{x \rightarrow x_0}f(x) = y_0 $$
+$$ \lim_{t \rightarrow x}f(t) = y $$
 
-이 떄, $y_0$를 $x \rightarrow x_0$일 때 $f(x)$의 극한값이라고 한다.
+이 떄, $y$를 $t \rightarrow x$일 때 $f(t)$의 극한값이라고 한다.
 
 ### 참고2
 open ball을 이용해서 표현하면 다음과 같다.
 
-$$ \forall \epsilon \in \R^+, \quad \exist \delta \in \R \st x \in B_{M_1}(x_0,\delta) - \Set{x_0} \implies f(x) \in B_{M_2}(y_0,\epsilon) $$
+$$ \forall \epsilon \in \R^+, \quad \exist \delta \in \R \st t \in B_{M_1}(x,\delta) - \Set{x} \implies f(t) \in B_{M_2}(y,\epsilon) $$
 
 ### 참고3
-$x$는 $x_0$와 항상 $\delta$만큼 떨어져 있기 때문에 극한을 정의하는데 있어 함수 $f(x)$는 $x = x_0$에서 반드시 정의되어 있을 필요는 없다.
+$t$는 $x$와 항상 $\delta$만큼 떨어져 있기 때문에 극한을 정의하는데 있어 함수 $f(x)$는 $t = x$에서 반드시 정의되어 있을 필요는 없다.
 
 > Reference  
 > {cite}`stewart` 1.7   
 
 ### 참고4
-함수의 극한값이 $L$이기 위해서는 $0 < d(x,x_0) < \delta$을 만족하는 모든 $x$에 대해서 $d(f(x),L) < \epsilon$을 만족해야 된다.
+함수의 극한값이 $L$이기 위해서는 $0 < d(x,t) < \delta$을 만족하는 모든 $t$에 대해서 $d(y,f(t)) < \epsilon$을 만족해야 된다.
 
-$d(x,x_0) < \delta$을 만족하는 특정 $x$에 대해 $d(f(x),L') < \epsilon$을 만족하는 $L'$은 극한값이 될 수 없다.
+$0 < d(x,t) < \delta$을 만족하는 특정 $x$에 대해 $d(y, f(t)) < \epsilon$을 만족하는 $L'$은 극한값이 될 수 없다.
 
 #### 예시
 $f(x) = \sin \frac{1}{x}$이 있다고 하자.
@@ -75,13 +75,13 @@ $$ \forall \epsilon \in \R^+ , \quad \exist \delta \enspace \text{satisfying} \q
 ### 명제
 $U \subset \R^n, \enspace V \subset \R^m$와 함수 $\mathbf f : U \rightarrow V, \enspace \mathbf g : V \rightarrow \R^k$가 있다고 하자.
 
-$\mathbf x_0 \in U$에 대해서 다음이 성립한다.
+$\mathbf x \in U$에 대해서 다음이 성립한다.
 
-$$ \lim_{\mathbf x \rightarrow \mathbf x_0} \mathbf f(\mathbf x) = \mathbf y_0, \enspace \lim_{\mathbf y \rightarrow \mathbf y_0} \mathbf g(\mathbf y) = \mathbf z_0$$
+$$ \lim_{\mathbf x \rightarrow \mathbf x} \mathbf f(\mathbf x) = \mathbf y_0, \enspace \lim_{\mathbf y \rightarrow \mathbf y_0} \mathbf g(\mathbf y) = \mathbf z_0$$
 
 이 때, 다음을 증명하여라.
 
-$$ \lim_{\mathbf x \rightarrow \mathbf x_0} (\mathbf g \circ \mathbf f)(\mathbf x) = \mathbf z_0 $$
+$$ \lim_{\mathbf x \rightarrow \mathbf x} (\mathbf g \circ \mathbf f)(\mathbf x) = \mathbf z_0 $$
 
 **Proof**
 
@@ -89,14 +89,14 @@ $\lim_{\mathbf y \rightarrow \mathbf y_0} \mathbf g(\mathbf y) = \mathbf z_0$임
 
 $$ \forall \epsilon >0, \quad \exist \delta_1 \st |\mathbf y - \mathbf y_0| < \delta_1 \implies |\mathbf g(\mathbf y) - \mathbf z_0| < \epsilon $$
 
-또한, $\lim_{\mathbf x \rightarrow \mathbf x_0} \mathbf f(\mathbf x) = \mathbf y_0$임으로 다음이 성립한다.
+또한, $\lim_{\mathbf x \rightarrow \mathbf x} \mathbf f(\mathbf x) = \mathbf y_0$임으로 다음이 성립한다.
 
-$$ \exist \delta \st |\mathbf x - \mathbf x_0| < \delta \implies |\mathbf f(\mathbf x) - \mathbf y_0| < \delta_1 $$
+$$ \exist \delta \st |\mathbf x - \mathbf x| < \delta \implies |\mathbf f(\mathbf x) - \mathbf y_0| < \delta_1 $$
 
 두 결과를 통해 다음이 성립함을 알 수 있다.
 
-$$ \forall \epsilon >0, \quad \exist \delta \st|\mathbf x - \mathbf x_0| < \delta \implies |(\mathbf g \circ \mathbf f)(\mathbf x) - \mathbf z_0| < \epsilon $$
+$$ \forall \epsilon >0, \quad \exist \delta \st|\mathbf x - \mathbf x| < \delta \implies |(\mathbf g \circ \mathbf f)(\mathbf x) - \mathbf z_0| < \epsilon $$
 
 따라서, 함수의 극한의 정의에 의해 다음이 성립한다.
 
-$$ \lim_{\mathbf x \rightarrow \mathbf x_0} (\mathbf g \circ \mathbf f)(\mathbf x) = \mathbf z_0 \quad {_\blacksquare} $$
+$$ \lim_{\mathbf x \rightarrow \mathbf x} (\mathbf g \circ \mathbf f)(\mathbf x) = \mathbf z_0 \quad {_\blacksquare} $$

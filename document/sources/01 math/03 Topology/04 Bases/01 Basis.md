@@ -265,7 +265,7 @@ $U_i \in \mathcal{T_X}, \enspace i = 1, \cdots, n$이라 하자.
 
 $\mathcal{T_X}$의 정의에 의해 다음이 성립한다.
 
-$$ \begin{aligned} & \forall U_i \in \mathcal{T_X}, \quad\exist \mathcal{B_i} \subseteq \mathcal{B} \quad U_i = \bigcup \mathcal{B_i} \\\implies& \forall x \in U_i, \quad \exist B \in \mathcal{B_i} \st x \in B \subseteq U_i \end{aligned}  $$
+$$ \begin{aligned} & \forall U_i \in \mathcal{T_X}, \quad\exist \mathcal{B_i} \subseteq \mathcal{B} \quad U_i = \bigcup \mathcal{B_i} \\\implies& \forall x \in U_i, \quad \exist B_i \in \mathcal{B_i} \st x \in B_i \subseteq U_i \end{aligned}  $$
 
 그러면, 다음이 성립한다.
 

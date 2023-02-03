@@ -4,7 +4,7 @@ Metric space $M$과 submetric space $S$가 있다고 하자.
 
 다음을 만족하면 $S$를 $M$에서의 `open set`이라고 한다.
 
-$$ \forall x \in S, \quad \exist r \in \R^+ \quad s.t. \quad B_M(x,r) \le S $$
+$$ \forall x \in S, \quad \exist r \in \R^+ \quad s.t. \quad B_M(x,r) \subseteq S $$
 
 > Reference  
 > {cite}`hubbard` chap 1.5  
@@ -18,21 +18,17 @@ $$ \text {Any union of open sets on } M \text{ is open set on } M. $$
 
 $M$의 모든 open set의 집합을 $\mathcal{S}$라 하자.
 
-$\mathcal{S}$의 임의의 subset을 $\mathcal{S'}$라 할 때, 집합 $X$를 다음과 같이 정의하자.
+$\mathcal{S}$의 임의의 subset을 $\mathcal{S'}$라 하면, 다음을 만족한다.
 
-$$ X := \bigcup_{S \in \mathcal{S'}} S $$
-
-$X$의 정의에 의해 다음을 만족한다.
-
-$$ \forall x \in X, \quad \exist S \in \mathcal{S'} \quad s.t. \quad x \in S $$
+$$ \forall x \in \bigcup\mathcal{S'}, \quad \exist S \in \mathcal{S'} \quad s.t. \quad x \in S $$
  
 이 때, $S$는 $M$위의 open set임으로, 다음이 성립한다.
 
-$$\exist r \in \R^+ \quad s.t. \quad B_M(x,r) \le S$$
+$$\exist r \in \R^+ \quad s.t. \quad B_M(x,r) \subseteq S \subseteq \bigcup\mathcal{S'} $$
 
-$X$의 정의에 의해 $S \le X$임으로, 다음이 성립한다.
+$X$의 정의에 의해 $S \subseteq X$임으로, 다음이 성립한다.
 
-$$ \forall x \in X, \quad \exist r \in \R^+ \quad s.t. \quad B_M(x,r) \le X$$
+$$ \forall x \in \bigcup\mathcal{S'}, \quad \exist r \in \R^+ \quad s.t. \quad B_M(x,r) \subseteq \bigcup\mathcal{S'} $$
 
 따라서, open set의 정의에 의해 다음이 성립한다.
 
@@ -62,15 +58,15 @@ $$ x \in S_i, \enspace i=1,\cdots,n $$
 
 이 때, $S_i$는 open set임으로 다음이 성립한다.
 
-$$\exist r_i \quad s.t. \quad B_M(x, r_i) \le S_i, \enspace i=1,\cdots,n$$
+$$\exist r_i \quad s.t. \quad B_M(x, r_i) \subseteq S_i, \enspace i=1,\cdots,n$$
 
 $\min(\{ r_i \}) = r$이라 하면 다음이 성립한다.
 
-$$ B_M(x,r) \le S_i, \enspace i=1,\cdots,n $$
+$$ B_M(x,r) \subseteq S_i, \enspace i=1,\cdots,n $$
 
 $X$의 정의에 의해 다음이 성립한다.
 
-$$ B_M(x,r) \le X$$
+$$ B_M(x,r) \subseteq X$$
 
 따라서, open set의 정의에 의해 다음이 성립한다.
 
@@ -112,17 +108,17 @@ $x \in M$이 있다고 하자.
 
 임의의 $r \in \R^+$에 대해, $B_M(x,r)$의 정의에 의해 다음이 성립한다.
 
-$$ B_M(x,r) \le M $$
+$$ B_M(x,r) \subseteq M $$
 
 이로 인해 $\forall x \in M$에 대해, 다음이 성립한다.
 
-$$ \exist r \in R^+ \quad s.t. \quad B_M(x,r) \le M $$
+$$ \exist r \in R^+ \quad s.t. \quad B_M(x,r) \subseteq M $$
 
 따라서 $M$는 $M$에서의 open set이 된다.$\qed$
 
 
 #### 따름명제4.1
-Metric space $M$과 $S \le M$이 있다고 하자.
+Metric space $M$과 $S \subseteq M$이 있다고 하자.
 
 이 때, 다음을 증명하여라.
 
@@ -132,7 +128,7 @@ $$ S \text{ is an open set on } S $$
 
 $\forall x \in S$에 대해, $B_S(x,r) = B_M(x,r) \cap S$임으로 다음이 성립한다.
 
-$$ B_S(x,r) \le S $$
+$$ B_S(x,r) \subseteq S $$
 
 따라서, $S$는 $S$에서의 open set이 된다.$\qed$
 
@@ -170,11 +166,11 @@ $$ \forall z \in B_M(y, \epsilon), \quad d(x,z) < d(x,y) + d(y,z) < d(x,y) + \ep
 
 따라서 $\epsilon = r - d(x,y)$로 두면 다음이 성립한다.
 
-$$ \begin{aligned} & d(x,z) < r \\ \iff& B_M(y,\epsilon) \le B_M(x,r) \end{aligned}  $$
+$$ \begin{aligned} & d(x,z) < r \\ \iff& B_M(y,\epsilon) \subseteq B_M(x,r) \end{aligned}  $$
 
 그럼으로, 다음이 성립한다.
 
-$$ \forall y \in B_M(x,r) \quad \exist\epsilon \in \R^+ \quad s.t. \quad B_M(y,r) \le B_M(x,r) $$
+$$ \forall y \in B_M(x,r) \quad \exist\epsilon \in \R^+ \quad s.t. \quad B_M(y,r) \subseteq B_M(x,r) $$
 
 따라서 open set의 정의에 의해 다음이 성립한다.
 
@@ -193,7 +189,7 @@ $$ U \text{ is an open set} \iff U \text{ is an union of some collection of open
 [$\implies$]  
 $U$의 정의에 의해 다음이 성립한다.
 
-$$ \forall x \in U, \quad \exist r_x \in \R^+ \quad s.t. \quad B_M(x,r_x) \le S $$
+$$ \forall x \in U, \quad \exist r_x \in \R^+ \quad s.t. \quad B_M(x,r_x) \subseteq S $$
 
 따라서, 다음이 성립한다.
 

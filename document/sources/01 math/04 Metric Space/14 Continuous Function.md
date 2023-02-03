@@ -1,18 +1,18 @@
 # Continuous Function
 ## 정의
-Metric space $M_1,M_2$와 함수 $f : M_1 \rightarrow M_2$가 있다고 하자.
+Metric space $M_1,M_2$가 있다고 하자.
 
-$f$가 `연속 함수(continuous function)`이라는 말은 다음과 동치이다.
+$X$가 $M_1$의 open set일 때, 함수 $f : X \rightarrow M_2$가  `연속 함수(continuous function)`이라는 말은 다음과 동치이다.
 
-$$ \forall x \in M_1, \quad f \text{is continuous at } x $$
+$$ \forall x \in M_1, \quad f \text{ is continuous at } x $$
 
 > Reference  
 > {cite}`hubbard` Chapter 1.5
 
 ### 명제
-Metric space $M_1,M_2$와 함수 $f : M_1 \rightarrow M_2$가 있다고 하자.
+Metric space $M_1,M_2$가 있다고 하자.
 
-이 때, 다음을 증명하여라
+$X$가 $M_1$의 open set이고 함수 $f : X \rightarrow M_2$가  있을 때, 다음을 증명하여라
 
 $$ f \text{ is a continuous function } \iff \text{preimage of every open subset is open} $$
 

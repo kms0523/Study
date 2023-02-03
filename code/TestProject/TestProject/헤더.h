@@ -1,16 +1,3 @@
 #pragma once
-#include <type_traits>
-#include <vector>
-
-class Number_Handler;
-
-class Number {
-  friend Number_Handler;
-
- public:
-  virtual void print(void) const = 0;
-
- protected:
-  Number(void) = default;
-  virtual ~Number(void) = default;
-};
+#include "헤더1.h"
+#include "헤더2.h"

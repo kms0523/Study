@@ -1,8 +1,8 @@
 # Continuous at a Point
 ## 정의
-Metric space $M_1,M_2$와 함수 $f : M_1 \rightarrow M_2$가 있다고 하자.
+Metric space $M_1,M_2$가 있다고 하자.
 
-$x \in M_1$에서 $f$가 `연속(continuous)`이라는 말은 다음과 동치이다.
+$X$가 $M_1$의 open set일 때, 함수 $f : X \rightarrow M_2$가 $x \in X$에서 `연속(continuous)`이라는 말은 다음과 동치이다.
 
 $$ \lim_{t \rightarrow x} f(t) = f(x) $$
 
@@ -23,7 +23,7 @@ $$ \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st f (B_{M_1}(x,\del
 $$ \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st B_{M_1}(x,\delta) \subseteq \preimg(B_{M_2}(f(x),\epsilon)) $$
 
 
-즉, $x \in M_1$에서 continuous하다는 말은 $f(x)$를 중심으로 하는 open ball $B$마다 $f$에 의해서 $B$에 포함되는 $x$를 중심으로 하는 open ball이 존재한다는 말이다.
+즉, $x \in X$에서 continuous하다는 말은 $f(x)$를 중심으로 하는 open ball $B$마다 $f$에 의해서 $B$에 포함되는 $x$를 중심으로 하는 open ball이 존재한다는 말이다.
 
 
 
