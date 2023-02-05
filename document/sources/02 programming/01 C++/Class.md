@@ -171,6 +171,42 @@ int main()
 [geeks for geeks](https://www.geeksforgeeks.org/anonymous-classes-in-cpp/)
 
 ## 생성자
+
+### Default move constructor
+별도로 move constructor를 설정하지 않아도 member variable을 move로 옮기는 move constructor가 생성된다.
+
+아래 코드를 확인해보자.
+
+```cpp
+#include <iostream>
+
+class A {
+ public:
+  A(void) = default;
+  A(const A& a) { std::cout << "copy constructor\n"; }
+  A(A&& a) { std::cout << "move constructor\n"; }
+};
+
+class B {
+ public:
+  B(void) = default;
+
+ private:
+  A a;
+  A b;
+  A c;
+};
+
+int main() {
+  B b;
+  B c(std::move(b));
+ //move constructor
+ //move constructor
+ //move constructor
+```
+
+Class `B`는 별도의  move constructor가 없지만 객체 `c`를 생성할 때, rvalue `b`를 넘겨줌으로써 default move constructor가 호출이 되고 멤버변수 `a,b,c`에 대해서 각각 move constructor를 호출하여 move constructor 문장이 3번 나오게 된다.
+
 ### explicit
 explicit 키워드는 자신이 원하지 않은 형변환이 일어나지 않도록 제한하는 키워드이다.
 

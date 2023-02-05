@@ -273,7 +273,7 @@ $$ \forall x \in \bigcap_{i=1}^n U_i, \quad x \in \bigcap_{i=1}^n B_i  $$
 
 따라서, 2번전제에 의해 다음이 성립한다.
 
-$$ \forall x \in \bigcap_{i=1}^n U_i, \quad \exist B_x \in \mathcal{B} \quad s.t. \quad x \in B_x \subseteq \bigcap_{i=1}^n U_i  $$
+$$ \forall x \in \bigcap_{i=1}^n U_i, \quad \exist B_x \in \mathcal{B} \quad s.t. \quad x \in B_x \subseteq \bigcap_{i=1}^n B_i  $$
 
 $B_x$의 collection을 $\mathcal{B_x}$라 하면 다음이 성립한다.
 

@@ -19,17 +19,13 @@ $$ f \text{ is a continuous function } \iff \text{preimage of every open subset 
 **Proof**
 
 [$\implies$]  
-$M_2$의 임의의 open set을 $V$라 하면 다음이 성립한다.
+$M_2$의 임의의 open set을 $V$라 하면, open set의 성질에 의해 다음이 성립한다.
 
-$$ \forall y \in V, \quad \exist r \in \R^+ \st B_{M_2}(y,r) \subseteq V $$
+$$ \forall x \in \preimg(V), \quad \exist r \in \R^+ \st B_{M_2}(f(x),r) \subseteq V $$
 
-그러면 전제에 의해 임의의 $y\in V$와 위를 만족하는 $r$에 대해 다음이 성립한다.
+그러면 전제에 의해 다음이 성립한다.
 
-$$ \forall x_y \in \preimg(y),\quad  \exist\delta \in \R^+ \st B_{M_1}(x_y,\delta) \subseteq \preimg(B_{M_2}(y,r)) \subseteq \preimg(V)) $$
-
-위의 결과를 종합하면 다음이 성립한다.
-
-$$ \begin{aligned} & \forall x \in \preimg(V), \quad \exist! y \in V \st x \in \preimg(y) \\ \implies& \forall x \in \preimg(V), \quad \exist \delta\in\R^+ \st B_{M_1}(x,\delta) \subseteq \preimg(V) \\ \implies& \preimg(V) \text{ is an open set of } M_1 \qed  \end{aligned}  $$
+$$ \begin{aligned} & \forall x \in \preimg(V), \quad \exist\delta \in \R^+ \st B_{M_1}(x,\delta) \subseteq \preimg(B_{M_2}(y,r)) \subseteq \preimg(V) \\ \implies& \preimg(V) \text{ is an open set of } M_1 \qed  \end{aligned}  $$
 
 [$\impliedby$]  
 $M_1$의 임의의 원소를 $x$라고 하자.
