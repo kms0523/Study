@@ -261,38 +261,38 @@ $$ X = \bigcup \mathcal{B} $$
 $$ X \in \mathcal{T_X} \qed $$
 
 [finite intersection]    
-$U_i \in \mathcal{T_X}, \enspace i = 1, \cdots, n$이라 하자.
+$\mathcal{T_X}$의 finite subset을 $\mathcal{T_X'}$이라고 하자.
 
-$\mathcal{T_X}$의 정의에 의해 다음이 성립한다.
+$$ \mathcal{T_X'} := \Set{S_i \in \mathcal{T_X} | i=1,\cdots,n} $$
 
-$$ \begin{aligned} & \forall U_i \in \mathcal{T_X}, \quad\exist \mathcal{B_i} \subseteq \mathcal{B} \quad U_i = \bigcup \mathcal{B_i} \\\implies& \forall x \in U_i, \quad \exist B_i \in \mathcal{B_i} \st x \in B_i \subseteq U_i \end{aligned}  $$
+$\mathcal{T_X'}$의 정의에 의해 다음이 성립한다.
 
-그러면, 다음이 성립한다.
+$$ \forall x \in S \in \mathcal{T_X'}, \quad \exist B_S \in \mathcal{B} \st x \in B_S \subseteq S $$
 
-$$ \forall x \in \bigcap_{i=1}^n U_i, \quad x \in \bigcap_{i=1}^n B_i  $$
+$\bigcap\mathcal{T_X'}$의 임의의 element를 $x$라고 하면 다음이 성립한다.
+
+$$ \begin{aligned} & x \in S_i, \quad i=1,\cdots,n \\\implies& \exist B_i \in \mathcal{B} \st x \in B_i \subseteq S_i, \quad i=1,\cdots,n \\\implies& x \in \bigcap_{i=1}^n B_i \subseteq \bigcap\mathcal{T_X'} \end{aligned} $$
 
 따라서, 2번전제에 의해 다음이 성립한다.
 
-$$ \forall x \in \bigcap_{i=1}^n U_i, \quad \exist B_x \in \mathcal{B} \quad s.t. \quad x \in B_x \subseteq \bigcap_{i=1}^n B_i  $$
+$$ \exist B_x \in \mathcal{B} \quad s.t. \quad x \in B_x \subseteq \bigcap_{i=1}^n B_i \subseteq \bigcap\mathcal{T_X'} $$
 
 $B_x$의 collection을 $\mathcal{B_x}$라 하면 다음이 성립한다.
 
-$$ \bigcap_{i=1}^n U_i = \bigcup \mathcal{B_x} $$
+$$ \exist \mathcal{B_x} \subseteq \mathcal{B} \st \bigcap\mathcal{T_X'} = \bigcup \mathcal{B_x} \implies \bigcap\mathcal{T_X'} \in \mathcal{T_X} \qed $$
 
-따라서, $\mathcal{T_X}$의 정의에 의해 다음이 성립한다.
+-[union]  
+$\mathcal{T_X}$의 subset을 $\mathcal{T_X'}$이라고 하자.
 
-$$ \bigcap_{i=1}^n U_i \in \mathcal{T_X} \qed$$
+$\mathcal{T_X'}$의 정의에 의해 다음이 성립한다.
 
--[infinite union]  
-집합 $U$를 다음과 같이 정의하자.
+$$ S \in \mathcal{T_X'}, \quad \exist \mathcal{B_S} \subseteq \mathcal{B} \st S = \bigcup \mathcal{B_S} $$
 
-$$ U = \bigcup_{{U_i \in \mathcal{T_X}}} U_i $$
+위를 만족하는 모든 $\mathcal{B_S}$의 collection을 $\mathcal{BS}$라고 하면, 다음이 성립한다.
 
-$U_i$는 $\mathcal{B}$의 어떤 원소들의 union임으로 $U$는 $\mathcal{B}$의 어떤 원소들의 union으로 귀결된다.
+$$ \bigcup\mathcal{BS} \subseteq \mathcal{B} $$
 
-이 때, $\mathcal{T_X}$의 정의에 의해 $\mathcal{B}$의 원소들의 union을 포함함으로 다음이 성립한다.
-
-$$ U \in \mathcal{T_X} $$
+$$ \bigcup\mathcal{T_X'} = \bigcup\left(\bigcup\mathcal{BS}\right) \in \mathcal{T_X} \qed $$
 
 > Reference  
 > {cite}`LeeTM` p.35
