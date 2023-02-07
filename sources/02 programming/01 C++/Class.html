@@ -458,7 +458,12 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../01%20math/03%20Topology/01%20Topologies/01%20Topological%20Spaces.html">
+      <a class="reference internal" href="../../01%20math/03%20Topology/01%20Topologies/01-1%20Topology.html">
+       Topology
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/03%20Topology/01%20Topologies/01-2%20Topological%20Spaces.html">
        Topological Space
       </a>
      </li>
@@ -697,7 +702,12 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/01%20Metric%20Subspace.html">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/01-1%20Metric.html">
+     Metric
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/01-2%20Metric%20Subspace.html">
      Metric Subspace
     </a>
    </li>
@@ -752,18 +762,18 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/11%20Convergent%20Sequence.html">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/11%20Convergence%20of%20Sequence.html">
      Convergent Sequence
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/12%20Limit%20of%20Function.html">
-     Limit of Function
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/12%20Convergence%20of%20Function.html">
+     Convergence of Function
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/13%20Continuous.html">
-     Continuous
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/13%20Continuous%20at%20a%20Point.html">
+     Continuous at a Point
     </a>
    </li>
    <li class="toctree-l2">
@@ -794,18 +804,33 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20math/05%20Analysis/03%20Rational%20Number.html">
+    <a class="reference internal" href="../../01%20math/05%20Analysis/03%20Absolute.html">
+     Absolute
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/05%20Analysis/04%20Rational%20Number.html">
      Rational Number
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20math/05%20Analysis/04%20Real%20Number.html">
+    <a class="reference internal" href="../../01%20math/05%20Analysis/05%20Real%20Number.html">
      Real Number
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20math/05%20Analysis/05%20Maximum%20and%20Minimum.html">
+    <a class="reference internal" href="../../01%20math/05%20Analysis/06%20Maximum%20and%20Minimum.html">
      Maximum and Minimum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/05%20Analysis/07%20Convergent%20Sequence.html">
+     Convergent Sequence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/05%20Analysis/08%20Bounded%20Sequence.html">
+     Bounded Sequence
     </a>
    </li>
   </ul>
@@ -1268,6 +1293,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="Keyword.html">
+     Keyword
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="Name%20Space.html">
      Namespace
     </a>
@@ -1706,6 +1736,11 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#default-move-constructor">
+     Default move constructor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#explicit">
      explicit
     </a>
@@ -1812,6 +1847,11 @@ title="Print to PDF"
    생성자
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#default-move-constructor">
+     Default move constructor
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#explicit">
      explicit
@@ -2045,6 +2085,39 @@ title="Print to PDF"
 </section>
 <section id="id5">
 <h2>생성자<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<section id="default-move-constructor">
+<h3>Default move constructor<a class="headerlink" href="#default-move-constructor" title="Permalink to this headline">#</a></h3>
+<p>별도로 move constructor를 설정하지 않아도 member variable을 move로 옮기는 move constructor가 생성된다.</p>
+<p>아래 코드를 확인해보자.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">A</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">A</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">A</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;copy constructor</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="n">A</span><span class="p">(</span><span class="n">A</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;move constructor</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">B</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">B</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
+
+<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">A</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">A</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">B</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">B</span><span class="w"> </span><span class="n">c</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">b</span><span class="p">));</span><span class="w"></span>
+<span class="w"> </span><span class="c1">//move constructor</span>
+<span class="w"> </span><span class="c1">//move constructor</span>
+<span class="w"> </span><span class="c1">//move constructor</span>
+</pre></div>
+</div>
+<p>Class <code class="docutils literal notranslate"><span class="pre">B</span></code>는 별도의  move constructor가 없지만 객체 <code class="docutils literal notranslate"><span class="pre">c</span></code>를 생성할 때, rvalue <code class="docutils literal notranslate"><span class="pre">b</span></code>를 넘겨줌으로써 default move constructor가 호출이 되고 멤버변수 <code class="docutils literal notranslate"><span class="pre">a,b,c</span></code>에 대해서 각각 move constructor를 호출하여 move constructor 문장이 3번 나오게 된다.</p>
+</section>
 <section id="explicit">
 <h3>explicit<a class="headerlink" href="#explicit" title="Permalink to this headline">#</a></h3>
 <p>explicit 키워드는 자신이 원하지 않은 형변환이 일어나지 않도록 제한하는 키워드이다.</p>

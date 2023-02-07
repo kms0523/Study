@@ -460,7 +460,12 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../01%20Topologies/01%20Topological%20Spaces.html">
+      <a class="reference internal" href="../01%20Topologies/01-1%20Topology.html">
+       Topology
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../01%20Topologies/01-2%20Topological%20Spaces.html">
        Topological Space
       </a>
      </li>
@@ -699,7 +704,12 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../04%20Metric%20Space/01%20Metric%20Subspace.html">
+    <a class="reference internal" href="../../04%20Metric%20Space/01-1%20Metric.html">
+     Metric
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../04%20Metric%20Space/01-2%20Metric%20Subspace.html">
      Metric Subspace
     </a>
    </li>
@@ -754,18 +764,18 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../04%20Metric%20Space/11%20Convergent%20Sequence.html">
+    <a class="reference internal" href="../../04%20Metric%20Space/11%20Convergence%20of%20Sequence.html">
      Convergent Sequence
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../04%20Metric%20Space/12%20Limit%20of%20Function.html">
-     Limit of Function
+    <a class="reference internal" href="../../04%20Metric%20Space/12%20Convergence%20of%20Function.html">
+     Convergence of Function
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../04%20Metric%20Space/13%20Continuous.html">
-     Continuous
+    <a class="reference internal" href="../../04%20Metric%20Space/13%20Continuous%20at%20a%20Point.html">
+     Continuous at a Point
     </a>
    </li>
    <li class="toctree-l2">
@@ -796,18 +806,33 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../05%20Analysis/03%20Rational%20Number.html">
+    <a class="reference internal" href="../../05%20Analysis/03%20Absolute.html">
+     Absolute
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../05%20Analysis/04%20Rational%20Number.html">
      Rational Number
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../05%20Analysis/04%20Real%20Number.html">
+    <a class="reference internal" href="../../05%20Analysis/05%20Real%20Number.html">
      Real Number
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../05%20Analysis/05%20Maximum%20and%20Minimum.html">
+    <a class="reference internal" href="../../05%20Analysis/06%20Maximum%20and%20Minimum.html">
      Maximum and Minimum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../05%20Analysis/07%20Convergent%20Sequence.html">
+     Convergent Sequence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../05%20Analysis/08%20Bounded%20Sequence.html">
+     Bounded Sequence
     </a>
    </li>
   </ul>
@@ -1267,6 +1292,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/Initialization.html">
      initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../02%20programming/01%20C%2B%2B/Keyword.html">
+     Keyword
     </a>
    </li>
    <li class="toctree-l2">
@@ -1741,15 +1771,20 @@ title="Print to PDF"
        보조명제5.1
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       따름명제5.2
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+    <a class="reference internal nav-link" href="#id11">
      명제6
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
+    <a class="reference internal nav-link" href="#id12">
      명제7
     </a>
    </li>
@@ -1828,15 +1863,20 @@ title="Print to PDF"
        보조명제5.1
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       따름명제5.2
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+    <a class="reference internal nav-link" href="#id11">
      명제6
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
+    <a class="reference internal nav-link" href="#id12">
      명제7
     </a>
    </li>
@@ -1857,29 +1897,27 @@ title="Print to PDF"
 <section id="id1">
 <h2>정의<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Topological space <span class="math notranslate nohighlight">\(X\)</span>가 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(X\)</span>의 subset collection <span class="math notranslate nohighlight">\(\mathcal{B}\)</span>가 다음을 만족할 때, <span class="math notranslate nohighlight">\(\mathcal{B}\)</span>를 topology <span class="math notranslate nohighlight">\(\mathcal{T_X}\)</span>의 basis라고 한다.</p>
-<ol class="simple">
-<li><p>Every element of <span class="math notranslate nohighlight">\(\mathcal{B}\)</span> is an open subset of <span class="math notranslate nohighlight">\(X\)</span></p></li>
-<li><p>Every open subset of <span class="math notranslate nohighlight">\(X\)</span> is the union of some collection of elements of <span class="math notranslate nohighlight">\(\mathcal{B}\)</span></p></li>
-</ol>
+<p><span class="math notranslate nohighlight">\(\mathcal{T_X}\)</span>의 subset <span class="math notranslate nohighlight">\(\mathcal{B}\)</span>가 다음을 만족할 때, <span class="math notranslate nohighlight">\(\mathcal{B}\)</span>를 topology <span class="math notranslate nohighlight">\(\mathcal{T_X}\)</span>의 basis라고 한다.</p>
+<div class="math notranslate nohighlight">
+\[ \forall S \in \mathcal{T_X}, \quad \exist \mathcal{B_S} \subseteq \mathcal{B} \st S = \bigcup \mathcal{B_S}\]</div>
 <section id="id2">
 <h3>참고<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p><span class="math notranslate nohighlight">\(X\)</span>의 open set <span class="math notranslate nohighlight">\(\empty\)</span>는 <span class="math notranslate nohighlight">\(\mathcal{B}\)</span>의 empty collection의 union이다.</p>
 </section>
 <section id="basis-criterion">
 <h3>명제1(Basis criterion)<a class="headerlink" href="#basis-criterion" title="Permalink to this headline">#</a></h3>
-<p>Topological sapce <span class="math notranslate nohighlight">\(X\)</span>와 <span class="math notranslate nohighlight">\(X\)</span>의 basis <span class="math notranslate nohighlight">\(\mathcal{B}\)</span>가 있다고 하자.</p>
+<p>Topological sapce <span class="math notranslate nohighlight">\(X\)</span>와 <span class="math notranslate nohighlight">\(\mathcal{T_X}\)</span>의 basis <span class="math notranslate nohighlight">\(\mathcal{B}\)</span>가 있다고 하자.</p>
 <p><span class="math notranslate nohighlight">\(X\)</span>의 subset <span class="math notranslate nohighlight">\(U\)</span>가 있을 떄, 다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
-\[ U \text{ is an open set of } X \iff \forall x \in U, \quad  \exist B \in \mathcal{B} \quad s.t. \quad x \in B \subseteq U \]</div>
+\[ U \text{ is an open set of } X \iff \forall x \in U, \quad  \exist B_x \in \mathcal{B} \quad s.t. \quad x \in B \subseteq U \]</div>
 <p><strong>Proof</strong></p>
 <p>[<span class="math notranslate nohighlight">\(\implies\)</span>]<br />
-전제에 의해 <span class="math notranslate nohighlight">\(U\)</span>가 open set임으로 basis의 성질에 의해 어떤 <span class="math notranslate nohighlight">\(B_i \in \mathcal{B}, \enspace(i = 1,\cdots,k)\)</span>에 대해 다음이 성립한다.</p>
+전제에 의해 <span class="math notranslate nohighlight">\(U\)</span>가 open set임으로 basis의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ U = \bigcup_{i=1}^k B_i \]</div>
-<p>따라서 <span class="math notranslate nohighlight">\(\forall x \in U\)</span>에 대해 다음이 성립한다.</p>
+\[\begin{split} \begin{aligned} &amp; \exist \mathcal{B_U} \subseteq \mathcal{B} \st U = \bigcup \mathcal{B_U} \\ \implies&amp; \forall x \in U, \quad \exist B_x \in \mathcal{B_U} \st x \in B_x \subseteq U \end{aligned}  \end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\mathcal{B_U} \subseteq \mathcal{B}\)</span>임으로 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \exist j \in [1,k] \quad s.t. \quad x \in B_j \subseteq U \]</div>
+\[ \forall x \in U, \quad  \exist B_x \in \mathcal{B} \quad s.t. \quad x \in B_x \subseteq U \qed \]</div>
 <p>[<span class="math notranslate nohighlight">\(\impliedby\)</span>]<br />
 전제에 의해, 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
@@ -1899,7 +1937,7 @@ title="Print to PDF"
 <p>Metric topology <span class="math notranslate nohighlight">\(M\)</span>이 있다고 하자.</p>
 <p>이 떄, 다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
-\[ \text{Collection of open ball in } M \text{ is a basis for } M \]</div>
+\[ \text{Collection of open ball in } M \text{ is a basis for } \mathcal{T_M} \]</div>
 <p><strong>Proof</strong></p>
 <p>Open ball의 성질에 의해 다음이 성립한다.</p>
 <ol>
@@ -2022,14 +2060,14 @@ Basis의 정의에 의해 다음이 성립한다.</p>
 </section>
 <section id="topology-from-a-basis">
 <h3>명제5(Topology from a basis)<a class="headerlink" href="#topology-from-a-basis" title="Permalink to this headline">#</a></h3>
-<p>Set <span class="math notranslate nohighlight">\(X\)</span>와 <span class="math notranslate nohighlight">\(X\)</span>의 subset의 collection <span class="math notranslate nohighlight">\(\mathcal{B}\)</span>가 있다고 하자.</p>
+<p>Set <span class="math notranslate nohighlight">\(X\)</span>와 <span class="math notranslate nohighlight">\(X\)</span>의 subset collection <span class="math notranslate nohighlight">\(\mathcal{B}\)</span>가 있다고 하자.</p>
 <p>이 때, 다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{array}{} &amp; \mathcal{B} \text{ is a basis for some topology on } X &amp; \iff &amp; \begin{aligned} 1.&amp; \bigcup_{B \in \mathcal{B}} B = X \\ 2. &amp; B_1, B_2 \in \mathcal{B} \implies \forall x \in B_1 \cap B_2, \quad \exist B \in \mathcal{B} \quad s.t. \quad x \in B \subseteq B_1 \cap B_2 \end{aligned} \end{array} \end{split}\]</div>
+\[\begin{split} \begin{array}{} &amp; \mathcal{B} \text{ is a basis for some topology on } X &amp; \iff &amp; \begin{aligned} 1.&amp; \bigcup \mathcal{B} = X \\ 2. &amp; B_1, B_2 \in \mathcal{B}, \enspace \forall x \in B_1 \cap B_2, \quad \exist B \in \mathcal{B} \quad s.t. \quad x \in B \subseteq B_1 \cap B_2 \end{aligned} \end{array} \end{split}\]</div>
 <p><strong>Proof</strong></p>
 <p>[<span class="math notranslate nohighlight">\(\implies\)</span>]<br />
 -[1]<br />
-<span class="math notranslate nohighlight">\(X\)</span>는 <span class="math notranslate nohighlight">\(X\)</span>의 가장 큰 open set이기 때문에 basis의 성질에 의해 다음이 성립한다.</p>
+<span class="math notranslate nohighlight">\(X\)</span>는 <span class="math notranslate nohighlight">\(X\)</span>의 가장 큰 open set이기 때문에 basis의 정의에 의해 자명하게 성립한다. <span class="math notranslate nohighlight">\(\qed\)</span></p>
 <div class="math notranslate nohighlight">
 \[ \bigcup_{B \in \mathcal{B}} B = X \qed \]</div>
 <p>-[2]<br />
@@ -2037,15 +2075,9 @@ Basis의 정의에 의해 다음이 성립한다.</p>
 <p><span class="math notranslate nohighlight">\(B_{1,2}\)</span>는 <span class="math notranslate nohighlight">\(X\)</span>의 open set임으로 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ B_1 \cap B_2 \text{ is an open set of } X \]</div>
-<p><span class="math notranslate nohighlight">\(B_1 \cap B_2\)</span>가 open set임으로 basis의 성질에 의해 다음이 성립한다.</p>
+<p>따라서 명제1에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \exist \mathcal{B'} \subseteq \mathcal{B} \st B_1 \cap B_2 = \bigcup \mathcal{B'} \]</div>
-<p>따라서, 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[ \forall x \in B_1 \cap B_2, \quad \exist B \in \mathcal{B'} \st x \in B \subseteq B_1 \cap B_2 \]</div>
-<p>그리고 <span class="math notranslate nohighlight">\(\mathcal{B'} \subseteq \mathcal{B}\)</span>임으로 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[ \forall x \in B_1 \cap B_2, \quad  \exist B \in \mathcal{B} \st x \in B \subseteq B_1 \cap B_2 \qed \]</div>
+\[ \forall x \in B_1 \cap B_2, \quad \exist B \in \mathcal{B} \quad s.t. \quad x \in B \subseteq B_1 \cap B_2 \qed \]</div>
 <p>[<span class="math notranslate nohighlight">\(\impliedby\)</span>]<br />
 <span class="math notranslate nohighlight">\(\mathcal{T_X}\)</span>를 다음과 같이 정의하자.</p>
 <div class="math notranslate nohighlight">
@@ -2071,44 +2103,68 @@ Basis의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ X \in \mathcal{T_X} \qed \]</div>
 <p>[finite intersection]<br />
-<span class="math notranslate nohighlight">\(U_i \in \mathcal T_X, \enspace i = 1, \cdots, n\)</span>이라 하자.</p>
-<p>basis의 정의에 의해 다음이 성립한다.</p>
+<span class="math notranslate nohighlight">\(\mathcal{T_X}\)</span>의 finite subset을 <span class="math notranslate nohighlight">\(\mathcal{T_X'}\)</span>이라고 하자.</p>
 <div class="math notranslate nohighlight">
-\[ \forall U_i \in \mathcal{T_X}, \quad\exist \mathcal{B_i} \subseteq \mathcal{B} \quad U_i = \bigcup \mathcal{B_i} \]</div>
-<p>그러면 다음이 성립한다.</p>
+\[ \mathcal{T_X'} := \Set{S_i \in \mathcal{T_X} | i=1,\cdots,n} \]</div>
+<p><span class="math notranslate nohighlight">\(\mathcal{T_X'}\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(S\)</span>라 하면 <span class="math notranslate nohighlight">\(\mathcal{T_X'}\)</span>의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall x \in U_i, \quad \exist B \in \mathcal{B_i} \st x \in B \subseteq U_i \]</div>
-<p>이 떄, 집합 <span class="math notranslate nohighlight">\(U\)</span>를 다음과 같이 정의하자.</p>
+\[ \forall x \in S, \quad \exist B_S \in \mathcal{B} \st x \in B_S \subseteq S \]</div>
+<p>그럼으로 <span class="math notranslate nohighlight">\(\bigcap\mathcal{T_X'}\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(x\)</span>라고 하면 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ U = \bigcap_{i=1}^n U_i \]</div>
-<p>그러면, 다음이 성립한다.</p>
+\[\begin{split} \begin{aligned} &amp; x \in S_i, \quad i=1,\cdots,n \\\implies&amp; \exist B_i \in \mathcal{B} \st x \in B_i \subseteq S_i, \quad i=1,\cdots,n \\\implies&amp; x \in \bigcap_{i=1}^n B_i \subseteq \bigcap\mathcal{T_X'} \end{aligned} \end{split}\]</div>
+<p>따라서, 2번전제에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{aligned} x \in U \implies&amp; x \in U_1 \land \cdots \land x \in U_n \\\implies&amp; \exist B_1 \in \mathcal{B_1} \st x \in B_1 \subseteq U_1  \\ \land\cdots\land&amp; \exist B_n \in \mathcal{B_n} \st x \in B_n \subseteq U_n \\\implies&amp; x \in \bigcap_{k=1}^n B_k \subseteq U \end{aligned} \end{split}\]</div>
-<p>이 떄, <span class="math notranslate nohighlight">\(\mathcal{B}\)</span>의 2번전제에 의해 다음이 성립한다.</p>
+\[ \exist B_x \in \mathcal{B} \quad s.t. \quad x \in B_x \subseteq \bigcap_{i=1}^n B_i \subseteq \bigcap\mathcal{T_X'} \]</div>
+<p><span class="math notranslate nohighlight">\(B_x\)</span>의 collection을 <span class="math notranslate nohighlight">\(\mathcal{B_x}\)</span>라 하면 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[  \exist B_x \in \mathcal{B} \quad s.t. \quad x \in B_x \subseteq \bigcap_{k=1}^n B_{k} \subseteq U \]</div>
-<p>따라서, 다음이 성립한다.</p>
+\[\begin{split} \begin{gathered} \mathcal{B_x} \subseteq \mathcal{B} \\ \bigcap\mathcal{T_X'} = \bigcup \mathcal{B_x} \end{gathered} \end{split}\]</div>
+<p>따라서, <span class="math notranslate nohighlight">\(\mathcal{T_X}\)</span>의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ U = \bigcup_{x \in U}B_x \]</div>
-<p>이 때, <span class="math notranslate nohighlight">\(\mathcal{T_X}\)</span>의 정의에 의해 <span class="math notranslate nohighlight">\(\mathcal{B}\)</span>의 원소들의 union은 <span class="math notranslate nohighlight">\(\mathcal{T_X}\)</span>의 원소임으로 다음이 성립한다.</p>
+\[ \bigcap\mathcal{T_X'} \in \mathcal{T_X} \qed \]</div>
+<p>-[union]<br />
+<span class="math notranslate nohighlight">\(\mathcal{T_X}\)</span>의 subset을 <span class="math notranslate nohighlight">\(\mathcal{T_X'}\)</span>이라고 하자.</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{T_X'}\)</span>의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ U \in \mathcal{T_X} \qed\]</div>
-<p>-[infinite union]<br />
-집합 <span class="math notranslate nohighlight">\(U\)</span>를 다음과 같이 정의하자.</p>
+\[ \forall S \in \mathcal{T_X'}, \quad S \in \mathcal{T_X} \]</div>
+<p>따라서 <span class="math notranslate nohighlight">\(\mathcal{T_X'}\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(S\)</span>라고 하면 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ U = \bigcup_{{U_i \in \mathcal{T_X}}} U_i \]</div>
-<p><span class="math notranslate nohighlight">\(U_i\)</span>는 <span class="math notranslate nohighlight">\(\mathcal{B}\)</span>의 어떤 원소들의 union임으로 <span class="math notranslate nohighlight">\(U\)</span>는 <span class="math notranslate nohighlight">\(\mathcal{B}\)</span>의 어떤 원소들의 union으로 귀결된다.</p>
-<p>이 때, <span class="math notranslate nohighlight">\(\mathcal{T_X}\)</span>의 정의에 의해 <span class="math notranslate nohighlight">\(\mathcal{B}\)</span>의 원소들의 union을 포함함으로 다음이 성립한다.</p>
+\[ \exist \mathcal{B_S} \subseteq \mathcal{B} \st S = \bigcup \mathcal{B_S} \]</div>
+<p>위를 만족하는 모든 <span class="math notranslate nohighlight">\(\mathcal{B_S}\)</span>의 collection을 <span class="math notranslate nohighlight">\(\mathcal{BS}\)</span>라고 하면, subset들의 union은 subset임으로 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ U \in \mathcal{T_X} \]</div>
+\[ \exist \mathcal{B'} \subseteq \mathcal{B} \st \mathcal{B'} = \bigcup\mathcal{BS} \]</div>
+<p>따라서, <span class="math notranslate nohighlight">\(\mathcal{T_X}\)</span>의 정의에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \bigcup\mathcal{B'} = \bigcup\mathcal{T_X'} \in \mathcal{T_X} \qed \]</div>
 <blockquote>
 <div><p>Reference<br />
 <span id="id9">[<a class="reference internal" href="../../../99%20References/references.html#id7" title="John M Lee. Introduction to Topological Manifolds. Graduate texts in mathematics. Springer, New York, NY, 2 edition, December 2010.">Lee, 2010</a>]</span> p.35</p>
 </div></blockquote>
 </section>
-</section>
 <section id="id10">
-<h3>명제6<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<h4>따름명제5.2<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
+<p><span class="math notranslate nohighlight">\(\R\)</span>의 subset collection <span class="math notranslate nohighlight">\(\mathcal{B}\)</span>를 다음과 같이 정의하자.</p>
+<div class="math notranslate nohighlight">
+\[ \mathcal{B} := \Set{[a,b) | a,b \in \R \land a \le b} \]</div>
+<p>이 떄, 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ \mathcal{B} \text{ is an basis of some topology on } \R \]</div>
+<p><strong>Proof</strong></p>
+<p><span class="math notranslate nohighlight">\(\R\)</span>의 Archimedean property에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \forall x \in \R, \quad \exist n \in \N \st -n &lt; x &lt; n \]</div>
+<p>실수의 조밀성에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \forall x \in \R, \quad \exist a,b \in \R \st -a \le x &lt; b \\ \implies&amp; \forall x \in \R , \quad \exist B_x \in \mathcal{B} \st x \in B_x \\\implies&amp; \R = \bigcup \mathcal{B} \end{aligned}  \end{split}\]</div>
+<p>그리고 <span class="math notranslate nohighlight">\([a_1,b_1),[a_2,b_2) \in \mathcal{B}\)</span>가 있을 때, <span class="math notranslate nohighlight">\(a_2 \le b_1\)</span>이라고 하면 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \forall x \in [a_1,b_1) \cap [a_2,b_2), \quad x \in [a_2,b_1) \in \mathcal{B} \]</div>
+<p>따라서, 명제5에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \mathcal{B} \text{ is an basis of some topology on } \R \qed \]</div>
+</section>
+</section>
+<section id="id11">
+<h3>명제6<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p>Topological space <span class="math notranslate nohighlight">\(X\)</span>와 <span class="math notranslate nohighlight">\(\mathcal{T_X}\)</span>의 basis <span class="math notranslate nohighlight">\(\mathcal{B}\)</span>가 있다고 하자.</p>
 <p><span class="math notranslate nohighlight">\(U\)</span>가 <span class="math notranslate nohighlight">\(X\)</span>의 open set일 때, <span class="math notranslate nohighlight">\(\mathcal{B_U}\)</span>를 다음과 같이 정의하자.</p>
 <div class="math notranslate nohighlight">
@@ -2137,8 +2193,8 @@ Basis의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ \mathcal{B_U} \text{ is basis of } \mathcal{T_U} \qed \]</div>
 </section>
-<section id="id11">
-<h3>명제7<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<section id="id12">
+<h3>명제7<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>집합 <span class="math notranslate nohighlight">\(X\)</span>와 <span class="math notranslate nohighlight">\(X\)</span>의 topology <span class="math notranslate nohighlight">\(\mathcal{T_1},\mathcal{T_2}\)</span>가 있다고 하자.</p>
 <p><span class="math notranslate nohighlight">\(\mathcal{T_i}\)</span>의 basis를 <span class="math notranslate nohighlight">\(\mathcal{B_i}\)</span>라 할 때, 다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
@@ -2174,7 +2230,7 @@ Basis의 정의에 의해 다음이 성립한다.</p>
 \[ U \in \mathcal{T_2} \qed \]</div>
 <blockquote>
 <div><p>Reference<br />
-<span id="id12">[<a class="reference internal" href="../../../99%20References/references.html#id13" title="James R Munkres. Topology. Pearson custom library. Pearson Education, London, England, 2 edition, July 2013.">Munkres, 2013</a>]</span>Lemma 13.3</p>
+<span id="id13">[<a class="reference internal" href="../../../99%20References/references.html#id13" title="James R Munkres. Topology. Pearson custom library. Pearson Education, London, England, 2 edition, July 2013.">Munkres, 2013</a>]</span>Lemma 13.3</p>
 </div></blockquote>
 </section>
 </section>

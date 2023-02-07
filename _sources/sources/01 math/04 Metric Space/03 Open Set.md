@@ -4,7 +4,7 @@ Metric space $M$과 submetric space $S$가 있다고 하자.
 
 다음을 만족하면 $S$를 $M$에서의 `open set`이라고 한다.
 
-$$ \forall x \in S, \quad \exist r \in \R^+ \quad s.t. \quad B_M(x,r) \le S $$
+$$ \forall x \in S, \quad \exist r \in \R^+ \quad s.t. \quad B_M(x,r) \subseteq S $$
 
 > Reference  
 > {cite}`hubbard` chap 1.5  
@@ -16,23 +16,24 @@ $$ \text {Any union of open sets on } M \text{ is open set on } M. $$
 
 **Proof**
 
-$M$의 모든 open set의 집합을 $S$라 하고 집합 $X$를 다음과 같이 정의하자.
+$M$의 모든 open set의 집합을 $\mathcal{S}$라 하자.
 
-$$ X := \bigcup_{s \in S} s $$
+$\mathcal{S}$의 임의의 subset을 $\mathcal{S'}$라 하면, 다음을 만족한다.
 
-$\forall x \in X$에 대해 다음을 만족한다.
-
-$$ \exist s \in S \quad s.t. \quad x \in s $$
+$$ \forall x \in \bigcup\mathcal{S'}, \quad \exist S \in \mathcal{S'} \quad s.t. \quad x \in S $$
  
-이 때, $s$는 $M$위의 open set임으로, 다음이 성립한다.
+이 때, $S$는 $M$위의 open set임으로, 다음이 성립한다.
 
-$$\exist r \in \R^+ \quad s.t. \quad B_M(x,r) \le s$$
+$$\exist r \in \R^+ \quad s.t. \quad B_M(x,r) \subseteq S \subseteq \bigcup\mathcal{S'} $$
 
-$X$의 정의에 의해 $s \le X$임으로, 다음이 성립한다.
+$X$의 정의에 의해 $S \subseteq X$임으로, 다음이 성립한다.
 
-$$\exist r \in \R^+ \quad s.t. \quad B_M(x,r) \le X$$
+$$ \forall x \in \bigcup\mathcal{S'}, \quad \exist r \in \R^+ \quad s.t. \quad B_M(x,r) \subseteq \bigcup\mathcal{S'} $$
 
-따라서 $X$는 $M$에서의 open set이다. $\qed$
+따라서, open set의 정의에 의해 다음이 성립한다.
+
+$$ \text {Any union of open sets on } M \text{ is open set on } M \qed $$
+
 
 > Refrence  
 > {cite}`apostol` chapter 3.7  
@@ -45,32 +46,36 @@ $$ \text {Any finite intersection of open sets is open.} $$
 
 **Proof**
 
-$M$의 모든 open set의 집합을 $S$라 하고 $s_i \in S, \enspace i = 1, \cdots, n$일 떄, 집합 $X$를 다음과 같이 정의하자.
+$M$의 모든 open set의 집합을 $\mathcal{S}$라 하자.
 
-$$ X := \bigcap_{i=1}^n s_i $$
+$\mathcal{S}$의 finite subset을 $\mathcal{S'}$이라 할 때, 집합 $X$를 다음과 같이 정의하자.
+
+$$ X := \bigcap_{S \in \mathcal{S'}} S $$
 
 $\forall x \in X$에 대해, 다음이 성립한다.
 
-$$ x \in s_i, \enspace i=1,\cdots,n $$
+$$ x \in S_i, \enspace i=1,\cdots,n $$
 
-이 때, $s_i$는 open set임으로 다음이 성립한다.
+이 때, $S_i$는 open set임으로 다음이 성립한다.
 
-$$\exist r_i \quad s.t. \quad B_M(x, r_i) \le s_i, \enspace i=1,\cdots,n$$
+$$\exist r_i \quad s.t. \quad B_M(x, r_i) \subseteq S_i, \enspace i=1,\cdots,n$$
 
 $\min(\{ r_i \}) = r$이라 하면 다음이 성립한다.
 
-$$ B_M(x,r) \le s_i, \enspace i=1,\cdots,n $$
+$$ B_M(x,r) \subseteq S_i, \enspace i=1,\cdots,n $$
 
 $X$의 정의에 의해 다음이 성립한다.
 
-$$ B_M(x,r) \le X$$
+$$ B_M(x,r) \subseteq X$$
 
-따라서 $X$는 $M$에서의 open set이다. $\qed$
+따라서, open set의 정의에 의해 다음이 성립한다.
+
+$$ \text {Any finite intersection of open sets is open} \qed $$
 
 > Refrence  
 > {cite}`apostol` chatper 3.8  
 > {cite}`hubbard` prob 1.5.3
-> 
+ 
 ### 명제3
 Metric space $M$이 있을 때, 다음을 증명하여라.
 
@@ -103,17 +108,17 @@ $x \in M$이 있다고 하자.
 
 임의의 $r \in \R^+$에 대해, $B_M(x,r)$의 정의에 의해 다음이 성립한다.
 
-$$ B_M(x,r) \le M $$
+$$ B_M(x,r) \subseteq M $$
 
 이로 인해 $\forall x \in M$에 대해, 다음이 성립한다.
 
-$$ \exist r \in R^+ \quad s.t. \quad B_M(x,r) \le M $$
+$$ \exist r \in R^+ \quad s.t. \quad B_M(x,r) \subseteq M $$
 
 따라서 $M$는 $M$에서의 open set이 된다.$\qed$
 
 
 #### 따름명제4.1
-Metric space $M$과 $S \le M$이 있다고 하자.
+Metric space $M$과 $S \subseteq M$이 있다고 하자.
 
 이 때, 다음을 증명하여라.
 
@@ -123,7 +128,7 @@ $$ S \text{ is an open set on } S $$
 
 $\forall x \in S$에 대해, $B_S(x,r) = B_M(x,r) \cap S$임으로 다음이 성립한다.
 
-$$ B_S(x,r) \le S $$
+$$ B_S(x,r) \subseteq S $$
 
 따라서, $S$는 $S$에서의 open set이 된다.$\qed$
 
@@ -153,25 +158,24 @@ $$ \text{open ball in } M \text{ is an open set of } M$$
 **Proof**  
 $x \in M, r \in \R^+$이 있다고 하자.
 
-$y \in B_M(x,r)$에 대해 $B_M(y,\epsilon)$을 고려해보자.
+임의의 $y \in B_M(x,r)$에 대해 $B_M(y,\epsilon)$가 있다고 하면 다음이 성립한다.
 
-$\forall z \in B_M(y, \epsilon)$이 있을 떄, 다음이 성립한다.
+$$ \forall z \in B_M(y, \epsilon), \quad d(x,z) < d(x,y) + d(y,z) < d(x,y) + \epsilon $$
 
-$$ \begin{aligned} d(x,z) &< d(x,y) + d(y,z) \\&< d(x,y) + \epsilon \end{aligned} $$
+이 떄, $y\in B_M(x,r)$임으로 $r - d(x,y) \in \R^+$이다.
 
-이 떄, $\epsilon = r - d(x,y)$로 두면 다음이 성립한다.
+따라서 $\epsilon = r - d(x,y)$로 두면 다음이 성립한다.
 
-$$ d(x,z) < r $$
+$$ \begin{aligned} & d(x,z) < r \\ \iff& B_M(y,\epsilon) \subseteq B_M(x,r) \end{aligned}  $$
 
-$\forall z \in B_M(y, \epsilon)$에 대해 $d(x,z) < r$임으로 다음이 성립한다.
+그럼으로, 다음이 성립한다.
 
-$$ B_M(y,\epsilon) \le B_M(x,r) $$
+$$ \forall y \in B_M(x,r) \quad \exist\epsilon \in \R^+ \quad s.t. \quad B_M(y,r) \subseteq B_M(x,r) $$
 
-이를 정리하면 다음과 같다.
+따라서 open set의 정의에 의해 다음이 성립한다.
 
-$$ \forall y \in B_M(x,r) \quad \exist\epsilon \in \R^+ \quad s.t. \quad B_M(y,r) \le B_M(x,r) $$
+$$ \text{open ball in } M \text{ is an open set of } M \qed $$
 
-open set의 정의에 의해 $B_M(x,r)$은 $M$의 open set이다. $\qed$
 
 ### 명제7
 Metric space $M$이 있다고 하자.
@@ -185,7 +189,7 @@ $$ U \text{ is an open set} \iff U \text{ is an union of some collection of open
 [$\implies$]  
 $U$의 정의에 의해 다음이 성립한다.
 
-$$ \forall x \in U, \quad \exist r_x \in \R^+ \quad s.t. \quad B_M(x,r_x) \le S $$
+$$ \forall x \in U, \quad \exist r_x \in \R^+ \quad s.t. \quad B_M(x,r_x) \subseteq S $$
 
 따라서, 다음이 성립한다.
 
@@ -197,7 +201,7 @@ $$ U = \bigcup_{x \in U} B_M(x,r_x) \qed $$
 open set의 성질에 의해 open set의 union은 open set이 된다. $\qed$
 
 ### 참고
-명제1,2,4,5을 만족하는 집합족의 원소를 open set으로 정의할 경우 거리가 정의되어 있지 않은 공간에서도 open set과 closed set을 정의할 수 있다.
+명제1,2,4,5을 만족하는 set의 collection의 원소를 open set으로 정의할 경우 거리가 정의되어 있지 않은 공간에서도 open set과 closed set을 정의할 수 있다.
 
 즉, 더 일반적인 형태의 open set과 closed set을 정의할 수 있게 된다.
 

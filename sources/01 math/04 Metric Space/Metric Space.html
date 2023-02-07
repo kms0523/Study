@@ -52,11 +52,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"span": "\\text{span}", "End": "\\text{End}", "C": "\\Complex", "F": "\\mathbb{F}", "R": "\\mathbb{R}", "N": "\\mathbb{N}", "Q": "\\mathbb{Q}", "Z": "\\mathbb{Z}", "Ext": "\\text{Ext}", "Int": "\\text{Int}", "st": "\\quad s.t \\quad", "qed": "\\quad\\tiny\\blacksquare", "preimg": "\\text{preimg}", "img": "\\text{img}", "norm": ["\\left\\lVert #1 \\right\\rVert", 1], "sym": "\\text{sym}", "tr": "\\text{tr}", "empty": "\\emptyset", "exist": "\\exists", "Set": ["\\left\\{ #1 \\right\\}", 1], "pdiff": ["\\frac{\\partial #1}{\\partial #2}", 2], "diff": ["\\frac{d #1}{d #2}", 2]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Metric Subspace" href="01%20Metric%20Subspace.html" />
+    <link rel="next" title="Metric" href="01-1%20Metric.html" />
     <link rel="prev" title="Product Open Set" href="../03%20Topology/07%20Product%20Spaces/03%20Product%20Open%20Set.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -460,7 +458,12 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../03%20Topology/01%20Topologies/01%20Topological%20Spaces.html">
+      <a class="reference internal" href="../03%20Topology/01%20Topologies/01-1%20Topology.html">
+       Topology
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../03%20Topology/01%20Topologies/01-2%20Topological%20Spaces.html">
        Topological Space
       </a>
      </li>
@@ -699,7 +702,12 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="01%20Metric%20Subspace.html">
+    <a class="reference internal" href="01-1%20Metric.html">
+     Metric
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-2%20Metric%20Subspace.html">
      Metric Subspace
     </a>
    </li>
@@ -754,18 +762,18 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="11%20Convergent%20Sequence.html">
+    <a class="reference internal" href="11%20Convergence%20of%20Sequence.html">
      Convergent Sequence
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="12%20Limit%20of%20Function.html">
-     Limit of Function
+    <a class="reference internal" href="12%20Convergence%20of%20Function.html">
+     Convergence of Function
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="13%20Continuous.html">
-     Continuous
+    <a class="reference internal" href="13%20Continuous%20at%20a%20Point.html">
+     Continuous at a Point
     </a>
    </li>
    <li class="toctree-l2">
@@ -796,18 +804,33 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../05%20Analysis/03%20Rational%20Number.html">
+    <a class="reference internal" href="../05%20Analysis/03%20Absolute.html">
+     Absolute
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05%20Analysis/04%20Rational%20Number.html">
      Rational Number
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../05%20Analysis/04%20Real%20Number.html">
+    <a class="reference internal" href="../05%20Analysis/05%20Real%20Number.html">
      Real Number
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../05%20Analysis/05%20Maximum%20and%20Minimum.html">
+    <a class="reference internal" href="../05%20Analysis/06%20Maximum%20and%20Minimum.html">
      Maximum and Minimum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05%20Analysis/07%20Convergent%20Sequence.html">
+     Convergent Sequence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05%20Analysis/08%20Bounded%20Sequence.html">
+     Bounded Sequence
     </a>
    </li>
   </ul>
@@ -1270,6 +1293,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../02%20programming/01%20C%2B%2B/Keyword.html">
+     Keyword
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../02%20programming/01%20C%2B%2B/Name%20Space.html">
      Namespace
     </a>
@@ -1665,48 +1693,12 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   정의
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     참고1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     참고2
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
@@ -1718,31 +1710,6 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   정의
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     참고1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     참고2
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -1752,39 +1719,6 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="metric-space">
 <h1>Metric Space<a class="headerlink" href="#metric-space" title="Permalink to this headline">#</a></h1>
-<section id="id1">
-<h2>정의<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>집합 <span class="math notranslate nohighlight">\(M\)</span>과 함수 <span class="math notranslate nohighlight">\(d : M \times M \rightarrow \R\)</span>이 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(x,y,z \in M\)</span>에 대해, <span class="math notranslate nohighlight">\(d\)</span>가 다음 성질들을 만족할 때,</p>
-<ol>
-<li><div class="math notranslate nohighlight">
-\[ d(x,x) = 0 \]</div>
-</li>
-<li><div class="math notranslate nohighlight">
-\[ d(x,y) &gt; 0 \text{ if } x \neq y \]</div>
-</li>
-<li><div class="math notranslate nohighlight">
-\[ d(x,y) = d(y,x) \]</div>
-</li>
-<li><div class="math notranslate nohighlight">
-\[ d(x,y) \le d(x,z) + d(z,y) \]</div>
-</li>
-</ol>
-<p>집합 <span class="math notranslate nohighlight">\(M\)</span>에 함수 <span class="math notranslate nohighlight">\(d\)</span>가 주어진 구조인 <span class="math notranslate nohighlight">\((M,d)\)</span>를 <code class="docutils literal notranslate"><span class="pre">metric</span> <span class="pre">space</span></code>라고 한다.</p>
-<section id="id2">
-<h3>참고1<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(x \in M\)</span>을 point, <span class="math notranslate nohighlight">\(d\)</span>를 metric of the space라고 부른다.</p>
-</section>
-<section id="id3">
-<h3>참고2<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(M = \R^n\)</span>이고 <span class="math notranslate nohighlight">\(d(x,y) = |x-y|\)</span>로 주어진 metric space를 <span class="math notranslate nohighlight">\(n\)</span> 차원 <code class="docutils literal notranslate"><span class="pre">Euclidean</span> <span class="pre">metric</span> <span class="pre">space</span></code>라고 한다.</p>
-<p><span class="math notranslate nohighlight">\(n\)</span> 차원 Euclidean metric space를 간단하게 <span class="math notranslate nohighlight">\(\R^n\)</span>으로 표기한다.</p>
-<blockquote>
-<div><p>Reference<br />
-<span id="id4">[<a class="reference internal" href="../../99%20References/references.html#id9" title="T.M. Apostol. Mathematical Analysis. Addison-Wesley series in mathematics. Addison-Wesle, 1974.">Apostol, 1974</a>]</span> Chap 3.13</p>
-</div></blockquote>
-</section>
-</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -1823,10 +1757,10 @@ title="Print to PDF"
             <p class="prev-next-title">Product Open Set</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="01%20Metric%20Subspace.html" title="next page">
+    <a class='right-next' id="next-link" href="01-1%20Metric.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Metric Subspace</p>
+        <p class="prev-next-title">Metric</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -460,7 +460,12 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../03%20Topology/01%20Topologies/01%20Topological%20Spaces.html">
+      <a class="reference internal" href="../03%20Topology/01%20Topologies/01-1%20Topology.html">
+       Topology
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../03%20Topology/01%20Topologies/01-2%20Topological%20Spaces.html">
        Topological Space
       </a>
      </li>
@@ -699,7 +704,12 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04%20Metric%20Space/01%20Metric%20Subspace.html">
+    <a class="reference internal" href="../04%20Metric%20Space/01-1%20Metric.html">
+     Metric
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04%20Metric%20Space/01-2%20Metric%20Subspace.html">
      Metric Subspace
     </a>
    </li>
@@ -754,18 +764,18 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04%20Metric%20Space/11%20Convergent%20Sequence.html">
+    <a class="reference internal" href="../04%20Metric%20Space/11%20Convergence%20of%20Sequence.html">
      Convergent Sequence
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04%20Metric%20Space/12%20Limit%20of%20Function.html">
-     Limit of Function
+    <a class="reference internal" href="../04%20Metric%20Space/12%20Convergence%20of%20Function.html">
+     Convergence of Function
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04%20Metric%20Space/13%20Continuous.html">
-     Continuous
+    <a class="reference internal" href="../04%20Metric%20Space/13%20Continuous%20at%20a%20Point.html">
+     Continuous at a Point
     </a>
    </li>
    <li class="toctree-l2">
@@ -818,6 +828,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="07%20Convergent%20Sequence.html">
      Convergent Sequence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08%20Bounded%20Sequence.html">
+     Bounded Sequence
     </a>
    </li>
   </ul>
@@ -1280,6 +1295,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../02%20programming/01%20C%2B%2B/Keyword.html">
+     Keyword
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../02%20programming/01%20C%2B%2B/Name%20Space.html">
      Namespace
     </a>
@@ -1713,14 +1733,21 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     명제2
+    <a class="reference internal nav-link" href="#triangle-inequliaty">
+     명제2(Triangle inequliaty)
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     명제3
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       따름명제2.1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       따름명제2.2
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -1759,14 +1786,21 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     명제2
+    <a class="reference internal nav-link" href="#triangle-inequliaty">
+     명제2(Triangle inequliaty)
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     명제3
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       따름명제2.1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       따름명제2.2
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -1790,7 +1824,7 @@ title="Print to PDF"
 \[\begin{split} abs: A \rightarrow A \st x \mapsto \begin{cases} x &amp; \text{if } 0_A \le x \\ -x &amp; \text{else} \end{cases} \end{split}\]</div>
 <section id="id2">
 <h3>참고<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(abs(a) = |a|\)</span>로 많이 표기한다.</p>
+<p><span class="math notranslate nohighlight">\(abs(a) = |a|\)</span>로 표기한다.</p>
 </section>
 <section id="id3">
 <h3>명제1<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
@@ -1810,11 +1844,11 @@ title="Print to PDF"
 따라서 다음이 성립한다.
 $<span class="math notranslate nohighlight">\( \forall x \in A, \enspace \forall r \in A^+, \quad |x| \le r \iff -r \le |x| \le r \qed \)</span>$</p>
 </section>
-<section id="id4">
-<h3>명제2<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<section id="triangle-inequliaty">
+<h3>명제2(Triangle inequliaty)<a class="headerlink" href="#triangle-inequliaty" title="Permalink to this headline">#</a></h3>
 <p>다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
-\[ \forall x,y \in A, \quad |x+y| &lt; |x| + |y| \]</div>
+\[ \forall x,y \in A, \quad |x+y| \le |x| + |y| \]</div>
 <p><strong>Proof</strong></p>
 <p>절대값 함수의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
@@ -1825,22 +1859,25 @@ $<span class="math notranslate nohighlight">\( \forall x \in A, \enspace \forall
 <p>명제1에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ |x+y| \le |x|+|y|  \]</div>
-</section>
-<section id="id5">
-<h3>명제3<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<section id="id4">
+<h4>따름명제2.1<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
 <p>다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
-\[ \forall x,y \in A, \quad |x-y| &lt; |x| + |y| \]</div>
+\[ \forall x,y \in A, \quad |x-y| \le |x| + |y| \]</div>
 <p><strong>Proof</strong></p>
-<p>절대값 함수의 정의에 의해 다음이 성립한다.</p>
+<p>명제2에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \forall x,y \in A, \quad  \begin{gathered} -|x| \le x \le |x| \\ -|y| \le -y \le |y| \end{gathered}  \end{split}\]</div>
-<p>따라서, 다음이 성립한다.</p>
+\[ |x-y|=|x+(-y)| \le |x| + |-y| = |x| + |y| \qed \]</div>
+</section>
+<section id="id5">
+<h4>따름명제2.2<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
+<p>다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
-\[ -(|x|+|y|) \le x-y \le |x|+|y| \]</div>
-<p>명제1에 의해 다음이 성립한다.</p>
+\[ \forall x,y \in A, |x| - |y| \le |x-y| \]</div>
+<p>명제2에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ |x-y| \le |x|+|y|  \]</div>
+\[\begin{split} \begin{aligned} |x| &amp;= |x-y+y| \\&amp;\le |x-y|+|y| \\ |x|-|y| &amp;\le |x-y| \qed \end{aligned} \end{split}\]</div>
+</section>
 </section>
 </section>
 </section>

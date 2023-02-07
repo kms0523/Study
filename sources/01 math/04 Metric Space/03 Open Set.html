@@ -460,7 +460,12 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../03%20Topology/01%20Topologies/01%20Topological%20Spaces.html">
+      <a class="reference internal" href="../03%20Topology/01%20Topologies/01-1%20Topology.html">
+       Topology
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../03%20Topology/01%20Topologies/01-2%20Topological%20Spaces.html">
        Topological Space
       </a>
      </li>
@@ -699,7 +704,12 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="01%20Metric%20Subspace.html">
+    <a class="reference internal" href="01-1%20Metric.html">
+     Metric
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-2%20Metric%20Subspace.html">
      Metric Subspace
     </a>
    </li>
@@ -754,18 +764,18 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="11%20Convergent%20Sequence.html">
+    <a class="reference internal" href="11%20Convergence%20of%20Sequence.html">
      Convergent Sequence
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="12%20Limit%20of%20Function.html">
-     Limit of Function
+    <a class="reference internal" href="12%20Convergence%20of%20Function.html">
+     Convergence of Function
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="13%20Continuous.html">
-     Continuous
+    <a class="reference internal" href="13%20Continuous%20at%20a%20Point.html">
+     Continuous at a Point
     </a>
    </li>
    <li class="toctree-l2">
@@ -796,18 +806,33 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../05%20Analysis/03%20Rational%20Number.html">
+    <a class="reference internal" href="../05%20Analysis/03%20Absolute.html">
+     Absolute
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05%20Analysis/04%20Rational%20Number.html">
      Rational Number
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../05%20Analysis/04%20Real%20Number.html">
+    <a class="reference internal" href="../05%20Analysis/05%20Real%20Number.html">
      Real Number
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../05%20Analysis/05%20Maximum%20and%20Minimum.html">
+    <a class="reference internal" href="../05%20Analysis/06%20Maximum%20and%20Minimum.html">
      Maximum and Minimum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05%20Analysis/07%20Convergent%20Sequence.html">
+     Convergent Sequence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05%20Analysis/08%20Bounded%20Sequence.html">
+     Bounded Sequence
     </a>
    </li>
   </ul>
@@ -1267,6 +1292,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../../02%20programming/01%20C%2B%2B/Initialization.html">
      initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../02%20programming/01%20C%2B%2B/Keyword.html">
+     Keyword
     </a>
    </li>
    <li class="toctree-l2">
@@ -1851,7 +1881,7 @@ title="Print to PDF"
 <p>Metric space <span class="math notranslate nohighlight">\(M\)</span>과 submetric space <span class="math notranslate nohighlight">\(S\)</span>가 있다고 하자.</p>
 <p>다음을 만족하면 <span class="math notranslate nohighlight">\(S\)</span>를 <span class="math notranslate nohighlight">\(M\)</span>에서의 <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">set</span></code>이라고 한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall x \in S, \quad \exist r \in \R^+ \quad s.t. \quad B_M(x,r) \le S \]</div>
+\[ \forall x \in S, \quad \exist r \in \R^+ \quad s.t. \quad B_M(x,r) \subseteq S \]</div>
 <blockquote>
 <div><p>Reference<br />
 <span id="id2">[<a class="reference internal" href="../../99%20References/references.html#id10" title="John Hamal Hubbard and Barbara Burke Hubbard. Vector calculus, linear algebra, and differential forms: A unified approach. Matrix Editions, 2015.">Hubbard and Hubbard, 2015</a>]</span> chap 1.5</p>
@@ -1862,19 +1892,19 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[ \text {Any union of open sets on } M \text{ is open set on } M. \]</div>
 <p><strong>Proof</strong></p>
-<p><span class="math notranslate nohighlight">\(M\)</span>의 모든 open set의 집합을 <span class="math notranslate nohighlight">\(S\)</span>라 하고 집합 <span class="math notranslate nohighlight">\(X\)</span>를 다음과 같이 정의하자.</p>
+<p><span class="math notranslate nohighlight">\(M\)</span>의 모든 open set의 집합을 <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>라 하자.</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{S}\)</span>의 임의의 subset을 <span class="math notranslate nohighlight">\(\mathcal{S'}\)</span>라 하면, 다음을 만족한다.</p>
 <div class="math notranslate nohighlight">
-\[ X := \bigcup_{s \in S} s \]</div>
-<p><span class="math notranslate nohighlight">\(\forall x \in X\)</span>에 대해 다음을 만족한다.</p>
+\[ \forall x \in \bigcup\mathcal{S'}, \quad \exist S \in \mathcal{S'} \quad s.t. \quad x \in S \]</div>
+<p>이 때, <span class="math notranslate nohighlight">\(S\)</span>는 <span class="math notranslate nohighlight">\(M\)</span>위의 open set임으로, 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \exist s \in S \quad s.t. \quad x \in s \]</div>
-<p>이 때, <span class="math notranslate nohighlight">\(s\)</span>는 <span class="math notranslate nohighlight">\(M\)</span>위의 open set임으로, 다음이 성립한다.</p>
+\[\exist r \in \R^+ \quad s.t. \quad B_M(x,r) \subseteq S \subseteq \bigcup\mathcal{S'} \]</div>
+<p><span class="math notranslate nohighlight">\(X\)</span>의 정의에 의해 <span class="math notranslate nohighlight">\(S \subseteq X\)</span>임으로, 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[\exist r \in \R^+ \quad s.t. \quad B_M(x,r) \le s\]</div>
-<p><span class="math notranslate nohighlight">\(X\)</span>의 정의에 의해 <span class="math notranslate nohighlight">\(s \le X\)</span>임으로, 다음이 성립한다.</p>
+\[ \forall x \in \bigcup\mathcal{S'}, \quad \exist r \in \R^+ \quad s.t. \quad B_M(x,r) \subseteq \bigcup\mathcal{S'} \]</div>
+<p>따라서, open set의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[\exist r \in \R^+ \quad s.t. \quad B_M(x,r) \le X\]</div>
-<p>따라서 <span class="math notranslate nohighlight">\(X\)</span>는 <span class="math notranslate nohighlight">\(M\)</span>에서의 open set이다. <span class="math notranslate nohighlight">\(\qed\)</span></p>
+\[ \text {Any union of open sets on } M \text{ is open set on } M \qed \]</div>
 <blockquote>
 <div><p>Refrence<br />
 <span id="id4">[<a class="reference internal" href="../../99%20References/references.html#id9" title="T.M. Apostol. Mathematical Analysis. Addison-Wesley series in mathematics. Addison-Wesle, 1974.">Apostol, 1974</a>]</span> chapter 3.7<br />
@@ -1887,22 +1917,25 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[ \text {Any finite intersection of open sets is open.} \]</div>
 <p><strong>Proof</strong></p>
-<p><span class="math notranslate nohighlight">\(M\)</span>의 모든 open set의 집합을 <span class="math notranslate nohighlight">\(S\)</span>라 하고 <span class="math notranslate nohighlight">\(s_i \in S, \enspace i = 1, \cdots, n\)</span>일 떄, 집합 <span class="math notranslate nohighlight">\(X\)</span>를 다음과 같이 정의하자.</p>
+<p><span class="math notranslate nohighlight">\(M\)</span>의 모든 open set의 집합을 <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>라 하자.</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{S}\)</span>의 finite subset을 <span class="math notranslate nohighlight">\(\mathcal{S'}\)</span>이라 할 때, 집합 <span class="math notranslate nohighlight">\(X\)</span>를 다음과 같이 정의하자.</p>
 <div class="math notranslate nohighlight">
-\[ X := \bigcap_{i=1}^n s_i \]</div>
+\[ X := \bigcap_{S \in \mathcal{S'}} S \]</div>
 <p><span class="math notranslate nohighlight">\(\forall x \in X\)</span>에 대해, 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ x \in s_i, \enspace i=1,\cdots,n \]</div>
-<p>이 때, <span class="math notranslate nohighlight">\(s_i\)</span>는 open set임으로 다음이 성립한다.</p>
+\[ x \in S_i, \enspace i=1,\cdots,n \]</div>
+<p>이 때, <span class="math notranslate nohighlight">\(S_i\)</span>는 open set임으로 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[\exist r_i \quad s.t. \quad B_M(x, r_i) \le s_i, \enspace i=1,\cdots,n\]</div>
+\[\exist r_i \quad s.t. \quad B_M(x, r_i) \subseteq S_i, \enspace i=1,\cdots,n\]</div>
 <p><span class="math notranslate nohighlight">\(\min(\{ r_i \}) = r\)</span>이라 하면 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ B_M(x,r) \le s_i, \enspace i=1,\cdots,n \]</div>
+\[ B_M(x,r) \subseteq S_i, \enspace i=1,\cdots,n \]</div>
 <p><span class="math notranslate nohighlight">\(X\)</span>의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ B_M(x,r) \le X\]</div>
-<p>따라서 <span class="math notranslate nohighlight">\(X\)</span>는 <span class="math notranslate nohighlight">\(M\)</span>에서의 open set이다. <span class="math notranslate nohighlight">\(\qed\)</span></p>
+\[ B_M(x,r) \subseteq X\]</div>
+<p>따라서, open set의 정의에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \text {Any finite intersection of open sets is open} \qed \]</div>
 <blockquote>
 <div><p>Refrence<br />
 <span id="id7">[<a class="reference internal" href="../../99%20References/references.html#id9" title="T.M. Apostol. Mathematical Analysis. Addison-Wesley series in mathematics. Addison-Wesle, 1974.">Apostol, 1974</a>]</span> chatper 3.8<br />
@@ -1936,21 +1969,21 @@ title="Print to PDF"
 <p><span class="math notranslate nohighlight">\(x \in M\)</span>이 있다고 하자.</p>
 <p>임의의 <span class="math notranslate nohighlight">\(r \in \R^+\)</span>에 대해, <span class="math notranslate nohighlight">\(B_M(x,r)\)</span>의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ B_M(x,r) \le M \]</div>
+\[ B_M(x,r) \subseteq M \]</div>
 <p>이로 인해 <span class="math notranslate nohighlight">\(\forall x \in M\)</span>에 대해, 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \exist r \in R^+ \quad s.t. \quad B_M(x,r) \le M \]</div>
+\[ \exist r \in R^+ \quad s.t. \quad B_M(x,r) \subseteq M \]</div>
 <p>따라서 <span class="math notranslate nohighlight">\(M\)</span>는 <span class="math notranslate nohighlight">\(M\)</span>에서의 open set이 된다.<span class="math notranslate nohighlight">\(\qed\)</span></p>
 <section id="id13">
 <h4>따름명제4.1<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
-<p>Metric space <span class="math notranslate nohighlight">\(M\)</span>과 <span class="math notranslate nohighlight">\(S \le M\)</span>이 있다고 하자.</p>
+<p>Metric space <span class="math notranslate nohighlight">\(M\)</span>과 <span class="math notranslate nohighlight">\(S \subseteq M\)</span>이 있다고 하자.</p>
 <p>이 때, 다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
 \[ S \text{ is an open set on } S \]</div>
 <p><strong>Proof</strong></p>
 <p><span class="math notranslate nohighlight">\(\forall x \in S\)</span>에 대해, <span class="math notranslate nohighlight">\(B_S(x,r) = B_M(x,r) \cap S\)</span>임으로 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ B_S(x,r) \le S \]</div>
+\[ B_S(x,r) \subseteq S \]</div>
 <p>따라서, <span class="math notranslate nohighlight">\(S\)</span>는 <span class="math notranslate nohighlight">\(S\)</span>에서의 open set이 된다.<span class="math notranslate nohighlight">\(\qed\)</span></p>
 <blockquote>
 <div><p>Reference<br />
@@ -1976,20 +2009,19 @@ title="Print to PDF"
 \[ \text{open ball in } M \text{ is an open set of } M\]</div>
 <p><strong>Proof</strong><br />
 <span class="math notranslate nohighlight">\(x \in M, r \in \R^+\)</span>이 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(y \in B_M(x,r)\)</span>에 대해 <span class="math notranslate nohighlight">\(B_M(y,\epsilon)\)</span>을 고려해보자.</p>
-<p><span class="math notranslate nohighlight">\(\forall z \in B_M(y, \epsilon)\)</span>이 있을 떄, 다음이 성립한다.</p>
+<p>임의의 <span class="math notranslate nohighlight">\(y \in B_M(x,r)\)</span>에 대해 <span class="math notranslate nohighlight">\(B_M(y,\epsilon)\)</span>가 있다고 하면 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{aligned} d(x,z) &amp;&lt; d(x,y) + d(y,z) \\&amp;&lt; d(x,y) + \epsilon \end{aligned} \end{split}\]</div>
-<p>이 떄, <span class="math notranslate nohighlight">\(\epsilon = r - d(x,y)\)</span>로 두면 다음이 성립한다.</p>
+\[ \forall z \in B_M(y, \epsilon), \quad d(x,z) &lt; d(x,y) + d(y,z) &lt; d(x,y) + \epsilon \]</div>
+<p>이 떄, <span class="math notranslate nohighlight">\(y\in B_M(x,r)\)</span>임으로 <span class="math notranslate nohighlight">\(r - d(x,y) \in \R^+\)</span>이다.</p>
+<p>따라서 <span class="math notranslate nohighlight">\(\epsilon = r - d(x,y)\)</span>로 두면 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ d(x,z) &lt; r \]</div>
-<p><span class="math notranslate nohighlight">\(\forall z \in B_M(y, \epsilon)\)</span>에 대해 <span class="math notranslate nohighlight">\(d(x,z) &lt; r\)</span>임으로 다음이 성립한다.</p>
+\[\begin{split} \begin{aligned} &amp; d(x,z) &lt; r \\ \iff&amp; B_M(y,\epsilon) \subseteq B_M(x,r) \end{aligned}  \end{split}\]</div>
+<p>그럼으로, 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ B_M(y,\epsilon) \le B_M(x,r) \]</div>
-<p>이를 정리하면 다음과 같다.</p>
+\[ \forall y \in B_M(x,r) \quad \exist\epsilon \in \R^+ \quad s.t. \quad B_M(y,r) \subseteq B_M(x,r) \]</div>
+<p>따라서 open set의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall y \in B_M(x,r) \quad \exist\epsilon \in \R^+ \quad s.t. \quad B_M(y,r) \le B_M(x,r) \]</div>
-<p>open set의 정의에 의해 <span class="math notranslate nohighlight">\(B_M(x,r)\)</span>은 <span class="math notranslate nohighlight">\(M\)</span>의 open set이다. <span class="math notranslate nohighlight">\(\qed\)</span></p>
+\[ \text{open ball in } M \text{ is an open set of } M \qed \]</div>
 </section>
 <section id="id16">
 <h3>명제7<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
@@ -2001,7 +2033,7 @@ title="Print to PDF"
 <p>[<span class="math notranslate nohighlight">\(\implies\)</span>]<br />
 <span class="math notranslate nohighlight">\(U\)</span>의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall x \in U, \quad \exist r_x \in \R^+ \quad s.t. \quad B_M(x,r_x) \le S \]</div>
+\[ \forall x \in U, \quad \exist r_x \in \R^+ \quad s.t. \quad B_M(x,r_x) \subseteq S \]</div>
 <p>따라서, 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ U = \bigcup_{x \in U} B_M(x,r_x) \qed \]</div>
@@ -2011,7 +2043,7 @@ title="Print to PDF"
 </section>
 <section id="id17">
 <h3>참고<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
-<p>명제1,2,4,5을 만족하는 집합족의 원소를 open set으로 정의할 경우 거리가 정의되어 있지 않은 공간에서도 open set과 closed set을 정의할 수 있다.</p>
+<p>명제1,2,4,5을 만족하는 set의 collection의 원소를 open set으로 정의할 경우 거리가 정의되어 있지 않은 공간에서도 open set과 closed set을 정의할 수 있다.</p>
 <p>즉, 더 일반적인 형태의 open set과 closed set을 정의할 수 있게 된다.</p>
 <blockquote>
 <div><p>Reference<br />

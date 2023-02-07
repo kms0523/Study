@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Analysis" href="../05%20Analysis/Analysis.html" />
-    <link rel="prev" title="Continuous" href="13%20Continuous.html" />
+    <link rel="prev" title="Continuous at a Point" href="13%20Continuous%20at%20a%20Point.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -460,7 +460,12 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../03%20Topology/01%20Topologies/01%20Topological%20Spaces.html">
+      <a class="reference internal" href="../03%20Topology/01%20Topologies/01-1%20Topology.html">
+       Topology
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../03%20Topology/01%20Topologies/01-2%20Topological%20Spaces.html">
        Topological Space
       </a>
      </li>
@@ -699,7 +704,12 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="01%20Metric%20Subspace.html">
+    <a class="reference internal" href="01-1%20Metric.html">
+     Metric
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-2%20Metric%20Subspace.html">
      Metric Subspace
     </a>
    </li>
@@ -754,18 +764,18 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="11%20Convergent%20Sequence.html">
+    <a class="reference internal" href="11%20Convergence%20of%20Sequence.html">
      Convergent Sequence
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="12%20Limit%20of%20Function.html">
-     Limit of Function
+    <a class="reference internal" href="12%20Convergence%20of%20Function.html">
+     Convergence of Function
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="13%20Continuous.html">
-     Continuous
+    <a class="reference internal" href="13%20Continuous%20at%20a%20Point.html">
+     Continuous at a Point
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -796,18 +806,33 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../05%20Analysis/03%20Rational%20Number.html">
+    <a class="reference internal" href="../05%20Analysis/03%20Absolute.html">
+     Absolute
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05%20Analysis/04%20Rational%20Number.html">
      Rational Number
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../05%20Analysis/04%20Real%20Number.html">
+    <a class="reference internal" href="../05%20Analysis/05%20Real%20Number.html">
      Real Number
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../05%20Analysis/05%20Maximum%20and%20Minimum.html">
+    <a class="reference internal" href="../05%20Analysis/06%20Maximum%20and%20Minimum.html">
      Maximum and Minimum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05%20Analysis/07%20Convergent%20Sequence.html">
+     Convergent Sequence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05%20Analysis/08%20Bounded%20Sequence.html">
+     Bounded Sequence
     </a>
    </li>
   </ul>
@@ -1270,6 +1295,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../02%20programming/01%20C%2B%2B/Keyword.html">
+     Keyword
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../02%20programming/01%20C%2B%2B/Name%20Space.html">
      Namespace
     </a>
@@ -1688,9 +1718,16 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   명제
+  <a class="reference internal nav-link" href="#id1">
+   정의
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     명제
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1712,9 +1749,16 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   명제
+  <a class="reference internal nav-link" href="#id1">
+   정의
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     명제
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1728,65 +1772,52 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="continuous-function">
 <h1>Continuous Function<a class="headerlink" href="#continuous-function" title="Permalink to this headline">#</a></h1>
-<p>open subsset <span class="math notranslate nohighlight">\(X \subset \R^n\)</span>과 함수 <span class="math notranslate nohighlight">\(\mathbf f : X \rightarrow \R^m\)</span>이 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(f\)</span>가 <code class="docutils literal notranslate"><span class="pre">연속</span> <span class="pre">함수(continuous</span> <span class="pre">function)</span></code>라는 말은 다음과 동치이다.</p>
+<section id="id1">
+<h2>정의<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Metric space <span class="math notranslate nohighlight">\(M_1,M_2\)</span>가 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(X\)</span>가 <span class="math notranslate nohighlight">\(M_1\)</span>의 open set일 때, 함수 <span class="math notranslate nohighlight">\(f : X \rightarrow M_2\)</span>가  <code class="docutils literal notranslate"><span class="pre">연속</span> <span class="pre">함수(continuous</span> <span class="pre">function)</span></code>이라는 말은 다음과 동치이다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall \mathbf x \in X, \quad f \text { is continuous at } \mathbf x \]</div>
+\[ \forall x \in M_1, \quad f \text{ is continuous at } x \]</div>
 <blockquote>
 <div><p>Reference<br />
-<span id="id1">[<a class="reference internal" href="../../99%20References/references.html#id10" title="John Hamal Hubbard and Barbara Burke Hubbard. Vector calculus, linear algebra, and differential forms: A unified approach. Matrix Editions, 2015.">Hubbard and Hubbard, 2015</a>]</span> Chapter 1.5</p>
+<span id="id2">[<a class="reference internal" href="../../99%20References/references.html#id10" title="John Hamal Hubbard and Barbara Burke Hubbard. Vector calculus, linear algebra, and differential forms: A unified approach. Matrix Editions, 2015.">Hubbard and Hubbard, 2015</a>]</span> Chapter 1.5</p>
 </div></blockquote>
-<section id="id2">
-<h2>명제<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<p>metric spaces <span class="math notranslate nohighlight">\((M_1,d_1),\)</span> <span class="math notranslate nohighlight">\((M_2,d_2)\)</span>와 함수 <span class="math notranslate nohighlight">\(f : M_1 \rightarrow M_2\)</span>가 있다고 하자.</p>
-<p>이 때, 다음을 증명하여라</p>
+<section id="id3">
+<h3>명제<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>Metric space <span class="math notranslate nohighlight">\(M_1,M_2\)</span>가 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(X\)</span>가 <span class="math notranslate nohighlight">\(M_1\)</span>의 open set이고 함수 <span class="math notranslate nohighlight">\(f : X \rightarrow M_2\)</span>가  있을 때, 다음을 증명하여라</p>
 <div class="math notranslate nohighlight">
 \[ f \text{ is a continuous function } \iff \text{preimage of every open subset is open} \]</div>
 <p><strong>Proof</strong></p>
 <p>[<span class="math notranslate nohighlight">\(\implies\)</span>]<br />
-<span class="math notranslate nohighlight">\(U\)</span>가 <span class="math notranslate nohighlight">\(M_2\)</span>의 open set이라 하자.</p>
-<p><span class="math notranslate nohighlight">\(x \in \preimg(U)\)</span>면 <span class="math notranslate nohighlight">\(U\)</span>가 open set임으로 다음이 성립한다.</p>
+<span class="math notranslate nohighlight">\(M_2\)</span>의 임의의 open set을 <span class="math notranslate nohighlight">\(V\)</span>라 하면, open set의 성질에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \exist r \in \R^+  \st B_{M_2}(f(x),r) \subseteq U \]</div>
-<p>이 때, <span class="math notranslate nohighlight">\(f\)</span>가 continuous임으로 다음이 성립한다.</p>
+\[ \forall x \in \preimg(V), \quad \exist r \in \R^+ \st B_{M_2}(f(x),r) \subseteq V \]</div>
+<p>그러면 전제에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall \epsilon &gt; 0, \quad \exist\delta \st y \in  B_{M_1}(x,\delta) \implies f(y) \in B_{M_2}(f(x),\epsilon) \]</div>
-<p>따라서, 위를 만족하는 <span class="math notranslate nohighlight">\(\delta\)</span>에 대해 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[ \forall y \in  B_{M_1}(x,\delta), \quad f(y) \in U \]</div>
-<p>그럼으로, 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[  B_{M_1}(x,\delta) \subseteq \preimg(U) \]</div>
-<p>임의의 <span class="math notranslate nohighlight">\(x\)</span>에서 <span class="math notranslate nohighlight">\(\preimg(U)\)</span>에 속하는 ball이 존재함으로, open set의 성질에 의해 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[\preimg(U) \text{ is open set of } M_1 \qed \]</div>
+\[\begin{split} \begin{aligned} &amp; \forall x \in \preimg(V), \quad \exist\delta \in \R^+ \st B_{M_1}(x,\delta) \subseteq \preimg(B_{M_2}(y,r)) \subseteq \preimg(V) \\ \implies&amp; \preimg(V) \text{ is an open set of } M_1 \qed  \end{aligned}  \end{split}\]</div>
 <p>[<span class="math notranslate nohighlight">\(\impliedby\)</span>]<br />
-<span class="math notranslate nohighlight">\(x_0 \in M_1\)</span>이라 하자.</p>
-<p>open ball의 정의에 의해 다음이 성립한다.</p>
+<span class="math notranslate nohighlight">\(M_1\)</span>의 임의의 원소를 <span class="math notranslate nohighlight">\(x\)</span>라고 하자.</p>
+<p>그러면 open ball의 성질에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall \epsilon \in \R^+,\quad  B_{M_2}(f(x_0),\epsilon) \text{ is an open set of } M_2\]</div>
-<p>그러면 가정에 의해, 다음이 성립한다.</p>
+\[ \forall \epsilon \in \R^+, \quad B_{M_2}(f(x),\epsilon) \text{ is an open set of } M_2 \]</div>
+<p>이 때, 전제에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[\preimg(B_{M_2}(f(x_0), \epsilon)) \text{ is an open set of } M_1\]</div>
+\[ \forall \epsilon \in \R^+, \quad \preimg(B_{M_2}(f(x),\epsilon)) \text{ is an open set of } M_1 \]</div>
 <p>따라서, open set의 성질에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall x \in \preimg(B_{M_2}(f(x_0), \epsilon)), \quad \exist\delta \in \R^+ \st B_{M_1}(x,\delta) \subseteq \preimg(B_{M_2}(f(x_0), \epsilon)) \]</div>
-<p>이 떄, <span class="math notranslate nohighlight">\(x_0 \in \preimg(B_{M_2}(f(x_0), \epsilon))\)</span> 임으로 다음이 성립한다.</p>
+\[ \forall p \in \preimg(B_{M_2}(f(x), \epsilon)), \quad \exist\delta \in \R^+ \st B_{M_1}(p,\delta) \subseteq \preimg(B_{M_2}(f(x), \epsilon)) \]</div>
+<p>이 때, <span class="math notranslate nohighlight">\(x \in \preimg(B_{M_2}(f(x),\epsilon))\)</span>임으로 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \exist\delta \in \R^+ \st \forall x \in B_{M_1}(x_0,\delta), \quad f(x) \in B_{M_2}(f(x_0),\epsilon) \]</div>
-<p>이를 조합하면 다음이 성립힌다.</p>
-<div class="math notranslate nohighlight">
-\[ \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st x \in B_{M_1}(x_0,\delta) \implies f(x) \in B_{M_2}(f(x_0),\epsilon) \]</div>
-<p>따라서, continous의 정의에 의해 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[ f \text{ is continous at } x_0 \]</div>
-<p><span class="math notranslate nohighlight">\(x_0\)</span>는 <span class="math notranslate nohighlight">\(M_1\)</span>의 임의의 원소임으로 continuous function의 정의에 의해 다음이 성립한다.</p>
+\[\begin{split} \begin{aligned} &amp; \forall \epsilon \in \R^+, \quad \exist\delta \in \R^+ \st  B_{M_1}(x,\delta) \subseteq \preimg(B_{M_2}(f(x),\epsilon)) \\ \iff&amp; f \text{ is continuous at } x \end{aligned} \end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(M_1\)</span>의 임의의 원소에서 <span class="math notranslate nohighlight">\(f\)</span>가 연속임으로 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ f \text{ is continous function } \qed \]</div>
 <blockquote>
 <div><p>Reference<br />
-<span id="id3">[<a class="reference internal" href="../../99%20References/references.html#id7" title="John M Lee. Introduction to Topological Manifolds. Graduate texts in mathematics. Springer, New York, NY, 2 edition, December 2010.">Lee, 2010</a>]</span> p.399</p>
+<span id="id4">[<a class="reference internal" href="../../99%20References/references.html#id7" title="John M Lee. Introduction to Topological Manifolds. Graduate texts in mathematics. Springer, New York, NY, 2 edition, December 2010.">Lee, 2010</a>]</span> p.399</p>
 </div></blockquote>
+</section>
 </section>
 </section>
 
@@ -1817,11 +1848,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="13%20Continuous.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="13%20Continuous%20at%20a%20Point.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Continuous</p>
+            <p class="prev-next-title">Continuous at a Point</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../05%20Analysis/Analysis.html" title="next page">

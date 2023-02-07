@@ -460,7 +460,12 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../03%20Topology/01%20Topologies/01%20Topological%20Spaces.html">
+      <a class="reference internal" href="../03%20Topology/01%20Topologies/01-1%20Topology.html">
+       Topology
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../03%20Topology/01%20Topologies/01-2%20Topological%20Spaces.html">
        Topological Space
       </a>
      </li>
@@ -699,7 +704,12 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04%20Metric%20Space/01%20Metric%20Subspace.html">
+    <a class="reference internal" href="../04%20Metric%20Space/01-1%20Metric.html">
+     Metric
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04%20Metric%20Space/01-2%20Metric%20Subspace.html">
      Metric Subspace
     </a>
    </li>
@@ -754,18 +764,18 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04%20Metric%20Space/11%20Convergent%20Sequence.html">
+    <a class="reference internal" href="../04%20Metric%20Space/11%20Convergence%20of%20Sequence.html">
      Convergent Sequence
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04%20Metric%20Space/12%20Limit%20of%20Function.html">
-     Limit of Function
+    <a class="reference internal" href="../04%20Metric%20Space/12%20Convergence%20of%20Function.html">
+     Convergence of Function
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04%20Metric%20Space/13%20Continuous.html">
-     Continuous
+    <a class="reference internal" href="../04%20Metric%20Space/13%20Continuous%20at%20a%20Point.html">
+     Continuous at a Point
     </a>
    </li>
    <li class="toctree-l2">
@@ -1285,6 +1295,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../02%20programming/01%20C%2B%2B/Keyword.html">
+     Keyword
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../02%20programming/01%20C%2B%2B/Name%20Space.html">
      Namespace
     </a>
@@ -1783,10 +1798,15 @@ title="Print to PDF"
        참고
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id17">
+       따름명제6.1
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id17">
+    <a class="reference internal nav-link" href="#id18">
      명제7
     </a>
    </li>
@@ -1892,10 +1912,15 @@ title="Print to PDF"
        참고
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id17">
+       따름명제6.1
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id17">
+    <a class="reference internal nav-link" href="#id18">
      명제7
     </a>
    </li>
@@ -2206,9 +2231,22 @@ title="Print to PDF"
 <h4>참고<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h4>
 <p>분모는 실수의 completeness 공리로부터 증명되었고 분자는 자연수의 well ordering 공리와 completeness 공리로부터 증명되었다.</p>
 </section>
-</section>
 <section id="id17">
-<h3>명제7<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
+<h4>따름명제6.1<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h4>
+<p>다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ \forall x_{1,2} \in \R \st x_1 &lt; x_2, \quad \exist r \in \R \st x_1 &lt; r &lt; x_2 \]</div>
+<p><strong>Proof</strong></p>
+<p>명제6에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \forall x_{1,2} \in \R \st x_1 &lt; x_2, \quad \exist q \in \Q \st x_1 &lt; q &lt; x_2 \]</div>
+<p><span class="math notranslate nohighlight">\(q \in \R\)</span>임으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \forall x_{1,2} \in \R \st x_1 &lt; x_2, \quad \exist r \in \R \st x_1 &lt; r &lt; x_2 \qed \]</div>
+</section>
+</section>
+<section id="id18">
+<h3>명제7<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
 <p><span class="math notranslate nohighlight">\(x_1,x_2 \in \R\)</span>이 있다고 하자.</p>
 <p>이 때, 다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">

@@ -351,6 +351,22 @@ $$ \begin{aligned} & \forall x_{1,2} \in \R \st x_1 < x_2, \quad \exist n \in \N
 #### 참고
 분모는 실수의 completeness 공리로부터 증명되었고 분자는 자연수의 well ordering 공리와 completeness 공리로부터 증명되었다.
 
+#### 따름명제6.1
+다음을 증명하여라.
+
+$$ \forall x_{1,2} \in \R \st x_1 < x_2, \quad \exist r \in \R \st x_1 < r < x_2 $$
+
+**Proof**
+
+명제6에 의해 다음이 성립한다.
+
+$$ \forall x_{1,2} \in \R \st x_1 < x_2, \quad \exist q \in \Q \st x_1 < q < x_2 $$
+
+$q \in \R$임으로 다음이 성립한다.
+
+$$ \forall x_{1,2} \in \R \st x_1 < x_2, \quad \exist r \in \R \st x_1 < r < x_2 \qed $$
+
+
 ### 명제7
 $x_1,x_2 \in \R$이 있다고 하자.
 
