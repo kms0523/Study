@@ -7,15 +7,13 @@ $p \in X$일 때, $p$의 `neighborhood` $N_p$는 $p$를 포함하는 $X$의 open
 
 $$ p \in N_p \in \mathcal T_X $$
 
-더 일반적으로, $S \subseteq X$일 때, $S$의 neighborhood $N_S$는 $S$를 포함하는 $X$의 open set이다.
-
-$$ S \subseteq N_S \in \mathcal T_X $$
-
 ### 참고1
 distance의 개념 없이 정의된 open set을 사용함으로써, "nearness"의 개념 또한 distance의 개념 없이 정의할 수 있다.
 
 ### 참고2
-현재 정의로는 $N$은 항상 open set이지만,  open set을 포함하는 임의의 subset으로 정의를 확장할 수 있다.
+Neighborhood의 더 일반적인 정의는 $p$를 포함하는 open set을 포함하는 $X$의 subset이다.
+
+$$ \begin{gathered} p \in S \subseteq N_S  \\ S \in \mathcal{T_X} \end{gathered} $$
 
 > Referece  
 > {cite}`LeeTM` p.20

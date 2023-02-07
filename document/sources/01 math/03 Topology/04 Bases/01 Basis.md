@@ -250,7 +250,6 @@ $\empty \subseteq \mathcal{B}$임으로, $\mathcal{T_X}$의 정의에 의해 다
 
 $$ \empty \in \mathcal{T_X} \qed $$
 
-
 [$X \in \mathcal{T_X}$]    
 $\mathcal{B}\subseteq\mathcal{B}$임으로 전제1에 의해 다음이 성립한다.
 
@@ -265,11 +264,11 @@ $\mathcal{T_X}$의 finite subset을 $\mathcal{T_X'}$이라고 하자.
 
 $$ \mathcal{T_X'} := \Set{S_i \in \mathcal{T_X} | i=1,\cdots,n} $$
 
-$\mathcal{T_X'}$의 정의에 의해 다음이 성립한다.
+$\mathcal{T_X'}$의 임의의 element를 $S$라 하면 $\mathcal{T_X'}$의 정의에 의해 다음이 성립한다.
 
-$$ \forall x \in S \in \mathcal{T_X'}, \quad \exist B_S \in \mathcal{B} \st x \in B_S \subseteq S $$
+$$ \forall x \in S, \quad \exist B_S \in \mathcal{B} \st x \in B_S \subseteq S $$
 
-$\bigcap\mathcal{T_X'}$의 임의의 element를 $x$라고 하면 다음이 성립한다.
+그럼으로 $\bigcap\mathcal{T_X'}$의 임의의 element를 $x$라고 하면 다음이 성립한다.
 
 $$ \begin{aligned} & x \in S_i, \quad i=1,\cdots,n \\\implies& \exist B_i \in \mathcal{B} \st x \in B_i \subseteq S_i, \quad i=1,\cdots,n \\\implies& x \in \bigcap_{i=1}^n B_i \subseteq \bigcap\mathcal{T_X'} \end{aligned} $$
 
@@ -279,20 +278,30 @@ $$ \exist B_x \in \mathcal{B} \quad s.t. \quad x \in B_x \subseteq \bigcap_{i=1}
 
 $B_x$의 collection을 $\mathcal{B_x}$라 하면 다음이 성립한다.
 
-$$ \exist \mathcal{B_x} \subseteq \mathcal{B} \st \bigcap\mathcal{T_X'} = \bigcup \mathcal{B_x} \implies \bigcap\mathcal{T_X'} \in \mathcal{T_X} \qed $$
+$$ \begin{gathered} \mathcal{B_x} \subseteq \mathcal{B} \\ \bigcap\mathcal{T_X'} = \bigcup \mathcal{B_x} \end{gathered} $$
+
+따라서, $\mathcal{T_X}$의 정의에 의해 다음이 성립한다.
+
+$$ \bigcap\mathcal{T_X'} \in \mathcal{T_X} \qed $$
 
 -[union]  
 $\mathcal{T_X}$의 subset을 $\mathcal{T_X'}$이라고 하자.
 
 $\mathcal{T_X'}$의 정의에 의해 다음이 성립한다.
 
-$$ S \in \mathcal{T_X'}, \quad \exist \mathcal{B_S} \subseteq \mathcal{B} \st S = \bigcup \mathcal{B_S} $$
+$$ \forall S \in \mathcal{T_X'}, \quad S \in \mathcal{T_X} $$
 
-위를 만족하는 모든 $\mathcal{B_S}$의 collection을 $\mathcal{BS}$라고 하면, 다음이 성립한다.
+따라서 $\mathcal{T_X'}$의 임의의 element를 $S$라고 하면 다음이 성립한다.
 
-$$ \bigcup\mathcal{BS} \subseteq \mathcal{B} $$
+$$ \exist \mathcal{B_S} \subseteq \mathcal{B} \st S = \bigcup \mathcal{B_S} $$
 
-$$ \bigcup\mathcal{T_X'} = \bigcup\left(\bigcup\mathcal{BS}\right) \in \mathcal{T_X} \qed $$
+위를 만족하는 모든 $\mathcal{B_S}$의 collection을 $\mathcal{BS}$라고 하면, subset들의 union은 subset임으로 다음이 성립한다.
+
+$$ \exist \mathcal{B'} \subseteq \mathcal{B} \st \mathcal{B'} = \bigcup\mathcal{BS} $$
+
+따라서, $\mathcal{T_X}$의 정의에 의해 다음이 성립한다.
+
+$$ \bigcup\mathcal{B'} = \bigcup\mathcal{T_X'} \in \mathcal{T_X} \qed $$
 
 > Reference  
 > {cite}`LeeTM` p.35

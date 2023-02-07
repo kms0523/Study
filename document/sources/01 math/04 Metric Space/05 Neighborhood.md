@@ -2,12 +2,7 @@
 ## 정의
 Metric space $M$이 있다고 하자.
 
-$x \in M$의 `neighborhood`는 다음을 만족하는 $N_x \subseteq M$이다.
-
-$$ \exist \epsilon \in \R^+, \quad  B(x,\epsilon) \subseteq N_x $$
-
-> Reference  
-> {cite}`hubbard` chap 1.5 
+$x \in M$의 `neighborhood` $N_x$는 $x$를 포함하는 $M$의 open set이다.
 
 ### 참고1
 정의에서 알 수 있듯이, neighborhood는 $x$를 중심으로 하는 어떤 open ball을 포함하는 집합일 뿐이다. 
@@ -18,7 +13,16 @@ $$ \exist \epsilon \in \R^+, \quad  B(x,\epsilon) \subseteq N_x $$
 > {cite}`hubbard` chap 1.5 
 
 ### 참고2
-$x$의 모든 neighborhood의 집합을 $\mathcal{N_x}$라고 표기한다.
+$x$의 모든 neighborhood의 collection을 $\mathcal{N_x}$라고 표기한다.
+
+### 참고3
+Neighborhood의 더 일반적인 정의는  $x$를 중점으로 하는 $M$의 어떤 open ball $B_M(x,\epsilon)$을 포함하는 $M$의 sub set이다. 
+
+$$ B(x,\epsilon) \subseteq N_x $$
+
+> Reference  
+> {cite}`hubbard` chap 1.5 
+
 
 ### 명제1
 Metric space $M$이 있다고 하자.
