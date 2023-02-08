@@ -153,34 +153,6 @@ Conitnuous function의 정의에 의해 다음이 성립한다.
 $$ \forall B \in \mathcal{B}, \quad \preimg(B) \text{ is an open set of } X \qed $$
 
 [$\impliedby$]  
- -[proof1]    
-$V$가 $Y$의 open set이라고 하자.
-
-Basis criterion에 의해 다음이 성립한다.
-
-$$ \forall y \in V, \quad \exist B_y \in \mathcal{B} \quad s.t. \quad y \in B_y \subseteq V $$
-
-따라서, 다음이 성립한다.
-
-$$ \preimg(\Set{y}) \subseteq \preimg(B_y) \subseteq \preimg(V) $$
-
-$\forall x \in \preimg(V)$에 대해, $\Set{x} = \preimg(\Set{y})$를 만족하는 $y \in V$가 존재함으로 다음이 성립한다.
-
-$$ \forall x \in \preimg(V), \quad \exist B_x \in \mathcal{B} \st x \in \preimg(B_x) \subseteq \preimg(V) $$
-
-이 떄, 전제에 의해서 $\preimg(B_x)$는 open set임으로 $\preimg(B_x) = \mathcal{N_x}$로 두면  다음이 성립한다.
-
-$$ \forall x \in \preimg(V), \quad \exist \mathcal{N_x} \quad s.t. \quad \mathcal{N_x} \subseteq \preimg(V) $$
-
-따라서, open set의 성질에 의해 다음이 성립한다.
-
-$$ \preimg(V) \text{ is an open set of } X$$
-
-그럼으로, continuous function의 정의에 의해 다음이 성립한다.
-
-$$ f \text{ is an continuous function.} $$
-
- -[proof2]    
 $V$가 $Y$의 open set이라고 하자.
 
 Basis의 정의에 의해 다음이 성립한다.
@@ -333,7 +305,8 @@ $$ \forall x \in [a_1,b_1) \cap [a_2,b_2), \quad x \in [a_2,b_1) \in \mathcal{B}
 
 $$ \mathcal{B} \text{ is an basis of some topology on } \R \qed $$
 
-
+#### 참고
+$$ X = \bigcup \mathcal{B} \iff \forall x \in X, \quad \exist B \in \mathcal{B} \st x \in B $$
 
 ### 명제6
 Topological space $X$와 $\mathcal{T_X}$의 basis $\mathcal{B}$가 있다고 하자.

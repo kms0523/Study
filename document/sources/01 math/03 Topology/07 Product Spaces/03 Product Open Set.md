@@ -73,7 +73,7 @@ $$ f \text{ is continuous } \qed $$
 #### 보조명제1.1
 다음을 증명하여라.
 
-$$ \preimg_{pi_i \circ f}(U) = \preimg_f\left(\prod_{\substack{j=1\\j\neq i}}^n X_i \times U\right) $$
+$$ \preimg_{\pi_i \circ f}(U) = \preimg_f\left(\prod_{\substack{j=1\\j\neq i}}^n X_i \times U\right) $$
 
 **Proof**
 
