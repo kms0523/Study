@@ -1,4 +1,4 @@
-# Product Topology
+# Product Bases
 ## 정의
 Topological space $X_1, \cdots, X_n$이 있다고 하자.
 
@@ -6,14 +6,9 @@ Catesian product를 이용해 다음과 같은 집합을 정의하자.
 
 $$ \prod_{i=1}^n X_i := X_1 \times\cdots\times X_n $$
 
-이 때, 집합 $\prod_{i=1}^n X_i$의 subset collection $\mathcal{B}$를 다음과 같이 정의하자.
+다음과 같이 정의된 집합 $\prod_{i=1}^n X_i$의 subset collection $\mathcal{B}$를 `product bases`라고 한다.
 
 $$ \mathcal{B} := \Set{\prod_{i=1}^n U_i | U_i \text{ is an open set of } X_i, i=1,\cdots,n} $$
-
-$\mathcal{B}$에 의해 생성된 $\prod_{i=1}^n X_i$의 topology를 `product topology`라고 한다.
-
-### 참고
-Product space의 bases를 `product bases`라고 한다.
 
 ### 명제1
 Topological space $X_1, \cdots, X_n$이 있다고 하자.
@@ -42,9 +37,9 @@ $$ \bigcup\mathcal{B} \subseteq X $$
 $$ \bigcup\mathcal{B} = X \qed $$
 
 [$B_1, B_2 \in \mathcal{B} \implies \forall x \in B_1 \cap B_2, \quad \exist B \in \mathcal{B} \quad s.t. \quad x \in B \subseteq B_1 \cap B_2 $]  
-$B_1,B_2 \in \mathcal{B}$를 다음과 같이 정의하자.
+$\mathcal{B}$의 임의의 두 element $B_1,B_2$를 다음과 같이 표현하자.
 
-$$ B_i := \prod_{j=1}^n U_j^i, i=1,2 $$
+$$ B_i = \prod_{j=1}^n U_j^i, i=1,2 $$
 
 그러면 Catesian product의 성질에 의해 다음이 성립한다.
 
@@ -70,6 +65,9 @@ $$\mathcal{B} \text{ is a basis for some topology on } \prod_{i=1}^n X_i \qed $$
 > Reference  
 > [math.stackexchange](https://math.stackexchange.com/questions/1714574/basis-for-a-topology-that-we-will-call-the-product-topology)  
 > [wiki-catesian product](https://en.wikipedia.org/wiki/Cartesian_product)
+
+#### 참고
+$\mathcal{B}$에 의해 생성된 $\prod_{i=1}^n X_i$의 topology를 `product topology`라고 한다.
 
 ### 명제2
 Metric space $\R^n$의 Euclidean topology를 $\mathcal{T_E}$ product topology를 $\mathcal{T_P}$라할 때, 다음을 증명하여라.

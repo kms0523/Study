@@ -24,7 +24,7 @@ $$ M_p = M_q \quad {_\blacksquare} $$
 > Reference  
 > [Wiki - Couple](https://en.wikipedia.org/wiki/Couple_(mechanics))
 
-# Simple Couple
+## Simple Couple
 `Simple couple`은 크기는 같고 방향은 반대이면서 평행한 line of action을 갖는 두 force로 이루어진 system이다.
 
 > Reference  
