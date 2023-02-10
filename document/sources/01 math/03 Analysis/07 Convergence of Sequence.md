@@ -1,4 +1,4 @@
-# Convergent Sequence
+# Convergence of Sequence
 ## 정의
 $\R$위의 sequence $s$가 있다고 하자.
 

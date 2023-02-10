@@ -199,3 +199,24 @@ $$ f \text{ is a continuous function } \iff \text{preimage of every open subset 
 
 #### 참고
 명제7에 의해 metric space에서 $\epsilon-\delta$ 논법에 의해 continuous function인 함수들은 topological space에서 continous function이다.
+
+### 명제8
+Topological space $X$가 있다고 하자.
+
+함수 $f:X \rightarrow \R, \enspace g: X \rightarrow \R - \Set{0}$이 continuous 할 때, 다음을 증명하여라.
+
+$$ f +g, f-g, fg, \frac{f}{g} \text{are conitnuous} $$
+
+**Proof**
+
+함수 $h$를 다음과 같이 정의하자.
+
+$$ h:X \rightarrow \R^2 \st x \mapsto (f(x),g(x))   $$
+
+$f,g$가 continuous function임으로 product space의 성질에 의해 다음이 성립한다.
+
+$$ h \text{ is continuos} $$
+
+이 때, $+,-,\times,\div$는 모두 $\R^2 \rightarrow \R$로 가는 continuous function임으로 continuous function의 성질에 의해 다음이 성립한다.
+
+$$ \begin{gathered} + \circ h \\ - \circ h \\ \times \circ h \\ \div \circ h \end{gathered} \text{ are conitnuous} \qed  $$
