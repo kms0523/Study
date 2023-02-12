@@ -203,15 +203,15 @@ $$ \begin{aligned} |(\alpha\beta) - (a_nb_n)| &= |\beta(\alpha-a_n) + a_n(\beta-
 
 이 떄, $a_n$이 convergent sequence임으로 다음이 성립한다.
 
-$$ \exist M \in \R^+ \st \forall n \in \N, \quad |a_n| \le M $$
+$$ \exist a_M \in \R^+ \st \forall n \in \N, \quad |a_n| \le a_M $$
 
-따라서, 다음이 성립한다.
+따라서, $M = \max(a_M,\beta)$라고 하면  다음이 성립한다.
 
-$$ |(\alpha\beta) - (a_nb_n)| < |\beta||\alpha-a_n| + M|\beta-b_n| $$
+$$ |(\alpha\beta) - (a_nb_n)| < |\beta||\alpha-a_n| + a_M|\beta-b_n| < M(|\alpha-a_n| + |\beta - b_n|) $$
 
-임의의 $\epsilon \in \R^+$가 있을 때, $\frac{\epsilon}{2|\beta|}, \frac{\epsilon}{2M}\in\R^+$이고 $a,b$가 convergent sequence임으로 다음이 성립한다.
+임의의 $\epsilon \in \R^+$가 있을 때, $\frac{\epsilon}{2M}\in\R^+$이고 $a,b$가 convergent sequence임으로 다음이 성립한다.
 
-$$ \exist N_1,N_2 \in \N \st \begin{gathered} N_1 \le n \implies |\alpha - a_n| < \frac{\epsilon}{2|\beta|} \\ N_2 \le n \implies |\beta - b_n| < \frac{\epsilon}{2M} \end{gathered} $$
+$$ \exist N_1,N_2 \in \N \st \begin{gathered} N_1 \le n \implies |\alpha - a_n| < \frac{\epsilon}{2M} \\ N_2 \le n \implies |\beta - b_n| < \frac{\epsilon}{2M} \end{gathered} $$
 
 따라서, 다음이 성립한다.
 
@@ -240,19 +240,19 @@ $$ \begin{aligned} \left|\frac{\alpha}{\beta} - \frac{a_n}{b_n}\right| &= \left|
 
 이 떄, $b_n$이 convergent sequence이고 $|\beta|/2\in\R^+$임으로 다음이 성립한다.
 
-$$ \exist N_1 \in \N \st \forall n \in \N \implies |\beta - b_n| \le \frac{|\beta|}{2} $$
+$$ \exist N_1 \in \N \st N_1 \le n \implies |\beta - b_n| \le \frac{|\beta|}{2} $$
 
 절대값의 성질에 의해 다음이 성립한다.
 
 $$ |\beta| - |b_n| \le |\beta-b_n| \le \frac{|\beta|}{2} \implies \frac{|\beta|}{2} \le |b_n| \iff \frac{1}{|b_n|} \le \frac{2}{|\beta|} $$
 
-따라서, 다음이 성립한다.
+따라서, $M = \max(2/\beta,2\alpha/\beta^2)$이라고 하면 $N_1 \le n$에 대해 다음이 성립한다.
 
-$$ \exist N_1 \in \N \st \forall n \in \N \implies \left|\frac{\alpha}{\beta} - \frac{a_n}{b_n}\right| \le \left|\frac{2}{\beta}\right||\alpha-a_n| + \left|\frac{2\alpha}{\beta^2}\right||\beta-b_n| $$
+$$ \left|\frac{\alpha}{\beta} - \frac{a_n}{b_n}\right| \le \left|\frac{2}{\beta}\right||\alpha-a_n| + \left|\frac{2\alpha}{\beta^2}\right||\beta-b_n| \le M(|\alpha-a_n| + |\beta-b_n|) $$
 
-임의의 $\epsilon \in \R^+$가 있을 때, $\frac{|\beta|\epsilon}{4}, \frac{\beta^2\epsilon}{4|\alpha|}\in\R^+$이고 $a,b$가 convergent sequence임으로 다음이 성립한다.
+임의의 $\epsilon \in \R^+$가 있을 때, $\frac{\epsilon}{2M}\in\R^+$이고 $a,b$가 convergent sequence임으로 다음이 성립한다.
 
-$$ \exist N_2,N_3 \in \N \st \begin{gathered} N_2 \le n \implies |\alpha - a_n| < \frac{|\beta|\epsilon}{4} \\ N_3 \le n \implies |\beta - b_n| < \frac{\beta^2\epsilon}{4|\alpha|} \end{gathered} $$
+$$ \exist N_2,N_3 \in \N \st \begin{gathered} N_2 \le n \implies |\alpha - a_n| < \frac{\epsilon}{2M} \\ N_3 \le n \implies |\beta - b_n| < \frac{\epsilon}{2M} \end{gathered} $$
 
 따라서, 다음이 성립한다.
 

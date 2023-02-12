@@ -66,7 +66,7 @@ $$ f \text{ is continuous} $$
 
 $\R^2$의 임의의 element를 $x$라 하자.
 
-$t \in \R^2$에 대해서 $\norm{x-t} < \delta$일 때, 다음이 성립한다.
+$\norm{x-t} < \delta$를 만족하는 $t \in \R^2$에 대해서 다음이 성립한다.
 
 $$ \begin{aligned} & \sqrt{(x_1-t_1)^2+(x_2-t_2)^2} < \delta \\\implies& |x_1-t_1| + |x_2-t_2| < \sqrt{2}\delta \end{aligned}  $$
 
@@ -99,7 +99,7 @@ $$ f \text{ is continuous} $$
 
 $\R^2$의 임의의 element를 $x$라 하자.
 
-$t \in \R^2$에 대해서 $\norm{x-t} < \delta$일 때, 다음이 성립한다.
+$\norm{x-t} < \delta$를 만족하는 $t \in \R^2$에 대해서 다음이 성립한다.
 
 $$ \begin{aligned} & \sqrt{(x_1-t_1)^2+(x_2-t_2)^2} < \delta \\\implies& |x_1-t_1| + |x_2-t_2| < \sqrt{2}\delta \end{aligned}  $$
 
@@ -132,22 +132,25 @@ $$ f \text{ is continuous} $$
 
 $\R^2$의 임의의 element를 $x$라 하자.
 
-$t \in \R^2$에 대해서 $\norm{x-t} < \delta \in \R^+$일 때, 다음이 성립한다.
+$f$의 정의에 의해 다음이 성립한다.
 
-$$ \begin{aligned} & \sqrt{(x_1-t_1)^2+(x_2-t_2)^2} < \delta \\\implies& (x_1-t_1)^2+(x_2-t_2)^2 < \delta^2 \end{aligned}  $$
+$$ \begin{aligned} |f(x)-f(t)| &= |x_1x_2-t_1t_2| \\&= |x_2(x_1-t_1)+t_1(x_2-t_2)| \\&\le |x_2||x_1-t_1|+|t_1||x_2-t_2| \end{aligned} $$
 
-따라서, 보조명제4.1-3에 의해 다음이 성립한다.
+이 때, $\norm{x-t} < \delta$를 만족하는 $t \in \R^2$에 대해서 보조명제4.1,2에 의해 다음이 성립한다.
 
-$$ \begin{aligned} |f(x)-f(t)| &= |x_1x_2-t_1t_2| \\&= |(x_1-t_1)(x_2-t_2)+t_2(x_1-t_1)+t_1(x_2-t_2)| \\&\le |(x_1-t_1)(x_2-t_2)|+|t_2(x_1-t_1)|+|t_1(x_2-t_2)| \\&<  \frac{\delta^2}{2} + (|t_1|+|t_2|)\delta \end{aligned} $$
+$$ \begin{gathered} |t_1| < |x_1| +\delta \\ |x_1-t_1| + |x_2-t_2| < \sqrt{2}\delta \end{gathered}  $$
+
+$M = \max(|x_2|,|x_1|+\delta)$라 하면 다음이 성립한다.
+
+$$ |f(x)-f(t)|< \sqrt{2}M\delta $$
 
 이 떄, $\delta$를 다음과 같이 정의하자.
 
-$$ \delta := \min\left( \sqrt{\epsilon}, \frac{\epsilon}{2(|t_1| + |t_2|)} \right) $$
+$$ \delta := \frac{\epsilon}{\sqrt{2}M} $$
 
 그러면 다음이 성립한다.
 
 $$ \forall \epsilon \in \R^+, \quad \norm{x-t} < \delta \implies |f(x) - f(t)| < \epsilon $$
-
 
 $f$는 임의의 점 $x$에서 continuous함으로 다음이 성립한다.
 
@@ -159,29 +162,20 @@ $$ f \text{ is continuous} \qed $$
 #### 보조명제4.1
 다음을 증명하여라.
 
-$$ \norm{x-t} < \delta \implies|x_1-t_1| < \delta $$
+$$ \norm{x-t} < \delta \implies |t_1| < |x_1| +\delta $$
 
 **Proof**
 
-$$ \begin{aligned} & (x_1-t_1)^2 < (x_1-t_1)^2 + (x_2-t_2)^2 < \delta^2 \\ \implies& |x_1-t_1| < \delta \qed  \end{aligned}  $$
+$$ \begin{aligned} & (x_1-t_1)^2 < (x_1-t_1)^2 + (x_2-t_2)^2 < \delta^2 \\ \implies& |x_1-t_1| < \delta \\ \implies& |t_1| < |x_1| + \delta \qed  \end{aligned}  $$
 
 #### 보조명제4.2
 다음을 증명하여라.
 
-$$ \norm{x-t} < \delta \implies|x_2-t_2| < \delta $$
+$$ \norm{x-t} < \delta \implies |x_1-t_1| + |x_2-t_2| < \sqrt{2}\delta $$
 
 **Proof**
 
-$$ \begin{aligned} & (x_2-t_2)^2 < (x_1-t_1)^2 + (x_2-t_2)^2 < \delta^2 \\ \implies& |x_2-t_2| < \delta \qed  \end{aligned}  $$
-
-#### 보조명제4.3
-다음을 증명하여라.
-
-$$ \norm{x-t} < \delta \implies|x_1-t_1||x_2-t_2| < \frac{\delta^2}{2} $$
-
-**Proof**
-
-$$ \begin{aligned} & 2\sqrt{(x_1-t_1)^2(x_2-t_2)^2} < (x_1-t_1)^2 + (x_2-t_2)^2 < \delta^2 \\ \implies& |x_1-t_1||x_2-t_2|< \frac{\delta^2}{2} \qed  \end{aligned}  $$
+$$ \begin{aligned} & \sqrt{(x_1-t_1)^2+(x_2-t_2)^2} < \delta \\ \implies& \frac{1}{\sqrt{2}} (|x_1-t_1|+|x_2-t_2|) < \delta \\\implies& |x_1-t_1| + |x_2-t_2| < \sqrt{2}\delta \qed  \end{aligned}  $$
 
 ### 명제5
 $\R^2_*$를 다음과 같이 정의하자.
@@ -200,19 +194,21 @@ $$ f \text{ is continuous} $$
 
 $\R^2_*$의 임의의 element를 $x$라 하자.
 
-$t \in \R^2_*$에 대해서 $\norm{x-t} < \delta$일 때, 다음이 성립한다.
+$f$의 정의에 의해 다음이 성립한다.
 
-$$ \begin{aligned} & \sqrt{(x_1-t_1)^2+(x_2-t_2)^2} < \delta \\\implies& |x_1-t_1| + |x_2-t_2| < \sqrt{2}\delta \end{aligned}  $$
+$$ \begin{aligned} |f(x)-f(t)| &= \left|\frac{x_1}{x_2}-\frac{t_1}{t_2}\right| \\&= \left|\frac{x_1t_2-t_1x_2}{x_2t_2}\right| \\&= \left|\frac{x_2(x_1-t_1)-x_1(x_2-t_2)}{x_2t_2}\right| \\&\le \frac{1}{|t_2|}|x_1-t_1| + \frac{|x_1|}{|x_2t_2|}|x_2-t_2| \end{aligned} $$
 
-따라서, 다음이 성립한다.
+$\norm{x-t} < \delta$를 만족하는 $t \in \R^2_*$에 대해서 보조명제 5.1,5.2에 의해서 다음이 성립한다.
 
-$$ \begin{aligned} |f(x)-f(t)| &= \left|\frac{x_1}{x_2}-\frac{t_1}{t_2}\right| \\&= \left|\frac{x_1t_2-t_1x_2}{x_2t_2}\right| \\&= \left|\frac{t_2(x_1-t_1)-t_1(x_2-t_2)}{x_2t_2}\right| \\&<  \frac{M}{|x_2t_2|} (|x_1-t_1| + |x_2-t_2|) \\&< \frac{\sqrt{2}M}{|x_2t_2|} \delta \end{aligned} $$
+$$ \begin{gathered} \frac{1}{|t_2|} < \frac{1}{|x_2| - \delta} \\ |x_1-t_1| + |x_2-t_2| < \sqrt{2}\delta \end{gathered} $$
 
-이 떄, $M=\max(|t_1|,|t_2|)$이다.
+따라서, $M = \max(\frac{1}{|x_2|-\delta},\frac{|x_1|}{(|x_2|-\delta)|x_2|})$이라 하면 다음이 성립한다.
+
+$$ |f(x)-f(t)| < \sqrt{2}M\delta $$
 
 이 떄, $\delta$를 다음과 같이 정의하자.
 
-$$ \delta := \frac{\sqrt{2}M}{|x_2t_2|} $$
+$$ \delta := \frac{\epsilon}{\sqrt{2}M} $$
 
 그러면 다음이 성립한다.
 
@@ -221,6 +217,24 @@ $$ \forall \epsilon \in \R^+, \quad \norm{x-t} < \delta \implies |f(x) - f(t)| <
 $f$는 임의의 점 $x$에서 continuous함으로 다음이 성립한다.
 
 $$ f \text{ is continuous} \qed $$
+
+#### 보조명제5.1
+다음을 증명하여라.
+
+$$ \norm{x-t} < \delta \implies \frac{1}{|t_2|} < \frac{1}{|x_2| - \delta} $$
+
+**Proof**
+
+$$ \begin{aligned} & |x_2-t_2| < \delta \\ \implies& |x_2| - \delta < |t_2| \\\implies& \frac{1}{|t_2|} < \frac{1}{|x_2| - \delta} \qed  \end{aligned}  $$
+
+#### 보조명제5.2
+다음을 증명하여라.
+
+$$ \norm{x-t} < \delta \implies |x_1-t_1| + |x_2-t_2| < \sqrt{2}\delta $$
+
+**Proof**
+
+$$ \begin{aligned} & \sqrt{(x_1-t_1)^2+(x_2-t_2)^2} < \delta \\ \implies& \frac{1}{\sqrt{2}} (|x_1-t_1|+|x_2-t_2|) < \delta \\\implies& |x_1-t_1| + |x_2-t_2| < \sqrt{2}\delta \qed  \end{aligned}  $$
 
 ### 명제6
 Metric space $M$과 함수 $f,g : M \rightarrow \R$이 있다고 하자.
@@ -248,3 +262,39 @@ $$ d(x,t) < \delta_m \implies |h(x)-h(t)| < \epsilon $$
 임의의 $x$에서 $h$가 continuous함으로 다음이 성립한다.
 
 $$ f+g \text{ is continuous} \qed $$
+
+
+### 명제7
+Metric space $M$과 함수 $f,g : M \rightarrow \R$이 있다고 하자.
+
+$f,g$가 continuous function일 떄, 다음을 증명하여라.
+
+$$ fg \text{ is continuous} $$
+
+**Proof**
+
+$h=fg$라고 할 떄, $h$의 정의에 의해 다음이 성립한다.
+
+$$ \begin{aligned} |h(x)-h(t)| &= |f(x)g(x)-f(t)g(t)| \\&= |g(x)(f(x)-f(t))+f(t)(g(x)-g(t))| \\&\le |g(x)||f(x)-f(t)|+|f(t)||g(x)-g(t)| \end{aligned} $$
+
+이 떄, $f$가 continuous function임으로 다음이 성립한다.
+
+$$ \exist \delta_1 \in \R^+ \st d(x,t) < \delta_1 \implies |f(x)-f(t)| < 1 \\ \implies f(t) < 1 + |f(x)| $$
+
+$M = \max(|g(x)|,1+|f(x)|)$일 떄, 다음이 성립한다.
+
+$$ |h(x)-h(t)| < M(|f(x)-f(t)| + |g(x)-g(t)|) $$
+
+$\R^+$의 임의의 element를 $\epsilon$이라고 하자.
+
+$\epsilon/2M \in \R^+$이고, $f,g$가 continuous function임으로 다음이 성립한다.
+
+$$ \begin{gathered} \exist \delta_2 \in \R^+ \st d(x,t) < \delta_2 \implies |f(x)-f(t)| < \frac{\epsilon}{2M} \\ \exist \delta_3 \in \R^+ \st d(x,t) < \delta_3 \implies |g(x)-g(t)| < \frac{\epsilon}{2M} \end{gathered}  $$
+
+따라서, $\delta_m = \min(\delta_1,\delta_2,\delta_3)$일 떄, 다음이 성립한다.
+
+$$ d(x,t) < \delta_m \implies |f(x)g(x)-f(t)g(t)| < \epsilon $$
+
+임의의 $x$에서 $h$가 continuous함으로 다음이 성립한다.
+
+$$ fg \text{ is continuous} \qed $$
