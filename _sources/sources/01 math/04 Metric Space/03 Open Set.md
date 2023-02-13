@@ -176,6 +176,11 @@ $$ \forall y \in B_M(x,r) \quad \exist\epsilon \in \R^+ \quad s.t. \quad B_M(y,r
 
 $$ \text{open ball in } M \text{ is an open set of } M \qed $$
 
+#### 참고
+임의의 open set은 open ball이 아닐 수 있다.
+
+예를 들어 두개의 disjoint open ball의 union은 open set이지만 open ball은 아니다.
+
 
 ### 명제7
 Metric space $M$이 있다고 하자.

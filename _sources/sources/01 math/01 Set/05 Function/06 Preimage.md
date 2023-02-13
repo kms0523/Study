@@ -153,3 +153,17 @@ preimage의 정의에 의해 다음이 성립한다.
 
 $$ \begin{aligned} \preimg_{f|_{X_1 \times Y_1}}(Y_2) &= \Set{ x \in X_1 | f(x) \in Y_1 \cap Y_2} \\&= X_1 \cap \Set{ x \in X | f(x) \in Y_1 \cap Y_2} \\&= X_1 \cap \Set{ x \in X | f(x) \in Y_1} \cap \Set{ x \in X | f(x) \in Y_2}  \\&= X_1 \cap \preimg_f(Y_1) \cap \preimg_f(Y_2) \qed \end{aligned} $$
 
+### 명제8
+집합 $X,Y,Z$와 함수 $f : X \rightarrow Y, g : Y \rightarrow Z$가 있다고 하자.
+
+$Z$의 subset을 $W$라고 할 때, 다음을 증명하여라.
+
+$$ \preimg_{g\circ f}(W) = \preimg_f(\preimg_g(W)) $$
+
+**Proof**
+
+preimage의 정의에 의해 다음이 성립한다.
+
+$$ \begin{aligned} \preimg_g(W) &= \Set{y \in Y | g(y) \in W} \\ \preimg_f(\preimg_g(W)) &= \Set{ x \in X | g(f(x)) \in W} \\&= \preimg_{g\circ f}(W) \qed \end{aligned} $$
+
+

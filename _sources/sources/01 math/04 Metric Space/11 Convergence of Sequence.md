@@ -1,4 +1,4 @@
-# Convergent Sequence
+# Convergence of Sequence
 ## 정의
 Metric space $M$과 $M$위의 sequnece $s$가 있다고 하자.
 
@@ -173,6 +173,35 @@ $$ \text{every subsequence of } s \text{ converges to } x \qed $$
 [$\impliedby$]  
 $s$는 $s$의 subsequence 중에 하나임으로 자명하게 성립한다. $\qed$
 
+### 명제6
+Metric space $M$과 $M$위의 sequence $s$가 있다고 하자.
 
+$x \in M$일 떄, 다음을 증명하여라.
 
+$$ s \text{ is converges to } x \iff \forall N_x \in \mathcal{N_x}, \quad \exist N \in \N \st N \le n \implies s(n) \in N_x $$
 
+**Proof**
+
+[$\implies$]  
+$\mathcal{N_x}$의 임의의 element를 $N_x$라 하자.
+
+$N_x$는 $x$를 포함하는 open set임으로 다음이 성립한다.
+
+$$ \exist r \in \R^+ \st B_M(x,r) \subseteq N_x $$
+
+$s$는 $x$의 coverge 함으로 다음이 성립한다.
+
+$$ \exist N \in \N \st N \le n \implies s(n) \in B_M(x,r)  $$
+
+임의의 $N_x$에서 위를 만족함으로 다음이 성립한다.
+
+$$ \forall N_x \in \mathcal{N_x}, \quad \exist N \in \N \st N \le n \implies s(n) \in N_x \qed $$
+
+[$\impliedby$]  
+$x$를 중점으로 하는 open ball은 $x$를 포함하는 open set임으로 다음이 성립한다.
+
+$$ \forall \epsilon \in \R^+, \quad B_M(x,\epsilon) \in \mathcal{N_x} $$
+
+따라서, 전제에 의해 다음이 성립한다.
+
+$$ \forall \epsilon \in \R^+, \quad \exist N\in \N \st N \le n \implies s(n) \in B_M(x,\epsilon) \qed $$
