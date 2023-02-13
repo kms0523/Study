@@ -114,17 +114,23 @@ $$ g \circ f \text{ is a continuous function} $$
 
 **Proof**
 
-Open set $U \subseteq Z$가 있을 떄, $g$가 연속임으로 다음이 성립한다.
+$Z$의 임의의 open set을 $W$라고 하자.
 
-$$ g^{-1}(U) \text{ is a open set on Y} $$
+preimage의 성질에 의해 다음이 성립한다.
+
+$$ \preimg_{g\circ f}(W) = \preimg_f(\preimg_g(W)) $$
+
+$g$가 연속임으로 다음이 성립한다.
+
+$$ \preimg_g(W) \text{ is a open set on Y} $$
 
 또한 $f$가 연속임으로 다음이 성립한다.
 
-$$ f^{-1}(g^{-1}(U)) \text{ is a open set on X} $$
+$$ \preimg_f(\preimg_g(W)) \text{ is a open set on X} $$
 
-이 떄, $\preimg((g \circ f)(U)) = f^{-1}(g^{-1}(U))$임으로, open set의 preimage는 open set이 된다.
+임의의 open set의 preimage가 open set임으로 continuos function의 성질에 의해 다음이 성립한다.
 
-따라서, $g \circ f$는 continuous function이다. $\qed$
+$$ g \circ f \text{ is a continuous function} \qed $$
 
 ### 명제6(Local Criterion for Continuity)
 Topological space $X,Y$와 함수 $f : X \rightarrow Y$가 있다고 하자.
@@ -199,24 +205,3 @@ $$ f \text{ is a continuous function } \iff \text{preimage of every open subset 
 
 #### 참고
 명제7에 의해 metric space에서 $\epsilon-\delta$ 논법에 의해 continuous function인 함수들은 topological space에서 continous function이다.
-
-### 명제8
-Topological space $X$가 있다고 하자.
-
-함수 $f:X \rightarrow \R, \enspace g: X \rightarrow \R - \Set{0}$이 continuous 할 때, 다음을 증명하여라.
-
-$$ f +g, f-g, fg, \frac{f}{g} \text{are conitnuous} $$
-
-**Proof**
-
-함수 $h$를 다음과 같이 정의하자.
-
-$$ h:X \rightarrow \R^2 \st x \mapsto (f(x),g(x))   $$
-
-$f,g$가 continuous function임으로 product space의 성질에 의해 다음이 성립한다.
-
-$$ h \text{ is continuos} $$
-
-이 때, $+,-,\times,\div$는 모두 $\R^2 \rightarrow \R$로 가는 continuous function임으로 continuous function의 성질에 의해 다음이 성립한다.
-
-$$ \begin{gathered} + \circ h \\ - \circ h \\ \times \circ h \\ \div \circ h \end{gathered} \text{ are conitnuous} \qed  $$

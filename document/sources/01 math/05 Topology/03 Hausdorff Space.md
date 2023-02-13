@@ -4,7 +4,7 @@ Topological Space $X$가 있다고 하자.
 
 다음을 만족하는 $X$를 `Hausdorff space`라고 한다.
 
-$$ \text{disjoint } x,y \in X \implies \exist \text{ disjoint } \mathcal{N_x},\mathcal N_y $$
+$$ \text{disjoint } x,y \in X \implies \exist \text{ disjoint } N_x,N_y $$
 
 ### 명제1
 다음을 증명하여라.
@@ -17,7 +17,7 @@ Metric space $M$이 있다고 하자.
 
 Metric space의 neighborhood의 성질에 의해 다음이 성립한다.
 
-$$ \text{disjoint } x,y \in M \implies \exist \text{ disjoint } \mathcal{N_x},\mathcal N_y $$
+$$ \text{disjoint } x,y \in M \implies \exist \text{ disjoint } N_x,N_y $$
 
 따라서, $M$은 Hausdorff space이다. $\qed$
 
@@ -32,11 +32,11 @@ $X$가 Hausdroff space라고 하자.
 
 $U$가 $X$의 subspace이고 $x,y \in U$라 하면, $X$가 Hausdroff space이기 때문에 다음이 성립한다.
 
-$$ \exist \text{ disjoint } \mathcal{N_x}, \mathcal N_y \text{ on } X $$
+$$ \exist \text{ disjoint } N_x, N_y \text{ on } X $$
 
 $U$가 $X$의 subspace임으로 다음이 성립한다.
 
-$$ \mathcal{N_x} \cap U \text{ and } \mathcal N_y \cap U \text{ are open set and disjoint in } U $$
+$$ N_x \cap U \text{ and } N_y \cap U \text{ are open set and disjoint in } U $$
 
 그럼으로 다음이 성립한다.
 
@@ -77,9 +77,9 @@ $$ \preimg(\mathcal N_0) \text{ and } \preimg(\mathcal N_r) \text{ are open set 
 
 $$ \begin{aligned} \preimg(\mathcal N_0) \cap \preimg(\mathcal N_r) &=  \preimg(\mathcal N_0 \cap \mathcal N_r) \\&= \preimg(\empty) \\&= \empty \end{aligned} $$
 
-$\mathcal{N_x} = \preimg(\mathcal N_0), \mathcal N_y = \preimg(\mathcal N_r)$라고 하면 다음이 성립한다.
+$N_x = \preimg(\mathcal N_0), N_y = \preimg(\mathcal N_r)$라고 하면 다음이 성립한다.
 
-$$ \exist \text{ disjoint } \mathcal{N_x}, \mathcal N_y \text{ on } X $$
+$$ \exist \text{ disjoint } N_x, N_y \text{ on } X $$
 
 따라서, $X$는 Hausdorff space이다.$\qed$
 
@@ -99,17 +99,17 @@ $x \in X$라 하자.
 
 $X$가 Hausdorff space이기 때문에 $\forall y \in X - \Set{x}$에 대해 다음이 성립한다.
 
-$$ \exist \text{ disjoint } \mathcal{N_x},\mathcal{N_y} \text{ on } X $$
+$$ \exist \text{ disjoint } N_x,N_y \text{ on } X $$
 
-$\mathcal{N_{x,y}}$가 disjoint neighborhood임으로, $\mathcal{N_y} \subseteq X-\Set{x}$이다.
+$\mathcal{N_{x,y}}$가 disjoint neighborhood임으로, $N_y \subseteq X-\Set{x}$이다.
 
 따라서, open set의 성질에 의해 다음이 성립한다.
 
-$$ \forall y \in X-\Set{x}, \quad \exist \mathcal{N_y} \st \mathcal{N_y} \subseteq X-\Set{x} \iff X-\Set{x} \text{ is an open set} $$
+$$ \forall y \in X-\Set{x}, \quad \exist N_y \st N_y \subseteq X-\Set{x} \iff X-\Set{x} \text{ is an open set} $$
 
 따라서, closed set의 정의에 의해 $\Set{x}$는 $X$의 closed set이다. $\qed$
 
-### 명제5
+#### 따름명제4.1
 $X$가 Hausdorff space라고 하자.
 
 이 떄, 다음을 증명하여라.
@@ -128,7 +128,40 @@ $$ \text{finite union of closed sets are closed.} $$
 
 이 떄, $X$의 finite subset은 단일 원소 집합의 finite union으로 구성되어 있음으로 closed이다. $\qed$
 
-### 명제6
+#### 따름명제4.2
+$X$가 finite Hausdorff space라고 하자.
+
+이 떄, 다음을 증명하여라.
+
+$$ X \text{ has an discrete topology} $$
+
+**Proof**
+
+$X$의 임의의 subset을 $S$라고 하자.
+
+$X$가 finite임으로 $S$도 finite subset이고, 따라서 다음과 같이 표현할 수 있다.
+
+$$ S := \Set{x_1,\cdots,x_k}, \enspace X-S := \Set{x_{k+1},\cdots, x_n} $$
+
+이 떄, $S$와 $X-S$는 singletone set의 finite union임으로 closed set의 성질에 의해 다음이 성립한다.
+
+$$ S,X-S \text{ are closed sets} $$
+
+$X-S$가 closed set임으로 다음이 성립한다.
+
+$$ S \text{ is an open set} $$
+
+임의의 subset $S$가 clopen임으로 다음이 성립한다.
+
+$$ \text{Every subset of } X \text{ is clopen} $$
+
+따라서, clopen set의 성질에 의해 다음이 성립한다.
+
+$$ X \text{ has an discrete topology} \qed $$
+
+
+
+### 명제5
 Hausdorff space $X$가 있다고 하자. 
 
 $X$위의 sequence $s$가 있을 때, 다음을 증명하여라.
@@ -143,19 +176,27 @@ $x,y \in X$가 있고 $\lim_{i\rightarrow\infty}s(i) = x$ 이고 $ \lim_{i\right
 
 $$ x \neq y $$
 
-수렴에 정의에 의해 다음이 성립한다.
+그러면 Hausdorff space임으로 다음이 성립한다.
 
-$$ \begin{aligned} \forall \mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad  \exist N_x \st N_x \le n \implies s(n) \in \mathcal{N_x} \\ \forall \mathcal{N_y} \in \Set{\mathcal{N_y}}, \quad  \exist N_y \st N_y \le n \implies s(n) \in \mathcal{N_y} \end{aligned} $$
+$$ \exist \text{disjoint } N_x,N_y $$
 
-$N = \max(N_x,N_y)$라 하면 모든 $\mathcal{N_x},\mathcal N_y$에 대해 $N \le n$이면 다음이 성립한다.
+이 때 , 수렴에 정의에 의해 다음이 성립한다.
 
-$$ s(n) \in \mathcal{N_x} \cap \mathcal N_y $$
+$$ \begin{aligned} \exist N_1 \st N_1 \le n \implies s(n) \in N_x \\ \exist N_2 \st N_2 \le n \implies s(n) \in N_y \end{aligned} $$
 
-하지만 이는 $X$가 Hausdorff space임으로 $ \exist \text{ disjoint } \mathcal{N_x},\mathcal{N_y} \text{ on } X $라는 사실에 모순된다.
+$N = \max(N_1,N_2)$라 하면 $N \le n$이면 다음이 성립한다.
 
-따라서,proof by contradiction에 의해 $x=y$이다. $\qed$
+$$ s(n) \in N_x \cap N_y $$
 
-### 명제7
+하지만 이는 $N_x,N_y$가 disjoint라는 사실에 모순됨으로 proof by contradiction에 의해 다음이 성립한다.
+
+$$ x=y $$
+
+즉, 다음이 성립한다.
+
+$$ s \text{ can converge to at most one point in } X \qed $$
+
+### 명제6
 Finite set $X$가 있을 떄, 다음을 증명하여라.
 
 $$ \text{Hausdorff topology on } X \text{ is a discrete topology} $$

@@ -259,7 +259,26 @@ $id$는 continuous map이고, $\pi_i \circ id = \pi_i$임으로 명제3에 의�
 
 $$ \forall i \in [1,n], \quad \pi_i \text{ is continous } \qed $$
 
-#### 따름명제
+#### 따름명제3.2
+Topological space $X$가 있다고 하자.
+
+함수 $f:X \rightarrow \R, \enspace g: X \rightarrow \R - \Set{0}$이 continuous 할 때, 다음을 증명하여라.
+
+$$ f +g, f-g, fg, \frac{f}{g} \text{are conitnuous} $$
+
+**Proof**
+
+함수 $h$를 다음과 같이 정의하자.
+
+$$ h:X \rightarrow \R^2 \st x \mapsto (f(x),g(x))   $$
+
+$f,g$가 continuous function임으로 product space의 성질에 의해 다음이 성립한다.
+
+$$ h \text{ is continuos} $$
+
+이 때, $+,-,\times,\div$는 모두 $\R^2 \rightarrow \R$로 가는 continuous function임으로 continuous function의 성질에 의해 다음이 성립한다.
+
+$$ \begin{gathered} + \circ h \\ - \circ h \\ \times \circ h \\ \div \circ h \end{gathered} \text{ are conitnuous} \qed  $$
 
 Continuity of sum/product using characteristic property of product topology
 
