@@ -18,39 +18,35 @@ $$ \text{Every nonempty subset of } \R \text{ that is bounded above has a suprem
 $x \in \R$은 $\R$의 어떤 bounded above subset의 supremum이라고 볼 수 있다.
 
 ### 명제1
-$\R$의 subset $X$가 있다고 하자.
+$\R$의 subset $U$가 있다고 하자.
 
-$x \in X$가 있을 떄, 다음을 증명하여라.
+$x$가 $U$의 upper bound일 떄, 다음을 증명하여라.
 
-$$ x = \sup(X) \iff \forall \epsilon \in \R^+, \quad \exist y \in X \st x-\epsilon < y \le x $$
+$$ x = \sup(U) \iff \forall \epsilon \in \R^+, \quad \exist u \in U \st x-\epsilon < u \le x $$
 
 **Proof**
 
 [$\implies$]  
-전제에 의해 $x$가 $X$의 supremum임으로, supremum의 정의에 의해 다음이 성립한다.
+전제에 의해 $x$가 $U$의 supremum임으로, supremum의 정의에 의해 다음이 성립한다.
 
-$$ \forall y \in X, \quad y \le x $$
+$$ \forall u \in U, \quad u \le x $$
 
-$\forall \epsilon \in \R^+. \quad 0 \le \epsilon$임으로 다음이 성립한다.
+또한, 다음도 성립한다.
 
-$$ \forall \epsilon \in \R^+, \quad x-\epsilon < x $$
-
-따라서, supremum의 정의에 의해 다음이 성립한다.
-
-$$ x-\epsilon \text{ is not an upper bound of } X $$
+$$ \forall \epsilon \in \R^+, \quad x-\epsilon < x \implies x-\epsilon \text{ is not an upper bound of } U $$
 
 그럼으로 다음이 성립한다.
 
-$$ \exist y \in X \st x-\epsilon < y $$
+$$ \exist u \in U \st x-\epsilon < u $$
 
 따라서, 위의 결과를 종합하면 다음이 성립한다.
 
-$$ \forall \epsilon \in \R^+, \quad \exist y \in X \st x-\epsilon < y \le x \qed $$
+$$ \forall \epsilon \in \R^+, \quad \exist u \in U \st x-\epsilon < u \le x \qed $$
 
 [$\impliedby$]  
 다음을 가정하자.
 
-$$ x \neq \sup(X) $$
+$$ x \neq \sup(U) $$
 
 그러면 다음이 성립한다.
 
@@ -70,7 +66,7 @@ $$ x - \epsilon_0 = y \text{ is not an upper bound of } X $$
 
 이는 모순임으로 proof by contradiction에 의해 다음이 성립한다.
 
-$$ x = \sup(X) \qed $$
+$$ x = \sup(U) \qed $$
 
 > Reference  
 > {cite}`abbott` Lemma 1.3.7.
@@ -144,11 +140,11 @@ $$ \exist\sup(S) \in \R $$
 
 $$ \begin{aligned} & \forall \epsilon \in \R^+, \quad \exist y \in S \st \sup(S)-\epsilon < y \le \sup(S) \\\implies& \exist y \in S \st \sup(S) - 1 < y \le \sup(S) \\\iff& \exist y \in S \st \sup(S) < y+1 \le \sup(S)+1 \end{aligned}  $$
 
-$S$는 $\N$의 subset임으로 다음이 성립한다.
-
-$$ \begin{aligned} & \exist y \in \N \st \sup(S) < y+1 \\ \implies& \exist y \in \N  \st  \forall s \in S, \quad s < y+1 \\ \implies& \exist y \in \N \st y+1 \notin S \\\iff& \exist y \in \N \st x < y+1 \end{aligned}  $$
-
 따라서, 다음이 성립한다.
+
+$$ \begin{aligned} & \sup(S) < y+1 \\\implies& y+1 \notin S \\\iff& x < y+1 \end{aligned} $$
+
+그럼으로 다음이 성립한다.
 
 $$ \forall x \in \R,\quad  \exist n \in \N \st x < n \qed $$
 
@@ -183,7 +179,7 @@ $$ \sup(U) = 1 \qed $$
 [inf]  
 자연수의 성질에 의해 다음이 성립한다.
 
-$$ \forall n \in \N, \quad 0 \le 1 \iff \forall n \in \N, \quad 0 \le \frac{1}{n} $$
+$$ 0 \le 1 \implies \forall n \in \N, \quad 0 \le \frac{1}{n} $$
 
 $U$의 lower bound의 집합을 $S$라고 할 떄, 다음이 성립한다.
 
@@ -212,7 +208,7 @@ $$ \inf(U) = 0 \qed $$
 #### 따름명제3.2
 $\R$의 subset $X$가 있다고 하자.
 
-$x \in X$가 있을 떄, 다음을 증명하여라.
+$X$의 upperbound $x$가 있을 떄, 다음을 증명하여라.
 
 $$ x = \sup(X) \iff \forall n \in \N, \quad \exist y \in X \st x- \frac{1}{n}< y \le x $$
 

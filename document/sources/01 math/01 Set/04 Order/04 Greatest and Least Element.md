@@ -2,9 +2,9 @@
 Poset $X$와 $X$의 subset $U$가 있다고 하자.
 
 ## Greatest Element
-$M \in U$가 다음을 만족할 때, $M$을 $U$의 greatest element라고 한다.
+$u_G \in U$가 다음을 만족할 때, $u_G$을 $U$의 greatest element라고 한다.
 
-$$ \forall u \in U, \quad u \le M $$
+$$ \forall u \in U, \quad u \le u_G $$
 
 > Reference  
 > [wiki](https://en.wikipedia.org/wiki/Greatest_element_and_least_element)
@@ -18,20 +18,20 @@ $$ \text{Greatest element of } U \text{ is unique.} $$
 
 **Proof**
 
-$M_1,M_2 \in U$가 greateset element라고 하자.
+$u_{G_1},u_{G_2} \in U$가 greateset element라고 하자.
 
 그러면 정의에 의해 다음이 성립한다.
 
-$$ \begin{gathered} M_1 \le M_2 \\ M_2 \le M_1 \end{gathered} $$
+$$ \begin{gathered} u_{G_1} \le u_{G_2} \\ u_{G_2} \le u_{G_1} \end{gathered} $$
 
 따라서, partial order의 성질에 의해 다음이 성립한다.
 
-$$ M_1 = M_2 \qed $$
+$$ u_{G_1} = u_{G_2} \qed $$
 
 ## Least Element
-$m \in U$가 다음을 만족할 때, $m$을 $U$의 least element라고 한다.
+$u_L \in U$가 다음을 만족할 때, $u_L$을 $U$의 least element라고 한다.
 
-$$ \forall u \in U, \quad m \le u $$
+$$ \forall u \in U, \quad u_L \le u $$
 
 > Reference  
 > [wiki](https://en.wikipedia.org/wiki/Greatest_element_and_least_element)
@@ -45,15 +45,15 @@ $$ \text{Least element of } U \text{ is unique.} $$
 
 **Proof**
 
-$M_1,M_2 \in U$가 least element라고 하자.
+$u_{L_1},u_{L_2} \in U$가 least element라고 하자.
 
 그러면 정의에 의해 다음이 성립한다.
 
-$$ \begin{gathered} M_1 \le M_2 \\ M_2 \le M_1 \end{gathered} $$
+$$ \begin{gathered} u_{L_1} \le u_{L_2} \\ u_{L_2} \le u_{L_1} \end{gathered} $$
 
 따라서, partial order의 성질에 의해 다음이 성립한다.
 
-$$ M_1 = M_2 \qed $$
+$$ u_{L_1} = u_{L_2} \qed $$
 
 ## 참고1
 $U$의 maximal and minimal element는 비교 가능한 원소들 중에서 가장 크거나 작은 element이다.

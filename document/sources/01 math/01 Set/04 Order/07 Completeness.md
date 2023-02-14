@@ -2,7 +2,10 @@
 ## 정의
 POSET $X$가 있다고 하자.
 
-$X$의 임의의 nonempty bounded above subset $U$가 supremum을 갖을 경우 $X$를 `complete` 하다고 한다.
+$X$가 다음을 만족할 떄, $X$를 `complete` 하다고 한다.
+
+$$ \text{Every nonempty bounded above subset of } X \text{ has supremum} $$
+
 
 > Reference  
 > [wiki](https://en.wikipedia.org/wiki/Completeness_(order_theory))
@@ -11,9 +14,9 @@ $X$의 임의의 nonempty bounded above subset $U$가 supremum을 갖을 경우 
 ### 명제1
 Complete POSET $X$가 있다고 하자.
 
-$X$의 bounded below subset $U$가 있을 때, 다음을 증명하여라.
+이 떄, 다음을 증명하여라.
 
-$$ \exist! \inf(U) $$
+$$ \text{Every nonempty bounded below subset of } X \text{ has infimum } $$
 
 **Proof**
 
@@ -25,27 +28,17 @@ $U$가 bounded below임으로 다음이 성립한다.
 
 $$ Y \text{ is nonempty} $$
 
-$Y$의 정의에 의해 다음이 성립한다.
-
-$$ \forall u \in U, \quad u \text{ is an upper bound of } Y \implies Y \text{ is bounded above subset of } X $$
-
-$X$의 completeness에 의해 다음이 성립한다.
+$Y$의 정의에 의해 $Y$는 bounded above set이고, 따라서 $X$의 completeness에 의해 다음이 성립한다.
 
 $$ \exist \sup(Y) $$
 
 그러면 supremum의 정의에 의해 다음이 성립한다.
 
-$$ \begin{aligned} & \forall u \in U, \quad \sup(Y) \le u \\ \implies& \sup(Y)\text{ is lower bound of } U \\ \implies& \sup(Y) \in Y \end{aligned} $$
+$$ \begin{aligned} & \forall u \in U, \quad \sup(Y) \le u \\ \implies& \sup(Y)\text{ is lower bound of } U \\ \implies& \sup(Y) \in Y \\\implies& \sup(Y) \text{ is an greatest element of } Y \\\implies& \sup(Y) = \inf(X) \end{aligned} $$
 
-따라서, supremum의 성질에 의해 다음이 성립한다.
+따라서, 다음이 성립한다.
 
-$$ \sup(Y) \text{ is an greatest element of Y} $$
-
-그러면 infimum의 정의에 의해 다음이 성립한다.
-
-$$ \inf(X) = \sup(Y) $$
-
-$\sup(Y)$가 유일하게 존재함으로 $\inf(X)$도 유일하게 존재한다. $\qed$
+$$ \text{Every nonempty bounded below subset of } X \text{ has infimum } $$
 
 > Reference  
 > {cite}`abbott` Exercise 1.3.3
