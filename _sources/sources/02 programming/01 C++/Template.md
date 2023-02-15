@@ -1,5 +1,187 @@
 # Template
 
+## Paramter & Argument
+template parameter는 아래 예시의 T와 같이 치환될 인자를 나타내는 변수들이다.
+``` cpp
+template<typename T>
+```
+
+template argument는 template parameter에 들어갈 구체적인 변수이다.
+
+> Reference  
+> [cppreference](https://en.cppreference.com/w/cpp/language/template_parameters)
+
+## Instantiation
+### Implicit instanciation
+컴파일러의 결정에 의해 template의 instance code를 생성하는 것을 말한다.
+
+다음 예시 코드를 보자.
+
+```cpp
+//Z.h
+
+template<class T>
+class Z
+{
+public:
+	void Ztest(void){ 
+        // long code
+    };
+    void Ztest2(void); 
+};
+
+//main.cpp
+
+#include "Z.h"
+
+int main(void){
+    Z<int> a;
+    a.Ztest();
+}
+
+```
+
+implicit instanciation은 main문에서 `a.Ztest()`가 호출될 떄 발생하며, `Z.h`에 있는 내용을 보고 template pameter T에 template argument int로 치환된 코드를 작성한다.
+
+따라서 반드시 `Z.h`에 정의가 전부 포함되어 있어야 한다. 
+
+만약, `Z.h`에 정의가 없는 경우, compiler가 implicit instanciation을 할 때 정의가 없이 선언만 되어 있기 때문에 template argument에 int가 들어간 코드를 작성할 떄 선언만 작성할 수 있음으로 compile error가 발생하게 된다.
+
+하지만 Ztest2를 보면 정의는 없지만 어떠한 compile error도 발생하지 않는 것을 볼 수 있다. 이는 Ztest2를 쓰는 code가 없어 instance화가 되지 않았기 때문이다.
+
+#### Multiple inclusion
+
+이번에는 여러 cpp에서 Z class를 사용하는 경우를 보자.
+```cpp
+//other.cpp
+#include "Z.h"
+
+void func(void){
+    Z<int> a;
+    a.Ztest();
+}
+
+//other2.cpp
+#include "Z.h"
+
+void func2(void){
+    Z<int> a;
+    a.Ztest();
+}
+```
+
+dumpbin을 이용해서 실제로 other.obj와 other2.obj의 symbol table을 보면 다음과 같이 작성되어 있는 것을 볼 수 있다.
+
+```
+039 00000000 SECT5  notype ()    External     | ?Ztest@?$Z@H@@QEAAXXZ (public: void __cdecl Z<int>::Ztest(void))
+
+02C 00000000 SECT5  notype ()    External     | ?Ztest@?$Z@H@@QEAAXXZ (public: void __cdecl Z<int>::Ztest(void))
+```
+
+여기서 세 번째 열에 SECTX가 포함된 경우 이 기호는 개체 파일의 해당 섹션에 정의되어 있다는 의미이다.
+
+즉, `Z<int>::Ztest()`를 사용하는 각각의 .obj마다 `Z<int>::Ztest()`의 instance화 된 정의가 되어 있다는 의미이다.
+
+아마 linux에서 nm프로그램을 이용해가지고 symbol을 볼 경우, 두 정의 모두 W로 표시되며 weak symbol을 가지고 있는 것을 볼 수 있을 것이다.
+
+weak symbol일 경우에는 [중복 정의를 허용](https://linux.die.net/man/1/nm)하며, compiler에 의해서 특정 정의를 선택한 후 최종 excutable에는 선택한 정의만을 사용한다.
+
+.map 파일을 보면 `Z<int>::Ztest()` 함수의 위치가 other.obj로 나타나는 것으로 보아 other.obj에 있는 정의가 선택되었음을 유추해볼 수 있다.
+```
+ 0002:000007c0       ?Ztest@?$Z@H@@QEAAXXZ      00000001400117c0 f i other.obj
+```
+
+따라서, implicit instantiation을 사용할 경우 object 파일마다 instance화가 됨으로 compile time이 증가하며, object 파일의 크기 또한 증가한다.
+
+> Reference  
+> [blog](http://egloos.zum.com/sweeper/v/3082946)
+> [stackoverflow](https://stackoverflow.com/questions/2351148/explicit-template-instantiation-when-is-it-used)
+
+### Explicit instanciation
+개발자의 결정에 의해 template의 instance code를 생성하는 것을 말한다.
+
+다음 예시 코드를 보자.
+
+```cpp
+//Z.h
+
+template<class T>
+class Z
+{
+public:
+	void Ztest(void);
+};
+
+//Z.cpp
+template<typename T>
+void Z<T>::Ztest(void){
+    //long code
+}
+
+//explicit class instanciation
+template class Z<int>;
+
+
+
+//main.cpp
+
+#include "Z.h"
+
+int main(void){
+    Z<int> a;
+    a.Ztest();
+}
+
+```
+
+explicit instanciation은 `Z.cpp`을 compile할 때 발생하며, main 문에서 `a.Ztest()`를 호출할 때는 외부에서 정의된 symbol을 호출한다.
+
+dumpbin을 통해 main.obj 파일을 보면 다음과 같이 작성되어 있다.
+
+```
+039 00000000 UNDEF  notype ()    External     | ?Ztest@?$Z@H@@QEAAXXZ (public: void __cdecl Z<int>::Ztest(void))
+```
+
+세번째 열에 UNDEF로 되어있으면 이 기호는 개체 파일에 정의되어 있지 않으며 외부에서 정의를 가져와야 된다는 의미이다.
+
+즉, Link 단계에서 Z.obj파일에서 정의를 link시키게 된다.
+
+그리고 아래와 같이 class의 특정 멤버 함수만 instanciation할 수 있다.
+
+```cpp
+//Z.h
+
+template<class T>
+class Z
+{
+public:
+	void Ztest(void);
+	void Ztest2(void);
+};
+
+//Z.cpp
+template<typename T>
+void Z<T>::Ztest(void){
+    //long code
+}
+
+//explicit member function instanciation
+template void Z<int>::Ztest(void);
+```
+
+explicit instantiation을 하는 경우, 정의를 header에 두지 않아 compile time dependency가 줄어들며 object 파일마다 instance화과 되는 것이 아니기 때문에 implicit instanciation에 비해 compilte time이 줄어들고 object 파일 크기 또한 줄어든다.
+
+> Reference  
+> [blog](http://egloos.zum.com/sweeper/v/3082946)
+
+### Two-phase name lookup
+instanciation될 떄, 두 단계로 나눠서 진행된다.
+1. template 정의부에서 문법을 확인한다.
+2. instanciation되는 시점에서 문법을 확인한다.
+
+> Reference  
+> [cppreference](https://en.cppreference.com/w/cpp/language/two-phase_lookup)
+
 ## Default Template Type
 ```cpp
 template <typename T1, typename T2>

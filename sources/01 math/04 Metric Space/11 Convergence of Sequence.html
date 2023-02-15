@@ -174,8 +174,13 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../01%20Set/04%20Order/05%20Bounded.html">
-       Bounded
+      <a class="reference internal" href="../01%20Set/04%20Order/05-1%20Upper%20Bound.html">
+       Upper Bound and Lower Bound
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../01%20Set/04%20Order/05-2%20Bounded%20Above%20and%20Below.html">
+       Bounded Above and Below
       </a>
      </li>
      <li class="toctree-l3">
@@ -532,8 +537,23 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="05%20Neighborhood.html">
+    <a class="reference internal" href="05-1%20Neighborhood.html">
      Neighborhood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-2%20Adherent%20Point.html">
+     Adherent Point
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-3%20Accumulation%20Point.html">
+     Accumulation Point
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-4%20Isolated%20Point.html">
+     Isolated Point
     </a>
    </li>
    <li class="toctree-l2">
@@ -624,8 +644,13 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../05%20Topology/01%20Topologies/03%20Closed%20set.html">
+      <a class="reference internal" href="../05%20Topology/01%20Topologies/03-1%20Closed%20set.html">
        Closed set
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../05%20Topology/01%20Topologies/03-2%20Clopen%20set.html">
+       Clopen set
       </a>
      </li>
      <li class="toctree-l3">
@@ -1336,6 +1361,11 @@ const thebe_selector_output = ".output, .cell_output"
    Git
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20programming/Visual%20Studio.html">
+   Visual Studio
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -1856,12 +1886,12 @@ title="Print to PDF"
 <p>Metric space <span class="math notranslate nohighlight">\(M\)</span>과 <span class="math notranslate nohighlight">\(M\)</span>위의 sequnece <span class="math notranslate nohighlight">\(s\)</span>가 있다고 하자.</p>
 <p><span class="math notranslate nohighlight">\(s\)</span>가 <span class="math notranslate nohighlight">\(a \in M\)</span>에 <code class="docutils literal notranslate"><span class="pre">수렴(convergence)</span></code>한다는 말은 다음과 동치이다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall \epsilon \in \R^+, \quad \exist N \in \N \quad s.t. \quad \forall n &gt; N, \quad d(s(n), a) &lt; \epsilon \]</div>
+\[ \forall \epsilon \in \R^+, \quad \exist N \in \N \st N\le n \implies d(s(n), a) &lt; \epsilon \]</div>
 <section id="id2">
 <h3>참고<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>open ball을 이용해서 표현하면 다음과 같다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall \epsilon \in \R^+, \quad \exist N \in \N \quad s.t. \quad \forall n &gt; N, \quad s(n) \in B_M(a, \epsilon) \]</div>
+\[ \forall \epsilon \in \R^+, \quad \exist N \in \N \st N\le n \implies s(n) \in B_M(a, \epsilon) \]</div>
 </section>
 <section id="id3">
 <h3>명제1<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
@@ -1942,23 +1972,20 @@ title="Print to PDF"
 <p>[<span class="math notranslate nohighlight">\(\implies\)</span>]<br />
 <span class="math notranslate nohighlight">\(x\)</span>가 <span class="math notranslate nohighlight">\(U\)</span>의 adherent point임으로 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall \epsilon \in \R^+, \quad B(x,\epsilon) \cap U \neq \empty \]</div>
-<p>따라서, 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[ \forall n \in \N, \quad \exist s_n \in U \st d(s_n,x) \le \frac{1}{n} \]</div>
-<p>이 떄, <span class="math notranslate nohighlight">\(U\)</span>위의 sequence <span class="math notranslate nohighlight">\(s\)</span>를 다음과 같이 정의하자.</p>
+\[\begin{split} \begin{aligned} &amp; \forall \epsilon \in \R^+, \quad B(x,\epsilon) \cap U \neq \empty \\\implies&amp; \forall n \in \N, \quad \exist s_n \in U \st d(x, s_n) \le \frac{1}{n} \end{aligned} \end{split}\]</div>
+<p>따라서, <span class="math notranslate nohighlight">\(U\)</span>위의 sequence <span class="math notranslate nohighlight">\(s\)</span>를 다음과 같이 정의하자.</p>
 <div class="math notranslate nohighlight">
 \[ s(i) = s_i \]</div>
-<p>Rationale number는 dense in real임으로 다음이 성립한다.</p>
+<p>Rationale number의 archimedean property에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall \epsilon \in \R^+, \quad \exist N \in \N \st \frac{1}{N} \le \epsilon \]</div>
+\[ \forall \epsilon \in \R^+, \quad \exist n \in \N \st \frac{1}{n} &lt; \epsilon \]</div>
 <p>따라서, 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall \epsilon \in \R^+, \quad \exist N \in \N \st  \forall n \ge N, \quad d(s(n),x) &lt; \epsilon \qed \]</div>
+\[ \forall \epsilon \in \R^+, \quad \exist N \in \N \st N \le n \implies d(s(n),x) &lt; \epsilon \qed \]</div>
 <p>[<span class="math notranslate nohighlight">\(\impliedby\)</span>]
 Convergent sequece의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall \epsilon \in \R^+, \quad \exist N \in \N \st  \forall n \ge N, \quad d(s(n),x) &lt; \epsilon \]</div>
+\[ \forall \epsilon \in \R^+, \quad \exist N \in \N \st N \le n \implies d(s(n),x) &lt; \epsilon \]</div>
 <p>따라서, 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ \forall \epsilon \in \R^+, \quad  B(x,\epsilon) \cap U \neq \empty \implies \forall \mathcal{N_x} \in \Set{\mathcal{N_x}}, \quad \mathcal{N_x} \cap U \neq \empty \]</div>

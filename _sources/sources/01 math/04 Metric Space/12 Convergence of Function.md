@@ -2,32 +2,37 @@
 ## 정의
 Metric space $M_1,M_2$가 있다고 하자.
 
-$X$가 $M_1$의 open set이고 $x \in \overline{X}, y \in M_2$가 있을 때, $t \in X$가 $x$로 갈 떄, $f(t)$가 $y$로 수렴한다는 말은 다음과 동치이다.
-
-$$ \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st 0 < d_1(x,t) < \delta \implies d_2(y,f(t)) < \epsilon $$
+$X$가 $M_1$의 open set이고 $x$가 $X$의 limit point일 때, $f$가 $x$에서 $y\in M_2$에 수렴한다는 말은 다음과 동치이다.
+ 
+$$ \forall t \in X, \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st 0 < d_1(x,t) < \delta \implies d_2(y,f(t)) < \epsilon $$
 
 > Reference  
 > {cite}`hubbard` p.92
 
 ### 참고1
+현재 수렴의 정의는 $f$가 $x$에서 정의되어 있을 필요가 없게끔 정의되어 있다.
+
+$x$가 $X$의 limit point이면서 $0 < d_1(x,t) < \delta$로 둠으로써 $t=x$가 되는 상황을 배제한다.
+
+### 참고2
 $t \rightarrow x$일 때, $f(t)$가 $y$로 수렴한다는 말은 다음과 같이 표현하기도 한다.
 
 $$ \lim_{t \rightarrow x}f(t) = y $$
 
 이 떄, $y$를 $t \rightarrow x$일 때 $f(t)$의 극한값이라고 한다.
 
-### 참고2
+### 참고3
 open ball을 이용해서 표현하면 다음과 같다.
 
 $$ \forall \epsilon \in \R^+, \quad \exist \delta \in \R \st t \in B_{M_1}(x,\delta) - \Set{x} \implies f(t) \in B_{M_2}(y,\epsilon) $$
 
-### 참고3
+### 참고4
 $t$는 $x$와 항상 $\delta$만큼 떨어져 있기 때문에 극한을 정의하는데 있어 함수 $f(x)$는 $t = x$에서 반드시 정의되어 있을 필요는 없다.
 
 > Reference  
 > {cite}`stewart` 1.7   
 
-### 참고4
+### 참고5
 함수의 극한값이 $L$이기 위해서는 $0 < d(x,t) < \delta$을 만족하는 모든 $t$에 대해서 $d(y,f(t)) < \epsilon$을 만족해야 된다.
 
 $0 < d(x,t) < \delta$을 만족하는 특정 $x$에 대해 $d(y, f(t)) < \epsilon$을 만족하는 $L'$은 극한값이 될 수 없다.
@@ -42,7 +47,7 @@ $x_n = \frac{1}{(2n + 0.5)\pi}, \enspace x_m = \frac{1}{(2m - 0.5)\pi}$로 두�
 > Reference  
 > {cite}`hubbard` Chapter 1.5
 
-### 참고5
+### 참고6
 극한의 정의가 갖는 의미를 이해하기 위해 구체적인 예시를 살펴보자. 
 
 $\R$위에서 함수 $f(x)$가 다음과 같이 정의되어 있다고 하자.

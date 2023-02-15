@@ -174,8 +174,13 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../01%20Set/04%20Order/05%20Bounded.html">
-       Bounded
+      <a class="reference internal" href="../01%20Set/04%20Order/05-1%20Upper%20Bound.html">
+       Upper Bound and Lower Bound
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../01%20Set/04%20Order/05-2%20Bounded%20Above%20and%20Below.html">
+       Bounded Above and Below
       </a>
      </li>
      <li class="toctree-l3">
@@ -532,8 +537,23 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04%20Metric%20Space/05%20Neighborhood.html">
+    <a class="reference internal" href="../04%20Metric%20Space/05-1%20Neighborhood.html">
      Neighborhood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04%20Metric%20Space/05-2%20Adherent%20Point.html">
+     Adherent Point
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04%20Metric%20Space/05-3%20Accumulation%20Point.html">
+     Accumulation Point
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04%20Metric%20Space/05-4%20Isolated%20Point.html">
+     Isolated Point
     </a>
    </li>
    <li class="toctree-l2">
@@ -624,8 +644,13 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../05%20Topology/01%20Topologies/03%20Closed%20set.html">
+      <a class="reference internal" href="../05%20Topology/01%20Topologies/03-1%20Closed%20set.html">
        Closed set
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../05%20Topology/01%20Topologies/03-2%20Clopen%20set.html">
+       Clopen set
       </a>
      </li>
      <li class="toctree-l3">
@@ -1336,6 +1361,11 @@ const thebe_selector_output = ".output, .cell_output"
    Git
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02%20programming/Visual%20Studio.html">
+   Visual Studio
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -1965,31 +1995,28 @@ title="Print to PDF"
 </section>
 <section id="id4">
 <h3>명제1<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(\R\)</span>의 subset <span class="math notranslate nohighlight">\(X\)</span>가 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(x \in X\)</span>가 있을 떄, 다음을 증명하여라.</p>
+<p><span class="math notranslate nohighlight">\(\R\)</span>의 subset <span class="math notranslate nohighlight">\(U\)</span>가 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(x\)</span>가 <span class="math notranslate nohighlight">\(U\)</span>의 upper bound일 떄, 다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
-\[ x = \sup(X) \iff \forall \epsilon \in \R^+, \quad \exist y \in X \st x-\epsilon &lt; y \le x \]</div>
+\[ x = \sup(U) \iff \forall \epsilon \in \R^+, \quad \exist u \in U \st x-\epsilon &lt; u \le x \]</div>
 <p><strong>Proof</strong></p>
 <p>[<span class="math notranslate nohighlight">\(\implies\)</span>]<br />
-전제에 의해 <span class="math notranslate nohighlight">\(x\)</span>가 <span class="math notranslate nohighlight">\(X\)</span>의 supremum임으로, supremum의 정의에 의해 다음이 성립한다.</p>
+전제에 의해 <span class="math notranslate nohighlight">\(x\)</span>가 <span class="math notranslate nohighlight">\(U\)</span>의 supremum임으로, supremum의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall y \in X, \quad y \le x \]</div>
-<p><span class="math notranslate nohighlight">\(\forall \epsilon \in \R^+. \quad 0 \le \epsilon\)</span>임으로 다음이 성립한다.</p>
+\[ \forall u \in U, \quad u \le x \]</div>
+<p>또한, 다음도 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall \epsilon \in \R^+, \quad x-\epsilon &lt; x \]</div>
-<p>따라서, supremum의 정의에 의해 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[ x-\epsilon \text{ is not an upper bound of } X \]</div>
+\[ \forall \epsilon \in \R^+, \quad x-\epsilon &lt; x \implies x-\epsilon \text{ is not an upper bound of } U \]</div>
 <p>그럼으로 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \exist y \in X \st x-\epsilon &lt; y \]</div>
+\[ \exist u \in U \st x-\epsilon &lt; u \]</div>
 <p>따라서, 위의 결과를 종합하면 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall \epsilon \in \R^+, \quad \exist y \in X \st x-\epsilon &lt; y \le x \qed \]</div>
+\[ \forall \epsilon \in \R^+, \quad \exist u \in U \st x-\epsilon &lt; u \le x \qed \]</div>
 <p>[<span class="math notranslate nohighlight">\(\impliedby\)</span>]<br />
 다음을 가정하자.</p>
 <div class="math notranslate nohighlight">
-\[ x \neq \sup(X) \]</div>
+\[ x \neq \sup(U) \]</div>
 <p>그러면 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ \exist \text{upper bound } y \st y &lt; x \]</div>
@@ -2004,7 +2031,7 @@ title="Print to PDF"
 \[ x - \epsilon_0 = y \text{ is not an upper bound of } X \]</div>
 <p>이는 모순임으로 proof by contradiction에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ x = \sup(X) \qed \]</div>
+\[ x = \sup(U) \qed \]</div>
 <blockquote>
 <div><p>Reference<br />
 <span id="id5">[<a class="reference internal" href="../../99%20References/references.html#id2" title="Stephen Abbott. Understanding Analysis. Springer, 2010. ISBN 1441928669; 9781441928665.">Abbott, 2010</a>]</span> Lemma 1.3.7.</p>
@@ -2065,10 +2092,10 @@ title="Print to PDF"
 <p>명제1에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} \begin{aligned} &amp; \forall \epsilon \in \R^+, \quad \exist y \in S \st \sup(S)-\epsilon &lt; y \le \sup(S) \\\implies&amp; \exist y \in S \st \sup(S) - 1 &lt; y \le \sup(S) \\\iff&amp; \exist y \in S \st \sup(S) &lt; y+1 \le \sup(S)+1 \end{aligned}  \end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(S\)</span>는 <span class="math notranslate nohighlight">\(\N\)</span>의 subset임으로 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \begin{aligned} &amp; \exist y \in \N \st \sup(S) &lt; y+1 \\ \implies&amp; \exist y \in \N  \st  \forall s \in S, \quad s &lt; y+1 \\ \implies&amp; \exist y \in \N \st y+1 \notin S \\\iff&amp; \exist y \in \N \st x &lt; y+1 \end{aligned}  \end{split}\]</div>
 <p>따라서, 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \sup(S) &lt; y+1 \\\implies&amp; y+1 \notin S \\\iff&amp; x &lt; y+1 \end{aligned} \end{split}\]</div>
+<p>그럼으로 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ \forall x \in \R,\quad  \exist n \in \N \st x &lt; n \qed \]</div>
 <section id="id8">
@@ -2096,7 +2123,7 @@ title="Print to PDF"
 <p>[inf]<br />
 자연수의 성질에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall n \in \N, \quad 0 \le 1 \iff \forall n \in \N, \quad 0 \le \frac{1}{n} \]</div>
+\[ 0 \le 1 \implies \forall n \in \N, \quad 0 \le \frac{1}{n} \]</div>
 <p><span class="math notranslate nohighlight">\(U\)</span>의 lower bound의 집합을 <span class="math notranslate nohighlight">\(S\)</span>라고 할 떄, 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ 0 \in S \]</div>
@@ -2119,7 +2146,7 @@ title="Print to PDF"
 <section id="id9">
 <h4>따름명제3.2<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
 <p><span class="math notranslate nohighlight">\(\R\)</span>의 subset <span class="math notranslate nohighlight">\(X\)</span>가 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(x \in X\)</span>가 있을 떄, 다음을 증명하여라.</p>
+<p><span class="math notranslate nohighlight">\(X\)</span>의 upperbound <span class="math notranslate nohighlight">\(x\)</span>가 있을 떄, 다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
 \[ x = \sup(X) \iff \forall n \in \N, \quad \exist y \in X \st x- \frac{1}{n}&lt; y \le x \]</div>
 <p><strong>Proof</strong></p>
