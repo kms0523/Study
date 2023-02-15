@@ -2,15 +2,15 @@
 ## 정의
 Metric space $M_1,M_2$가 있다고 하자.
 
-$X$가 $M_1$의 open set이고 $x$가 $X$의 limit point이며, $y\in M_2$가 있을 때, $t \in X$가 $x$로 갈 떄, $f(t)$가 $y$로 수렴한다는 말은 다음과 동치이다.
-
-$$ \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st 0 < d_1(x,t) < \delta \implies d_2(y,f(t)) < \epsilon $$
+$X$가 $M_1$의 open set이고 $x$가 $X$의 limit point일 때, $f$가 $x$에서 $y\in M_2$에 수렴한다는 말은 다음과 동치이다.
+ 
+$$ \forall t \in X, \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st 0 < d_1(x,t) < \delta \implies d_2(y,f(t)) < \epsilon $$
 
 > Reference  
 > {cite}`hubbard` p.92
 
 ### 참고1
-현재의 정의는 $f(x)$가 정의되어 있을 필요가 없게끔 정의되어 있다.
+현재 수렴의 정의는 $f$가 $x$에서 정의되어 있을 필요가 없게끔 정의되어 있다.
 
 $x$가 $X$의 limit point이면서 $0 < d_1(x,t) < \delta$로 둠으로써 $t=x$가 되는 상황을 배제한다.
 

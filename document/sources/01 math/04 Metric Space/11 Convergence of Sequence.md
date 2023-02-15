@@ -4,12 +4,12 @@ Metric space $M$과 $M$위의 sequnece $s$가 있다고 하자.
 
 $s$가 $a \in M$에 `수렴(convergence)`한다는 말은 다음과 동치이다.
 
-$$ \forall \epsilon \in \R^+, \quad \exist N \in \N \quad s.t. \quad \forall n > N, \quad d(s(n), a) < \epsilon $$
+$$ \forall \epsilon \in \R^+, \quad \exist N \in \N \st N\le n \implies d(s(n), a) < \epsilon $$
 
 ### 참고
 open ball을 이용해서 표현하면 다음과 같다.
 
-$$ \forall \epsilon \in \R^+, \quad \exist N \in \N \quad s.t. \quad \forall n > N, \quad s(n) \in B_M(a, \epsilon) $$
+$$ \forall \epsilon \in \R^+, \quad \exist N \in \N \st N\le n \implies s(n) \in B_M(a, \epsilon) $$
 
 ### 명제1
 Metric space $M$와 $x \in M$이 있다고 하자.
@@ -110,28 +110,24 @@ $$ x \text{ is an adherent point of } U \iff \exist\text{squence } s \text{ on }
 [$\implies$]  
 $x$가 $U$의 adherent point임으로 다음이 성립한다.
 
-$$ \forall \epsilon \in \R^+, \quad B(x,\epsilon) \cap U \neq \empty $$
+$$ \begin{aligned} & \forall \epsilon \in \R^+, \quad B(x,\epsilon) \cap U \neq \empty \\\implies& \forall n \in \N, \quad \exist s_n \in U \st d(x, s_n) \le \frac{1}{n} \end{aligned} $$
 
-따라서, 다음이 성립한다.
-
-$$ \forall n \in \N, \quad \exist s_n \in U \st d(s_n,x) \le \frac{1}{n} $$
-
-이 떄, $U$위의 sequence $s$를 다음과 같이 정의하자.
+따라서, $U$위의 sequence $s$를 다음과 같이 정의하자.
 
 $$ s(i) = s_i $$
 
-Rationale number는 dense in real임으로 다음이 성립한다.
+Rationale number의 archimedean property에 의해 다음이 성립한다.
 
-$$ \forall \epsilon \in \R^+, \quad \exist N \in \N \st \frac{1}{N} \le \epsilon $$
+$$ \forall \epsilon \in \R^+, \quad \exist n \in \N \st \frac{1}{n} < \epsilon $$
 
 따라서, 다음이 성립한다.
 
-$$ \forall \epsilon \in \R^+, \quad \exist N \in \N \st  \forall n \ge N, \quad d(s(n),x) < \epsilon \qed $$
+$$ \forall \epsilon \in \R^+, \quad \exist N \in \N \st N \le n \implies d(s(n),x) < \epsilon \qed $$
 
 [$\impliedby$]
 Convergent sequece의 정의에 의해 다음이 성립한다.
 
-$$ \forall \epsilon \in \R^+, \quad \exist N \in \N \st  \forall n \ge N, \quad d(s(n),x) < \epsilon $$
+$$ \forall \epsilon \in \R^+, \quad \exist N \in \N \st N \le n \implies d(s(n),x) < \epsilon $$
 
 따라서, 다음이 성립한다.
 

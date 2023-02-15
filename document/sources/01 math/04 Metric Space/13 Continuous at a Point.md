@@ -4,17 +4,21 @@ Metric space $M_1,M_2$가 있다고 하자.
 
 $X$가 $M_1$의 open set일 때, 함수 $f : X \rightarrow M_2$가 $x \in X$에서 `연속(continuous)`이라는 말은 다음과 동치이다.
 
-$$ \lim_{t \rightarrow x} f(t) = f(x) $$
+$$ \forall t \in X, \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st d_1(x,t) < \delta \implies d_2(f(x),f(t)) < \epsilon $$
 
 > Reference  
 > {cite}`hubbard` Chapter 1.5
 
 ### 참고1
-연속의 정의를 풀어 쓰면 다음이 성립한다.
+연속을 정의하기 위해서는 $f$가 $x$에서 정의되어 있음으로 함수의 수렴과는 정의상 약간의 차이가 있다.
 
-$$ \begin{aligned} & \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st 0 < d_1(x,t) < \delta \implies d_2(f(x),f(t)) < \epsilon \\ \implies& \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st d_1(x,t) < \delta \implies d_2(f(x),f(t)) < \epsilon \end{aligned} $$
+함수의 수렴의 정의에서 $f$가 $x$에서 정의되지 않아도 동작하도록 하게 만드는 모든 장치들이 함수의 연속의 정의에서는 빠져있는것을 알 수 있다.
 
-이를 Open ball을 이용해 표현하면 다음과 같다.
+* limit point
+* $0 < d <\delta$
+
+### 참고2
+연속의 정의를 Open ball을 이용해 표현하면 다음과 같다.
 
 $$ \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st f (B_{M_1}(x,\delta)) \subseteq B_{M_2}(f(x),\epsilon) $$
 

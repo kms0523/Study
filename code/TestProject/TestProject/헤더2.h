@@ -1,45 +1,153 @@
 #pragma once
+template<class T>
+class Z
+{
+public:
+	void Ztest() {
+		const auto a = "longlonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong";
+	};
+	void Ztest2(void) {
+		const auto b = "longlonglonglonglonglonglonglonglonglonglongqwer"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+			"longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong";
+	}
 
-template<typename T>
-void ff(void) { f(); };
+};
 
-// class Number_Container {
-//  using This = Number_Container;
-//
-// public:
-//   const Number* get_ptr(const std::string& str, const int order) {
-//    if (str == "2") {
-//      if (This::order_to_two_sptr.find(order) ==
-//          This::order_to_two_sptr.end()) {
-//        This::order_to_two_sptr.emplace(order, new Two(order));
-//      }
-//
-//      return This::order_to_two_sptr[order];
-//    } else {
-//      if (This::order_to_three_sptr.find(order) ==
-//          This::order_to_three_sptr.end()) {
-//        This::order_to_three_sptr.emplace(order, new Three(order));
-//      }
-//
-//      return This::order_to_three_sptr[order];
-//    }
-//  }
-//
-// private:
-//  Number_Container(void) = default;
-//  ~Number_Container(void) {
-//    for (auto& iter : order_to_two_sptr) {
-//      delete iter.second;
-//    }
-//
-//    for (auto& iter : order_to_three_sptr) {
-//      delete iter.second;
-//    }
-//  }
-//
-// private:
-//  using Order_To_Number_Ptr = std::map<int, const Number*>;
-//
-//  inline static Order_To_Number_Ptr order_to_two_sptr;
-//  inline static Order_To_Number_Ptr order_to_three_sptr;
-//};
+template<class T>
+class X
+{
+public:
+	void Xtest1();
+	void Xtest2();
+};

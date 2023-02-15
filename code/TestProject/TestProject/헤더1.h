@@ -1,4 +1,4 @@
 #pragma once
-
-
-inline void f(void) {};
+void testfunction(void);
+inline void testinlinefunction(void) {};
+static void teststaticfunction(void) {};

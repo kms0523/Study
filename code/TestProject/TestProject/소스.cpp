@@ -1,8 +1,23 @@
 #pragma once
 
-#include <iostream>
+//#include "헤더1.h"
+//
+//int main(void) {
+//	
+//	
+//}
+
+#include "헤더1.h"
+#include "헤더2.h"
 
 int main(void) {
+	Z<int> a; 
+	a.Ztest();
 
-	std::cout << 5 / 2;
+	X<int> b;
+	b.Xtest1();
+
+	testfunction();
+	testinlinefunction();
+	teststaticfunction();
 }
