@@ -1802,6 +1802,16 @@ title="Print to PDF"
      명제8
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#monotone-convergence-theorem">
+     명제9(Monotone Convergence Theorem)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     명제10(Monotone Convergence Theorem)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1871,6 +1881,16 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id10">
      명제8
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#monotone-convergence-theorem">
+     명제9(Monotone Convergence Theorem)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     명제10(Monotone Convergence Theorem)
     </a>
    </li>
   </ul>
@@ -2098,6 +2118,34 @@ title="Print to PDF"
 <p>따라서, convergent sequence의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ \lim_{n\rightarrow\infty}\frac{a_n}{b_n} = \frac{\alpha}{\beta}\qed \]</div>
+</section>
+<section id="monotone-convergence-theorem">
+<h3>명제9(Monotone Convergence Theorem)<a class="headerlink" href="#monotone-convergence-theorem" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\R\)</span>위의 sequence <span class="math notranslate nohighlight">\(a_n\)</span>과 <span class="math notranslate nohighlight">\(A = \img(a_n)\)</span>이 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(a_n\)</span>이 monotone increasing이고 bounded above일 때, 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ \lim_{n\rightarrow\infty}a_n = \sup(A) \]</div>
+<p><strong>Proof</strong></p>
+<p><span class="math notranslate nohighlight">\(a_n\)</span>이 bounded above sequence임으로 <span class="math notranslate nohighlight">\(\R\)</span>의 completness에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \exist\sup(A) \]</div>
+<p><span class="math notranslate nohighlight">\(\R\)</span>의 성질에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \forall\epsilon\in\R^+, \enspace \exist a_N \in A \st \sup(A)-\epsilon &lt; a_N &lt; \sup(A) \\\implies&amp; \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\sup(A)-a_n|&lt;\epsilon \\\implies&amp; \lim_{n\rightarrow\infty}a_n = \sup(A) \qed \end{aligned} \end{split}\]</div>
+</section>
+<section id="id11">
+<h3>명제10(Monotone Convergence Theorem)<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\R\)</span>위의 sequence <span class="math notranslate nohighlight">\(a_n\)</span>과 <span class="math notranslate nohighlight">\(A = \img(a_n)\)</span>이 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(a_n\)</span>이 monotone decreasing이고 bounded below일 때, 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ \lim_{n\rightarrow\infty}a_n = \inf(A) \]</div>
+<p><strong>Proof</strong></p>
+<p><span class="math notranslate nohighlight">\(a_n\)</span>이 bounded below sequence임으로 <span class="math notranslate nohighlight">\(\R\)</span>의 completness에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \exist\inf(A) \]</div>
+<p><span class="math notranslate nohighlight">\(\R\)</span>의 성질에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \forall\epsilon\in\R^+, \enspace \exist a_N \in A \st \inf(A) \le a_N &lt; \inf(A) + \epsilon \\\implies&amp; \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\inf(A)-a_n|&lt;\epsilon \\\implies&amp; \lim_{n\rightarrow\infty}a_n = \inf(A) \qed \end{aligned} \end{split}\]</div>
 </section>
 </section>
 </section>

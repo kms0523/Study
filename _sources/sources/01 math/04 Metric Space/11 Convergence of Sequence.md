@@ -201,3 +201,34 @@ $$ \forall \epsilon \in \R^+, \quad B_M(x,\epsilon) \in \mathcal{N_x} $$
 따라서, 전제에 의해 다음이 성립한다.
 
 $$ \forall \epsilon \in \R^+, \quad \exist N\in \N \st N \le n \implies s(n) \in B_M(x,\epsilon) \qed $$
+
+### 명제7
+Metric space $M$과 $M$위의 sequence $a_n,b_n,c_n$이 있다고 하자.
+
+$\forall n\in\N$에서 $a_n\le b_n\le c_n$이고 $x\in M$이 있을 떄, 다음을 증명하여라.
+
+$$ \lim_{n\rightarrow\infty} a_n=c_n = x \implies \lim_{n\rightarrow\infty}b_n = x  $$
+
+**Proof**
+
+Triangle inequality에 의해 다음이 성립한다.
+
+$$ d(x,b_n) < d(x,a_n) + d(a_n,b_n) < d(x,a_n) + d(a_n,c_n) <  2d(x,a_n) + d(x,c_n) $$
+
+$\R^+$의 임의의 element를 $\epsilon$이라고 하자.
+
+$a_n,c_n$이 $x$로 converge하고 $\epsilon/3 \in \R^+$임으로 다음이 성립한다.
+
+$$ \begin{gathered} \exist N_1\in\N \st N_1\le n \implies d(x,a_n) < \frac{\epsilon}{3} \\ \exist N_2\in\N \st N_2\le n \implies d(x,c_n) < \frac{\epsilon}{3} \end{gathered} $$
+
+따라서, $N = max(N_1,N_2)$라고 하면 다음이 성립한다.
+
+$$ N \le n \implies d(x,b_n) < \epsilon $$
+
+임의의 $\epsilon$에서 위가 성립함으로 다음이 성립한다.
+
+$$ \lim_{n\rightarrow\infty}b_n = x \qed $$
+
+
+
+

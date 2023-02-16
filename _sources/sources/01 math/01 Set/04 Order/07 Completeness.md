@@ -20,7 +20,9 @@ $$ \text{Every nonempty bounded below subset of } X \text{ has infimum } $$
 
 **Proof**
 
-Set $Y$를 다음과 같이 정의하자.
+$X$의 임의의 bounded below subset을 $U$라고 하자.
+
+이 떄, Set $Y$를 다음과 같이 정의하자.
 
 $$ Y := \Set{x \in X | x \text{ is a lower bound of } U} $$
 
@@ -32,7 +34,7 @@ $Y$의 정의에 의해 $Y$는 bounded above set이고, 따라서 $X$의 complet
 
 $$ \exist \sup(Y) $$
 
-그러면 supremum의 정의에 의해 다음이 성립한다.
+$\forall u \in U$는 $Y$의 upper bound임으로 supremum의 정의에 의해 다음이 성립한다.
 
 $$ \begin{aligned} & \forall u \in U, \quad \sup(Y) \le u \\ \implies& \sup(Y)\text{ is lower bound of } U \\ \implies& \sup(Y) \in Y \\\implies& \sup(Y) \text{ is an greatest element of } Y \\\implies& \sup(Y) = \inf(X) \end{aligned} $$
 

@@ -1796,7 +1796,12 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id13">
-     명제
+     명제1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     명제2
     </a>
    </li>
   </ul>
@@ -1864,7 +1869,12 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id13">
-     명제
+     명제1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     명제2
     </a>
    </li>
   </ul>
@@ -1884,9 +1894,9 @@ title="Print to PDF"
 <section id="id1">
 <h2>정의<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Metric space <span class="math notranslate nohighlight">\(M_1,M_2\)</span>가 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(X\)</span>가 <span class="math notranslate nohighlight">\(M_1\)</span>의 open set이고 <span class="math notranslate nohighlight">\(x\)</span>가 <span class="math notranslate nohighlight">\(X\)</span>의 limit point일 때, <span class="math notranslate nohighlight">\(f\)</span>가 <span class="math notranslate nohighlight">\(x\)</span>에서 <span class="math notranslate nohighlight">\(y\in M_2\)</span>에 수렴한다는 말은 다음과 동치이다.</p>
+<p><span class="math notranslate nohighlight">\(X\)</span>가 <span class="math notranslate nohighlight">\(M_1\)</span>의 open set이고 <span class="math notranslate nohighlight">\(x\)</span>가 <span class="math notranslate nohighlight">\(X\)</span>의 limit point일 때, <span class="math notranslate nohighlight">\(f:X\rightarrow M_2\)</span>가 <span class="math notranslate nohighlight">\(x\)</span>에서 <span class="math notranslate nohighlight">\(y\in M_2\)</span>에 수렴한다는 말은 다음과 동치이다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall t \in X, \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st 0 &lt; d_1(x,t) &lt; \delta \implies d_2(y,f(t)) &lt; \epsilon \]</div>
+\[ \forall \epsilon \in \R^+, \enspace \exist \delta \in \R^+ \st \forall t \in X, \enspace 0 &lt; d_1(x,t) &lt; \delta \implies d_2(y,f(t)) &lt; \epsilon \]</div>
 <blockquote>
 <div><p>Reference<br />
 <span id="id2">[<a class="reference internal" href="../../99%20References/references.html#id10" title="John Hamal Hubbard and Barbara Burke Hubbard. Vector calculus, linear algebra, and differential forms: A unified approach. Matrix Editions, 2015.">Hubbard and Hubbard, 2015</a>]</span> p.92</p>
@@ -1957,7 +1967,7 @@ title="Print to PDF"
 </div></blockquote>
 </section>
 <section id="id13">
-<h3>명제<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<h3>명제1<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p><span class="math notranslate nohighlight">\(U \subset \R^n, \enspace V \subset \R^m\)</span>와 함수 <span class="math notranslate nohighlight">\(\mathbf f : U \rightarrow V, \enspace \mathbf g : V \rightarrow \R^k\)</span>가 있다고 하자.</p>
 <p><span class="math notranslate nohighlight">\(\mathbf x \in U\)</span>에 대해서 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
@@ -1978,6 +1988,35 @@ title="Print to PDF"
 <p>따라서, 함수의 극한의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ \lim_{\mathbf x \rightarrow \mathbf x} (\mathbf g \circ \mathbf f)(\mathbf x) = \mathbf z_0 \quad {_\blacksquare} \]</div>
+</section>
+<section id="id14">
+<h3>명제2<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<p>Metric space <span class="math notranslate nohighlight">\(M_1,M_2\)</span>가 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(X\)</span>가 <span class="math notranslate nohighlight">\(M_1\)</span>의 open set이고 <span class="math notranslate nohighlight">\(x\)</span>가 <span class="math notranslate nohighlight">\(X\)</span>의 limit point이며 함수 <span class="math notranslate nohighlight">\(f:X\rightarrow M_2\)</span>가 있을 떄, <span class="math notranslate nohighlight">\(y \in M_2\)</span>에 대해 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \lim_{t\rightarrow x} f(t) = y \iff \begin{gathered} \text{Let } a_n \text{ be an any sequence on } X-\Set{x} \text{ converge to } x \\ \lim_{n\rightarrow \infty} f(a_n) = y \end{gathered} \end{split}\]</div>
+<p><strong>Proof</strong></p>
+<p>[<span class="math notranslate nohighlight">\(\implies\)</span>]<br />
+전제에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \forall\epsilon\in\R^+, \enspace \exist\delta\in\R^+ \st \forall t \in X, \enspace 0 &lt; d_1(x,t) &lt; \delta \implies d_2(y,f(t))&lt;\epsilon \]</div>
+<p>이 때, <span class="math notranslate nohighlight">\(x\)</span>로 수렴하는 <span class="math notranslate nohighlight">\(X- \Set{x}\)</span>위의 임의의 sequence를 <span class="math notranslate nohighlight">\(a_n\)</span>이라 하면 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \forall\delta\in\R^+, \enspace \exist N \in \N \st N \le n \implies 0 &lt; d_1(x,a_n) &lt; \delta \]</div>
+<p><span class="math notranslate nohighlight">\(a_n \in X\)</span>임으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \forall \epsilon\in\R^+, \enspace \exist N \in N \st N \le n \implies d_2(y,f(a_n)) &lt; \epsilon \\ \implies&amp;  \lim_{n\rightarrow \infty} f(a_n) = y \qed \end{aligned}  \end{split}\]</div>
+<p>[<span class="math notranslate nohighlight">\(\impliedby\)</span>]<br />
+다음을 가정하자.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \lim_{t\rightarrow x} f(t) \neq y \\\implies&amp; \exist\epsilon\in\R^+ \st \forall\delta\in\R^+, \enspace \exist t \in X \st 0 &lt; d_1(x,t)&lt;\delta \land \epsilon \le d_2(y,f(t)) \\\implies&amp; \exist\epsilon\in\R^+ \st \forall n \in\N, \enspace \exist t\in X \st 0 &lt;d_1(x,t)&lt;\frac{1}{n} \land \epsilon\le d_2(y,f(t)) \end{aligned}  \end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(n \in \N\)</span>마다 위를 만족하는 <span class="math notranslate nohighlight">\(t\)</span>를 모은 sequence를 <span class="math notranslate nohighlight">\(t_n\)</span>이라 하자.</p>
+<p>그러면, <span class="math notranslate nohighlight">\(t_n\)</span>은 <span class="math notranslate nohighlight">\(x\)</span>로 converge하는 <span class="math notranslate nohighlight">\(X-\Set{x}\)</span>위의 sequence임으로 전제에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \lim_{n\rightarrow\infty}f(t_n) = y \\ \iff&amp; \forall\epsilon\in\R^+,\enspace \exist N\in\N \st N\le n \implies d_2(y,f(t_n)) &lt; \epsilon \end{aligned}  \end{split}\]</div>
+<p>이는 가정에 모순임으로, proof by contradiction에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \lim_{t\rightarrow x} f(t) = y \qed \]</div>
 </section>
 </section>
 </section>

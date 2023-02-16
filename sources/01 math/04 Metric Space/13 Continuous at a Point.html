@@ -1794,6 +1794,11 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     명제3
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1857,6 +1862,11 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     명제3
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1876,7 +1886,7 @@ title="Print to PDF"
 <p>Metric space <span class="math notranslate nohighlight">\(M_1,M_2\)</span>가 있다고 하자.</p>
 <p><span class="math notranslate nohighlight">\(X\)</span>가 <span class="math notranslate nohighlight">\(M_1\)</span>의 open set일 때, 함수 <span class="math notranslate nohighlight">\(f : X \rightarrow M_2\)</span>가 <span class="math notranslate nohighlight">\(x \in X\)</span>에서 <code class="docutils literal notranslate"><span class="pre">연속(continuous)</span></code>이라는 말은 다음과 동치이다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall t \in X, \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st d_1(x,t) &lt; \delta \implies d_2(f(x),f(t)) &lt; \epsilon \]</div>
+\[ \forall \epsilon \in \R^+, \enspace \exist \delta \in \R^+ \st \forall t \in X, \enspace d_1(x,t) &lt; \delta \implies d_2(f(x),f(t)) &lt; \epsilon \]</div>
 <blockquote>
 <div><p>Reference<br />
 <span id="id2">[<a class="reference internal" href="../../99%20References/references.html#id10" title="John Hamal Hubbard and Barbara Burke Hubbard. Vector calculus, linear algebra, and differential forms: A unified approach. Matrix Editions, 2015.">Hubbard and Hubbard, 2015</a>]</span> Chapter 1.5</p>
@@ -1894,10 +1904,10 @@ title="Print to PDF"
 <h3>참고2<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>연속의 정의를 Open ball을 이용해 표현하면 다음과 같다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st f (B_{M_1}(x,\delta)) \subseteq B_{M_2}(f(x),\epsilon) \]</div>
+\[ \forall \epsilon \in \R^+, \enspace \exist \delta \in \R^+ \st f (B_{M_1}(x,\delta)) \subseteq B_{M_2}(f(x),\epsilon) \]</div>
 <p>혹은 다음과 같이 표현할 수 있다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st B_{M_1}(x,\delta) \subseteq \preimg(B_{M_2}(f(x),\epsilon)) \]</div>
+\[ \forall \epsilon \in \R^+, \enspace \exist \delta \in \R^+ \st B_{M_1}(x,\delta) \subseteq \preimg(B_{M_2}(f(x),\epsilon)) \]</div>
 <p>즉, <span class="math notranslate nohighlight">\(x \in X\)</span>에서 continuous하다는 말은 <span class="math notranslate nohighlight">\(f(x)\)</span>를 중심으로 하는 open ball <span class="math notranslate nohighlight">\(B\)</span>마다 <span class="math notranslate nohighlight">\(f\)</span>에 의해서 <span class="math notranslate nohighlight">\(B\)</span>에 포함되는 <span class="math notranslate nohighlight">\(x\)</span>를 중심으로 하는 open ball이 존재한다는 말이다.</p>
 </section>
 <section id="id5">
@@ -1929,26 +1939,26 @@ title="Print to PDF"
 \[ S := \{ s(n) : \N \rightarrow X \enspace | \enspace  \lim_{n \rightarrow \infty} \mathbf s(n) = \mathbf x_0 \}\]</div>
 <p>이 때, 다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
-\[ \lim_{\mathbf x \rightarrow \mathbf x_0} \mathbf f(\mathbf x) = \mathbf f(\mathbf x_0) \enspace \iff \enspace \forall s \in S, \quad \lim_{n \rightarrow \infty} (\mathbf f \circ s)(n) = \mathbf f(\mathbf x_0) \]</div>
+\[ \lim_{\mathbf x \rightarrow \mathbf x_0} \mathbf f(\mathbf x) = \mathbf f(\mathbf x_0) \enspace \iff \enspace \forall s \in S, \enspace \lim_{n \rightarrow \infty} (\mathbf f \circ s)(n) = \mathbf f(\mathbf x_0) \]</div>
 <p><strong>Proof</strong></p>
 <p>[<span class="math notranslate nohighlight">\(\implies\)</span>]<br />
 <span class="math notranslate nohighlight">\(\mathbf f\)</span>가 <span class="math notranslate nohighlight">\(\mathbf x_0\)</span>에서 연속임으로, 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall \epsilon &gt;0, \quad \exist \delta \st |\mathbf x - \mathbf x_0| &lt; \delta \implies |\mathbf {f(x) - f(x_0)}| &lt; \epsilon\]</div>
+\[ \forall \epsilon &gt;0, \enspace \exist \delta \st |\mathbf x - \mathbf x_0| &lt; \delta \implies |\mathbf {f(x) - f(x_0)}| &lt; \epsilon\]</div>
 <p>이 때, <span class="math notranslate nohighlight">\(s \in S\)</span>가 <span class="math notranslate nohighlight">\(\mathbf x_0\)</span>에 수렴하는 수열임으로 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ \exist N \st N &lt; n \implies |s(n) - \mathbf x_0| &lt; \delta \]</div>
 <p>즉, 이러한 <span class="math notranslate nohighlight">\(N\)</span>에 대해서는 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ N &lt; n \implies |(\mathbf f \circ s)(n)) - \mathbf{f(x_0)}| &lt; \epsilon \]</div>
-<p>따라서, <span class="math notranslate nohighlight">\((\mathbf f\circ s)(n)\)</span>은 <span class="math notranslate nohighlight">\(\mathbf{f(x_0)}\)</span>로 수렴하는 수열이다. <span class="math notranslate nohighlight">\(\quad {_\blacksquare}\)</span></p>
+<p>따라서, <span class="math notranslate nohighlight">\((\mathbf f\circ s)(n)\)</span>은 <span class="math notranslate nohighlight">\(\mathbf{f(x_0)}\)</span>로 수렴하는 수열이다. <span class="math notranslate nohighlight">\(\enspace {_\blacksquare}\)</span></p>
 <p>[<span class="math notranslate nohighlight">\(\impliedby\)</span>]<br />
 다음과 같이 가정하자.</p>
 <div class="math notranslate nohighlight">
-\[\forall s \in S, \quad \lim_{n \rightarrow \infty} (\mathbf f \circ s)(n) = \mathbf f(\mathbf x_0) \implies \lim_{\mathbf x \rightarrow \mathbf x_0} \mathbf f(\mathbf x) \neq \mathbf f(\mathbf x_0)\]</div>
+\[\forall s \in S, \enspace \lim_{n \rightarrow \infty} (\mathbf f \circ s)(n) = \mathbf f(\mathbf x_0) \implies \lim_{\mathbf x \rightarrow \mathbf x_0} \mathbf f(\mathbf x) \neq \mathbf f(\mathbf x_0)\]</div>
 <p>그러면 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \forall \delta, \quad \exist \epsilon \st |\mathbf x - \mathbf x_0| &lt; \delta \text{ but } \epsilon \le |\mathbf {f(x) - f(x_0)}|   \]</div>
+\[ \forall \delta, \enspace \exist \epsilon \st |\mathbf x - \mathbf x_0| &lt; \delta \text{ but } \epsilon \le |\mathbf {f(x) - f(x_0)}|   \]</div>
 <p>이 때, <span class="math notranslate nohighlight">\(s \in S\)</span>가 <span class="math notranslate nohighlight">\(\mathbf x_0\)</span>에 수렴하는 수열임으로 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ \exist N \st N &lt; n \implies |s(n) - \mathbf x_0| &lt; \delta \]</div>
@@ -1957,7 +1967,7 @@ title="Print to PDF"
 \[ N &lt; n \implies \epsilon \le |(\mathbf f \circ s)(n)) - \mathbf{f(x_0)}|  \]</div>
 <p>이는, <span class="math notranslate nohighlight">\((\mathbf f\circ s)(n)\)</span>은 <span class="math notranslate nohighlight">\(\mathbf{f(x_0)}\)</span>로 수렴하는 수열이라는 가정에 모순됨으로 귀류법에의해 다음 명제는 참이다.</p>
 <div class="math notranslate nohighlight">
-\[\forall s \in S, \quad \lim_{n \rightarrow \infty} (\mathbf f \circ s)(n) = \mathbf f(\mathbf x_0) \implies \lim_{\mathbf x \rightarrow \mathbf x_0} \mathbf f(\mathbf x) = \mathbf f(\mathbf x_0) \quad {_\blacksquare}\]</div>
+\[\forall s \in S, \enspace \lim_{n \rightarrow \infty} (\mathbf f \circ s)(n) = \mathbf f(\mathbf x_0) \implies \lim_{\mathbf x \rightarrow \mathbf x_0} \mathbf f(\mathbf x) = \mathbf f(\mathbf x_0) \enspace {_\blacksquare}\]</div>
 <blockquote>
 <div><p>Reference<br />
 <span id="id10">[<a class="reference internal" href="../../99%20References/references.html#id10" title="John Hamal Hubbard and Barbara Burke Hubbard. Vector calculus, linear algebra, and differential forms: A unified approach. Matrix Editions, 2015.">Hubbard and Hubbard, 2015</a>]</span> Chapter 1.5</p>
@@ -1974,7 +1984,7 @@ title="Print to PDF"
 <p><strong>Proof</strong></p>
 <p>함수의 극한의 명제에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \lim_{x \rightarrow b} (f \circ g)(x) = f(g(b)) = (f \circ g)(b)  \quad {_\blacksquare}\]</div>
+\[ \lim_{x \rightarrow b} (f \circ g)(x) = f(g(b)) = (f \circ g)(b)  \enspace {_\blacksquare}\]</div>
 <blockquote>
 <div><p>Reference<br />
 <span id="id12">[<a class="reference internal" href="../../99%20References/references.html#id11" title="James Stewart. Calculus. Mindtap Course List. Cengage Learning, Florence, AL, 8 edition, May 2015.">Stewart, 2015</a>]</span> Chapter 1.8</p>
@@ -1989,6 +1999,35 @@ title="Print to PDF"
 <span id="id14">[<a class="reference internal" href="../../99%20References/references.html#id11" title="James Stewart. Calculus. Mindtap Course List. Cengage Learning, Florence, AL, 8 edition, May 2015.">Stewart, 2015</a>]</span> Chapter 1.8</p>
 </div></blockquote>
 </section>
+</section>
+<section id="id15">
+<h3>명제3<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<p>Metric space <span class="math notranslate nohighlight">\(M_1,M_2\)</span>가 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(X\)</span>가 <span class="math notranslate nohighlight">\(M_1\)</span>의 open set이고 함수 <span class="math notranslate nohighlight">\(f:X\rightarrow M_2\)</span>가 있을 떄, <span class="math notranslate nohighlight">\(x\in X\)</span>에 대해서 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} f \text{ is continuous at } x \iff \begin{gathered} \text{Let } a_n \text{ be an any sequence on } X \text{ converge to } x \\ \lim_{n\rightarrow \infty} f(a_n) = f(x) \end{gathered} \end{split}\]</div>
+<p><strong>Proof</strong></p>
+<p>[<span class="math notranslate nohighlight">\(\implies\)</span>]<br />
+전제에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \forall\epsilon\in\R^+, \enspace \exist\delta\in\R^+ \st \forall t \in X, \enspace d_1(x,t) &lt; \delta \implies d_2(f(x),f(t))&lt;\epsilon \]</div>
+<p>이 때, <span class="math notranslate nohighlight">\(x\)</span>로 수렴하는 <span class="math notranslate nohighlight">\(X\)</span>위의 임의의 sequence를 <span class="math notranslate nohighlight">\(a_n\)</span>이라 하면 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \forall\delta\in\R^+, \enspace \exist N \in \N \st N \le n \implies d_1(x,a_n) &lt; \delta \]</div>
+<p><span class="math notranslate nohighlight">\(a_n \in X\)</span>임으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \forall \epsilon\in\R^+, \enspace \exist N \in N \st N \le n \implies d_2(f(x),f(a_n)) &lt; \epsilon \\ \implies&amp;  \lim_{n\rightarrow \infty} f(a_n) = f(x) \qed \end{aligned}  \end{split}\]</div>
+<p>[<span class="math notranslate nohighlight">\(\impliedby\)</span>]<br />
+다음을 가정하자.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; f \text{ is not continuous at } x \\\implies&amp; \exist\epsilon\in\R^+ \st \forall\delta\in\R^+, \enspace \exist t \in X \st d_1(x,t)&lt;\delta \land \epsilon \le d_2(f(x),f(t)) \\\implies&amp; \exist\epsilon\in\R^+ \st \forall n \in\N, \enspace \exist t\in X \st d_1(x,t)&lt;\frac{1}{n} \land \epsilon\le d_2(f(x),f(t)) \end{aligned}  \end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(n \in \N\)</span>마다 위를 만족하는 <span class="math notranslate nohighlight">\(t\)</span>를 모은 sequence를 <span class="math notranslate nohighlight">\(t_n\)</span>이라 하자.</p>
+<p>그러면, <span class="math notranslate nohighlight">\(t_n\)</span>은 <span class="math notranslate nohighlight">\(x\)</span>로 converge하는 <span class="math notranslate nohighlight">\(X\)</span>위의 sequence임으로 전제에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \lim_{n\rightarrow\infty}f(t_n) = f(x) \\ \iff&amp; \forall\epsilon\in\R^+,\enspace \exist N\in\N \st N\le n \implies d_2(f(x),f(t_n)) &lt; \epsilon \end{aligned}  \end{split}\]</div>
+<p>이는 가정에 모순임으로, proof by contradiction에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ f \text{ is continuous at } x \qed \]</div>
 </section>
 </section>
 </section>

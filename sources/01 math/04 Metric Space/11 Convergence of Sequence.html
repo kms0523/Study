@@ -1799,6 +1799,11 @@ title="Print to PDF"
      명제6
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     명제7
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1865,6 +1870,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id12">
      명제6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     명제7
     </a>
    </li>
   </ul>
@@ -2045,6 +2055,27 @@ Convergent sequece의 정의에 의해 다음이 성립한다.</p>
 <p>따라서, 전제에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ \forall \epsilon \in \R^+, \quad \exist N\in \N \st N \le n \implies s(n) \in B_M(x,\epsilon) \qed \]</div>
+</section>
+<section id="id13">
+<h3>명제7<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<p>Metric space <span class="math notranslate nohighlight">\(M\)</span>과 <span class="math notranslate nohighlight">\(M\)</span>위의 sequence <span class="math notranslate nohighlight">\(a_n,b_n,c_n\)</span>이 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(\forall n\in\N\)</span>에서 <span class="math notranslate nohighlight">\(a_n\le b_n\le c_n\)</span>이고 <span class="math notranslate nohighlight">\(x\in M\)</span>이 있을 떄, 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ \lim_{n\rightarrow\infty} a_n=c_n = x \implies \lim_{n\rightarrow\infty}b_n = x  \]</div>
+<p><strong>Proof</strong></p>
+<p>Triangle inequality에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ d(x,b_n) &lt; d(x,a_n) + d(a_n,b_n) &lt; d(x,a_n) + d(a_n,c_n) &lt;  2d(x,a_n) + d(x,c_n) \]</div>
+<p><span class="math notranslate nohighlight">\(\R^+\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(\epsilon\)</span>이라고 하자.</p>
+<p><span class="math notranslate nohighlight">\(a_n,c_n\)</span>이 <span class="math notranslate nohighlight">\(x\)</span>로 converge하고 <span class="math notranslate nohighlight">\(\epsilon/3 \in \R^+\)</span>임으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{gathered} \exist N_1\in\N \st N_1\le n \implies d(x,a_n) &lt; \frac{\epsilon}{3} \\ \exist N_2\in\N \st N_2\le n \implies d(x,c_n) &lt; \frac{\epsilon}{3} \end{gathered} \end{split}\]</div>
+<p>따라서, <span class="math notranslate nohighlight">\(N = max(N_1,N_2)\)</span>라고 하면 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ N \le n \implies d(x,b_n) &lt; \epsilon \]</div>
+<p>임의의 <span class="math notranslate nohighlight">\(\epsilon\)</span>에서 위가 성립함으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \lim_{n\rightarrow\infty}b_n = x \qed \]</div>
 </section>
 </section>
 </section>
