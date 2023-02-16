@@ -1,23 +1,18 @@
 #pragma once
 
-//#include "헤더1.h"
-//
-//int main(void) {
-//	
-//	
-//}
+#include <memory>
 
-#include "헤더1.h"
-#include "헤더2.h"
+#include "헤더.h"
+
 
 int main(void) {
-	Z<int> a; 
-	a.Ztest();
+	std::unique_ptr<Common_Base> ptr = std::make_unique<A_impl1>();
+	assert(ptr->is_A());
+	ptr->A1();
+	ptr->A2();
 
-	X<int> b;
-	b.Xtest1();
-
-	testfunction();
-	testinlinefunction();
-	teststaticfunction();
+	std::unique_ptr<Common_Base> ptr2 = std::make_unique<B_impl1>();
+	assert(ptr2->is_B());
+	ptr2->B1();
+	ptr2->B2();
 }

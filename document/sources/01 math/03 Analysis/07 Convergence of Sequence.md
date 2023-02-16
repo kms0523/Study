@@ -265,3 +265,51 @@ $$ \forall \epsilon \in \R^+, \quad \exist N \in \N \st N \le n \implies \left|\
 따라서, convergent sequence의 정의에 의해 다음이 성립한다.
 
 $$ \lim_{n\rightarrow\infty}\frac{a_n}{b_n} = \frac{\alpha}{\beta}\qed $$
+
+### 명제9(Monotone Convergence Theorem)
+$\R$위의 sequence $a_n$과 $A = \img(a_n)$이 있다고 하자.
+
+$a_n$이 monotone increasing이고 bounded above일 때, 다음을 증명하여라.
+
+$$ \lim_{n\rightarrow\infty}a_n = \sup(A) $$
+
+**Proof**
+
+$a_n$이 bounded above sequence임으로 $\R$의 completness에 의해 다음이 성립한다.
+
+$$ \exist\sup(A) $$
+
+$\R$의 성질에 의해 다음이 성립한다.
+
+$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist a_N \in A \st \sup(A)-\epsilon < a_N < \sup(A) \\\implies& \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\sup(A)-a_n|<\epsilon \\\implies& \lim_{n\rightarrow\infty}a_n = \sup(A) \qed \end{aligned} $$
+
+### 명제10(Monotone Convergence Theorem)
+$\R$위의 sequence $a_n$과 $A = \img(a_n)$이 있다고 하자.
+
+$a_n$이 monotone decreasing이고 bounded below일 때, 다음을 증명하여라.
+
+$$ \lim_{n\rightarrow\infty}a_n = \inf(A) $$
+
+**Proof**
+
+$a_n$이 bounded below sequence임으로 $\R$의 completness에 의해 다음이 성립한다.
+
+$$ \exist\inf(A) $$
+
+$\R$의 성질에 의해 다음이 성립한다.
+
+$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist a_N \in A \st \inf(A) \le a_N < \inf(A) + \epsilon \\\implies& \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\inf(A)-a_n|<\epsilon \\\implies& \lim_{n\rightarrow\infty}a_n = \inf(A) \qed \end{aligned} $$
+
+
+
+
+
+
+
+
+
+
+
+
+
+

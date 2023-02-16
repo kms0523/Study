@@ -4,7 +4,7 @@ Metric space $M_1,M_2$가 있다고 하자.
 
 $X$가 $M_1$의 open set이고 $x$가 $X$의 limit point일 때, $f:X\rightarrow M_2$가 $x$에서 $y\in M_2$에 수렴한다는 말은 다음과 동치이다.
  
-$$ \forall t \in X, \forall \epsilon \in \R^+, \quad \exist \delta \in \R^+ \st 0 < d_1(x,t) < \delta \implies d_2(y,f(t)) < \epsilon $$
+$$ \forall \epsilon \in \R^+, \enspace \exist \delta \in \R^+ \st \forall t \in X, \enspace 0 < d_1(x,t) < \delta \implies d_2(y,f(t)) < \epsilon $$
 
 > Reference  
 > {cite}`hubbard` p.92
@@ -116,33 +116,29 @@ $$ \lim_{t\rightarrow x} f(t) = y \iff \begin{gathered} \text{Let } a_n \text{ b
 **Proof**
 
 [$\implies$]  
-$x$로 수렴하는 $X- \Set{x}$위의 임의의 sequence를 $a_n$이라 하면 다음이 성립한다.
+전제에 의해 다음이 성립한다.
 
-$$ \forall\delta\in\R^+, \quad \exist N \in \N \st N \le n \implies 0 < d_1(x,a_n) < \delta $$
+$$ \forall\epsilon\in\R^+, \enspace \exist\delta\in\R^+ \st \forall t \in X, \enspace 0 < d_1(x,t) < \delta \implies d_2(y,f(t))<\epsilon $$
 
-따라서, 전제에 의해 다음이 성립한다.
+이 때, $x$로 수렴하는 $X- \Set{x}$위의 임의의 sequence를 $a_n$이라 하면 다음이 성립한다.
 
-$$ \begin{aligned} & \forall \epsilon\in \delta, \quad \exist N \in N \st d_2(y,f(a_n)) < \epsilon \\ \implies&  \lim_{n\rightarrow \infty} f(a_n) = y \qed \end{aligned}  $$
+$$ \forall\delta\in\R^+, \enspace \exist N \in \N \st N \le n \implies 0 < d_1(x,a_n) < \delta $$
+
+$a_n \in X$임으로 다음이 성립한다.
+
+$$ \begin{aligned} & \forall \epsilon\in\R^+, \enspace \exist N \in N \st N \le n \implies d_2(y,f(a_n)) < \epsilon \\ \implies&  \lim_{n\rightarrow \infty} f(a_n) = y \qed \end{aligned}  $$
 
 [$\impliedby$]  
 다음을 가정하자.
 
-$$ \begin{aligned} & \lim_{t\rightarrow x} f(t) \neq y \\\implies& \exist t \in X, \exist\epsilon\in\R^+ \st \forall \delta \in \R^+, \quad 0 < d_1(x,t)<\delta \implies \epsilon \le d_2(y,f(t)) \end{aligned}  $$
+$$ \begin{aligned} & \lim_{t\rightarrow x} f(t) \neq y \\\implies& \exist\epsilon\in\R^+ \st \forall\delta\in\R^+, \enspace \exist t \in X \st 0 < d_1(x,t)<\delta \land \epsilon \le d_2(y,f(t)) \\\implies& \exist\epsilon\in\R^+ \st \forall n \in\N, \enspace \exist t\in X \st 0 <d_1(x,t)<\frac{1}{n} \land \epsilon\le d_2(y,f(t)) \end{aligned}  $$
 
-그러면 임의의 $n \in \N$에 대해 다음이 성립한다.
+$n \in \N$마다 위를 만족하는 $t$를 모은 sequence를 $t_n$이라 하자.
 
-$$ \exist t \in X, \exist\epsilon \in \R^+ \st 0 < d_1(x,t) < \frac{1}{n} \implies \epsilon \le d_2(y, f(t)) $$
+그러면, $t_n$은 $x$로 converge하는 $X-\Set{x}$위의 sequence임으로 전제에 의해 다음이 성립한다.
 
-이러한 $t$를 모은 $X- \Set{x}$위의 수열을 $t_n$이라 하면 $0 < d_1(x,t_n) < 1/n$임으로 다음이 성립한다.
+$$ \begin{aligned} & \lim_{n\rightarrow\infty}f(t_n) = y \\ \iff& \forall\epsilon\in\R^+,\enspace \exist N\in\N \st N\le n \implies d_2(y,f(t_n)) < \epsilon \end{aligned}  $$
 
-$$ t_n \text{ converge to x} $$
+이는 가정에 모순임으로, proof by contradiction에 의해 다음이 성립한다.
 
-따라서, 전제에 의해 다음이 성립한다.
-
-$$ \begin{aligned} & \lim_{n\rightarrow\infty}f(t_n) = y \\\implies& \forall \epsilon\in\R^+,\quad  \exist N_2 \in \N \st N \le n \implies d_2(y,f(t_n)) < \epsilon  \end{aligned} $$
-
-이는 $\epsilon \le d_2(y, f(t))$를 만족하는 $\epsilon$ 존재한다는 사실에 모순임으로, proof by contradiction에 의해 다음이 성립한다.
-
-$$ \lim_{t\rightarrow x} f(t) = y $$
-
-$$  $$
+$$ \lim_{t\rightarrow x} f(t) = y \qed $$
