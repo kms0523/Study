@@ -6,13 +6,22 @@
 
 
 int main(void) {
-	std::unique_ptr<Common_Base> ptr = std::make_unique<A_impl1>();
-	assert(ptr->is_A());
-	ptr->A1();
-	ptr->A2();
+	int a = 0;
+	switch (a)
+	{
+	case 0:
+		if (a == 0) {
+			std::cout << "Break";
+			break;
 
-	std::unique_ptr<Common_Base> ptr2 = std::make_unique<B_impl1>();
-	assert(ptr2->is_B());
-	ptr2->B1();
-	ptr2->B2();
+		}
+		else {
+			std::cout << "no break";
+
+		}
+		break;
+	default:
+		break;
+	}
+
 }

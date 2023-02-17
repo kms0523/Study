@@ -281,7 +281,11 @@ $$ \exist\sup(A) $$
 
 $\R$의 성질에 의해 다음이 성립한다.
 
-$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist a_N \in A \st \sup(A)-\epsilon < a_N < \sup(A) \\\implies& \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\sup(A)-a_n|<\epsilon \\\implies& \lim_{n\rightarrow\infty}a_n = \sup(A) \qed \end{aligned} $$
+$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist a_N \in A \st \sup(A)-\epsilon < a_N < \sup(A) \\\implies& \forall\epsilon\in\R^+, \enspace \exist N\in\N \st |\sup(A)-a_N|<\epsilon \end{aligned} $$
+
+이 때, $a_n$이 monotone increasing sequence이고 $\sup(A)$가 $a_n$의 upper bound이기 때문에 다음이 성립한다.
+
+$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\sup(A)-a_n|<\epsilon \\\implies& \lim_{n\rightarrow\infty}a_n = \sup(A) \qed \end{aligned} $$
 
 ### 명제10(Monotone Convergence Theorem)
 $\R$위의 sequence $a_n$과 $A = \img(a_n)$이 있다고 하자.
@@ -298,7 +302,11 @@ $$ \exist\inf(A) $$
 
 $\R$의 성질에 의해 다음이 성립한다.
 
-$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist a_N \in A \st \inf(A) \le a_N < \inf(A) + \epsilon \\\implies& \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\inf(A)-a_n|<\epsilon \\\implies& \lim_{n\rightarrow\infty}a_n = \inf(A) \qed \end{aligned} $$
+$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist a_N \in A \st \inf(A) \le a_N < \inf(A) + \epsilon \\\implies& \forall\epsilon\in\R^+, \enspace \exist N\in\N \st |\inf(A)-a_N|<\epsilon \end{aligned} $$
+
+이 때, $a_n$이 monotone decreasing sequence이고 $\inf(A)$가 $a_n$의 lower bound이기 때문에 다음이 성립한다.
+
+$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\inf(A)-a_n|<\epsilon \\\implies& \lim_{n\rightarrow\infty}a_n = \inf(A) \qed \end{aligned} $$
 
 
 
