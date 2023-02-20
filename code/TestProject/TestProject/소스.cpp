@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <set>
+#include <stdexcept>
 #include <vector>
 
 enum class day {
@@ -13,13 +14,6 @@ enum class day {
     num_total_day = 7,
     not_in_list = -1,
 };
-
-class Date;
-
-bool contain(const std::set<Date>& set, const Date val)
-{
-    return set.find(val) != set.end();
-}
 
 bool contain(const std::vector<int>& sorted_vec, const int val)
 {
@@ -77,14 +71,13 @@ bool is_weekends(const day d)
 }
 
 class Date {
-
 public:
     Date(void) = default;
     Date(const int month, const int day)
         : month_(month)
-        , day_(day){};
+        , day_(day) {};
 
-    //command
+    // command
 public:
     void next(const int num_day = 1)
     {
@@ -102,7 +95,7 @@ public:
         }
     }
 
-    void previous(const int num_day)
+    void previous(const int num_day = 1)
     {
         this->day_ -= num_day;
 
@@ -120,11 +113,52 @@ public:
         }
     }
 
-    //query
+    // query
 public:
     operator std::pair<int, int>(void) const
     {
         return { this->month_, this->day_ };
+    }
+
+    int operator-(const Date& other) const
+    {
+        if (this->month_ == other.month_) {
+            return this->day_ - other.day_;
+        } else if (this->month_ < other.month_) {
+            auto day = other.day_;
+            auto month = other.month_;
+
+            auto result = 1 - other.day_;
+
+            while (true) {
+                if (month == this->month_) {
+                    result += this->day_ - 1;
+                    return result;
+                }
+
+                month--;
+                const auto last_day = last_day_in_month(month);
+                result -= last_day;
+            }
+        } else {
+            auto day = other.day_;
+            auto month = other.month_;
+
+            const auto last_day = last_day_in_month(month);
+            auto result = last_day - day;
+            month++;
+
+            while (true) {
+                if (month == this->month_) {
+                    result += this->day_;
+                    return result;
+                }
+
+                const auto last_day = last_day_in_month(month);
+                result += last_day;
+                month++;
+            }
+        }
     }
 
     bool operator<(const Date& other) const
@@ -134,6 +168,11 @@ public:
         } else {
             return this->month_ < other.month_;
         }
+    }
+
+    bool operator==(const Date& other) const
+    {
+        return this->month_ == other.month_ && this->day_ == other.day_;
     }
 
 public:
@@ -156,6 +195,61 @@ public:
 private:
     int month_ = 1;
     int day_ = 1;
+};
+
+bool contain(const std::set<Date>& set, const Date val)
+{
+    return set.find(val) != set.end();
+}
+
+class Consecutive_Dates {
+public:
+    Consecutive_Dates(const Date begin_date, const Date end_date)
+        : begin_date_(begin_date)
+        , end_date_(end_date)
+    {
+        if (this->end_date_ < this->begin_date_) {
+            throw std::invalid_argument("invalid input");
+        }
+    }
+
+    // command
+public:
+    void extend_end_date(void)
+    {
+        this->end_date_.next();
+    }
+    void extend_begin_date(void)
+    {
+        this->begin_date_.previous();
+    }
+    void try_merge(const Consecutive_Dates& other)
+    {
+        if (this->begin_date_ == other.end_date_) {
+            this->begin_date_ = other.begin_date_;
+        } else if (this->end_date_ == other.begin_date_) {
+            this->end_date_ = other.end_date_;
+        }
+    }
+
+    // query
+public:
+    const Date& begin_date(void) const
+    {
+        return this->begin_date_;
+    }
+    const Date& end_date(void) const
+    {
+        return this->end_date_;
+    }
+    int num_day(void) const
+    {
+        return this->end_date_ - this->begin_date_;
+    }
+
+private:
+    Date begin_date_;
+    Date end_date_;
 };
 
 class Calender {
@@ -182,7 +276,7 @@ public:
                 date.next();
                 insert_sunday_as_break_day(this->break_date_set_, date);
             } catch (...) {
-                //till next year exception occur
+                // till next year exception occur
                 break;
             }
 
@@ -193,15 +287,59 @@ public:
 public:
     std::vector<int> cal_best_vacation_plan(const int num_vacation) const
     {
-        for (const auto& search_start_date : this->break_date_set_) {
+        const auto consecutive_dates = this->make_consecutive_Dates();
 
-            auto next_date = search_start_date.get_next();
-            auto previous_date = search_start_date.get_previous();
+        const auto num_consecutive_dates = consecutive_dates.size();
+        std::vector<Consecutive_Dates> best_vacation_candidates;
+        best_vacation_candidates.reserve(num_consecutive_dates);
 
-            if (contain(this->break_date_set_, next_date) && contain(this->break_date_set_, previous_date)) {
-                continue;
+        for (int i = 0; i < num_consecutive_dates; ++i) {
+            const auto& start_cdates = consecutive_dates[i];
+
+            bool last_year_exception_not_occur = true;
+            bool next_year_exception_not_occur = true;
+            Consecutive_Dates result = start_cdates;
+
+            for (int j = 0; j < num_vacation; ++j) {
+                auto candidate1 = result;
+
+                if (last_year_exception_not_occur) {
+                    try {
+                        candidate1.extend_begin_date();
+
+                        if (i != 0) {
+                            candidate1.try_merge(consecutive_dates[i - 1]);
+                        }
+
+                    } catch (...) {
+                        last_year_exception_not_occur = false;
+                    }
+                }
+
+                auto candidate2 = result;
+
+                if (next_year_exception_not_occur) {
+                    try {
+                        candidate2.extend_end_date();
+
+                        if (i != num_consecutive_dates - 1) {
+                            candidate2.try_merge(consecutive_dates[i + 1]);
+                        }
+
+                    } catch (...) {
+                        next_year_exception_not_occur = false;
+                    }
+                }
+
+                if (candidate1.num_day() < candidate2.num_day()) {
+                    result = candidate2;
+                } else {
+                    result = candidate1;
+                }
             }
         }
+
+        return {};
     }
 
     int cal_num_break_day(void) const
@@ -272,10 +410,122 @@ public:
     }
 
 private:
-    std::vector<int> search_vacation_plan(const Date& date, const int num_vacation) const
+    // std::vector<int> search_vacation_plan(const Date& date, const int num_vacation, const std::vector<Consecutive_Date>& consecutive_dates) const
+    //{
+    //     Consecutive_Date result(date, date);
+
+    //    Consecutive_Date candidate1 = result;
+
+    //    int right_before_consecutive_dates_index = 0;
+
+    //    while (true) {
+    //        auto index = right_before_consecutive_dates_index;
+    //        const auto& consecutive_date = consecutive_dates[index];
+
+    //        if (consecutive_date.end_date() < date) {
+    //            index++;
+    //        }
+    //        else {
+    //            right_before_consecutive_dates_index = index;
+    //            break;
+    //        }
+    //    }
+
+    //    auto pdate = date;
+
+    //    while (true) {
+    //        pdate.previous();
+
+    //        if (!contain(this->break_date_set_, pdate)) {
+    //            break;
+    //        }
+    //    }
+
+    //    Consecutive_Date cd(pdate, date);
+
+    //    const auto num_consecutive_dates = consecutive_dates.size();
+    //    for (int i = 0; i < num_consecutive_dates; ++i) {
+    //        if (date < consecutive_dates[i].begin_date()) {
+    //            continue;
+    //        } else if (date == consecutive_dates[i].begin_date()) {
+    //            cd.glue(consecutive_dates[i]);
+    //            break;
+    //        } else {
+    //            break;
+    //        }
+    //    }
+
+    //    const auto gain = cd.num_day();
+
+    //    ///
+
+    //    auto ndate = date;
+
+    //    while (true) {
+    //        ndate.next();
+
+    //        if (!contain(this->break_date_set_, pdate)) {
+    //            break;
+    //        }
+    //    }
+
+    //    Consecutive_Date cd(pdate, date);
+
+    //    const auto num_consecutive_dates = consecutive_dates.size();
+    //    for (int i = 0; i < num_consecutive_dates; ++i) {
+    //        if ( consecutive_dates[i].end_date() < date) {
+    //            continue;
+    //        } else if (date == consecutive_dates[i].end_date()) {
+    //            cd.glue(consecutive_dates[i]);
+    //            break;
+    //        } else {
+    //            break;
+    //        }
+    //    }
+
+    //    const auto gain = cd.num_day();
+
+    //    //choose bigger gain
+
+    //    //선택된 cd에대해서
+    //    cd.begin_date(); //이걸로 pdate
+    //    cd.end_date() // 이걸로 ndate
+    //                        // 또 choose
+    //
+    //}
+
+    std::vector<Consecutive_Dates> make_consecutive_Dates(void) const
     {
+        std::vector<Consecutive_Dates> result;
 
+        auto begin_iter = this->break_date_set_.begin();
+        auto end_iter = begin_iter;
 
+        while (true) {
+
+            auto iter = std::next(end_iter);
+
+            while (true) {
+                if (end_iter->get_next() == *iter) {
+                    iter++;
+                    end_iter++;
+
+                    if (iter == this->break_date_set_.end()) {
+                        auto cd = Consecutive_Dates(*begin_iter, *end_iter);
+                        result.push_back(cd);
+                        return result;
+                    }
+
+                } else {
+                    auto cd = Consecutive_Dates(*begin_iter, *end_iter);
+                    result.push_back(cd);
+                    break;
+                }
+            }
+
+            begin_iter = std::next(end_iter);
+            end_iter = begin_iter;
+        }
     }
 
     std::vector<std::vector<int>> make_month_to_break_day(void) const
@@ -372,7 +622,7 @@ std::vector<int> solution(int X, std::vector<std::vector<int>> H, int Y)
     day year_start_day = static_cast<day>(X);
 
     Calender calender(year_start_day, holiday_date_set);
-    return calender.cal_pay_days(Y);
+    return calender.cal_best_vacation_plan(Y);
 }
 
 #include <iostream>
@@ -381,6 +631,6 @@ int main(void)
 {
     auto result = solution(7, std::vector<std::vector<int>>(), 1);
 
-    for (const auto e : result)
-        std::cout << e << "\n";
+    // for (const auto e : result)
+    //     std::cout << e << "\n";
 }
