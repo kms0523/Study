@@ -52,3 +52,41 @@ $$ \begin{aligned} &\liminf_{\ninf} s_n = \lim_{\ninf} a_n = \sup(a_n) \\\implie
 $$ \begin{aligned} & \limsup_{\ninf}s_n = \lim_{\ninf} b_n = \inf(b_n) \\\implies& \liminf_{\ninf}s_n \le \limsup_{\ninf}s_n \qed \end{aligned} $$
 
 
+### 명제2
+$\R$위의 bounded sequence $s$가 있다고 하자.
+
+이 떄, 다음을 증명하여라.
+
+$$ \limsup_{\ninf}s_n = \beta \iff \forall\epsilon\in\R^+, \enspace \begin{gathered} \exist N\in\N \st N \le n \implies s_n \le \beta + \epsilon \\ \forall n \in \N, \enspace \exist N\in\N \st n \le N \land \beta-\epsilon < s_N  \end{gathered} $$
+
+**Proof**
+
+$\R$위의 bounded sequence $b$를 다음과 같이 정의하자.
+
+$$ b_n := \sup(\Set{s_k|n\le k}) $$
+
+[$\implies$]  
+-[1]  
+limit supremum의 정의에 의해 다음이 성립한다.
+
+$$ \lim_{\ninf}b_n = \beta $$
+
+$b_n$은 monotone decreasing bounded sequence임으로, 다음이 성립한다.
+
+$$ \lim_{\ninf}b_n = \inf(b) = \beta $$
+
+따라서, infimum과 monotone decreasing에 정의에 의해 다음이 성립한다.
+
+$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist N \in \N \st \beta \le b_N < \beta+\epsilon \\ \implies& \forall\epsilon\in\R^+, \enspace \exist N \in \N \st N \le n \implies \beta \le b_n < \beta+\epsilon  \end{aligned} $$
+
+이 때, $b_n$의 정의에 의해 $s_n \le b_n$임으로 다음이 성립한다.
+
+$$ \forall\epsilon\in\R^+, \enspace \exist N \in \N \st N \le n \implies s_n < \beta+\epsilon \qed $$
+
+-[2]  
+$b_n$은 monotone decreasing sequence임으로 다음이 성립한다.
+
+$$ \begin{aligned} & \forall\epsilon\in\R^+,\enspace \forall n\in\N,\enspace \beta-\epsilon\le \beta \le b_n \\\iff& \forall\epsilon\in\R^+,\enspace\forall n \in \N, \enspace \beta-\epsilon \le \sup(\Set{s_k|n\le k}) \\\iff& \forall\epsilon\in\R^+,\enspace\forall n \in \N, \enspace \beta-\epsilon\text{ is not an upper bound of } \Set{s_k|n\le k} \\\iff& \forall\epsilon\in\R^+,\enspace\forall n \in \N,\enspace \exist N \in \N \st \enspace n \le N \land \beta-\epsilon < s_N \qed \end{aligned}  $$
+
+
+

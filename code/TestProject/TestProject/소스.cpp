@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <optional>
 #include <set>
 #include <stdexcept>
 #include <vector>
@@ -75,7 +76,7 @@ public:
     Date(void) = default;
     Date(const int month, const int day)
         : month_(month)
-        , day_(day) {};
+        , day_(day){};
 
     // command
 public:
@@ -170,6 +171,15 @@ public:
         }
     }
 
+    bool operator<=(const Date& other) const
+    {
+        if (this->month_ == other.month_) {
+            return this->day_ <= other.day_;
+        } else {
+            return this->month_ <= other.month_;
+        }
+    }
+
     bool operator==(const Date& other) const
     {
         return this->month_ == other.month_ && this->day_ == other.day_;
@@ -225,9 +235,9 @@ public:
     }
     void try_merge(const Consecutive_Dates& other)
     {
-        if (this->begin_date_ == other.end_date_) {
+        if (this->begin_date_.get_previous() == other.end_date_) {
             this->begin_date_ = other.begin_date_;
-        } else if (this->end_date_ == other.begin_date_) {
+        } else if (this->end_date_.get_next() == other.begin_date_) {
             this->end_date_ = other.end_date_;
         }
     }
@@ -244,13 +254,15 @@ public:
     }
     int num_day(void) const
     {
-        return this->end_date_ - this->begin_date_;
+        return (this->end_date_ - this->begin_date_) + 1;
     }
 
 private:
     Date begin_date_;
     Date end_date_;
 };
+
+using CDates = Consecutive_Dates;
 
 class Calender {
 
@@ -287,59 +299,32 @@ public:
 public:
     std::vector<int> cal_best_vacation_plan(const int num_vacation) const
     {
-        const auto consecutive_dates = this->make_consecutive_Dates();
+        const auto cdatess = this->make_consecutive_dates();
+        const auto best_vacation_plan_candidates = this->cal_best_vacation_plan_candidates(cdatess, num_vacation);
 
-        const auto num_consecutive_dates = consecutive_dates.size();
-        std::vector<Consecutive_Dates> best_vacation_candidates;
-        best_vacation_candidates.reserve(num_consecutive_dates);
+        int best_plan_index = 0;
+        int max_days = 0;
 
-        for (int i = 0; i < num_consecutive_dates; ++i) {
-            const auto& start_cdates = consecutive_dates[i];
+        const auto num_candidates = best_vacation_plan_candidates.size();
+        for (int i = 0; i < num_candidates; ++i) {
+            const auto& candidate = best_vacation_plan_candidates[i];
+            const auto num_days = candidate.num_day();
 
-            bool last_year_exception_not_occur = true;
-            bool next_year_exception_not_occur = true;
-            Consecutive_Dates result = start_cdates;
-
-            for (int j = 0; j < num_vacation; ++j) {
-                auto candidate1 = result;
-
-                if (last_year_exception_not_occur) {
-                    try {
-                        candidate1.extend_begin_date();
-
-                        if (i != 0) {
-                            candidate1.try_merge(consecutive_dates[i - 1]);
-                        }
-
-                    } catch (...) {
-                        last_year_exception_not_occur = false;
-                    }
-                }
-
-                auto candidate2 = result;
-
-                if (next_year_exception_not_occur) {
-                    try {
-                        candidate2.extend_end_date();
-
-                        if (i != num_consecutive_dates - 1) {
-                            candidate2.try_merge(consecutive_dates[i + 1]);
-                        }
-
-                    } catch (...) {
-                        next_year_exception_not_occur = false;
-                    }
-                }
-
-                if (candidate1.num_day() < candidate2.num_day()) {
-                    result = candidate2;
-                } else {
-                    result = candidate1;
-                }
+            if (max_days < num_days) {
+                max_days = num_days;
+                best_plan_index = i;
             }
         }
 
-        return {};
+        const auto& best_plan = best_vacation_plan_candidates[best_plan_index];
+
+        const auto best_num_days = best_plan.num_day();
+        const auto best_begin_month = best_plan.begin_date().month();
+        const auto best_begin_day = best_plan.begin_date().day();
+        const auto best_end_month = best_plan.end_date().month();
+        const auto best_end_day = best_plan.end_date().day();
+
+        return { best_num_days, best_begin_month, best_begin_day, best_end_month, best_end_day };
     }
 
     int cal_num_break_day(void) const
@@ -410,91 +395,112 @@ public:
     }
 
 private:
-    // std::vector<int> search_vacation_plan(const Date& date, const int num_vacation, const std::vector<Consecutive_Date>& consecutive_dates) const
-    //{
-    //     Consecutive_Date result(date, date);
+    std::vector<Consecutive_Dates> cal_best_vacation_plan_candidates(const std::vector<Consecutive_Dates>& cdatess, const int num_vacation) const
+    {
+        const auto num_cdates = cdatess.size();
+        std::vector<CDates> best_vacation_candidates;
+        best_vacation_candidates.reserve(num_cdates);
 
-    //    Consecutive_Date candidate1 = result;
+        for (int i = 0; i < num_cdates; ++i) {
+            const auto& start_cdates = cdatess[i];
 
-    //    int right_before_consecutive_dates_index = 0;
+            bool last_year_exception_not_occur = true;
+            bool next_year_exception_not_occur = true;
+            CDates result = start_cdates;
 
-    //    while (true) {
-    //        auto index = right_before_consecutive_dates_index;
-    //        const auto& consecutive_date = consecutive_dates[index];
+            for (int j = 0; j < num_vacation; ++j) {
+                const auto [opt_before_cdates, opt_after_cdates] = this->find_right_before_and_after(cdatess, result);
 
-    //        if (consecutive_date.end_date() < date) {
-    //            index++;
-    //        }
-    //        else {
-    //            right_before_consecutive_dates_index = index;
-    //            break;
-    //        }
-    //    }
+                auto candidate1 = result;
 
-    //    auto pdate = date;
+                if (last_year_exception_not_occur) {
+                    try {
+                        candidate1.extend_begin_date();
 
-    //    while (true) {
-    //        pdate.previous();
+                        if (opt_before_cdates.has_value()) {
+                            candidate1.try_merge(opt_before_cdates.value());
+                        }
 
-    //        if (!contain(this->break_date_set_, pdate)) {
-    //            break;
-    //        }
-    //    }
+                    } catch (...) {
+                        candidate1 = result;
+                        last_year_exception_not_occur = false;
+                    }
+                }
 
-    //    Consecutive_Date cd(pdate, date);
+                auto candidate2 = result;
 
-    //    const auto num_consecutive_dates = consecutive_dates.size();
-    //    for (int i = 0; i < num_consecutive_dates; ++i) {
-    //        if (date < consecutive_dates[i].begin_date()) {
-    //            continue;
-    //        } else if (date == consecutive_dates[i].begin_date()) {
-    //            cd.glue(consecutive_dates[i]);
-    //            break;
-    //        } else {
-    //            break;
-    //        }
-    //    }
+                if (next_year_exception_not_occur) {
+                    try {
+                        candidate2.extend_end_date();
 
-    //    const auto gain = cd.num_day();
+                        if (opt_after_cdates.has_value()) {
+                            candidate2.try_merge(opt_after_cdates.value());
+                        }
 
-    //    ///
+                    } catch (...) {
+                        candidate2 = result;
+                        next_year_exception_not_occur = false;
+                    }
+                }
 
-    //    auto ndate = date;
+                if (candidate1.num_day() < candidate2.num_day()) {
+                    result = candidate2;
+                } else {
+                    result = candidate1;
+                }
+            }
 
-    //    while (true) {
-    //        ndate.next();
+            best_vacation_candidates.push_back(result);
+        }
 
-    //        if (!contain(this->break_date_set_, pdate)) {
-    //            break;
-    //        }
-    //    }
+        return best_vacation_candidates;
+    }
 
-    //    Consecutive_Date cd(pdate, date);
+    std::pair<std::optional<CDates>, std::optional<CDates>> find_right_before_and_after(const std::vector<CDates>& cdatess, const CDates& target) const
+    {
+        std::pair<std::optional<CDates>, std::optional<CDates>> result;
 
-    //    const auto num_consecutive_dates = consecutive_dates.size();
-    //    for (int i = 0; i < num_consecutive_dates; ++i) {
-    //        if ( consecutive_dates[i].end_date() < date) {
-    //            continue;
-    //        } else if (date == consecutive_dates[i].end_date()) {
-    //            cd.glue(consecutive_dates[i]);
-    //            break;
-    //        } else {
-    //            break;
-    //        }
-    //    }
+        bool exist_right_back = true;
+        bool exist_right_after = true;
 
-    //    const auto gain = cd.num_day();
+        auto index = 0;
 
-    //    //choose bigger gain
+        if (target.begin_date() < cdatess.front().end_date()) {
+            exist_right_back = false;
+            index++;
+        }
 
-    //    //선택된 cd에대해서
-    //    cd.begin_date(); //이걸로 pdate
-    //    cd.end_date() // 이걸로 ndate
-    //                        // 또 choose
-    //
-    //}
+        if (cdatess.back().begin_date() < target.end_date()) {
+            exist_right_after = false;
+        }
 
-    std::vector<Consecutive_Dates> make_consecutive_Dates(void) const
+        if (exist_right_back) {
+            while (true) {
+                if (cdatess[index].end_date() < target.begin_date() && target.begin_date() <= cdatess[index + 1].end_date()) {
+                    result.first = cdatess[index];
+                    index++;
+                    break;
+                } else {
+                    index++;
+                }
+            }
+        }
+
+        if (exist_right_after) {
+            while (true) {
+                if (cdatess[index - 1].begin_date() <= target.end_date() && target.end_date() < cdatess[index].begin_date()) {
+                    result.second = cdatess[index];
+                    break;
+                } else {
+                    index++;
+                }
+            }
+        }
+
+        return result;
+    }
+
+    std::vector<Consecutive_Dates> make_consecutive_dates(void) const
     {
         std::vector<Consecutive_Dates> result;
 
@@ -502,7 +508,6 @@ private:
         auto end_iter = begin_iter;
 
         while (true) {
-
             auto iter = std::next(end_iter);
 
             while (true) {
@@ -526,6 +531,7 @@ private:
             begin_iter = std::next(end_iter);
             end_iter = begin_iter;
         }
+
     }
 
     std::vector<std::vector<int>> make_month_to_break_day(void) const
@@ -609,7 +615,7 @@ private:
     std::set<Date> break_date_set_;
 };
 
-std::vector<int> solution(int X, std::vector<std::vector<int>> H, int Y)
+std::vector<int> solution(int X, std::vector<std::vector<int>> H, int N)
 {
     std::set<Date> holiday_date_set;
 
@@ -622,15 +628,5 @@ std::vector<int> solution(int X, std::vector<std::vector<int>> H, int Y)
     day year_start_day = static_cast<day>(X);
 
     Calender calender(year_start_day, holiday_date_set);
-    return calender.cal_best_vacation_plan(Y);
-}
-
-#include <iostream>
-
-int main(void)
-{
-    auto result = solution(7, std::vector<std::vector<int>>(), 1);
-
-    // for (const auto e : result)
-    //     std::cout << e << "\n";
+    return calender.cal_best_vacation_plan(N);
 }

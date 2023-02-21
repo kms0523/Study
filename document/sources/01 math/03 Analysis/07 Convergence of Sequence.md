@@ -308,6 +308,9 @@ $$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist a_N \in A \st \inf(
 
 $$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\inf(A)-a_n|<\epsilon \\\implies& \lim_{n\rightarrow\infty}a_n = \inf(A) \qed \end{aligned} $$
 
+#### 참고
+극한값과 supremum, infimum은 원래 관계가 없는데, MCT를 통해  특별한 경우에는 이 둘이 같음 보여준다.
+
 
 
 
