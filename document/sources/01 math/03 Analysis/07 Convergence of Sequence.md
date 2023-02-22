@@ -312,6 +312,47 @@ $$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \
 극한값과 supremum, infimum은 원래 관계가 없는데, MCT를 통해  특별한 경우에는 이 둘이 같음 보여준다.
 
 
+### 명제11
+$\R$위의 convergent sequence $a$가 다음을 만족한다고 하자.
+
+$$ \exist N_1 \in \N \st N_1 \le n \implies 0 \le a_n $$
+
+이 떄, 다음을 증명하여라.
+
+$$ 0 \le \lim_{\ninf} a_n $$
+
+**Proof**
+
+다음을 가정하자.
+
+$$ \lim_{\ninf} a_n < 0 $$
+
+$\lim_{\ninf} a_n = \alpha$라고 할 때, convergence의 정의에 의해 다음이 성립한다.
+
+$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\alpha - a_n| < \epsilon \\\implies& \exist N_2 \in \N \st N_2 \le n \implies |\alpha - a_n| < \frac{\alpha}{2} \\\implies& \max(N_1,N_2) \le n \implies |\alpha - a_n| < \frac{\alpha}{2} \end{aligned}  $$
+
+이 떄, 가정과 전제에 의해 $\max(N_1,N_2) \le n$일 때, $\alpha - a_n < 0$임으로 다음이 성립한다.
+
+$$ a_n < \frac{3\alpha}{2}$$
+
+이는 $\alpha <0$이라는 가정에 모순임으로 proof by contradiction에 의해 다음이 성립한다.
+
+$$ 0 \le \lim_{\ninf} a_n \qed $$
+
+### 명제11
+$\R$위의 convergent sequence $a,b$가 다음을 만족한다고 하자.
+
+$$ \exist N \in \N \st N\le n \implies a_n \le b_n $$
+
+이 떄, 다음을 증명하여라.
+
+$$ \lim_{\ninf} a_n \le \lim_{\ninf} b_n $$
+
+**Proof**
+
+convergent sequence의 성질에 의해 다음이 성립한다.
+
+$$ \begin{aligned} & \forall n\in\N, \enspace 0 \le b_n - a_n \\\implies& 0 \le \lim_{\ninf} (b_n - a_n) \\\implies& 0 \le \lim_{\ninf} b_n - \lim_{\ninf} a_n \\\implies& \lim_{\ninf} a_n \le \lim_{\ninf} b_n \qed  \end{aligned} $$
 
 
 
