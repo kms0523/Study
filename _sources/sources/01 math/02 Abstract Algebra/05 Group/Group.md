@@ -20,7 +20,7 @@ $(\mathbb{Q}-\{0\},\times),(\R-\{0\}, \times)$은 군이다.
 
 $(\{A \in \R^{n \times n} | \det(A) \neq 0\}, \times)$은 군이다.
 
-$(\{f:A \rightarrow A | f \text{는 전단사함수} \},\circ)$은 군이다.
+$(\{f:A \rightarrow A | f \text{ is bijective} \},\circ)$은 군이다.
 
 ### 명제1 
 Group $G$가 있을 때, 다음을 증명하여라.

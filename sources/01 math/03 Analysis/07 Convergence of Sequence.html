@@ -495,6 +495,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="09%20liminf%20%26%20limsup.html">
+     Limit Inferior &amp; Superior
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="50%20Inequality.html">
      Inequality
     </a>
@@ -1811,6 +1816,23 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#id11">
      명제10(Monotone Convergence Theorem)
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       참고
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     명제11
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     명제11
+    </a>
    </li>
   </ul>
  </li>
@@ -1891,6 +1913,23 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id11">
      명제10(Monotone Convergence Theorem)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       참고
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     명제11
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     명제11
     </a>
    </li>
   </ul>
@@ -2131,7 +2170,10 @@ title="Print to PDF"
 \[ \exist\sup(A) \]</div>
 <p><span class="math notranslate nohighlight">\(\R\)</span>의 성질에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{aligned} &amp; \forall\epsilon\in\R^+, \enspace \exist a_N \in A \st \sup(A)-\epsilon &lt; a_N &lt; \sup(A) \\\implies&amp; \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\sup(A)-a_n|&lt;\epsilon \\\implies&amp; \lim_{n\rightarrow\infty}a_n = \sup(A) \qed \end{aligned} \end{split}\]</div>
+\[\begin{split} \begin{aligned} &amp; \forall\epsilon\in\R^+, \enspace \exist a_N \in A \st \sup(A)-\epsilon &lt; a_N &lt; \sup(A) \\\implies&amp; \forall\epsilon\in\R^+, \enspace \exist N\in\N \st |\sup(A)-a_N|&lt;\epsilon \end{aligned} \end{split}\]</div>
+<p>이 때, <span class="math notranslate nohighlight">\(a_n\)</span>이 monotone increasing sequence이고 <span class="math notranslate nohighlight">\(\sup(A)\)</span>가 <span class="math notranslate nohighlight">\(a_n\)</span>의 upper bound이기 때문에 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\sup(A)-a_n|&lt;\epsilon \\\implies&amp; \lim_{n\rightarrow\infty}a_n = \sup(A) \qed \end{aligned} \end{split}\]</div>
 </section>
 <section id="id11">
 <h3>명제10(Monotone Convergence Theorem)<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
@@ -2145,7 +2187,49 @@ title="Print to PDF"
 \[ \exist\inf(A) \]</div>
 <p><span class="math notranslate nohighlight">\(\R\)</span>의 성질에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{aligned} &amp; \forall\epsilon\in\R^+, \enspace \exist a_N \in A \st \inf(A) \le a_N &lt; \inf(A) + \epsilon \\\implies&amp; \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\inf(A)-a_n|&lt;\epsilon \\\implies&amp; \lim_{n\rightarrow\infty}a_n = \inf(A) \qed \end{aligned} \end{split}\]</div>
+\[\begin{split} \begin{aligned} &amp; \forall\epsilon\in\R^+, \enspace \exist a_N \in A \st \inf(A) \le a_N &lt; \inf(A) + \epsilon \\\implies&amp; \forall\epsilon\in\R^+, \enspace \exist N\in\N \st |\inf(A)-a_N|&lt;\epsilon \end{aligned} \end{split}\]</div>
+<p>이 때, <span class="math notranslate nohighlight">\(a_n\)</span>이 monotone decreasing sequence이고 <span class="math notranslate nohighlight">\(\inf(A)\)</span>가 <span class="math notranslate nohighlight">\(a_n\)</span>의 lower bound이기 때문에 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\inf(A)-a_n|&lt;\epsilon \\\implies&amp; \lim_{n\rightarrow\infty}a_n = \inf(A) \qed \end{aligned} \end{split}\]</div>
+<section id="id12">
+<h4>참고<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
+<p>극한값과 supremum, infimum은 원래 관계가 없는데, MCT를 통해  특별한 경우에는 이 둘이 같음 보여준다.</p>
+</section>
+</section>
+<section id="id13">
+<h3>명제11<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\R\)</span>위의 convergent sequence <span class="math notranslate nohighlight">\(a\)</span>가 다음을 만족한다고 하자.</p>
+<div class="math notranslate nohighlight">
+\[ \exist N_1 \in \N \st N_1 \le n \implies 0 \le a_n \]</div>
+<p>이 떄, 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ 0 \le \lim_{\ninf} a_n \]</div>
+<p><strong>Proof</strong></p>
+<p>다음을 가정하자.</p>
+<div class="math notranslate nohighlight">
+\[ \lim_{\ninf} a_n &lt; 0 \]</div>
+<p><span class="math notranslate nohighlight">\(\lim_{\ninf} a_n = \alpha\)</span>라고 할 때, convergence의 정의에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\alpha - a_n| &lt; \epsilon \\\implies&amp; \exist N_2 \in \N \st N_2 \le n \implies |\alpha - a_n| &lt; \frac{\alpha}{2} \\\implies&amp; \max(N_1,N_2) \le n \implies |\alpha - a_n| &lt; \frac{\alpha}{2} \end{aligned}  \end{split}\]</div>
+<p>이 떄, 가정과 전제에 의해 <span class="math notranslate nohighlight">\(\max(N_1,N_2) \le n\)</span>일 때, <span class="math notranslate nohighlight">\(\alpha - a_n &lt; 0\)</span>임으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ a_n &lt; \frac{3\alpha}{2}\]</div>
+<p>이는 <span class="math notranslate nohighlight">\(\alpha &lt;0\)</span>이라는 가정에 모순임으로 proof by contradiction에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ 0 \le \lim_{\ninf} a_n \qed \]</div>
+</section>
+<section id="id14">
+<h3>명제11<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\R\)</span>위의 convergent sequence <span class="math notranslate nohighlight">\(a,b\)</span>가 다음을 만족한다고 하자.</p>
+<div class="math notranslate nohighlight">
+\[ \exist N \in \N \st N\le n \implies a_n \le b_n \]</div>
+<p>이 떄, 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ \lim_{\ninf} a_n \le \lim_{\ninf} b_n \]</div>
+<p><strong>Proof</strong></p>
+<p>convergent sequence의 성질에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \forall n\in\N, \enspace 0 \le b_n - a_n \\\implies&amp; 0 \le \lim_{\ninf} (b_n - a_n) \\\implies&amp; 0 \le \lim_{\ninf} b_n - \lim_{\ninf} a_n \\\implies&amp; \lim_{\ninf} a_n \le \lim_{\ninf} b_n \qed  \end{aligned} \end{split}\]</div>
 </section>
 </section>
 </section>

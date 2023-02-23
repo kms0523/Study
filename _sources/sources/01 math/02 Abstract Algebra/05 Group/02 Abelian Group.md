@@ -4,7 +4,7 @@ Comutative group $(G,*)$가 있다고 하자.
 이 떄, binary operation $*$이 $+$라면 `아벨 군(Abelian group)`이라 한다.
 
 ### 참고
-$x \in G - \{e\}$에 대해 $nx$는 $x$끼리 n번 연산했다는 것을 나타낸다. 
+$x \in G - \{e\}$에 대해 $nx$는 $x$끼리 $n$번 연산했다는 것을 나타낸다. 
 
 $$ nx \equiv \underbrace{x + \cdots + x}_{n} $$
 

@@ -281,7 +281,11 @@ $$ \exist\sup(A) $$
 
 $\R$의 성질에 의해 다음이 성립한다.
 
-$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist a_N \in A \st \sup(A)-\epsilon < a_N < \sup(A) \\\implies& \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\sup(A)-a_n|<\epsilon \\\implies& \lim_{n\rightarrow\infty}a_n = \sup(A) \qed \end{aligned} $$
+$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist a_N \in A \st \sup(A)-\epsilon < a_N < \sup(A) \\\implies& \forall\epsilon\in\R^+, \enspace \exist N\in\N \st |\sup(A)-a_N|<\epsilon \end{aligned} $$
+
+이 때, $a_n$이 monotone increasing sequence이고 $\sup(A)$가 $a_n$의 upper bound이기 때문에 다음이 성립한다.
+
+$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\sup(A)-a_n|<\epsilon \\\implies& \lim_{n\rightarrow\infty}a_n = \sup(A) \qed \end{aligned} $$
 
 ### 명제10(Monotone Convergence Theorem)
 $\R$위의 sequence $a_n$과 $A = \img(a_n)$이 있다고 하자.
@@ -298,9 +302,57 @@ $$ \exist\inf(A) $$
 
 $\R$의 성질에 의해 다음이 성립한다.
 
-$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist a_N \in A \st \inf(A) \le a_N < \inf(A) + \epsilon \\\implies& \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\inf(A)-a_n|<\epsilon \\\implies& \lim_{n\rightarrow\infty}a_n = \inf(A) \qed \end{aligned} $$
+$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist a_N \in A \st \inf(A) \le a_N < \inf(A) + \epsilon \\\implies& \forall\epsilon\in\R^+, \enspace \exist N\in\N \st |\inf(A)-a_N|<\epsilon \end{aligned} $$
+
+이 때, $a_n$이 monotone decreasing sequence이고 $\inf(A)$가 $a_n$의 lower bound이기 때문에 다음이 성립한다.
+
+$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\inf(A)-a_n|<\epsilon \\\implies& \lim_{n\rightarrow\infty}a_n = \inf(A) \qed \end{aligned} $$
+
+#### 참고
+극한값과 supremum, infimum은 원래 관계가 없는데, MCT를 통해  특별한 경우에는 이 둘이 같음 보여준다.
 
 
+### 명제11
+$\R$위의 convergent sequence $a$가 다음을 만족한다고 하자.
+
+$$ \exist N_1 \in \N \st N_1 \le n \implies 0 \le a_n $$
+
+이 떄, 다음을 증명하여라.
+
+$$ 0 \le \lim_{\ninf} a_n $$
+
+**Proof**
+
+다음을 가정하자.
+
+$$ \lim_{\ninf} a_n < 0 $$
+
+$\lim_{\ninf} a_n = \alpha$라고 할 때, convergence의 정의에 의해 다음이 성립한다.
+
+$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\alpha - a_n| < \epsilon \\\implies& \exist N_2 \in \N \st N_2 \le n \implies |\alpha - a_n| < \frac{\alpha}{2} \\\implies& \max(N_1,N_2) \le n \implies |\alpha - a_n| < \frac{\alpha}{2} \end{aligned}  $$
+
+이 떄, 가정과 전제에 의해 $\max(N_1,N_2) \le n$일 때, $\alpha - a_n < 0$임으로 다음이 성립한다.
+
+$$ a_n < \frac{3\alpha}{2}$$
+
+이는 $\alpha <0$이라는 가정에 모순임으로 proof by contradiction에 의해 다음이 성립한다.
+
+$$ 0 \le \lim_{\ninf} a_n \qed $$
+
+### 명제11
+$\R$위의 convergent sequence $a,b$가 다음을 만족한다고 하자.
+
+$$ \exist N \in \N \st N\le n \implies a_n \le b_n $$
+
+이 떄, 다음을 증명하여라.
+
+$$ \lim_{\ninf} a_n \le \lim_{\ninf} b_n $$
+
+**Proof**
+
+convergent sequence의 성질에 의해 다음이 성립한다.
+
+$$ \begin{aligned} & \forall n\in\N, \enspace 0 \le b_n - a_n \\\implies& 0 \le \lim_{\ninf} (b_n - a_n) \\\implies& 0 \le \lim_{\ninf} b_n - \lim_{\ninf} a_n \\\implies& \lim_{\ninf} a_n \le \lim_{\ninf} b_n \qed  \end{aligned} $$
 
 
 
