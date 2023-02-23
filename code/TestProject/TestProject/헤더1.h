@@ -1,9 +1,75 @@
 #pragma once
+#include <cctype>
 #include <map>
+#include <memory>
 #include <set>
 #include <string>
 #include <string_view>
 #include <vector>
+
+class OP {
+public:
+    virtual bool compare(const int sv1, const int sv2) const = 0;
+    virtual bool compare(std::string_view sv1, std::string_view sv2) const = 0;
+};
+
+class LE : public OP {
+public:
+    bool compare(std::string_view sv1, std::string_view sv2) const override
+    {
+        return sv1 <= sv2;
+    }
+    bool compare(const int sv1, const int sv2) const override
+    {
+        return sv1 <= sv2;
+    }
+};
+
+class EQ : public OP {
+public:
+    bool compare(std::string_view sv1, std::string_view sv2) const override
+    {
+        return sv1 == sv2;
+    }
+    bool compare(const int sv1, const int sv2) const override
+    {
+        return sv1 == sv2;
+    }
+};
+
+class GE : public OP {
+public:
+    bool compare(std::string_view sv1, std::string_view sv2) const override
+    {
+        return sv1 >= sv2;
+    }
+    bool compare(const int sv1, const int sv2) const override
+    {
+        return sv1 >= sv2;
+    }
+};
+
+std::vector<std::string_view> parse(std::string_view sv, std::string_view delimiter)
+{
+    std::vector<std::string_view> result;
+
+    while (true) {
+        auto delimiter_pos = sv.find(delimiter);
+
+        if (delimiter_pos == std::string_view::npos) {
+            result.push_back(std::move(sv));
+            break;
+        }
+
+        auto substr = sv.substr(0, delimiter_pos);
+
+        result.push_back(std::move(substr));
+
+        sv.remove_prefix(delimiter_pos + delimiter.size());
+    }
+
+    return result;
+}
 
 class Information {
 public:
@@ -154,8 +220,10 @@ std::vector<std::set<Information>> make_clients_information_set(const std::vecto
 
 class DB {
 public:
-    DB(const std::vector<std::vector<std::string>>& clinets_info_keys, const std::vector<std::vector<std::string>>& clinets_info_vals)
+    DB(const std::string& TN, const std::vector<std::vector<std::string>>& clinets_info_keys, const std::vector<std::vector<std::string>>& clinets_info_vals)
     {
+        this->table_name_ = TN;
+
         constexpr auto initial_val = 0;
 
         for (const auto& clinet_infos : clinets_info_keys) {
@@ -179,7 +247,7 @@ public:
             const auto& client_info_vals = clinets_info_vals[i];
 
             auto& client_vals = this->clients_vals_[i];
-            client_vals.resize(num_total_key);
+            client_vals.resize(num_total_key, "-");
 
             for (int j = 0; j < client_info_keys.size(); ++j) {
                 std::string_view info_key = client_info_keys[j];
@@ -191,6 +259,109 @@ public:
     }
 
 public:
+    std::vector<std::vector<std::string>> explore_query(std::string_view query) const
+    {
+        if (query.find(this->table_name_) == std::string_view::npos) {
+            return {};
+        }
+
+        std::vector<std::vector<std::string>> result;
+
+        auto key_sv = query;
+
+        auto key_start_pos = key_sv.find('(');
+        key_sv.remove_prefix(key_start_pos + 1);
+        auto key_end_pos = key_sv.find(')');
+        key_sv.remove_suffix(key_sv.size() - key_end_pos);
+
+        constexpr auto delimiter = ", ";
+        auto keys = parse(key_sv, delimiter);
+
+        auto condition_sv = query;
+
+        auto condition_start_pos = condition_sv.find("where");
+
+        auto has_no_condition = condition_start_pos == std::string_view::npos;
+
+        const auto num_client = this->clients_vals_.size();
+        const auto num_key = keys.size();
+
+        if (has_no_condition) {
+
+            result.resize(num_client);
+            for (auto& client_infos : result) {
+                client_infos.resize(num_key);
+            }
+
+            for (int i = 0; i < num_key; ++i) {
+                auto key = keys[i];
+                auto index = this->key_to_var_index_.at(key);
+                for (int j = 0; j < num_client; ++j) {
+                    result[j][i] = this->clients_vals_[j][index];
+                }
+            }
+        } else {
+            condition_sv.remove_prefix(condition_start_pos + 6);
+
+            constexpr auto space = " ";
+            auto parsed_condition = parse(condition_sv, space);
+
+            const auto target_key = parsed_condition[0];
+            const auto operation = parsed_condition[1];
+            const auto criteria = parsed_condition[2];
+
+            bool is_number = std::isdigit(criteria.front());
+
+            std::unique_ptr<OP> op_ptr;
+
+            if (operation == ">=") {
+                op_ptr = std::make_unique<GE>();
+            } else if (operation == "==") {
+                op_ptr = std::make_unique<EQ>();
+            } else {
+                op_ptr = std::make_unique<LE>();
+            }
+
+            const auto target_index = this->key_to_var_index_.at(target_key);
+
+            std::vector<int> valid_client_index;
+
+            for (int i = 0; i < num_client; ++i) {
+                const auto& target_var = this->clients_vals_[i][target_index];
+
+                bool is_valid = false;
+                if (is_number) {
+                    is_valid = op_ptr->compare(std::stoi(target_var), std::stoi(criteria.data()));
+                } else {
+                    is_valid = op_ptr->compare(target_var, criteria);
+                }
+
+                if (is_valid) {
+                    valid_client_index.push_back(i);
+                }
+            }
+
+            const auto num_valid_client = valid_client_index.size();
+            result.resize(num_valid_client);
+            for (auto& client_infos : result) {
+                client_infos.resize(num_key);
+            }
+
+            for (int i = 0; i < num_key; ++i) {
+                auto key = keys[i];
+                auto var_index = this->key_to_var_index_.at(key);
+
+                for (int j = 0; j < num_valid_client; ++j) {
+                    const auto client_index = valid_client_index[j];
+
+                    result[j][i] = this->clients_vals_[client_index][var_index];
+                }
+            }
+        }
+
+        return result;
+    }
+
     std::vector<std::vector<std::string>> print(void) const
     {
         std::vector<std::vector<std::string>> result;
@@ -213,12 +384,13 @@ public:
             }
         }
 
-				return result;
+        return result;
     }
 
 private:
+    std::string table_name_;
     std::map<std::string_view, int> key_to_var_index_;
-    std::vector<std::vector<std::string_view>> clients_vals_;
+    std::vector<std::vector<std::string>> clients_vals_;
 };
 
 std::string solution1(std::string TN, std::vector<std::vector<std::string>> P)
@@ -233,9 +405,15 @@ std::vector<std::string> solution2(std::string TN, std::vector<std::vector<std::
     return make_insert_query(TN, clients_keyval_set);
 }
 
-std::vector<std::vector<std::string>> solution(std::string TN, std::vector<std::vector<std::string>> P, std::vector<std::vector<std::string>> V)
+std::vector<std::vector<std::string>> solution3(std::string TN, std::vector<std::vector<std::string>> P, std::vector<std::vector<std::string>> V)
 {
-    DB db(P, V);
-
+    DB db(TN, P, V);
     return db.print();
+}
+
+std::vector<std::vector<std::string>> solution(std::string TN, std::vector<std::vector<std::string>> P, std::vector<std::vector<std::string>> V, std::string Q)
+{
+    DB db(TN, P, V);
+
+    return db.explore_query(Q);
 }

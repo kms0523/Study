@@ -16,7 +16,7 @@ $$\forall x \in R, \quad 0_Rx =0_R$$
 
 **Proof**
 
-$$ 0_Rx  = (0_R + 0_R)x = 0_Rx + 0_Rx \quad \land \quad 0_Rx = 0_Rx + 0_R \\ \therefore 0_Rx = 0_R \quad {_\blacksquare} $$
+$$ \begin{gathered} 0_Rx  = (0_R + 0_R)x = 0_Rx + 0_Rx \\0_Rx = 0_Rx + 0_R \end{gathered} \implies \therefore 0_Rx = 0_R \qed $$
 
 ### 명제2
 
@@ -24,5 +24,5 @@ $$ 0_Rx  = (0_R + 0_R)x = 0_Rx + 0_Rx \quad \land \quad 0_Rx = 0_Rx + 0_R \\ \th
 
 **proof**
 
-$$ (x + x^{-1})y = xy + x^{-1}y = 0_R \\ \therefore (xy)^{-1} = x^{-1}y $$
+$$ (x + x^{-1})y = xy + x^{-1}y = 0_R \implies (xy)^{-1} = x^{-1}y $$
 

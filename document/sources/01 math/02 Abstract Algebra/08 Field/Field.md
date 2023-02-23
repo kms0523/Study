@@ -4,7 +4,7 @@ Ring $\F$가 있다고 하자.
 
 $\F$가 다음을 만족할 때, `체(field)`라고 한다.
 
-$$(\F,\cdot) \text{ is a commutative group}  $$
+$$(\F - \Set{0_\F},\cdot) \text{ is a commutative group}  $$
 
 ### 예시
 $(\R,+,\times), (\mathbb{Q},+,\times)$은 체이다.  
@@ -15,7 +15,3 @@ $(\R,+,\times), (\mathbb{Q},+,\times)$은 체이다.
 ### 참고2
 모든 field는 commtative ring이지만 그 역은 성립하지 않는다.
 
-### 참고3
-$\F^+$는 다음과 같이 정의된 집합이다.
-
-$$ \F^+ := \Set{ x \in \F | 0_\F < x} $$

@@ -1,4 +1,5 @@
 # Limit Inferior & Superior
+## 정의
 $\R$위의 bounded sequence $s_n$이 있다고 하자.
 
 이 때, sequence $a_n,b_n$을 다음과 같이 정의하자.
