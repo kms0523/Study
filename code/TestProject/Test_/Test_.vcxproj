@@ -36,6 +36,7 @@
     <ClCompile Include="test.cpp" />
     <ClCompile Include="test_header.cpp" />
     <ClCompile Include="test_header1.cpp" />
+    <ClCompile Include="test_header2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TestProject\TestProject.vcxproj">

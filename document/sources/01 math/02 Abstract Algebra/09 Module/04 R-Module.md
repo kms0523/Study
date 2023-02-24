@@ -13,25 +13,33 @@ $$ \exist A_R \text{ or } _RA \st {_RA} = A_R $$
 
 **Proof**
 
-먼저, left action of $R$ on $A$ $\cdot_L$이 주어져 $_RA$가 주어졌다고 하자.
+먼저, left action of $R$ on $A$ $\cdot_L$이 주어져있다고 하자.
 
-이 떄, $\cdot_R$을 다음과 같이 정의하자.
+이 떄, $\cdot_R$을 다음을 만족하게 정의하자
 
-$$ \begin{gathered} \forall x \in A, \quad \forall r \in R, \quad r \cdot_L x = x \cdot_R r \\ \cdot_R \text{ is right action of } R \text{ on } A \end{gathered}  $$
+$$ \begin{gathered} \forall x \in A, \quad \forall r \in R, \quad r \cdot_R x = x \cdot_L r \\ \cdot_R \text{ is right action of } R \text{ on } A \end{gathered}  $$
 
-그러면 $\forall r_1,r_2 \in R, \quad \forall m_1,m_2 \in M,$ 다음이 성립한다.
+그러면 $\forall r_1,r_2 \in R, \quad \forall m_1,m_2 \in M$에 대해 다음이 성립한다.
 
-$$ \begin{aligned} (r_1 + r_2) \cdot_L m_1 &= r_1 \cdot_L m_1 + r_2 \cdot_L m_1 \\&= m_1 \cdot_R r_1 + m_1 \cdot_R r_2 \\&= m_1 \cdot_R (r_1 + r_2) \\ r_1 \cdot_L (m_1 + m_2) &= r_1 \cdot_L m_1 + r_1 \cdot_L m_2 \\&= m_1 \cdot_R r_1 + m_2 \cdot_R r_1 \\&= (m_1 + m_2)\cdot_R r_2 \\ (r_1 \cdot r_2)\cdot_Lm_1 &= r_1 \cdot_L (r_2 \cdot_L m_1) \\&= r_1 \cdot_L (m_1 \cdot_R r_2) \\&= (m_1 \cdot_R r_2) \cdot_R r_1 \\&= m_1 \cdot_R (r_2 \cdot r_1) \\&= m_1 \cdot_r (r_1 \cdot r_2) \\ 1_R \cdot_L m_1 &= m_1 \cdot_R 1_R  \end{aligned} $$
+$$ \begin{aligned} (r_1 + r_2) \cdot_L m_1 &= r_3\cdot _Lm_1 \\&=m_1 \cdot_R r_3 \\&= m_1 \cdot_R (r_1 +r_2) \\ r_1 \cdot_L m_1 + r_2 \cdot_L m_1 &= m_1 \cdot_R r_1 + m_1 \cdot_R r_2 \\&= m_1 \cdot_R (r_1 + r_2)\end{aligned} $$
 
-즉, $\cdot_L$과 $\cdot_R$이 같은 값을 갖음으로 두 action은 동일하다.
+$$ \begin{aligned} r_1 \cdot_L (m_1 + m_2) &= r_1 \cdot_L m_3 \\&= m_3 \cdot_R r_1 \\&= (m_1 + m_2)\cdot_R r_2 \\ r_1 \cdot_L m_1 + r_1 \cdot_L m_2 &= m_1 \cdot_R r_1 + m_2 \cdot_R r_1 \\&= (m_1 + m_2)\cdot_R r_2 \end{aligned} $$
 
-따라서 $\cdot_R$을 갖는 right module을 $A_R$이라 하면 다음이 성립한다.
+$$ \begin{aligned} (r_1 \cdot r_2)\cdot_Lm_1 &= r_3 \cdot_L m_1 \\&= m_1 \cdot_R r_3 \\&= m_1 \cdot_r (r_1 \cdot r_2) \\ r_1 \cdot_L (r_2 \cdot_L m_1) &= r_1 \cdot_L (m_1 \cdot_R r_2) \\&= (m_1 \cdot_R r_2) \cdot_R r_1 \\&= m_1 \cdot_R (r_2 \cdot r_1) \\&= m_1 \cdot_r (r_1 \cdot r_2) \end{aligned} $$
 
-$$ _RA = A_R $$
+$$ 1_R \cdot_L m_1 = m_1 \cdot_R 1_R $$
 
-똑같이, right action of $R$ on $A$ $\cdot_R$이 주어져 $A_R$이 주어져있을 떄도, 동일한 과정을 거쳐서 다음을 증명할 수 있다.
+
+즉, 위와 같이 정의한 right action이 모든 경우에 대해 left action과 동일한 값을 준다는 것을 알 수 있다.
+
+그럼으로 다음이 성립한다.
+
+$$ A_R = _RA $$
+
+똑같이, right action of $R$ on $A$ $\cdot_R$이 주어져 있을 떄 동일한 과정을 거쳐서 다음을 증명할 수 있다.
 
 $$ _RA = A_R \qed $$
+
 
 > Reference  
 > [math.stackexchange1](https://math.stackexchange.com/questions/773402/modules-over-commutative-rings)  
@@ -39,11 +47,20 @@ $$ _RA = A_R \qed $$
 
 
 #### 참고1
-left action이 주어져도 left action과 동일한 right action을 정의할 수 있으며, 그 반대도 마찬가지임으로 left, right action의 구분이 무의미하다.
+left module이 주어져도 동일한 값을 갖는 right module을 정의할 수 있으며, 그 반대도 마찬가지임으로 left, right module의 구분이 무의미해진다.
 
-따라서, left module과 right module의 구분이 무의미해진다.
+예를 들어, Left module이 주어져서 $x(r_1r_2)$을 알고 있다고 하자.
+
+이때 위의 명제에 의해 $x(r_1r_2) = (r_1r_2)x$인 right module을 만들 수 있다.
+
+따라서 동일한 값이기 때문에 $x(r_1r_2)$과 $(r_1r_2)x$를 구분해서 쓸 필요가 없어진다. 
+
 
 #### 참고2
+commutative ring이 아닌 경우에 right action의 추가 조건으로 $(xr_1)r_2 = r_1(r_2x)$을 줘도 $(xr_1)r_2r_3 = r_1r_2(r_3x)$를 만족하지 못한다. 즉, commutative ring이 아니면 left module과 동일한 값을 주는 right module을 만들 수 없다.
+
+
+#### 참고3
 commutative ring이 아니더라도 다른 성질들은 성립하지만 $(r_1 \cdot r_2)\cdot_Lm_1 = m_1 \cdot_r (r_1 \cdot r_2)$은 오직 commutative ring일 때만 성립한다.
 
 따라서, commutative ring일 때만 left module과 right module의 구분이 무의미해진다.
