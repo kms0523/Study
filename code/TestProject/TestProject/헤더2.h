@@ -88,14 +88,6 @@ public:
 public:
     void go(const int hold_id)
     {
-        if (hold_id <= this->current_hold_id_) {
-            if (HJ::last_hold_id_ < this->current_hold_id_) {
-                HJ::last_hold_id_ = this->current_hold_id_;
-            }
-
-            throw std::runtime_error("infinity loop");
-        }
-
         this->current_hold_id_ = hold_id;
     }
 
@@ -123,6 +115,8 @@ public:
         return hold[1] <= this->arm_length_;
     }
 
+
+
 private:
     inline static int last_hold_id_ = -1;
     inline static int arm_length_ = 0;
@@ -136,21 +130,17 @@ int solution(int N, std::vector<std::vector<int>> H, int D)
 
     HJ hj;
 
-		try {
-        for (int i = 0; i < N; ++i) {
-            const auto& hold = H[i];
+    for (int i = 0; i < N; ++i) {
+        const auto& hold = H[i];
 
-            if (hj.can_start(hold)) {
-                auto copy_hj = hj;
-                copy_hj.go(i);
-                copy_hj.search();
-            } else {
-                break;
-            }
+        if (hj.can_start(hold)) {
+            auto copy_hj = hj;
+            copy_hj.go(i);
+            copy_hj.search();
+        } else {
+            break;
         }
-		}
-		catch (...) {};
-
+    }
 
     const auto last_hold_id = HJ::get_last_hold_id();
 

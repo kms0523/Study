@@ -34,7 +34,19 @@ $A \in M_{nn}(\mathbb F), B \in M_{nm}(\mathbb F), D \in M_{mm}(\mathbb F)$이 �
 $$ \det\begin{bmatrix} A & B \\ 0 & D \end{bmatrix} = \det(A)\det(D)  $$
 
 > Reference  
-> [Wiki - Determinant](https://en.wikipedia.org/wiki/Determinant#Block_matrices)
+> [Wiki - Determinant](https://en.wikipedia.org/wiki/Determinant#Block_matrices)  
+> [blog](https://www.statlect.com/matrix-algebra/determinant-of-block-matrix)  
+
+### 명제5
+$A \in M_{nn}(\mathbb F), B \in M_{nm}(\mathbb F), D \in M_{mm}(\mathbb F)$이 있다고 하자.
+
+$D$가 invertible matrix일 때, 다음을 증명하여라.
+
+$$ \det\begin{bmatrix} A & B \\ C & D \end{bmatrix} = \det (A-BD^{-1}C)\det(D)  $$
+
+> Reference  
+> [Wiki - Determinant](https://en.wikipedia.org/wiki/Determinant#Block_matrices)  
+> [blog](https://www.statlect.com/matrix-algebra/determinant-of-block-matrix) 
 
 ### 명제5
 Upper trianglular matrix $A \in M_{nn}(\mathbb F)$가 있다고 하자.
