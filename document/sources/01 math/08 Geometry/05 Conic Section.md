@@ -86,9 +86,11 @@ $B$는 symmetric matrix이기 때문에 선형대수에 의해 다음이 성립�
 $$ B = P^T \Lambda P $$
 
 이 때, 다음과 같은 변수변환을 생각해보자.
-$$ \begin{bmatrix} x \\ y \end{bmatrix} = P\begin{bmatrix} u \\ v \end{bmatrix} $$
+
+$$ \begin{bmatrix} u \\ v \end{bmatrix} = P\begin{bmatrix} x \\ y \end{bmatrix} $$
 
 이를 원래 행렬식에 대입하고 풀어 쓰면 다음과 같다.
+
 $$ \lambda_1 u^2 + \lambda_2 v^2 + 2d'u + 2e'v + f =0 \qed $$
 
 > Reference  
@@ -105,7 +107,7 @@ $$ \lambda_1 u^2 + \lambda_2 v^2 = k $$
 
 **Proof**
 
-$(x_c,y_c)$에서 linear term이 전부 사라지는 center이라고 하면 다음이 성립한다.
+$(x_c,y_c)$가 conic의 linear term이 전부 사라지는 center이라고 하면 다음이 성립한다.
 
 $$ ax^2 + 2bxy + cy^2 + 2dx + 2ey + f = a(x-x_c)^2 + 2b(y-y_c)(x-x_c) + c(y-y_c)^2 + k $$
 
@@ -120,6 +122,23 @@ $$ x_c = \frac{cd-be}{\det(B)}, \enspace y_c = \frac{ae-bd}{\det(B)} $$
 다음으로 $k$는 다음을 만족한다.
 
 $$ \begin{aligned} k &= f - (ax_c^2 + 2bx_cy_c + cy_c^2) \\&= \frac{1}{\det(B)} (\det(B)f - (x_c(ax_c+by_c) + y_c(cy_c +bx_c))) \\&= - \frac{\det(A)}{\det(B)}  \end{aligned}  $$
+
+이를 행렬 형태로 나타내면 다음과 같다.
+
+$$ \begin{bmatrix} x-x_c&y-y_c \end{bmatrix} \begin{bmatrix} a & b \\ b & c \end{bmatrix} \begin{bmatrix} x-x_c \\ y-y_c \end{bmatrix} + k = 0 $$
+
+$B$는 symmetric matrix이기 때문에 선형대수에 의해 다음이 성립한다. 
+
+$$ B = P^T \Lambda P $$
+
+이 때, 다음과 같은 변수변환을 생각해보자.
+
+$$ \begin{bmatrix} u \\ v \end{bmatrix} = P\begin{bmatrix} x-x_c \\ y-y_c \end{bmatrix} $$
+
+이를 원래 행렬식에 대입하고 풀어 쓰면 다음과 같다.
+
+$$ \lambda_1 u^2 + \lambda_2 v^2 = k \qed $$
+
 
 > Reference  
 > [wiki](https://en.wikipedia.org/wiki/Matrix_representation_of_conic_sections#Central_conics)  
