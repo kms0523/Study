@@ -1,0 +1,2552 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Class &#8212; MS Study Documents</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="concept" href="concept.html" />
+    <link rel="prev" title="Abstract Function" href="Abstract%20Function.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MS Study Documents</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../cover.html">
+                    MS Study Documents
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01%20math/01%20Set/Set.html">
+   Set
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/01%20Power%20Set.html">
+     Power Set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/02%20Product%20Set.html">
+     Product Set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/03%20Relations.html">
+     Relation
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/01%20Set/04%20Order/Order.html">
+     Order
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/04%20Order/01%20Partial%20Order.html">
+       Partial Order
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/04%20Order/02%20Partially%20Order%20Set.html">
+       Partially Ordered Set
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/04%20Order/03%20Maximal%20and%20Minimal%20Element.html">
+       Minimal and Maximal Element
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/04%20Order/04%20Greatest%20and%20Least%20Element.html">
+       Greatest and Least Element
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/04%20Order/05-1%20Upper%20Bound.html">
+       Upper Bound and Lower Bound
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/04%20Order/05-2%20Bounded%20Above%20and%20Below.html">
+       Bounded Above and Below
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/04%20Order/06%20Supremum%20and%20Infimum.html">
+       Sumpremum and Infimum
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/04%20Order/07%20Completeness.html">
+       Completeness
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/04%20Order/08%20Total%20Order.html">
+       Total Order
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/04%20Order/09%20Totally%20Ordered%20Set.html">
+       Totally Ordered Set
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/04%20Order/10%20Well-order.html">
+       Well-ordered Set
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/04%20Order/11%20Induction.html">
+       Induction
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/01%20Set/05%20Function/Function.html">
+     Function
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/05%20Function/05%20Image.html">
+       Image
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/05%20Function/06%20Preimage.html">
+       Preimage
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/05%20Function/07%20Injective%20Function.html">
+       Injective Function
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/05%20Function/08%20Surjective%20Function.html">
+       Surjective Function
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/05%20Function/09%20Bijective%20Function.html">
+       Bijective Function
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/01%20Set/05%20Function/10%20Inverse%20Function.html">
+       Inverse Function
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/95%20Equivalence%20Relation.html">
+     Equivalence Relation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/01%20Set/96%20Equivalence%20Class.html">
+     Equivalence Class
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/Abstract%20Algebra.html">
+   Abstract Algebra
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/01%20Binary%20Operation/Binary%20Operation.html">
+     Binary Operation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/01%20Binary%20Operation/01%20Closed.html">
+       Closed Under Binary Operation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/01%20Binary%20Operation/02%20Associative%20Property.html">
+       Associative Property
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/01%20Binary%20Operation/03%20Commutative%20Property.html">
+       Commutative Property
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/02%20Algebraic%20Structure.html">
+     Algebraic Structure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/03%20Semi-group.html">
+     Semi-group
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/04%20Monoid.html">
+     Monoid
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/Group.html">
+     Group
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/01%20Commutative%20Group.html">
+       Commutative Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/02%20Abelian%20Group.html">
+       Abelian Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/03%20Subgroup.html">
+       Subgroup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/04%20Span.html">
+       Span
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/05%20Group%20Action.html">
+       Group Action
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/06%20Distributive%20Property.html">
+     Distributive Property
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/07%20Ring/Ring.html">
+     Ring
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/07%20Ring/03%20Ring%20Action.html">
+       Ring Action
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/07%20Ring/04%20Commutative%20Ring.html">
+       Commutative Ring
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/07%20Ring/05%20Ring%20Homeomorphism.html">
+       Ring Homeomorphism
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/08%20Field/Field.html">
+     Field
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/08%20Field/01%20Ordered%20Field.html">
+       Ordered Field
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/09%20Module/Module.html">
+     Module
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/09%20Module/01%20Left%20Module.html">
+       Left Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/09%20Module/02%20Right%20Module.html">
+       Right Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/09%20Module/03%20Bimodule.html">
+       Bimodule
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/09%20Module/04%20R-Module.html">
+       R-Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/09%20Module/05%20Module%20Homeomorphism.html">
+       Module Homeomorphism
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01%20math/03%20Analysis/Analysis.html">
+   Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/03%20Analysis/01%20Integer%20Number.html">
+     Integer Number
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/03%20Analysis/02%20Archimedean%20Property.html">
+     Archimedean Property
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/03%20Analysis/03%20Absolute.html">
+     Absolute
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/03%20Analysis/04%20Rational%20Number.html">
+     Rational Number
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/03%20Analysis/05%20Real%20Number.html">
+     Real Number
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/03%20Analysis/06%20Maximum%20and%20Minimum.html">
+     Maximum and Minimum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/03%20Analysis/07%20Convergence%20of%20Sequence.html">
+     Convergence of Sequence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/03%20Analysis/08%20Bounded%20Sequence.html">
+     Bounded Sequence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/03%20Analysis/09%20liminf%20%26%20limsup.html">
+     Limit Inferior &amp; Superior
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/03%20Analysis/50%20Inequality.html">
+     Inequality
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01%20math/04%20Metric%20Space/Metric%20Space.html">
+   Metric Space
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/01-1%20Metric.html">
+     Metric
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/01-2%20Metric%20Subspace.html">
+     Metric Subspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/02%20Open%20Ball.html">
+     Open ball
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/03%20Open%20Set.html">
+     Open set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/04%20Closed%20set.html">
+     Closed set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/05-1%20Neighborhood.html">
+     Neighborhood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/05-2%20Adherent%20Point.html">
+     Adherent Point
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/05-3%20Accumulation%20Point.html">
+     Accumulation Point
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/05-4%20Isolated%20Point.html">
+     Isolated Point
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/06%20Closure.html">
+     Closure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/07%20Interior.html">
+     Interior
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/08%20Boudnary.html">
+     Boundary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/09%20Bounded%20set.html">
+     Bounded Set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/09-1%20Bounded%20sequence.html">
+     Bounded Sequence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/10%20Compact%20Set.html">
+     Compact Set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/11%20Convergence%20of%20Sequence.html">
+     Convergence of Sequence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/12%20Convergence%20of%20Function.html">
+     Convergence of Function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/13%20Continuous%20at%20a%20Point.html">
+     Continuous at a Point
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/04%20Metric%20Space/14%20Continuous%20Function.html">
+     Continuous Function
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01%20math/05%20Topology/Topology.html">
+   Topology
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/05%20Topology/01%20Topologies/Topologies.html">
+     Topologies
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/01%20Topologies/01-1%20Topology.html">
+       Topology
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/01%20Topologies/01-2%20Topological%20Spaces.html">
+       Topological Space
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/01%20Topologies/02%20Open%20Set.html">
+       Open Set
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/01%20Topologies/03-1%20Closed%20set.html">
+       Closed set
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/01%20Topologies/03-2%20Clopen%20set.html">
+       Clopen set
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/01%20Topologies/04%20Neighborhood.html">
+       Neighborhood
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/01%20Topologies/05%20Subspace%20Topology.html">
+       Subspace Topology
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/01%20Topologies/06%20Subspace.html">
+       Subspace
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/01%20Topologies/07%20Closure.html">
+       Closure
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/01%20Topologies/08%20Interior.html">
+       Interior
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/01%20Topologies/09%20Exteriror.html">
+       Exteriror
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/01%20Topologies/10%20Boundary.html">
+       Boundary
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/01%20Topologies/11-1%20Adherent%20Point.html">
+       Adherent Point
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/01%20Topologies/11-2%20Limit%20Point.html">
+       Limit Point
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/01%20Topologies/12%20Isolated%20Point.html">
+       Isolated Point
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/01%20Topologies/13%20Dense.html">
+       Dense
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/05%20Topology/02%20Convergence%20and%20Continuity/Convergence%20and%20Continuity.html">
+     Convergence and Continuity
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/02%20Convergence%20and%20Continuity/1%20Convergence.html">
+       Convergence
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/02%20Convergence%20and%20Continuity/2%20Continuity.html">
+       Continuity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/02%20Convergence%20and%20Continuity/3%20Homeomorphism.html">
+       Homeomorphism
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/05%20Topology/03%20Hausdorff%20Space.html">
+     Hausdorff Space
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/05%20Topology/04%20Bases/Bases.html">
+     Bases
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/04%20Bases/01%20Basis.html">
+       Basis
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/04%20Bases/02%20Neighborhood%20Basis.html">
+       Neighborhood Basis
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/04%20Bases/03%20Nested%20Neighborhood%20Basis.html">
+       Nested Neighborhood Basis
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/05%20Topology/05%20Countability%20Properties/Countability%20Properties.html">
+     Countability Properties
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/05%20Countability%20Properties/20%20First%20Countable.html">
+       First Countable
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/05%20Countability%20Properties/21%20Eventually%20in.html">
+       Eventually in
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/05%20Countability%20Properties/22%20Second%20Countable.html">
+       Second Countable
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/05%20Countability%20Properties/23%20Cover.html">
+       Cover
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/05%20Countability%20Properties/24%20Seperable.html">
+       Seperable
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/05%20Countability%20Properties/25%20Lindelof%20Space.html">
+       Lindelof Space
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/05%20Topology/06%20Manifolds/Manifolds.html">
+     Manifolds
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/06%20Manifolds/26%20Locally%20Euclidean.html">
+       Locally Euclidean
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/06%20Manifolds/27%20Coordinate.html">
+       Coordinate
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/06%20Manifolds/28%20Topological%20Manifold.html">
+       Topological Manifold
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/05%20Topology/07%20Product%20Spaces/Product%20Spaces.html">
+     Product Spaces
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+    <label for="toctree-checkbox-18">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/07%20Product%20Spaces/01%20Product%20Topology.html">
+       Product Bases
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/07%20Product%20Spaces/02%20Product%20Space.html">
+       Product Space
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/05%20Topology/07%20Product%20Spaces/03%20Product%20Open%20Set.html">
+       Product Open Set
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01%20math/06%20Calculus/Calculus.html">
+   Calculus
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label for="toctree-checkbox-19">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/01%20Derivatives.html">
+     Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/02%20Partial%20Derivatives.html">
+     Partial Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/03%20Partial%20Derivatives%20of%20Vector-valued%20F.html">
+     Partial Derivatives of Vector-valued Function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/04%20Total%20Derivative.html">
+     Total Derivative
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/05%20Directional%20Derivative.html">
+     Directional Derivative
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/06%20Definite%20Integral.html">
+     Definite Integral
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/07%20Fundamental%20Theorem%20of%20Calculus.html">
+     Fundamental Theorem of Calculus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/40%20Differential.html">
+     Differential
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/50%20Leibniz%20Integral%20Rule.html">
+     Libniz Integral Rule
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/51%20Taylor%27s%20Theorem.html">
+     <span class="math notranslate nohighlight">
+      \(f: \R \rightarrow \R\)
+     </span>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/52%20Inverse%20Function%20Theorem.html">
+     Inverse Function Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/Divergence%20Theorem.html">
+     Divergence Theorem
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01%20math/07%20Linear%20Algebra/Linear%20Algebra.html">
+   Linear Algebra
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+  <label for="toctree-checkbox-20">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/07%20Linear%20Algebra/01%20Vector%20Space.html">
+     Vector Space
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/07%20Linear%20Algebra/02%20Span.html">
+     Span
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/07%20Linear%20Algebra/03%20Linearly%20Independet%20Set.html">
+     Linearly Independet Set
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/07%20Linear%20Algebra/04%20Basis.html">
+     Basis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01%20math/08%20Geometry/Geometry.html">
+   Geometry
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+  <label for="toctree-checkbox-21">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/08%20Geometry/02%20Smooth%20Manifold/Smooth%20Manifold.html">
+     Smooth Manifold
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/08%20Geometry/02%20Smooth%20Manifold/01%20Ambient%20Space.html">
+       Ambient space
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/08%20Geometry/03%20Affine%20space.html">
+     Affine space
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/08%20Geometry/04%20Curve/Curve.html">
+     Curve
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/08%20Geometry/04%20Curve/01%20Parametric%20Curve.html">
+       Parametric Curve
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/08%20Geometry/04%20Curve/02%20Tangent%20Vector.html">
+       Tangent Vector
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/08%20Geometry/04%20Curve/03%20Arc%20Length.html">
+       Arc Length
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/08%20Geometry/04%20Curve/04%20Curvature.html">
+       정의
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/08%20Geometry/05%20Conic%20Section.html">
+     Conic
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01%20math/09%20Numerical%20Analysis/Numerical%20Analysis.html">
+   Numerical Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+  <label for="toctree-checkbox-24">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../01%20math/09%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/Boundary%20Value%20Problem.html">
+     Boundary Value Problem
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/09%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/01%20Strong%20formulation.html">
+       Strong formulation
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../01%20math/09%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/02%20Weighted%20Residual%20Methods/Weighted%20Residual%20Methods.html">
+       Weighted Residual Methods
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+      <label for="toctree-checkbox-26">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/09%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/02%20Weighted%20Residual%20Methods/01%20Weighted%20Residual%20Formulation.html">
+         Weighted Residual Formulation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/09%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/02%20Weighted%20Residual%20Methods/02%20Dimensional%20Reduction.html">
+         Dimensional Reduction
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/09%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/02%20Weighted%20Residual%20Methods/03%20Reduced%20Function%20Space.html">
+         Reduced Function Space
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../01%20math/09%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/Weak%20Formulation.html">
+       Weak Formulation
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+      <label for="toctree-checkbox-27">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/09%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/01%20Strong%20Formulation.html">
+         Strong Formulation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/09%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/02%20Weighted%20Residual%20Formulation.html">
+         Weighted Residual Formulation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/09%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/03%20Weak%20Formulation.html">
+         Weak Formulation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/09%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/04%20Dimensional%20Reduction.html">
+         Dimensional Reduction
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/09%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/03%20Weak%20Formulation/05%20Reduced%20Function%20Space.html">
+         Reduced Function Space
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../01%20math/09%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/04%20Model%20Problems/Model%20Problems.html">
+       Model Problems
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+      <label for="toctree-checkbox-28">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/09%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/04%20Model%20Problems/01%20Model%20Problem1.html">
+         Model Problem1
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/09%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/04%20Model%20Problems/02%20Model%20Problem2.html">
+         Model Problem2
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../01%20math/09%20Numerical%20Analysis/01%20Boundary%20Value%20Problem/04%20Model%20Problems/03%20Model%20Problem3.html">
+         Model Problem3
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01%20math/10%20PDEs/PDEs.html">
+   Partial Differential Equations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+  <label for="toctree-checkbox-29">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/10%20PDEs/01%20Linear%20PDE.html">
+     Linear PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/10%20PDEs/02%20Semilinear%20PDE.html">
+     Semilinear PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/10%20PDEs/03%20Quasilinear%20PDE.html">
+     Quasilinear PDE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/10%20PDEs/04%20Second%20Order%20PDE%20Classification.html">
+     Second Order PDE Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20math/10%20PDEs/31%20Heat%20Conducting%20in%20Bar.html">
+     Heat Conducting in Bar
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  programming
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="C%2B%2B.html">
+   C++
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+  <label for="toctree-checkbox-30">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="01%20Build/Build.html">
+     Build
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="01%20Build/01%20PreProcessing.html">
+       Preprocessing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="01%20Build/02%20Compile.html">
+       Compile
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="01%20Build/03%20Linking/Linking.html">
+       Linking
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+      <label for="toctree-checkbox-32">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="01%20Build/03%20Linking/01%20Storage%20Class%20Specifier.html">
+         Storage Class Specifier
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="01%20Build/03%20Linking/02%20Name%20Mangling.html">
+         Name Mangling
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="01%20Build/03%20Linking/03%20Link.html">
+         Link
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="01%20Build/03%20Linking/04%20Relocation.html">
+         Relocation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="01%20Build/03%20Linking/05%20LinkingMethod.html">
+         Linking Method
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="01%20Build/03%20Linking/06%20Static%20Library.html">
+         Static Library
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="01%20Build/03%20Linking/07%20Shared%20Library.html">
+         Shared Library
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="02%20Memory/Memory.html">
+     Memory
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+    <label for="toctree-checkbox-33">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02%20Memory/01%20Virtual%20Memory.html">
+       Virtual Memory
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02%20Memory/02%20Paging%20system.html">
+       Paging system
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02%20Memory/03%20Virtual%20Memory%20Size.html">
+       Virtual Memory Size
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02%20Memory/04%20Virtual%20Memory%20Management%20in%20Window.html">
+       Virtual Memory Management in Window
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02%20Memory/05%20Virtual%20Memory%20Structure.html">
+       Virtual Memory Structure
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="03%20Standard%20Library/Standard%20Library.html">
+     STD
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+    <label for="toctree-checkbox-34">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="03%20Standard%20Library/01%20type-traits.html">
+       type-traits
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Abstract%20Function.html">
+     Abstract Function
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="concept.html">
+     concept
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Enum.html">
+     Enum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Initialization.html">
+     initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Keyword.html">
+     Keyword
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Name%20Space.html">
+     Namespace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="One%20Definition%20Rule.html">
+     One Definition Rule
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="static.html">
+     Static
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Template.html">
+     Template
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CMake.html">
+   Cmake
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../git.html">
+   Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Visual%20Studio.html">
+   Visual Studio
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  continuum mechanics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../10%20continuum%20mechanics/01%20Stress%20Vector.html">
+   Stress Vector
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../10%20continuum%20mechanics/02%20Cauchy%27s%20Stress%20Principle.html">
+   Cauchy’s Stress Principle
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../10%20continuum%20mechanics/03%20Stress%20Tensor.html">
+   Stress Tensor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../10%20continuum%20mechanics/Stress.html">
+   Principal Direction &amp; Principal Stress
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  CFD
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../20%20CFD/CFD.html">
+   Computational Fluid Dynamics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  CSM
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../21%20CSM/01%20Function%20Approximation.html">
+   Function Approximation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../21%20CSM/02%20Direct%20Stiffness%20Method.html">
+   Direct Stiffness Method
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../21%20CSM/03%20Bar/Bar.html">
+   Bar
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+  <label for="toctree-checkbox-35">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../21%20CSM/03%20Bar/01%20Governing%20Equation.html">
+     Governing Equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../21%20CSM/03%20Bar/02%20Boundary%20Value%20Problem.html">
+     Boundary Value Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../21%20CSM/03%20Bar/03%20FE%20Formulation.html">
+     FE Formulation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../21%20CSM/04%20Beam/Beam.html">
+   Beam
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+  <label for="toctree-checkbox-36">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../21%20CSM/04%20Beam/01%20Element%20Beam%20Theory.html">
+     Element Beam Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../21%20CSM/04%20Beam/02%20Neutral%20Surface.html">
+     Neutral Surface
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../21%20CSM/05%20Plate/Plate.html">
+   판 이론
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../21%20CSM/06%20Finite%20Element%20Formulation/Finite%20Element%20Formulation.html">
+   Finite Element Formulation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+  <label for="toctree-checkbox-37">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../21%20CSM/06%20Finite%20Element%20Formulation/02%20Mechanical%20Equilibrium/Mechanical%20Equilibrium.html">
+     Mechanical Equilibrium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+    <label for="toctree-checkbox-38">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../21%20CSM/06%20Finite%20Element%20Formulation/02%20Mechanical%20Equilibrium/01%20Governing%20Equation.html">
+       Governing Equation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../21%20CSM/06%20Finite%20Element%20Formulation/02%20Mechanical%20Equilibrium/02%20Weak%20Formulation.html">
+       Weak Formulation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../21%20CSM/06%20Finite%20Element%20Formulation/02%20Mechanical%20Equilibrium/03%20FE%20Formulation.html">
+       FE Formulation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../21%20CSM/07%20Nonlinear%20Analysis/Nonlinear%20Analysis.html">
+   Non Linear Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+  <label for="toctree-checkbox-39">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../21%20CSM/07%20Nonlinear%20Analysis/01%20Elastoplasticity/Elastoplasticity.html">
+     Elastoplasticity
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+    <label for="toctree-checkbox-40">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../21%20CSM/07%20Nonlinear%20Analysis/01%20Elastoplasticity/01%201D%20Elastoplastic.html">
+       1D Stress-Strain Relation in Tension
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../21%20CSM/07%20Nonlinear%20Analysis/01%20Elastoplasticity/01%20Classical%20Elastoplasticity%20Model.html">
+       Classical Elastoplasticity Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../21%20CSM/07%20Nonlinear%20Analysis/01%20Elastoplasticity/02%20J2%20Plasiticity%20with%20Combined%20Hardening%20Model.html">
+       J2 Plasticity Model with Hardening
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../21%20CSM/07%20Nonlinear%20Analysis/01%20Elastoplasticity/03%20Stress%20Calculation%20Algorithm.html">
+       Prerequisite
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../21%20CSM/07%20Nonlinear%20Analysis/01%20Elastoplasticity/04%20Elastoplasticity%20Algorithm.html">
+       Assumption
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Finance
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../30%20Finance/01%20Finance%20Market.html">
+   금융시장
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../30%20Finance/02%20Derivatives.html">
+   Derivatives
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Jupyter Book
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../98%20Jupyter%20Book/1%20document.html">
+   문서작성법
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../98%20Jupyter%20Book/2%20folder.html">
+   폴더구성법
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../98%20Jupyter%20Book/3%20build.html">
+   빌드
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../98%20Jupyter%20Book/4%20Publish.html">
+   배포
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../99%20References/references.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/sources/03 programming/01 C++/Class.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   클래스 선언과 정의
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   클래스의 멤버 함수의 링크 방식
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   익명 클래스
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   생성자
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#default-move-constructor">
+     Default move constructor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#explicit">
+     explicit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#copy-list-initialization">
+     copy list initialization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#user-define-deduction-guide">
+     User define deduction guide
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#precautions">
+     Precautions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#virtual-functions">
+       Virtual Functions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#variadic-template-with-perfect-forwarding">
+       variadic template with perfect forwarding
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   상속
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     부모클래스 매서드 숨김 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#derive">
+     Derive 클래스의 복사
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#friend-class">
+   Friend Class
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#across-namespace">
+     Across namespace
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#member-variable">
+   Member variable
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Class</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   클래스 선언과 정의
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   클래스의 멤버 함수의 링크 방식
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   익명 클래스
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   생성자
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#default-move-constructor">
+     Default move constructor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#explicit">
+     explicit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#copy-list-initialization">
+     copy list initialization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#user-define-deduction-guide">
+     User define deduction guide
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#precautions">
+     Precautions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#virtual-functions">
+       Virtual Functions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#variadic-template-with-perfect-forwarding">
+       variadic template with perfect forwarding
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   상속
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     부모클래스 매서드 숨김 문제
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#derive">
+     Derive 클래스의 복사
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#friend-class">
+   Friend Class
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#across-namespace">
+     Across namespace
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#member-variable">
+   Member variable
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="class">
+<h1>Class<a class="headerlink" href="#class" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2>클래스 선언과 정의<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>일반적으로 객체(변수, 배열)나 함수가 가상 메모리 영역을 차지하는 것에 비하여 클래스는 오직 개념적인 구조로서만 존재할 뿐이다.</p>
+<p>즉, 클래스는 메모리 영역과는 전혀 상관이 없다.</p>
+<p>아래의 예시 코드를 보자.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//A.cpp TU1</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">g_val</span><span class="p">;</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Test</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_val</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">//Main.cpp</span>
+<span class="k">extern</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">g_val</span><span class="p">;</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Test</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">g_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">Test</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w">         </span><span class="c1">//compile error</span>
+<span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">m_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//compile error</span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>선언을 통해서 g_val이 int 전역 변수라는 것을 알고 있다. 따라서 컴파일러는 g_val이 4byte의 메모리 영역을 차지하고 있음을 알 수 있다. 이로써 컴파일 단계에서는 어셈블리로 특정 주소를 시작으로 4byte 영역을 1로 채우는 코드를 작성하면 되고 링크 단계에서는 특정 주소를 실제 g_val이 위치하는 주소로 변경하면 된다.</p>
+<p>그러나 class의 경우에는 문제가 달라진다. Test 객체를 생성해야 하는데 Test의 크기를 알 수가 없다. Test의 크기를 알기 위해서는 정의가 필요하다. A.cpp에 Test의 정의가 있지만 이는 오직 TU1에서만 알 수 있다. 따라서 컴파일러는 여지없이 에러를 발생시키는 것이다.</p>
+<p>컴파일러에게 필요한 것은 Test가 클래스라는 선언이 아니라 Test의 설계도인 정의이다. 결국 Main.cpp에도 Test를 정의해줘야 한다. 결국 클래스의 정의는 사용되는 모든 소스(cpp) 파일마다 정의되어야만 하기 때문에 일반 객체나 함수의 정의와는 다르게 중복을 허용한다.</p>
+<p>클래스의 정의가 내용이 많을 경우 클래스를 사용하는 소스 파일마다 클래스의 정의를 똑같이 붙여 넣는 것은 분명히 비효율적인 방법이다. 그래서 클래스의 정의는 보통 헤더 파일에 작성하고, 클래스 내부의 멤버 함수의 정의 같은것은 소스 파일에 작성한다.</p>
+<p>이렇게 클래스 정의가 중복될 수 있음으로 문제가 발생하기도 하는데 바로 중복되는 정의가 서로 다른 경우이다. 아래의 예제를 보자.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//A.cpp</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Test</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">Test</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">val1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">val2</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">val1_</span><span class="p">(</span><span class="n">val1</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="n">val2_</span><span class="p">(</span><span class="n">val2</span><span class="p">)</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val2_</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val1_</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">extern</span><span class="w"> </span><span class="n">Test</span><span class="w"> </span><span class="n">g_test</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">get_val1</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">g_test</span><span class="p">.</span><span class="n">val1_</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">//Main.cpp</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Test</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">Test</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">val1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">val2</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">val1_</span><span class="p">(</span><span class="n">val1</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="n">val2_</span><span class="p">(</span><span class="n">val2</span><span class="p">)</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val1_</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">val2_</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="n">Test</span><span class="w"> </span><span class="nf">g_test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">get_val1</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">get_val1</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 2가 출력됨</span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>코드를 살펴보면 1이 출력되야 될 것 같지만 실제 결과는 2가 출력이 된다.</p>
+<p>이를 이해해 보기 위해 먼저 A.cpp와 Main.cpp에 클래스 Test가 중복으로 정의되어 있지만 멤버 변수가 정의된 순서가 다르다는걸 알아야한다.</p>
+<p>Main.cpp에서 <code class="docutils literal notranslate"><span class="pre">g_test.val1_;</span></code>이 의미하는 것은 g_test의 메모리 영역 중에서 <code class="docutils literal notranslate"><span class="pre">첫</span> <span class="pre">번째</span> <span class="pre">멤버</span> <span class="pre">변수</span></code>를 나타내지만  A.cpp에서 <code class="docutils literal notranslate"><span class="pre">g_test.val1_;</span></code>이 의미하는 것은 g_test의 메모리 영역 중에서 <code class="docutils literal notranslate"><span class="pre">두</span> <span class="pre">번째</span> <span class="pre">멤버</span> <span class="pre">변수</span></code>를 나타낸다는 점에서 문제가 발생한다.</p>
+<p>Main.cpp에서 <code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">g_test(1,</span> <span class="pre">2);</span></code>이 실행될 때는 이미 첫번째 4btye에는 1을 두번째 4byte에는 2를 작성하였다. 이후에 A.cpp에서 <code class="docutils literal notranslate"><span class="pre">g_test.val1_;</span></code>이 실행될 때 두번째 4byte 값을 읽기 때문에 결과로 2가 출력되는 것이다.</p>
+<p>여기서 알 수 있는 점은 클래스의 멤버 변수에 접근하는 것은 클래스 정의에 따라 해당 멤버 변수의 메모리 오프셋에 의해서 계산된 위치를 기준으로 한다는 점이다.</p>
+<p>즉, 멤버 변수의 이름은 오직 오프셋 계산을 위해서 사용되는 것이지, 그 자체가 하나의 고정된 영역을 나타내는 것은 아니라는 점이다.</p>
+<p>보통은 이름만 같고 정의가 완전히 다른 경우에는 런타임 에러가 발생해서 어느 정도 문제를 빠르게 확인할 수 있을수도 있지만, 같은 라이브러리를 사용하지만 버전이 서로 다른 것이 혼합되어 있을 경우 클래스 정의가 유사하지만 약간 다른 부분이 가끔씩 문제를 일이클 경우에는 어디서 문제가 잘못되었는지 파악하기 어려울 수 있다.</p>
+<blockquote>
+<div><p>Reference<br />
+<span id="id2">[<a class="reference internal" href="../../99%20References/references.html#id12" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span></p>
+</div></blockquote>
+</section>
+<section id="id3">
+<h2>클래스의 멤버 함수의 링크 방식<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<p>클래스 멤버 함수의 링크 방식은 외부 링크 방식이다.</p>
+<p>아래의 예제 코드를 통해 확인해보자</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// A.h</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="n">tell</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="c1">// A.cpp TU1</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;A.h&quot;</span><span class="cp"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">A::tell</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;I&#39;m A</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">// Main.cpp TU2</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<span class="w">	</span><span class="n">a</span><span class="p">.</span><span class="n">tell</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>TU2에서 TU1에 정의되어 있는 함수를 사용하였음으로 TU1에 정의된 A class의 tell 멤버 함수는 외부 링크 방식임을 알 수 있다.</p>
+</section>
+<section id="id4">
+<h2>익명 클래스<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<p>익명 클래스(unnamed, anonymus class)는 이름이 주어지지 않은 클래스이다.</p>
+<p>익명 클래스는 생성자는 갖을 수 없으나 소멸자는 갖을수 있으며 함수의 인자나 리턴 값으로 사용될 수 없다.</p>
+<p>아래의 예시 코드를 보자.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="c1">//익명 클래스</span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">setData</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">print</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Value for i : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">       </span>
+<span class="p">}</span><span class="w"> </span><span class="n">obj1</span><span class="p">;</span><span class="w">     </span><span class="c1">//익명 클래스의 객체</span>
+<span class="w">            </span><span class="c1">//obj1, obj2, ...; 와 같이 ,로 연결하여 여러개를 생성할 수 있음</span>
+<span class="w">  </span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">obj1</span><span class="p">.</span><span class="n">setData</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w">   </span><span class="c1">//익명 클래스의 객체의 저장 기간(stroage duration)과 링크 방식(linkage)??</span>
+<span class="w">    </span><span class="n">obj1</span><span class="p">.</span><span class="n">print</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Reference<br />
+<a class="reference external" href="https://www.geeksforgeeks.org/anonymous-classes-in-cpp/">geeks for geeks</a></p>
+</div></blockquote>
+</section>
+<section id="id5">
+<h2>생성자<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<section id="default-move-constructor">
+<h3>Default move constructor<a class="headerlink" href="#default-move-constructor" title="Permalink to this headline">#</a></h3>
+<p>별도로 move constructor를 설정하지 않아도 member variable을 move로 옮기는 move constructor가 생성된다.</p>
+<p>아래 코드를 확인해보자.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">A</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">A</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">A</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;copy constructor</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="n">A</span><span class="p">(</span><span class="n">A</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;move constructor</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">B</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">B</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
+
+<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">A</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">A</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">B</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">B</span><span class="w"> </span><span class="n">c</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">b</span><span class="p">));</span><span class="w"></span>
+<span class="w"> </span><span class="c1">//move constructor</span>
+<span class="w"> </span><span class="c1">//move constructor</span>
+<span class="w"> </span><span class="c1">//move constructor</span>
+</pre></div>
+</div>
+<p>Class <code class="docutils literal notranslate"><span class="pre">B</span></code>는 별도의  move constructor가 없지만 객체 <code class="docutils literal notranslate"><span class="pre">c</span></code>를 생성할 때, rvalue <code class="docutils literal notranslate"><span class="pre">b</span></code>를 넘겨줌으로써 default move constructor가 호출이 되고 멤버변수 <code class="docutils literal notranslate"><span class="pre">a,b,c</span></code>에 대해서 각각 move constructor를 호출하여 move constructor 문장이 3번 나오게 된다.</p>
+</section>
+<section id="explicit">
+<h3>explicit<a class="headerlink" href="#explicit" title="Permalink to this headline">#</a></h3>
+<p>explicit 키워드는 자신이 원하지 않은 형변환이 일어나지 않도록 제한하는 키워드이다.</p>
+<p>아래 예제코드를 통해 생성자에 explicit이 있을때와 없을 때의 차이를 알아보자.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">A</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">A</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">      </span><span class="c1">// converting constructor</span>
+<span class="w">    </span><span class="n">A</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// converting constructor (C++11)</span>
+<span class="w">    </span><span class="k">operator</span><span class="w"> </span><span class="kt">bool</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="w"> </span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">B</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">B</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">B</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="kt">bool</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="w"> </span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="n">a1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">      </span><span class="c1">// OK: copy-initialization selects A::A(int)</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="n">a2</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">       </span><span class="c1">// OK: direct-initialization selects A::A(int)</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="n">a3</span><span class="w"> </span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span><span class="w">   </span><span class="c1">// OK: direct-list-initialization selects A::A(int, int)</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="n">a4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span><span class="w"> </span><span class="c1">// OK: copy-list-initialization selects A::A(int, int)</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="n">a5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">// OK: explicit cast performs static_cast</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">      </span><span class="c1">// OK: A::operator bool()</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">na1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a1</span><span class="p">;</span><span class="w"> </span><span class="c1">// OK: copy-initialization selects A::operator bool()</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">na2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a1</span><span class="p">);</span><span class="w"> </span><span class="c1">// OK: static_cast performs direct-initialization</span>
+<span class="w"> </span>
+<span class="c1">//  B b1 = 1;      // error: copy-initialization does not consider B::B(int)</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="n">b2</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">       </span><span class="c1">// OK: direct-initialization selects B::B(int)</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="n">b3</span><span class="w"> </span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span><span class="w">   </span><span class="c1">// OK: direct-list-initialization selects B::B(int, int)</span>
+<span class="c1">//  B b4 = {4, 5}; // error: copy-list-initialization does not consider B::B(int,int)</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="n">b5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">B</span><span class="p">)</span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">// OK: explicit cast performs static_cast</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">b2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">      </span><span class="c1">// OK: B::operator bool()</span>
+<span class="c1">//  bool nb1 = b2; // error: copy-initialization does not consider B::operator bool()</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">nb2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b2</span><span class="p">);</span><span class="w"> </span><span class="c1">// OK: static_cast performs direct-initialization</span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Reference<br />
+<a class="reference external" href="https://en.cppreference.com/w/cpp/language/explicit">explicit - cppreference</a></p>
+</div></blockquote>
+</section>
+<section id="copy-list-initialization">
+<h3>copy list initialization<a class="headerlink" href="#copy-list-initialization" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span><span class="w"> </span>
+<span class="w">  </span><span class="n">A</span><span class="p">(</span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;calling constuctor</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span>
+<span class="w">  </span><span class="n">A</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">A</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;calling copy constructor</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">A</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="w"> </span><span class="p">};</span><span class="w"> </span><span class="c1">// A(A arg1, A arg2, A arg3) copy is occur here</span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="user-define-deduction-guide">
+<h3>User define deduction guide<a class="headerlink" href="#user-define-deduction-guide" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//user-defined deduction guides</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span><span class="w"></span>
+<span class="n">EuclideanVector</span><span class="p">(</span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">EuclideanVector</span><span class="o">&lt;</span><span class="k">sizeof</span><span class="p">...(</span><span class="n">Args</span><span class="p">)</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="n">EuclideanVector</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">vec</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">EuclideanVector</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="precautions">
+<h3>Precautions<a class="headerlink" href="#precautions" title="Permalink to this headline">#</a></h3>
+<section id="virtual-functions">
+<h4>Virtual Functions<a class="headerlink" href="#virtual-functions" title="Permalink to this headline">#</a></h4>
+<p>Pure virtual function can not use in <code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">class</span> <span class="pre">constructor</span></code> and virtual function call can be invoke unwanted behavior.</p>
+<blockquote>
+<div><p>Reference<br />
+<a class="reference external" href="https://stackoverflow.com/questions/8630160/call-to-pure-virtual-function-from-base-class-constructor">stackoverflow</a></p>
+</div></blockquote>
+</section>
+<section id="variadic-template-with-perfect-forwarding">
+<h4>variadic template with perfect forwarding<a class="headerlink" href="#variadic-template-with-perfect-forwarding" title="Permalink to this headline">#</a></h4>
+<p>copy constructor doesn’t work.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">	</span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"></span>
+<span class="w">		</span><span class="o">:</span><span class="w"> </span><span class="n">values_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Args</span><span class="o">&gt;</span><span class="p">(</span><span class="n">args</span><span class="p">)...)</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+
+<span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">values_</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span><span class="w"></span>
+<span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">	</span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Debug&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="id6">
+<h2>상속<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<section id="id7">
+<h3>부모클래스 매서드 숨김 문제<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<p>먼저 아래 예제코드를 보자.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">test</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="w">	</span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">B</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">A</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">test</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="w">	</span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">test</span><span class="p">();</span><span class="w"> </span><span class="c1">//Error!</span>
+
+<span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>B클래스는 A클래스를 상속하였음으로 인자를 받지 않는 test함수가 클래스 B에 존재하고 int를 인자로 받는 또 다른 test함수가 overloading 될 것으로 기대한다.</p>
+<p>하지만 예제코드에서 알 수 있듯이, int를 인자로 받는 test함수가 정의가 되면 A 클래스에 있는 test 함수가 숨겨지고 에러가 발생한다.</p>
+<p>기대와 다르게 클래스 A와 B사이에는 어떠한 overloading도 발생하지 않는다.</p>
+<p>그 이유는 overloading은 개념적으로 하나의 범위(scope)만을 살펴보기 때문이다.</p>
+<p>예제 코드를 보면 객체 b가 test 함수를 호출할 때 컴파일러는 B 클래스의 범위를 살펴본 뒤 int 타입을 인자로 받는 함수만을 찾게된다.</p>
+<p>A 클래스에 정의된 test함수는 A 클래스의 범위에 속하기 때문에 컴파일러가 overloading을 위해 하나의 범위만을 살펴본다는 기본 규칙에 의해 살펴보는 범위가 아니게 된다.</p>
+<p>따라서 컴파일러는 인자를 받지 않는 함수를 찾지 못해 에러를 발생시킨다.</p>
+<p>C++에서는 범위를 넘어서는 overloading을 지원하지 않으며 이 기본규칙은 상속관계에 있는 Base - Derived 클래스의 경우일지라도 일관되게 적용된다.</p>
+<p>이 문제는 다음 방법으로 해결할 수 있다.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">test</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="w">	</span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">B</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">A</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">	</span><span class="k">using</span><span class="w"> </span><span class="n">A</span><span class="o">::</span><span class="n">test</span><span class="p">;</span><span class="w"></span>
+<span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="nf">test</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
+<span class="w">	</span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">test</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>숨겨진 함수를 using을 사용한 선언(declaration)을 통해 드러낼 수 있다.</p>
+<blockquote>
+<div><p>Reference<br />
+<a class="reference external" href="https://stackoverflow.com/questions/1896830/why-should-i-use-the-using-keyword-to-access-my-base-class-method">stackoverflow</a><br />
+<a class="reference external" href="https://isocpp.org/wiki/faq/strange-inheritance#hiding-rule">CppFAQ</a></p>
+</div></blockquote>
+</section>
+<section id="derive">
+<h3>Derive 클래스의 복사<a class="headerlink" href="#derive" title="Permalink to this headline">#</a></h3>
+<p>다음 예제 코드를 보자</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">	</span><span class="n">A</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
+<span class="w">	</span><span class="n">A</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">A</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;A copy constructor</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="w">	</span>
+<span class="w">	</span><span class="n">A</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">A</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;A copy operator</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">B</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">A</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">	</span><span class="n">B</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
+<span class="w">	</span><span class="n">B</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">B</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;B copy constructor</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w">             </span><span class="c1">//wrong</span>
+<span class="w">	</span><span class="c1">//B(const B&amp; b) : A(b) { std::cout &lt;&lt; &quot;B copy constructor\n&quot;; };    //right</span>
+
+<span class="w">	</span><span class="n">B</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">B</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;B copy operator</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="k">this</span><span class="p">;</span><span class="w"> </span><span class="p">};</span><span class="w">   </span><span class="c1">//wrong</span>
+<span class="w">	</span><span class="c1">//B&amp; operator=(const B&amp; other) { A::operator=(other); std::cout &lt;&lt; &quot;B copy operator\n&quot;; return *this; }; //right</span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="n">B</span><span class="w"> </span><span class="n">b1</span><span class="p">,</span><span class="w"> </span><span class="n">b2</span><span class="p">;</span><span class="w"></span>
+<span class="w">	</span>
+<span class="w">	</span><span class="n">B</span><span class="w"> </span><span class="n">b3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b1</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">	</span><span class="n">b2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b1</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>코드를 실행시킬경우 Parent 클래스와 관련된 복사는 발생하지 않는다.</p>
+<p>이런 문제를 해결하기 위해서 Derive 클래스의 복사생성자를 작성할 때는 initializer list를 사용해서 Parent 클래스의 복사생성자가 먼저 호출되게 해줘야 한다.</p>
+<p>또한 Derive 클래스의 복사 연산자를 구현할 때도 가장 먼저 Parent class의 복사 연산자가 먼저 호출되게 해줘야 한다.</p>
+<p>이러한 과정이 주석처리된 코드에 나타나있다.</p>
+</section>
+</section>
+<section id="friend-class">
+<h2>Friend Class<a class="headerlink" href="#friend-class" title="Permalink to this headline">#</a></h2>
+<section id="across-namespace">
+<h3>Across namespace<a class="headerlink" href="#across-namespace" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//header1.h</span>
+
+<span class="c1">//class ms::A; // doesn&#39;t work!</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">ms</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">B</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">	</span><span class="k">friend</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ms</span><span class="o">::</span><span class="n">A</span><span class="p">;</span><span class="w"></span>
+<span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">	</span><span class="kt">double</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="c1">//header2.h</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;header1.h&quot;</span><span class="cp"></span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">ms</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"></span>
+<span class="w">	</span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">		</span><span class="n">A</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">			</span><span class="n">B</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="w">			</span><span class="n">b</span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.14</span><span class="p">;</span><span class="w"> </span><span class="c1">// can access!</span>
+<span class="w">		</span><span class="p">};</span><span class="w"></span>
+<span class="w">	</span><span class="p">};</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="member-variable">
+<h2>Member variable<a class="headerlink" href="#member-variable" title="Permalink to this headline">#</a></h2>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">X</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">val4</span><span class="p">;</span><span class="w">	</span><span class="c1">// 정의한것	</span>
+<span class="w">						</span><span class="c1">// 초기화되지 않은 전역 변수로 BSS 영역에 저장</span>
+<span class="w">						</span><span class="c1">// 0으로 초기화됨								</span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./sources\03 programming\01 C++"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Abstract%20Function.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Abstract Function</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="concept.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">concept</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By MS<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
