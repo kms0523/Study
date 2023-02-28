@@ -15,7 +15,7 @@ $$ \exist A_R \text{ or } _RA \st {_RA} = A_R $$
 
 먼저, left action of $R$ on $A$ $\cdot_L$이 주어져있다고 하자.
 
-이 떄, $\cdot_R$을 다음을 만족하게 정의하자
+이 떄, $\cdot_R$을 다음을 만족하게 정의하자.
 
 $$ \begin{gathered} \forall x \in A, \quad \forall r \in R, \quad r \cdot_R x = x \cdot_L r \\ \cdot_R \text{ is right action of } R \text{ on } A \end{gathered}  $$
 
@@ -45,22 +45,30 @@ $$ _RA = A_R \qed $$
 > [math.stackexchange1](https://math.stackexchange.com/questions/773402/modules-over-commutative-rings)  
 > [math.stackexchange2](https://math.stackexchange.com/questions/2203324/when-ring-is-commutative-prove-that-left-and-right-modules-coincide)
 
-
 #### 참고1
-left module이 주어져도 동일한 값을 갖는 right module을 정의할 수 있으며, 그 반대도 마찬가지임으로 left, right module의 구분이 무의미해진다.
+$R$이 commutative ring이 아닌 경우에 다음을 만족하는 $\cdot_R$이 있다고 가정하자.
 
-예를 들어, Left module이 주어져서 $x(r_1r_2)$을 알고 있다고 하자.
+$$ \exist \cdot_R : A \times R \rightarrow A \st  \forall x \in A, \quad \forall r \in R, \quad r \cdot_R x = x \cdot_L r $$
 
-이때 위의 명제에 의해 $x(r_1r_2) = (r_1r_2)x$인 right module을 만들 수 있다.
+$\cdot_R$의 정의에 의해 다음이 성립한다.
 
-따라서 동일한 값이기 때문에 $x(r_1r_2)$과 $(r_1r_2)x$를 구분해서 쓸 필요가 없어진다. 
+$$ \begin{gathered} (r_1\cdot r_2)\cdot_L m_1 = m_1 \cdot_r (r_1\cdot r_2) \\ r_1 \cdot_L (r_2\cdot_Lm_1) = (m_1 \cdot_r r_2) \cdot_r r_1 = m_1 \cdot_r(r_2 \cdot r_1) \end{gathered}  $$
 
+이 떄, $\cdot_L$의 성질에 의해 $(r_1\cdot r_2)\cdot_L m_1 = r_1 \cdot_L (r_2\cdot_Lm_1)$임으로 다음이 성립한다.
+
+$$ m_1 \cdot_r (r_1\cdot r_2) = m_1 \cdot_r(r_2 \cdot r_1) $$
+
+$R$이 commutative ring이 아니라는 전제에 모순임으로 proof by contradiction에 의해 $\cdot_R$은 존재하지 않는다.
 
 #### 참고2
 commutative ring이 아닌 경우에 right action의 추가 조건으로 $(xr_1)r_2 = r_1(r_2x)$을 줘도 $(xr_1)r_2r_3 = r_1r_2(r_3x)$를 만족하지 못한다. 즉, commutative ring이 아니면 left module과 동일한 값을 주는 right module을 만들 수 없다.
 
 
 #### 참고3
-commutative ring이 아니더라도 다른 성질들은 성립하지만 $(r_1 \cdot r_2)\cdot_Lm_1 = m_1 \cdot_r (r_1 \cdot r_2)$은 오직 commutative ring일 때만 성립한다.
+한 마디로 순서를 바꿔 적어도 동일한 값을 주는 action을 정의할 수 있음으로 순서에 상관없이 표기가 가능해진다.
 
-따라서, commutative ring일 때만 left module과 right module의 구분이 무의미해진다.
+예를 들어, Left module이 주어져서 $x(r_1r_2)$을 알고 있다고 하자.
+
+이때 위의 명제에 의해 $x(r_1r_2) = (r_1r_2)x$인 right module을 만들 수 있다.
+
+따라서 동일한 값이기 때문에 $x(r_1r_2)$과 $(r_1r_2)x$를 구분해서 쓸 필요가 없어진다. 

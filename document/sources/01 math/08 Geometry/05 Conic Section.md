@@ -109,23 +109,23 @@ $$ \lambda_1 u^2 + \lambda_2 v^2 = k $$
 
 $(x_c,y_c)$가 conic의 linear term이 전부 사라지는 center이라고 하면 다음이 성립한다.
 
-$$ ax^2 + 2bxy + cy^2 + 2dx + 2ey + f = a(x-x_c)^2 + 2b(y-y_c)(x-x_c) + c(y-y_c)^2 + k $$
+$$ ax^2 + 2bxy + cy^2 + 2dx + 2ey + f = a(x-x_c)^2 + 2b(y-y_c)(x-x_c) + c(y-y_c)^2 - k $$
 
 위의 식으로부터 다음 두 조건을 얻을 수 있다.
 
 $$ \begin{gathered} ax_c + by_c + d =0 \\ bx_c + cy_c + e =0 \end{gathered} $$
 
-이를 연립하여 풀면 다음을 얻을 수 있다.
+이를 행렬로 나타내면 다음과 같다.
 
-$$ x_c = \frac{cd-be}{\det(B)}, \enspace y_c = \frac{ae-bd}{\det(B)} $$
+$$ \begin{aligned} & B \begin{bmatrix} x_c\\y_c \end{bmatrix} + \begin{bmatrix} d\\e \end{bmatrix} = 0 \\ \implies& \begin{bmatrix} x_c\\y_c \end{bmatrix} = - B^{-1} \begin{bmatrix} d\\e \end{bmatrix}  \\\implies& x_c = \frac{be-cd}{\det(B)}, \enspace y_c = \frac{bd-ae}{\det(B)} \end{aligned} $$
 
 다음으로 $k$는 다음을 만족한다.
 
-$$ \begin{aligned} k &= f - (ax_c^2 + 2bx_cy_c + cy_c^2) \\&= \frac{1}{\det(B)} (\det(B)f - (x_c(ax_c+by_c) + y_c(cy_c +bx_c))) \\&= - \frac{\det(A)}{\det(B)}  \end{aligned}  $$
+$$ \begin{aligned} k &= (ax_c^2 + 2bx_cy_c + cy_c^2) - f \\&= x_c(ax_c+by_c) + y_c(cy_c +bx_c) - f \\&= \frac{d(cd-be)}{\det(B)} + \frac{e(ae-bd)}{\det(B)} - f \\&= \frac{1}{\det(B)}(d(cd-be) + e(ae-bd) -f\det(B)) \\&= -\frac{\det(A)}{\det(B)}  \end{aligned}  $$
 
 이를 행렬 형태로 나타내면 다음과 같다.
 
-$$ \begin{bmatrix} x-x_c&y-y_c \end{bmatrix} \begin{bmatrix} a & b \\ b & c \end{bmatrix} \begin{bmatrix} x-x_c \\ y-y_c \end{bmatrix} + k = 0 $$
+$$ \begin{bmatrix} x-x_c&y-y_c \end{bmatrix} \begin{bmatrix} a & b \\ b & c \end{bmatrix} \begin{bmatrix} x-x_c \\ y-y_c \end{bmatrix} - k = 0 $$
 
 $B$는 symmetric matrix이기 때문에 선형대수에 의해 다음이 성립한다. 
 
@@ -143,7 +143,7 @@ $$ \lambda_1 u^2 + \lambda_2 v^2 = k \qed $$
 > Reference  
 > [wiki](https://en.wikipedia.org/wiki/Matrix_representation_of_conic_sections#Central_conics)  
 
-### 명제3
+### 명제4
 none degerate Conic의 general cartesian form이 다음과 같이 주어졌다고 하자.
 
 $$ ax^2 + 2bxy + cy^2 + 2dx + 2ey + f = 0$$
@@ -154,29 +154,17 @@ $$ \det(B)<0 \implies \text{hyperbola} $$
 
 **Proof**
 
-명제2에 의해 general catesian form은 적절한 회전변환에 의해 다음과 같이 표현할 수 있다.
+명제3에 의해 general catesian form은 다음과 같이 표현할 수 있다.
 
-$$ \lambda_1 u^2 + \lambda_2 v^2 + 2d'u + 2e'v + f =0 $$
-
-따라서, 다음이 성립한다.
-
-$$ \begin{aligned} \lambda_1 u^2 + \lambda_2 v^2 + 2d'u + 2e'v + f &=0  \\ \lambda_1\left(u^2+\frac{2d'}{\lambda_1}u\right) + \lambda_2\left(v^2+\frac{2e'}{\lambda_2}v\right) + f &=0 \\ \lambda_1\left(u+\frac{d'}{\lambda_1}\right)^2 + \lambda_2\left(v+\frac{e'}{\lambda_2}\right)^2 + f - \frac{(d')^2}{\lambda_1} - \frac{(e')^2}{\lambda_2} &=0 \end{aligned} $$
-
-이 떄, $k$를 다음과 같이 정의하자.
-
-$$ k = \frac{(d')^2}{\lambda_1} + \frac{(e')^2}{\lambda_2} - f $$
-
-그러면 다음이 성립한다.
-
-$$ \frac{\left(u+\dfrac{d'}{\lambda_1}\right)^2}{\dfrac{k}{\lambda_1}}  + \frac{\left(v+\dfrac{e'}{\lambda_2}\right)^2}{\dfrac{k}{\lambda_2}} = 1 $$
+$$ \begin{aligned}  \lambda_1 u^2 + \lambda_2 v^2 &= k \\ \frac{u^2}{\dfrac{k}{\lambda_1}}  + \frac{v^2}{\dfrac{k}{\lambda_2}} &= 1 \end{aligned}  $$
 
 이 떄, $\lambda_{1,2}$는 $B$의 eigen value임으로 다음이 성립한다.
 
 $$ \det(B) < 0 \iff \lambda_1 \lambda_2 < 0 $$
 
-따라서 $\lambda_1,\lambda_2$의 부호가 다름으로 위 식은 중심점이 $\left(-\dfrac{d'}{\lambda_1}, -\dfrac{e'}{\lambda_2}\right)$이고 $u,v$축을 갖는 hyperbola이다.
+따라서 $\lambda_1,\lambda_2$의 부호가 다름으로 $\dfrac{k}{\lambda_1}, \dfrac{k}{\lambda_2}$의 부호가 다르고 따라서 $u,v$를 축으로 갖는 hyperbola이다. $\qed$
 
-### 명제4
+### 명제5
 none degerate Conic의 general cartesian form이 다음과 같이 주어졌다고 하자.
 
 $$ ax^2 + 2bxy + cy^2 + 2dx + 2ey + f = 0$$
@@ -227,7 +215,7 @@ $$ \begin{gathered} a+c =0 \\ ac-b^2 = 0 \end{gathered} $$
 
 $$ \det(B)=0 \implies \text{parabola} \qed $$
 
-### 명제5
+### 명제6
 none degerate Conic의 general cartesian form이 다음과 같이 주어졌다고 하자.
 
 $$ ax^2 + 2bxy + cy^2 + 2dx + 2ey + f = 0$$
@@ -238,76 +226,57 @@ $$ \det(B)>0 \land (a+c)\det(A) <0 \implies \text{real ellipse} $$
 
 **Proof**
 
-명제2에 의해 general catesian form은 적절한 회전변환에 의해 다음과 같이 표현할 수 있다.
+명제3에 의해 general catesian form은 다음과 같이 표현할 수 있다.
 
-$$ \lambda_1 u^2 + \lambda_2 v^2 + 2d'u + 2e'v + f =0 $$
-
-따라서, 다음이 성립한다.
-
-$$ \begin{aligned} \lambda_1 u^2 + \lambda_2 v^2 + 2d'u + 2e'v + f &=0  \\ \lambda_1\left(u^2+\frac{2d'}{\lambda_1}u\right) + \lambda_2\left(v^2+\frac{2e'}{\lambda_2}v\right) + f &=0 \\ \lambda_1\left(u+\frac{d'}{\lambda_1}\right)^2 + \lambda_2\left(v+\frac{e'}{\lambda_2}\right)^2 + f - \frac{(d')^2}{\lambda_1} - \frac{(e')^2}{\lambda_2} &=0 \end{aligned} $$
-
-이 떄, $k$를 다음과 같이 정의하자.
-
-$$ k = \frac{(d')^2}{\lambda_1} + \frac{(e')^2}{\lambda_2} - f $$
-
-그러면 다음이 성립한다.
-
-$$ \frac{\left(u+\dfrac{d'}{\lambda_1}\right)^2}{\dfrac{k}{\lambda_1}}  + \frac{\left(v+\dfrac{e'}{\lambda_2}\right)^2}{\dfrac{k}{\lambda_2}} = 1 $$
+$$ \begin{aligned}  \lambda_1 u^2 + \lambda_2 v^2 &= k \\ \frac{u^2}{\dfrac{k}{\lambda_1}}  + \frac{v^2}{\dfrac{k}{\lambda_2}} &= 1 \end{aligned}  $$
 
 이 떄, $\lambda_{1,2}$는 $B$의 eigen value임으로 다음이 성립한다.
 
 $$ \det(B) > 0 \iff \lambda_1 \lambda_2 > 0 $$
 
-따라서 $\lambda_1,\lambda_2$의 부호가 같다.
+그리고 $(a+c)\det(A) <0$임으로 경우를 나눠서 생각해보자.
 
-그리고 $A' \in M_{33}(\R)$을 다음과 같이 정의하자.
-
-$$ A' := \begin{bmatrix} \lambda & 0 & d \\ 0 & \lambda & e \\ d & e & f \end{bmatrix} $$
-다음으로 $a+c >0, \det(A) <0$인 경우를 생각해보자.
-
+[$a+c >0, \det(A) <0$]  
 $A$의 characteristic polynomial을 보면 $a+c>0$이면 그 해인 $\lambda_1+\lambda_2>0$이다. 그리고 $\lambda_1,\lambda_2$의 부호가 같음으로 $\lambda_1,\lambda_2>0$이다.
 
+그리고 $k = -\det(A)/\det(B)$임으로 $k >0$이다.
 
+따라서, $0 <\dfrac{k}{\lambda_1}, \dfrac{k}{\lambda_2}$임으로 $u,v$를 축으로 갖는 real ellipse이다. $\qed$
 
-위 식은 중심점이 $\left(-\dfrac{d'}{\lambda_1}, -\dfrac{e'}{\lambda_2}\right)$이고 $u,v$축을 갖는 hyperbola이다.
+[$a+c <0, \det(A) >0$]  
+$A$의 characteristic polynomial을 보면 $a+c<0$이면 그 해인 $\lambda_1+\lambda_2<0$이다. 그리고 $\lambda_1,\lambda_2$의 부호가 같음으로 $\lambda_1,\lambda_2<0$이다.
 
+그리고 $k = -\det(A)/\det(B)$임으로 $k < 0$이다.
+
+따라서, $0 < \dfrac{k}{\lambda_1}, \dfrac{k}{\lambda_2}$임으로 $u,v$를 축으로 갖는 real ellipse이다. $\qed$
 
 ### 예시
 다음과 같은 이차방정식이 주어졌다고 하자.
+
 $$ 2x^2 + 4xy + 5y^2 + 4x + 13y - 1/4 =0 $$
 
-이 떄, $A \in M_{22}(\R)$를 다음과 같이 정의하자.
-$$ A := \begin{bmatrix} 2 & 2 \\ 2 & 5  \end{bmatrix} $$
+$A \in M_{33}(\R), B \in M_{22}(\R)$을 다음과 같이 정의하자.
 
-$A$의 eigen value와 eigen vector는 다음과 같다.
+$$ A := \begin{bmatrix} 2&2&2 \\ 2&5&13/2 \\ 2&13/2&-1/4  \end{bmatrix}, \enspace B := \begin{bmatrix} 2 & 2 \\ 2 & 5  \end{bmatrix} $$
+
+$\det(A) = -54, \det(B) = 6$이고 $(a+c)\det(A)<0$임으로 real ellipse인걸 알 수 있다.
+
+이제 이 conic의 그림을 그려보자.
+
+먼저, $x_c,y_c$는 다음과 같이 구할 수 있다.
+
+$$ x_c = \frac{be-cd}{\det(B)} = \frac{1}{2}, \enspace y_c = \frac{bd-ae}{\det(B)} = -\frac{3}{2} $$
+
+$B$의 eigen value와 eigen vector는 다음과 같다.
+
 $$ \begin{gathered} \lambda_1 = 1, \enspace v_1 = \frac{1}{\sqrt 5} \begin{bmatrix} 2 \\ -1 \end{bmatrix} \\ \lambda_2 = 6, \enspace v_2 = \frac{1}{\sqrt 5} \begin{bmatrix} 1 \\ 2 \end{bmatrix} \end{gathered} $$
 
-이 떄, $P \in M_{22}(\R)$를 다음과 같이 정의하자.
-$$ P := \begin{bmatrix} v_1 & v_2 \end{bmatrix} = \frac{1}{\sqrt 5} \begin{bmatrix} 2 & 1 \\ -1 & 2  \end{bmatrix} $$
-
-$x = Pu$로 변수변환 하면 다음과 같이 정리할 수 있다.
-$$ \begin{aligned} & u^2 + 6v^2 - \sqrt 5 u + 6 \sqrt 5v - 1/4 = 0 \\ \Rightarrow \enspace & (u - 1/2 \sqrt 5)^2 + 6(v + 1/2 \sqrt 5)^2 = 9 \end{aligned} $$
+따라서, 주어진 conic은 $x-y$ Cartesian coordinate에서 중심점이 $(1/2,-3/2)$이고 $v_1,v_2$를 축으로 갖으며 명제3에 따라 $k=9$임으로 장축은 $3$ 단축은 $\sqrt{6}/2$인 real ellipse이다.
 
 이를 그림으로 나타내면 다음과 같다.
-<p align = "center">
-<img src = "./image/connic_section1.png">
-</p>
 
-그림을 통해 eigen vector가 $u,v$ 두 축을 나타내는것을 알 수 있다.
+```{figure} _image/0501.png
+```
 
 > Reference  
 > [Note] (Dey) Conic section
-
----
-
-## Shifted Center Form
-standard form에서 중심점을 $(c_1,c_2)$로 옮기게 되면 standard form에 $x = x'-c_1, y = y'-c_2$를 대입하면 된다.
-
-이를 풀어 쓰면 다음과 같은 형태를 갖게 된다.
-
-$$ a x^2 + b y^2 + cx + dy + e =0 $$
-
-이 떄, 고차항의 계수에 따라 다음과 같이 구분할 수 있다.
-
-$$ \def\arraystretch{1.5}\begin{array}{c|c} \text{ellipse} & ab > 0 \\ \text{parabola} & ab = 0 \\ \text{hyperbola} & ab < 0 \end{array} $$
-
