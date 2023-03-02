@@ -136,6 +136,10 @@
     <ClInclude Include="헤더2.h" />
     <ClInclude Include="헤더3.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".clang-foramt" />
+    <None Include=".clang-format" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -39,4 +39,8 @@
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".clang-foramt" />
+    <None Include=".clang-format" />
+  </ItemGroup>
 </Project>
