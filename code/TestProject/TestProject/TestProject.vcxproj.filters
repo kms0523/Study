@@ -40,7 +40,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include=".clang-foramt" />
     <None Include=".clang-format" />
   </ItemGroup>
 </Project>

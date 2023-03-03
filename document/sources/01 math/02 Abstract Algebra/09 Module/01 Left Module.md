@@ -26,11 +26,9 @@ Left module $_RA$가 있다고 하자.
 
 이 때, 다음을 증명하여라.
 
-$$ \forall x \in A, \quad x^{-1} = -x $$
+$$ \forall x \in A, \quad -x = (-1_R)x $$
 
 **Proof**
-
-
 
 Left action의 성질에 의해 다음이 성립한다. 
 
@@ -38,8 +36,8 @@ $$ \forall x \in A, \quad \begin{gathered} -x + x = (-1_R + 1_R)x = 0_Rx \\ x + 
 
 명제1에의해 다음이 성립한다.
 
-$$ \forall x \in A, \quad \begin{gathered} -x + x = 0_M \\ x + (-x) = 0_M  \end{gathered}  $$
+$$ \forall x \in A, \quad \begin{gathered} (-1_R)x + x = 0_M \\ x + (-1_R)x = 0_M  \end{gathered}  $$
 
 따라서, inverse element의 정에의해 다음이 성립한다.
 
-$$ \forall x \in A, \quad x^{-1} = -x \qed $$
+$$ \forall x \in A, \quad -x = (-1_R)x \qed $$

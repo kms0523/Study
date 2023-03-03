@@ -3,6 +3,12 @@ Comutative group $(G,*)$가 있다고 하자.
 
 이 떄, binary operation $*$이 $+$라면 `아벨 군(Abelian group)`이라 한다.
 
+### 참고1
+$G$의 identity를 $0_R$이라고 표현한다.
+
+### 참고2
+$x \in G$의 inverse element를 $-x$로 표현한다.
+
 ### 참고
 $x \in G - \{e\}$에 대해 $nx$는 $x$끼리 $n$번 연산했다는 것을 나타낸다. 
 

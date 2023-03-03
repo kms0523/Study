@@ -6,26 +6,30 @@
 # AfterClass, AfterControlStatement, AfterEnum, AfterFunction, AfterNamespace, 
 # AfterStruct, AfterUnion
 
-BasedOnStyle: LLVM
+BasedOnStyle: WebKit
 AccessModifierOffset: -2
 AlignAfterOpenBracket: DontAlign
 AllowShortBlocksOnASingleLine: true
 AllowShortFunctionsOnASingleLine: All
+
+BreakBeforeBraces: Custom
 BraceWrapping:
-  AfterClass: false    # TODO: 확인
-  AfterControlStatement: false    # TODO: 확인
-  AfterEnum: false    # TODO: 확인
-  AfterFunction: false    # TODO: 확인
-  AfterNamespace: false    # TODO: 확인
-  AfterStruct: false    # TODO: 확인
-  AfterUnion: false    # TODO: 확인
+  AfterClass: true	
+  AfterControlStatement: false		
+  AfterEnum: false					
+  AfterFunction: true				
+  AfterNamespace: false				
+  AfterStruct: false				
+  AfterUnion: false					
   BeforeCatch: true
   BeforeElse: true
   IndentBraces: false
   SplitEmptyFunction: true
   SplitEmptyRecord: true
-BreakBeforeBraces: Custom
-ColumnLimit: 100
+
+#BinPackArguments: true
+
+ColumnLimit: 150
 Cpp11BracedListStyle: false
 DerivePointerAlignment: true
 FixNamespaceComments: false

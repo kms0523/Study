@@ -83,7 +83,7 @@ $$ \forall s \in S, \quad (f+(-f))(s) = f(s) + (-f(s)) = 0_\F $$
 $$ \forall f \in F, \quad -f \text{ is an inverse element} \qed $$
 
 [결론]  
-$F$가 Abelian group이고 $\F$는 commutative ring임으로 다음이 성립한다.
+$F$가 Abelian group이고 $\F$는 field임으로 다음이 성립한다.
 
 $$ F \text{ is a } \F-\text{module} $$
 

@@ -10,6 +10,9 @@ $$(\F - \Set{0_\F},\cdot) \text{ is a commutative group}  $$
 $(\R,+,\times), (\mathbb{Q},+,\times)$은 체이다.  
 
 ### 참고1
+$x \in \F-\Set{0_\F}$의 $\cdot$에 대한 inverse element를 $\dfrac{1}{x}$라고 한다.
+
+### 참고1
 즉, filed는 사칙연산이 자유로이 시행될 수 있고 산술의 잘 알려진 규칙들을 만족하는 algebraic structure이다. 
 
 ### 참고2

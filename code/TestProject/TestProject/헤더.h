@@ -29,7 +29,8 @@ int num_days_in_month(const int month_index)
 	}
 }
 
-class Calender {
+class Calender
+{
 public:
 	Calender(const int start_day_index, const std::vector<std::vector<int>>& holiday_dates)
 	{
@@ -80,7 +81,7 @@ public:
 		int best_begin_date_index = 0;
 		int best_end_date_index = 0;
 
-		for (auto[begin_date_index, end_date_index] : best_vacation_plan_candidates) {
+		for (auto [begin_date_index, end_date_index] : best_vacation_plan_candidates) {
 			auto num_day = end_date_index - begin_date_index + 1;
 
 			if (max < num_day) {
@@ -90,10 +91,10 @@ public:
 			}
 		}
 
-		auto[bmonth, bday] = this->to_month_day(best_begin_date_index);
-		auto[emonth, eday] = this->to_month_day(best_end_date_index);
+		auto [bmonth, bday] = this->to_month_day(best_begin_date_index);
+		auto [emonth, eday] = this->to_month_day(best_end_date_index);
 
-		return { max, bmonth,bday,emonth,eday };
+		return { max, bmonth, bday, emonth, eday };
 	}
 
 private:
@@ -116,7 +117,6 @@ private:
 				if (num_used_vacation == num_vacation) {
 					break;
 				}
-
 			}
 			else {
 				is_last_year = true;
@@ -245,7 +245,7 @@ private:
 			}
 		}
 
-		//saturday
+		// saturday
 		constexpr auto first_date_index = 0;
 
 		for (const auto date_index : saturday_start_holiday_date_index) {
@@ -266,7 +266,7 @@ private:
 			}
 		}
 
-		//sunday
+		// sunday
 		constexpr auto last_date_index = 364;
 
 		for (const auto date_index : sunday_start_holiday_date_index) {
@@ -294,7 +294,8 @@ private:
 		return this->month_index_to_date_index_[month_index] + day - 1;
 	}
 
-	std::pair<int, int> to_month_day(const int date_index) const {
+	std::pair<int, int> to_month_day(const int date_index) const
+	{
 		auto month_index = 0;
 		while (true) {
 			if (date_index < this->month_index_to_date_index_[month_index]) {
@@ -314,10 +315,7 @@ private:
 		return { month, day };
 	}
 
-	int cal_month_index(const int month) const
-	{
-		return month - 1;
-	}
+	int cal_month_index(const int month) const { return month - 1; }
 
 	std::optional<int> find_right_before_work_day_date_index(const int date_index) const
 	{
