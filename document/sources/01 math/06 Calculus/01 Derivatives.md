@@ -12,6 +12,12 @@ $$ f'(a) := \lim_{h \rightarrow 0} \frac{1}{h}(f(a + h) - f(a)) $$
 ### 참고1
 극한값이 존재하는 경우 `미분가능(differentiable)`하다고 한다.
 
+이 때, 분자가 0으로 가기 때문에 극한값이 존재하기 위해서는 분모도 0으로 가야 한다.
+
+$$ \lim_{h \rightarrow 0} f(a + h) = f(a) $$
+
+이는 $\lim_{t\rightarrow x}f(t) = f(x)$와 동치임으로 $f$가 continuous해야 한다는 조건이 생긴다.
+
 ### 참고2
 $f'$은 $U$의 변화량과 그에 따른 $f$의 변화량의 비율의 극한이다.
 

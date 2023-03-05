@@ -9,7 +9,7 @@ $S$의 subset $C$가 totally ordered set일 떄, $C$를 `사슬(chain)`이라 �
 $S$안에서는 모든 원소가 비교가능할 필요는 없지만 적어도 $C$안에서는 모든 원소가 비교가능해야 한다.
 
 ### 초른의 보조정리(Axiom)
-Poset $S$의 모든 chain $C$가 upper bound를 가지면 $A$는 극대원소를 갖는다.
+Poset $S$의 모든 chain $C$가 upper bound를 가지면 $S$는 극대원소를 갖는다.
 
 #### 참고1
 임의의 chian을 $C$, $C$의 upper bound를 $M_C$라 하자. 
