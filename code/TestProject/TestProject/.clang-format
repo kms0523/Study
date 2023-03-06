@@ -30,13 +30,16 @@ BraceWrapping:
 #BinPackArguments: true
 
 ColumnLimit: 150
+IndentWidth: 2
+TabWidth: 2
+MaxEmptyLinesToKeep: 1
+
 Cpp11BracedListStyle: false
 DerivePointerAlignment: true
 FixNamespaceComments: false
 IndentCaseLabels: false
 IndentPPDirectives: None
-IndentWidth: 2
-MaxEmptyLinesToKeep: 10
+
 NamespaceIndentation: All
 SortIncludes: false
 SortUsingDeclarations: false
@@ -47,5 +50,4 @@ SpaceInEmptyParentheses: false
 SpacesInCStyleCastParentheses: false
 SpacesInParentheses: false
 SpacesInSquareBrackets: false
-TabWidth: 2
 UseTab: true

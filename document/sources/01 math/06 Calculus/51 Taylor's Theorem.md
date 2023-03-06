@@ -1,4 +1,5 @@
-# $f: \R \rightarrow \R$
+# Taylor's Theorem
+## $f: \R \rightarrow \R$
 
 ### 명제1
 함수 $f: \R \rightarrow \R$가 있다고 하자.

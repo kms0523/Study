@@ -1,9 +1,21 @@
+#include "gtest/gtest.h"
+
+TEST(Test, test)
+{
+	if (1)
+		std::cout << "true\n";
+	else
+		std::cout << "false\n";
+
+	if (1) std::cout << "true\n";
+}
+
 //#include "../TestProject/¼Ò½º.cpp"
 //#include "gtest/gtest.h"
 //
 //#include <optional>
 //
-//std::pair<std::optional<CDates>, std::optional<CDates>> find_right_before_and_after(const std::vector<CDates>& cdatess, const CDates& target)
+// std::pair<std::optional<CDates>, std::optional<CDates>> find_right_before_and_after(const std::vector<CDates>& cdatess, const CDates& target)
 //{
 //    std::pair<std::optional<CDates>, std::optional<CDates>> result;
 //
@@ -26,7 +38,7 @@
 //								index++;
 //                break;
 //            } else {
-//                index++; 
+//                index++;
 //            }
 //        }
 //    }
@@ -46,7 +58,7 @@
 //}
 //
 //
-//TEST(Consecutive_Dates, find_right_before_and_after)
+// TEST(Consecutive_Dates, find_right_before_and_after)
 //{
 //    Date d1(1, 3);
 //    Date d2(1, 5);
@@ -68,9 +80,10 @@
 //    EXPECT_EQ(result.second.has_value(), true);
 //}
 //
-//TEST(CT, test1_5) {
-//    std::vector<std::vector<int>> H = { { 1, 1 }, { 1, 21 }, { 1, 22 }, { 1, 23 }, { 3, 1 }, { 5, 5 }, { 5, 27 }, { 6, 6 }, { 8, 15 }, { 9, 28 }, { 9, 29 }, { 9, 30 }, { 10, 3 }, { 10, 9 }, { 12, 25 } };
+// TEST(CT, test1_5) {
+//    std::vector<std::vector<int>> H = { { 1, 1 }, { 1, 21 }, { 1, 22 }, { 1, 23 }, { 3, 1 }, { 5, 5 }, { 5, 27 }, { 6, 6 }, { 8, 15 }, { 9, 28 }, {
+//    9, 29 }, { 9, 30 }, { 10, 3 }, { 10, 9 }, { 12, 25 } };
 //
 //    auto result = solution(7, H, 3);
-//		
+//
 //}

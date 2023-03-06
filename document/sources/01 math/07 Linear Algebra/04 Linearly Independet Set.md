@@ -2,14 +2,21 @@
 ## 정의
 Vector space $V/\F$와 $V$의 subset $S$가 있다고 하자.
 
-$S$의 임의의 $n$개의 element를 $v_1, \cdots, v_n$이라고 하자.
+$S$의 임의의 $n$개의 element를 $v_1, \cdots, v_n$ $\F$의 임의의 $n$개의 element를 $a_1, \cdots, a_n$이라 하자.
 
 이 떄, 다음을 항상 만족할 경우 $S$를 `선형 독립 집합(linearly independent set)`라고 한다.
 
 $$ \sum_{k=1}^{n}a_k v_k = 0_V \implies \forall a_k=0_\F $$ 
 
+> Reference  
+> {cite}`friedberg` Chapter1.5
+
 ### 참고
-linear independent set이 되기 위해서는 항상 조건을 만족해야 됨으로 set에서 선택가능한 모든 조합이 linear independent해야 한다.
+$n$개에도 자유도가 있고, 그 선택에도 자유도가 있다.
+
+다시 말해 2개를 뽑던지 100개를 뽑던 지 위에가 만족해야 되고 또한 2개를 어떻게 뽑더라도 100개를 어떻게 뽑더라도 항상 위를 만족해야 한다.
+
+따라서 set에서 선택가능한 모든 조합이 linearly independent해야 한다.
 
 
 ### 참고1

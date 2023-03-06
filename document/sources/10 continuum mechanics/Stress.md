@@ -1,10 +1,5 @@
-
-
-
-
-
-
-# Principal Direction & Principal Stress
+# Stress
+## Principal Direction & Principal Stress
 주어진 $x,t$에서 응력텐서 $\boldsymbol{\sigma}$가 주어졌다고 하자.
 
 $\boldsymbol{\sigma}$의 eigen vectors를 `principal direction`, eigen values를 `principal stresses`라고 한다.
@@ -242,7 +237,7 @@ $$ \begin{aligned} & \max(\sqrt f) = \max( \frac{|a-b|}{2}, \frac{|b-c|}{2}, \fr
 > [book] (Lai et al) Introduction to Continuum Mechanics Chap4.6
 
 
-# Principal Invariants of Second Rank Tensor
+## Principal Invariants of Second Rank Tensor
 Second rank tensor $A: \R^3 \rightarrow \R^3$가 있다고 하자.
 
 $A$의 principal invariants $I_{1,2,3}$은 다음과 같다.

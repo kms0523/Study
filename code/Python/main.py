@@ -1,43 +1,75 @@
 import numpy as np
 import sympy as sp
 
-K1 = np.matrix(([1,-1,0,0],
-                [-1,1,0,0],
-                [0,0,0,0],
-                [0,0,0,0]))
-K2 = np.matrix(([0,0,0,0],
-                [0,1,-1,0],
-                [0,-1,1,0],
-                [0,0,0,0]))
-K3 = K2
-K4 = np.matrix(([0,0,0,0],
-                [0,1,0,-1],
-                [0,0,0,0],
-                [0,-1,0,1]))
-K5 = np.matrix(([0,0,0,0],
-                [0,0,0,0],
-                [0,0,1,-1],
-                [0,0,-1,1]))
+A = np.matrix([[1,1,1],
+               [1,2,1],
+               [3,4,3]])
 
-K = K1 + K2 + K3 + K4 + K5;
+print(np.linalg.det(A))
 
-print(K)
-print(np.linalg.det(K))
+b = np.matrix([[5],[7],[17]])
 
-x = sp.symbols("x")
+row = 0
+column = 1
+A = np.delete(A,0,column)
 
-Q = sp.Matrix([[sp.cos(x), sp.sin(x), 0, 0],
-              [-sp.sin(x), sp.cos(x), 0, 0],
-              [0,0,sp.cos(x), sp.sin(x)],
-              [0,0,-sp.sin(x), sp.cos(x)]])
-QT = sp.transpose(Q)
+A0 = A
+A0 = np.delete(A0,0,row)
+b0 = np.delete(b,0,row)
+x0 = np.linalg.inv(A0)*b0
+print(x0)
 
-K = np.matrix([[1,0,-1,0],
-               [0,0,0,0],
-               [-1,0,1,0],
-               [0,0,0,0]])
+A1 = A
+A1 = np.delete(A1,1,row)
+b1 = np.delete(b,1,row)
+x1 = np.linalg.inv(A1)*b1
+print(x1)
 
-print(QT * K * Q)
+A2 = A
+A2 = np.delete(A2,2,row)
+b2 = np.delete(b,2,row)
+x2 = np.linalg.inv(A2)*b2
+print(x2)
+
+
+
+# K1 = np.matrix(([1,-1,0,0],
+#                 [-1,1,0,0],
+#                 [0,0,0,0],
+#                 [0,0,0,0]))
+# K2 = np.matrix(([0,0,0,0],
+#                 [0,1,-1,0],
+#                 [0,-1,1,0],
+#                 [0,0,0,0]))
+# K3 = K2
+# K4 = np.matrix(([0,0,0,0],
+#                 [0,1,0,-1],
+#                 [0,0,0,0],
+#                 [0,-1,0,1]))
+# K5 = np.matrix(([0,0,0,0],
+#                 [0,0,0,0],
+#                 [0,0,1,-1],
+#                 [0,0,-1,1]))
+
+# K = K1 + K2 + K3 + K4 + K5;
+
+# print(K)
+# print(np.linalg.det(K))
+
+# x = sp.symbols("x")
+
+# Q = sp.Matrix([[sp.cos(x), sp.sin(x), 0, 0],
+#               [-sp.sin(x), sp.cos(x), 0, 0],
+#               [0,0,sp.cos(x), sp.sin(x)],
+#               [0,0,-sp.sin(x), sp.cos(x)]])
+# QT = sp.transpose(Q)
+
+# K = np.matrix([[1,0,-1,0],
+#                [0,0,0,0],
+#                [-1,0,1,0],
+#                [0,0,0,0]])
+
+# print(QT * K * Q)
 
 # b = np.matrix(([6],[2],[1]))
 

@@ -98,7 +98,7 @@ $f_{p_1}$가 bijective임으로 다음이 성립한다.
 
 $$ \exist!v \in V_A \st f_{p_1}(v) = p_1 + v = p_2 \qed $$
 
-# Substraction and Weyl's axioms
+## Substraction and Weyl's axioms
 위의 주어진 $+$의 성질을 활용하여 다음같은 이항연산을 정의할 수 있다.
 
 $$ - := A \times A \rightarrow V \st (p_1,p_2) \mapsto p_2 - p_1 $$
@@ -136,7 +136,7 @@ $$ \phi : A \rightarrow \R^n \st P \mapsto [P-p_0]_\beta $$
 > [must-vectors-in-mathbbrn-have-their-tail-at-origin - mathematics](https://math.stackexchange.com/questions/627616/must-vectors-in-mathbbrn-have-their-tail-at-origin)
 > [Euclidean space - wiki](https://en.wikipedia.org/wiki/Euclidean_space) 
 
-# Affine subspace
+## Affine subspace
 vector space $V_A / \mathbb F$가 주어진 affine space $A$와 $S \le V$가 있다고 하자.
 
 $p \in A$에 대해서, 집합 $B$를 다음과 같이 정의하자.
@@ -153,7 +153,7 @@ $B$가 $A$의 affine subspace라는 것을 다음과 같이 간단하게 나타�
 
 $$ B \le A $$
 
-# Parallel
+## Parallel
 vector space $V_A / \mathbb F$가 주어진 affine space $A$가 있다고 하자.
 
 $B,C \le A$일 때 $V_B = V_C$이면, $B$와 $C$가 `평행(parallel)`하다고 한다.

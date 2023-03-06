@@ -1,4 +1,5 @@
 # Abelian Group
+## 정의
 Comutative group $(G,*)$가 있다고 하자.
 
 이 떄, binary operation $*$이 $+$라면 `아벨 군(Abelian group)`이라 한다.
