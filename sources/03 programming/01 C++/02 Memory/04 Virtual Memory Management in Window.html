@@ -211,6 +211,11 @@ const thebe_selector_output = ".output, .cell_output"
        Induction
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../01%20math/01%20Set/04%20Order/12%20Chain.html">
+       Chain
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -371,11 +376,6 @@ const thebe_selector_output = ".output, .cell_output"
      </i>
     </label>
     <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../../01%20math/02%20Abstract%20Algebra/07%20Ring/03%20Ring%20Action.html">
-       Ring Action
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../01%20math/02%20Abstract%20Algebra/07%20Ring/04%20Commutative%20Ring.html">
        Commutative Ring
@@ -929,9 +929,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../../01%20math/06%20Calculus/51%20Taylor%27s%20Theorem.html">
-     <span class="math notranslate nohighlight">
-      \(f: \R \rightarrow \R\)
-     </span>
+     Taylor’s Theorem
     </a>
    </li>
    <li class="toctree-l2">
@@ -962,17 +960,22 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../01%20math/07%20Linear%20Algebra/02%20Span.html">
+    <a class="reference internal" href="../../../01%20math/07%20Linear%20Algebra/02%20Subspace.html">
+     Subspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../01%20math/07%20Linear%20Algebra/03%20Span.html">
      Span
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../01%20math/07%20Linear%20Algebra/03%20Linearly%20Independet%20Set.html">
+    <a class="reference internal" href="../../../01%20math/07%20Linear%20Algebra/04%20Linearly%20Independet%20Set.html">
      Linearly Independet Set
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../01%20math/07%20Linear%20Algebra/04%20Basis.html">
+    <a class="reference internal" href="../../../01%20math/07%20Linear%20Algebra/05%20Basis.html">
      Basis
     </a>
    </li>
@@ -1032,7 +1035,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../01%20math/08%20Geometry/04%20Curve/04%20Curvature.html">
-       정의
+       Curvature
       </a>
      </li>
     </ul>
@@ -1452,7 +1455,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../../10%20continuum%20mechanics/Stress.html">
-   Principal Direction &amp; Principal Stress
+   Stress
   </a>
  </li>
 </ul>
@@ -1979,7 +1982,7 @@ title="Print to PDF"
 <h1>Virtual Memory Management in Window<a class="headerlink" href="#virtual-memory-management-in-window" title="Permalink to this headline">#</a></h1>
 <p>메모리를 관리하는 것은 전적으로 운영체제의 몫이다. 프로세스가 가상 메모리를 할당 받기 위해서는 해당 운영체제에게 메모리 요청을 해야만한다. Windows에서 제공하는 메모리 관련 Windows API는 아래 그림과 같다.</p>
 <figure class="align-default">
-<img alt="sources/03 programming/01 C++/02 Memory/_image/0401.png" src="sources/03 programming/01 C++/02 Memory/_image/0401.png" />
+<img alt="../../../../_images/04013.png" src="../../../../_images/04013.png" />
 </figure>
 <p>위 그림을 보면 Heap Memory API는 Virtual Memory API를 통해 구현되어있고 Local/Global Memory API와 CRT Memory fuctions and operations는 Heap Memory API로 구현되어있음을 알수 있다. 결국 메모리 맵 파일 API를 제외하고 모든 API는 Virtual Memory API를 이용하고 있다는 말이다. 메모리 맵 파일을 제외한 모든 메모리 관련 API 또는 오브젝트들은 Virtual Memory API을 이용하여 특정 용도에 맞도록 보다 쉽게 구현된 것들이다. Windows 운영체제가 Virtual Memory API를 기반으로 만들어졌으니 당연한 일일 것이다.</p>
 <section id="virtual-memory-api">
@@ -2055,7 +2058,7 @@ title="Print to PDF"
 <p>메모리 할당 요청 함수로 malloc을 살펴보았지만 할당 요청 함수가 malloc만 있는 것은 아니다. calloc, realloc 등도 있으며 필요에 따라서 적절히 선택하여 사용할 수 있다. 그러나 이와 같은 메모리 할당 함수를 이용하여 할당된 메모리를 해제하는 함수는 오직 free 하나 뿐이다.</p>
 <blockquote>
 <div><p>Reference<br />
-<span id="id3">[<a class="reference internal" href="../../../99%20References/references.html#id12" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span></p>
+<span id="id3">[<a class="reference internal" href="../../../99%20References/references.html#id13" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span></p>
 </div></blockquote>
 </section>
 <section id="new-delete">
@@ -2090,7 +2093,7 @@ title="Print to PDF"
 <p>new는 기본적으로 malloc을 통하여 메모리를 할당 받고, 할당 받은 메모리 영역에 대하여 생성자를 호출하는 역할을 수행해야 한다. 따라서 반드시 타입을 알아야만 하기 때문에 new 뒤에는 생성하고자 하는 객체의 타입이 들어가게 된다. 내부적으로는 타입의 크기를 알아내서 malloc을 호출하게 되어 있다. delete 또한 마찬가지로 뒤에 오는 포인터의 타입이 클래스일 경우 해당 클래스의 소멸자를 호출한 후에 free를 호출하여 메모리를 해제하게 된다. 컴파일러는 대상 포인터의 타입만을 체크하여 해당 타입과 일치하는 클래스의 소멸자를 호출한 뒤에 메모리 영역을 해제하는 어셈블리를 작성한다.</p>
 <blockquote>
 <div><p>Reference<br />
-<span id="id4">[<a class="reference internal" href="../../../99%20References/references.html#id12" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span></p>
+<span id="id4">[<a class="reference internal" href="../../../99%20References/references.html#id13" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span></p>
 </div></blockquote>
 </section>
 <section id="id5">
@@ -2116,14 +2119,14 @@ title="Print to PDF"
 <p>배열 타입의 new [], delete []도 내부적으로는 malloc과 free를 호출한다. 즉, heap manager의 할당 내역의 변화를 일으키는 것은 직접적으로 new와 delete가 아니라 내부에서 호출되는 malloc과 free다. 여기서 중요한 점은 단일 객체 타입의 new와 delete는 malloc과 free를 그대로 호출하는데, 배열 타입의 new [], delete []는 malloc과 free를 그대로 호출하지 않는다는 사실이다. 당연히 배열 타입이니까 다른 면이 있겠지만, 가장 큰 차이점이라고 한다면 할당 되고 해제되는 메모리의 구조 자체가 다르다는 점이다.</p>
 <blockquote>
 <div><p>Reference<br />
-<span id="id6">[<a class="reference internal" href="../../../99%20References/references.html#id12" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span></p>
+<span id="id6">[<a class="reference internal" href="../../../99%20References/references.html#id13" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span></p>
 </div></blockquote>
 <section id="new">
 <h4>단일 타입 new의 처리 과정<a class="headerlink" href="#new" title="Permalink to this headline">#</a></h4>
 <p>기본 타입인 int에 대해서 new를 호출할 경우 내부적으로는 malloc이 호출된다. malloc은 heap manager에게 메모리 할당을 요청하며, heap manager는 관리하고 있는 힙에서 적절히 4바이트 만큼의 메모리 블록을 찾은 뒤에 해당 블록의 주소를 반환할 것이다. 동시에 heap manager는 해당 블록의 주소를 할당 내역에 추가한다. malloc을 통해서 할당 받은 메모리 블록의 주소를 new는 그대로 다시 반환한다.</p>
 <blockquote>
 <div><p>Reference<br />
-<span id="id7">[<a class="reference internal" href="../../../99%20References/references.html#id12" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span></p>
+<span id="id7">[<a class="reference internal" href="../../../99%20References/references.html#id13" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span></p>
 </div></blockquote>
 </section>
 <section id="id8">
@@ -2131,7 +2134,7 @@ title="Print to PDF"
 <p>new []를 호출하면 내부에서 malloc을 호출하는 것은 같지만, malloc으로 넘기는 인자에 변화를 준다. new[]의 경우 필요한 메모리에 추가적인 메모리를 더해 malloc에 요청한다. heap manager는 요청 받은 만큼 힙에서 찾아내서 반환을 해줄 것이다. 그리고 추가적으로 할당한 메모리 부분에 배열의 요소 개수가 저장된다. 이것이 바로 배열 타입 객체의 소멸자를 배열 요소 개수만큼 호출하기 위한 마법의 근원이다.</p>
 <blockquote>
 <div><p>Reference<br />
-<span id="id9">[<a class="reference internal" href="../../../99%20References/references.html#id12" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span></p>
+<span id="id9">[<a class="reference internal" href="../../../99%20References/references.html#id13" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span></p>
 </div></blockquote>
 </section>
 <section id="delete">
@@ -2140,7 +2143,7 @@ title="Print to PDF"
 <p>delete []가 아니라 delete를 호출할 경우 컴파일러는 단순히 소멸자는 한번만 호출할 것이며 ptr 주소를 그대로 free에 인자로 넘기게 된다. 그러나 ptr에는 추가적으로 할당된 메모리 주소가 배제되어 있기 때문에 이 값으로 할당 내역 테이블에서 검색할 경우 주소를 찾을 수 없기 때문에 메모리는 제대로 해제되지 않게 된다. 이런 상황을 보통 힙 충돌이 발생했다고 하는데 힙 충돌은 즉시 오류를 발생시킬 수도 있지만, 보통 나중에 더 큰 오류의 원인으로 작용하기 때문에 디버깅을 상당히 어렵게 만든다.</p>
 <blockquote>
 <div><p>Reference<br />
-<span id="id10">[<a class="reference internal" href="../../../99%20References/references.html#id12" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span></p>
+<span id="id10">[<a class="reference internal" href="../../../99%20References/references.html#id13" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span></p>
 </div></blockquote>
 </section>
 <section id="id11">
@@ -2178,7 +2181,7 @@ title="Print to PDF"
 <p>결론적으로 default 소멸자만 있을 경우 소멸자를 호출할 필요가 없기 때문에 배열의 요소 개수를 저장할 추가 영역 할당등의 작업이 불필요하게 된다. 따라서 단일 객체 할당을 위한 new와 크게 다를 것이 없다. 이로인해 delete와 delete []의 구분이 무의미해진다.</p>
 <blockquote>
 <div><p>Reference<br />
-<span id="id12">[<a class="reference internal" href="../../../99%20References/references.html#id12" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span><br />
+<span id="id12">[<a class="reference internal" href="../../../99%20References/references.html#id13" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span><br />
 <a class="reference external" href="https://securitynewsteam.tistory.com/99">윈도우 메모리 구조 - 보안 세상 블로그</a><br />
 <a class="reference external" href="https://dnsdudrla97.github.io/window_allocator_/">Window Heap 관리자</a><br />
 <a class="reference external" href="https://kiaak.tistory.com/entry/Windowsheap%EC%97%90-%EA%B4%80%ED%95%9C-%ED%99%94%EC%A0%9C">heap에 관한 화제 - kiaak 블로그</a><br />

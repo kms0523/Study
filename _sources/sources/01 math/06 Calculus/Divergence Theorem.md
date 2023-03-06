@@ -1,6 +1,6 @@
 # Divergence Theorem
 
-### 명제
+## 명제
 다음을 증명하여라.
 $$ \int_{\Omega} w_i\frac{\partial F_{ij}}{\partial x_j} \thinspace dV = \int_{\partial\Omega} w_i F_{ij} n_j \thinspace dS -\int_{\Omega} F_{ij} \frac{\partial w_i}{\partial x_j} \thinspace dV $$
 

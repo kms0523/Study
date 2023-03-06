@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Principal Direction &amp; Principal Stress" href="Stress.html" />
+    <link rel="next" title="Stress" href="Stress.html" />
     <link rel="prev" title="Cauchy’s Stress Principle" href="02%20Cauchy%27s%20Stress%20Principle.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -211,6 +211,11 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toctree-l3">
       <a class="reference internal" href="../01%20math/01%20Set/04%20Order/11%20Induction.html">
        Induction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../01%20math/01%20Set/04%20Order/12%20Chain.html">
+       Chain
       </a>
      </li>
     </ul>
@@ -373,11 +378,6 @@ const thebe_selector_output = ".output, .cell_output"
      </i>
     </label>
     <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../01%20math/02%20Abstract%20Algebra/07%20Ring/03%20Ring%20Action.html">
-       Ring Action
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../01%20math/02%20Abstract%20Algebra/07%20Ring/04%20Commutative%20Ring.html">
        Commutative Ring
@@ -931,9 +931,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01%20math/06%20Calculus/51%20Taylor%27s%20Theorem.html">
-     <span class="math notranslate nohighlight">
-      \(f: \R \rightarrow \R\)
-     </span>
+     Taylor’s Theorem
     </a>
    </li>
    <li class="toctree-l2">
@@ -964,17 +962,22 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01%20math/07%20Linear%20Algebra/02%20Span.html">
+    <a class="reference internal" href="../01%20math/07%20Linear%20Algebra/02%20Subspace.html">
+     Subspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01%20math/07%20Linear%20Algebra/03%20Span.html">
      Span
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01%20math/07%20Linear%20Algebra/03%20Linearly%20Independet%20Set.html">
+    <a class="reference internal" href="../01%20math/07%20Linear%20Algebra/04%20Linearly%20Independet%20Set.html">
      Linearly Independet Set
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01%20math/07%20Linear%20Algebra/04%20Basis.html">
+    <a class="reference internal" href="../01%20math/07%20Linear%20Algebra/05%20Basis.html">
      Basis
     </a>
    </li>
@@ -1034,7 +1037,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../01%20math/08%20Geometry/04%20Curve/04%20Curvature.html">
-       정의
+       Curvature
       </a>
      </li>
     </ul>
@@ -1454,7 +1457,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Stress.html">
-   Principal Direction &amp; Principal Stress
+   Stress
   </a>
  </li>
 </ul>
@@ -1944,7 +1947,7 @@ title="Print to PDF"
 \[ \sigma (n^i \epsilon_i) = n^i \sigma (\epsilon_i)\]</div>
 <p><strong>Proof</strong></p>
 <figure class="align-default">
-<img alt="sources/10 continuum mechanics/_image/0301.png" src="sources/10 continuum mechanics/_image/0301.png" />
+<img alt="../../_images/03011.png" src="../../_images/03011.png" />
 </figure>
 <p>Normal vector가 <span class="math notranslate nohighlight">\(\epsilon_i\)</span>와 평행한 면의 면적을 <span class="math notranslate nohighlight">\(\Delta A_i\)</span>라 하고 <span class="math notranslate nohighlight">\(n\)</span>과 평행한 면의 면적을 <span class="math notranslate nohighlight">\(\Delta A_n\)</span>이라 하자.</p>
 <p>이 때, 운동 방정식은 다음과 같다.</p>
@@ -2011,7 +2014,7 @@ title="Print to PDF"
 <p>그러면 <span class="math notranslate nohighlight">\(T^j_i\)</span>는 <span class="math notranslate nohighlight">\(\beta_i\)</span>를 normal vector로 갖는 평면에 작용하는 stress vector의 <span class="math notranslate nohighlight">\(\beta_j\)</span>방향의 coordinate다.</p>
 <p>이를 그림으로 표현하면 다음과 같다.</p>
 <figure class="align-default">
-<img alt="sources/10 continuum mechanics/_image/0302.png" src="sources/10 continuum mechanics/_image/0302.png" />
+<img alt="../../_images/0302.png" src="../../_images/0302.png" />
 </figure>
 </section>
 </section>
@@ -2087,7 +2090,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="Stress.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Principal Direction &amp; Principal Stress</p>
+        <p class="prev-next-title">Stress</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -7,6 +7,11 @@ $$ \begin{gathered} (R,+) \text{ is an Abelian group} \\ (R,\cdot) \text { is a 
 > Reference  
 > [wiki](https://en.wikipedia.org/wiki/Ring_(mathematics)#Definition)
 
+### 참고1
+$R$의 $\cdot$에 대한 identity를 $1_R$이라고 표현한다.
+
+
+
 ### 명제1
 환 $R$이 있다고 하자.
 
@@ -20,9 +25,13 @@ $$ \begin{gathered} 0_Rx  = (0_R + 0_R)x = 0_Rx + 0_Rx \\0_Rx = 0_Rx + 0_R \end{
 
 ### 명제2
 
-환 $(R,+,\cdot)$이 있을 때, $x,y \in R$에 대해 $(xy)^{-1}=x^{-1}y$을 증명하여라.
+환 $(R,+,\cdot)$이 있다고 하자.
+
+이 떄, 다음을 증명하여라.
+
+$$ \forall x,y \in R, \enspace -(xy)=(-x)y$$
 
 **proof**
 
-$$ (x + x^{-1})y = xy + x^{-1}y = 0_R \implies (xy)^{-1} = x^{-1}y $$
+$$ (x + (-x))y = xy + (-x)y = 0_R \implies -(xy) = (-x)y $$
 

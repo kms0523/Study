@@ -1,5 +1,5 @@
 # Equivalence Class
-
+## 정의
 집합 $S$와 동치 관계 $R \subseteq S \times S$가 있다고 하자.
 
 $s \in S$에 대해 `동치류(equivalence class)` $[ s ]_ R$는 다음과 같이 정의된 집합이다.

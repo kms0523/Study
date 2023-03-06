@@ -34,7 +34,7 @@ $R(d) = 0$을 풀기 위해 Newton-Raphson method와 재료에 맞는 stress cal
    $$ \begin{aligned} {}^{n+1}d &= {}^{n}d + \Delta d^{k+1} \\ {}^{n+1}\sigma &= \sigma^{k+1} \\ {}^{n+1}\alpha &= \alpha^{k+1} \\ {}^{n+1}(\epsilon_e^p) &= (\epsilon_e^p)^{k+1} \\ {}^{n+1}(\tfrac{\partial\sigma}{\partial\epsilon}) &= (\tfrac{\partial\sigma}{\partial\epsilon})^{k+1} \end{aligned}  $$
 10. Convergence criterion을 만족하지 않는다면 $k = k + 1$로 두고 2번으로 돌아간다.
 
-### 명제1
+## 명제1
 다음을 증명하여라.
 $$ J_{R^k} = \int_{\Omega} B^T \frac{\partial\sigma}{\partial\epsilon}(d^k)B \thinspace dV $$
 

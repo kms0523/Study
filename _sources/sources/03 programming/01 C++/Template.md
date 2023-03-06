@@ -311,7 +311,7 @@ int main() {
 ### Pack expansion
 A pattern followed by an ellipsis is expanded into ***zero or more comma-separated instantiations of the pattern***, where the name of the parameter pack is replaced by each of the elements from the pack, in order.
 
-##### Example1
+#### Example1
 ```cpp
 template<typename... Us> void f(Us... pargs) {}
 template<typename... Ts> void g(Ts... args) { f(&args...); }
@@ -386,7 +386,7 @@ void invalid(Ts..., U);  // Error: cna not deduce U
     // resolve issue when use c++ language standard c++latest 
 
 ## Fold Expression
-##### Example1
+### Example1
 ```cpp
 template <typename... Args>
 bool contains_icase(const std::string& str, const Args... args) {		

@@ -7,7 +7,8 @@
 
 아래의 어셈블리 코드를 보면서 함수 호출 과정을 살펴보자. 참고로 아래 어셈블리는 필요한 부분만 작성한 것이다.
 
-```cpp
+```
+
 class Test
 {
 public:
@@ -73,7 +74,7 @@ int main(void)
 
 클래스의 생성자와 소멸자는 각각 선처리 영역과 후처리 영역을 가지고 있다. 이를 간단하게 정리하면 다음과 같다.
 
-```cpp
+```
 A(...)
 [// 선처리 영역 시작
 1. 부모 클래스의 생성자 호출
@@ -211,6 +212,7 @@ int main(void)
 먼저 아래의 어셈블리 코드를 보자. 참고로 아래 어셈블리는 필요한 부분만 작성한것이다.
 
 ```cpp
+
 class A 
 {
 public:
@@ -221,11 +223,12 @@ int main(void)
 {
     auto* ptr = new A;
     delete ptr;
-    call        A::'scalar deleting destructor'
+    //call        A::'scalar deleting destructor'
 
     A a;    
-    call        A::~A
+    //call        A::~A
 }
+
 ```
 
 delete를 사용할 경우 scalar deleting destructor 함수를 호출하고 스택에서 객체가 해제될 경우에는 바로 A::~A를 호출한다. 즉, delete 연산은 직접적으로 소멸자를 호출하는 것이 아니라 파괴자(destructor)를 호출하고 그 안에서 A::~A를 호출함으로써 소멸자를 간접 호출한다. 파괴자는 클래스의 소멸자를 호출해준 뒤 바로 heap에 생성된 클래스 객체 메모리를 해제하는 역할을 한다.

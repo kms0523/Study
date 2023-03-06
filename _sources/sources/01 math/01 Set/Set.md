@@ -103,38 +103,3 @@ $$ \begin{aligned} & (x,y) \in R \\ \Leftrightarrow \enspace & \exist t \in S \q
 명제 1-4에 의해 동치 관계와 분할 사이에는 일대일 대응 관계가 존재함을 알 수 있다.
 
 
-## 극대,극소 원소
-
-부분순서집합 $(A,\le)$와 $a \in A$가 있을 때,
-
-$\forall b \in A, \quad a \le b \Rightarrow a=b$이면 $a$를 `극대 원소(maximal element)`,
-
-$\forall b \in A, \quad b \le a \Rightarrow a=b$이면 $a$를 `극소 원소(maximal element)`라 한다.
-
-즉, 극대 원소는 비교가능한 원소중 가장 큰 원소, 극소 원소는 비교가능한 원소중 가장 작은 원소이다.
-
-## 전순서집합
-
-부분순서집합 $(A,\le)$가 있을 때, `전순서집합(totally ordered set)`은 다음을 만족하는 $(A,\le)$이다.
-
-$$ a,b \in A \Rightarrow a \le b \lor b \le a $$
-
-### 참고
-
-전순서집합은 부분순서집합과 다르게 모든 원소가 비교가능해야함을 의미한다.
-
-## 사슬
-
-부분순서집합 $(A,\le)$가 주어졌을 때, 전순서집합인 $(C \subseteq A, \le)$를 `사슬(chain)`이라 한다.
-
-### 참고
-
-$A$안에서는 모든 원소가 비교가능할 필요는 없지만 적어도 $C$안에서는 모든 원소가 비교가능해야 한다.
-
-### 초른의 보조정리
-
-부분순서집합 $(A,\le)$의 모든 사슬 $C$가 상계를 가지면 $S$는 극대원소를 갖는다.
-
-#### 참고
-
-[초른의 보조정리 - 2!=2 블로그](https://chocobear.tistory.com/69)

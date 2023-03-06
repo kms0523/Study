@@ -1,4 +1,5 @@
 # Inverse Function Theorem
+## Statement
 함수 $f: \R^n \rightarrow \R^n$가 있다고 하자.
 
 $a \in \R^n$을 포함하는 $\R^n$의 open set $U$에서 $f$가 continuously differentiable할 때, 다음을 증명하여라.

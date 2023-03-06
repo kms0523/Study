@@ -180,7 +180,7 @@ $$ \begin{aligned} \frac{\partial \epsilon_e^p}{\partial t} &= \sqrt{\frac{2}{3}
 따라서 다음이 성립한다.
 $$ \frac{\partial f}{\partial \epsilon_e^p} \frac{\partial \epsilon_e^p}{\partial t} = -\frac{2}{3} \frac{\partial K}{\partial \epsilon_e^p} \gamma$$
 
-# Plastic Consistency Requirement
+## Plastic Consistency Requirement
 Plastic state에서는 yield surface에 머물러 있어야 함으로 다음이 성립해야 한다.
 $$ \begin{aligned} & \frac{\partial f}{\partial t} = 0 \\ \Rightarrow \enspace & 2\mu N : \frac{\partial \epsilon}{\partial t} - \gamma(2\mu + H + \frac{2}{3}\frac{\partial K}{\partial \epsilon_e^p}) = 0 \\ \Rightarrow \enspace & \gamma = \frac{2 \mu N : \frac{\partial \epsilon}{\partial t}}{2\mu + H + \frac{2}{3}\frac{\partial K}{\partial \epsilon_e^p}} \end{aligned}  $$
 
@@ -208,7 +208,7 @@ $$ (A:B) C = A_{kl}B_{kl}C_{ij}e_{ij} $$
 
 $$ (C \otimes A) : B = C_{ij}A_{kl}B_{kl}e_{ij} $$
 
-# Tangent Stiffness Tensor
+## Tangent Stiffness Tensor
 J2 plasticity with hardening model에 따른 tangent stiffness tensor를 다음과 같이 정의하자.
 $$ C^{m} := \frac{\partial\dot\sigma}{\partial\dot\epsilon} $$
 

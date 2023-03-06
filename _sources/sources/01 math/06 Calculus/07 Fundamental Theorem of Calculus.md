@@ -173,7 +173,7 @@ $$ \int^{x_2}_{x_1} f'(x) \thinspace dx = f(x_2) - f(x_1) $$
 
 ---
 
-## 보조명제2
+### 보조명제2
 다음을 증명하여라.
 
 $$ F \text{ is continuous on } [a,b] $$
@@ -202,4 +202,3 @@ $$ \begin{gathered} \lim_{x\rightarrow a^+} F(x) = \lim_{h\rightarrow 0^+} F(a+h
 
 $$ F \text{ is continuous on } [a,b] \qed $$
 
----

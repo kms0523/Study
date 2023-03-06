@@ -211,6 +211,11 @@ const thebe_selector_output = ".output, .cell_output"
        Induction
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../01%20math/01%20Set/04%20Order/12%20Chain.html">
+       Chain
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -371,11 +376,6 @@ const thebe_selector_output = ".output, .cell_output"
      </i>
     </label>
     <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../../01%20math/02%20Abstract%20Algebra/07%20Ring/03%20Ring%20Action.html">
-       Ring Action
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../01%20math/02%20Abstract%20Algebra/07%20Ring/04%20Commutative%20Ring.html">
        Commutative Ring
@@ -929,9 +929,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../../01%20math/06%20Calculus/51%20Taylor%27s%20Theorem.html">
-     <span class="math notranslate nohighlight">
-      \(f: \R \rightarrow \R\)
-     </span>
+     Taylor’s Theorem
     </a>
    </li>
    <li class="toctree-l2">
@@ -962,17 +960,22 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../01%20math/07%20Linear%20Algebra/02%20Span.html">
+    <a class="reference internal" href="../../../01%20math/07%20Linear%20Algebra/02%20Subspace.html">
+     Subspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../01%20math/07%20Linear%20Algebra/03%20Span.html">
      Span
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../01%20math/07%20Linear%20Algebra/03%20Linearly%20Independet%20Set.html">
+    <a class="reference internal" href="../../../01%20math/07%20Linear%20Algebra/04%20Linearly%20Independet%20Set.html">
      Linearly Independet Set
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../01%20math/07%20Linear%20Algebra/04%20Basis.html">
+    <a class="reference internal" href="../../../01%20math/07%20Linear%20Algebra/05%20Basis.html">
      Basis
     </a>
    </li>
@@ -1032,7 +1035,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../01%20math/08%20Geometry/04%20Curve/04%20Curvature.html">
-       정의
+       Curvature
       </a>
      </li>
     </ul>
@@ -1452,7 +1455,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../../10%20continuum%20mechanics/Stress.html">
-   Principal Direction &amp; Principal Stress
+   Stress
   </a>
  </li>
 </ul>
@@ -1876,7 +1879,7 @@ title="Print to PDF"
 <h2>페이지 테이블<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>페이지 테이블에는 페이지 번호가 몇번 프레임과 연결되어 있는지가 기록되어 있으며 개별 데이터는 <code class="docutils literal notranslate"><span class="pre">page</span> <span class="pre">table</span> <span class="pre">entry</span> <span class="pre">(PTE)</span></code>라고 한다.</p>
 <figure class="align-default">
-<img alt="sources/03 programming/01 C++/02 Memory/_image/0201.png" src="sources/03 programming/01 C++/02 Memory/_image/0201.png" />
+<img alt="../../../../_images/02011.png" src="../../../../_images/02011.png" />
 </figure>
 <p>32bit 기준으로 PTE는 위의 구조로 이루어져 있다. P는 present bit로 해당 페이지가 물리 메모리에 존재하는지 나타낸다. R/W는 read/write bit로 해당 페이지가 read/writer가 가능한지를 나타낸다. U/S는 user/supervisor bit로 유저, 커널모드 중 어느 모드에 접근 가능한지 나타낸다. V는 valid bit로 주소 자체가 유효한지를 나타낸다. 만약에 유효하지 않은경우 segmentation fault이다. PFN은 physical frame number를 나타낸다.</p>
 <p>페이지 테이블은 프로세스마다 하나씩 존재하게 되며 주기억장치에 상주하게 된다. 즉, 많은 프로세스가 구동될 수록 페이지 테이블로 인한 주기억장치 사용이 커진다.</p>
@@ -1890,11 +1893,11 @@ title="Print to PDF"
 <p>만약 물리 메모리에 빈 공간이 없을경우 <code class="docutils literal notranslate"><span class="pre">페이지</span> <span class="pre">교체(page</span> <span class="pre">replacement)</span></code>를 실시한다. 가장 먼저 <code class="docutils literal notranslate"><span class="pre">page</span> <span class="pre">replacement</span> <span class="pre">algorithm</span></code>으로 page-out 시킬 페이지를 먼저 결정한다. page out된 페이지의 PTE를 수정하고 이 페이지와 연결된 프레임에 저장된 데이터는 paging file에 저장한다. 이 후 원래 paging file에 존재했던 데이터를 이 프레임에 저장한다. 그리고 페이지 테이블과 TLB를 업데이트 한다.</p>
 <p>지금까지의 과정을 TLB와 페이지 테이블 관점에서 정리하면, 아래 그림과 같다.</p>
 <figure class="align-default">
-<img alt="sources/03 programming/01 C++/02 Memory/_image/0202.png" src="sources/03 programming/01 C++/02 Memory/_image/0202.png" />
+<img alt="../../../../_images/0202.png" src="../../../../_images/0202.png" />
 </figure>
 <blockquote>
 <div><p>Reference<br />
-<span id="id3">[<a class="reference internal" href="../../../99%20References/references.html#id12" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span><br />
+<span id="id3">[<a class="reference internal" href="../../../99%20References/references.html#id13" title="김화수. Fundamental C++ 프로그래밍 원리: 기초부터고급까지. 혜지원, 2015.">김화수, 2015</a>]</span><br />
 <a class="reference external" href="https://sorjfkrh5078.tistory.com/49">주기억장치 할당 기법- Libi 블로그</a><br />
 <a class="reference external" href="https://jeong-pro.tistory.com/91">메모리 단편화 - 정아마추어 블로그</a><br />
 <a class="reference external" href="http://sweeper.egloos.com/2988689">가상 메모리 - 수까락 블로그</a><br />

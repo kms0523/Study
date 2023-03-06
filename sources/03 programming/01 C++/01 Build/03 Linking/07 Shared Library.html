@@ -211,6 +211,11 @@ const thebe_selector_output = ".output, .cell_output"
        Induction
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../../01%20math/01%20Set/04%20Order/12%20Chain.html">
+       Chain
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -371,11 +376,6 @@ const thebe_selector_output = ".output, .cell_output"
      </i>
     </label>
     <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../../../01%20math/02%20Abstract%20Algebra/07%20Ring/03%20Ring%20Action.html">
-       Ring Action
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../01%20math/02%20Abstract%20Algebra/07%20Ring/04%20Commutative%20Ring.html">
        Commutative Ring
@@ -929,9 +929,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../../../01%20math/06%20Calculus/51%20Taylor%27s%20Theorem.html">
-     <span class="math notranslate nohighlight">
-      \(f: \R \rightarrow \R\)
-     </span>
+     Taylor’s Theorem
     </a>
    </li>
    <li class="toctree-l2">
@@ -962,17 +960,22 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../../01%20math/07%20Linear%20Algebra/02%20Span.html">
+    <a class="reference internal" href="../../../../01%20math/07%20Linear%20Algebra/02%20Subspace.html">
+     Subspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../../01%20math/07%20Linear%20Algebra/03%20Span.html">
      Span
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../../01%20math/07%20Linear%20Algebra/03%20Linearly%20Independet%20Set.html">
+    <a class="reference internal" href="../../../../01%20math/07%20Linear%20Algebra/04%20Linearly%20Independet%20Set.html">
      Linearly Independet Set
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../../01%20math/07%20Linear%20Algebra/04%20Basis.html">
+    <a class="reference internal" href="../../../../01%20math/07%20Linear%20Algebra/05%20Basis.html">
      Basis
     </a>
    </li>
@@ -1032,7 +1035,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../../01%20math/08%20Geometry/04%20Curve/04%20Curvature.html">
-       정의
+       Curvature
       </a>
      </li>
     </ul>
@@ -1452,7 +1455,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../../../10%20continuum%20mechanics/Stress.html">
-   Principal Direction &amp; Principal Stress
+   Stress
   </a>
  </li>
 </ul>
@@ -1874,11 +1877,11 @@ title="Print to PDF"
 </ol>
 <p>컴퓨터 개발자들은 이러한 문제들을 해결하기 위해 획기적인 방법을 제시한다. 앞서 정적 라이브러리의 가장 큰 문제점은 “모든 프로그램들이 같은 라이브러리를 링킹 하더라도 정적으로 링킹할 경우 프로그램 내에 동일한 라이브러리 코드를 포함해야 한다” 였다. 그렇다면 “많은 프로그램 상에서 사용되는 라이브러리를 컴퓨터 메모리 상에 딱 하나 올려놓고 이를 사용하는 프로그램들이 해당 라이브러리를 공유 하면 어떨까?”는 생각이 바로 공유 라이브러리의 출발이다.</p>
 <figure class="align-default">
-<img alt="sources/03 programming/01 C++/01 Build/03 Linking/_image/0401.png" src="sources/03 programming/01 C++/01 Build/03 Linking/_image/0401.png" />
+<img alt="../../../../../_images/04012.png" src="../../../../../_images/04012.png" />
 </figure>
 <p>공유 라이브러리를 사용할려면 서로 다른 프로그램이 같은 메모리를 공유할 수 있어야 하는데 각 프로세스들은 다른 프로세스들과 독립적이고 서로 접근할 수 없는 메모리를 갖고 있다. 이러한 문제는 페이지 테이블을 통해 해결한다.</p>
 <figure class="align-default">
-<img alt="sources/03 programming/01 C++/01 Build/03 Linking/_image/0402.png" src="sources/03 programming/01 C++/01 Build/03 Linking/_image/0402.png" />
+<img alt="../../../../../_images/0402.png" src="../../../../../_images/0402.png" />
 </figure>
 <p>프로세스마다 코드의 크기가 다르기 때문에 공유 라이브러리가 각 프로세스의 가상 메모리에 놓이는 위치가 다르게 된다. 위 그림 처럼 프로세스 1 의 libc 는 0x1234 에, 프로세스 2 의 libc 는 0xABCD 에, 프로세스 3 의 libc 는 0x10 에 놓여 있다. 이 때 위의 그림처럼 각각의 프로세스에는 가상 메모리를 물리 메모리로 변환하는 고유의 페이지 테이블이 있다. 이를 통해 실제 물리 메모리에 libc 코드를 딱 한 군데만 올려 놓고 각 프로세스의 페이지 테이블 내용을 바꿔줌으로써 마치 프로세스 마다 고유의 위치에 libc 코드가 있는 것 처럼 사용할 수 있다.</p>
 <p>그렇다면 한가지 궁금증이 생긴다. “그냥 정적 라이브러리를 공유 라이브러리 처럼 쓰면 안되나?”.</p>
@@ -2058,7 +2061,7 @@ Contents of section .got:
 <p>0x1040 이후에 스택에 1을 푸시하고 PLT 맨 위로 점프한다. 그리고 다시 스택에 0x2f92(%rip)를 푸시하고, *0x2f93(%rip)로 점프한다.</p>
 <p>무슨 일이 일어나고 있는지 아래 그림을 보면서 이해해보자.</p>
 <figure class="align-default">
-<img alt="sources/03 programming/01 C++/01 Build/03 Linking/_image/0403.png" src="sources/03 programming/01 C++/01 Build/03 Linking/_image/0403.png" />
+<img alt="../../../../../_images/0403.png" src="../../../../../_images/0403.png" />
 </figure>
 <p>가장 먼저 main 함수에서 공유 라이브러리 안에 있는 bar 함수를 호출한다. 만일 bar가 정적으로 링크된 라이브러리의 함수였다면 그냥 bar가 정의된 위치를 호출하면 된다. 하지만 공유 라이브러리의 경우 프로그램 어디에 위치 되었는지 알 수 없기 때문에 해당 함수를 직접 호출하는 것은 불가능하다.</p>
 <p>따라서 어떤 방식을 취하게 되냐면 <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">offset</span> <span class="pre">table</span> <span class="pre">(GOT)</span></code>라는 이름의 데이터 테이블을 프로그램 내부에 만든 다음에, 실제 함수들의 주소값을 이 테이블에 적어 놓는다. 그리고 우리가 함수를 호출하게 되면 해당 함수의 실제 위치를 이 테이블을 통해서 알아낸다.</p>

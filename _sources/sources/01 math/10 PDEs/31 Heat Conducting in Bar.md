@@ -1,4 +1,5 @@
 # Heat Conducting in Bar
+## Modeling
 bar의 축방향으로는 heat conducting이 발생하고 각 단면 내에서는 heat conducting이 없는 bar가 있다고 하자.
 
 $q$를 heat flux, $g$를 generation rate라고 하면 bar의 한단면을 다음과 같이 모델링 할 수 있다.  

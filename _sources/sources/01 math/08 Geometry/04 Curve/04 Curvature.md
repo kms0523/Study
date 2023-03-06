@@ -1,4 +1,4 @@
-**# Curvature
+# Curvature
 ## 정의
 $\R$의 open set $U$와 $U$에서 differentiable한 $r : U \rightarrow \R^n$이 있다고 하자.
 

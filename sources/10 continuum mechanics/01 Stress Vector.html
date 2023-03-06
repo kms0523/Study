@@ -213,6 +213,11 @@ const thebe_selector_output = ".output, .cell_output"
        Induction
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../01%20math/01%20Set/04%20Order/12%20Chain.html">
+       Chain
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -373,11 +378,6 @@ const thebe_selector_output = ".output, .cell_output"
      </i>
     </label>
     <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../01%20math/02%20Abstract%20Algebra/07%20Ring/03%20Ring%20Action.html">
-       Ring Action
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../01%20math/02%20Abstract%20Algebra/07%20Ring/04%20Commutative%20Ring.html">
        Commutative Ring
@@ -931,9 +931,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01%20math/06%20Calculus/51%20Taylor%27s%20Theorem.html">
-     <span class="math notranslate nohighlight">
-      \(f: \R \rightarrow \R\)
-     </span>
+     Taylor’s Theorem
     </a>
    </li>
    <li class="toctree-l2">
@@ -964,17 +962,22 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01%20math/07%20Linear%20Algebra/02%20Span.html">
+    <a class="reference internal" href="../01%20math/07%20Linear%20Algebra/02%20Subspace.html">
+     Subspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01%20math/07%20Linear%20Algebra/03%20Span.html">
      Span
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01%20math/07%20Linear%20Algebra/03%20Linearly%20Independet%20Set.html">
+    <a class="reference internal" href="../01%20math/07%20Linear%20Algebra/04%20Linearly%20Independet%20Set.html">
      Linearly Independet Set
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../01%20math/07%20Linear%20Algebra/04%20Basis.html">
+    <a class="reference internal" href="../01%20math/07%20Linear%20Algebra/05%20Basis.html">
      Basis
     </a>
    </li>
@@ -1034,7 +1037,7 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../01%20math/08%20Geometry/04%20Curve/04%20Curvature.html">
-       정의
+       Curvature
       </a>
      </li>
     </ul>
@@ -1454,7 +1457,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Stress.html">
-   Principal Direction &amp; Principal Stress
+   Stress
   </a>
  </li>
 </ul>
@@ -1821,7 +1824,7 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="stress-vector">
 <h1>Stress Vector<a class="headerlink" href="#stress-vector" title="Permalink to this headline">#</a></h1>
 <figure class="align-default">
-<img alt="sources/10 continuum mechanics/_image/0101.png" src="sources/10 continuum mechanics/_image/0101.png" />
+<img alt="../../_images/0101.png" src="../../_images/0101.png" />
 </figure>
 <p>물체에 하중이 가해졌을 때, 물체 내부의 분자들에 작용하는 힘을 표시한 (a)와 물체 내부를 가상의 평면으로 나눈 (b)를 보자.</p>
 <p>(b)에 나타난 가상의 평면에 작용하는 힘을 정확히 표현하기 위해서는 평면 위의 분자들간의 상호작용을 모두 고려해야 한다. 하지만 많은 분자를 모두 고려하는 일은 매우 어려운 일이다.</p>
@@ -1829,7 +1832,7 @@ title="Print to PDF"
 <p>(d)를 보면 알 수 있듯이 <span class="math notranslate nohighlight">\(F\)</span>는 어떤 평면을 선택하냐에 따라 달라진다. 이는 평면이 달라지면 평면에 힘을 가하는 분자들의 집합이 달라지기 때문이다.</p>
 <p>다음으로, (c)와 같이 가정한 상황에서 가상의 평면위의 점 <span class="math notranslate nohighlight">\(P\)</span>에 작용하는 가상의 분자력을 고려해보자.</p>
 <figure class="align-default">
-<img alt="sources/10 continuum mechanics/_image/0102.png" src="sources/10 continuum mechanics/_image/0102.png" />
+<img alt="../../_images/0102.png" src="../../_images/0102.png" />
 </figure>
 <p>위의 그림과 같이 <span class="math notranslate nohighlight">\(P\)</span>를 포함하는 영역을 <span class="math notranslate nohighlight">\(\Delta A\)</span>라 하고 <span class="math notranslate nohighlight">\(n\)</span>의 <span class="math notranslate nohighlight">\(+\)</span>방향에 있는 분자들에 의해 <span class="math notranslate nohighlight">\(\Delta A\)</span>에 작용하는 가상의 분자력을 <span class="math notranslate nohighlight">\(\Delta F\)</span>라 하자.</p>
 <p>이 때, <span class="math notranslate nohighlight">\(P\)</span>에 작용하는 <code class="docutils literal notranslate"><span class="pre">응력</span> <span class="pre">벡터(stress</span> <span class="pre">vector)</span></code> <span class="math notranslate nohighlight">\(t_n\)</span>은 다음과 같이 정의한다.</p>
@@ -1838,7 +1841,7 @@ title="Print to PDF"
 <p>위에 살펴보았듯이 평면의 선택 즉, <span class="math notranslate nohighlight">\(n\)</span>에 따라서 <span class="math notranslate nohighlight">\(\Delta F\)</span>가 달라지기 때문에 <span class="math notranslate nohighlight">\(t_n\)</span>을 표기할 때 <span class="math notranslate nohighlight">\(n\)</span>을 사용한다.</p>
 <blockquote>
 <div><p>Reference<br />
-<span id="id1">[<a class="reference internal" href="../99%20References/references.html#id3" title="W Michael Lai, David Rubin, and Erhard Krempl. Introduction to Continuum Mechanics. Elsevier, 4 edition, 2010.">Lai <em>et al.</em>, 2010</a>]</span> Chapter4.1</p>
+<span id="id1">[<a class="reference internal" href="../99%20References/references.html#id4" title="W Michael Lai, David Rubin, and Erhard Krempl. Introduction to Continuum Mechanics. Elsevier, 4 edition, 2010.">Lai <em>et al.</em>, 2010</a>]</span> Chapter4.1</p>
 </div></blockquote>
 </section>
 

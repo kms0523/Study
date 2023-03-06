@@ -391,7 +391,7 @@ Chain rule에 의해서 다음이 성립한다.
 
 $$ \begin{aligned} \frac{\partial K^{k+1}((\epsilon_e^p)^{k+1})}{\partial\Delta\epsilon} &= \frac{\partial K^{k+1}((\epsilon_e^p)^{k+1})}{\partial ((\epsilon_e^p)^{k+1})} \frac{\partial ((\epsilon_e^p)^{k+1})}{\partial \Delta \gamma} \frac{\partial \Delta \gamma}{\partial\Delta\epsilon} \\&= \sqrt{\frac{2}{3}}  \frac{\partial K^{k+1}(\epsilon_e^p)}{\partial \epsilon_e^p} \frac{\partial \Delta \gamma}{\partial\Delta\epsilon} \quad\tiny\blacksquare \end{aligned}  $$
 
-# Discrete Plastic Consistency Requirement
+## Discrete Plastic Consistency Requirement
 선형 탄성 재료에 J2 plasticity model을 기반으로한 알고리즘을 사용한다고 하자.
 
 Stress calculation 과정에서 plastic state일 때, yield surface에 머물러 있어야 함으로 다음이 성립해야 한다.
@@ -415,7 +415,7 @@ discrete plastic consistency requirement와 plastic correction 명제5,8에 의�
 
 $$ \frac{\partial\Delta\sigma}{\partial\Delta\epsilon} = C - \frac{4 \mu^2 N^{tr} \otimes N^{tr}}{2\mu + H^{k+1} + \sqrt{\frac{2}{3}}\frac{\partial H^{k+1}}{\partial \epsilon_e^p} \Delta\gamma + \frac{2}{3}\frac{\partial K^{k+1}}{\partial \epsilon_e^p}} - \frac{4 \mu^2 \Delta \gamma}{\lVert \eta^{tr} \rVert}(I_{dev} - N^{tr} \otimes N^{tr}) \quad\tiny\blacksquare $$
 
-# Tangent Stiffness Tensor
+## Tangent Stiffness Tensor
 Algorithmic tangent stiffness tensor를 다음과 같이 정의하자.
 
 $$ C^{alg} := \frac{\partial\Delta\sigma}{\partial\Delta\epsilon} $$
