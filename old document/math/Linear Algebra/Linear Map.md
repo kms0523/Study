@@ -1,9 +1,9 @@
 # Linear Map
 vector space $V,W / \mathbb F$와 함수 $\Phi:V \rightarrow W$가 있다고 하자.
 
- `선형 변환(linear transformation)` 혹은 `선형 사상(linear map)`은 다음을 만족하는 $\Phi$이다.
+`선형 변환(linear transformation)` 혹은 `선형 사상(linear map)`은 `선형성(linearity)`을 보존하는 함수이다.
 
-$$ v_1,v_2 \in V, a \in F \Rightarrow \Phi(av_1+v_2)=a\Phi(v_1)+\Phi(v_2)$$  
+$$ \forall v_1,v_2 \in V, a \in \F \implies \Phi(av_1+v_2)=a\Phi(v_1)+\Phi(v_2)$$  
 
 ### 참고1
 linear map은 vector space의 연산 및 관계를 보존하는 함수로 `vector space homomorphism`이다.
@@ -12,7 +12,7 @@ linear map은 vector space의 연산 및 관계를 보존하는 함수로 `vecto
 $f : V \rightarrow W$인 모든 linear map들을 모은 집합을 $L(V; W)$라 표기한다.
 
 ### 참고3
-$f : V \rightarrow V$인 linear map을 `endomorphism`이라 하며 endomorphism을 모은 집합을 $\text{End}(V)$라 표기한다.
+$f : V \rightarrow V$인 linear map을 `endomorphism`이라 하며 endomorphism을 모은 집합을 $\End(V)$라 표기한다.
 
 > Reference  
 > [Wiki - Endomorphism](https://en.wikipedia.org/wiki/Endomorphism)
@@ -23,7 +23,7 @@ $W = \mathbb F$이면 `linear form`이라고 한다.
 ### 참고5
 vector space $V / \mathbb F$와 $T \in \text{End}(V)$가 있다고 하자.
 
-$W \le V$에 대해서 $T|_W \in \text{End}(W)$이면 $W$를 $T-$invariant라고 한다.
+$W \le V$에 대해서 $T|_W \in \text{End}(W)$이면 $W$를 $T-$`invariant`라고 한다.
 
 ### 명제1
 vector spaces $V,W / \mathbb F$가 있을 때, 다음과 같은 연산이 주어졌다고 하자.
@@ -58,7 +58,7 @@ $$ T_0 : V \rightarrow W \quad s.t. \quad v \mapsto 0_W $$
 $n,m$ 차원 vector spaces $V,W / \mathbb F$다고 하자.
 
 $V,W$의 기저를 각 각 $\beta, \gamma$라 할 때, 함수 $f^j_i$를 다음과 같이 정의하자.
-$$f^j_i : V \rightarrow W \quad s.t. \quad \beta_k \mapsto \delta^j_k \gamma_i $$
+$$f^j_i : V \rightarrow W \quad s.t. \quad a^k\beta_k \mapsto a^k\delta^j_k \gamma_i $$
 
 이 떄, 다음을 증명하여라.
 $$ \{ f^j_i \} \text{ is a basis of } L(V;W) $$
