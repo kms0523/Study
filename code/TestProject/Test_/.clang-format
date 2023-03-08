@@ -14,7 +14,7 @@ AllowShortFunctionsOnASingleLine: All
 
 BreakBeforeBraces: Custom
 BraceWrapping:
-  AfterClass: true	
+  AfterClass: true
   AfterControlStatement: true		
   AfterEnum: false					
   AfterFunction: true				
@@ -33,7 +33,7 @@ TabWidth: 2
 MaxEmptyLinesToKeep: 1
 
 AllowShortIfStatementsOnASingleLine: true
-
+AlwaysBreakTemplateDeclarations : true
 
 Cpp11BracedListStyle: false
 DerivePointerAlignment: true

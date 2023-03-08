@@ -686,3 +686,34 @@ int main (void){
 
 ```
 
+## using
+
+template을 using으로 alias할 경우 다음과 같이 사용해야 된다.
+
+```cpp
+template <typename T, typename V>
+class Foo {};
+
+template <typename T, typename V>
+using Bar = Foo<T, V>;
+```
+
+### Issue
+
+```cpp
+template <typename T, typename V>
+class Foo
+{
+public:
+	void test(void);
+};
+
+template <typename T, typename V>
+using Bar = Foo<T, V>;
+
+template <typename T, typename V>
+void Bar<T, V>::test(void) //빨간줄이 뜨는데 빌드는 된다. 문제가 없는 건지 모르겠다.
+{
+	std::cout << "이게 되네?";
+};
+```

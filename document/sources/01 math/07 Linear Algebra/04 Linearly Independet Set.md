@@ -129,3 +129,27 @@ $$ S_k \subseteq \span(S_{k+1}) \implies \span(S_k) \subseteq \span(S_{k+1}) \im
 
 > Reference  
 > [wiki](https://en.wikipedia.org/wiki/Steinitz_exchange_lemma)
+
+### 명제3
+Vector space $V/\F$와 $V$의 subset $S$가 있다고 하자.
+
+이 떄, 다음을 증명하여라.
+
+$$ S \text{ is an linearly independent set of } V \implies  0_V \notin S $$
+
+**Proof**
+
+다음을 가정하자.
+
+$$ 0_V \in S $$
+
+그러면 $S$에서 $0_V$를 뽑으면 다음이 성립한다.
+
+$$ \exist a \in \F - \Set{0_\F} \st a0_V = 0_\F $$
+
+이는 $S$가 linearly independent set이라는 전제에 모순임으로 proof by contradiction에 의해 다음이 성립한다.
+
+$$ S \text{ is an linearly independent set of } V \implies  0_V \notin S \qed $$
+
+
+

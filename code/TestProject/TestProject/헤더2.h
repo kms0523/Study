@@ -71,6 +71,7 @@ public:
 
 private:
 	inline static std::vector<std::set<int>> hold_id_to_reachable_hold_id_set_;
+	//이미 탐색된 hold를 거를 필요가 있음.
 };
 
 class HJ {

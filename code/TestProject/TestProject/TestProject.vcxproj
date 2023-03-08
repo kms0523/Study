@@ -134,7 +134,6 @@
     <ClInclude Include="헤더.h" />
     <ClInclude Include="헤더1.h" />
     <ClInclude Include="헤더2.h" />
-    <ClInclude Include="헤더3.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />

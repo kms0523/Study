@@ -1,13 +1,31 @@
 #include "gtest/gtest.h"
 
+template <typename T, typename V>
+class Foo
+{
+public:
+	void test(void);
+};
+
+template <typename T, typename V>
+using Bar = Foo<T, V>;
+
+template <typename T, typename V>
+void Bar<T, V>::test(void)
+{
+	std::cout << "이게 되네?";
+};
+
+class Apple
+{
+public:
+	void test(void){};
+};
+
 TEST(Test, test)
 {
-	if (1)
-		std::cout << "true\n";
-	else
-		std::cout << "false\n";
-
-	if (1) std::cout << "true\n";
+	Bar<int, double> b;
+	b.test();
 }
 
 //#include "../TestProject/소스.cpp"

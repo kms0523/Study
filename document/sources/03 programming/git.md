@@ -13,6 +13,20 @@ Tracked 파일은 또 `Commited`(Git Directory의 상태와 동일)와 `Modified
 
 그리고 나머지 파일은 모두 Untracked 파일이다. 
 
+## Snapshot Hash
+Git은 모든 snapshot을 commit하기 전에 항상 체크섬을 구하고 그 체크섬으로 데이터를 관리한다. 
+
+체크섬은 SHA-1 해시를 사용하여 만들어진다. 만든 체크섬은 40자 길이의 16진수 문자열이며 파일의 내용이나 디렉토리 구조를 이용하여 체크섬을 구한다.
+
+체크섬은 아래와 같이 생겼다.
+
+```
+24b9da6552252987aa493b52f8696cd6d3b00373
+```
+
+이 떄, 다양한 명령어에서 commit된 snapshot에 접근할 때 SHA-1 해시를 이용해서 접근할수 있으며 명령어에서는 체크섬의 앞 5자만 입력해도 된다.
+
+
 ### 명령어
 * `git restore --staged ./`  
 Staging Area에 있는 모든 파일을 다시 unstage
@@ -56,12 +70,27 @@ global config file --> 모든 git repository
 * `git config --local -e`    
   local config file editor로 열기 
 
+## 로그 보기
+* `git log [filename]`
+  특정 파일의 log 보기
+* 
+
 ## 파일 비교
 
 * `git difftool`  
   modifed 상태인 파일이 Git Directory에 저장된 snapshot과 어떤 차이가 있는지 diff tool을 이용해서 보여준다.
 * `git difftool --staged`  
   staged 상태인 파일이 Git Directory에 저장된 snapshot과 어떤 차이가 있는지 diff tool을 이용해서 보여준다. 
+* `git difftool [filename]`
+  modifed 상태와 Git Directory에 저장된 snapshot과 어떤 차이가 있는지 diff tool을 이용해서 보여준다.
+* `git difftool [commit hash] [filename]`
+   commit hash의 상태와 Git Directory에 저장된 snapshot과 어떤 차이가 있는지 diff tool을 이용해서 보여준다.
+* `git difftool [commit hash1] [commit hash2] [filename]`
+   commit hash의 상태와 Git Directory에 저장된 snapshot과 어떤 차이가 있는지 diff tool을 이용해서 보여준다.
+* 
+
+> Reference  
+> [blog](https://nochoco-lee.tistory.com/67)  
 
 ## 리모트 저장소
 리모트 저장소(서버)는 인터넷이나 네트워크 어딘가에 있는 저장소를 말한다. 
