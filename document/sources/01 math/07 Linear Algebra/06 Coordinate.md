@@ -46,6 +46,8 @@ $$ \phi(v_1)=\phi(v_2) \implies v_1 = a^i\beta_i = v_2 \qed $$
 [surjective]  
 $\F^n$의 임의의 element를 $(a^1,\cdots,a^n)$이라고 하자.
 
-그러면 다음이 성립한다.
+$V=\span(\beta)$임으로 basis의 모든 linear combination을 포함한다. 
+
+따라서 다음이 성립한다.
 
 $$ \exist v \in V \st \phi(v) = (a^1,\cdots,a^n) \qed $$

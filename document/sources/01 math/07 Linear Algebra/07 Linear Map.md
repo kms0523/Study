@@ -3,7 +3,7 @@ vector space $V,W / \mathbb F$와 함수 $\Phi:V \rightarrow W$가 있다고 하
 
 `선형 변환(linear transformation)` 혹은 `선형 사상(linear map)`은 `선형성(linearity)`을 보존하는 함수이다.
 
-$$ \forall v_1,v_2 \in V, a \in \F \implies \Phi(av_1+v_2)=a\Phi(v_1)+\Phi(v_2)$$  
+$$ \forall v_1,v_2 \in V, \forall a \in \F \implies \Phi(av_1+v_2)=a\Phi(v_1)+\Phi(v_2)$$  
 
 ### 참고1
 linear map은 vector space의 연산 및 관계를 보존하는 함수로 `vector space homomorphism`이다.
@@ -34,31 +34,66 @@ $$ L(V;W) \text{ is a vector space} $$
 
 **Proof**
 
-[기본 연산 법칙]  
-vector space의 부분집합과 연산을 그대로 사용하기 때문에 교환법칙 분배법칙등 $F-$가군의 성질들이 전부 성립한다. 
+[Abelian Group]  
+-[closed]  
+$L(V;W)$의 임의의 element를 $f,g$라고 하자.
 
-[연산에 닫힘]  
-$T_1, T_2 \in L(V,W)$, $a \in \Bbb F$라 하자.
+$V$의 임의의 element를 $v_1,v_2$, $\F$의 임의의 element를 $c$라고할 때, 다음이 성립한다.
 
-$v_1,v_2 \in V$, $b \in \mathbb{F}$가 있을 때 다음이 성립한다.
-$$ \begin{aligned} (aT_1 + T_2)(bv_1 + v_2) &= aT_1(bv_1 + v_2) + T_2(bv_1 + v_2) \\ &= abT_1(v_1) + bT_2(v_1) + aT_1(v_2) + T_2(v_2) \\ &= b(aT_1+T_2)(v_1) + (aT_1+T_2)(v_2) \end{aligned}  $$
+$$ \begin{aligned} (f+g)(v_1+cv_2) &= f(v_1+cv_2) + g(v_1+cv_2) \\&= f(v_1)+g(v_1) + c(f(v_2)+g(v_2)) \\&= (f+g)(v_1) + c(f+g)(v_2) \end{aligned}  $$
 
-따라서, $aT_1 + T_2 \in L(V,W)$임으로 연산에 닫혀있다. $\quad {_\blacksquare}$
+따라서, $f+g \in L(V;W)$이다. $\qed$
 
-[$+$연산 항등원의 존재성]  
-함수가 다음과 같이 정의되어 있다고 하자.
-$$ T_0 : V \rightarrow W \quad s.t. \quad v \mapsto 0_W $$
+-[identity]  
+$0_L \in L(V;W)$를 다음과 같이 정의하자.
 
-자명하게 $T_0 \in L(V,W)$이고 $T_0$는 $+$에 대해 항등원이다.
+$$ \forall v\in V, \enspace  0_L(v) = 0_W $$
 
-[$+$연산 역원의 존재성]  
-상수곱이 정의되어 있음으로 환의 명제2에 의해 역원이 존재한다. 
+$L(V;W)$의 임의의 element를 $f$, $V$의 임의의 element를 $v$라고 하면 다음이 성립한다.
+
+$$ \begin{gathered} (f+0_L)(v) = f(v)+0_L(v) = f(v) \\ (0_L+f)(v) = 0_L(v)+f(v) = f(v) \end{gathered} \implies (f+0_L) = (0_L+f) = f $$
+
+따라서, $0_L$은 $L(V;W)$의 identity element이다.$\qed$
+
+-[inverse]  
+$L(V;W)$의 임의의 element를 $f$라고 하자.
+
+$-f \in L(V;W)$를 다음과 같이 정의하자.
+
+$$ \forall v \in V, (-f)(v) = -f(v) $$
+
+$V$의 임의의 element를 $v$라고 하면 다음이 성립한다.
+
+$$ \begin{gathered} (f+(-f))(v) = f(v)+(-f)(v) = 0_W = 0_L(v) \\ ((-f)+f)(v) = (-f)(v) + f(v) = 0_W = 0_L(v) \end{gathered} \implies f+(-f) = (-f) + f = 0_L $$
+
+따라서, $-f$는 $f$의 inverse element이다.$\qed$
+
+-[commutative]  
+$L(V;W)$의 임의의 element를 $f,g$라고 하자.
+
+$V$의 임의의 element를 $v$라고 하면, $f(v),g(v)\in W$임으로 다음이 성립한다.
+
+$$ (f+g)(v) = f(v) + g(v) = g(v) + f(v) = (g+f)(v) \qed $$
+
+[Module]  
+$L(V;W)$의 임의의 element를 $f,g$, $\F$의 임의의 element를 $r_1,r_2$라고 하자.
+
+$V$의 임의의 element를 $v$라고 할 때, 주어진 action의 정의에 의해 다음이 성립한다.
+
+$$ \begin{aligned} (r_1(f+g))(v) &= r_1(f+g)(v) = r_1f(v) + r_1g(v) = (r_1f + r_1g)(v) \\ ((r_1+r_2)f)(v) &= (r_1+r_2)f(v) = r_1f(v) + r_2f(v) = (r_1f + r_2f)(v) \\ ((r_1r_2)f)(v) &= r_1r_2f(v) = r_1(r_2f)(v) = (r_1(r_2f))(v) \\ (1_\F f)(v) &= 1_\F f(v) = f(v) \end{aligned} $$
+
+따라서 주어진 action은 module의 scalar multiplication의 정의를 만족한다.
+
+[결론]  
+$\F$는 field 임으로 $L(V;W)$는 $\F-$module이고 vector space의 정의에 의해 다음이 성립한다.
+
+$$ L(V;W) \text{ is a vector space} \qed $$
 
 ### 명제2
-$n,m$ 차원 vector spaces $V,W / \mathbb F$다고 하자.
+$n,m$ 차원 vector spaces $V,W / \mathbb F$가 있다고 하자.
 
-$V,W$의 기저를 각 각 $\beta, \gamma$라 할 때, 함수 $f^j_i$를 다음과 같이 정의하자.
-$$f^j_i : V \rightarrow W \quad s.t. \quad a^k\beta_k \mapsto a^k\delta^j_k \gamma_i $$
+$V,W$의 기저를 각 각 $\beta, \gamma$라 할 때, 함수 $f^i_j$를 다음과 같이 정의하자.
+$$f^i_j : V \rightarrow W \quad s.t. \quad a^k\beta_k \mapsto a^k\delta^i_k \gamma_j $$
 
 이 떄, 다음을 증명하여라.
 $$ \{ f^j_i \} \text{ is a basis of } L(V;W) $$
