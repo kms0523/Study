@@ -979,6 +979,16 @@ const thebe_selector_output = ".output, .cell_output"
      Basis
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01%20math/07%20Linear%20Algebra/06%20Coordinate.html">
+     Coordinate
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01%20math/07%20Linear%20Algebra/07%20Linear%20Map.html">
+     Linear Map
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -1831,6 +1841,11 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#working-directory">
    Working Directory
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#snapshot-hash">
+   Snapshot Hash
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
@@ -1858,23 +1873,28 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   파일 비교
+   로그 보기
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
+   파일 비교
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
    리모트 저장소
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id7">
      명령어
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
+  <a class="reference internal nav-link" href="#id8">
    브랜치
   </a>
  </li>
@@ -1884,7 +1904,7 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
+    <a class="reference internal nav-link" href="#id9">
      명령어
     </a>
     <ul class="nav section-nav flex-column">
@@ -1908,12 +1928,12 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id10">
+  <a class="reference internal nav-link" href="#id11">
    커밋 되돌리기
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
+    <a class="reference internal nav-link" href="#id12">
      명령어
     </a>
    </li>
@@ -1962,6 +1982,11 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#working-directory">
    Working Directory
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#snapshot-hash">
+   Snapshot Hash
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
@@ -1989,23 +2014,28 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   파일 비교
+   로그 보기
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
+   파일 비교
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
    리모트 저장소
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id7">
      명령어
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
+  <a class="reference internal nav-link" href="#id8">
    브랜치
   </a>
  </li>
@@ -2015,7 +2045,7 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
+    <a class="reference internal nav-link" href="#id9">
      명령어
     </a>
     <ul class="nav section-nav flex-column">
@@ -2039,12 +2069,12 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id10">
+  <a class="reference internal nav-link" href="#id11">
    커밋 되돌리기
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
+    <a class="reference internal nav-link" href="#id12">
      명령어
     </a>
    </li>
@@ -2085,6 +2115,16 @@ title="Print to PDF"
 <p>Working Directory의 모든 파일은 크게 <code class="docutils literal notranslate"><span class="pre">Tracked(관리대상임)</span></code>와 <code class="docutils literal notranslate"><span class="pre">Untracked(관리대상이</span> <span class="pre">아님)</span></code>로 나눈다.</p>
 <p>Tracked 파일은 또 <code class="docutils literal notranslate"><span class="pre">Commited</span></code>(Git Directory의 상태와 동일)와 <code class="docutils literal notranslate"><span class="pre">Modified</span></code>(Git Directory의 상태에서 변경이 발생) 그리고 <code class="docutils literal notranslate"><span class="pre">Staged</span></code>(commit으로 Git Directory에 새롭게 기록 예정) 상태 중 하나이다.</p>
 <p>그리고 나머지 파일은 모두 Untracked 파일이다.</p>
+</section>
+<section id="snapshot-hash">
+<h2>Snapshot Hash<a class="headerlink" href="#snapshot-hash" title="Permalink to this headline">#</a></h2>
+<p>Git은 모든 snapshot을 commit하기 전에 항상 체크섬을 구하고 그 체크섬으로 데이터를 관리한다.</p>
+<p>체크섬은 SHA-1 해시를 사용하여 만들어진다. 만든 체크섬은 40자 길이의 16진수 문자열이며 파일의 내용이나 디렉토리 구조를 이용하여 체크섬을 구한다.</p>
+<p>체크섬은 아래와 같이 생겼다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">24</span><span class="n">b9da6552252987aa493b52f8696cd6d3b00373</span>
+</pre></div>
+</div>
+<p>이 떄, 다양한 명령어에서 commit된 snapshot에 접근할 때 SHA-1 해시를 이용해서 접근할수 있으며 명령어에서는 체크섬의 앞 5자만 입력해도 된다.</p>
 <section id="id1">
 <h3>명령어<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
@@ -2139,20 +2179,39 @@ local config file editor로 열기</p></li>
 </section>
 </section>
 <section id="id4">
-<h2>파일 비교<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<h2>로그 보기<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">[filename]</span></code>
+특정 파일의 log 보기</p></li>
+<li></li>
+</ul>
+</section>
+<section id="id5">
+<h2>파일 비교<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">difftool</span></code><br />
 modifed 상태인 파일이 Git Directory에 저장된 snapshot과 어떤 차이가 있는지 diff tool을 이용해서 보여준다.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">difftool</span> <span class="pre">--staged</span></code><br />
 staged 상태인 파일이 Git Directory에 저장된 snapshot과 어떤 차이가 있는지 diff tool을 이용해서 보여준다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">difftool</span> <span class="pre">[filename]</span></code>
+modifed 상태와 Git Directory에 저장된 snapshot과 어떤 차이가 있는지 diff tool을 이용해서 보여준다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">difftool</span> <span class="pre">[commit</span> <span class="pre">hash]</span> <span class="pre">[filename]</span></code>
+commit hash의 상태와 Git Directory에 저장된 snapshot과 어떤 차이가 있는지 diff tool을 이용해서 보여준다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">difftool</span> <span class="pre">[commit</span> <span class="pre">hash1]</span> <span class="pre">[commit</span> <span class="pre">hash2]</span> <span class="pre">[filename]</span></code>
+commit hash의 상태와 Git Directory에 저장된 snapshot과 어떤 차이가 있는지 diff tool을 이용해서 보여준다.</p></li>
+<li></li>
 </ul>
+<blockquote>
+<div><p>Reference<br />
+<a class="reference external" href="https://nochoco-lee.tistory.com/67">blog</a></p>
+</div></blockquote>
 </section>
-<section id="id5">
-<h2>리모트 저장소<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<section id="id6">
+<h2>리모트 저장소<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>리모트 저장소(서버)는 인터넷이나 네트워크 어딘가에 있는 저장소를 말한다.</p>
 <p>다른 사람들과 함께 일한다는 것은 리모트 저장소를 관리하면서 데이터를 거기에 Push 하고 Pull 하는 것이다. 리모트 저장소를 관리한다는 것은 저장소를 추가, 삭제하는 것뿐만 아니라 브랜치를 관리하고 추적할지 말지 등을 관리하는 것을 말한다.</p>
-<section id="id6">
-<h3>명령어<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<section id="id7">
+<h3>명령어<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span></code><br />
 현재 프로젝트에 등록된 리모트 저장소를 확인</p>
@@ -2178,8 +2237,8 @@ staged 상태인 파일이 Git Directory에 저장된 snapshot과 어떤 차이�
 </ul>
 </section>
 </section>
-<section id="id7">
-<h2>브랜치<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<section id="id8">
+<h2>브랜치<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-u</span> <span class="pre">[remote-name]/[branch-name]</span></code><br />
 현재 로컬 브랜치가 리모트 저장소의 특정 브랜치를 추적하게 한다.</p></li>
@@ -2188,8 +2247,8 @@ staged 상태인 파일이 Git Directory에 저장된 snapshot과 어떤 차이�
 <section id="stash">
 <h2>Stash<a class="headerlink" href="#stash" title="Permalink to this headline">#</a></h2>
 <p>Stash는 Modified이면서 Tracked 상태인 파일과 Staging Area에 있는 파일들을 보관해두는 장소다.</p>
-<section id="id8">
-<h3>명령어<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<section id="id9">
+<h3>명령어<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <section id="git-stash">
 <h4>git stash<a class="headerlink" href="#git-stash" title="Permalink to this headline">#</a></h4>
 <p>스택에 새로운 stash가 만들어지고 워킹 디렉토리가 깨끗해진다.</p>
@@ -2204,15 +2263,15 @@ staged 상태인 파일이 Git Directory에 저장된 snapshot과 어떤 차이�
 <p>만약 이름 없이 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">apply</span></code>만 할 경우 가장 최근의 stash를 적용한다.</p>
 <blockquote>
 <div><p>Reference<br />
-<span id="id9">[<a class="reference internal" href="../99%20References/references.html#id9" title="Scott Chacon and Ben Straub. ProGit. Apress, 2 edition, 2018.">Chacon and Straub, 2018</a>]</span> 218p</p>
+<span id="id10">[<a class="reference internal" href="../99%20References/references.html#id9" title="Scott Chacon and Ben Straub. ProGit. Apress, 2 edition, 2018.">Chacon and Straub, 2018</a>]</span> 218p</p>
 </div></blockquote>
 </section>
 </section>
 </section>
-<section id="id10">
-<h2>커밋 되돌리기<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <section id="id11">
-<h3>명령어<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<h2>커밋 되돌리기<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
+<section id="id12">
+<h3>명령어<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></code><br />
 완료한 커밋을 수정해야 될 때</p></li>

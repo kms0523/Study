@@ -17,6 +17,9 @@ $\span(\empty) = \{ 0_V \}$로 정의한다.
 ### 참고3
 선형결합에서 $a_1,\cdots,a_n$을 `계수(coefficients)`라고 부른다.
 
+### 참고4
+$V = \span(S)$를 만족할 떄, $S$를 $V$의 `generating set`이라고 한다.
+
 ### 명제1
 벡터공간 $V/\F$와 $S \subseteq V$가 있을 때, 다음을 증명하여라.
 

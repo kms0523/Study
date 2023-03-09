@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Geometry" href="../08%20Geometry/Geometry.html" />
+    <link rel="next" title="Coordinate" href="06%20Coordinate.html" />
     <link rel="prev" title="Linearly Independet Set" href="04%20Linearly%20Independet%20Set.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -981,6 +981,16 @@ const thebe_selector_output = ".output, .cell_output"
      Basis
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06%20Coordinate.html">
+     Coordinate
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07%20Linear%20Map.html">
+     Linear Map
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -1835,21 +1845,28 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     명제3 (기저의 존재 정리)
+    <a class="reference internal nav-link" href="#existence-of-basis">
+     명제3(Existence of basis)
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
+      <a class="reference internal nav-link" href="#id4">
        참고
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id5">
      명제4
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       참고
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
@@ -1903,21 +1920,28 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     명제3 (기저의 존재 정리)
+    <a class="reference internal nav-link" href="#existence-of-basis">
+     명제3(Existence of basis)
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
+      <a class="reference internal nav-link" href="#id4">
        참고
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id5">
      명제4
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       참고
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
@@ -1951,12 +1975,12 @@ title="Print to PDF"
 <section id="id1">
 <h2>정의<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Vector space <span class="math notranslate nohighlight">\(V/\F\)</span>와 <span class="math notranslate nohighlight">\(V\)</span>의 subset <span class="math notranslate nohighlight">\(\beta\)</span>가 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(\beta\)</span>가 다음을 만족할 떄, <span class="math notranslate nohighlight">\(\beta\)</span>를 <code class="docutils literal notranslate"><span class="pre">기저(basis)</span></code>라고 한다.</p>
+<p><span class="math notranslate nohighlight">\(\beta\)</span>가 다음을 만족할 떄, <span class="math notranslate nohighlight">\(\beta\)</span>를 <span class="math notranslate nohighlight">\(V\)</span>의 <code class="docutils literal notranslate"><span class="pre">기저(basis)</span></code>라고 한다.</p>
 <div class="math notranslate nohighlight">
-\[ \beta \text{ is linearly independent set} \land \span(\beta) = V \]</div>
+\[ \beta \text{ is linearly independent generating set of } V \]</div>
 <section id="id2">
 <h3>명제1<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<p>Vector space <span class="math notranslate nohighlight">\(V/\F\)</span>와 <span class="math notranslate nohighlight">\(V\)</span>의 linearly independent subset <span class="math notranslate nohighlight">\(S\)</span>가 있다고 하자.</p>
+<p>Vector space <span class="math notranslate nohighlight">\(V/\F\)</span>와 <span class="math notranslate nohighlight">\(V\)</span>의 nonempty linearly independent subset <span class="math notranslate nohighlight">\(S\)</span>가 있다고 하자.</p>
 <p>그리고 집합 <span class="math notranslate nohighlight">\(F\)</span>를 다음과 같이 정의하자.</p>
 <div class="math notranslate nohighlight">
 \[F := \{ A \subseteq V | S \subseteq A \land A \text{ is linearly independent}\}\]</div>
@@ -1970,14 +1994,17 @@ title="Print to PDF"
 <p>따라서, set inclusion의 성질에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ (F,\subseteq) \text{ is a poset} \]</div>
-<p><span class="math notranslate nohighlight">\((F,\subseteq)\)</span>의 임의의 chain <span class="math notranslate nohighlight">\(C_i\)</span>를 다음과 같이 표현하자.</p>
+<p><span class="math notranslate nohighlight">\((F,\subseteq)\)</span>의 임의의 chain <span class="math notranslate nohighlight">\(C\)</span>라고 했을 떄, <span class="math notranslate nohighlight">\(M = \bigcup C\)</span>라고 하자.</p>
+<p><span class="math notranslate nohighlight">\(M\)</span>의 임의의 <span class="math notranslate nohighlight">\(n\)</span>개의 element를 <span class="math notranslate nohighlight">\(v_1,\cdots,v_n\)</span>이라하고 <span class="math notranslate nohighlight">\(\F\)</span>의 임의의 <span class="math notranslate nohighlight">\(n\)</span>개의 element를 <span class="math notranslate nohighlight">\(a_1,\cdots,a_n\)</span>이라고 할 때, <span class="math notranslate nohighlight">\(M\)</span>의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ C_i = \Set{A_{i1}, \cdots, A_{in}} \subseteq F \]</div>
-<p><span class="math notranslate nohighlight">\(C_i\)</span>는 전순서집합임으로 <code class="docutils literal notranslate"><span class="pre">일반성을</span> <span class="pre">잃지</span> <span class="pre">않고(without</span> <span class="pre">loss</span> <span class="pre">of</span> <span class="pre">generality,</span> <span class="pre">WLOG)</span></code> 다음을 가정할 수 있다.</p>
+\[ \exist C_i \in C \st v_i \in C_i \enspace i=1,\cdots,n \]</div>
+<p>그리고 <span class="math notranslate nohighlight">\(C\)</span>는 전순서집합임으로 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ A_{i1} \subseteq \cdots \subseteq A_{in} \]</div>
-<p>그러면 <span class="math notranslate nohighlight">\(C_i\)</span>는 항상 상계 <span class="math notranslate nohighlight">\(A_{in}\)</span>을 갖는다.</p>
-<p>부분순서집합 <span class="math notranslate nohighlight">\((F,\subseteq)\)</span>의 모든 사슬이 상계를 갖음으로, Zorn’s lemma에 의해 다음이 성립한다.</p>
+\[\begin{split} \begin{aligned} &amp; \exist C_M \in C \st C_1,\cdots,C_n \subseteq C_M \\ \implies&amp; v_1,\cdots,v_n \in C_M \end{aligned} \end{split}\]</div>
+<p>이 떄, <span class="math notranslate nohighlight">\(C_M \in F\)</span>임으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \sum_{i=1}^n a_iv_i = 0_V \implies a_1\cdots,a_n = 0_\F \\\implies&amp; M \text{ is an linearly independent set } \\\implies&amp; M \in F \end{aligned} \end{split}\]</div>
+<p>따라서, <span class="math notranslate nohighlight">\(M\)</span>은 <span class="math notranslate nohighlight">\(C\)</span>의 upper bound이고 임의의 chain이 upper bound를 갖음으로 Zorn’s lemma에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ (F,\subseteq) \text{ has maximal element} \qed \]</div>
 </section>
@@ -2010,49 +2037,68 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[ V = \span(M) \qed \]</div>
 </section>
-<section id="id4">
-<h3>명제3 (기저의 존재 정리)<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
-<p>모든 벡터공간 <span class="math notranslate nohighlight">\(V/F\)</span>이 기저를 갖음을 증명하여라.</p>
+<section id="existence-of-basis">
+<h3>명제3(Existence of basis)<a class="headerlink" href="#existence-of-basis" title="Permalink to this headline">#</a></h3>
+<p>모든 vector space가 basis를 갖음을 증명하여라.</p>
 <p><strong>Proof</strong></p>
+<p>임의의 vector space를 <span class="math notranslate nohighlight">\(V/\F\)</span>라고 하자.</p>
 <p><span class="math notranslate nohighlight">\(V = \{ 0_V \}\)</span>인 경우 자명하게 <span class="math notranslate nohighlight">\(\beta = \emptyset\)</span>이다.</p>
-<p><span class="math notranslate nohighlight">\(V \neq \{ 0_V \}\)</span>인 경우  <span class="math notranslate nohighlight">\(\exist v \in V - \{ 0_V \}\)</span>이고 따라서 집합 <span class="math notranslate nohighlight">\(S = \{ av | a \in F \}\)</span>는 <span class="math notranslate nohighlight">\(V\)</span>의 선형 독립 집합이다.</p>
-<p>이 때, 명제1,2에 의해 <span class="math notranslate nohighlight">\(S \subseteq M\)</span>이고 <span class="math notranslate nohighlight">\(V = span(M)\)</span>인 선형 독립 집합 <span class="math notranslate nohighlight">\(M\)</span>이 존재한다.</p>
-<p>따라서 <span class="math notranslate nohighlight">\(M\)</span>은 <span class="math notranslate nohighlight">\(V/F\)</span>의 기저가 된다. <span class="math notranslate nohighlight">\(\quad {_\blacksquare}\)</span></p>
-<section id="id5">
-<h4>참고<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
+<p><span class="math notranslate nohighlight">\(V \neq \{ 0_V \}\)</span>인 경우 항상 <span class="math notranslate nohighlight">\(V\)</span>의 linearly independent set이 존재한다.</p>
+<p><span class="math notranslate nohighlight">\(V\)</span>의 linearly independent set을 <span class="math notranslate nohighlight">\(S\)</span>라고 하면  명제1,2에 의해 <span class="math notranslate nohighlight">\(V = \span(M)\)</span>인 linearly independent set <span class="math notranslate nohighlight">\(M\)</span>이 존재한다.</p>
+<p>따라서 <span class="math notranslate nohighlight">\(M\)</span>은 <span class="math notranslate nohighlight">\(V/\F\)</span>의 기저가 되며 임의의 vector space가 basis를 갖음으로 모든 vector space가 basis를 갖는다. <span class="math notranslate nohighlight">\(\qed\)</span></p>
+<section id="id4">
+<h4>참고<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
 <ol class="simple">
-<li><p>기저는 극대 선형 독립 집합이다.</p></li>
-<li><p>기저의 존재성은 초른의 보조정리에 의존한다.</p></li>
-<li><p>공리(초른의 보조정리)에 의해 기저의 존재성을 보장했을 뿐 기저가 무엇인지는 알 수 없다.</p></li>
+<li><p>기저는 maximal linearly independent set이다.</p></li>
+<li><p>기저의 존재성은 Zorn’s lemma에 의존한다.</p></li>
+<li><p>공리(Zorn’s lemma)에 의해 기저의 존재성을 보장했을 뿐 기저가 무엇인지는 알 수 없다.</p></li>
 <li><p>기저의 유일성은 보장되지 않기 때문에 기저는 여러개일 수 있다.</p></li>
 </ol>
 </section>
 </section>
-<section id="id6">
-<h3>명제4<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
-<p>벡터공간 <span class="math notranslate nohighlight">\(V/F\)</span>와 기저 <span class="math notranslate nohighlight">\(\beta_1,\beta_2\)</span>가 있을 때 <span class="math notranslate nohighlight">\(|\beta_1| = |\beta_2|\)</span>임을 증명하여라.</p>
+<section id="id5">
+<h3>명제4<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p>Vector space <span class="math notranslate nohighlight">\(V/\F\)</span>와 basis <span class="math notranslate nohighlight">\(\beta_1,\beta_2\)</span>가 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(\beta_1,\beta_2\)</span>가 finite set일 때, 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ |\beta_1| = |\beta_2| \]</div>
 <p><strong>proof</strong></p>
-<p><span class="math notranslate nohighlight">\(|\beta_1| \le |\beta_2|\)</span>라 하자.</p>
-<p>그러면 함수 <span class="math notranslate nohighlight">\(f: \beta_1 \rightarrow \beta_2\)</span>는 단사함수이지만 전사함수는 아닌 함수가 존재한다.</p>
-<p>이 경우 <span class="math notranslate nohighlight">\(f(\beta_1) \subset \beta_2\)</span>이다.</p>
-<p><span class="math notranslate nohighlight">\(\exist v_1 \in \beta_2 - f(\beta_1)\)</span></p>
-<p>Since <span class="math notranslate nohighlight">\(\beta_1, \beta_2\)</span> are both maximal, it is contradiction.</p>
-<p><code class="docutils literal notranslate"><span class="pre">(미완성)</span></code></p>
+<p><span class="math notranslate nohighlight">\(\beta_1\)</span>을 <span class="math notranslate nohighlight">\(V\)</span>의 finite linearly independent set, <span class="math notranslate nohighlight">\(\beta_2\)</span>를 <span class="math notranslate nohighlight">\(V\)</span>의 finite generating set이라고 하자.</p>
+<p>그러면 steinitz exchange lemma에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ |\beta_1| \le |\beta_2| \]</div>
+<p>이번에는 반대로 <span class="math notranslate nohighlight">\(\beta_1\)</span>을 <span class="math notranslate nohighlight">\(V\)</span>의 finite generating set, <span class="math notranslate nohighlight">\(\beta_2\)</span>를 <span class="math notranslate nohighlight">\(V\)</span>의 finite linearly independent set이라고 하자.</p>
+<p>그러면 steinitz exchange lemma에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ |\beta_2| \le |\beta_1| \]</div>
+<p>따라서 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ |\beta_1| = |\beta_2| \qed \]</div>
+<section id="id6">
+<h4>참고<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
+<p>basis의 cardinality는 항상 동일하기 때문에, basis의 cardinality를 vector space의 <code class="docutils literal notranslate"><span class="pre">차원(dimension)</span></code>이라고 한다.</p>
+</section>
 </section>
 <section id="id7">
 <h3>명제5<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(n\)</span>차원 vector space <span class="math notranslate nohighlight">\(V / \mathbb F\)</span>가 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(S_1, S_2 \le V\)</span>이고 각각의 기저가 <span class="math notranslate nohighlight">\(\beta_1,\beta_2\)</span>일 때,  다음을 증명하여라.
-$<span class="math notranslate nohighlight">\( S_1 \cap S_2 = \{ 0_V \} \Rightarrow \beta_1 \cap \beta_2 = \empty\)</span>$</p>
+<p>Vector space <span class="math notranslate nohighlight">\(V / \mathbb F\)</span>가 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(S_1, S_2\)</span>가 <span class="math notranslate nohighlight">\(V\)</span>의 subspace이고 각각의 기저가 <span class="math notranslate nohighlight">\(\beta_1,\beta_2\)</span>일 때, 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ S_1 \cap S_2 = \{ 0_V \} \implies \beta_1 \cap \beta_2 = \empty\]</div>
 <p><strong>Proof</strong></p>
-<p><span class="math notranslate nohighlight">\(\beta_1 \cap \beta_2 \neq \empty\)</span>라 가정하자.</p>
+<p>다음을 가정하자.</p>
+<div class="math notranslate nohighlight">
+\[ \beta_1 \cap \beta_2 \neq \empty \]</div>
 <p><span class="math notranslate nohighlight">\(\beta \in \beta_1 \cap \beta_2\)</span>라 하면 다음이 성립한다.
-$<span class="math notranslate nohighlight">\( \begin{aligned} &amp; \beta \in \text{span}(\beta_1) \land \beta \in \text{span}(\beta_2) \\ \Rightarrow \enspace &amp; \beta \in S_1 \cap S_2 \\ \Rightarrow \enspace &amp; \beta = 0_V \end{aligned}  \)</span>$</p>
-<p>하지만, basis는 <span class="math notranslate nohighlight">\(0_V\)</span>가 될 수 없음으로 모순이 발생한다. 따라서, <span class="math notranslate nohighlight">\(\beta_1 \cap \beta_2 = \empty\)</span>이다. <span class="math notranslate nohighlight">\(\quad {_\blacksquare}\)</span></p>
+$<span class="math notranslate nohighlight">\( \begin{aligned} &amp; \beta \in \text{span}(\beta_1) \land \beta \in \text{span}(\beta_2) \\ \implies \enspace &amp; \beta \in S_1 \cap S_2 \\ \implies \enspace &amp; \beta = 0_V \end{aligned}  \)</span>$</p>
+<p>하지만, basis는 linearly independent set임으로 <span class="math notranslate nohighlight">\(0_V\)</span>를 갖을 수 없음으로 모순이 발생한다.</p>
+<p>따라서, proof by contradiction에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ S_1 \cap S_2 = \{ 0_V \} \implies \beta_1 \cap \beta_2 = \empty \qed \]</div>
 </section>
 <section id="id8">
 <h3>명제6<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(n\)</span>차원 vector space <span class="math notranslate nohighlight">\(V / \mathbb F\)</span>와 기저 <span class="math notranslate nohighlight">\(\beta\)</span>가 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(n\)</span>차원 vector space <span class="math notranslate nohighlight">\(V / \mathbb F\)</span>와 기저 <span class="math notranslate nohighlight">\(\beta = \Set{\beta_1,\cdots,\beta_n}\)</span>가 있다고 하자.</p>
 <p><span class="math notranslate nohighlight">\(U = \text{span}(\{\beta_1, \cdots, \beta_k \}), W = \text{span}(\{ \beta_{k+1}, \cdots \beta_n \})\)</span>라 할 때, 다음을 증명하여라.
 $<span class="math notranslate nohighlight">\(V = U \oplus W\)</span>$</p>
 <p><strong>Proof</strong></p>
@@ -2116,10 +2162,10 @@ $<span class="math notranslate nohighlight">\( \text{span}(\bigcup_{i=1}^k \omeg
             <p class="prev-next-title">Linearly Independet Set</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../08%20Geometry/Geometry.html" title="next page">
+    <a class='right-next' id="next-link" href="06%20Coordinate.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Geometry</p>
+        <p class="prev-next-title">Coordinate</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
