@@ -1,4 +1,5 @@
 # Linear Map
+## 정의
 vector space $V,W / \mathbb F$와 함수 $\Phi:V \rightarrow W$가 있다고 하자.
 
 `선형 변환(linear transformation)` 혹은 `선형 사상(linear map)`은 `선형성(linearity)`을 보존하는 함수이다.
@@ -90,50 +91,93 @@ $\F$는 field 임으로 $L(V;W)$는 $\F-$module이고 vector space의 정의에 
 $$ L(V;W) \text{ is a vector space} \qed $$
 
 ### 명제2
-$n,m$ 차원 vector spaces $V,W / \mathbb F$가 있다고 하자.
+$n$차원 vector space $V/\F$와 vector space $W/\F$가 있다고 하자.
 
-$V,W$의 기저를 각 각 $\beta, \gamma$라 할 때, 함수 $f^i_j$를 다음과 같이 정의하자.
-$$f^i_j : V \rightarrow W \quad s.t. \quad a^k\beta_k \mapsto a^k\delta^i_k \gamma_j $$
+$L(V;W)$의 임의의 element를 $f,g$라고 하고 $V$의 basis를 $\beta$라 할 때, 다음을 증명하여라.
 
-이 떄, 다음을 증명하여라.
-$$ \{ f^j_i \} \text{ is a basis of } L(V;W) $$
+$$ f(\beta_i) = g(\beta_i), \enspace i=1,\cdots,n \iff f = g $$
 
 **Proof**
 
-[$\text{span}(\{ f_i^j \}) = L(V;W)$]  
--[$\text{span}(\{ f_i^j \}) \subseteq L(V;W)$]  
-$c \in \mathbb F, \enspace v_1 = a^i\beta_i, \enspace v_2 = b^i \beta_i \in V$가 있을 때, 다음이 성립한다.
-$$ \begin{aligned} f_i^j(cv_1 + v_2) &= (ca^k + b^k)f_i^j(\beta_k) \\ &= (ca^k + b^k) \delta^j_k \gamma_i \\ &= (ca^j + b^j)\gamma_i \\ &= cf_i^j(v_1) + f_i^j(v_2) \end{aligned} $$
+[$\implies$]  
+$V$의 임의의 element를 $v=a^i\beta_i$라고 하면 다음이 성립한다.
 
-따라서, $f_i^j \in L(V;W)$임으로 $\text{span}(\{ f_i^j \}) \subseteq L(V;W)$이다.
+$$ f(v) = f(a^i\beta_i) = a^if(\beta_i) = a^ig(\beta_i) = g(a^i\beta_i) = g(v) \qed  $$
 
--[$L(V;W) \subseteq \text{span}(\{ f_i^j \})$]  
-$T \in L(V;W)$가 있을 때, $v_1 = a^i\beta_i \in V, \enspace T(v_1) = b^i \gamma_i \in W$라 하자.
+[$\impliedby$]  
+자명하게 성립한다. $\qed$
 
-$f = c^i_jf^j_i \in \text{span}(\{ f_i^j \})$라 하면 다음이 성립한다.
-$$ c^i_jf_i^j(v_1) = a^kc^i_jf_i^j(\beta_k) = a^k c^i_j \delta^j_k \gamma_i  = a^j c^i_j\gamma_i $$
+### 명제3
+$n,m$ 차원 vector spaces $V,W / \mathbb F$가 있다고 하자.
 
-따라서, $c^i_j$를 $a^jc^i_j = b^i$를 만족하게 결정하면 $T \in \text{span}(\{ f_i^j \})$이다.
+$V,W$의 기저를 각 각 $\beta, \gamma$라 할 때, 함수 $f^i_j, \enspace i=1,\cdots,m, j=1,\cdots,n$를 다음과 같이 정의하자.
+$$f^i_j : V \rightarrow W \quad s.t. \quad a^k\beta_k \mapsto a^k\delta^i_k \gamma_j $$
 
-[$\{ f_i^j \}$ are linearly independent]  
-$c^i_jf_i^j = 0_{L(V;W)}$라 하자.
+이 떄, 다음을 증명하여라.
+$$ \{ f^i_j \} \text{ is a basis of } L(V;W) $$
 
-$v = a^i\beta_i \in V$에 대해 다음이 성립한다.
-$$ c^i_jf_i^j(v) = c^i_j a^j \gamma_i = 0_W $$
+**Proof**
+
+[$\text{span}(\{ f^i_j \}) = L(V;W)$]  
+-[$\text{span}(\{ f^i_j \}) \subseteq L(V;W)$]  
+$V$의 임의의 element를 $v_1 = a^i\beta_i, \enspace v_2 = b^i \beta_i$, $\F$의 임의의 element를 $c$라고 하자.
+
+그러면, 임의의 $f^i_j$에 대해서 다음이 성립한다.
+$$ \begin{aligned} f^i_j(cv_1 + v_2) &= (ca^k + b^k)f^i_j(\beta_k) \\ &= (ca^k + b^k) \delta^i_k \gamma_j \\ &= (ca^i + b^i)\gamma_j \\ &= cf^i_j(v_1) + f^i_j(v_2) \end{aligned} $$
+
+따라서, 임의의 $f^i_j$ 는 $L(V;W)$의 element이고 $L(V;W)$는 vector space임으로 다음이 성립한다. 
+
+$$ \span(\{ f^i_j \}) \subseteq L(V;W) \qed $$
+
+-[$L(V;W) \subseteq \text{span}(\{ f^i_j \})$]  
+$L(V;W)$의 임의의 element를 $f$라고 하자.
+
+그러면 어떤 $a^i_j \in \F, i=1,\cdots,m, j=1,\cdots,n$에 대해서 다음을 만족한다.
+
+$$ f(\beta_i) = a^j_i\gamma_j $$
+
+이 때, $g \in \span(\Set{f^i_j})$를 다음과 같이 정의하자.
+
+$$ g = a^j_if^i_j $$
+
+그러면 다음이 성립한다.
+
+$$ \begin{aligned} & g(\beta_k) = a^j_i\delta^i_k\gamma_j = a^j_k\gamma_j = f(\beta_k) \\ \implies& g = f \\ \implies& f \in \span(\Set{f^i_j}) \end{aligned} $$
+
+따라서, 임의의 element $f$가 $\span(\Set{f^i_j})$에 포함됨으로 다음이 성립한다.
+
+$$ L(V;W) \subseteq \text{span}(\{ f^i_j \}) \qed $$
+
+[$\{ f^i_j \}$ are linearly independent]  
+$c^j_if^i_j = 0_{L(V;W)}$라 하자.
+
+$V$의 임의의 element를 $v = a^i\beta_i$라고 하면 다음이 성립한다.
+
+$$ c^j_if^i_j(v) = c^i_j a^j \gamma_i = 0_W $$
 
 임의의 $a^j$에 대해 항상 위 식이 성립해야 함으로 다음이 성립한다.
+
 $$ c^{ij} = 0 $$
 
-따라서, $\{ f_i^j \}$는 선형 독립이다.
+따라서, 다음이 성립한다.
+
+$$ \{ f^i_j \}  \text{ are linearly independent} \qed $$
 
 #### 따름정리
 다음을 증명하여라.
+
 $$ \dim(L(V;W)) = mn $$
+
+**Proof**
+
+$f^i_j, \enspace i=1,\cdots,m, j=1,\cdots,n$가 basis임으로 다음이 성립한다.
+
+$$ \dim(L(V;W)) = mn \qed $$
 
 #### 참고
 $f^j_i$는 $V$와 $W$의 기저 선택에 의존한다.
 
-### 명제3
+### 명제4
 vector spaces $V,W,Z/ \mathbb F$와 $T_1 \in L(V;W), T_2\in L(W;Z)$가 있다고 하자.
 
 이 떄, 다음을 증명하여라.
@@ -146,35 +190,72 @@ $$ \begin{aligned} (T_2 \circ T_1)(av_1 + v_2) & = T_2(T_1(av_1 +v_2)) \\ & = T_
 
 따라서, $T_2 \circ T_1 \in L(V;Z)$이다. $\quad {_\blacksquare}$
 
+### 명제5
+vector space $V,W/\F$가 있다고 하자.
+
+$L(V;W)$의 임의의 element를 $f$라고 할 때, 다음을 증명하여라.
+
+$$ f(0_V) = 0_W $$
+
+**Proof**
+
+$V$의 임의의 element를 $v$라고 하면 다음이 성립한다.
+
+$$ f(v) = f(v+0_V) = f(v) + f(0_V) \implies f(0_V) = 0_W \qed $$
+
 
 
 # Kernel
-유한 차원 vector space $V,W / \mathbb F$와 $T \in L(V,W)$가 있을 때, 다음과 같이 정의된 집합을 $T$의 kernel이라고 한다.
+## 정의
+Vector space $V,W / \mathbb F$와 $T \in L(V,W)$가 있을 때, 다음과 같이 정의된 집합을 $T$의 kernel이라고 한다.
 $$ \ker(T) := \{ v \in V \enspace | \enspace T(v) = 0_W \} $$
 
 ### 명제1
 유한 차원 vector space $V,W / \mathbb F$과 $T \in L(V,W)$가 있을 때, 다음을 증명하여라.
-$$ \ker(T) \le V $$
+
+$$ \ker(T) \text{ is a subspace of } V $$
 
 **Proof**
 
-[기본 연산 법칙]  
-vector space의 부분집합과 연산을 그대로 사용하기 때문에 교환법칙 분배법칙등 $F-$가군의 성질들이 전부 성립한다. 
+[Abelian Group]  
+-[closed]  
+$\ker(T)$의 임의의 element를 $v_1,v_2$라고 하자.
 
-[연산에 닫힘]  
-$v_1, v_2 \in \ker(T)$, $a \in \Bbb F$가 있을 때, $T(av_1 + v_2) = aT(v_1) + T(v_2) = 0_W$임으로 $av_1 + v_2 \in \ker(T)$이고 연산에 닫혀있다.
+$T$가 linear map임으로 다음이 성립한다.
 
-[항등원의 존재성]  
-명제1에 의해 항등원이 존재한다. 
+$$ T(v_1+v_2) = T(v_1) + T(v_2) = 0_W $$
 
-[역원의 존재성]  
-상수곱이 정의되어 있음으로 환의 명제2에 의해 역원이 존재한다. 
+따라서 $v_1 + v_2 \in \ker(T)$이고 그럼으로 $\ker(T)$는 $+$에 닫혀있다. $\qed$
 
-따라서 $\ker(T)$는 $V$의 부분벡터공간이다. $\quad {_\blacksquare}$
+-[identity]  
+$T(0_V) = 0_W$임으로 $0_V \in \ker(T)$이고 $\ker(T)$의 모든 element는 $V$의 element임으로 다음이 성립한다.
+
+$$ 0_V \text{ is an identity of } \ker(T) \qed $$
+
+-[inverse]  
+$\ker(T)$의 임의의 element를 $v$라고 하자.
+
+$v \in V$임으로 inverse element는 $-v \in V$이고 다음이 성립한다.
+
+$$ T(-v) = - T(v) = 0_W $$
+
+따라서 $-v \in \ker(T)$임으로 $\ker(T)$는 inverse element를 갖는다. $\qed$
+
+-[commutative]  
+$\ker(T)$의 임의의 element를 $v_1,v_2$라고 하자.
+
+$v_1,v_2 \in V$임으로 다음이 성립한다.
+
+$$ v_1 + v_2 = v_2 + v_1 \qed $$
+
+[Mouule]
+$V$의 scalar multiplication을 그대로 사용함으로 module의 성질을 전부 만족하고 따라서 $\ker(T) = \F-\text{module}$이고 다음이 성립한다.
+
+$$ \ker(T) \text{ is a vector space } \implies \ker(T) \text{ is a subspace of } V \qed  $$
 
 ### 명제2
 유한 차원 vector space $V,W / \mathbb F$과 $T \in L(V,W)$가 있을 때, 다음을 증명하여라.
-$$ \ker(T) = \{ 0_V \} \Leftrightarrow T \text{ is injective} $$
+$$ \ker(T) = \{ 0_V \} \iff T \text{ is injective} $$
 
 **Proof1**
 
