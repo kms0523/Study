@@ -190,12 +190,16 @@ $$ \begin{aligned} (T_2 \circ T_1)(av_1 + v_2) & = T_2(T_1(av_1 +v_2)) \\ & = T_
 
 따라서, $T_2 \circ T_1 \in L(V;Z)$이다. $\quad {_\blacksquare}$
 
-### 명제5
+## Kernel
+Vector space $V,W / \mathbb F$와 $T \in L(V,W)$가 있을 때, 다음과 같이 정의된 집합을 $T$의 `kernel`이라고 한다.
+$$ \ker(T) := \{ v \in V \enspace | \enspace T(v) = 0_W \} $$
+
+### 명제1
 vector space $V,W/\F$가 있다고 하자.
 
 $L(V;W)$의 임의의 element를 $f$라고 할 때, 다음을 증명하여라.
 
-$$ f(0_V) = 0_W $$
+$$ 0_V \in \ker(f)$$
 
 **Proof**
 
@@ -203,14 +207,7 @@ $V$의 임의의 element를 $v$라고 하면 다음이 성립한다.
 
 $$ f(v) = f(v+0_V) = f(v) + f(0_V) \implies f(0_V) = 0_W \qed $$
 
-
-
-# Kernel
-## 정의
-Vector space $V,W / \mathbb F$와 $T \in L(V,W)$가 있을 때, 다음과 같이 정의된 집합을 $T$의 kernel이라고 한다.
-$$ \ker(T) := \{ v \in V \enspace | \enspace T(v) = 0_W \} $$
-
-### 명제1
+### 명제2
 유한 차원 vector space $V,W / \mathbb F$과 $T \in L(V,W)$가 있을 때, 다음을 증명하여라.
 
 $$ \ker(T) \text{ is a subspace of } V $$
@@ -241,62 +238,141 @@ $$ T(-v) = - T(v) = 0_W $$
 
 따라서 $-v \in \ker(T)$임으로 $\ker(T)$는 inverse element를 갖는다. $\qed$
 
--[commutative]  
+-[commutative]   
 $\ker(T)$의 임의의 element를 $v_1,v_2$라고 하자.
 
 $v_1,v_2 \in V$임으로 다음이 성립한다.
 
 $$ v_1 + v_2 = v_2 + v_1 \qed $$
 
-[Mouule]
-$V$의 scalar multiplication을 그대로 사용함으로 module의 성질을 전부 만족하고 따라서 $\ker(T) = \F-\text{module}$이고 다음이 성립한다.
+[$\F-$Module]  
+$\ker(T)$의 임의의 element를 $v$라고 하자.
 
-$$ \ker(T) \text{ is a vector space } \implies \ker(T) \text{ is a subspace of } V \qed  $$
+$\F$의 임의의 element를 $c$라고 할 때, 다음이 성립한다.
 
-### 명제2
+$$ T(cv) = cT(v) = c0_W = 0_W \implies cv \in \ker(T) $$
+
+따라서, $\ker(T)$는 $V$의 scalar multiplication에 닫혀있음으로, scalar multiplication을 그대로 사용하면 자명하게 $\ker(T)$는 $\F-$module이다.
+
+[결론]
+따라서 $\ker(T)$는 vector space이고 다음이 성립한다.
+
+$$ \ker(T) \text{ is a subspace of } V \qed  $$
+
+### 명제3
 유한 차원 vector space $V,W / \mathbb F$과 $T \in L(V,W)$가 있을 때, 다음을 증명하여라.
+
 $$ \ker(T) = \{ 0_V \} \iff T \text{ is injective} $$
 
-**Proof1**
+**Proof**
 
-group monomorphism의 명제에 의해 성립한다.
+[$\implies$]  
+$V$의 임의의 element를 $v_1,v_2$라고 하면 다음이 성립한다.
 
-**Proof2**
+$$ \begin{aligned} & T(v_1) = T(v_2) \\ \implies \enspace & T(v_1) - T(v_2) = T(v_2) - T(v_2) \\ \implies \enspace & T(v_1 - v_2) = 0_W \\ \implies \enspace & v_1 - v_2 = 0_V \\ \implies \enspace & v_1 = v_2 \qed \end{aligned} $$
 
-[$\Rightarrow$]  
-$v_1, v_2 \in V$일 때, 다음이 성립한다.
-$$ \begin{aligned} & T(v_1) = T(v_2) \\ \Rightarrow \enspace & T(v_1) - T(v_2) = T(v_2) - T(v_2) \\ \Rightarrow \enspace & T(v_1 - v_2) = 0_W \\ \Rightarrow \enspace & v_1 - v_2 = 0_V \\ \Rightarrow \enspace & v_1 = v_2 \end{aligned} $$
+[$\impliedby$]  
+$T(0_V) = 0_W$이고 $T$가 injective임으로 $\ker(T) = \{ 0_V \}$이다. $\qed$
 
-[$\Leftarrow$]  
-$T(0_V) = T(0_F 0_V) = 0_F T(0_V) = 0_W$이고 $T$가 단사함수임으로 $\ker(T) = \{ 0_V \}$이다. $\quad {_\blacksquare}$
-
-# Image
+## Image
 유한 차원 vector space $V,W / \mathbb F$와 $T \in L(V,W)$가 있을 때, 다음과 같이 정의된 집합을 $T$의 image이라고 한다.
 $$ \text{img}(T) := \{ T(v) \in W \enspace | \enspace v \in V \} $$
 
 $\text{img}(T)$는 $T(V)$로 쓰기도 한다.
 
 ### 명제1
-유한 차원 vector space $V,W/F$과 $T \in L(V,W)$가 있을 때, 다음을 증명하여라.
-$$\mathrm{img}(T) \le W$$
+Vector space $V,W/\F$과 $T \in L(V,W)$가 있을 때, 다음을 증명하여라.
+
+$$ \img(T) \text{ is a subspace of } W $$
 
 **Proof**
 
-[기본 연산 법칙]  
-vector space의 부분집합과 연산을 그대로 사용하기 때문에 교환법칙 분배법칙등 $F-$가군의 성질들이 전부 성립한다. 
+[Abelian Group]  
+-[closed]  
+$\img(T)$의 임의의 두 element를 $w_1,w_2$라고 하면 다음이 성립한다.
 
-[연산에 닫힘]  
-$w_1, w_2 \in \mathrm{img}(T)$, $a \in \Bbb F$가 있을 때, $\exist v_1,v_2 \quad s.t \quad w_1 = T(v_1), w_2 = T(v_2)$이다. 따라서 $aw_1 + w_2 = aT(v_1) + T(v_2) = T(av_1 + v_2)  \in \mathrm{img}(T)$임으로 연산에 닫혀있다.
+$$ \exist v_{1,2} \in V \st T(v_{1,2}) = w_{1,2} $$
 
-[항등원의 존재성]  
-$$ T(0_V) = T(0_F 0_V) = 0_F T(0_V) = 0_W $$
+그러면 $\F$의 임의의 element를 $c$라고 할 때, 다음이 성립한다.
 
-[역원의 존재성]  
-scalar multiplication이 정의되어 있음으로 환의 명제2에 의해 역원이 존재한다. 
+$$ w_1 + cw_2 = T(v_1) + cT(v_2) = T(v_1 + cv_2) \in \img(T) \qed $$
 
-따라서 $\mathrm{img}(T)$는 $W$의 부분벡터공간이다. $\quad {_\blacksquare}$
+-[identity]  
+$T(0_V) = 0_W$임으로 $0_W \in \img(T)$이고, $\img(T)$의 모든 element는 $W$의 element임으로 $0_W$는 $\img(T)$의 identity element이다. $\qed$
 
-# Dimension Theorem
+-[inverse]  
+$\img(T)$의 임의의 element를 $w$라고 하면 다음이 성립한다.
+
+$$ \exist v \in V \st T(v) = w $$
+
+그러면 다음이 성립한다.
+
+$$ \begin{gathered} w + T(-v) = T(v) + T(-v) = 0_W \\ T(-v) + w = T(-v)+T(v) = 0_W \end{gathered} $$
+
+따라서, $T(-v)$는 $w$의 inverse element이고 $T(-v) \in \img(T)$이다. $\qed$
+
+-[commutative]  
+$\img(T)$의 임의의 element를 $w_{1,2}$라고 하자.
+
+$w_{1,2} \in W$이기 때문에 다음이 성립한다.
+
+$$ w_1 + w_2 = w_2+w_1 \qed $$
+
+[$\F-$Module]  
+$\img(T)$의 임의의 element를 $w$라고 하면 다음이 성립한다.
+
+$$ \exist v \in V \st T(v) = w $$
+
+$\F$의 임의의 element를 $c$라고 하면 다음이 성립한다.
+
+$$ cw = cT(v) = T(cv) \in \img(T) $$
+
+따라서, $\img(T)$는 $W$의 scalar multiplication에 닫혀있음으로, $W$의 scalar multiplication을 그대로 사용하면 $\img(T)$는 $\F-$module이다. $\qed$
+
+[결론]  
+$\img(T)$는 vector space임으로 다음이 성립한다.
+
+$$ \img(T) \text{ is a subspace of } W \qed $$
+
+### 명제2
+$n,m$차원 vector space $V,W/\F$와 $f \in L(V;W)$가 있다고 하자.
+
+$V/\F$의 임의의 basis를 $\beta=\Set{\beta_1,\cdots,\beta_n}$라 할 때, $\beta_0$를 다음과 같이 정의하자.
+
+$$ \beta_0 = \Set{v \in \beta | f(v) = 0_W} $$
+
+이 떄, 다음을 증명하여라.
+
+$$ f(\beta-\beta_0) \text{ is a basis of } \img(f) $$
+
+**Proof**
+
+[linearly independent]  
+일반성을 잃지 않고 $\beta_0 = \Set{\beta_1,\cdots,\beta_k}$라고 하자.
+
+그러면 다음이 성립한다.
+
+$$ \begin{aligned} & a^if(\beta_{k+i}) = 0_W \\\implies& f(a^i\beta_{k+i}) = 0_W \\\implies& a^i\beta_{k+i} = 0_V \implies \forall a^i = 0_\F \qed  \end{aligned}   $$
+
+[$\img(f) = f(\span(\beta-\beta_0))$]  
+-[$\img(f) \subseteq f(\span(\beta-\beta_0))$]  
+$\img(f)$의 임의의 element를 $w$라고 하면 다음이 성립한다.
+
+$$ \begin{aligned} & \exist v \in V \st f(v) = w \\ \implies& f(a^i\beta_i) = w \\\implies& a^if(\beta_i) = w \end{aligned} $$  
+
+이 떄, $\beta_i \in \beta_0$는 $0_W$임으로 다음이 성립한다.
+
+$$ a^if(\beta_i) \in f(\span(\beta-\beta_0)) \implies w \in f(\span(\beta-\beta_0)) \qed $$
+
+-[$f(\span(\beta-\beta_0)) \subseteq \img(f)$]  
+$\span(\beta-\beta_0) \subseteq V$임으로 $\img$의 정의에 의해 다음이 성립한다.
+
+$$ f(\span(\beta-\beta_0)) \subseteq \img(f) \qed $$
+
+> Reference  
+> [wiki](https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem)  
+
+## Dimension Theorem
 벡터공간 $V,W / \mathbb F$와, $T \in L(V; W)$가 있을 때 다음을 증명하여라.
 $$ \dim(V) = \text{nullity}(T) + \text{rank}(T) $$
 
@@ -308,7 +384,11 @@ $$ \dim(V) = \text{nullity}(T) + \text{rank}(T) $$
 
 **Proof2**
 
-$V$의 기저를 $\beta$라 하고, $\ker(T)$의 기저를 $\beta_0$라고 하자. 그러면 $T(\beta - \beta_0)$는 $\text{img}(T)$의 기저가 됨으로 $\text{rank}(T) = \dim(V) - \text{nullity}(T)$가 된다.
+$V$의 기저를 $\beta$라 하고, $\ker(T)$의 기저를 $\beta_0$라고 하자. 
+
+그러면 $T(\beta - \beta_0)$는 $\text{img}(T)$의 기저가 됨으로 다음이 성립한다.
+
+$$\text{rank}(T) = \dim(V) - \text{nullity}(T)$$
 
 ### 명제1
 유한 차원 vector space $V,W / \mathbb F$과 $T \in L(V; W)$가 있을 때, 다음을 증명하여라.
