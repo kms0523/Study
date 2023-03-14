@@ -23,7 +23,7 @@ $V = \span(S)$를 만족할 떄, $S$를 $V$의 `generating set`이라고 한다.
 ### 명제1
 벡터공간 $V/\F$와 $S \subseteq V$가 있을 때, 다음을 증명하여라.
 
-$$ \span(S) \text{ is a vector space } $$
+$$ \span(S) \text{ is a subspace of } V $$
 
 **proof**  
 
@@ -56,7 +56,7 @@ $\span(S)$의 모든 element는 $V$의 element임으로 다음이 성립한다.
 
 $$ \forall s_1,s_2 \in \span(S), \enspace s_1+s_2 = s_2+s_1 \qed $$
 
-[module]    
+[$\F-$module]    
 $\span(S)$의 임의의 element를 $s$라 하자. 
 
 그러면 $s\in V$임으로 $V$의 scalar multiplication을 그대로 사용할 수 있다.
@@ -65,6 +65,7 @@ $\span(S)$의 임의의 element를 $s$라 하자.
 
 $$ \span(S) = \F-\text{module} $$
 
+[결론]  
 따라서, 다음이 성립한다.
 
 $$ \span(S) \text{ is a vector space } \qed $$
@@ -105,10 +106,52 @@ $\span(S)$는 $S$를 포함하며 명제1에 의해 $V$의 subspace임으로 다
 
 $$ \span(S) \in H \implies \bigcap H \subseteq \span(S) \qed $$
 
+#### 따름명제2.1
+벡터공간 $V/\F$와 $V$의 subset $S$가 있다고 하자.
+
+이 때, 다음을 증명하여라.
+
+$$ \text{every subspace of } V \text{ that contains } S \text{ must alos contain the } \span(S) $$
+
+**Proof**
+
+$S$를 포함하는 $V$의 모든 subspace의 집합을 $H$라고 하자.
+
+그러면 명제2에 의해 다음이 성립한다.
+
+$$ \bigcap H = \span(S) $$
+
+따라서, $H$의 모든 element는 $\span(S)$를 subset으로 갖는다. $\qed$
+
+#### 따름명제2.2
+Vector space $V/\F$와 $V$의 generatiing set $G$가 있다고 하자.
+
+$V$의 임의의 subset을 $S$라고 할 떄, 다음을 증명하여라.
+
+$$ G \subseteq \span(S) \implies \span(S) = V $$
+
+**Proof**
+
+$G$를 포함하는 $V$의 모든 subspace의 collection을 $H$라고 하자.
+
+그러면, $\span(S) \in H$이고 $\span(G) = \bigcap H$임으로 다음이 성립한다.
+
+$$ \span(G) \subseteq \span(S) \implies V \subseteq \span(S) $$
+
+또한 $S$는 $V$의 subset임으로 다음이 성립한다.
+
+$$ \span(S) \subseteq V $$
+
+따라서 다음이 성립한다.
+
+$$ \span(S) = V \qed $$
+
 #### 참고
 $\span(S)$는 $H$의 element이면서 동시에 $\span(S) = \bigcap H$를 만족한다.
 
 따라서, $S$를 포함하는 모든 subspace는 $\span(S)$를 포함하며, $\span(S)$는 $S$를 포함하는 $V$의 subspace중에 가장 작은 subspace이다.
+
+
 
 ### 명제3
 벡터공간 $V/\F$가 있을 때, 다음을 증명하여라.
@@ -131,3 +174,4 @@ $V$의 임의의 원소는 그 원소 한개를 뽑아서 선형결합한 것으
 $V$의 부분집합으로 $S=V$를 잡게 되면 $\span(S) = \span(V) = V$가 된다. 
 
 즉, $V$의 부분집합중 span을 통해 $V$를 만들어내는 부분집합이 반드시 존재한다.
+

@@ -3,7 +3,8 @@
 #include <set>
 #include <vector>
 
-class myCompare {
+class myCompare
+{
 public:
 	bool operator()(const std::vector<int>& a, const std::vector<int>& b)
 	{
@@ -26,7 +27,8 @@ double cal_distance(const std::vector<int>& hold1, const std::vector<int>& hold2
 	return std::sqrt(delx * delx + dely * dely);
 }
 
-class Map {
+class Map
+{
 private:
 	Map(void) = delete;
 
@@ -64,17 +66,15 @@ public:
 		}
 	}
 
-	static const std::set<int>& get_reachable_hold_id_set(const int hold_id)
-	{
-		return Map::hold_id_to_reachable_hold_id_set_[hold_id];
-	}
+	static const std::set<int>& get_reachable_hold_id_set(const int hold_id) { return Map::hold_id_to_reachable_hold_id_set_[hold_id]; }
 
 private:
 	inline static std::vector<std::set<int>> hold_id_to_reachable_hold_id_set_;
 	//이미 탐색된 hold를 거를 필요가 있음.
 };
 
-class HJ {
+class HJ
+{
 public:
 	static void initialize(const int arm_length)
 	{
@@ -83,16 +83,10 @@ public:
 	}
 
 public:
-	static int get_last_hold_id(void)
-	{
-		return HJ::last_hold_id_;
-	}
+	static int get_last_hold_id(void) { return HJ::last_hold_id_; }
 
 public:
-	void go(const int hold_id)
-	{
-		this->current_hold_id_ = hold_id;
-	}
+	void go(const int hold_id) { this->current_hold_id_ = hold_id; }
 
 	void search(void)
 	{
@@ -113,12 +107,7 @@ public:
 	}
 
 public:
-	bool can_start(const std::vector<int>& hold) const
-	{
-		return hold[1] <= this->arm_length_;
-	}
-
-
+	bool can_start(const std::vector<int>& hold) const { return hold[1] <= this->arm_length_; }
 
 private:
 	inline static int last_hold_id_ = -1;

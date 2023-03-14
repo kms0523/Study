@@ -6,7 +6,22 @@ $\beta$가 다음을 만족할 떄, $\beta$를 $V$의 `기저(basis)`라고 한�
 
 $$ \beta \text{ is linearly independent generating set of } V $$
 
-### 명제1
+### 명제1(Existence of basis)
+모든 vector space가 basis를 갖음을 증명하여라.
+
+**Proof** 
+
+임의의 vector space를 $V/\F$라고 하자.
+
+$V = \{ 0_V \}$인 경우 자명하게 $\beta = \emptyset$이다.
+
+$V \neq \{ 0_V \}$인 경우 항상 $V$의 linearly independent set이 존재한다.
+
+$V$의 linearly independent set을 $S$라고 하면 보조명제1,2에 의해 $V = \span(M)$인 linearly independent set $M$이 존재한다.
+
+따라서 $M$은 $V/\F$의 기저가 되며 임의의 vector space가 basis를 갖음으로 모든 vector space가 basis를 갖는다. $\qed$
+
+#### 보조명제1
 Vector space $V/\F$와 $V$의 nonempty linearly independent subset $S$가 있다고 하자.
 
 그리고 집합 $F$를 다음과 같이 정의하자.
@@ -18,6 +33,7 @@ $$F := \{ A \subseteq V | S \subseteq A \land A \text{ is linearly independent}\
 $$ (F,\subseteq) \text{ has maximal element} $$
 
 **Proof**  
+
 $S \in F$임으로 다음이 성립한다.
 
 $$ F \neq \empty $$
@@ -44,7 +60,7 @@ $$ \begin{aligned} & \sum_{i=1}^n a_iv_i = 0_V \implies a_1\cdots,a_n = 0_\F \\\
 
 $$ (F,\subseteq) \text{ has maximal element} \qed $$
 
-### 명제2
+#### 보조명제2
 Vector space $V/\F$와 $V$의 linearly independent subset $S$가 있다고 하자.
 
 그리고 집합 $F$를 다음과 같이 정의하자.
@@ -81,29 +97,13 @@ $$ M \cup \{v\} \in F \enspace \land \enspace M \subseteq (M \cup \{v\}) $$
 
 $$ V = \span(M) \qed $$
 
-### 명제3(Existence of basis)
-모든 vector space가 basis를 갖음을 증명하여라.
-
-**Proof** 
-
-임의의 vector space를 $V/\F$라고 하자.
-
-$V = \{ 0_V \}$인 경우 자명하게 $\beta = \emptyset$이다.
-
-$V \neq \{ 0_V \}$인 경우 항상 $V$의 linearly independent set이 존재한다.
-
-$V$의 linearly independent set을 $S$라고 하면  명제1,2에 의해 $V = \span(M)$인 linearly independent set $M$이 존재한다.
-
-따라서 $M$은 $V/\F$의 기저가 되며 임의의 vector space가 basis를 갖음으로 모든 vector space가 basis를 갖는다. $\qed$
-
 #### 참고
-
 1. 기저는 maximal linearly independent set이다.
 2. 기저의 존재성은 Zorn's lemma에 의존한다.
 3. 공리(Zorn's lemma)에 의해 기저의 존재성을 보장했을 뿐 기저가 무엇인지는 알 수 없다.
 4. 기저의 유일성은 보장되지 않기 때문에 기저는 여러개일 수 있다.
 
-### 명제4
+### 명제2(Dimension)
 Vector space $V/\F$와 basis $\beta_1,\beta_2$가 있다고 하자.
 
 $\beta_1,\beta_2$가 finite set일 때, 다음을 증명하여라.
@@ -131,6 +131,110 @@ $$ |\beta_1| = |\beta_2| \qed $$
 #### 참고
 basis의 cardinality는 항상 동일하기 때문에, basis의 cardinality를 vector space의 `차원(dimension)`이라고 한다.
 
+### 명제3
+$n$차원 vector space $V/\F$가 있다고 하자.
+
+$G$가 $V$의 generating set일 때, 다음을 증명하여라.
+
+$$ \exist G' \subseteq G \st G' \text{ is a basis of } V $$
+
+**Proof**
+
+$G$의 $0_V$가 아닌 임의의 element를 $v_1$이라고 하자.
+
+그러면, $\Set{v_1}$은 linearly independent set이다.
+
+다음으로, $G$에서 $\Set{v_1} \cup \Set{v_2}$가 linearly independent인 vector $v_2$를 찾는다.
+
+그러면 $\Set{v_1,v_2}$는 linearly independent set이다.
+
+다음으로, $G$에서 $\Set{v_1,v_2} \cup \set{v_3}$가 linearly independent인 vector $v_3$를 찾는다.
+
+그러면 $\Set{v_1,v_2,v_3}$는 linearly independent set이다.
+
+이 과정을 가능한만큼 반복해서 얻은 linearly independent set을 $\beta = \Set{v_1,\cdots,v_k}$라고 하자.
+
+다음을 가정하자.
+
+$$ G \not\subseteq \span(\beta) $$
+
+그러면 다음이 성립한다.
+$$ \begin{aligned} & \exist v \in G - \span(\beta) \\\implies& \beta \cup \Set{v} \text{ is an linearly independent set} \end{aligned} $$
+
+이는 $\beta$를 만들 때, 가능한한 반복했다는 생성방식에 모순이 됨으로 proof by contradiction에 의해 다음이 성립한다.
+
+$$ G \subseteq \span(\beta) $$
+
+따라서, $G$가 generating set임으로 span의 성질에 의해 다음이 성립한다.
+
+$$ \span(\beta) = V $$
+
+그럼으로 $\beta$는 $V$의 basis가 되고 다음이 성립한다.
+
+$$ \exist G' \subseteq G \st G' \text{ is a basis of } V \qed $$
+
+#### 따름명제3.1
+$n$차원 vector space $V/\F$가 있다고 하자.
+
+$G$가 $V$의 generating set일 때, 다음을 증명하여라.
+
+$$ |G| = n \implies G \text{ is a basis of } V $$
+
+**Proof**
+
+$G$가 genrating set임으로 명제3에 의해 다음이 성립한다.
+
+$$ \exist G' \subseteq G \st G' \text{ is a basis of } V $$
+
+이 떄, $V$가 $n$차원임으로 다음이 성립한다.
+
+$$ |G'| = n $$
+
+전제에 의해 $|G|$의 subset중 cardinality가 $n$인 subset은 $G$밖에 없음으로 다음이 성립한다.
+
+$$ |G| = n \implies G \text{ is a basis of } V \qed $$
+
+### 명제4
+$n$차원 vector space $V/\F$가 있다고 하자.
+
+$V$의 linearly independent set을 $S$라고 할 떄, 다음을 증명하여라.
+
+$$ |S| = n \implies S \text{ is a basis of } V $$
+
+**Proof**
+
+$V$의 임의의 basis를 $\beta$라고 하자.
+
+$\beta$는 generating set임으로 Steinitz exchange lemma에 의해 다음이 성립한다.
+
+$$ \exist \beta' \subseteq \beta \st |\beta'| = 0 \land \span(S\cup\beta) = V$$
+
+따라서 $\beta' = \empty$임으로 $\span(S)=V$이고 다음이 성립한다. 
+
+$$ |S| = n \implies S \text{ is a basis of } V \qed $$
+
+#### 따름명제4.1
+$n$차원 vector space $V/\F$가 있다고 하자.
+
+$V$의 subspace $U$가 있을 때, 다음을 증명하여라.
+
+$$ \dim(U) = n \implies U = V $$
+
+**Proof**
+
+$U$의 basis를 $\beta$라고 하자.
+
+$U$는 $V$의 subspace임으로 다음이 성립한다.
+
+$$ \beta \text{ is an linearly independent set of } V $$
+
+이 떄, $|\beta| = n$임으로 명제4에 의해 다음이 성립한다.
+
+$$ \beta \text{ is a basis of } V $$
+
+따라서, 다음이 성립한다.
+
+$$ U = V \qed $$
 
 ### 명제5
 Vector space $V / \mathbb F$가 있다고 하자.

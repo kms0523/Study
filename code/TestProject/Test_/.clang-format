@@ -27,7 +27,7 @@ BraceWrapping:
   SplitEmptyFunction: true
   SplitEmptyRecord: true
 
-ColumnLimit: 150
+ColumnLimit: 60
 IndentWidth: 2
 TabWidth: 2
 MaxEmptyLinesToKeep: 1

@@ -192,6 +192,7 @@ $$ \begin{aligned} (T_2 \circ T_1)(av_1 + v_2) & = T_2(T_1(av_1 +v_2)) \\ & = T_
 
 ## Kernel
 Vector space $V,W / \mathbb F$와 $T \in L(V,W)$가 있을 때, 다음과 같이 정의된 집합을 $T$의 `kernel`이라고 한다.
+
 $$ \ker(T) := \{ v \in V \enspace | \enspace T(v) = 0_W \} $$
 
 ### 명제1
@@ -274,6 +275,13 @@ $$ \begin{aligned} & T(v_1) = T(v_2) \\ \implies \enspace & T(v_1) - T(v_2) = T(
 [$\impliedby$]  
 $T(0_V) = 0_W$이고 $T$가 injective임으로 $\ker(T) = \{ 0_V \}$이다. $\qed$
 
+## Nullity
+Vector space $V,W / \mathbb F$와 $T \in L(V,W)$가 있다고 하자.
+
+이 때, $V$의 subspace $\ker(T)$의 dimension을 $\nullity(T)$ 라고 한다.
+
+$$ \nullity(T) := \dim(\ker(T)) $$
+
 ## Image
 유한 차원 vector space $V,W / \mathbb F$와 $T \in L(V,W)$가 있을 때, 다음과 같이 정의된 집합을 $T$의 image이라고 한다.
 $$ \text{img}(T) := \{ T(v) \in W \enspace | \enspace v \in V \} $$
@@ -334,78 +342,123 @@ $\img(T)$는 vector space임으로 다음이 성립한다.
 
 $$ \img(T) \text{ is a subspace of } W \qed $$
 
-### 명제2
-$n,m$차원 vector space $V,W/\F$와 $f \in L(V;W)$가 있다고 하자.
+### 명제2(Basis of image)
+$n$차원 vector space $V/\F$, vector space $W/\F$와 $T \in L(V; W)$가 있다고 하자.
 
-$V/\F$의 임의의 basis를 $\beta=\Set{\beta_1,\cdots,\beta_n}$라 할 때, $\beta_0$를 다음과 같이 정의하자.
+그리고 $V$의 기저를 $\beta = \Set{\beta_1,\cdots,\beta_n}$라 하고, $\ker(T)$의 기저를 $\gamma = \Set{\gamma_1,\cdots,\gamma_k}$라고 하자.
 
-$$ \beta_0 = \Set{v \in \beta | f(v) = 0_W} $$
+그러면 Steinitz exchange lemma에 의해서 다음이 성립한다.
 
-이 떄, 다음을 증명하여라.
+$$ \exist \beta' \subseteq \beta \st |\beta'| = n-k \land \span(\gamma\cup\beta') = V$$
 
-$$ f(\beta-\beta_0) \text{ is a basis of } \img(f) $$
+이 때, 다음을 증명하여라.
+
+$$ f(\beta') :=  \{ T(\beta'_1),\cdots,T(\beta'_{n-k}) \} \text { is a basis of } \img(T)$$
 
 **Proof**
 
 [linearly independent]  
-일반성을 잃지 않고 $\beta_0 = \Set{\beta_1,\cdots,\beta_k}$라고 하자.
+어떤 $a^1,\cdots,a^{n-k}\in\F$에 대해서 $a^1f(\beta'_1)+\cdots+a^{n-k}f(\beta'_{n-k}) = 0_W$라고 하면 다음이 성립한다.
 
-그러면 다음이 성립한다.
+$$ \begin{aligned} &  a^if(\beta'_{i}) = 0_W \\\implies& f(a^i\beta'_{i}) = 0_W \\\implies& a^i\beta'_{i} \in \ker(T) = \span(\gamma) \\\implies& a^i\beta'_{i} =b^j\gamma_j \\\implies& a^1\beta'_1+\cdots+a^{n-k}\beta'_{n-k} -b^1\gamma_1-\cdots-b^k\gamma_k = 0_V \end{aligned} $$
 
-$$ \begin{aligned} & a^if(\beta_{k+i}) = 0_W \\\implies& f(a^i\beta_{k+i}) = 0_W \\\implies& a^i\beta_{k+i} = 0_V \implies \forall a^i = 0_\F \qed  \end{aligned}   $$
+이 때, $\beta' \cup \gamma$은 basis임으로 다음이 성립한다.
 
-[$\img(f) = f(\span(\beta-\beta_0))$]  
--[$\img(f) \subseteq f(\span(\beta-\beta_0))$]  
+$$ a^1=\cdots=a^{n-k}=b^1=\cdots=b^k=0_\F $$
+
+따라서, $f(\beta')$은 linearly independent set이다. $\qed$
+
+[$\img(f) = \span(f(\beta'))$]  
+-[$\img(f) \subseteq \span(f(\beta'))$]  
 $\img(f)$의 임의의 element를 $w$라고 하면 다음이 성립한다.
 
-$$ \begin{aligned} & \exist v \in V \st f(v) = w \\ \implies& f(a^i\beta_i) = w \\\implies& a^if(\beta_i) = w \end{aligned} $$  
+$$ \exist v \in V \st f(v) = w $$
 
-이 떄, $\beta_i \in \beta_0$는 $0_W$임으로 다음이 성립한다.
+이 떄, $\gamma \cup \beta'$이 basis임으로 어떤 $a^1,\cdots,a^{n-k},b^1,\cdots,b^k \in \F$에 대해서 다음이 성립한다.
 
-$$ a^if(\beta_i) \in f(\span(\beta-\beta_0)) \implies w \in f(\span(\beta-\beta_0)) \qed $$
+$$ v = a^1\beta'_1+\cdots+a^{n-k}\beta'_{n-k}+b^1\gamma_1+\cdots+b^k\gamma_k $$
 
--[$f(\span(\beta-\beta_0)) \subseteq \img(f)$]  
-$\span(\beta-\beta_0) \subseteq V$임으로 $\img$의 정의에 의해 다음이 성립한다.
+따라서, 다음이 성립한다.
 
-$$ f(\span(\beta-\beta_0)) \subseteq \img(f) \qed $$
+$$ \begin{aligned} w &= f(a^1\beta'_1+\cdots+a^{n-k}\beta'_{n-k}+b^1\gamma_1+\cdots+b^k\gamma_k) \\&= a^1f(\beta'_1)+\cdots+a^{n-k}f(\beta'_{n-k}) \\&\in \span(f(\beta'))\end{aligned} $$  
+
+$\img(f)$의 임의의 element에 대해 위가 성립함으로 다음이 성립한다.
+
+$$ \img(f) \subseteq \span(f(\beta')) \qed $$
+
+-[$\span(f(\beta')) \subseteq \img(f)$]  
+$\span(f(\beta'))$의 임의의 element를 $w$라고 하면 다음이 성립한다.
+
+$$ \begin{aligned} w &= a^1f(\beta'_1)+\cdots+a^{n-k}f(\beta'_{n-k}) \\&= f(a^1\beta'_1+\cdots+a^{n-k}\beta'_{n-k}) \end{aligned} $$
+
+이 때, $a^1\beta'_1+\cdots+a^{n-k}\beta'_{n-k} \in V$임으로 다음이 성립한다.
+
+$$ w \in \img(f) $$
+
+$\span(f(\beta'))$의 임의의 element에 대해 위가 성립함으로 다음이 성립한다.
+
+$$ \span(f(\beta')) \subseteq \img(f) \qed $$
+
+[결론]  
+$f(\beta')$는 linearly independent set이면서 동시에 $\img(f)$의 generating set임으로 다음이 성립한다.
+
+$$ f(\beta') \text{ is a basis of } \img(f) \qed $$
+
 
 > Reference  
 > [wiki](https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem)  
 
-## Dimension Theorem
-벡터공간 $V,W / \mathbb F$와, $T \in L(V; W)$가 있을 때 다음을 증명하여라.
-$$ \dim(V) = \text{nullity}(T) + \text{rank}(T) $$
+## Rank
+Vector space $V,W / \mathbb F$와 $T \in L(V,W)$가 있다고 하자.
+
+이 때, $W$의 subspace $\img(T)$의 dimension을 $\rank(T)$ 라고 한다.
+
+$$ \rank(T) := \dim(\img(T)) $$
+
+### 명제1(Dimension Theorem)
+$n$차원 vector space $V/\F$, vector space $W/\F$와 $T \in L(V; W)$가 있다고 하자.
+
+이 때 다음을 증명하여라.
+
+$$ \text{rank}(T) = \dim(V) - \text{nullity}(T) $$
 
 **Proof1**
 
 추상대수학에서 1st homorphism theorem을 통해 군 $G,H$와 group homomorphism인 $f : G \rightarrow H$가 있을 때, $G / \ker(f) \cong \text{img}(f)$임을 보였다. 이를 벡터공간으로 확장하면 다음과 같다.
 
-벡터공간 $V,W / \mathbb F$와, $T \in L(V,W)$가 있을 때, $V / \ker(T) \cong \text{img}(T)$이다. 이를 통해 $\dim(V / \ker(T)) = \dim(\text{img}(T))$이고 정리하면 $\dim(V) = \text{nullity}(T) + \text{rank}(T)$이다.
+벡터공간 $V,W / \mathbb F$와, $T \in L(V,W)$가 있을 때, $V / \ker(T) \cong \text{img}(T)$이다. 이를 통해 $\dim(V / \ker(T)) = \dim(\text{img}(T))$이고 정리하면 $\text{rank}(T) = \dim(V) - \text{nullity}(T)$이다.
 
 **Proof2**
 
-$V$의 기저를 $\beta$라 하고, $\ker(T)$의 기저를 $\beta_0$라고 하자. 
+$V$의 기저를 $\beta = \Set{\beta_1,\cdots,\beta_n}$라 하고, $\ker(T)$의 기저를 $\gamma = \Set{\gamma_1,\cdots,\gamma_k}$라고 하자. 
 
-그러면 $T(\beta - \beta_0)$는 $\text{img}(T)$의 기저가 됨으로 다음이 성립한다.
+그러면 Steinitz exchange lemma에 의해서 다음이 성립한다.
 
-$$\text{rank}(T) = \dim(V) - \text{nullity}(T)$$
+$$ \exist \beta' \subseteq \beta \st |\beta'| = n-k \land \span(\gamma\cup\beta') = V$$
 
-### 명제1
+이 떄, $\img(T)$에 성질에 의해 $f(\beta')$은 $\img(T)$의 basis임으로 다음이 성립한다.
+
+$$\text{rank}(T) = \dim(V) - \text{nullity}(T) \qed $$
+
+#### 따름명제1.1
 유한 차원 vector space $V,W / \mathbb F$과 $T \in L(V; W)$가 있을 때, 다음을 증명하여라.
-$$ \dim(V) = \dim(W) \land \ker(T) = \{ 0_V \} \Rightarrow T \text{ is bijective} $$
+$$ \dim(V) = \dim(W) \land \ker(T) = \{ 0_V \} \implies T \text{ is bijective} $$
 
 **Proof**
 
 [injective]  
-Kernel의 명제2에 의해 $T$는 injective이다.
+$\ker(T) = \{ 0_V \}$임으로 $T$는 injective이다. $\qed$
 
 [surjective]  
-가정과 Dimension Theorem에 의해 다음이 성립한다.
+$\dim(V) = \dim(W)$임으로 Dimension Theorem에 의해 다음이 성립한다.
+
 $$ \dim(W) = \dim(V) = \text{nullity}(T) + \text{rank}(T) = \text{rank}(T) = \dim(\text{img}(T)) $$
 
-$\text{img}(T) \le W$이고 $\dim(\text{img}(T)) = \dim(W)$임으로 차원의 명제1에 의해 $\text{img}(T) = W$이다. $\quad {_\blacksquare}$
+$\img(T)$는 $W$의 subspace이고 $\dim(\text{img}(T)) = \dim(W)$임으로 다음이 성립한다.
 
-# Determinant of an Linear Map
+$$ \text{img}(T) = W \qed $$
+
+## Determinant of an Linear Map
 vector space $V/ \mathbb F$와 $T \in \text{End}(V)$가 있을 때, $T$의 determinat를 다음과 같이 정의한다.
 $$ \det(T) : \text{End}(V) \rightarrow \mathbb F \quad s.t. \quad T \mapsto \det(\frak m_\beta^\beta(T)) \text { for any basis } \beta $$
 
@@ -423,7 +476,7 @@ $$ \frak m^\gamma_\gamma(T) \sim  \frak m^\beta_\beta(T)$$
 similar한 두 행렬의 성질에 의해 다음이 성립한다.
 $$ \det(\frak m^\gamma_\gamma(T)) = \det(\frak m^\beta_\beta(T)) \quad {_\blacksquare} $$
 
-# Trace of an Linear Map
+## Trace of an Linear Map
 vector space $V/ \mathbb F$와 $T \in \text{End}(V)$가 있을 때, $T$의 trace를 다음과 같이 정의한다.
 
 $$ \mathrm{tr}(T) : \text{End}(V) \rightarrow \mathbb F \quad s.t. \quad T \mapsto \mathrm{tr}(\frak m_\beta^\beta(T)) \text { for any basis } \beta $$
@@ -442,7 +495,7 @@ $$ \frak m^\gamma_\gamma(T) \sim  \frak m^\beta_\beta(T)$$
 similar한 두 행렬의 성질에 의해 다음이 성립한다.
 $$ \mathrm{tr}(\frak m^\gamma_\gamma(T)) = \mathrm{tr}(\frak m^\beta_\beta(T)) \quad {_\blacksquare} $$
 
-# Characteristic Polynomial of an Linear Map
+## Characteristic Polynomial of an Linear Map
 vector space $V/\mathbb F$와 $T \in \text{End}(V)$가 있을 때, $T$의 특성다항식은 다음과 같이 정의된다.
 $$ \varphi_T(t) = \det(T - tid) $$
 
