@@ -265,7 +265,7 @@ struct X : Base<T>
     }
 };
 ```
-기본적으로 c++에서는 `Base<T>::example`이 템플릿이 아니고 따라서 컴파일러에서 `<`를 less-than으로 해석한다고 가정하기 때문에 오류를 발생시킨다.
+기본적으로 c++에서는 `Base<T>::example`이 템플릿이 아니라고 보고 따라서 컴파일러에서 `<`를 less-than으로 해석한다고 가정하기 때문에 오류를 발생시킨다.
 
 이를 해결하기 위해 `example`가 template이라는 것을 인지시켜 `<`을 꺽쇠로 올바르게 구문 분석할 수 있도록 `template` keyword를 추가해야 한다.
 
@@ -294,11 +294,19 @@ int main() {
 }
 ```
 
-기본적으로 C++에서는 `T`는 template parameter에 depend하는 dependent name이기 때문에 `T::mytpe`이 한정자를 사용하는 정규화된 이름으로 본다.
+`T::mytype`은 template parameter `T`에 depend하는 dependent name이기 때문에 instantiation되기 전까지 compiler는 `T::mytype`에 대해서 알 수 있는 것이 거의 없다.
 
-따라서, `T::mytpe`가 type이라는 것을 인지시켜 올바르게 구문 분석할 수 있도록 `typename` keyword를 추가해야 한다.
+왜냐하면 template parameter `T`가 무엇이 되느냐에 따라서 `T::mytype`는 완전히 다른 종류를 가르킬 수 있기 때문이다.
 
-<br><br>
+예를 들면 T class의 static 변수, 함수 일수도 있고 T class안에 정의된 특정한 type일 수도 있다.
+
+따라서 C++에서는 `T`에 depend하는 `정규화된 이름(qualified id)`중 type을 가르키는 경우 `typename` keyword를 추가하도록 강제하고 있다.
+
+> Reference  
+> [MSDN - Templates and Name Resolution](https://learn.microsoft.com/en-us/cpp/cpp/templates-and-name-resolution?view=msvc-170)  
+> [MSDN - Name Resolution for Dependent Types](https://learn.microsoft.com/en-us/cpp/cpp/name-resolution-for-dependent-types?view=msvc-170)  
+> [MSDN - Typename](https://learn.microsoft.com/en-us/cpp/cpp/typename?view=msvc-160)  
+> [stackoverflow - qualified id](https://stackoverflow.com/questions/4103756/what-is-a-nested-name-specifier)  
 
 ## Template Parameter Pack 
 `Template parameter pack`은 0개 또는 그 이상의 인자를 받는 template parameter이다.

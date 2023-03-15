@@ -1,31 +1,16 @@
 #include "gtest/gtest.h"
 
-template <typename T, typename V>
-class Foo
+template <typename T>
+std::vector<typename T> qwer(void)
 {
-public:
-	void test(void);
-};
-
-template <typename T, typename V>
-using Bar = Foo<T, V>;
-
-template <typename T, typename V>
-void Bar<T, V>::test(void)
-{
-	std::cout << "이게 되네?";
-};
-
-class Apple
-{
-public:
-	void test(void){};
-};
+	std::vector<T> vec;
+	return vec;
+}
 
 TEST(Test, test)
 {
-	Bar<int, double> b;
-	b.test();
+	std::cout << qwer<int>().size();
+	std::exit(523);
 }
 
 //#include "../TestProject/소스.cpp"

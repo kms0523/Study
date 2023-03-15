@@ -1,18 +1,13 @@
-# Matrix representation of a vector
+# Matrix representation
+## Vector
 $n$ 차원 vector space $V / \mathbb F$와 기저 $\beta$가 있다고 하자.
 
 $v = a^i \beta_i \in V$의 $\beta$에 대한 `행렬표현(matrix representation)` $\frak m_\beta(v)$은 다음과 같이 정의된 함수이다.
 $$ \frak m_\beta : V \rightarrow M_{n1}(\mathbb F) \quad s.t. \quad v \mapsto \begin{bmatrix} a^1 \\ \vdots \\ a^n \end{bmatrix} $$  
 
-### 참고1
-$\frak m_\beta(v)$를 $v$의 `좌표(coordinate)`라고도 한다.
-
-### 참고2
-편의성을 위해 $M_{n1}(\mathbb F)$를 $\mathbb F^n$으로 표기한다.
-
 ### 명제1
 $n$차원 vector space $V / \mathbb F$와 기저 $\beta$가 있을 때, $v \in V$에 대해 다음을 증명하여라.
-$$ \frak m_\beta(v) \text{ is well defined.} $$
+$$ \frak m_\beta \text{ is well defined.} $$
 
 **proof**
 
@@ -28,7 +23,7 @@ $$ a^i = b^i $$
 $n$차원 vector space $V/ \mathbb F$와 기저 $\beta$가 있다고 하자.
 
 $v \in V$에 대해 다음을 증명하여라.
-$$ \frak m_\beta(v) \text{ is a vector space isomorphism} $$
+$$ \frak m_\beta \text{ is a vector space isomorphism} $$
 
 **Proof**
 
@@ -41,26 +36,39 @@ $$ \frak m_\beta(cv_1 + v_2) = \begin{bmatrix} ca^1 + b_1 \\ \vdots \\ ca^n+ b_n
 [$m_\beta$ is bijective]  
 $\ker(m_\beta) = \{ 0_V \}$이고 $\dim(V) = \dim(\mathbb F^n)$임으로 dimension theorem에 의해 $m_\beta$는 bijective이다.$\quad\tiny\blacksquare$
 
-# Matrix representation of an linear map
-$n$차원, $m$차원 벡터공간 $V,W / \mathbb F$와 각각의 기저 $\beta, \gamma$ 그리고 $T \in L(V;W)$가 있다고 하자.
+## Linear Map
+$n,m$차원 벡터공간 $V,W / \F$와 각각의 기저 $\beta, \gamma$ 그리고 $T \in L(V;W)$가 있다고 하자.
 
-$v = a^i\beta_i \in V, \enspace T(v) = b^i \gamma_i$일 때, $T$는 다음과 같이 나타낼 수 있다.
-$$ T= c^i_jf^j_i, \enspace i=1,\cdots,m, \enspace j=1, \cdots, n $$
-
-$$ \text{Where, } f^j_i(\beta_k) = \delta^j_k \gamma_i, \enspace b^i =c^i_ja^j $$
-
-이 떄, $T$의 $\beta,\gamma$에 대한 `행렬표현(matrix representation)` $\frak m_\beta^\gamma(v)$은 다음과 같이 정의된 함수이다.
-$$ \frak m_\beta^\gamma : L(V;W) \rightarrow M_{mn}(\mathbb F) \quad s.t. \quad T \mapsto \begin{bmatrix} c^1_1 & \cdots & c^1_n \\ \vdots & \ddots & \vdots \\ c^m_1 & \cdots & c^m_n \\ \end{bmatrix} $$  
+이 때, $T=A^j_if^i_j$일 때, $T$의 $\beta,\gamma$에 대한 `행렬표현(matrix representation)` $\frak m_\beta^\gamma$은 다음과 같이 정의된 함수이다.
+$$ \frak m_\beta^\gamma : L(V;W) \rightarrow M_{mn}(\mathbb F) \quad s.t. \quad T \mapsto \begin{bmatrix} A^1_1 & \cdots & A^1_n \\ \vdots & \ddots & \vdots \\ A^m_1 & \cdots & A^m_n \\ \end{bmatrix} $$  
 
 ### 참고1
+$V$의 임의의 element를 $v=a^i\beta_i$라고 할 때, $T(v) = b^j \gamma_j$, $T = A^j_if^i_j$라고 한다면 다음 관계식이 성립한다.
+
+$$ b^j = A^j_ia^i $$
+
+이를 행렬형태로 나타내면 다음과 같다.
+
+$$ \begin{bmatrix} b^1 \\ \vdots \\ b^m \end{bmatrix} =  \begin{bmatrix} A^1_1 & \cdots & A^1_n \\ \vdots & \ddots & \vdots \\ A^m_1 & \cdots & A^m_n \\ \end{bmatrix} \begin{bmatrix} a^1 \\ \vdots \\ a^n \end{bmatrix} $$
+
+따라서, $T$의 행렬표현을 위와 같이 정의한것이다.
+
+### 참고2
+$A^j_i$는 $i$ coordinate를 $j$ coordinate로 변환할 때, 얼마나 scailing 해줄 것인지를 결정하는 값이다.
+
+$$ \begin{bmatrix} b^1 \\ \vdots \\ b^m \end{bmatrix} = \begin{bmatrix} A^1_1 \\ \vdots \\ A^m_1 \end{bmatrix} a^1 + \cdots $$
+
+형태를 보면 $a^1$ 이라는 coordinate에 $A^j_1$만큼 scailing 해준 만큼 $b^j$ coordinate에 영향을 준다.
+
+### 참고3
 $T$의 행렬 표현은 다음과 같이 나타낼 수 있다.
 $$\frak m^\gamma_\beta(T) = \begin{bmatrix} \frak m_\gamma(T(\beta_1)) & \cdots & \frak m_\gamma(T(\beta_n)) \end{bmatrix}  $$
 
 따라서 $\frak m^\gamma_\beta(T) = A$라 할 때, 다음이 성립한다.
 $$ T(\beta_i) = A^j_i \gamma_j $$
 
-### 참고2
-$b^i =c^i_ja^j$임으로 행렬 곱의 성질에 의해 다음이 성립한다.
+### 참고4
+$b^j =A^j_ia^i$임으로 다음이 성립한다.
 $$ \frak m_\gamma(T(v)) = \frak m^\gamma_\beta(T) \frak m_\beta(v) $$
 
 ### 명제1

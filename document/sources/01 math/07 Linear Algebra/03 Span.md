@@ -73,9 +73,7 @@ $$ \span(S) \text{ is a vector space } \qed $$
 ### 명제2
 벡터공간 $V/\F$와 $V$의 subset $S$가 있다고 하자.
 
-$V$의 subspace의 collection $H$를 다음과 같이 정의하자.
-
-$$H := \{ W \enspace | \enspace S \subseteq W \land W \le V \}$$
+$S$를 포함하는 $V$의 모든 subspace의 집합을 $H$라고 하자.
 
 이 떄, 다음을 증명하여라.
 $$ \span(S)=\bigcap H $$
@@ -89,13 +87,13 @@ $$ v = a_1v_1+ \cdots + a_nv_n, \enspace a_i \in \F, v_i \in S $$
 
 $H$의 임의의 element를 $H_i \in H$라 하자.
 
-$H$의 정의에 의해 $S \subseteq H_i$이고 $H_i$는 $+,\cdot$에 닫혀 있음으로 다음이 성립한다.
+$H$의 정의에 의해 $S \subseteq H_i$는 subspace임으로 다음이 성립한다.
 
 $$ v \in H_i $$
 
 임의의 $H_i$에 대해 위에가 성립함으로 다음이 성립한다.
 
-$$ v \in \bigcap H_i $$
+$$ v \in \bigcap H $$
 
 임의의 element에 대해 위에가 성립함으로, 다음이 성립한다.
 
@@ -107,21 +105,19 @@ $\span(S)$는 $S$를 포함하며 명제1에 의해 $V$의 subspace임으로 다
 $$ \span(S) \in H \implies \bigcap H \subseteq \span(S) \qed $$
 
 #### 따름명제2.1
-벡터공간 $V/\F$와 $V$의 subset $S$가 있다고 하자.
+Vector space $V/\F$가 있다고 하자.
 
-이 때, 다음을 증명하여라.
+$V$의 임의의 subspace를 $U$, $V$의 임의의 subset을 $S$라고 할 때, 다음을 증명하여라.
 
-$$ \text{every subspace of } V \text{ that contains } S \text{ must alos contain the } \span(S) $$
+$$ S \subseteq U \implies \span(S) \subseteq U $$
 
 **Proof**
 
 $S$를 포함하는 $V$의 모든 subspace의 집합을 $H$라고 하자.
 
-그러면 명제2에 의해 다음이 성립한다.
+그러면 $\span(S) = \bigcap H$이고 $U \in H$임으로 다음이 성립한다.
 
-$$ \bigcap H = \span(S) $$
-
-따라서, $H$의 모든 element는 $\span(S)$를 subset으로 갖는다. $\qed$
+$$ \span(S) \subseteq U \qed $$
 
 #### 따름명제2.2
 Vector space $V/\F$와 $V$의 generatiing set $G$가 있다고 하자.

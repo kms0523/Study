@@ -64,3 +64,17 @@ custom .clang_format을 사용하고 싶은 경우 `사용자 지정 clang-forma
 
 ## 솔루션 탐색기
 `솔루션 탐색기 >> 파일 우클릭 >> 속성 >> 구성 속성 >> 일반`에 가서 보면 항목 형식에서 cpp 파일이면 `C/C++ 컴파일러`로 되어 있고 h 파일이면 `C/C++ 헤더`로 되어 있다.
+
+## VAssisX
+
+### 문제점
+Microsoft Visual Studio Professional 2017 버전 15.9.49와 VA_X.dll file version 10.9.2217.0  built 2017.04.26를 사용하면 multi-catet을 사용해서 typing을 할 때, main caret만 연속해서 글을 쓸 수 있고 나머지 caret들은 한글자만 작성되고 자동 취소된다.
+
+[What's New in Visual Assist](https://www.wholetomato.com/features/whats-new)를 보면 General Release Build 2291에 
+```
+[VS2017 15.8+] VA no longer interferes with Multi-Caret Edit mode. (case=117499)
+```
+라고 나와있는것을 확인할 수 있다.
+
+> Reference  
+> [forums.wholetomato](https://forums.wholetomato.com/forum/topic.asp?TOPIC_ID=15297)

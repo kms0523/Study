@@ -111,7 +111,7 @@ $$ f(v) = f(a^i\beta_i) = a^if(\beta_i) = a^ig(\beta_i) = g(a^i\beta_i) = g(v) \
 $n,m$ 차원 vector spaces $V,W / \mathbb F$가 있다고 하자.
 
 $V,W$의 기저를 각 각 $\beta, \gamma$라 할 때, 함수 $f^i_j, \enspace i=1,\cdots,m, j=1,\cdots,n$를 다음과 같이 정의하자.
-$$f^i_j : V \rightarrow W \quad s.t. \quad a^k\beta_k \mapsto a^k\delta^i_k \gamma_j $$
+$$f^i_j : V \rightarrow W \quad s.t. \quad a^k\beta_k \mapsto a^i \gamma_j $$
 
 이 떄, 다음을 증명하여라.
 $$ \{ f^i_j \} \text{ is a basis of } L(V;W) $$
@@ -123,7 +123,7 @@ $$ \{ f^i_j \} \text{ is a basis of } L(V;W) $$
 $V$의 임의의 element를 $v_1 = a^i\beta_i, \enspace v_2 = b^i \beta_i$, $\F$의 임의의 element를 $c$라고 하자.
 
 그러면, 임의의 $f^i_j$에 대해서 다음이 성립한다.
-$$ \begin{aligned} f^i_j(cv_1 + v_2) &= (ca^k + b^k)f^i_j(\beta_k) \\ &= (ca^k + b^k) \delta^i_k \gamma_j \\ &= (ca^i + b^i)\gamma_j \\ &= cf^i_j(v_1) + f^i_j(v_2) \end{aligned} $$
+$$ \begin{aligned} f^i_j(cv_1 + v_2) &= f^i_j((ca^k + b^k)\beta_k) \\&= (ca^i + b^i)\gamma_j \\ &= cf^i_j(v_1) + f^i_j(v_2) \end{aligned} $$
 
 따라서, 임의의 $f^i_j$ 는 $L(V;W)$의 element이고 $L(V;W)$는 vector space임으로 다음이 성립한다. 
 
@@ -132,32 +132,32 @@ $$ \span(\{ f^i_j \}) \subseteq L(V;W) \qed $$
 -[$L(V;W) \subseteq \text{span}(\{ f^i_j \})$]  
 $L(V;W)$의 임의의 element를 $f$라고 하자.
 
-그러면 어떤 $a^i_j \in \F, i=1,\cdots,m, j=1,\cdots,n$에 대해서 다음을 만족한다.
+그러면 어떤 $A^j_i \in \F, i=1,\cdots,n, j=1,\cdots,$에 대해서 다음을 만족한다.
 
-$$ f(\beta_i) = a^j_i\gamma_j $$
+$$ f(\beta_i) = A^j_i\gamma_j $$
 
 이 때, $g \in \span(\Set{f^i_j})$를 다음과 같이 정의하자.
 
-$$ g = a^j_if^i_j $$
+$$ g = A^j_if^i_j $$
 
 그러면 다음이 성립한다.
 
-$$ \begin{aligned} & g(\beta_k) = a^j_i\delta^i_k\gamma_j = a^j_k\gamma_j = f(\beta_k) \\ \implies& g = f \\ \implies& f \in \span(\Set{f^i_j}) \end{aligned} $$
+$$ \begin{aligned} & g(\beta_i) = A^j_i\gamma_j = f(\beta_i), \enspace i=1,\cdots,n \\ \implies& g = f \\ \implies& f \in \span(\Set{f^i_j}) \end{aligned} $$
 
 따라서, 임의의 element $f$가 $\span(\Set{f^i_j})$에 포함됨으로 다음이 성립한다.
 
 $$ L(V;W) \subseteq \text{span}(\{ f^i_j \}) \qed $$
 
 [$\{ f^i_j \}$ are linearly independent]  
-$c^j_if^i_j = 0_{L(V;W)}$라 하자.
+$A^j_if^i_j = 0_{L(V;W)}$라 하자.
 
 $V$의 임의의 element를 $v = a^i\beta_i$라고 하면 다음이 성립한다.
 
-$$ c^j_if^i_j(v) = c^i_j a^j \gamma_i = 0_W $$
+$$ A^j_if^i_j(v) = A^j_i a^i \gamma_j = 0_W $$
 
-임의의 $a^j$에 대해 항상 위 식이 성립해야 함으로 다음이 성립한다.
+임의의 $a^i$에 대해 항상 위 식이 성립해야 함으로 다음이 성립한다.
 
-$$ c^{ij} = 0 $$
+$$ A^j_i = 0 $$
 
 따라서, 다음이 성립한다.
 
@@ -170,12 +170,17 @@ $$ \dim(L(V;W)) = mn $$
 
 **Proof**
 
-$f^i_j, \enspace i=1,\cdots,m, j=1,\cdots,n$가 basis임으로 다음이 성립한다.
+$f^i_j, \enspace i=1,\cdots,n, j=1,\cdots,m$가 basis임으로 다음이 성립한다.
 
 $$ \dim(L(V;W)) = mn \qed $$
 
 #### 참고
-$f^j_i$는 $V$와 $W$의 기저 선택에 의존한다.
+$L(V;W)$의 임의의 element를 $T = A^j_if^i_j$라고 하자.
+
+$f^i_j$는 $i$ coordinate를 $j$ coordinate로 변환시켜주고 $A^j_i$는 $i$ coordinate를 $j$ coordinate로 변환시켜줄 때 얼마나 scaling을 할지 결정한다.
+
+따라서 $A^j_i$는 $\beta,\gamma$에 의존한다.
+
 
 ### 명제4
 vector spaces $V,W,Z/ \mathbb F$와 $T_1 \in L(V;W), T_2\in L(W;Z)$가 있다고 하자.
