@@ -1,35 +1,50 @@
 import numpy as np
 import sympy as sp
 
-A = np.matrix([[1,1,1],
-               [1,2,1],
-               [3,4,3]])
+x = sp.symbols("x")
+y = sp.symbols("y")
 
-print(np.linalg.det(A))
 
-b = np.matrix([[5],[7],[17]])
+A = sp.Matrix([[sp.cos(x), sp.sin(x), 0],
+               [-sp.sin(x), sp.cos(x), 0],
+               [0,0,1]])
+B = sp.Matrix([[0,0,1],
+               [sp.cos(y), sp.sin(y), 0],
+               [-sp.sin(y), sp.cos(y), 0]])
 
-row = 0
-column = 1
-A = np.delete(A,0,column)
+sp.pprint(A*B)
 
-A0 = A
-A0 = np.delete(A0,0,row)
-b0 = np.delete(b,0,row)
-x0 = np.linalg.inv(A0)*b0
-print(x0)
+# A = np.matrix([[1,1,1],
+#                [1,2,1],
+#                [3,4,3]])
 
-A1 = A
-A1 = np.delete(A1,1,row)
-b1 = np.delete(b,1,row)
-x1 = np.linalg.inv(A1)*b1
-print(x1)
+# print(np.linalg.det(A))
 
-A2 = A
-A2 = np.delete(A2,2,row)
-b2 = np.delete(b,2,row)
-x2 = np.linalg.inv(A2)*b2
-print(x2)
+# b = np.matrix([[5],[7],[17]])
+
+# row = 0
+# column = 1
+# A = np.delete(A,0,column)
+
+# A0 = A
+# A0 = np.delete(A0,0,row)
+# b0 = np.delete(b,0,row)
+# x0 = np.linalg.inv(A0)*b0
+# print(x0)
+
+# A1 = A
+# A1 = np.delete(A1,1,row)
+# b1 = np.delete(b,1,row)
+# x1 = np.linalg.inv(A1)*b1
+# print(x1)
+
+# A2 = A
+# A2 = np.delete(A2,2,row)
+# b2 = np.delete(b,2,row)
+# x2 = np.linalg.inv(A2)*b2
+# print(x2)
+
+
 
 
 
