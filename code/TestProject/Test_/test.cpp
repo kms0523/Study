@@ -9,8 +9,19 @@ std::vector<typename T> qwer(void)
 
 TEST(Test, test)
 {
-	std::cout << qwer<int>().size();
-	std::exit(523);
+		const int num = 10;
+		std::cout << num;
+
+		const int* p = &num;
+		int* p2 = const_cast<int*>(p);
+		*p2 = 30;
+
+		std::cout << num;
+
+		//printf("&num = %x, p = %x, p2 = %x\n", &num, p, p2);
+		//printf("num = %d, *p = %d, *p2 = %d\n", num, *p, *p2);
+
+		exit(523);
 }
 
 //#include "../TestProject/¼Ò½º.cpp"

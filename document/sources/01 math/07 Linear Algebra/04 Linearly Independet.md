@@ -10,9 +10,7 @@ $$ \sum_{k=1}^{n}a_k v_k = 0_V \implies \forall a_k=0_\F $$
 ## Set
 Vector space $V/\F$와 $V$의 subset $S$가 있다고 하자.
 
-$S$의 임의의 $n$개의 element를 $v_1, \cdots, v_n$ $\F$의 임의의 $n$개의 element를 $a_1, \cdots, a_n$이라 하자.
-
-모든 선택에 대해서 vector들이 linearly independent인 경우 $S$를 `선형 독립 집합(linearly independent set)`라고 한다.
+$S$의 임의의 $n$개의 element $v_1, \cdots, v_n$이 항상 linearly independent일 때, $S$를 `선형 독립 집합(linearly independent set)`라고 한다.
 
 > Reference  
 > {cite}`friedberg` Chapter1.5
@@ -86,40 +84,39 @@ $$ \begin{gathered} |X| \le |Y| \\ \exist Y' \subseteq Y \st |Y'| = |Y| - |X| \l
 
 $X = \Set{x_1,\cdots,x_n}, Y = \Set{y_1,\cdots,y_m}$이라고 하자.
 
-이 떄, $S_0,\cdots, S_n$를 다음과 같이 정의하자
+이 떄, $X_i,Y_i, \enspace i=0,\cdots,n$를 다음과 같이 정의하자
 
-$$ S_i := \Set{x_1, \cdots, x_i, y_{i+1}, \cdots, y_m} $$
+$$ X_i := \Set{x_1, \cdots, x_i}, \enspace Y_i := \Set{y_{i+1}, \cdots, y_m} $$
 
 보조명제2.1에 의해 다음이 성립한다.
 
-$$  \begin{gathered} n \le m \\ \span(S_n) = V \end{gathered} $$
+$$  \begin{gathered} n \le m \\ \span(X_n \cup Y_n) = V \end{gathered} $$
  
-따라서 $|X| \le |Y|$이고  $Y' = \Set{y_{n+1},\cdots,y_m}$이라고 하면 명제를 모두 만족시킴을 알 수 있다. $\qed$
-
+따라서 $|X| \le |Y|$이고  $Y' = Y_n$이라고 하면 명제를 모두 만족시킴을 알 수 있다. $\qed$
 
 #### 보조명제2.1
 다음을 증명하여라.
 
-$$  \begin{gathered} n \le m \\ \span(S_n) = V \end{gathered} $$
+$$ \begin{gathered} n \le m \\ \span(X_n \cup Y_n) = V \end{gathered} $$
 
 **Proof**
 
-mathematrical induction을 통해 $n \le m$이고 $\span(S_n) = V$임을 보이자.
+mathematrical induction을 통해 $n \le m$이고 $\span(X_n \cup Y_n) = V$임을 보이자.
 
 [$i=0$]  
-$S_0 = Y$임으로 $\span(S_0) = V$이고 자명하게 $0\le m$이다. $\qed$
+$0 \le m$이고  $X_0 = \empty, Y_0 = Y$임으로 $\span(X_0\cup Y_0) = V$이다. $\qed$
 
 [$i=k<n$]  
-$k$일 때, $k \le m$이고 $\span(S_k) = V$라고 가정하자.
+$k \le m$이고 $\span(X_k\cup Y_k) = V$라고 가정하자.
 
 [$i=k+1$]    
-$x_{k+1} \in V$이고 $\span(S_k) = V$임으로 다음이 성립한다.
+$x_{k+1} \in V$이고 $\span(X_k\cup Y_k) = V$임으로 다음이 성립한다.
 
 $$ x_{k+1} = a_1x_1 + \cdots a_kx_k + a_{k+1}y_{k+1} + \cdots + a_my_m $$
 
-이 때, $\Set{x_1,\cdots,x_{k+1}}$은 linearly independent set임으로 다음이 성립한다.
+이 때, $X_{k+1}$은 linearly independent set임으로 다음이 성립한다.
 
-$$ \exist i \in [k+1,m] \st a_i \neq 0_\F $$
+$$ \exist j \in [k+1,m] \st a_j \neq 0_\F $$
 
 즉, $[k+1,m]$에 어떤 정수가 존재함으로 다음이 성립한다.
 
@@ -127,14 +124,14 @@ $$ k+1 \le m $$
 
 그리고 $Y$의 element의 순서를 적절하게 바꿔줌으로써 일반성을 잃지 않고 $a_{k+1} \neq 0_\F$라고 할수 있음으로 다음이 성립한다.
 
-$$ \begin{aligned} & y_{k+1} = \frac{1}{a_{k+1}} \left( x_{k+1} - \sum_{i=1}^ka_ix_i - \sum_{i=k+2}^m a_iy_i \right) \\ \implies& y_{k+1} \in \span(S_{k+1}) \end{aligned}  $$
+$$ \begin{aligned} & y_{k+1} = \frac{1}{a_{k+1}} \left( x_{k+1} - \sum_{i=1}^ka_ix_i - \sum_{i=k+2}^m a_iy_i \right) \\ \implies& y_{k+1} \in \span(X_{k+1}\cup Y_{k+1}) \end{aligned}  $$
 
-또한, $x_1,\cdots,x_k, y_{k+2},\cdots,y_m \in S_{k+1}$임으로 다음이 성립한다.
+또한, $x_1,\cdots,x_k, y_{k+2},\cdots,y_m \in X_{k+1}\cup Y_{k+1}$이고 $X_{k}\cup Y_{k}$은 generating set임으로 다음이 성립한다.
 
-$$ S_k \subseteq \span(S_{k+1}) \implies \span(S_k) \subseteq \span(S_{k+1}) \implies \span(S_{k+1}) = V \qed $$
+$$ X_{k}\cup Y_{k} \subseteq \span(X_{k+1}\cup Y_{k+1})  \implies \span(X_{k+1}\cup Y_{k+1}) = V \qed $$
 
 [결론]  
-따라서 mathematical induction에 의해 $n \le m$이고 $\span(S_n) =V$이다. $\qed$
+따라서 mathematical induction에 의해 $n \le m$이고 $\span(X_{n}\cup Y_{n}) =V$이다. $\qed$
 
 > Reference  
 > [wiki](https://en.wikipedia.org/wiki/Steinitz_exchange_lemma)

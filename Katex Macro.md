@@ -14,6 +14,7 @@ $\gdef\norm#1{\left\lVert #1 \right\rVert}$
 $\gdef\sym{\text{sym}}$
 $\gdef\tr{\text{tr}}$
 $\gdef\pdiff#1#2{\frac{\partial #1}{\partial #2}}$
+$\gdef\dpdiff#1#2{\dfrac{\partial #1}{\partial #2}}$
 $\gdef\diff#1#2{\frac{d #1}{d #2}}$
 $\gdef\ninf{n\rightarrow\infty}$
 $\gdef\nullity{\text{nullity}}$
