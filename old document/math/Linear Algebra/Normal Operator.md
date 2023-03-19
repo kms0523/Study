@@ -178,3 +178,6 @@ $A \in M_{nn}(\R)$가 있다고 하자.
 
 이 떄, $A$가 다음 성질을 만족할 경우 `orthogonal matrix`라고 한다.
 $$ AA^T = I $$
+
+> Reference  
+> [blog](https://m.blog.naver.com/qio910/221791116197)
