@@ -251,3 +251,5 @@ adjoint operator의 성질에 의해 orthogonal transformation은 항상 orthogo
 
 > Reference  
 > [math.stackexchange](https://math.stackexchange.com/questions/679636/the-reason-behind-the-name-orthogonal-transformation)
+> Reference  
+> [blog](https://m.blog.naver.com/qio910/221791116197)
