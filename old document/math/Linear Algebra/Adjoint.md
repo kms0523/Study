@@ -1,12 +1,3 @@
-# Adjoint Matrix
-$A \in M_{mn}(\F)$가 있다고 하자. $A$의 `adjoint` $A^*$는 다음과 같이 정의된 행렬이다.
-$$ A^* \in M_{nm}(\F) \quad s.t. \quad A^*_{ij} = \overline{A_{ji}} $$
-
-### 참고
-$\F = \R$이면, adjoint는 단순히 transpose가 되며, $A = A^*$인 경우를  $A$가 symmetric하다고 한다.
-
-만약, $\F = \Complex$이면, $A = A^*$인 경우 $A$를 Hermitian이라고 한다.
-
 # Adjoint Operator
 $n$차원 inner product space $V/\F$와 $T\in\End(V)$가 있다고 하자.
 
@@ -203,6 +194,15 @@ $$ \beta $$
 
 $\beta$가 orthonormal basis임으로 다음이 성립한다.
 $$ \begin{aligned} T^*(4-2x) &= B(T^*(4-2x), \beta_i)\beta_i \\&= B(4-2x, T(\beta_i))\beta_i  \end{aligned} $$
+
+# Adjoint Matrix
+$A \in M_{mn}(\F)$가 있다고 하자. $A$의 `adjoint` $A^*$는 다음과 같이 정의된 행렬이다.
+$$ A^* \in M_{nm}(\F) \quad s.t. \quad A^*_{ij} = \overline{A_{ji}} $$
+
+### 참고
+$\F = \R$이면, adjoint는 단순히 transpose가 되며, $A = A^*$인 경우를  $A$가 symmetric하다고 한다.
+
+만약, $\F = \Complex$이면, $A = A^*$인 경우 $A$를 Hermitian이라고 한다.
 
 # Self-adjoint Operator
 Inner product space $V/\mathbb{F}$가 있다고 하자.

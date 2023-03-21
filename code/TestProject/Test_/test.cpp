@@ -7,21 +7,22 @@ std::vector<typename T> qwer(void)
 	return vec;
 }
 
+int extract_layer_index(const int output_manula_id) 
+{
+	const auto id_str = std::to_string(output_manula_id);
+
+	constexpr auto layer_index_start = 1;
+	constexpr auto layer_index_end = 4;
+	const auto layer_index_str = id_str.substr(layer_index_start, layer_index_end);
+
+	return std::stoi(layer_index_str);
+}
+
 TEST(Test, test)
 {
-		const int num = 10;
-		std::cout << num;
-
-		const int* p = &num;
-		int* p2 = const_cast<int*>(p);
-		*p2 = 30;
-
-		std::cout << num;
-
-		//printf("&num = %x, p = %x, p2 = %x\n", &num, p, p2);
-		//printf("num = %d, *p = %d, *p2 = %d\n", num, *p, *p2);
-
-		exit(523);
+	EXPECT_EQ(extract_layer_index(10031202), 31);
+	EXPECT_EQ(extract_layer_index(10001202), 1);
+	EXPECT_EQ(extract_layer_index(10200202), 200);
 }
 
 //#include "../TestProject/¼Ò½º.cpp"

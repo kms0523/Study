@@ -226,6 +226,81 @@ $$ \begin{aligned} B(x,v_g) &= a^i g(\beta_j) B(\beta_i,\beta_j) \\&= a^i g(\bet
 위의 두 결과를 조합하면, 다음과 같다.
 $$ \forall g \in V^*, \quad \exist v_g \in V \st g(\cdot) = B(\cdot,v_g) \qed $$
 
+#### 따름명제2.1
+$n$차원 inner product space $V/\F$가 있다고 하자.
+
+함수 $B^\flat$를 다음과 같이 정의하자.
+
+$$ B^\flat : V \rightarrow V^* \st v \mapsto B(\cdot,v)$$
+
+다음을 증명하여라.
+
+$$ B^\flat \text{ is a bijective} $$
+
+**Proof**
+
+[injective]  
+$V$의 임의의 element를 $v_1,v_2$라고 하자. 
+
+$V$의 임의의 element를 $v$라고 하면 다음이 성립한다.
+
+$$ \begin{aligned} & (B^\flat(v_1))(v) = (B^\flat(v_2))(v) \\\implies& B(v,v_1) = B(v,v_2) \\\implies& B(v, v_1-v_2) = 0_W \end{aligned} $$
+
+임의의 $v$에서 위가 성립함으로, inner product의 성질에 의해 다음이 성립한다.
+
+$$ v_1 - v_2 = 0_V \implies v_1 = v_2 \qed $$
+
+[surjective]  
+$V^*$의 임의의 element를 $f$라고 하자.
+
+그러면 Reise representation theorem에 의해 다음이 성립한다.
+
+$$ \exist v_f \st B^\flat(v_f) = f \qed $$
+
+##### 참고
+$B^\flat$의 역함수를 $B^\sharp$로 표기한다.
+
+> Reference  
+> [math.stackexchange - Inner product in dual space](https://math.stackexchange.com/questions/3486532/inner-product-in-dual-space)
+
+#### 따름명제2.2
+$n$차원 inner product space $V/\R$가 있다고 하자.
+
+함수 $B^\flat$를 다음과 같이 정의하자.
+
+$$ B^\flat : V \rightarrow V^* \st v \mapsto B(\cdot,v)$$
+
+다음을 증명하여라.
+
+$$ B^\flat \text{ is a vector space isomorphism} $$
+
+**Proof**
+
+따름명제2.1에 의해 $B^\flat$은 bijective임으로 linear map인지만 증명하면 된다.
+
+[$B^\flat \in L(V,V^*)$]  
+$V$의 임의의 element를 $v_1,v_2$, $\R$의 임의의 element를 $a$라고 하면 다음이 성립한다.
+
+$$ \begin{aligned} B^\flat(v_1+av_2) &= B(\cdot, v_1 +av_2) \\&= B(\cdot,v_1) + aB(\cdot,v_2) \\&= B^\flat(v_1) + aB^\flat(v_2) \qed \end{aligned}  $$
+
+[$B^\sharp \in L(V^*,V)$]  
+$V^*$의 임의의 element를 $g_1,g_2$, $\R$의 임의의 element를 $a$라고 하자.
+
+$V$의 임의의 element를 $v$라고 하면 다음이 성립한다.
+
+$$ (g_1 + ag_2)(v) = g_1(v) + ag_2(v) $$
+
+따라서 다음이 성립한다.
+
+$$ B^\sharp(g_1+ag_2) = B^\sharp(g_1) + aB^\sharp(g_2) \qed $$
+
+##### 참고
+$V$와 $V^*$ 사이에 isomorphism은 basis에 무관함으로 natural isomorphism이다. 
+
+> Reference  
+> [math.stackexchange - Inner product in dual space](https://math.stackexchange.com/questions/3486532/inner-product-in-dual-space)  
+> [math.stackexchange - natural isomorphism in linear algebra](https://math.stackexchange.com/questions/234127/natural-isomorphism-in-linear-algebra)
+
 #### 참고1
 $g \in V^*$가 있을 때, Reisz representation theorem에 의해 결정되는 $v_g$를 $g$에 대한 Reisz representation이라고 한다.
 
@@ -236,7 +311,6 @@ $$ \forall x \in V, \quad f(x) = B(v_f, x) $$
 이럴 경우, inner product는 두번째 component에 대해서 conjugate linear이기 때문에 $f$는 conjugate linear map이 된다.
 
 따라서, $f \notin V^*$이 되는 모순이 발생한다.
-
 
 ### 명제3(Schur's theorem)
 $n$차원 inner product space $V/\F$와 $T \in \End(V)$가 있다고 하자.

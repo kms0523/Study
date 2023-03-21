@@ -9,7 +9,7 @@ $$ T \in \underbrace{V \otimes \cdots \otimes V}_{p} \otimes \underbrace{V^* \ot
 
 ### 명제1
 vector space $V / \mathbb F$가 있을 때, 함수 $\phi^k_l$를 다음과 같이 정의하자.
-$$ \phi^k_l : L^{k+l}(\underbrace{V^*, \cdots , V^*}_{l}, \underbrace{V, \cdots , V}_{k} ; V) \rightarrow T^k_{l+1}(V) \quad s.t. \quad L \mapsto \phi^k_l(L) $$
+$$ \phi^k_l : L(\underbrace{V^*, \cdots , V^*}_{l}, \underbrace{V, \cdots , V}_{k} ; V) \rightarrow T^k_{l+1}(V) \quad s.t. \quad L \mapsto \phi^k_l(L) $$
 
 $$ \text{Where, } \phi^k_l(L)(v^1, \cdots, v^{l+1},v_1, \cdots, v_k) = v^{l+1}(L(v^1, \cdots, v^l,v_1, \cdots, v_k))$$
 
@@ -20,12 +20,12 @@ $$ \phi^k_l \text{ is a vector space isomorphism}$$
 
 $\{v^{l}_k\} = (v^1, \cdots, v^{l},v_1, \cdots, v_k)$라 하자.
 
-[$\phi^k_l \in L(L^{k+l}; T^k_l)$]  
-$L_1, L_2 \in L^{k+l}$이라 하자.
+[$\phi^k_l \in L(L; T^k_l)$]  
+$L_1, L_2 \in L$이라 하자.
 $$ \begin{aligned} (\phi^k_l(L_1 + aL_2))\{v^{l+1}_k\} &= v^{l+1}((L_1 + aL_2)\{v^{l+1}_k\}) \\ &= v^{l+1}(L_1\{v^{l+1}_k\}) + av^{l+1}(L_2\{v^{l+1}_k\}) \\ &= (\phi^k_l(L_1))\{v^{l+1}_k\} + a(\phi^k_l(L_2))\{v^{l+1}_k\} \end{aligned}  $$
 
 [$\phi^k_l$ is bijective]    
-$\ker(L^{k+l}) = \{ 0_{L^{k+l}} \}$이고, $\dim(L^{k+l}) = \dim(T^k_{l+1})$임으로 dimension theorem에 의해 bijective이다. $\quad {_\blacksquare}$
+$\ker(L) = \{ 0_{L} \}$이고, $\dim(L) = \dim(T^k_{l+1})$임으로 dimension theorem에 의해 bijective이다. $\quad {_\blacksquare}$
 
 > 참고  
 > [Tensor - Wiki](https://en.wikipedia.org/wiki/Tensor)  

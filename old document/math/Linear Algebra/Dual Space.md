@@ -142,3 +142,4 @@ $$ \begin{aligned} \frak m^{\beta^*}_{\gamma^*}(T^*) &= \begin{bmatrix} \frak m_
 > [note] (upenn) The Dual Space   
 > [note] (Canez) Notes on dual spaces  
 > [note] (Garrett) Duals, naturality, bilinear forms
+

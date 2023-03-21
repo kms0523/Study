@@ -1,8 +1,8 @@
 # Tensor Products
-두 벡터공간 $V,W / \mathbb F$이 있을 때, $V$와 $W$의 `텐서 곱(tensor product)` $V \otimes W$는 아래와 같은 보편 성질을 갖는 bilinear map  $B \in L^2(V,W; V \otimes W)$과 함께 정의된 벡터공간이다. 
+두 벡터공간 $V,W / \mathbb F$이 있을 때, $V$와 $W$의 `텐서 곱(tensor product)` $V \otimes W$는 아래와 같은 보편 성질을 갖는 bilinear map  $B \in L(V\times W; V \otimes W)$과 함께 정의된 벡터공간이다. 
 
 임의의 벡터공간 $X / \mathbb F$가 있을 때, 
-$$ H \in L^2(V,W;X) \Rightarrow \exist! T \in L(V \otimes W;X) \quad s.t. \quad H = T \circ B  $$
+$$ H \in L(V\times W;X) \Rightarrow \exist! T \in L(V \otimes W;X) \quad s.t. \quad H = T \circ B  $$
 
 ### 명제1
 두 벡터공간 $V,W / \mathbb F$이 있을 때, $V \otimes W$가 존재함을 증명하여라.
@@ -14,21 +14,21 @@ $$ B:V \times W \rightarrow V \otimes W \quad s.t. \quad (v,w) \mapsto v \otimes
 
 $$ \text{Where, } \quad v \otimes w \in L^2(V^*,W^*; \mathbb F) \quad s.t. \quad (v^*,w^*) \mapsto v^*(v)w^*(w) $$
 
-임의의 벡터공간 $X / \mathbb F$와 $H \in L^2(V,W;X)$가 있을 때, $V,W$의 기저 $\beta,\gamma$에 대해 다음과 같이 동작하는 linear map $T$를 정의하자.
+임의의 벡터공간 $X / \mathbb F$와 $H \in L(V\times W;X)$가 있을 때, $V,W$의 기저 $\beta,\gamma$에 대해 다음과 같이 동작하는 linear map $T$를 정의하자.
 $$T \in L(V \otimes W;X) \quad s.t. \quad \beta_i \otimes \gamma_j \mapsto H(\beta_i,\gamma_j)$$
 
 위의 정의에 의해 $T$는 유일하게 존재하며, $(\beta_i ,\gamma_j)$에서 $H = T \circ B$이다. 
 
-위의 정의한 $B$는 $T$ 의해 보편 성질을 갖으며 보조명제1에 의해 $B\in L^2(V,W; V\otimes W)$이다. 또한, 보조명제2에 의해 위와 같이 정의된 함수 $B$에 대해서, $V \otimes W = L^2(V^*, W^*, \mathbb F)$임으로, vector space이다.
+위의 정의한 $B$는 $T$ 의해 보편 성질을 갖으며 보조명제1에 의해 $B\in L(V\times W; V\otimes W)$이다. 또한, 보조명제2에 의해 위와 같이 정의된 함수 $B$에 대해서, $V \otimes W = L^2(V^*, W^*, \mathbb F)$임으로, vector space이다.
 
 따라서 $V \otimes W$가 최소한 한개 이상 존재한다. $\quad {_\blacksquare}$
 
 #### 따름명제
-두 벡터공간 $V,W / \mathbb F$이 있을 때, $L^2(V^*, W; \mathbb F),L^2(V,W^*, \mathbb F),L^2(V,W; \mathbb F)$도 $V \otimes W$임을 증명하여라.
+두 벡터공간 $V,W / \mathbb F$이 있을 때, $L^2(V^*, W; \mathbb F),L(V\times W^*, \mathbb F),L(V\times W; \mathbb F)$도 $V \otimes W$임을 증명하여라.
 
 #### 보조명제1
 다음을 증명하여라.
-$$ B \in L^2(V,W; V \otimes W) $$
+$$ B \in L(V\times W; V \otimes W) $$
 
 **Proof**
 
@@ -101,5 +101,6 @@ $S,T$는 모두 linear map임으로 $S \circ T$는 linear map이고 따라서 $S
 $T$와 $S$는 역함수 관계임으로 $T$는 vector space isomorphism이다. 그리고 $T$는 Tensor product의 정의에 의해 유일하게 존재한다. $\quad {_\blacksquare}$
 
 > Reference  
-> [note] (Kamnitzer) Tensor products  
-> [tensor product - wiki](https://en.wikipedia.org/wiki/Tensor_product)
+> [note] (Kamnitzer) Tensor products    
+> [tensor product - wiki](https://en.wikipedia.org/wiki/Tensor_product)  
+> [blog](https://algebrology.github.io/tensor-products/)
