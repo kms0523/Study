@@ -1,28 +1,26 @@
 #include "gtest/gtest.h"
 
-template <typename T>
-std::vector<typename T> qwer(void)
+class A
 {
-	std::vector<T> vec;
-	return vec;
-}
+public:
+	A(double* d) : _ptr(d) {};
 
-int extract_layer_index(const int output_manula_id) 
-{
-	const auto id_str = std::to_string(output_manula_id);
-
-	constexpr auto layer_index_start = 1;
-	constexpr auto layer_index_end = 4;
-	const auto layer_index_str = id_str.substr(layer_index_start, layer_index_end);
-
-	return std::stoi(layer_index_str);
-}
+public:
+	double* _ptr;
+};
 
 TEST(Test, test)
 {
-	EXPECT_EQ(extract_layer_index(10031202), 31);
-	EXPECT_EQ(extract_layer_index(10001202), 1);
-	EXPECT_EQ(extract_layer_index(10200202), 200);
+	double d = 3;
+
+	A a(&d);
+	A b(a);
+	A c(std::move(a));
+
+	std::cout << a._ptr << "\n";
+	std::cout << b._ptr << "\n";
+	std::cout << c._ptr << "\n";
+	 
 }
 
 //#include "../TestProject/¼Ò½º.cpp"

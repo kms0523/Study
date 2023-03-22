@@ -13,4 +13,4 @@ $$ \begin{aligned} BA &= BAI \\&= BABB^{-1} \\&= BB^{-1} \\&= I \end{aligned}  $
 즉, $AB = BA = I$임으로 $A^{-1} = B$이다. $\quad\tiny\blacksquare$
 
 > Reference  
-> [Mathmatics](https://math.stackexchange.com/questions/852387/if-ab-i-then-ba-i-is-my-proof-right)
+> [math.stackexchange](https://math.stackexchange.com/questions/852387/if-ab-i-then-ba-i-is-my-proof-right)
