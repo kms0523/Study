@@ -79,17 +79,50 @@ $AA^T=I$임으로 $A$의 row을 coordinate로 갖는 vector들은 orthonormal하
 ### 명제4
 $n$차원 inner product space $V/\R$과 orthogonal map $T$가 있다고 하자.
 
+이 때, 다음을 증명하여라.
+
+$$ T \text{ is bijective} $$
+
+**Proof**
+
+[injective]  
+$\ker(T)$의 임의의 element를 $v$라고 하면 다음이 성립한다.
+
+$$ \begin{aligned} & \Braket{v,v} = \Braket{T(v),T(v)} = 0_\F \\\implies& v = 0_V \end{aligned} $$
+
+$v$가 $0_V$일 수 밖에 없음으로 다음이 성립한다.
+
+$$ \ker(T) = \Set{0_V} \implies \ker(T) \text{ is injective} \qed $$
+
+[surjective]  
+Dimension theorem에 의해 다음이 성립한다.
+
+$$ \begin{aligned} & \rank(T) = \dim(V) - \nullity(T) \\\implies& \rank(T) = \dim(V) \\\implies& \img(T) = V \end{aligned} $$
+
+따라서, $T$는 surjective 하다. $\qed$
+
+### 명제5
+$n$차원 inner product space $V/\R$과 orthogonal map $T$가 있다고 하자.
+
 그리고 $V$의 orthonormal basis를 $\beta$라고 할 때, 다음을 증명하여라.
 
 $$ T(\beta) \text{ is an orthonormal basis of } V $$
 
 **Proof**
 
+$T$가 bijective임으로 다음이 성립한다.
+
+$$ T(\beta) \text{ is an basis of } V $$
+
 $T(\beta)$의 임의의 element를 $T(\beta_i),T(\beta_j)$라고 하면 다음이 성립한다.
 
-$$ \Braket{T(\beta_i),T(\beta_j)} = \Braket{\beta_i,\beta_j} = \delta_{ij} \qed  $$
+$$ \Braket{T(\beta_i),T(\beta_j)} = \Braket{\beta_i,\beta_j} = \delta_{ij} $$
 
-### 명제5
+따라서, 다음이 성립한다.
+
+$$ T(\beta) \text{ is an orthonormal basis of } V \qed $$
+
+### 명제6
 $n$차원 inner product space $V/\R$과 orthogonal map $T$가 있다고 하자.
 
 그리고 $V$의 orthonormal basis를 $\beta$라고 할 때,$A =\frak{m}^\beta_\beta(T)$라고 하자.

@@ -157,5 +157,23 @@ $$ \exist a \in \F - \Set{0_\F} \st a0_V = 0_\F $$
 
 $$ S \text{ is an linearly independent set of } V \implies  0_V \notin S \qed $$
 
+### 명제4
+Vector space $V/\F$와 $V$의 nonempty subset $S$가 있다고 하자.
 
+$S$의 maximal linearly independent set을 $M$이라고 할 때, 다음을 증명하여라.
 
+$$ S \subseteq \span(M) $$
+
+**Proof**
+
+다음을 가정하자.
+
+$$ S \nsubseteq \span(M) $$
+
+그러면 다음이 성립한다.
+
+$$ \begin{aligned} & S - \span(M) \neq \empty \\ \implies& \exist v \in S - \span(M) \\\implies& M \cup \Set{v} \text{ is an linearly independent set} \end{aligned} $$
+
+하지만 이는 $M$이 maximal linearly independent set이라는 사실에 모순임으로 proof by contradiction에 의해 다음이 성립한다.
+
+$$ S \subseteq \span(M) \qed $$

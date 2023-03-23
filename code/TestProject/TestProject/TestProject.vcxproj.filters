@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\mec">
+      <UniqueIdentifier>{9ac096c9-e06a-4113-865f-9ea41dde3b71}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="소스.cpp">
@@ -24,6 +27,9 @@
     <ClCompile Include="소스2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="mec\MecSharedPtr.cpp">
+      <Filter>소스 파일\mec</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="헤더.h">
@@ -34,6 +40,45 @@
     </ClInclude>
     <ClInclude Include="헤더2.h">
       <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="mec\MecArrayIterator.h">
+      <Filter>소스 파일\mec</Filter>
+    </ClInclude>
+    <ClInclude Include="mec\MecCommaAssignment.h">
+      <Filter>소스 파일\mec</Filter>
+    </ClInclude>
+    <ClInclude Include="mec\MecDenseMatrix.h">
+      <Filter>소스 파일\mec</Filter>
+    </ClInclude>
+    <ClInclude Include="mec\MecGlobalTypedefs.h">
+      <Filter>소스 파일\mec</Filter>
+    </ClInclude>
+    <ClInclude Include="mec\MecMatrixRef.h">
+      <Filter>소스 파일\mec</Filter>
+    </ClInclude>
+    <ClInclude Include="mec\MecMiniVector.h">
+      <Filter>소스 파일\mec</Filter>
+    </ClInclude>
+    <ClInclude Include="mec\MecSharedPtr.h">
+      <Filter>소스 파일\mec</Filter>
+    </ClInclude>
+    <ClInclude Include="mec\MecSharedPtr.hpp">
+      <Filter>소스 파일\mec</Filter>
+    </ClInclude>
+    <ClInclude Include="mec\MecSimpleMatrix.h">
+      <Filter>소스 파일\mec</Filter>
+    </ClInclude>
+    <ClInclude Include="mec\MecSimpleVector.h">
+      <Filter>소스 파일\mec</Filter>
+    </ClInclude>
+    <ClInclude Include="mec\MecTinyMatrix.h">
+      <Filter>소스 파일\mec</Filter>
+    </ClInclude>
+    <ClInclude Include="mec\MecVector.h">
+      <Filter>소스 파일\mec</Filter>
+    </ClInclude>
+    <ClInclude Include="mec\MecVectorRef.h">
+      <Filter>소스 파일\mec</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

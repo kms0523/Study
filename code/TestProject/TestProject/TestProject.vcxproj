@@ -88,6 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\midas\code\Library\boost_1_68_0;C:\midas\code\Library\blitz-0.9;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,11 +127,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="mec\MecSharedPtr.cpp" />
     <ClCompile Include="소스.cpp" />
     <ClCompile Include="소스1.cpp" />
     <ClCompile Include="소스2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="mec\MecArrayIterator.h" />
+    <ClInclude Include="mec\MecCommaAssignment.h" />
+    <ClInclude Include="mec\MecDenseMatrix.h" />
+    <ClInclude Include="mec\MecGlobalTypedefs.h" />
+    <ClInclude Include="mec\MecMatrixRef.h" />
+    <ClInclude Include="mec\MecMiniVector.h" />
+    <ClInclude Include="mec\MecSharedPtr.h" />
+    <ClInclude Include="mec\MecSharedPtr.hpp" />
+    <ClInclude Include="mec\MecSimpleMatrix.h" />
+    <ClInclude Include="mec\MecSimpleVector.h" />
+    <ClInclude Include="mec\MecTinyMatrix.h" />
+    <ClInclude Include="mec\MecVector.h" />
+    <ClInclude Include="mec\MecVectorRef.h" />
     <ClInclude Include="헤더.h" />
     <ClInclude Include="헤더1.h" />
     <ClInclude Include="헤더2.h" />
