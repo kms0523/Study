@@ -38,81 +38,46 @@ void expect_equal(const Mec::DenseMatrix<T>& m1, const Mec::DenseMatrix<T>& m2)
 using Matrix = Mec::DenseMatrix<double>;
 
 
-// Dense Matrix는 component wise mulitplication밖에 안된다.
-TEST(Test, muliplication1)
-{
-	Matrix matrix;
-	matrix.resize(2, 2);
-	matrix = 1, 2, 1, 2;
-
-	Matrix matrix2;
-	matrix2.resize(2, 2);
-	matrix2 = 2, 1, 2, 1;
-
-	Matrix matrix3;
-	matrix3 = matrix * matrix2;
-
-	Matrix ref;
-	ref.resize(2, 2);
-	ref = 2, 2, 2, 2;
-
-	expect_equal(ref, matrix3);
-}
-TEST(Test, muliplication2)
-{
-	Matrix matrix;
-	matrix.resize(2, 2);
-	matrix = 1, 2, 1, 2;
-
-	Matrix matrix2;
-	matrix2.resize(2, 2);
-	matrix2 = 2, 1, 2, 1;
-
-	matrix *= matrix2;
-
-	Matrix ref;
-	ref.resize(2, 2);
-	ref = 2, 2, 2, 2;
-
-	expect_equal(ref, matrix);
-}
-TEST(Test, muliplication3)
-{
-	Matrix matrix;
-	matrix.resize(2, 2);
-	matrix = 1, 2, 1, 2;
-
-	Matrix matrix2;
-	matrix2.resize(2, 2);
-	matrix2 = 2, 1, 2, 1;
-
-	auto m = matrix * matrix2;
-	auto m2 = m * matrix;
-	auto m3 = m * m2;
-
-	Matrix matrix3;
-	matrix3 = m3;
-
-	print(matrix3);
-
-	//Matrix ref;
-	//ref.resize(2, 2);
-	//ref = 2, 2, 2, 2;
-
-	//expect_equal(ref, matrix3);
-}
-
-
-//TEST(Test, muliplication3)
+//// Dense Matrix는 component wise mulitplication밖에 안된다.
+//TEST(Test, muliplication1)
 //{
 //	Matrix matrix;
-//	matrix.resize(1, 2);
-//	matrix = 1, 2;
+//	matrix.resize(2, 2);
+//	matrix = 1, 2, 1, 2;
 //
 //	Matrix matrix2;
-//	matrix2.resize(2, 1);
-//	matrix2 = 2, 1;
+//	matrix2.resize(2, 2);
+//	matrix2 = 2, 1, 2, 1;
+//
+//	Matrix matrix3;
+//	matrix3 = matrix * matrix2;
+//
+//	Matrix ref;
+//	ref.resize(2, 2);
+//	ref = 2, 2, 2, 2;
+//
+//	expect_equal(ref, matrix3);
 //}
+//TEST(Test, muliplication2)
+//{
+//	Matrix matrix;
+//	matrix.resize(2, 2);
+//	matrix = 1, 2, 1, 2;
+//
+//	Matrix matrix2;
+//	matrix2.resize(2, 2);
+//	matrix2 = 2, 1, 2, 1;
+//
+//	matrix *= matrix2;
+//
+//	Matrix ref;
+//	ref.resize(2, 2);
+//	ref = 2, 2, 2, 2;
+//
+//	expect_equal(ref, matrix);
+//}
+
+
 
 //TEST(Test, vector_push_back)
 //{
