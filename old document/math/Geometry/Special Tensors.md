@@ -134,6 +134,10 @@ $$ \begin{aligned} I_{sym} : A &= \frac{1}{2}(\delta_{ik}\delta_{jl} + \delta_{i
 $$ I_{diff} = \delta_{ik}\delta_{jl}e_{ijkl} $$
 
 ## Deviatoric Tensor
+$$ I_{dev} =  \left( \frac{1}{2}(\delta_{mp}\delta_{nq} + \delta_{mq}\delta_{np}) - \frac{1}{3}\delta_{mn}\delta_{pq} \right) e_{mnpq} $$
+
+
+### 참고
 $$ I_{dev} =  I_{sym} - \frac{1}{3}I \otimes I $$
 
 ### 명제1
@@ -142,7 +146,7 @@ $$ I_{diff} : I_{dev} = I_{dev} $$
 
 **Proof**
 
-$$ \begin{aligned} I_{diff} : I_{dev} &= \delta_{ik}\delta_{jl}(\frac{1}{2}(\delta_{km}\delta_{ln} + \delta_{kn}\delta_{lm}) + \delta_{kl}\delta_{mn})e_{ijmn} \\&= (\frac{1}{2}(\delta_{im}\delta_{jn} + \delta_{in}\delta_{jm}) + \delta_{ij}\delta_{mn})e_{ijmn} \\&= I_{dev} \end{aligned} $$
+$$ \begin{aligned} I_{diff} : I_{dev} &= \delta_{ik}\delta_{jl}e_{ijkl} : \left( \frac{1}{2}(\delta_{mp}\delta_{nq} + \delta_{mq}\delta_{np}) - \frac{1}{3}\delta_{mn}\delta_{pq} \right) e_{mnpq} \\&= \delta_{ik}\delta_{jl}\left( \frac{1}{2}(\delta_{mp}\delta_{nq} + \delta_{mq}\delta_{np}) - \frac{1}{3}\delta_{mn}\delta_{pq} \right) e_{ijkl} : e_{mnpq} \\&= \delta_{ik}\delta_{jl}\left( \frac{1}{2}(\delta_{mp}\delta_{nq} + \delta_{mq}\delta_{np}) - \frac{1}{3}\delta_{mn}\delta_{pq} \right) \delta_{kp}\delta_{lq} e_{ijmn} \\&= \delta_{ik}\delta_{jl} \left( \frac{1}{2}(\delta_{mk}\delta_{nl} + \delta_{ml}\delta_{nk}) - \frac{1}{3} \delta_{mn}\delta_{kl} \right) e_{ijmn} \\&= \left( \frac{1}{2}(\delta_{im}\delta_{jn} + \delta_{in}\delta_{jm}) - \frac{1}{3} \delta_{ij}\delta_{mn} \right) e_{ijmn} \\&= I_{dev} \end{aligned} $$
 
 ### 명제2
 $A$가 second order tensor일 떄, 다음을 증명하여라.
@@ -161,9 +165,16 @@ $$ \frac{\partial I_{dev}:A}{\partial A} = I_{dev} $$
 $$ \begin{aligned} \frac{\partial I_{dev}:A}{\partial A} &= \frac{\partial}{\partial A_{kl}} \bigg(\frac{1}{2}(A_{ij} + A_{ji}) - \frac{A_{kk}}{3}\delta_{ij}\bigg) e_{ijkl} \\&= \bigg( \frac{1}{2} (\delta_{ik}\delta_{jl} + \delta_{il}\delta_{jk}) - \frac{1}{3}\delta_{kl}\delta_{ij} \bigg)e_{ijkl} \\&= I_{dev}  \end{aligned} $$
 
 
+### 명제4
+$A$가 second order tensor일 때, 다음을 증명하여라.
 
+$$ I_{dev} : A \text{ is symmetric} $$
 
+**Proof**
 
+$$ I_{dev} : A = \sym(A) - \frac{1}{3}A_{kk}I $$
+
+$sym(A)$도 $I$도 symmetric tensor임으로 $I_{dev} : A$는 symmetric tensor이다. $\qed$
 
 
 

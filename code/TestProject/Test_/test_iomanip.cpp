@@ -2,14 +2,26 @@
 #include <iomanip>
 #include <fstream>
 
-
-TEST(test1,test1)
+TEST(test1, test1)
 {
-	constexpr int num_decimical_places = 3;
-
 	std::ofstream of("test.txt");
 
-	of << std::scientific << std::setprecision(num_decimical_places);	
-	of << std::setw(10) << 1.0<< std::setw(10) << 2<< std::setw(10) << 3 << "\n";
-	of << std::setw(15) << 1.234567 << std::setw(15) << 123.456789 << std::setw(15) << 0.000123;
+	of << std::setw(10) << "ELEMENT" << std::setw(10) << "GRID" << std::setw(50) << "NORMALIZED CUMULATIVE STRAIN ENERGY\n";
+	of << std::setw(7) << "ID" << std::setw(7) << "ID\n";
+
+	//of << "    ELEMENT    GRID     NORMALIZED CUMULATIVE STRAIN ENERGY\n"
+	//	 << "      ID        ID	     \n";
+
+	constexpr int elem_id = 1;
+	std::vector<float> values = { 1.0, 2.0345, 1.2355123e-13 };
+
+	constexpr int num_decimical_places = 6;
+	of << std::scientific << std::setprecision(num_decimical_places);
+
+	of << "      " << elem_id << "       CENTER      ";
+	for (auto val : values)
+	{
+		of << val << "  ";
+	}
+	of << "\n";
 };
