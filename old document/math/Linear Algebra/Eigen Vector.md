@@ -1,8 +1,8 @@
-# Eigen Vector
-vector space $V/ \mathbb F$와 $T \in \text{End}(V)$가 있을 때, $T$의 `고유벡터(eigen vector)` $v$는 다음을 만족하는 벡터이다.
+# Eigenvector
+vector space $V/ \mathbb F$와 $T \in \text{End}(V)$가 있을 때, $T$의 `고유벡터(eigenvector)` $v$는 다음을 만족하는 벡터이다.
 $$ v \in V - \{ 0_V \} \quad \land \quad T(v)  = \lambda v \quad \lambda \in \mathbb F$$
 
-이 때, 스칼라 값 $\lambda$를 `고유값(eigen value)`라 한다.
+이 때, 스칼라 값 $\lambda$를 `고유값(eigenvalue)`라 한다.
 
 ### 참고1
 vector space $V/ \mathbb F$와 $T \in L(V;V)$가 있고, $T$의 고유벡터와 고유값 $v, \lambda$가 있을 때, $T$의 정의역을 $S := \{ cv | c \in \mathbb F\} < V$로 `restriction`시킨 restriction map을 생각해보자.
@@ -19,7 +19,7 @@ $$ v \in \ker(T-\lambda id) $$
 
 ### 명제1
 vector space $V/ \mathbb F$와 $T \in \text{End}(V)$가 있을 때, 다음을 증명하여라.
-$$ \lambda \in \mathbb{F} \text{ is eigen value of } T \Leftrightarrow \det(T - \lambda id) = 0 $$
+$$ \lambda \in \mathbb{F} \text{ is eigenvalue of } T \Leftrightarrow \det(T - \lambda id) = 0 $$
 
 **Proof**
 
@@ -36,7 +36,7 @@ $$ \begin{aligned} & \det(T-\lambda id) = 0 \\ \Rightarrow \enspace &  \det(\fra
 ### 명제2
 $n$차원 vector space $V/ \mathbb F$와 $T \in \text{End}(V)$가 있다.
 
-$\beta_{\lambda^i}$가 eigen value $\lambda^i$와 관련된 eigen vectors의 집합일 떄, $i \neq j$이면 $\lambda^i \neq \lambda^j$라 하자.
+$\beta_{\lambda^i}$가 eigenvalue $\lambda^i$와 관련된 eigenvectors의 집합일 떄, $i \neq j$이면 $\lambda^i \neq \lambda^j$라 하자.
 
 이 때, 다음을 증명하여라.
 $$ \beta_{\lambda^i} \cap \beta_{\lambda^j} = \empty $$
@@ -48,14 +48,14 @@ $\beta_{\lambda^i} \cap \beta_{\lambda^j} \neq \empty$라 가정하자.
 $\beta \in \beta_{\lambda^i} \cap \beta_{\lambda^j}$라 하면 다음이 성립한다.
 $$ \begin{aligned} & T(\beta) = \lambda^i\beta = \lambda^j\beta \\ \Rightarrow \enspace & (\lambda^i - \lambda^j)\beta = 0_V \end{aligned}  $$
 
-$\lambda^i \neq \lambda^j$임으로 $\beta = 0_V$여야한다. 하지만, eigen vector의 정의와 모순이 발생한다.
+$\lambda^i \neq \lambda^j$임으로 $\beta = 0_V$여야한다. 하지만, eigenvector의 정의와 모순이 발생한다.
 
 따라서 가정에 의해 모순이 발생했음으로, $\beta_{\lambda^i} \cap \beta_{\lambda^j} = \empty$이다. $\quad {_\blacksquare}$
 
 ### 명제3
 $n$차원 vector space $V/ \mathbb F$와 $T \in \text{End}(V)$가 있다.
 
-$\beta_{\lambda^i}$가 eigen value $\lambda^i$와 관련된 eigen vectors의 집합일 떄, $i \neq j$이면 $\lambda^i \neq \lambda^j$라 하자.
+$\beta_{\lambda^i}$가 eigenvalue $\lambda^i$와 관련된 eigenvectors의 집합일 떄, $i \neq j$이면 $\lambda^i \neq \lambda^j$라 하자.
 
 이 때, 다음을 증명하여라.
 $$ \bigcup_{i=1}^k \beta_{\lambda^i} \text{ is an linearly independent set.} $$

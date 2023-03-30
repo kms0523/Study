@@ -1,3 +1,5 @@
-   ELEMENT      GRID              NORMALIZED CUMULATIVE STRAIN ENERGY
-     ID    ID
-      1       CENTER      1.000000e+00  2.034500e+00  1.235512e-13  
+    ELEMENT    GRID    SURFACE     NORMALIZED CUMULATIVE STRAIN ENERGY
+      ID        ID	    
+       1      CENTER          1.000000e+00  
+                  23          2.034500e+00  
+                  23          1.235512e-13  

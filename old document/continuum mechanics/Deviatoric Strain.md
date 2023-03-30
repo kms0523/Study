@@ -43,11 +43,19 @@ $$ \tilde\epsilon : \tilde\epsilon = (\epsilon_1 - \epsilon_m)^2 + (\epsilon_2 -
 
 **Proof**
 
-Double dot 연산의 성질에 의해 다음이 성립한다.
+$\tilde\epsilon, D_{\tilde{\epsilon}}$은 symmetric 함으로 다음이 성립한다.
 
-$$ \begin{aligned} \tilde\epsilon : \tilde\epsilon &= \text{tr}(\tilde\epsilon^2) \\&= \text{tr}(D_{\tilde\epsilon}^2) \\&= (\epsilon_1 - \epsilon_m)^2 + (\epsilon_2 - \epsilon_m)^2 + (\epsilon_3 - \epsilon_m)^2 \qed  \end{aligned} $$
+$$ \tilde\epsilon : \tilde\epsilon = \text{tr}(\tilde\epsilon^2) = \text{tr}(D_{\tilde\epsilon}^2) = D_{\tilde\epsilon}: D_{\tilde\epsilon}  $$
 
-### 명제4
+이 떄, $\epsilon$이 diagonalizable함으로 다음이 성립한다.
+
+$$ D_{\tilde{\epsilon}} = D_{\epsilon} - \frac{\tr(D_\epsilon)}{3}I = D_{\epsilon} - \epsilon_mI $$
+
+따라서, 다음이 성립한다.
+
+$$ \begin{aligned} D_{\tilde\epsilon}: D_{\tilde\epsilon} &= (D_{\epsilon} - \epsilon_mI) : (D_{\epsilon} - \epsilon_mI) \\&= (\epsilon_1 - \epsilon_m)^2 + (\epsilon_2 - \epsilon_m)^2 + (\epsilon_3 - \epsilon_m)^2 \qed \end{aligned} $$
+
+#### 따름명제3.1
 Infinitesimal strains $\epsilon$이 있다고 하자.
 
 $\epsilon$의 eigen value가 $\epsilon_{1,2,3}$일 때, 다음을 증명하여라.

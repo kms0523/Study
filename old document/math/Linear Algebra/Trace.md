@@ -36,31 +36,6 @@ $$ \text{tr}(M^2) = \text{tr}(N^2) $$
 $$ \mathrm{tr}(M^2) = \mathrm{tr}(B^{-1}NBB^{-1}NB) = \mathrm{tr}(B^{-1}N^2B) = \mathrm{tr}(N^2)  \quad {_\blacksquare}  $$
 
 ### 명제4
-$M,N \in M_{nn}(\mathbb F)$가 있을 때, $M \sim N$라 하자.
-
-$c_1,c_2 \in \mathbb F$에 대해, 다음을 증명하여라.
-$$ c_1M + c_2I \sim c_1N + c_2I $$
-
-**Proof**
-
-$M \sim N$이기 때문에 다음을 만족하는 $B \in M_{nn}(\mathbb F)$가 존재한다.
-$$ M = B^{-1}NB $$
-
-따라서, 다음이 성립한다.
-$$\begin{aligned} B^{-1}(c_1N + c_2I)B &= c_1B^{-1}NB + c_2I \\&= c_1M + c_2I \quad {_\blacksquare} \end{aligned} $$
-
-#### 따름명제
-$X_m = \text{tr}(X) / 3$로 정의할 떄, 다음을 증명하여라.
-$$ M - M_mI \sim N - N_m I $$
-
-**Proof**
-
-$M \sim N$이기 때문에 다음이 성립한다.
-$$ M_m = N_m = k $$
-
-따라서, 명제5에 의해 성립한다. $\quad {_\blacksquare}$
-
-### 명제5
 $A \in M_{nn}(\R)$이라 하자.
 
 $A$가 symmetric metrix일 때, 다음을 증명하여라.
@@ -80,7 +55,7 @@ $$ A : A = B : B $$
 
 $$ \begin{aligned} A : A &= \tr(A^2) \\ &= \tr(B^2) \\ &= B : B\qed \end{aligned} $$
 
-### 명제6
+### 명제5
 $A,B \in M_{nn}(\R)$이라 하자.
 
 이 떄, 다음을 증명하여라.
