@@ -4,12 +4,12 @@ POSET $X$와 $X$의 부분집합 $U$가 있다고 하자.
 ## Upper Bound
 다음을 만족하는 $M \in X$를 $U$의 `upper bound`라고 한다.
 
-$$ \forall u \in U, \quad u \le M $$
+$$ M \in X \st \forall u \in U, \quad u \le M $$
 
 ## Lower Bound
 다음을 만족하는 $m \in X$를 $U$의 `lower bound`라고 한다.
 
-$$ \forall u \in U, \quad m \le u $$
+$$ m \in X \st  \forall u \in U, \quad m \le u $$
 
 ## 참고1
 $U$의 greatest, least element는 $U$의 element이지만 $U$의 upper, lower bound는 $X$의 element이다.

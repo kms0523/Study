@@ -981,16 +981,6 @@ const thebe_selector_output = ".output, .cell_output"
      Basis
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="06%20Coordinate.html">
-     Coordinate
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="07%20Linear%20Map.html">
-     Linear Map
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -1856,24 +1846,7 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
-     명제1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#steinitz-exchange-lemma">
-     명제2(Steinitz exchange lemma)
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
-       보조명제2.1
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     명제3
+     명제
     </a>
    </li>
   </ul>
@@ -1924,24 +1897,7 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
-     명제1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#steinitz-exchange-lemma">
-     명제2(Steinitz exchange lemma)
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
-       보조명제2.1
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     명제3
+     명제
     </a>
    </li>
   </ul>
@@ -1993,7 +1949,7 @@ $<span class="math notranslate nohighlight">\(  v_1 = - \frac{1}{a_1}\sum_{k=2}^
 <p><span class="math notranslate nohighlight">\(v \in V- \{0_V\}\)</span>에 대해 <span class="math notranslate nohighlight">\(\beta=\{v\}\)</span>면 <span class="math notranslate nohighlight">\(\beta\)</span>는 선형 독립 집합이다.</p>
 </section>
 <section id="id7">
-<h3>명제1<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>명제<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>Vector space <span class="math notranslate nohighlight">\(V/\F\)</span>와 <span class="math notranslate nohighlight">\(V\)</span>의 linearly independent set <span class="math notranslate nohighlight">\(S\)</span>가 있다고 하자.</p>
 <p><span class="math notranslate nohighlight">\(v \in V - \span(S)\)</span>일 때, 다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
@@ -2015,73 +1971,6 @@ $<span class="math notranslate nohighlight">\(  v_1 = - \frac{1}{a_1}\sum_{k=2}^
 <p>따라서, linearly independet set의 정의에 따라 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ S \cup \Set{v} \text{ is an linearly independent set} \qed \]</div>
-</section>
-<section id="steinitz-exchange-lemma">
-<h3>명제2(Steinitz exchange lemma)<a class="headerlink" href="#steinitz-exchange-lemma" title="Permalink to this headline">#</a></h3>
-<p>Vector space <span class="math notranslate nohighlight">\(V/\F\)</span>와 <span class="math notranslate nohighlight">\(V\)</span>의 finite linearly independent set <span class="math notranslate nohighlight">\(X\)</span> 그리고 <span class="math notranslate nohighlight">\(V\)</span>의 finite generating set <span class="math notranslate nohighlight">\(Y\)</span>가 있다고 하자.</p>
-<p>이 떄, 다음을 증명하여라.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \begin{gathered} |X| \le |Y| \\ \exist Y' \subseteq Y \st |Y'| = |Y| - |X| \land \span(X \cup Y') = V \end{gathered} \end{split}\]</div>
-<p><strong>Proof</strong></p>
-<p><span class="math notranslate nohighlight">\(X = \Set{x_1,\cdots,x_n}, Y = \Set{y_1,\cdots,y_m}\)</span>이라고 하자.</p>
-<p>이 떄, <span class="math notranslate nohighlight">\(S_0,\cdots, S_n\)</span>를 다음과 같이 정의하자</p>
-<div class="math notranslate nohighlight">
-\[ S_i := \Set{x_1, \cdots, x_i, y_{i+1}, \cdots, y_m} \]</div>
-<p>보조명제2.1에 의해 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}  \begin{gathered} n \le m \\ \span(S_n) = V \end{gathered} \end{split}\]</div>
-<p>따라서 <span class="math notranslate nohighlight">\(|X| \le |Y|\)</span>이고  <span class="math notranslate nohighlight">\(Y' = \Set{y_{n+1},\cdots,y_m}\)</span>이라고 하면 명제를 모두 만족시킴을 알 수 있다. <span class="math notranslate nohighlight">\(\qed\)</span></p>
-<section id="id8">
-<h4>보조명제2.1<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
-<p>다음을 증명하여라.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}  \begin{gathered} n \le m \\ \span(S_n) = V \end{gathered} \end{split}\]</div>
-<p><strong>Proof</strong></p>
-<p>mathematrical induction을 통해 <span class="math notranslate nohighlight">\(n \le m\)</span>이고 <span class="math notranslate nohighlight">\(\span(S_n) = V\)</span>임을 보이자.</p>
-<p>[<span class="math notranslate nohighlight">\(i=0\)</span>]<br />
-<span class="math notranslate nohighlight">\(S_0 = Y\)</span>임으로 <span class="math notranslate nohighlight">\(\span(S_0) = V\)</span>이고 자명하게 <span class="math notranslate nohighlight">\(0\le m\)</span>이다. <span class="math notranslate nohighlight">\(\qed\)</span></p>
-<p>[<span class="math notranslate nohighlight">\(i=k&lt;n\)</span>]<br />
-<span class="math notranslate nohighlight">\(k\)</span>일 때, <span class="math notranslate nohighlight">\(k \le m\)</span>이고 <span class="math notranslate nohighlight">\(\span(S_k) = V\)</span>라고 가정하자.</p>
-<p>[<span class="math notranslate nohighlight">\(i=k+1\)</span>]<br />
-<span class="math notranslate nohighlight">\(x_{k+1} \in V\)</span>이고 <span class="math notranslate nohighlight">\(\span(S_k) = V\)</span>임으로 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[ x_{k+1} = a_1x_1 + \cdots a_kx_k + a_{k+1}y_{k+1} + \cdots + a_my_m \]</div>
-<p>이 때, <span class="math notranslate nohighlight">\(\Set{x_1,\cdots,x_{k+1}}\)</span>은 linearly independent set임으로 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[ \exist i \in [k+1,m] \st a_i \neq 0_\F \]</div>
-<p>즉, <span class="math notranslate nohighlight">\([k+1,m]\)</span>에 어떤 정수가 존재함으로 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[ k+1 \le m \]</div>
-<p>그리고 <span class="math notranslate nohighlight">\(Y\)</span>의 element의 순서를 적절하게 바꿔줌으로써 일반성을 잃지 않고 <span class="math notranslate nohighlight">\(a_{k+1} \neq 0_\F\)</span>라고 할수 있음으로 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \begin{aligned} &amp; y_{k+1} = \frac{1}{a_{k+1}} \left( x_{k+1} - \sum_{i=1}^ka_ix_i - \sum_{i=k+2}^m a_iy_i \right) \\ \implies&amp; y_{k+1} \in \span(S_{k+1}) \end{aligned}  \end{split}\]</div>
-<p>또한, <span class="math notranslate nohighlight">\(x_1,\cdots,x_k, y_{k+2},\cdots,y_m \in S_{k+1}\)</span>임으로 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[ S_k \subseteq \span(S_{k+1}) \implies \span(S_k) \subseteq \span(S_{k+1}) \implies \span(S_{k+1}) = V \qed \]</div>
-<p>[결론]<br />
-따라서 mathematical induction에 의해 <span class="math notranslate nohighlight">\(n \le m\)</span>이고 <span class="math notranslate nohighlight">\(\span(S_n) =V\)</span>이다. <span class="math notranslate nohighlight">\(\qed\)</span></p>
-<blockquote>
-<div><p>Reference<br />
-<a class="reference external" href="https://en.wikipedia.org/wiki/Steinitz_exchange_lemma">wiki</a></p>
-</div></blockquote>
-</section>
-</section>
-<section id="id9">
-<h3>명제3<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
-<p>Vector space <span class="math notranslate nohighlight">\(V/\F\)</span>와 <span class="math notranslate nohighlight">\(V\)</span>의 subset <span class="math notranslate nohighlight">\(S\)</span>가 있다고 하자.</p>
-<p>이 떄, 다음을 증명하여라.</p>
-<div class="math notranslate nohighlight">
-\[ S \text{ is an linearly independent set of } V \implies  0_V \notin S \]</div>
-<p><strong>Proof</strong></p>
-<p>다음을 가정하자.</p>
-<div class="math notranslate nohighlight">
-\[ 0_V \in S \]</div>
-<p>그러면 <span class="math notranslate nohighlight">\(S\)</span>에서 <span class="math notranslate nohighlight">\(0_V\)</span>를 뽑으면 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[ \exist a \in \F - \Set{0_\F} \st a0_V = 0_\F \]</div>
-<p>이는 <span class="math notranslate nohighlight">\(S\)</span>가 linearly independent set이라는 전제에 모순임으로 proof by contradiction에 의해 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[ S \text{ is an linearly independent set of } V \implies  0_V \notin S \qed \]</div>
 </section>
 </section>
 </section>
