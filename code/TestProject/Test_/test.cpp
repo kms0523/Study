@@ -1,10 +1,11 @@
 #include "gtest/gtest.h"
+#include "../TestProject/Header3.h"
+#include "../TestProject/Header4.h"
+
 
 TEST(test123,test123)
 {
-	int a = 5;
-	int b = 2;
-	auto c = a / b;
-
-	std::cout << c;
+	AD a;
+	B b;
+	b.test(a);
 }

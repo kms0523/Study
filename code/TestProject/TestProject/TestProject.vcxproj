@@ -130,11 +130,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="mec\MecSharedPtr.cpp" />
+    <ClCompile Include="Source3.cpp" />
     <ClCompile Include="소스.cpp" />
     <ClCompile Include="소스1.cpp" />
     <ClCompile Include="소스2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header3.h" />
+    <ClInclude Include="Header4.h" />
     <ClInclude Include="mec\MecArrayIterator.h" />
     <ClInclude Include="mec\MecCommaAssignment.h" />
     <ClInclude Include="mec\MecDenseMatrix.h" />

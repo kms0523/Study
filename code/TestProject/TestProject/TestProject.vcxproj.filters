@@ -30,6 +30,9 @@
     <ClCompile Include="mec\MecSharedPtr.cpp">
       <Filter>소스 파일\mec</Filter>
     </ClCompile>
+    <ClCompile Include="Source3.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="헤더.h">
@@ -79,6 +82,12 @@
     </ClInclude>
     <ClInclude Include="mec\MecVectorRef.h">
       <Filter>소스 파일\mec</Filter>
+    </ClInclude>
+    <ClInclude Include="Header3.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Header4.h">
+      <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
