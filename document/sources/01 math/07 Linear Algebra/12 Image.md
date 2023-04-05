@@ -181,10 +181,11 @@ $$ \exist \beta' \subseteq \beta \st |\beta'| = n-k \land \span(\gamma\cup\beta'
 $$\text{rank}(T) = \dim(V) - \text{nullity}(T) \qed $$
 
 #### 참고
-dimension theorem은 Steinitz exchange lemma에 다른 해석이다.
+dimension theorem은 Steinitz exchange lemma에 따른 자명한 결과이다.
 
 #### 따름명제1.1
 유한 차원 vector space $V,W / \mathbb F$과 $T \in L(V; W)$가 있을 때, 다음을 증명하여라.
+
 $$ \dim(V) = \dim(W) \land \ker(T) = \{ 0_V \} \iff T \text{ is bijective} $$
 
 **Proof**

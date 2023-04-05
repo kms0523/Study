@@ -69,25 +69,30 @@ $$V \cong W \iff \dim(V)=\dim(W)$$
 **Proof**  
 
 [$\implies$]  
-$V$의 기저 $\beta$와 vector space isomorphism $\Phi:V \rightarrow W$가 있을 때, 벡터 공간 동형 사상의 명제2에 $\Phi(\beta)$은 $W/F$의 기저가 된다.
+전제에 의해 bijective linear map $T$가 존재한다.
 
-따라서 $\dim(V)=\dim(W)$. $\quad {_\blacksquare}$
+$T$가 bijective임으로 다음이 성립한다.
+
+$$ \begin{gathered} \ker(T) = \Set{0_V} \\ \dim(V)=\dim(W) \end{gathered}  \qed $$
 
 [$\impliedby$]  
+$T \in L(V;W)$가 $\nullity(T) = 0$이면 전제에 의해 $T$는 bijective이고 따라서 $T$는 vector space isomorphism이고 $V,W$는 vector space isomorphic하다.
+
+이 때, 중요한점은 $\nullity(T) = 0$를 만족하는 $T \in L(V;W)$가 존재하는지이다.
+
+[one of example]  
 $\beta = \Set{\beta_1,\cdots,\beta_n}, \gamma= \Set{\gamma_1,\cdots,\gamma_n}$를 $V,W$의 basis라고 하자.
 
-이 떄, 함수 $\varphi$를 다음과 같이 정의하자.
-$$\varphi:V \rightarrow W \quad s.t \quad a^i\beta_i \mapsto a^i\gamma_i$$  
+이 떄, 함수 $T$를 다음과 같이 정의하자.
+$$T:V \rightarrow W \quad s.t \quad a^i\beta_i \mapsto a^i\gamma_i$$  
 
-이 때, $\varphi$가 vectorspace isomorphism임을 보이자.
-
--[$\varphi \in L(V,W)$]  
+-[$T \in L(V,W)$]  
 $v_1 = a^i\beta_i, v_2 = b^i\beta_i \in V, c \in F$에 대해,
 
-$$ \begin{aligned} \varphi(cv_1+v_2) &= (ca^i + b^i)\gamma_i \\ &= ca^i\gamma_i + b^i\gamma_i \\ &= c\varphi(v_1) + \varphi(v_2) \qed \end{aligned} $$
+$$ \begin{aligned} T(cv_1+v_2) &= (ca^i + b^i)\gamma_i \\ &= ca^i\gamma_i + b^i\gamma_i \\ &= cT(v_1) + T(v_2) \qed \end{aligned} $$
 
--[$\varphi$ is bijective]  
-$\ker(\varphi) = \{ 0_V \}$이고 $\dim(V) = \dim(W)$임으로 dimension theorem의 따름명제에 의해 $\varphi$는 bijective이다.$\qed$
+-[$\nullity(T) = 0$]  
+$\ker(T) = \{ 0_V \}$임으로 $\nullity(T) = 0$이다. $\qed$
 
 ### Remark
 차원을 통해 Vector space를 분류할 수 있다. 즉, 차원이 같으면 벡터 공간 동형이고 차원이 다르면 벡터 공간 동형이 아닌 경우로 분류가 된다.

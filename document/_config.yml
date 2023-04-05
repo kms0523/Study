@@ -49,6 +49,8 @@ sphinx:
           "pdiff": ["\\frac{\\partial #1}{\\partial #2}", 2]
           "diff": ["\\frac{d #1}{d #2}", 2]
           "ninf": "n \\rightarrow \\infty"
+          "rank": "\\text{rank}"
+          "nullity": "\\text{nullity}"
 
     latex_elements:
         preamble: |
