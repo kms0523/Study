@@ -139,6 +139,15 @@ stash list에 있는 stash 중 stash name과 동일한 stash를 적용한다.
 
 
 ## 커밋 되돌리기
+
+### Reset
+
+```{figure} _image/1001.png
+```
+
+> Reference  
+> [blog](https://sdardew-valley.tistory.com/189)
+
 ### 명령어
 * `git commit --amend`  
 완료한 커밋을 수정해야 될 때
@@ -149,6 +158,7 @@ stash list에 있는 stash 중 stash name과 동일한 stash를 적용한다.
 
 > 참고  
 > Progit >> Git 도구 >> Reset 명확히 알고 가기
+
 
 
 ## .gitignore

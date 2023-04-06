@@ -146,6 +146,7 @@ $\beta_i$와 $T(\beta_j)$ 모두 orthonormal basis이기 때문에 두 vector의
 $A \in M_{nn}(\R)$가 있다고 하자.
 
 이 떄, $A$가 다음 성질을 만족할 경우 `orthogonal matrix`라고 한다.
+
 $$ AA^T = A^TA = I $$
 
 ### 참고
