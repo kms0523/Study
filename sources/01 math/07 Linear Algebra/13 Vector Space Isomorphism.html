@@ -52,7 +52,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"span": "\\text{span}", "End": "\\text{End}", "C": "\\Complex", "F": "\\mathbb{F}", "R": "\\mathbb{R}", "N": "\\mathbb{N}", "Q": "\\mathbb{Q}", "Z": "\\mathbb{Z}", "Ext": "\\text{Ext}", "Int": "\\text{Int}", "st": "\\quad s.t \\quad", "qed": "\\quad\\tiny\\blacksquare", "preimg": "\\text{preimg}", "img": "\\text{img}", "norm": ["\\left\\lVert #1 \\right\\rVert", 1], "sym": "\\text{sym}", "tr": "\\text{tr}", "empty": "\\emptyset", "exist": "\\exists", "Set": ["\\left\\{ #1 \\right\\}", 1], "pdiff": ["\\frac{\\partial #1}{\\partial #2}", 2], "diff": ["\\frac{d #1}{d #2}", 2], "ninf": "n \\rightarrow \\infty"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"span": "\\text{span}", "End": "\\text{End}", "C": "\\Complex", "F": "\\mathbb{F}", "R": "\\mathbb{R}", "N": "\\mathbb{N}", "Q": "\\mathbb{Q}", "Z": "\\mathbb{Z}", "Ext": "\\text{Ext}", "Int": "\\text{Int}", "st": "\\quad s.t \\quad", "qed": "\\quad\\tiny\\blacksquare", "preimg": "\\text{preimg}", "img": "\\text{img}", "norm": ["\\left\\lVert #1 \\right\\rVert", 1], "sym": "\\text{sym}", "tr": "\\text{tr}", "empty": "\\emptyset", "exist": "\\exists", "Set": ["\\left\\{ #1 \\right\\}", 1], "pdiff": ["\\frac{\\partial #1}{\\partial #2}", 2], "diff": ["\\frac{d #1}{d #2}", 2], "ninf": "n \\rightarrow \\infty", "rank": "\\text{rank}", "nullity": "\\text{nullity}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -1464,6 +1464,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../03%20programming/01%20C%2B%2B/Forward%20Declaration.html">
+     Forward Declaration
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../03%20programming/01%20C%2B%2B/Initialization.html">
      initialization
     </a>
@@ -1496,13 +1501,13 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../03%20programming/CMake.html">
-   Cmake
+  <a class="reference internal" href="../../03%20programming/10%20git.html">
+   Git
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../03%20programming/git.html">
-   Git
+  <a class="reference internal" href="../../03%20programming/CMake.html">
+   Cmake
   </a>
  </li>
  <li class="toctree-l1">
@@ -2052,19 +2057,23 @@ title="Print to PDF"
 \[V \cong W \iff \dim(V)=\dim(W)\]</div>
 <p><strong>Proof</strong></p>
 <p>[<span class="math notranslate nohighlight">\(\implies\)</span>]<br />
-<span class="math notranslate nohighlight">\(V\)</span>의 기저 <span class="math notranslate nohighlight">\(\beta\)</span>와 vector space isomorphism <span class="math notranslate nohighlight">\(\Phi:V \rightarrow W\)</span>가 있을 때, 벡터 공간 동형 사상의 명제2에 <span class="math notranslate nohighlight">\(\Phi(\beta)\)</span>은 <span class="math notranslate nohighlight">\(W/F\)</span>의 기저가 된다.</p>
-<p>따라서 <span class="math notranslate nohighlight">\(\dim(V)=\dim(W)\)</span>. <span class="math notranslate nohighlight">\(\quad {_\blacksquare}\)</span></p>
+전제에 의해 bijective linear map <span class="math notranslate nohighlight">\(T\)</span>가 존재한다.</p>
+<p><span class="math notranslate nohighlight">\(T\)</span>가 bijective임으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{gathered} \ker(T) = \Set{0_V} \\ \dim(V)=\dim(W) \end{gathered}  \qed \end{split}\]</div>
 <p>[<span class="math notranslate nohighlight">\(\impliedby\)</span>]<br />
+<span class="math notranslate nohighlight">\(T \in L(V;W)\)</span>가 <span class="math notranslate nohighlight">\(\nullity(T) = 0\)</span>이면 전제에 의해 <span class="math notranslate nohighlight">\(T\)</span>는 bijective이고 따라서 <span class="math notranslate nohighlight">\(T\)</span>는 vector space isomorphism이고 <span class="math notranslate nohighlight">\(V,W\)</span>는 vector space isomorphic하다.</p>
+<p>이 때, 중요한점은 <span class="math notranslate nohighlight">\(\nullity(T) = 0\)</span>를 만족하는 <span class="math notranslate nohighlight">\(T \in L(V;W)\)</span>가 존재하는지이다.</p>
+<p>[one of example]<br />
 <span class="math notranslate nohighlight">\(\beta = \Set{\beta_1,\cdots,\beta_n}, \gamma= \Set{\gamma_1,\cdots,\gamma_n}\)</span>를 <span class="math notranslate nohighlight">\(V,W\)</span>의 basis라고 하자.</p>
-<p>이 떄, 함수 <span class="math notranslate nohighlight">\(\varphi\)</span>를 다음과 같이 정의하자.
-$<span class="math notranslate nohighlight">\(\varphi:V \rightarrow W \quad s.t \quad a^i\beta_i \mapsto a^i\gamma_i\)</span>$</p>
-<p>이 때, <span class="math notranslate nohighlight">\(\varphi\)</span>가 vectorspace isomorphism임을 보이자.</p>
-<p>-[<span class="math notranslate nohighlight">\(\varphi \in L(V,W)\)</span>]<br />
+<p>이 떄, 함수 <span class="math notranslate nohighlight">\(T\)</span>를 다음과 같이 정의하자.
+$<span class="math notranslate nohighlight">\(T:V \rightarrow W \quad s.t \quad a^i\beta_i \mapsto a^i\gamma_i\)</span>$</p>
+<p>-[<span class="math notranslate nohighlight">\(T \in L(V,W)\)</span>]<br />
 <span class="math notranslate nohighlight">\(v_1 = a^i\beta_i, v_2 = b^i\beta_i \in V, c \in F\)</span>에 대해,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{aligned} \varphi(cv_1+v_2) &amp;= (ca^i + b^i)\gamma_i \\ &amp;= ca^i\gamma_i + b^i\gamma_i \\ &amp;= c\varphi(v_1) + \varphi(v_2) \qed \end{aligned} \end{split}\]</div>
-<p>-[<span class="math notranslate nohighlight">\(\varphi\)</span> is bijective]<br />
-<span class="math notranslate nohighlight">\(\ker(\varphi) = \{ 0_V \}\)</span>이고 <span class="math notranslate nohighlight">\(\dim(V) = \dim(W)\)</span>임으로 dimension theorem의 따름명제에 의해 <span class="math notranslate nohighlight">\(\varphi\)</span>는 bijective이다.<span class="math notranslate nohighlight">\(\qed\)</span></p>
+\[\begin{split} \begin{aligned} T(cv_1+v_2) &amp;= (ca^i + b^i)\gamma_i \\ &amp;= ca^i\gamma_i + b^i\gamma_i \\ &amp;= cT(v_1) + T(v_2) \qed \end{aligned} \end{split}\]</div>
+<p>-[<span class="math notranslate nohighlight">\(\nullity(T) = 0\)</span>]<br />
+<span class="math notranslate nohighlight">\(\ker(T) = \{ 0_V \}\)</span>임으로 <span class="math notranslate nohighlight">\(\nullity(T) = 0\)</span>이다. <span class="math notranslate nohighlight">\(\qed\)</span></p>
 </section>
 <section id="remark">
 <h3>Remark<a class="headerlink" href="#remark" title="Permalink to this headline">#</a></h3>

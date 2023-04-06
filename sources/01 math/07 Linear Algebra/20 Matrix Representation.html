@@ -52,7 +52,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"span": "\\text{span}", "End": "\\text{End}", "C": "\\Complex", "F": "\\mathbb{F}", "R": "\\mathbb{R}", "N": "\\mathbb{N}", "Q": "\\mathbb{Q}", "Z": "\\mathbb{Z}", "Ext": "\\text{Ext}", "Int": "\\text{Int}", "st": "\\quad s.t \\quad", "qed": "\\quad\\tiny\\blacksquare", "preimg": "\\text{preimg}", "img": "\\text{img}", "norm": ["\\left\\lVert #1 \\right\\rVert", 1], "sym": "\\text{sym}", "tr": "\\text{tr}", "empty": "\\emptyset", "exist": "\\exists", "Set": ["\\left\\{ #1 \\right\\}", 1], "pdiff": ["\\frac{\\partial #1}{\\partial #2}", 2], "diff": ["\\frac{d #1}{d #2}", 2], "ninf": "n \\rightarrow \\infty"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"span": "\\text{span}", "End": "\\text{End}", "C": "\\Complex", "F": "\\mathbb{F}", "R": "\\mathbb{R}", "N": "\\mathbb{N}", "Q": "\\mathbb{Q}", "Z": "\\mathbb{Z}", "Ext": "\\text{Ext}", "Int": "\\text{Int}", "st": "\\quad s.t \\quad", "qed": "\\quad\\tiny\\blacksquare", "preimg": "\\text{preimg}", "img": "\\text{img}", "norm": ["\\left\\lVert #1 \\right\\rVert", 1], "sym": "\\text{sym}", "tr": "\\text{tr}", "empty": "\\emptyset", "exist": "\\exists", "Set": ["\\left\\{ #1 \\right\\}", 1], "pdiff": ["\\frac{\\partial #1}{\\partial #2}", 2], "diff": ["\\frac{d #1}{d #2}", 2], "ninf": "n \\rightarrow \\infty", "rank": "\\text{rank}", "nullity": "\\text{nullity}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -1464,6 +1464,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../03%20programming/01%20C%2B%2B/Forward%20Declaration.html">
+     Forward Declaration
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../03%20programming/01%20C%2B%2B/Initialization.html">
      initialization
     </a>
@@ -1496,13 +1501,13 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../03%20programming/CMake.html">
-   Cmake
+  <a class="reference internal" href="../../03%20programming/10%20git.html">
+   Git
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../03%20programming/git.html">
-   Git
+  <a class="reference internal" href="../../03%20programming/CMake.html">
+   Cmake
   </a>
  </li>
  <li class="toctree-l1">
@@ -1940,26 +1945,31 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
-     명제1
+     참고5
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     명제2
+     명제1
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id9">
-     명제3
+     명제2
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id10">
-     명제4
+     명제3
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id11">
+     명제4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
      명제5
     </a>
    </li>
@@ -2028,26 +2038,31 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
-     명제1
+     참고5
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     명제2
+     명제1
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id9">
-     명제3
+     명제2
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id10">
-     명제4
+     명제3
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id11">
+     명제4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
      명제5
     </a>
    </li>
@@ -2068,123 +2083,161 @@ title="Print to PDF"
 <section id="vector">
 <h2>Vector<a class="headerlink" href="#vector" title="Permalink to this headline">#</a></h2>
 <p><span class="math notranslate nohighlight">\(n\)</span> 차원 vector space <span class="math notranslate nohighlight">\(V / \mathbb F\)</span>와 기저 <span class="math notranslate nohighlight">\(\beta\)</span>가 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(v = a^i \beta_i \in V\)</span>의 <span class="math notranslate nohighlight">\(\beta\)</span>에 대한 <code class="docutils literal notranslate"><span class="pre">행렬표현(matrix</span> <span class="pre">representation)</span></code> <span class="math notranslate nohighlight">\(\frak m_\beta(v)\)</span>은 다음과 같이 정의된 함수이다.
-$<span class="math notranslate nohighlight">\( \frak m_\beta : V \rightarrow M_{n1}(\mathbb F) \quad s.t. \quad v \mapsto \begin{bmatrix} a^1 \\ \vdots \\ a^n \end{bmatrix} \)</span>$</p>
+<p><span class="math notranslate nohighlight">\(v = a^i \beta_i \in V\)</span>의 <span class="math notranslate nohighlight">\(\beta\)</span>에 대한 <code class="docutils literal notranslate"><span class="pre">행렬표현(matrix</span> <span class="pre">representation)</span></code> <span class="math notranslate nohighlight">\(\frak m_\beta(v)\)</span>은 다음과 같이 정의된 함수이다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \frak m_\beta : V \rightarrow M_{n1}(\mathbb F) \quad s.t. \quad v \mapsto \begin{bmatrix} a^1 \\ \vdots \\ a^n \end{bmatrix} \end{split}\]</div>
 <section id="id1">
 <h3>명제1<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(n\)</span>차원 vector space <span class="math notranslate nohighlight">\(V / \mathbb F\)</span>와 기저 <span class="math notranslate nohighlight">\(\beta\)</span>가 있을 때, <span class="math notranslate nohighlight">\(v \in V\)</span>에 대해 다음을 증명하여라.
-$<span class="math notranslate nohighlight">\( \frak m_\beta \text{ is well defined.} \)</span>$</p>
+<p><span class="math notranslate nohighlight">\(n\)</span>차원 vector space <span class="math notranslate nohighlight">\(V / \mathbb F\)</span>와 기저 <span class="math notranslate nohighlight">\(\beta\)</span>가 있을 때, <span class="math notranslate nohighlight">\(v \in V\)</span>에 대해 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ \frak m_\beta \text{ is well defined.} \]</div>
 <p><strong>proof</strong></p>
-<p><span class="math notranslate nohighlight">\(v = a^i \beta_i = b^i \beta_i \in V\)</span>라 하면 다음이 성립한다.
-$<span class="math notranslate nohighlight">\( (a^i -b^i) \beta_i = 0_V \)</span>$</p>
-<p><span class="math notranslate nohighlight">\(\beta\)</span>는 linearly independent함으로 다음이 성립한다.
-$<span class="math notranslate nohighlight">\( a^i = b^i \)</span>$</p>
+<p><span class="math notranslate nohighlight">\(v = a^i \beta_i = b^i \beta_i \in V\)</span>라 하면 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ (a^i -b^i) \beta_i = 0_V \]</div>
+<p><span class="math notranslate nohighlight">\(\beta\)</span>는 linearly independent함으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ a^i = b^i \]</div>
 <p>즉, <span class="math notranslate nohighlight">\(\frak m_\beta(v)\)</span>가 유일하게 결정됨으로, <span class="math notranslate nohighlight">\(\frak m_\beta\)</span>는 well defined다. <span class="math notranslate nohighlight">\(\quad\tiny\blacksquare\)</span></p>
 </section>
 <section id="id2">
 <h3>명제2<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p><span class="math notranslate nohighlight">\(n\)</span>차원 vector space <span class="math notranslate nohighlight">\(V/ \mathbb F\)</span>와 기저 <span class="math notranslate nohighlight">\(\beta\)</span>가 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(v \in V\)</span>에 대해 다음을 증명하여라.
-$<span class="math notranslate nohighlight">\( \frak m_\beta \text{ is a vector space isomorphism} \)</span>$</p>
+<p><span class="math notranslate nohighlight">\(v \in V\)</span>에 대해 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ \frak m_\beta \text{ is a vector space isomorphism} \]</div>
 <p><strong>Proof</strong></p>
-<p>[<span class="math notranslate nohighlight">\(m_\beta \in L(V; \mathbb F^n)\)</span>]<br />
-<span class="math notranslate nohighlight">\(v_1 = a^i\beta_i, \enspace v_2 = b^i\beta_i \in V, \enspace c \in \mathbb F\)</span>가 있을 때 다음이 성립한다.
-$<span class="math notranslate nohighlight">\( \frak m_\beta(cv_1 + v_2) = \begin{bmatrix} ca^1 + b_1 \\ \vdots \\ ca^n+ b_n \end{bmatrix} = c\begin{bmatrix} a^1 \\ \vdots \\ a^n \end{bmatrix} + \begin{bmatrix} b^1 \\ \vdots \\ b^n \end{bmatrix} = c \frak m_\beta(v_1) + \frak m_\beta(v_2) \)</span>$</p>
-<p>따라서, <span class="math notranslate nohighlight">\(m_\beta \in L(V; \mathbb F^n)\)</span>이다.</p>
+<p>[<span class="math notranslate nohighlight">\(m_\beta \in L(V; \mathbb M_{n1}(\mathbb F))\)</span>]<br />
+<span class="math notranslate nohighlight">\(v_1 = a^i\beta_i, \enspace v_2 = b^i\beta_i \in V, \enspace c \in \mathbb F\)</span>가 있을 때 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \frak m_\beta(cv_1 + v_2) = \begin{bmatrix} ca^1 + b_1 \\ \vdots \\ ca^n+ b_n \end{bmatrix} = c\begin{bmatrix} a^1 \\ \vdots \\ a^n \end{bmatrix} + \begin{bmatrix} b^1 \\ \vdots \\ b^n \end{bmatrix} = c \frak m_\beta(v_1) + \frak m_\beta(v_2) \end{split}\]</div>
+<p>따라서, <span class="math notranslate nohighlight">\(m_\beta \in L(V; \mathbb M_{n1}(\mathbb F))\)</span>이다.</p>
 <p>[<span class="math notranslate nohighlight">\(m_\beta\)</span> is bijective]<br />
-<span class="math notranslate nohighlight">\(\ker(m_\beta) = \{ 0_V \}\)</span>이고 <span class="math notranslate nohighlight">\(\dim(V) = \dim(\mathbb F^n)\)</span>임으로 dimension theorem에 의해 <span class="math notranslate nohighlight">\(m_\beta\)</span>는 bijective이다.<span class="math notranslate nohighlight">\(\quad\tiny\blacksquare\)</span></p>
+<span class="math notranslate nohighlight">\(\ker(m_\beta) = \{ 0_V \}\)</span>이고 <span class="math notranslate nohighlight">\(\dim(V) = \dim(\mathbb M_{n1}(\mathbb F))\)</span>임으로 dimension theorem에 의해 <span class="math notranslate nohighlight">\(m_\beta\)</span>는 bijective이다.<span class="math notranslate nohighlight">\(\quad\tiny\blacksquare\)</span></p>
 </section>
 </section>
 <section id="linear-map">
 <h2>Linear Map<a class="headerlink" href="#linear-map" title="Permalink to this headline">#</a></h2>
-<p><span class="math notranslate nohighlight">\(n,m\)</span>차원 벡터공간 <span class="math notranslate nohighlight">\(V,W / \F\)</span>와 각각의 기저 <span class="math notranslate nohighlight">\(\beta, \gamma\)</span> 그리고 <span class="math notranslate nohighlight">\(T \in L(V;W)\)</span>가 있다고 하자.</p>
-<p>이 때, <span class="math notranslate nohighlight">\(T=A^j_if^i_j\)</span>일 때, <span class="math notranslate nohighlight">\(T\)</span>의 <span class="math notranslate nohighlight">\(\beta,\gamma\)</span>에 대한 <code class="docutils literal notranslate"><span class="pre">행렬표현(matrix</span> <span class="pre">representation)</span></code> <span class="math notranslate nohighlight">\(\frak m_\beta^\gamma\)</span>은 다음과 같이 정의된 함수이다.
-$<span class="math notranslate nohighlight">\( \frak m_\beta^\gamma : L(V;W) \rightarrow M_{mn}(\mathbb F) \quad s.t. \quad T \mapsto \begin{bmatrix} A^1_1 &amp; \cdots &amp; A^1_n \\ \vdots &amp; \ddots &amp; \vdots \\ A^m_1 &amp; \cdots &amp; A^m_n \\ \end{bmatrix} \)</span>$</p>
-<section id="id3">
-<h3>참고1<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(V\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(v=a^i\beta_i\)</span>라고 할 때, <span class="math notranslate nohighlight">\(T(v) = b^j \gamma_j\)</span>, <span class="math notranslate nohighlight">\(T = A^j_if^i_j\)</span>라고 한다면 다음 관계식이 성립한다.</p>
+<p><span class="math notranslate nohighlight">\(n,m\)</span>차원 벡터공간 <span class="math notranslate nohighlight">\(V,W / \F\)</span>와 <span class="math notranslate nohighlight">\(T \in L(V;W)\)</span>가 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(V,W\)</span> 각각의 기저를 <span class="math notranslate nohighlight">\(\beta, \gamma\)</span>라고 할 때, <span class="math notranslate nohighlight">\(V\)</span>의 임의의 elemnt를 <span class="math notranslate nohighlight">\(v\)</span>와 <span class="math notranslate nohighlight">\(T(v)\)</span>를 다음과 같이 표현하자.</p>
 <div class="math notranslate nohighlight">
-\[ b^j = A^j_ia^i \]</div>
-<p>이를 행렬형태로 나타내면 다음과 같다.</p>
+\[ v = a^i\beta_i, \enspace T(v) = b^j\gamma_j \]</div>
+<p>이 떄, <span class="math notranslate nohighlight">\(T\)</span>는 linear map임으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} T(v) &amp;= T(a^i\beta_i) \\&amp;= a^iT(\beta_i) \end{aligned} \end{split}\]</div>
+<p>이 떄 <span class="math notranslate nohighlight">\(T(\beta_i) = A^j_i\gamma_j\)</span>라고 하면 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ T(v) = a^iA^j_i\gamma_j = b^j\gamma_j \]</div>
+<p>이를 행렬 형태로 나타내면 다음과 같다.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} \begin{bmatrix} b^1 \\ \vdots \\ b^m \end{bmatrix} =  \begin{bmatrix} A^1_1 &amp; \cdots &amp; A^1_n \\ \vdots &amp; \ddots &amp; \vdots \\ A^m_1 &amp; \cdots &amp; A^m_n \\ \end{bmatrix} \begin{bmatrix} a^1 \\ \vdots \\ a^n \end{bmatrix} \end{split}\]</div>
-<p>따라서, <span class="math notranslate nohighlight">\(T\)</span>의 행렬표현을 위와 같이 정의한것이다.</p>
+<p>따라서, <span class="math notranslate nohighlight">\(T\)</span>의 <span class="math notranslate nohighlight">\(\beta,\gamma\)</span>에 대한 <code class="docutils literal notranslate"><span class="pre">행렬표현(matrix</span> <span class="pre">representation)</span></code> <span class="math notranslate nohighlight">\(\frak m_\beta^\gamma\)</span>은 다음과 같이 정의된 함수이다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \frak m_\beta^\gamma : L(V;W) \rightarrow M_{mn}(\mathbb F) \quad s.t. \quad T \mapsto \begin{bmatrix} A^1_1 &amp; \cdots &amp; A^1_n \\ \vdots &amp; \ddots &amp; \vdots \\ A^m_1 &amp; \cdots &amp; A^m_n \\ \end{bmatrix} \end{split}\]</div>
+<section id="id3">
+<h3>참고1<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(L(V;W)\)</span>의 <span class="math notranslate nohighlight">\(\beta,\gamma\)</span>에 대한 basis를 <span class="math notranslate nohighlight">\(f^i_j, i=1,\cdots,n, j=1,\cdots,m\)</span>라고 하자.</p>
+<p><span class="math notranslate nohighlight">\(T \in L(V;W)\)</span>가 있을 때, <span class="math notranslate nohighlight">\(\frak{m}^\gamma_\beta(T) = A\)</span>일 때, 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ T = A^j_if^i_j \]</div>
 </section>
 <section id="id4">
 <h3>참고2<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(A^j_i\)</span>는 <span class="math notranslate nohighlight">\(i\)</span> coordinate를 <span class="math notranslate nohighlight">\(j\)</span> coordinate로 변환할 때, 얼마나 scailing 해줄 것인지를 결정하는 값이다.</p>
+<p><span class="math notranslate nohighlight">\(f^i_j\)</span>는 <span class="math notranslate nohighlight">\(i\)</span> coordinate를 <span class="math notranslate nohighlight">\(j\)</span> coordinate로 보내주는 함수임으로, <span class="math notranslate nohighlight">\(A^j_i\)</span>는 <span class="math notranslate nohighlight">\(i\)</span> coordinate를 <span class="math notranslate nohighlight">\(j\)</span> coordinate로 변환할 때, 얼마나 scailing 해줄 것인지를 결정하는 값이다.</p>
+<p>행렬 곱 형태를 다음과 같이 바꿔보자.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} \begin{bmatrix} b^1 \\ \vdots \\ b^m \end{bmatrix} = \begin{bmatrix} A^1_1 \\ \vdots \\ A^m_1 \end{bmatrix} a^1 + \cdots \end{split}\]</div>
-<p>형태를 보면 <span class="math notranslate nohighlight">\(a^1\)</span> 이라는 coordinate에 <span class="math notranslate nohighlight">\(A^j_1\)</span>만큼 scailing 해준 만큼 <span class="math notranslate nohighlight">\(b^j\)</span> coordinate에 영향을 준다.</p>
+<p><span class="math notranslate nohighlight">\(a^1\)</span> 이라는 coordinate에 <span class="math notranslate nohighlight">\(A^j_1\)</span>만큼 scailing 해준 만큼 <span class="math notranslate nohighlight">\(b^j\)</span> coordinate에 영향을 준다는 것이 잘 들어난다.</p>
 </section>
 <section id="id5">
 <h3>참고3<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(T\)</span>의 행렬 표현은 다음과 같이 나타낼 수 있다.
-$<span class="math notranslate nohighlight">\(\frak m^\gamma_\beta(T) = \begin{bmatrix} \frak m_\gamma(T(\beta_1)) &amp; \cdots &amp; \frak m_\gamma(T(\beta_n)) \end{bmatrix}  \)</span>$</p>
-<p>따라서 <span class="math notranslate nohighlight">\(\frak m^\gamma_\beta(T) = A\)</span>라 할 때, 다음이 성립한다.
-$<span class="math notranslate nohighlight">\( T(\beta_i) = A^j_i \gamma_j \)</span>$</p>
+<p><span class="math notranslate nohighlight">\(T\)</span>의 행렬 표현은 다음과 같이 나타낼 수 있다.</p>
+<div class="math notranslate nohighlight">
+\[\frak m^\gamma_\beta(T) = \begin{bmatrix} \frak m_\gamma(T(\beta_1)) &amp; \cdots &amp; \frak m_\gamma(T(\beta_n)) \end{bmatrix}  \]</div>
+<p>따라서 <span class="math notranslate nohighlight">\(\frak m^\gamma_\beta(T) = A\)</span>라 할 때, 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ T(\beta_i) = A^j_i \gamma_j \]</div>
 </section>
 <section id="id6">
 <h3>참고4<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(b^j =A^j_ia^i\)</span>임으로 다음이 성립한다.
-$<span class="math notranslate nohighlight">\( \frak m_\gamma(T(v)) = \frak m^\gamma_\beta(T) \frak m_\beta(v) \)</span>$</p>
+<p><span class="math notranslate nohighlight">\(b^j =A^j_ia^i\)</span>임으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \frak m_\gamma(T(v)) = \frak m^\gamma_\beta(T) \frak m_\beta(v) \]</div>
 </section>
 <section id="id7">
-<h3>명제1<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
-<p>차원이 각 각 <span class="math notranslate nohighlight">\(n,m\)</span>인 벡터 공간 <span class="math notranslate nohighlight">\(V,W/ \mathbb F\)</span>와 각각의 기저 <span class="math notranslate nohighlight">\(\beta, \gamma\)</span>, <span class="math notranslate nohighlight">\(T \in L(V;W)\)</span>가 있을 때, 다음을 증명하여라.
-$<span class="math notranslate nohighlight">\( \frak m_\beta^\gamma(T) \text{ is well defined.} \)</span>$</p>
+<h3>참고5<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<p>함수 <span class="math notranslate nohighlight">\(f\)</span>를 다음과 같이 정의하자.</p>
+<div class="math notranslate nohighlight">
+\[ f : M_{n1} \rightarrow M_{m1} \st x \mapsto Ax \]</div>
+<p>그러면 다음과 같은 도식을 그릴 수 있다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{CD} V &#64;&gt;T&gt;&gt; W \\ &#64;V{\frak m_\beta}VV &#64;VV{\frak m_\gamma}V \\ M_{n1} &#64;&gt;&gt;f&gt; M_{m1} \end{CD} \end{split}\]</div>
+<p>따라서, <span class="math notranslate nohighlight">\(f\)</span>는 3가지 선형변환의 합성으로 표현할 수 있다.</p>
+<div class="math notranslate nohighlight">
+\[ f = \frak m_\gamma \circ T \circ \frak m_\beta^{-1} \]</div>
+<p><span class="math notranslate nohighlight">\(\epsilon^n, \epsilon^m\)</span>을 <span class="math notranslate nohighlight">\(M_{n1}\)</span>의 standarad basis라고 할 때, 명제3에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\frak m^{\epsilon^m}_{\epsilon^n}(f) = \frak m^{\epsilon^m}_{\gamma}(\frak m_\gamma) \frak m^\gamma_\beta(T) \frak m^{\beta}_{\epsilon^n}(\frak m_\beta^{-1})\]</div>
+<p>이 때, <span class="math notranslate nohighlight">\(\frak m^{\epsilon^m}_{\gamma}(\frak m_\gamma)\)</span>와 <span class="math notranslate nohighlight">\(\frak m^{\beta}_ {\epsilon^n}(\frak m_\beta^{-1})\)</span>는 다음과 같다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \frak m^{\epsilon^m}_{\gamma}(\frak m_\gamma) = \begin{bmatrix} \frak m_{\epsilon^m}(\frak m_\gamma(\gamma_1)) &amp; \cdots &amp; \frak m_{\epsilon^m}(\frak m_\gamma(\gamma_m)) \end{bmatrix}  = I_m \\ \frak m^{\beta}_{\epsilon^n}(\frak m_\beta^{-1}) = \begin{bmatrix} \frak m_{\beta}(\frak m_\beta^{-1}(\epsilon^n_1)) &amp; \cdots &amp; \frak m_{\beta}(\frak m_\beta^{-1}(\epsilon^n_n)) \end{bmatrix} = I_n \end{split}\]</div>
+<p>따라서 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} \frak m^{\epsilon^m}_{\epsilon^n}(f) &amp;= \frak m^{\epsilon^m}_{\gamma}(\frak m_\gamma) \frak m^\gamma_\beta(T) \frak m^{\beta}_{\epsilon^n}(\frak m_\beta^{-1}) \\ &amp;= I_m \frak m^\gamma_\beta(T) I_n \\ &amp;= \frak m^\gamma_\beta(T) \end{aligned}  \end{split}\]</div>
+</section>
+<section id="id8">
+<h3>명제1<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<p>차원이 각 각 <span class="math notranslate nohighlight">\(n,m\)</span>인 벡터 공간 <span class="math notranslate nohighlight">\(V,W/ \mathbb F\)</span>와 각각의 기저 <span class="math notranslate nohighlight">\(\beta, \gamma\)</span>, <span class="math notranslate nohighlight">\(T \in L(V;W)\)</span>가 있을 때, 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ \frak m_\beta^\gamma(T) \text{ is well defined.} \]</div>
 <p><strong>Proof</strong></p>
 <p>vector의 matrix representation 명제1과 동일한 과정으로 증명이 가능하다.</p>
 </section>
-<section id="id8">
-<h3>명제2<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
-<p>차원이 각 각 <span class="math notranslate nohighlight">\(n,m\)</span>인 벡터 공간 <span class="math notranslate nohighlight">\(V,W/ \mathbb F\)</span>와 각각의 기저 <span class="math notranslate nohighlight">\(\beta, \gamma\)</span>, <span class="math notranslate nohighlight">\(T \in L(V;W)\)</span>가 있을 때, 다음을 증명하여라.
-$<span class="math notranslate nohighlight">\( \frak m_\beta^\gamma(T) \text{ is a vectorspace isomorphism} \)</span>$</p>
+<section id="id9">
+<h3>명제2<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<p>차원이 각 각 <span class="math notranslate nohighlight">\(n,m\)</span>인 벡터 공간 <span class="math notranslate nohighlight">\(V,W/ \mathbb F\)</span>와 각각의 기저 <span class="math notranslate nohighlight">\(\beta, \gamma\)</span>, <span class="math notranslate nohighlight">\(T \in L(V;W)\)</span>가 있을 때, 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ \frak m_\beta^\gamma(T) \text{ is a vectorspace isomorphism} \]</div>
 <p><strong>proof</strong></p>
 <p>vector의 matrix representation 명제2와 동일한 과정으로 증명이 가능하다.</p>
 </section>
-<section id="id9">
-<h3>명제3<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
-<p>차원이 각 각 <span class="math notranslate nohighlight">\(n,m,k\)</span>인 벡터공간 <span class="math notranslate nohighlight">\(V,W,Z/ \mathbb F\)</span>와 각 각의 기저 <span class="math notranslate nohighlight">\(\alpha,\beta,\gamma\)</span>가 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(T_1 = a^i_jf^j_i \in L(V;W), \enspace T_2 = b^i_jg^j_i \in L(W;Z), \enspace T_2 \circ T_1 = c^i_jh^j_i\)</span>가 있을때, 다음을 증명하여라.
-$<span class="math notranslate nohighlight">\( \frak m^\gamma_\alpha(T_2 \circ T_1) = \frak m^\gamma_\beta(T_2) \frak m^\beta_\alpha(T_1) \)</span>$</p>
-<p><strong>proof</strong></p>
-<p><span class="math notranslate nohighlight">\(T_2 \circ T_1(\alpha_k) = c^i_jh^j_i(\alpha_k)\)</span>임으로 다음이 성립한다.
-$<span class="math notranslate nohighlight">\( c^i_jh^j_i(\alpha_k) = c^i_j \delta^j_k \gamma_i = c^i_k \gamma_i \)</span>$</p>
-<p>동시에, <span class="math notranslate nohighlight">\(T_2 \circ T_1(\alpha_k) = T_2 (T_1(\alpha_k))\)</span>임으로 다음이 성립한다.
-$<span class="math notranslate nohighlight">\( a^i_j b^k_l g^l_k(f^j_i(\alpha_m)) = a^i_j b^k_l \delta ^j_m g^l_k (\beta_i) = a^i_m b^k_l \delta^l_i \gamma_k = a^l_m b^k_l \gamma_k =  b^i_j a^j_k \gamma_i \)</span>$</p>
-<p>두 식을 비교하면 다음이 성립한다.
-$<span class="math notranslate nohighlight">\( c^i_j = b^i_ka^k_j \)</span>$</p>
-<p>따라서, 행렬의 곱의 성질에 의해 다음이 성립한다.
-$<span class="math notranslate nohighlight">\( \frak m^\gamma_\alpha(T_2 \circ T_1) = \frak m^\gamma_\beta(T_2) \frak m^\beta_\alpha(T_1) \)</span>$</p>
-</section>
 <section id="id10">
-<h3>명제4<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
-<p>차원이 각 각 <span class="math notranslate nohighlight">\(n,m\)</span>인 vector space <span class="math notranslate nohighlight">\(V,W/ \mathbb F\)</span>와 각각의 기저 <span class="math notranslate nohighlight">\(\beta, \gamma\)</span>가 있다고 하자. <span class="math notranslate nohighlight">\(\mathbb F^n,\mathbb F^m\)</span>의 기준 기저를 <span class="math notranslate nohighlight">\(\epsilon^n,\epsilon^m\)</span>라 하면 <span class="math notranslate nohighlight">\(f \in L(\mathbb F^n; \mathbb F^m), \enspace T \in L(V; W)\)</span>에 대해 다음이 성립함을 증명하여라.
-$<span class="math notranslate nohighlight">\( \frak m^{\epsilon^m}_{\epsilon^n}(f) = \frak m^\gamma_\beta(T) \)</span>$</p>
+<h3>명제3<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<p>차원이 각 각 <span class="math notranslate nohighlight">\(n,m,k\)</span>인 벡터공간 <span class="math notranslate nohighlight">\(V,W,Z/ \mathbb F\)</span>와 각 각의 기저 <span class="math notranslate nohighlight">\(\alpha,\beta,\gamma\)</span>가 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(T_1 \in L(V;W), \enspace T_2 \in L(W;Z)\)</span>가 있을때, 다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{CD} V &#64;&gt;T&gt;&gt; W \\ &#64;V{\frak m_\beta}VV &#64;VV{\frak m_\gamma}V \\ \mathbb F^n &#64;&gt;&gt;f&gt; \mathbb F^m  \end{CD} \end{split}\]</div>
-<p><strong>Proof</strong></p>
-<p><span class="math notranslate nohighlight">\(\frak m_\beta\)</span>은 vector space isomorphism임으로 다음이 성립한다.
-$<span class="math notranslate nohighlight">\( f = \frak m_\gamma \circ T \circ \frak m_\beta^{-1} \)</span>$</p>
-<p>명제3에 의해 다음이 성립한다.
-$<span class="math notranslate nohighlight">\(\frak m^{\epsilon^m}_{\epsilon^n}(f) = \frak m^{\epsilon^m}_{\gamma}(\frak m_\gamma) \frak m^\gamma_\beta(T) \frak m^{\beta}_{\epsilon^n}(\frak m_\beta^{-1})\)</span>$</p>
-<p>이 때, <span class="math notranslate nohighlight">\(\frak m^{\epsilon^m}_{\gamma}(\frak m_\gamma)\)</span>와 <span class="math notranslate nohighlight">\(\frak m^{\beta}_ {\epsilon^n}(\frak m_\beta^{-1})\)</span>는 다음과 같다.
-$<span class="math notranslate nohighlight">\( \frak m^{\epsilon^m}_{\gamma}(\frak m_\gamma) = \begin{bmatrix} \frak m_{\epsilon^m}(\frak m_\gamma(\gamma_1)) &amp; \cdots &amp; \frak m_{\epsilon^m}(\frak m_\gamma(\gamma_m)) \end{bmatrix}  = I_m \\ \frak m^{\beta}_{\epsilon^n}(\frak m_\beta^{-1}) = \begin{bmatrix} \frak m_{\beta}(\frak m_\beta^{-1}(\epsilon^n_1)) &amp; \cdots &amp; \frak m_{\beta}(\frak m_\beta^{-1}(\epsilon^n_n)) \end{bmatrix} = I_n \)</span>$</p>
-<p>따라서 다음이 성립한다.
-$<span class="math notranslate nohighlight">\( \begin{aligned} \frak m^{\epsilon^m}_{\epsilon^n}(f) &amp;= \frak m^{\epsilon^m}_{\gamma}(\frak m_\gamma) \frak m^\gamma_\beta(T) \frak m^{\beta}_{\epsilon^n}(\frak m_\beta^{-1}) \\ &amp;= I_m \frak m^\gamma_\beta(T) I_n \\ &amp;= \frak m^\gamma_\beta(T) \quad\tiny\blacksquare \end{aligned}  \)</span>$</p>
+\[ \frak m^\gamma_\alpha(T_2 \circ T_1) = \frak m^\gamma_\beta(T_2) \frak m^\beta_\alpha(T_1) \]</div>
+<p><strong>proof</strong></p>
+<p><span class="math notranslate nohighlight">\(V\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(v\)</span>라고 할 때, <span class="math notranslate nohighlight">\(v,T_1(v), (T_2\circ T_1)(v)\)</span>를 다음과 같이 표현하자.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} v &amp;= a^i\alpha_i \\ T_1(v) &amp;= b^j\beta_j \\ (T_2\circ T_1)(v) &amp;= c^k\gamma_k \end{aligned} \end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\frak{m}_\alpha^\beta(T_1) = A, \frak{m}_\beta^\gamma(T_2) =B, \frak{m}_\alpha^\gamma(T_2 \circ T_1) = C\)</span>라고 하면 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} T_1(v) &amp;\implies b^j = A^j_ia^i \\ T_2(T_1(v)) &amp;\implies c^k = B^k_j b^j \implies c^k = B^k_jA^j_i a^i \\ (T_2\circ T_1)(v) &amp;\implies c^k = C^k_ia^i  \end{aligned} \end{split}\]</div>
+<p>따라서, 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ C^k_i = B^k_jA^j_i \]</div>
+<p>행렬의 곱의 성질에 의해 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \frak m^\gamma_\alpha(T_2 \circ T_1) = \frak m^\gamma_\beta(T_2) \frak m^\beta_\alpha(T_1) \]</div>
 </section>
 <section id="id11">
-<h3>명제5<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<h3>명제4<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id12">
+<h3>명제5<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p><span class="math notranslate nohighlight">\(n\)</span> 차원 vector space <span class="math notranslate nohighlight">\(V / \mathbb F\)</span>와 <span class="math notranslate nohighlight">\(U,W \le V\)</span> 그리고 <span class="math notranslate nohighlight">\(T \in \text{End}(V)\)</span>가 있다고 하자.</p>
-<p>이 때, <span class="math notranslate nohighlight">\(V = U \oplus W\)</span>이고 <span class="math notranslate nohighlight">\(U,W\)</span>가 <span class="math notranslate nohighlight">\(T\)</span> invariant일 때 <span class="math notranslate nohighlight">\(V,U,W\)</span> 각각의 기저 <span class="math notranslate nohighlight">\(\alpha, \beta, \gamma\)</span>에 대해 다음을 증명하여라.
-$<span class="math notranslate nohighlight">\( \frak m_\alpha^\alpha(T) = \begin{bmatrix} \begin{array}{c | c} \frak m_\beta^\beta(T|_U) &amp; 0 \\ \hline  0 &amp; \frak m_\gamma^\gamma(T|_W) \end{array} \end{bmatrix} \)</span>$</p>
+<p>이 때, <span class="math notranslate nohighlight">\(V = U \oplus W\)</span>이고 <span class="math notranslate nohighlight">\(U,W\)</span>가 <span class="math notranslate nohighlight">\(T\)</span> invariant일 때 <span class="math notranslate nohighlight">\(V,U,W\)</span> 각각의 기저 <span class="math notranslate nohighlight">\(\alpha, \beta, \gamma\)</span>에 대해 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \frak m_\alpha^\alpha(T) = \begin{bmatrix} \begin{array}{c | c} \frak m_\beta^\beta(T|_U) &amp; 0 \\ \hline  0 &amp; \frak m_\gamma^\gamma(T|_W) \end{array} \end{bmatrix} \end{split}\]</div>
 <p><strong>Proof</strong></p>
 <p><span class="math notranslate nohighlight">\(\dim(U) =k\)</span>라고 하자.</p>
-<p><span class="math notranslate nohighlight">\(V = U \oplus W\)</span>임으로 다음이 성립한다.
-$<span class="math notranslate nohighlight">\( \alpha = \beta \cup \gamma = \{ \beta_1, \cdots, \beta_k, \gamma_1, \cdots, \gamma_{n-k} \} \)</span>$</p>
-<p>이 떄, <span class="math notranslate nohighlight">\(U,W\)</span>가 <span class="math notranslate nohighlight">\(T\)</span> invariant임으로 다음이 성립한다.
-$<span class="math notranslate nohighlight">\( \begin{aligned} \frak m_\alpha^\alpha(T) &amp;= \begin{bmatrix} \frak m_\alpha (T(\beta_1)) &amp; \cdots &amp; \frak m_\alpha (T(\beta_k)) &amp; \frak m_\alpha (T(\gamma_1)) &amp; \cdots &amp; \frak m_\alpha (T(\gamma_{n-k})) \end{bmatrix} \\&amp;= \begin{bmatrix} \frak m_\beta (T(\beta_1)) &amp; \cdots &amp; \frak m_\beta (T(\beta_k)) &amp; \frak m_\beta (T(\gamma_1)) &amp; \cdots &amp; \frak m_\beta (T(\gamma_{n-k})) \\ \frak m_\gamma (T(\beta_1)) &amp; \cdots &amp; \frak m_\gamma (T(\beta_k)) &amp; \frak m_\gamma (T(\gamma_1)) &amp; \cdots &amp; \frak m_\gamma (T(\gamma_{n-k})) \end{bmatrix} \\&amp;= \begin{bmatrix} \frak m_\beta^\beta (T) &amp; \frak m_\gamma^\beta (T) \\ \frak m_\beta^\gamma (T) &amp; \frak m_\gamma^\gamma (T) \end{bmatrix} \\&amp;= \begin{bmatrix} \frak m_\beta^\beta (T|_U) &amp; 0 \\ 0 &amp; \frak m_\gamma^\gamma (T|_W) \end{bmatrix} \\&amp;= \begin{bmatrix} \begin{array}{c | c} \frak m_\beta^\beta(T|_U) &amp; 0 \\ \hline  0 &amp; \frak m_\gamma^\gamma(T|_W) \end{array} \end{bmatrix} \quad\tiny\blacksquare \end{aligned} \)</span>$</p>
+<p><span class="math notranslate nohighlight">\(V = U \oplus W\)</span>임으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \alpha = \beta \cup \gamma = \{ \beta_1, \cdots, \beta_k, \gamma_1, \cdots, \gamma_{n-k} \} \]</div>
+<p>이 떄, <span class="math notranslate nohighlight">\(U,W\)</span>가 <span class="math notranslate nohighlight">\(T\)</span> invariant임으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} \frak m_\alpha^\alpha(T) &amp;= \begin{bmatrix} \frak m_\alpha (T(\beta_1)) &amp; \cdots &amp; \frak m_\alpha (T(\beta_k)) &amp; \frak m_\alpha (T(\gamma_1)) &amp; \cdots &amp; \frak m_\alpha (T(\gamma_{n-k})) \end{bmatrix} \\&amp;= \begin{bmatrix} \frak m_\beta (T(\beta_1)) &amp; \cdots &amp; \frak m_\beta (T(\beta_k)) &amp; \frak m_\beta (T(\gamma_1)) &amp; \cdots &amp; \frak m_\beta (T(\gamma_{n-k})) \\ \frak m_\gamma (T(\beta_1)) &amp; \cdots &amp; \frak m_\gamma (T(\beta_k)) &amp; \frak m_\gamma (T(\gamma_1)) &amp; \cdots &amp; \frak m_\gamma (T(\gamma_{n-k})) \end{bmatrix} \\&amp;= \begin{bmatrix} \frak m_\beta^\beta (T) &amp; \frak m_\gamma^\beta (T) \\ \frak m_\beta^\gamma (T) &amp; \frak m_\gamma^\gamma (T) \end{bmatrix} \\&amp;= \begin{bmatrix} \frak m_\beta^\beta (T|_U) &amp; 0 \\ 0 &amp; \frak m_\gamma^\gamma (T|_W) \end{bmatrix} \\&amp;= \begin{bmatrix} \begin{array}{c | c} \frak m_\beta^\beta(T|_U) &amp; 0 \\ \hline  0 &amp; \frak m_\gamma^\gamma(T|_W) \end{array} \end{bmatrix} \quad\tiny\blacksquare \end{aligned} \end{split}\]</div>
 </section>
 </section>
 </section>

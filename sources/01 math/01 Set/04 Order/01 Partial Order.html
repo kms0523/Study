@@ -52,7 +52,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"span": "\\text{span}", "End": "\\text{End}", "C": "\\Complex", "F": "\\mathbb{F}", "R": "\\mathbb{R}", "N": "\\mathbb{N}", "Q": "\\mathbb{Q}", "Z": "\\mathbb{Z}", "Ext": "\\text{Ext}", "Int": "\\text{Int}", "st": "\\quad s.t \\quad", "qed": "\\quad\\tiny\\blacksquare", "preimg": "\\text{preimg}", "img": "\\text{img}", "norm": ["\\left\\lVert #1 \\right\\rVert", 1], "sym": "\\text{sym}", "tr": "\\text{tr}", "empty": "\\emptyset", "exist": "\\exists", "Set": ["\\left\\{ #1 \\right\\}", 1], "pdiff": ["\\frac{\\partial #1}{\\partial #2}", 2], "diff": ["\\frac{d #1}{d #2}", 2], "ninf": "n \\rightarrow \\infty"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"span": "\\text{span}", "End": "\\text{End}", "C": "\\Complex", "F": "\\mathbb{F}", "R": "\\mathbb{R}", "N": "\\mathbb{N}", "Q": "\\mathbb{Q}", "Z": "\\mathbb{Z}", "Ext": "\\text{Ext}", "Int": "\\text{Int}", "st": "\\quad s.t \\quad", "qed": "\\quad\\tiny\\blacksquare", "preimg": "\\text{preimg}", "img": "\\text{img}", "norm": ["\\left\\lVert #1 \\right\\rVert", 1], "sym": "\\text{sym}", "tr": "\\text{tr}", "empty": "\\emptyset", "exist": "\\exists", "Set": ["\\left\\{ #1 \\right\\}", 1], "pdiff": ["\\frac{\\partial #1}{\\partial #2}", 2], "diff": ["\\frac{d #1}{d #2}", 2], "ninf": "n \\rightarrow \\infty", "rank": "\\text{rank}", "nullity": "\\text{nullity}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -1464,6 +1464,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../../03%20programming/01%20C%2B%2B/Forward%20Declaration.html">
+     Forward Declaration
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../../03%20programming/01%20C%2B%2B/Initialization.html">
      initialization
     </a>
@@ -1496,13 +1501,13 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../03%20programming/CMake.html">
-   Cmake
+  <a class="reference internal" href="../../../03%20programming/10%20git.html">
+   Git
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../03%20programming/git.html">
-   Git
+  <a class="reference internal" href="../../../03%20programming/CMake.html">
+   Cmake
   </a>
  </li>
  <li class="toctree-l1">
@@ -1903,7 +1908,17 @@ title="Print to PDF"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
-     참고
+     참고1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     참고2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     참고3
     </a>
    </li>
   </ul>
@@ -1934,7 +1949,17 @@ title="Print to PDF"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
-     참고
+     참고1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     참고2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     참고3
     </a>
    </li>
   </ul>
@@ -1958,9 +1983,21 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\begin{split} \begin{array}{cl} \forall x \in X, \quad x \le x &amp;\text{ (reflexive)} \\ \forall x,y,z \in X, \quad x \le y \land y \le z \implies x \le z &amp;\text{ (transitive)} \\ \forall x,y \in X, \quad  x\le y \land y \le x \implies x = y &amp;\text{ (antisymmetric)} \end{array} \end{split}\]</div>
 <section id="id2">
-<h3>참고<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h3>참고1<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>reflexive 성질은 <span class="math notranslate nohighlight">\(X\)</span>의 모든 원소에 대해서 만족해야 한다.</p>
 <p>하지만 transitive와 antisymmetric 성질은 비교 가능한 원소들간에만 만족하면 된다.</p>
+</section>
+<section id="id3">
+<h3>참고2<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>관계가 대칭적이란 말은 <span class="math notranslate nohighlight">\(a \sim_R b\)</span>이면 <span class="math notranslate nohighlight">\(b \sim_R a\)</span>이란 얘기이다.</p>
+<p>우리가 주고 싶은 관계는 순서를 주고 싶은것이기 때문에 대칭적이면 “<span class="math notranslate nohighlight">\(a\)</span>가 <span class="math notranslate nohighlight">\(b\)</span>보다 작으면 <span class="math notranslate nohighlight">\(b\)</span>도 <span class="math notranslate nohighlight">\(a\)</span>보다 작다”가 된다.</p>
+<p><span class="math notranslate nohighlight">\(a,b\)</span>가 같다면 위의 말은 순서가 갖는 의미에 부합하지만 <span class="math notranslate nohighlight">\(a,b\)</span>가 다르다면 순서가 갖는 의미에 모순된다.</p>
+<p>따라서, <code class="docutils literal notranslate"><span class="pre">반대칭(antisymmetric)</span></code> 조건을 부여하여 대칭관계를 갖는 <span class="math notranslate nohighlight">\(a,b\)</span>가 다를 수 없게 만든다.</p>
+</section>
+<section id="id4">
+<h3>참고3<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>antisymmetric 조건의 대우 명제는 <span class="math notranslate nohighlight">\(a\neq b\)</span>이면 <span class="math notranslate nohighlight">\(a \not\sim_R b \lor b \not\sim_R a\)</span>이다.</p>
+<p>즉, 서로 다르다면 관계가 둘다 있을 수는 없다는 의미이다.</p>
 </section>
 </section>
 </section>

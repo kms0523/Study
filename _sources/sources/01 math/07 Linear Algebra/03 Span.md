@@ -4,7 +4,7 @@ Vector space $V/\F$와 $V$의 subset $S$가 있다고 하자.
 
  $S$의 `생성(span)`이란 다음과 같이 정의된 집합이다.
 
-$$ \span(S) = \lang S \rang  := \left \{ \sum_{k=1}^{n}a^kv_k \; \Big\vert \; n \in \N, a^i \in F, v_i \in S \right \} $$
+$$ \span(S) = \Braket{S} := \left \{ \sum_{k=1}^{n}a^kv_k \; \Big\vert \; n \in \N, a^i \in F, v_i \in S \right \} $$
 
 ### 참고1
 $\span(S)$란 $S$에서 임의의 $n$개의 vector의 `선형결합(linear combination)`들의 집합이다.

@@ -52,7 +52,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"span": "\\text{span}", "End": "\\text{End}", "C": "\\Complex", "F": "\\mathbb{F}", "R": "\\mathbb{R}", "N": "\\mathbb{N}", "Q": "\\mathbb{Q}", "Z": "\\mathbb{Z}", "Ext": "\\text{Ext}", "Int": "\\text{Int}", "st": "\\quad s.t \\quad", "qed": "\\quad\\tiny\\blacksquare", "preimg": "\\text{preimg}", "img": "\\text{img}", "norm": ["\\left\\lVert #1 \\right\\rVert", 1], "sym": "\\text{sym}", "tr": "\\text{tr}", "empty": "\\emptyset", "exist": "\\exists", "Set": ["\\left\\{ #1 \\right\\}", 1], "pdiff": ["\\frac{\\partial #1}{\\partial #2}", 2], "diff": ["\\frac{d #1}{d #2}", 2], "ninf": "n \\rightarrow \\infty"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"span": "\\text{span}", "End": "\\text{End}", "C": "\\Complex", "F": "\\mathbb{F}", "R": "\\mathbb{R}", "N": "\\mathbb{N}", "Q": "\\mathbb{Q}", "Z": "\\mathbb{Z}", "Ext": "\\text{Ext}", "Int": "\\text{Int}", "st": "\\quad s.t \\quad", "qed": "\\quad\\tiny\\blacksquare", "preimg": "\\text{preimg}", "img": "\\text{img}", "norm": ["\\left\\lVert #1 \\right\\rVert", 1], "sym": "\\text{sym}", "tr": "\\text{tr}", "empty": "\\emptyset", "exist": "\\exists", "Set": ["\\left\\{ #1 \\right\\}", 1], "pdiff": ["\\frac{\\partial #1}{\\partial #2}", 2], "diff": ["\\frac{d #1}{d #2}", 2], "ninf": "n \\rightarrow \\infty", "rank": "\\text{rank}", "nullity": "\\text{nullity}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -1464,6 +1464,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../03%20programming/01%20C%2B%2B/Forward%20Declaration.html">
+     Forward Declaration
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../03%20programming/01%20C%2B%2B/Initialization.html">
      initialization
     </a>
@@ -1496,13 +1501,13 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../03%20programming/CMake.html">
-   Cmake
+  <a class="reference internal" href="../../03%20programming/10%20git.html">
+   Git
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../03%20programming/git.html">
-   Git
+  <a class="reference internal" href="../../03%20programming/CMake.html">
+   Cmake
   </a>
  </li>
  <li class="toctree-l1">
@@ -1900,6 +1905,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#id1">
    정의
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     명제1
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1924,6 +1936,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#id1">
    정의
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     명제1
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1940,7 +1959,30 @@ title="Print to PDF"
 <section id="id1">
 <h2>정의<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Vector space <span class="math notranslate nohighlight">\(V/\F\)</span>와 <span class="math notranslate nohighlight">\(V\)</span>의 subset <span class="math notranslate nohighlight">\(S\)</span>가 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(S\)</span>가 <span class="math notranslate nohighlight">\(V\)</span>의 연사들에 의해 vector space가 될 떄, <span class="math notranslate nohighlight">\(S\)</span>를 <span class="math notranslate nohighlight">\(V\)</span>의 <code class="docutils literal notranslate"><span class="pre">subspace</span></code>라고 한다.</p>
+<p><span class="math notranslate nohighlight">\(S\)</span>가 <span class="math notranslate nohighlight">\(V\)</span>의 연산들에 의해 vector space가 될 떄, <span class="math notranslate nohighlight">\(S\)</span>를 <span class="math notranslate nohighlight">\(V\)</span>의 <code class="docutils literal notranslate"><span class="pre">subspace</span></code>라고 한다.</p>
+<section id="id2">
+<h3>명제1<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>Vector space <span class="math notranslate nohighlight">\(V/\F\)</span>와 <span class="math notranslate nohighlight">\(V\)</span>의 subset <span class="math notranslate nohighlight">\(S\)</span>가 있다고 하자.</p>
+<p>이 때, 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{gathered} S \text{ is closed under operations of } V \\ S \neq \empty \end{gathered} \iff S \text{ is a subspace of } V  \end{split}\]</div>
+<p><strong>Proof</strong></p>
+<p>[Abeilian Group]<br />
+-[identity]<br />
+<span class="math notranslate nohighlight">\(S\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(x\)</span>라고 하자.</p>
+<p><span class="math notranslate nohighlight">\(S\)</span>가 scalar multiplication에 닫혀 있음으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ 0x = 0_V \in S \]</div>
+<p>-[inverse]<br />
+<span class="math notranslate nohighlight">\(S\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(x\)</span>라고 하자.</p>
+<p><span class="math notranslate nohighlight">\(S\)</span>가 scalar multiplication에 닫혀 있음으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ (-1)x = x^{-1} \in S \]</div>
+<p>-[commutative]<br />
+<span class="math notranslate nohighlight">\(S\)</span>의 element는 <span class="math notranslate nohighlight">\(V\)</span>의 element임으로 commutative 하다. <span class="math notranslate nohighlight">\(\qed\)</span></p>
+<p>[module]<br />
+<span class="math notranslate nohighlight">\(S\)</span>의 element는 <span class="math notranslate nohighlight">\(V\)</span>의 element이고 scalar multiplication에 닫혀 있음으로 <span class="math notranslate nohighlight">\(\F-\)</span>module의 정의을 만족한다. <span class="math notranslate nohighlight">\(\qed\)</span></p>
+</section>
 </section>
 </section>
 
