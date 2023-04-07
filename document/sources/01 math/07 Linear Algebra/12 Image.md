@@ -155,7 +155,7 @@ Vector space $V,W / \mathbb F$와 $T \in L(V,W)$가 있다고 하자.
 
 $$ \rank(T) := \dim(\img(T)) $$
 
-### 명제1(Dimension Theorem)
+### 명제1(Rank-nullity Theorem)
 $n$차원 vector space $V/\F$, vector space $W/\F$와 $T \in L(V; W)$가 있다고 하자.
 
 이 때 다음을 증명하여라.

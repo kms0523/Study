@@ -245,7 +245,7 @@ void A<2>::func2(void) {
 }
 ```
 
-## Template Disambiguation for Depedent Type
+## The Template Disambiguator for Depedent Type
 ```cpp
 template<typename T> 
 struct Base{
@@ -272,6 +272,70 @@ struct X : Base<T>
 > Reference  
 > [MSDN1](https://learn.microsoft.com/ko-kr/cpp/cpp/name-resolution-for-dependent-types?view=msvc-160)  
 > [MSDN2](https://learn.microsoft.com/ko-kr/cpp/error-messages/compiler-errors-2/compiler-error-c7510?view=msvc-160)  
+
+## The Template Disambiguator for Dependent Names
+Template 정의에서 나타나는 depedent name중에서 current instantiation이 아닌 member는 template name으로 인식되지 않는다.
+
+template name으로 인식시키기 위해서는 disambiguation keyword인 template을 추가하여 template name임을 명시적으로 나타내야된다.
+
+아래 예시코드를 보자.
+
+```cpp
+template<typename T>
+struct S
+{
+    template<typename U>
+    void foo() {}
+};
+ 
+template<typename T>
+void bar()
+{
+    S<T> s;
+    s.foo<T>();          // error: < parsed as less than operator
+    s.template foo<T>(); // OK
+}
+```
+
+> Reference  
+> [cppreference](https://en.cppreference.com/w/cpp/language/dependent_name)
+
+### Current instantiation
+Template 정의에서 나타나는 몇몇 이름은 current instantiation으로 추론된다.
+
+이를 통해 instantiation이 되기 전에 definition되는 시점에서 몇몇 error를 잡아낼 수 있으며, typename이나 template와 같은 dependent name을 위한 template disambiguators 를 사용할 필요가 없게 된다.
+
+다음과 같은 예시를 보자.
+
+```cpp
+template<class T>
+class A
+{
+    A* p1;      // A is the current instantiation
+    A<T>* p2;   // A<T> is the current instantiation
+    ::A<T>* p4; // ::A<T> is the current instantiation
+    A<T*> p3;   // A<T*> is not the current instantiation
+ 
+    class B
+    {
+        B* p1;                 // B is the current instantiation
+        A<T>::B* p2;           // A<T>::B is the current instantiation
+        typename A<T*>::B* p3; // A<T*>::B is not the current instantiation
+    };
+};
+
+template<class T>
+class C
+{
+    A<T> p1;  // A<T> is not the current instantiation
+};
+```
+
+
+
+
+> Reference   
+> [cppreference](https://en.cppreference.com/w/cpp/language/dependent_name#Current%20instantiation)  
 
 ## Name Resolution for Depedent Type
 

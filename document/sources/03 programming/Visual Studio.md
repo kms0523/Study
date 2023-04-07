@@ -62,8 +62,13 @@ Clang Format을 사용하기 위해서는 다음 경로로 들어가서 `Clang F
 ### 참고
 custom .clang_format을 사용하고 싶은 경우 `사용자 지정 clang-format.exe 파일 사용` 옵션은 체크하지 않아야 한다.
 
-## 솔루션 탐색기
+## 파일형식
+
 `솔루션 탐색기 >> 파일 우클릭 >> 속성 >> 구성 속성 >> 일반`에 가서 보면 항목 형식에서 cpp 파일이면 `C/C++ 컴파일러`로 되어 있고 h 파일이면 `C/C++ 헤더`로 되어 있다.
+
+## Command Arguments
+`프로젝트 >> 속성 >> Debugging >> Command Arguments`에서 `-iMec2009`처럼 `-`가 하나만 나온경우에는 `i`가 option 이름이고 option 값이 Mec2009가 된다. 그리고 `--runbyopt=on`처럼 `--`인 경우에는 `runbytop`라는 단어 전체가 option 이름이 되고 option 값이 on이 된다.
+
 
 ## VAssisX
 
