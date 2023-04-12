@@ -7,7 +7,7 @@ $x \in M$이 다음을 만족할 때, $x$를 $U$의 `accumulation point`라고 �
 $$ \forall\epsilon\in\R^+, \quad B_M(x,\epsilon) \cap (U - \Set{x}) \neq \empty $$
 
 ### 참고
-accumulation point를 limit point 또는 cluster point라도 한다.
+accumulation point를 `limit point` 또는 `cluster point`라고 한다.
 
 ### 명제1
 $\R$의 subset $U$가 다음과 같이 정의되어 있다고 하자.

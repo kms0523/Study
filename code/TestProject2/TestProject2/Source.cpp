@@ -1,12 +1,13 @@
-#include "Header3.h"
+#include <memory>
 
-//void function(void) {};
+class A{};
+
+class B : public A {};
 
 int main(void)
 {
-	C c;
-	c.f2();
+	std::unique_ptr<A> ptr = std::make_unique<B>();
 
-	B b;
-	b.f();
+	
+		
 }
