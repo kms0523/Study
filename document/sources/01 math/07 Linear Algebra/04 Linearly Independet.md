@@ -1,16 +1,16 @@
 # Linearly Independet
-## Vector
-Vector space $V/\F$와 $V$의 elements $v_1,\cdots,v_n$이 있다고 하자.
+## Finite Set
+Vector space $V/\F$와 $V$의 finite subset $S = \Set{v_1,\cdots,v_n}$이 있다고 하자.
 
-$\F$의 elements $a^1,\cdots,a^n$에 대해서 다음을 만족할 때, $v_1,\cdots,v_n$을 `선형 독립(linearly independent)`이라고 한다.
+$\F$의 elements $a^1,\cdots,a^n$에 대해서 다음을 만족할 때, 각각의 $v_i$들을 `선형 독립(linearly independent)`이라고 하고 $S$를 `선형 독립 집합(linearly independent set)`라고 한다.
 
 $$ \sum_{k=1}^{n}a_k v_k = 0_V \implies \forall a_k=0_\F $$ 
 
 
-## Set
+## Infinite Set
 Vector space $V/\F$와 $V$의 subset $S$가 있다고 하자.
 
-$S$의 임의의 $n$개의 element $v_1, \cdots, v_n$이 항상 linearly independent일 때, $S$를 `선형 독립 집합(linearly independent set)`라고 한다.
+$S$의 임의의 $n$개의 element $v_1, \cdots, v_n$이 항상 linearly independent일 때, $S$를 linearly independent set이라고 한다.
 
 > Reference  
 > {cite}`friedberg` Chapter1.5
