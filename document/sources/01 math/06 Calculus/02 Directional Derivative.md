@@ -12,24 +12,47 @@ $$ \lim_{h\rightarrow 0}\frac{f(a+h) - f(a)}{h} $$
 
 하지만 다변수 함수의 경우 $a$에 가까워 지는 방향이 무한가지이기때문에 $h\rightarrow 0$만으로 그 의미가 충분히 표현되지 못한다.
 
-따라서, 특정 방향 $v \in \R^n \st \norm{v} = 1$을 정해서 
+```{figure} _image/0201.png
+```
 
-//그림//
+따라서, 위의 두 문제를 해결하기 위해 특정 방향 $v \in \R^n \st \norm{v} = 1$을 정해서 $v$ 방향으로 $a$에서 derivative를 생각하게 되면 다음과 같이 정의하는 것이 자연스럽다.
 
-따라서, 다변수 함수로 일차원 미분계수의
+$$ \lim_{h\rightarrow 0} \frac{f(a + h v) - f (a)}{h} $$
 
 ## 정의
-open subset $U \subset \R^n$과 함수 $f:U \rightarrow \R^m$이 있다고 하자.
+$\R^n$의 open subset $U$와 함수 $f:U \rightarrow \R^m$이 있다고 하자.
 
-$f$의 `directional derivative`는 다음과 같이 정의된 함수이다.
+$a \in U$에서 $v\in \R^n \st \norm{v}=1$ 방향으로의 $f$의 `방향 미분계수(directional derivative)`는 다음과 같다.
 
-$$ Df : U \times \R^n \rightarrow \R^m \st (a,v) \mapsto \lim_{h \rightarrow 0}\frac{ f(a + h v) - f (a)}{h} $$
+$$ D_vf(a) = \lim_{h \rightarrow 0}\frac{ f(a + h v) - f (a)}{h} $$
 
-### 참고1(notation)
-$Df(a,v)$는 $D_vf(a)$와 같이 표기하는 것이 일반적이다.
+### 참고1
+$\R^n$의 standard basis인 $e_i$방향의 directional derivative를 다음과 같이 표현한다.
+
+$$ D_{e_i}f(a) = \pdiff{f}{x_i} $$
 
 ### 참고2
-$D_vf(a)$는 $a$에서 $v$방향으로 변화량과 그에 따른 $f$의 변화량의 비율의 극한을 의미한다.
+일변수 함수에서 미분계수가 존재하는 점에서 미분가능하다고 한다.
+
+따라서, 다변수 함수에서는 모든 방향에서 directional derivative가 존재하는 경우 미분가능하다고 정의하는것이 자연스러운 선택일 것이다.
+
+그렇다면 이렇게 정의한 다변수함수의 미분가능성이 기존의 일변수 함수의 미분가능성과 같은 성질을 가지고 있는지 확인해보자.
+
+일변수 함수에서 미분가능성에 대해 다음 두가지 성질이 성립함을 알고 있다.
+1. 미분가능하면 연속이다.
+2. chain rule이 성립한다. $(f\circ g)' = f'g'$
+
+하지만 현재 정의는 위 성질이 만족되지 않는 반례가 존재한다.
+
+1번의 반례를 보이기 위해 함수 $f(x,y)$를 다음과 같이 정의하자.
+
+$$ f(x,y) = \begin{cases} 0 & y \le 0 \lor x \le \sqrt{y} \\ 1 & \text{else} \end{cases} $$
+
+$f$는 $(0,0)$에서 불연속이지만 임의의 $v$에 대해서 $D_vf(0,0)$은 잘 정의된다.
+
+즉, 위의 정의대로라면 (0,0)에서 미분가능하지만 연속이 아닌 $f$가 존재하게 된다.
+
+따라서, directional derivative의 존재성으로 미분가능성을 정의하기에는 부족한 점이 있다는것을 알 수 있다.
 
 ### 참고3(Alternative Form)
 위의 정의를 다차원으로 확장하기 위해 open set $U \subset \R^n$와 함수 $f : U \rightarrow \R^m$이 있다고 하자.
