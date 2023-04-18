@@ -71,6 +71,9 @@ $$ x = \sup(U) \qed $$
 > Reference  
 > {cite}`abbott` Lemma 1.3.7.
 
+#### 참고
+$\implies$는 supremum의 성질을 알려주고 $\impliedby$는 upper bound가 supremum이 되기 위한 필요 조건을 알려준다.
+
 ### 명제2
 $\R$의 bounded below subset $U$가 있다고 하자.
 

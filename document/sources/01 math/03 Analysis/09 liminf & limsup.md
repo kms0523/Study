@@ -1,16 +1,19 @@
 # Limit Inferior & Superior
 ## 정의
-$\R$위의 bounded sequence $s_n$이 있다고 하자.
+$\R$위의 bounded sequence $s$가 있다고 하자.
 
-이 때, sequence $a_n,b_n$을 다음과 같이 정의하자.
+이 때, $\R$위의 sequence $a,b$을 다음과 같이 정의하자.
 
-$$ \begin{gathered} a_k := \inf(\Set{s_n | k \le n}) \\ b_k := \sup(\Set{s_n | k \le n}) \end{gathered} $$
+$$ \begin{gathered} a \st a_k := \inf(\Set{s_n | k \le n}) \\ b \st b_k := \sup(\Set{s_n | k \le n}) \end{gathered} $$
 
-$s_n$의 `limit inferior`과 `limit superior`은 다음과 같이 정의한다.
+$s$의 `limit inferior`과 `limit superior`은 다음과 같이 정의한다.
 
 $$ \begin{gathered} \liminf_{n\rightarrow\infty} s_n := \lim_{n\rightarrow\infty} a_n \\ \limsup_{\ninf} s_n := \lim_{n\rightarrow\infty} b_n  \end{gathered} $$
 
 ### 참고1
+$s$가 bounded sequence이기 때문에 $\R$의 completeness에 의해 $a_k,b_k$가 모두 잘 정의된다.
+
+### 참고2
 정의에 의해 $a_n$은 monotone increasing bounded above sequence이고 $b_n$은 monotone decreasing bounded below sequence이다.
 
 따라서, MCT에 의해 다음이 성립한다.
@@ -19,12 +22,12 @@ $$ \lim_{n\rightarrow\infty} a_n = \sup(a_n), \enspace \lim_{n\rightarrow\infty}
 
 이런 이유로 다음과 같은 표기를 사용하기도 한다.
 
-$$ \begin{gathered} \liminf_{\ninf} s_n = \sup_{1\le n}\inf_{n\le m} s_n \\ \limsup_{\ninf} s_n = \inf_{1\le n}\sup_{n\le m} s_n \end{gathered} $$
-
-### 참고2
-$s_n$이 convergence sequence가 아니더라도, limit inferior과 limit superior은 존재한다.
+$$ \begin{gathered} \liminf_{\ninf} s_n = \sup_{1\le n}\inf_{n\le m} s_m \\ \limsup_{\ninf} s_n = \inf_{1\le n}\sup_{n\le m} s_m \end{gathered} $$
 
 ### 참고3
+$s_n$이 convergence sequence가 아니더라도, limit inferior과 limit superior은 존재한다.
+
+### 참고4
 limit inferior은 개념적으로 inferior들 중 큰 값을 찾아가는 과정이라고 볼 수 있고, limit superior은 개념적으로 superior들 중 작은 값을 찾아가는 과정이라고 볼 수 있다.
 
 ### 명제1
@@ -106,6 +109,11 @@ $$ \begin{aligned} & \beta-\epsilon<b_n<\beta+\epsilon \\\iff& |\beta-b_n| < \ep
 위의 결과들이 임의의 $\epsilon\in\R^+$에 대해 성립함으로, 다음이 성립한다.
 
 $$ \begin{aligned} &\forall\epsilon\in\R^+, \enspace \exist N \in \N \st N_1\le n \implies |\beta-b_n| < \epsilon \\\iff& \lim_{\ninf} b_n = \beta \\\iff& \limsup_{\ninf}s_n = \beta \qed \end{aligned} $$
+
+#### 참고
+$\limsup s_n = \beta$라는 것은 $\beta+\epsilon$이 $b$의 lower bound가 아니라는 사실과 $\beta-\epsilon$이 $\Set{s_i|n\le i}$의 upper bound가 아니라는 사실을 알려준다.
+
+반대로 $\beta+\epsilon$이 $b$의 lower bound가 아니라는 사실과 $\beta-\epsilon$이 $\Set{s_i|n\le i}$의 upper bound가 아니라는 사실은 $\beta-\epsilon < b_n < \beta + \epsilon$이라는 사실을 알려준다.
 
 ### 명제3
 

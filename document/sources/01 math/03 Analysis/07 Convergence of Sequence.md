@@ -329,11 +329,11 @@ $$ \lim_{\ninf} a_n < 0 $$
 
 $\lim_{\ninf} a_n = \alpha$라고 할 때, convergence의 정의에 의해 다음이 성립한다.
 
-$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\alpha - a_n| < \epsilon \\\implies& \exist N_2 \in \N \st N_2 \le n \implies |\alpha - a_n| < \frac{\alpha}{2} \\\implies& \max(N_1,N_2) \le n \implies |\alpha - a_n| < \frac{\alpha}{2} \end{aligned}  $$
+$$ \begin{aligned} & \forall\epsilon\in\R^+, \enspace \exist N\in\N \st N\le n \implies |\alpha - a_n| < \epsilon \\\implies& \exist N_2 \in \N \st N_2 \le n \implies |\alpha - a_n| < -\frac{\alpha}{2} \\\implies& \max(N_1,N_2) \le n \implies |\alpha - a_n| < -\frac{\alpha}{2} \end{aligned}  $$
 
 이 떄, 가정과 전제에 의해 $\max(N_1,N_2) \le n$일 때, $\alpha - a_n < 0$임으로 다음이 성립한다.
 
-$$ a_n < \frac{3\alpha}{2}$$
+$$ \max(N_1,N_2) \le n \implies 0 \le a_n < \frac{\alpha}{2}$$
 
 이는 $\alpha <0$이라는 가정에 모순임으로 proof by contradiction에 의해 다음이 성립한다.
 
