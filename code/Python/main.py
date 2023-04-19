@@ -1,18 +1,76 @@
 import numpy as np
 import sympy as sp
 
-x = sp.symbols("x")
-y = sp.symbols("y")
+m1 = np.matrix([[1.193737075048E-09,	1.193717604220E-09,	1.662576118399E-08,	1.662583385235E-08],
+              [8.596337794000E-06,	8.596174198079E-06,	3.208141934154E-05,	3.208158293746E-05]])
+
+m2 = np.matrix([[0.2500000000000,	1.8660254037844,	-0.500000000000,   	0.1339745962156,	-0.5000000000000],
+              [0.2500000000000,	-0.500000000000,	1.8660254037844,   -0.5000000000000,	0.1339745962156],
+              [0.2500000000000,	-0.500000000000,	0.1339745962156,   -0.5000000000000,	1.8660254037844],
+              [0.2500000000000,	0.1339745962156,	-0.500000000000,   	1.8660254037844,	-0.5000000000000]])
+print(m1)
+print(m2)
+print(m1*m2)
+
+# print(m1[1,:])
+# print(m2[:,1])
+
+# x = sp.symbols("x")
+# y = sp.symbols("y")
+
+# c1 = 3.2e-05
+# c2 = 8.6e-06
+# c3 = np.sqrt(3)
+
+# f1 = 1-x
+# f2 = 1+x
+# f3 = 1-y
+# f4 = 1+y
+
+# s1 = 0.25*f1*f3
+# s2 = 0.25*f2*f3
+# s3 = 0.25*f2*f4
+# s4 = 0.25*f1*f4
+
+# xs = [0, -c3, c3, c3, -c3]
+# ys = [0, -c3, -c3, c3, c3]
 
 
-A = sp.Matrix([[sp.cos(x), sp.sin(x), 0],
-               [-sp.sin(x), sp.cos(x), 0],
-               [0,0,1]])
-B = sp.Matrix([[0,0,1],
-               [sp.cos(y), sp.sin(y), 0],
-               [-sp.sin(y), sp.cos(y), 0]])
+# m = np.zeros((4,5))
+# for i in range(0,5):
+#     m[0,i] = s1.subs([(x,xs[i]),(y,ys[i])])
+#     m[1,i] = s2.subs([(x,xs[i]),(y,ys[i])])
+#     m[2,i] = s3.subs([(x,xs[i]),(y,ys[i])])
+#     m[3,i] = s4.subs([(x,xs[i]),(y,ys[i])])
 
-sp.pprint(A*B)
+# print(m)
+
+# m[[2,3],:] = m[[3,2],:]
+
+# print(m)
+
+# m2 = np.array([c2,c2,c1,c1])
+# result = np.matmul(m2,m)
+# print(result)
+
+# q = c1*(s1+s2) + c2*(s3+s4)
+
+# print(q.subs([(x,0),(y,0)]))
+# print(q.subs([(x,-c3),(y,-c3)]))
+# print(q.subs([(x,c3),(y,-c3)]))
+# print(q.subs([(x,c3),(y,c3)]))
+# print(q.subs([(x,-c3),(y,c3)]))
+
+
+
+# A = sp.Matrix([[sp.cos(x), sp.sin(x), 0],
+#                [-sp.sin(x), sp.cos(x), 0],
+#                [0,0,1]])
+# B = sp.Matrix([[0,0,1],
+#                [sp.cos(y), sp.sin(y), 0],
+#                [-sp.sin(y), sp.cos(y), 0]])
+
+# sp.pprint(A*B)
 
 # A = np.matrix([[1,1,1],
 #                [1,2,1],
