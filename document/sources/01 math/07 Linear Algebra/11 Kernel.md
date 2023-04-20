@@ -24,50 +24,11 @@ $$ \ker(T) \text{ is a subspace of } V $$
 
 **Proof**
 
-[Abelian Group]  
--[closed]  
-$\ker(T)$의 임의의 element를 $v_1,v_2$라고 하자.
+$\ker(T)$는 $V$의 subset임으로 연산에 닫혀있음만 보이면 된다.
 
-$T$가 linear map임으로 다음이 성립한다.
+$\ker(T)$의 임의의 elements를 $v_1,v_2$, $\F$의 임의의 element를 $a$라고 하면 다음이 성립한다.
 
-$$ T(v_1+v_2) = T(v_1) + T(v_2) = 0_W $$
-
-따라서 $v_1 + v_2 \in \ker(T)$이고 그럼으로 $\ker(T)$는 $+$에 닫혀있다. $\qed$
-
--[identity]  
-$T(0_V) = 0_W$임으로 $0_V \in \ker(T)$이고 $\ker(T)$의 모든 element는 $V$의 element임으로 다음이 성립한다.
-
-$$ 0_V \text{ is an identity of } \ker(T) \qed $$
-
--[inverse]  
-$\ker(T)$의 임의의 element를 $v$라고 하자.
-
-$v \in V$임으로 inverse element는 $-v \in V$이고 다음이 성립한다.
-
-$$ T(-v) = - T(v) = 0_W $$
-
-따라서 $-v \in \ker(T)$임으로 $\ker(T)$는 inverse element를 갖는다. $\qed$
-
--[commutative]   
-$\ker(T)$의 임의의 element를 $v_1,v_2$라고 하자.
-
-$v_1,v_2 \in V$임으로 다음이 성립한다.
-
-$$ v_1 + v_2 = v_2 + v_1 \qed $$
-
-[$\F-$Module]  
-$\ker(T)$의 임의의 element를 $v$라고 하자.
-
-$\F$의 임의의 element를 $c$라고 할 때, 다음이 성립한다.
-
-$$ T(cv) = cT(v) = c0_W = 0_W \implies cv \in \ker(T) $$
-
-따라서, $\ker(T)$는 $V$의 scalar multiplication에 닫혀있음으로, scalar multiplication을 그대로 사용하면 자명하게 $\ker(T)$는 $\F-$module이다.
-
-[결론]
-따라서 $\ker(T)$는 vector space이고 다음이 성립한다.
-
-$$ \ker(T) \text{ is a subspace of } V \qed  $$
+$$ T(av_1+v_2) = aT(v_1)+T(v_2) = 0_W \implies av_1 + v_2 \in \ker(T) \qed $$
 
 ### 명제3
 유한 차원 vector space $V,W / \mathbb F$과 $T \in L(V,W)$가 있을 때, 다음을 증명하여라.
