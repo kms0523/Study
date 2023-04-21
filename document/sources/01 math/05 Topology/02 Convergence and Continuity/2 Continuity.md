@@ -9,6 +9,18 @@ $$ \text{preimage of every open set of } Y \text{ is open set of } X$$
 > Referece  
 > {cite}`LeeTM` p.26
 
+### 참고
+open set의 image를 open set이라고 정의한다면 일반적으로 가지고 있는 continuous function의 직관에 위배된다.
+
+예를 들어, $y =  x^2$을 생각해보자. 
+
+open set $(-1,1)$의 image는 $[0,1)$로open set이 아니다. 
+
+따라서 위의 정의에 따르면 continuous function이 아니게 된다.
+
+> Reference  
+> [math.stackexchange](https://math.stackexchange.com/questions/1074769/image-of-open-set-is-not-open)  
+
 ### 명제1
 Topological space $X,Y$가 있다고 하자.
 
@@ -20,7 +32,7 @@ $$ \text{Every constant map } f : X \rightarrow Y \text{ is continous} $$
 
 $f(X) = y \in Y$라고 하자.
  
-openset $S \subset Y$가 있을 때, 다음이 성립한다.
+open set $S \subset Y$가 있을 때, 다음이 성립한다.
 
 $$ \preimg(S) = \begin{cases} \empty & y \notin S \\ X & y \in S \end{cases} $$
 
