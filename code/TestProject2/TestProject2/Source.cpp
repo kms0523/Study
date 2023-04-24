@@ -1,52 +1,63 @@
-#include <memory>
+#include <vector>
 
-class A
+using f32 = float;
+
+enum class Type
 {
-public:
-	virtual void f1(void) {};
+	square,
+	rectangle,
+	triangle
 };
 
-// A
-// f1 = 0
-
-class B : public A
+class shape_base
 {
 public:
-	virtual void f3(void) {};
-	void f1(void) override {};
-	virtual void f2(void) {};
-	void f4(void) {};
+	shape_base() {}
+	virtual f32 Area() = 0;
 };
 
-// B
-// f1 = 1
-// f2 = 2
-// f3 = 0
+class square : public shape_base
+{
+public:
+	square(f32 SideInit) : Side(SideInit) {}
+	virtual f32 Area() { return Side * Side; }
 
-//일반함수에는 없는 함수인거에요?
+private:
+	f32 Side;
+};
 
-//가상함수에만 잇는 함수인거에요?
-//get_offset(func_name)
-//{
-//	  f1=1
-//		f2=2
-//		f3=0
-//3
+class rectangle : public shape_base
+{
+public:
+	rectangle(f32 WidthInit, f32 HeightInit) : Width(WidthInit), Height(HeightInit) {}
+	virtual f32 Area() { return Width * Height; }
 
-//일반함수가 본인의 주소를 알 듯이
-//가상함수는 본인의 번호를 안다.
+private:
+	f32 Width, Height;
+};
 
+class triangle : public shape_base
+{
+public:
+	triangle(f32 BaseInit, f32 HeightInit) : Base(BaseInit), Height(HeightInit) {}
+	virtual f32 Area() { return 0.5f*Base*Height; }
 
+private:
+	f32 Base, Height;
+};
+
+class shapes
+{
+public:
+	void cal_areas(double* areas) const;
+
+private:
+	std::vector<double> widths;
+	std::vector<double> heigths;
+	std::vector<Type> types;
+};
 
 int main(void)
 {
-	B b;
-	b.f4();
-	// adress of f4는 알고 있다.
-	// call (adress of f4)
 
-	std::unique_ptr<A> ptr = std::make_unique<B>();
-	ptr->f1();		
-	// f1 = 1  이걸 그냥 알고 있다. --> 이걸 모른다.
-	// call ptr->vftable[1]
 }

@@ -46,21 +46,29 @@ $$ s \text{ is bijective} $$
 $s$는 정의에 의해 monotonic increase 함수임으로 자명하다. $\qed$
 
 ### 명제3
-$\R$의 open set $U,V$와 $U$에서 differentiable한 $r:U\rightarrow\R^n$과 $V$에서 differentiable한 $s:V\rightarrow\R^n$과이 있다고 하자.
+다음을 증명하여라.
 
-동일한 curve가 $r,s$로 표현된다고 했을 때, 다음을 증명하여라.
-
-$$ \int^t_{\inf(U)} \norm{r'(x)}\thinspace dx = \int^t_{\inf(V)} \norm{s'(y)}\thinspace dy $$
+$$ \text{Arc length is parametric invariant} $$
 
 **Proof**
 
-동일한 curve가 $r,s$로 표현됨으로 다음이 성립한다.
+$\R$의 open set $U,V$와 $r_1:U\rightarrow\R^n \in C^1$과 $r_2:V\rightarrow\R^n \in C^1$이 있을 때, Curve $C$가 $r_1,r_2$로 표현된다고 하자.
 
-$$ \begin{gathered} \exist f:U\rightarrow V \st f\text{ is bijective} \\ \forall x \in U, \quad  r(x) = s(f(x)) \end{gathered} $$
+$C$가 $r_1,r_2$로 표현됨으로 다음이 성립한다.
 
-$m(x) = \norm{r'(x)}, n(y) = \norm{s'(y)} $으로 두면 substitution rule에 의해 다음이 성립한다.
+$$ \begin{gathered} \exist \text{bijective } f:U\rightarrow V \st  \forall x \in U, \quad  r_1(x) = r_2(f(x)) \end{gathered} $$
 
-$$ \begin{aligned} \int^t_{\inf(V)} \norm{s'(y)}\thinspace dy &= \int^t_{\inf(V)} n(y)\thinspace dy \\&= \int^{f^{-1}(t)}_{f^{-1}(\inf(V))} n(f(x)) f'(x)\thinspace dx \\&= \int^{f^{-1}(t)}_{f^{-1}(\inf(V))} \norm{s'(f(x))} f'(x)\thinspace dx \\&= \int^t_{\inf(U)} \norm{r'(x)}\thinspace dx \qed \end{aligned}   $$
+따라서, chain rule에 의해 다음이 성립한다.
 
-#### 참고
-즉, $s$는 parametric independent 하다.
+$$ \begin{aligned} s(t) &= \int_{U} \norm{r_1'(x)}\thinspace dx \\&= \int_{U} \norm{r_2'(f(x))\diff{f}{x}}\thinspace dx \\&= \int_{U} \norm{r_2'(f(x))}\norm{\diff{f}{x}}\thinspace dx \end{aligned} $$
+
+이 때, $0 \le df/dx$이라 가정하고 $u = f(x)$로 두면 다음이 성립한다.
+
+$$ \begin{aligned} \int_{U} \norm{r_2'(f(x))}\norm{\diff{f}{x}}\thinspace dx &= \int_{f(U)} \norm{r_2'(u)}\thinspace du \end{aligned} $$
+
+즉, 다음이 성립한다.
+
+$$ \int_{U} \norm{r_1'(x)}\thinspace dx = \int_{V} \norm{r_2'(u)}\thinspace du $$
+
+> Reference  
+> [math.stackexchange](https://math.stackexchange.com/questions/137410/arc-length-under-change-of-parameter)

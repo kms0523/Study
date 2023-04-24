@@ -279,3 +279,7 @@ int main(void)
 
 > Reference  
 > {cite}`FundamentalC++`
+
+## Performance
+> Reference
+> [blog](https://johnnysswlab.com/the-true-price-of-virtual-functions-in-c/)
