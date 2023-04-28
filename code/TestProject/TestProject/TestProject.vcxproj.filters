@@ -16,6 +16,12 @@
     <Filter Include="소스 파일\mec">
       <UniqueIdentifier>{9ac096c9-e06a-4113-865f-9ea41dde3b71}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\코테1">
+      <UniqueIdentifier>{0facc10f-b5f7-48f1-9941-2d7e556705ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\PHS2">
+      <UniqueIdentifier>{12d2dd77-6956-4e21-8500-2f27d73843d4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="소스.cpp">
@@ -35,15 +41,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="헤더.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="헤더1.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="헤더2.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
     <ClInclude Include="mec\MecArrayIterator.h">
       <Filter>소스 파일\mec</Filter>
     </ClInclude>
@@ -88,6 +85,24 @@
     </ClInclude>
     <ClInclude Include="Header4.h">
       <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="헤더.h">
+      <Filter>소스 파일\코테1</Filter>
+    </ClInclude>
+    <ClInclude Include="헤더1.h">
+      <Filter>소스 파일\코테1</Filter>
+    </ClInclude>
+    <ClInclude Include="헤더2.h">
+      <Filter>소스 파일\코테1</Filter>
+    </ClInclude>
+    <ClInclude Include="PHS2_1.h">
+      <Filter>소스 파일\PHS2</Filter>
+    </ClInclude>
+    <ClInclude Include="PHS2_2.h">
+      <Filter>소스 파일\PHS2</Filter>
+    </ClInclude>
+    <ClInclude Include="PHS2_3.h">
+      <Filter>소스 파일\PHS2</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
