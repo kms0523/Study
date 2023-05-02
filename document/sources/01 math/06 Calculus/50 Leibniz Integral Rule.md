@@ -24,7 +24,7 @@ $$ F(X,t) = \nabla_X \varphi $$
 
 Deformation gradient의 성질에 의해 다음이 성립한다.
 
-$$ \begin{aligned} \int_{\Omega} f(x,t) \thinspace dV &= \int_{\Omega} (f \circ \varphi)(X,t) \det(F) \thinspace dV_0 \\&= \int_{\Omega_0} f(\varphi(X,t),t) J \thinspace dV_0 \\&= \int_{\Omega_0} f_m J \thinspace dV_0 \end{aligned} $$
+$$ \begin{aligned} \int_{\Omega} f(x,t) \thinspace dV &= \int_{\Omega_0} f(\varphi(X,t),t) \det(F) \thinspace dV_0 \\&= \int_{\Omega_0} f_m J \thinspace dV_0 \end{aligned} $$
 
 
 $$ \text {Where, } f_m(X,t) := f(\varphi(X,t),t), \enspace J := \det(F)$$
