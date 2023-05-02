@@ -1,53 +1,32 @@
-# Visual Studio에서 생성한 .clang 형식 파일입니다.
-
-# 이 파일의 스타일 옵션은 도구 > 옵션에서
-# 현재 IDE 서식 구성을 복제하려는 최선의 시도입니다. 그러나 다음
-# 스타일 옵션을 확인해야 합니다:
-# AfterClass, AfterControlStatement, AfterEnum, AfterFunction, AfterNamespace, 
-# AfterStruct, AfterUnion
+# https://releases.llvm.org/6.0.0/tools/clang/docs/ClangFormatStyleOptions.html
+# https://leimao.github.io/blog/Clang-Format-Quick-Tutorial/
 
 BasedOnStyle: WebKit
-AccessModifierOffset: -2
-AlignAfterOpenBracket: DontAlign
-AllowShortBlocksOnASingleLine: true
-AllowShortFunctionsOnASingleLine: All
+BreakBeforeBraces: Allman
 
-BreakBeforeBraces: Custom
-BraceWrapping:
-  AfterClass: true	
-  AfterControlStatement: false		
-  AfterEnum: false					
-  AfterFunction: true				
-  AfterNamespace: false				
-  AfterStruct: false				
-  AfterUnion: false					
-  BeforeCatch: true
-  BeforeElse: true
-  IndentBraces: false
-  SplitEmptyFunction: true
-  SplitEmptyRecord: true
+AlwaysBreakTemplateDeclarations: true
 
-#BinPackArguments: true
+ColumnLimit: 0
 
-ColumnLimit: 150
 IndentWidth: 2
 TabWidth: 2
+
+AlignConsecutiveAssignments : true
+AlignConsecutiveDeclarations : true
+AlignTrailingComments: true
+
+AllowShortBlocksOnASingleLine : true
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: true
+
+AccessModifierOffset: -2
+
+FixNamespaceComments: true
+
 MaxEmptyLinesToKeep: 1
 
-Cpp11BracedListStyle: false
-DerivePointerAlignment: true
-FixNamespaceComments: false
-IndentCaseLabels: false
-IndentPPDirectives: None
-
-NamespaceIndentation: All
-SortIncludes: false
-SortUsingDeclarations: false
-SpaceAfterCStyleCast: false
-SpaceBeforeAssignmentOperators: true
-SpaceBeforeParens: ControlStatements
-SpaceInEmptyParentheses: false
-SpacesInCStyleCastParentheses: false
-SpacesInParentheses: false
-SpacesInSquareBrackets: false
-UseTab: true
+AlwaysBreakBeforeMultilineStrings: false
+BreakStringLiterals: false
+PenaltyBreakString: 100
+PenaltyBreakFirstLessLess: 100
+PenaltyBreakAssignment: 100
