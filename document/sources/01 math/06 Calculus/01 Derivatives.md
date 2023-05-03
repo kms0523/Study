@@ -20,9 +20,9 @@ $$ \lim_{h \rightarrow 0} f(a + h) = f(a) $$
 이는 $\lim_{t\rightarrow x}f(t) = f(x)$와 동치임으로 $f$가 continuous해야 한다는 조건이 생긴다.
 
 ### 참고2
-$f'$은 $U$의 변화량과 그에 따른 $f$의 변화량의 비율의 극한이다.
+$f'$은 $U$에서 $a$에 한없이 가까이갈 때, $U$에서의 변화량과 $f$에서의 변화량의 비율의 극한이다.
 
-$$ \frac{\text{change in }f}{\text{change in }U} = \frac{f(a+h)-f(a)}{h}  $$
+$$ \frac{\text{change in }f}{\text{change in }U} = \frac{f(a+h)-f(a)}{(a+h)-a}  $$
 
 ### 참고3
 $U$가 open set이기 때문에 다음이 성립한다.
