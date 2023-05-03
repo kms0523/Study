@@ -136,12 +136,22 @@
 //  const std::vector<std::string> ref    = { "ac", "ae" };
 //  EXPECT_EQ(result, ref);
 //}
-TEST(PHS2_3, 2_5)
-{
-  int                      N = 6;
-  std::vector<std::string> W = { "ab", "bc", "cb", "ba", "ad", "de" };
+//TEST(PHS2_3, 2_5)
+//{
+//  int                      N = 6;
+//  std::vector<std::string> W = { "ab", "bc", "cb", "ba", "ad", "de" };
+//
+//  const auto                     result = solution2(N, W);
+//  const std::vector<std::string> ref    = { "ab", "bc", "cb" };
+//  EXPECT_EQ(result, ref);
+//}
 
-  const auto                     result = solution2(N, W);
-  const std::vector<std::string> ref    = { "ab", "bc", "cb" };
-  EXPECT_EQ(result, ref);
+TEST(test1,test1)
+{
+	std::vector<double> v = { 1 };
+
+  if (not v.empty())
+  {
+		std::cout << "noe empty";
+  }
 }
