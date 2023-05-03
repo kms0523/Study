@@ -123,6 +123,7 @@ $$ \{ f^i_j \} \text{ is a basis of } L(V;W) $$
 $V$의 임의의 element를 $v_1 = a^i\beta_i, \enspace v_2 = b^i \beta_i$, $\F$의 임의의 element를 $c$라고 하자.
 
 그러면, 임의의 $f^i_j$에 대해서 다음이 성립한다.
+
 $$ \begin{aligned} f^i_j(cv_1 + v_2) &= f^i_j((ca^k + b^k)\beta_k) \\&= (ca^i + b^i)\gamma_j \\ &= cf^i_j(v_1) + f^i_j(v_2) \end{aligned} $$
 
 따라서, 임의의 $f^i_j$ 는 $L(V;W)$의 element이고 $L(V;W)$는 vector space임으로 다음이 성립한다. 
@@ -186,21 +187,25 @@ $f^i_j$는 $i$ coordinate를 $j$ coordinate로 변환시켜주고 $A^j_i$는 $i$
 vector spaces $V,W,Z/ \mathbb F$와 $T_1 \in L(V;W), T_2\in L(W;Z)$가 있다고 하자.
 
 이 떄, 다음을 증명하여라.
+
 $$ T_2 \circ T_1 \in L(V;Z) $$
 
 **Proof**  
 
 $v_1,v_2 \in V$과 $a \in F$가 있을 때, 다음이 성립한다.
+
 $$ \begin{aligned} (T_2 \circ T_1)(av_1 + v_2) & = T_2(T_1(av_1 +v_2)) \\ & = T_2(aT_1(v_1) +T_1(v_2)) \\ & = aT_2(T_1(v_1)) + T_2(T_1(v_2)) \\ & = a(T_2 \circ T_1)(v_1) + (T_2 \circ T_1)(v_2) \end{aligned} $$
 
 따라서, $T_2 \circ T_1 \in L(V;Z)$이다. $\quad {_\blacksquare}$
 
 ## Determinant of an Linear Map
 vector space $V/ \mathbb F$와 $T \in \text{End}(V)$가 있을 때, $T$의 determinat를 다음과 같이 정의한다.
+
 $$ \det(T) : \text{End}(V) \rightarrow \mathbb F \quad s.t. \quad T \mapsto \det(\frak m_\beta^\beta(T)) \text { for any basis } \beta $$
 
 ### 명제1
 vector space $V/ \mathbb F$와 $T \in \text{End}(V)$가 있을 때 다음을 증명하여라
+
 $$\det(T) \text{ is well-defined}$$
 
 **Proof**
@@ -208,9 +213,11 @@ $$\det(T) \text{ is well-defined}$$
 well-defined 되기 위해서는 기저의 선택에 관계없이 일정함을 보이면 된다.
 
 $V$의 두 기저를 $\beta,\gamma$라 하면 다음이 성립한다.
+
 $$ \frak m^\gamma_\gamma(T) \sim  \frak m^\beta_\beta(T)$$
 
 similar한 두 행렬의 성질에 의해 다음이 성립한다.
+
 $$ \det(\frak m^\gamma_\gamma(T)) = \det(\frak m^\beta_\beta(T)) \quad {_\blacksquare} $$
 
 ## Trace of an Linear Map
@@ -220,6 +227,7 @@ $$ \mathrm{tr}(T) : \text{End}(V) \rightarrow \mathbb F \quad s.t. \quad T \maps
 
 ### 명제1
 vector space $V/ \mathbb F$와 $T \in \text{End}(V)$가 있을 때, 다음을 증명하여라
+
 $$\text{tr}(T) \text{ is well-defined}$$
 
 **Proof**
@@ -227,13 +235,16 @@ $$\text{tr}(T) \text{ is well-defined}$$
 well-defined 되기 위해서는 기저의 선택에 관계없이 일정함을 보이면 된다.
 
 $V$의 두 기저를 $\beta,\gamma$라 하면 다음이 성립한다.
+
 $$ \frak m^\gamma_\gamma(T) \sim  \frak m^\beta_\beta(T)$$
 
 similar한 두 행렬의 성질에 의해 다음이 성립한다.
+
 $$ \mathrm{tr}(\frak m^\gamma_\gamma(T)) = \mathrm{tr}(\frak m^\beta_\beta(T)) \quad {_\blacksquare} $$
 
 ## Characteristic Polynomial of an Linear Map
 vector space $V/\mathbb F$와 $T \in \text{End}(V)$가 있을 때, $T$의 특성다항식은 다음과 같이 정의된다.
+
 $$ \varphi_T(t) = \det(T - tid) $$
 
 특성다항식의 근이 고유값이 된다.
