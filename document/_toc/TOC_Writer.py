@@ -12,7 +12,7 @@ class TOC_Writer:
 
 		names = mspath.extract_foldernames(source_folder_path)
 
-		# Documents
+		# Chapter
 		for name in names:			
 			if name.startswith('_'): #convetion
 				continue
