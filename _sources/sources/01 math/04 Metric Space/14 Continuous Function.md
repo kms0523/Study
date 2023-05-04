@@ -53,6 +53,18 @@ $$ f \text{ is continous function } \qed $$
 > Reference  
 > {cite}`LeeTM` p.399
 
+#### 참고
+continuos function $f$가 있다고 하자.
+
+이 때, open set의 image는 일반적으로 open set이 아니다.
+
+예를 들어, $y =  x^2$을 생각해보자. 
+
+open set$(-1,1)$의 image는$[0,1)$로 open set이 아니다.
+
+> Reference  
+> [math.stackexchange](https://math.stackexchange.com/questions/1074769/image-of-open-set-is-not-open)  
+
 ### 명제2
 함수 $f$가 다음과 같이 주어졌다고 하자.
 

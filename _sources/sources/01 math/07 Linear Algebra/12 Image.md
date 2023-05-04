@@ -15,52 +15,15 @@ $$ \img(T) \text{ is a subspace of } W $$
 
 **Proof**
 
-[Abelian Group]  
--[closed]  
-$\img(T)$의 임의의 두 element를 $w_1,w_2$라고 하면 다음이 성립한다.
+$\img(T)$는 $W$의 subset임으로 연산에 닫혀있음을 보이면 충분하다.
 
-$$ \exist v_{1,2} \in V \st T(v_{1,2}) = w_{1,2} $$
+$\img(T)$의 임의의 elements를 $w_1,w_2$라고 하면 다음이 성립한다.
 
-그러면 $\F$의 임의의 element를 $c$라고 할 때, 다음이 성립한다.
+$$ \exist v_1,v_2 \in V \st T(v_i) = w_i   $$
 
-$$ w_1 + cw_2 = T(v_1) + cT(v_2) = T(v_1 + cv_2) \in \img(T) \qed $$
+이 떄, $\F$의 임의의 element를 $a$라고 하면 다음이 성립한다.
 
--[identity]  
-$T(0_V) = 0_W$임으로 $0_W \in \img(T)$이고, $\img(T)$의 모든 element는 $W$의 element임으로 $0_W$는 $\img(T)$의 identity element이다. $\qed$
-
--[inverse]  
-$\img(T)$의 임의의 element를 $w$라고 하면 다음이 성립한다.
-
-$$ \exist v \in V \st T(v) = w $$
-
-그러면 다음이 성립한다.
-
-$$ \begin{gathered} w + T(-v) = T(v) + T(-v) = 0_W \\ T(-v) + w = T(-v)+T(v) = 0_W \end{gathered} $$
-
-따라서, $T(-v)$는 $w$의 inverse element이고 $T(-v) \in \img(T)$이다. $\qed$
-
--[commutative]  
-$\img(T)$의 임의의 element를 $w_{1,2}$라고 하자.
-
-$w_{1,2} \in W$이기 때문에 다음이 성립한다.
-
-$$ w_1 + w_2 = w_2+w_1 \qed $$
-
-[$\F-$Module]  
-$\img(T)$의 임의의 element를 $w$라고 하면 다음이 성립한다.
-
-$$ \exist v \in V \st T(v) = w $$
-
-$\F$의 임의의 element를 $c$라고 하면 다음이 성립한다.
-
-$$ cw = cT(v) = T(cv) \in \img(T) $$
-
-따라서, $\img(T)$는 $W$의 scalar multiplication에 닫혀있음으로, $W$의 scalar multiplication을 그대로 사용하면 $\img(T)$는 $\F-$module이다. $\qed$
-
-[결론]  
-$\img(T)$는 vector space임으로 다음이 성립한다.
-
-$$ \img(T) \text{ is a subspace of } W \qed $$
+$$ w_1 + aw_2 = T(v_1) + aT(v_2) = T(v_1 + av_2) \in \img(T) \qed $$
 
 ### 명제2(Basis of image)
 $n$차원 vector space $V/\F$, vector space $W/\F$와 $T \in L(V; W)$가 있다고 하자.
@@ -155,7 +118,7 @@ Vector space $V,W / \mathbb F$와 $T \in L(V,W)$가 있다고 하자.
 
 $$ \rank(T) := \dim(\img(T)) $$
 
-### 명제1(Dimension Theorem)
+### 명제1(Rank-nullity Theorem)
 $n$차원 vector space $V/\F$, vector space $W/\F$와 $T \in L(V; W)$가 있다고 하자.
 
 이 때 다음을 증명하여라.

@@ -132,7 +132,7 @@ $$ |\beta_1| = |\beta_2| \qed $$
 basis의 cardinality는 항상 동일하기 때문에, basis의 cardinality를 vector space의 `차원(dimension)`이라고 한다.
 
 ### 명제3
-$n$차원 vector space $V/\F$가 있다고 하자.
+Vector space $V/\F$가 있다고 하자.
 
 $G$가 $V$의 generating set일 때, 다음을 증명하여라.
 
@@ -140,36 +140,23 @@ $$ \exist G' \subseteq G \st G' \text{ is a basis of } V $$
 
 **Proof**
 
-$G$의 $0_V$가 아닌 임의의 element를 $v_1$이라고 하자.
+$G$의 $0_V$가 아닌 임의의 element를 $v$라고 하고 $S = \Set{v}$라고 하자.
 
-그러면, $\Set{v_1}$은 linearly independent set이다.
+그러면, $S$은 linearly independent set이다.
 
-다음으로, $G$에서 $\Set{v_1} \cup \Set{v_2}$가 linearly independent인 vector $v_2$를 찾는다.
+$S$를 포함하는 $G$ linear inedependent set의 family를 $F$라고 하면 $(F,\subseteq)$는 POSET이고 $F$의 임의의 chain은 upper bound를 갖는걸 basis의 존재정리를 증명할 때와 같은 방식으로 증명할 수 있다.
 
-그러면 $\Set{v_1,v_2}$는 linearly independent set이다.
+따라서 Zorn's lemma에 의해 $F$는 maximal element를 갖으며 이를 $G'$이라고 하자.
 
-다음으로, $G$에서 $\Set{v_1,v_2} \cup \set{v_3}$가 linearly independent인 vector $v_3$를 찾는다.
+$G'$의 maximality에 의해 다음이 성립한다.
 
-그러면 $\Set{v_1,v_2,v_3}$는 linearly independent set이다.
+$$ G \subseteq \span(G') $$
 
-이 과정을 가능한만큼 반복해서 얻은 linearly independent set을 $\beta = \Set{v_1,\cdots,v_k}$라고 하자.
+이 떄, $G$가 generating set임으로 span의 성질에 의해 다음이 성립한다.
 
-다음을 가정하자.
+$$ \span(G') = V $$
 
-$$ G \not\subseteq \span(\beta) $$
-
-그러면 다음이 성립한다.
-$$ \begin{aligned} & \exist v \in G - \span(\beta) \\\implies& \beta \cup \Set{v} \text{ is an linearly independent set} \end{aligned} $$
-
-이는 $\beta$를 만들 때, 가능한한 반복했다는 생성방식에 모순이 됨으로 proof by contradiction에 의해 다음이 성립한다.
-
-$$ G \subseteq \span(\beta) $$
-
-따라서, $G$가 generating set임으로 span의 성질에 의해 다음이 성립한다.
-
-$$ \span(\beta) = V $$
-
-그럼으로 $\beta$는 $V$의 basis가 되고 다음이 성립한다.
+그럼으로 $G'$는 $V$의 basis가 되고 다음이 성립한다.
 
 $$ \exist G' \subseteq G \st G' \text{ is a basis of } V \qed $$
 
@@ -298,3 +285,37 @@ $$ \begin{aligned} & a^1\beta_1 + \cdots + a^m\beta_m = 0_V \\ \Rightarrow \ensp
 
 명제5에 의해 $i \neq j$면, $\omega_i \cap \omega_j = \empty$임으로, 다음이 성립한다.
 $$ \text{span}(\bigcup_{i=1}^k \omega_i) = \bigoplus_{i=1}^k \text{span}(\omega_i) = \bigoplus_{i=1}^k W_i = V \quad {_\blacksquare} $$
+
+
+### 명제8
+Vector space $V/\F$와 $V$의 subset $S$가 있다고 하자.
+
+$V$의 모든 element가 $S$의 유한한 vector들의 lienar combination으로 유일하게 표현된다고 할 떄, 다음을 증명하여라.
+
+$$ S \text{ is an basis of } V $$
+
+**Proof**
+
+[$\span(S)=V$]  
+$V$의 모든 element가 $S$의 유한한 vector들의 linear combination으로 표현됨으로 자명하게 성립한다.$\qed$
+
+[linearly independent]  
+$S$의 임의의 $n$개의 element들을 $v_1,\cdots,v_n$이라고 할 때, 다음을 생각해보자.
+
+$$ a^1v_1 + \cdots + a^nv_n = 0_V $$
+
+이 때, 다음을 가정하자.
+
+$$ \exist a^i \st a^i \neq 0_\F $$
+
+그러면 $0_V$는 다음 두가지로 표현된다.
+
+$$ 0_V = a^iv_i = 0_\F a^1 + \cdots $$
+
+이는 유일한 표현을 갖는다는 사실에 모순임으로 proof by contradiction에 의해 다음이 성립한다.
+
+$$ \forall a^i = 0_\F $$
+
+따라서, 다음이 성립한다.
+
+$$ S \text{ is an linearly independent set} \qed $$
