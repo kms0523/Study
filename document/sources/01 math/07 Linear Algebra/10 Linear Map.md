@@ -28,9 +28,11 @@ $W \le V$에 대해서 $T|_W \in \text{End}(W)$이면 $W$를 $T-$`invariant`라�
 
 ### 명제1
 vector spaces $V,W / \mathbb F$가 있을 때, 다음과 같은 연산이 주어졌다고 하자.
+
 $$ \begin{aligned} + : & L(V,W) \times L(V,W) \rightarrow L(V,W) \quad s.t. \quad T_1 + T_2 \mapsto (T_1 + T_2) \\ & \text {satisfying} \quad (T_1 + T_2)(v) = T_1(v) + T_2 (v) \\ \cdot : & \mathbb F \times L(V,W) \rightarrow L(V,W) \quad s.t. \quad a \cdot T \mapsto (aT) \\ & \text {satisfying} \quad (aT)(v) = aT(v) \end{aligned}  $$
 
 이 때, 다음을 증명하여라.
+
 $$ L(V;W) \text{ is a vector space} $$
 
 **Proof**
@@ -111,9 +113,11 @@ $$ f(v) = f(a^i\beta_i) = a^if(\beta_i) = a^ig(\beta_i) = g(a^i\beta_i) = g(v) \
 $n,m$ 차원 vector spaces $V,W / \mathbb F$가 있다고 하자.
 
 $V,W$의 기저를 각 각 $\beta, \gamma$라 할 때, 함수 $f^i_j, \enspace i=1,\cdots,m, j=1,\cdots,n$를 다음과 같이 정의하자.
+
 $$f^i_j : V \rightarrow W \quad s.t. \quad a^k\beta_k \mapsto a^i \gamma_j $$
 
 이 떄, 다음을 증명하여라.
+
 $$ \{ f^i_j \} \text{ is a basis of } L(V;W) $$
 
 **Proof**
@@ -131,11 +135,11 @@ $$ \begin{aligned} f^i_j(cv_1 + v_2) &= f^i_j((ca^k + b^k)\beta_k) \\&= (ca^i + 
 $$ \span(\{ f^i_j \}) \subseteq L(V;W) \qed $$
 
 -[$L(V;W) \subseteq \text{span}(\{ f^i_j \})$]  
-$L(V;W)$의 임의의 element를 $f$라고 하자.
+$L(V;W)$의 임의의 element를 $T$라고 하자.
 
-그러면 어떤 $A^j_i \in \F, i=1,\cdots,n, j=1,\cdots,$에 대해서 다음을 만족한다.
+$V$의 임의의 element를 $v=a^i\beta_i$, $T(v)=b^j\gamma_j$라고 하면 다음을 만족하는 $A^j_i \in \F, i=1,\cdots,n, j=1,\cdots,m$가 있다.
 
-$$ f(\beta_i) = A^j_i\gamma_j $$
+$$ b^j = A^j_ia^i $$
 
 이 때, $g \in \span(\Set{f^i_j})$를 다음과 같이 정의하자.
 
@@ -143,9 +147,9 @@ $$ g = A^j_if^i_j $$
 
 그러면 다음이 성립한다.
 
-$$ \begin{aligned} & g(\beta_i) = A^j_i\gamma_j = f(\beta_i), \enspace i=1,\cdots,n \\ \implies& g = f \\ \implies& f \in \span(\Set{f^i_j}) \end{aligned} $$
+$$ \begin{aligned} & g(v) = (A^j_if^i_j)(a^k\beta_k) = A^j_if^i_j(a^k\beta_k) = A^j_i a^i\gamma_j = b^j\gamma_j = T(v) \\ \implies& g = f \\ \implies& T \in \span(\Set{f^i_j}) \end{aligned} $$
 
-따라서, 임의의 element $f$가 $\span(\Set{f^i_j})$에 포함됨으로 다음이 성립한다.
+따라서, 임의의 element $T$가 $\span(\Set{f^i_j})$에 포함됨으로 다음이 성립한다.
 
 $$ L(V;W) \subseteq \text{span}(\{ f^i_j \}) \qed $$
 
@@ -182,17 +186,18 @@ $f^i_j$는 $i$ coordinate를 $j$ coordinate로 변환시켜주고 $A^j_i$는 $i$
 
 따라서 $A^j_i$는 $\beta,\gamma$에 의존한다.
 
-
 ### 명제4
 vector spaces $V,W,Z/ \mathbb F$와 $T_1 \in L(V;W), T_2\in L(W;Z)$가 있다고 하자.
 
 이 떄, 다음을 증명하여라.
+
 
 $$ T_2 \circ T_1 \in L(V;Z) $$
 
 **Proof**  
 
 $v_1,v_2 \in V$과 $a \in F$가 있을 때, 다음이 성립한다.
+
 
 $$ \begin{aligned} (T_2 \circ T_1)(av_1 + v_2) & = T_2(T_1(av_1 +v_2)) \\ & = T_2(aT_1(v_1) +T_1(v_2)) \\ & = aT_2(T_1(v_1)) + T_2(T_1(v_2)) \\ & = a(T_2 \circ T_1)(v_1) + (T_2 \circ T_1)(v_2) \end{aligned} $$
 
@@ -217,6 +222,7 @@ $V$의 두 기저를 $\beta,\gamma$라 하면 다음이 성립한다.
 $$ \frak m^\gamma_\gamma(T) \sim  \frak m^\beta_\beta(T)$$
 
 similar한 두 행렬의 성질에 의해 다음이 성립한다.
+
 
 $$ \det(\frak m^\gamma_\gamma(T)) = \det(\frak m^\beta_\beta(T)) \quad {_\blacksquare} $$
 

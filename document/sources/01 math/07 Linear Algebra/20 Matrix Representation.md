@@ -7,19 +7,21 @@ $v = a^i \beta_i \in V$의 $\beta$에 대한 `행렬표현(matrix representation
 $$ \frak m_\beta : V \rightarrow M_{n1}(\mathbb F) \quad s.t. \quad v \mapsto \begin{bmatrix} a^1 \\ \vdots \\ a^n \end{bmatrix} $$  
 
 ### 명제1
-$n$차원 vector space $V / \mathbb F$와 기저 $\beta$가 있을 때, $v \in V$에 대해 다음을 증명하여라.
+$n$차원 vector space $V / \mathbb F$와 기저 $\beta$가 있을 때, 다음을 증명하여라.
 
 $$ \frak m_\beta \text{ is well defined.} $$
 
 **proof**
 
-$v = a^i \beta_i = b^i \beta_i \in V$라 하면 다음이 성립한다.
+$V$의 임의의 두 element를 $v_1 = a^i \beta_i, v_2 = b^i \beta_i$라고 하고 $v_1=v_2$이면 다음이 성립한다.
 
 $$ (a^i -b^i) \beta_i = 0_V $$
 
 $\beta$는 linearly independent함으로 다음이 성립한다.
 
 $$ a^i = b^i $$
+
+따라서, $\frak{m}_\beta(v_1) = \frak{m}_\beta(v_2)$이다.
 
 즉, $\frak m_\beta(v)$가 유일하게 결정됨으로, $\frak m_\beta$는 well defined다. $\quad\tiny\blacksquare$
 
@@ -101,7 +103,9 @@ $$ \frak m_\gamma(T(v)) = \frak m^\gamma_\beta(T) \frak m_\beta(v) $$
 
 $$ f : M_{n1} \rightarrow M_{m1} \st x \mapsto Ax $$
 
-그러면 다음과 같은 도식을 그릴 수 있다.
+이 떄, $f$의 의미에 대해서 조금더 살펴보자.
+
+$\frak{m}_{\beta,\gamma}$는 vector space isomorphism임으로 임의의 $n,m$차원 vector space를 $V,W$라고 하면  다음과 같은 도식을 그릴 수 있다.
 
 $$ \begin{CD} V @>T>> W \\ @V{\frak m_\beta}VV @VV{\frak m_\gamma}V \\ M_{n1} @>>f> M_{m1} \end{CD} $$
 
@@ -109,7 +113,7 @@ $$ \begin{CD} V @>T>> W \\ @V{\frak m_\beta}VV @VV{\frak m_\gamma}V \\ M_{n1} @>
 
 $$ f = \frak m_\gamma \circ T \circ \frak m_\beta^{-1} $$
 
-$\epsilon^n, \epsilon^m$을 $M_{n1}$의 standarad basis라고 할 때, 명제3에 의해 다음이 성립한다.
+$\epsilon^n, \epsilon^m$을 $M_{n1},M_{m1}$의 standarad basis라고 할 때, 명제3에 의해 다음이 성립한다.
 
 $$\frak m^{\epsilon^m}_{\epsilon^n}(f) = \frak m^{\epsilon^m}_{\gamma}(\frak m_\gamma) \frak m^\gamma_\beta(T) \frak m^{\beta}_{\epsilon^n}(\frak m_\beta^{-1})$$
 
@@ -120,6 +124,8 @@ $$ \frak m^{\epsilon^m}_{\gamma}(\frak m_\gamma) = \begin{bmatrix} \frak m_{\eps
 따라서 다음이 성립한다.
 
 $$ \begin{aligned} \frak m^{\epsilon^m}_{\epsilon^n}(f) &= \frak m^{\epsilon^m}_{\gamma}(\frak m_\gamma) \frak m^\gamma_\beta(T) \frak m^{\beta}_{\epsilon^n}(\frak m_\beta^{-1}) \\ &= I_m \frak m^\gamma_\beta(T) I_n \\ &= \frak m^\gamma_\beta(T) \end{aligned}  $$
+
+즉, $f$의 행렬 표현 $A$는 어떤 linear map $T$의 행렬 표현이기도 하다.
 
 ### 명제1
 차원이 각 각 $n,m$인 벡터 공간 $V,W/ \mathbb F$와 각각의 기저 $\beta, \gamma$, $T \in L(V;W)$가 있을 때, 다음을 증명하여라.
@@ -166,9 +172,6 @@ $$ C^k_i = B^k_jA^j_i $$
 $$ \frak m^\gamma_\alpha(T_2 \circ T_1) = \frak m^\gamma_\beta(T_2) \frak m^\beta_\alpha(T_1) $$
 
 ### 명제4
-
-
-### 명제5
 $n$ 차원 vector space $V / \mathbb F$와 $U,W \le V$ 그리고 $T \in \text{End}(V)$가 있다고 하자.
 
 이 때, $V = U \oplus W$이고 $U,W$가 $T$ invariant일 때 $V,U,W$ 각각의 기저 $\alpha, \beta, \gamma$에 대해 다음을 증명하여라.
@@ -185,4 +188,4 @@ $$ \alpha = \beta \cup \gamma = \{ \beta_1, \cdots, \beta_k, \gamma_1, \cdots, \
 
 이 떄, $U,W$가 $T$ invariant임으로 다음이 성립한다.
 
-$$ \begin{aligned} \frak m_\alpha^\alpha(T) &= \begin{bmatrix} \frak m_\alpha (T(\beta_1)) & \cdots & \frak m_\alpha (T(\beta_k)) & \frak m_\alpha (T(\gamma_1)) & \cdots & \frak m_\alpha (T(\gamma_{n-k})) \end{bmatrix} \\&= \begin{bmatrix} \frak m_\beta (T(\beta_1)) & \cdots & \frak m_\beta (T(\beta_k)) & \frak m_\beta (T(\gamma_1)) & \cdots & \frak m_\beta (T(\gamma_{n-k})) \\ \frak m_\gamma (T(\beta_1)) & \cdots & \frak m_\gamma (T(\beta_k)) & \frak m_\gamma (T(\gamma_1)) & \cdots & \frak m_\gamma (T(\gamma_{n-k})) \end{bmatrix} \\&= \begin{bmatrix} \frak m_\beta^\beta (T) & \frak m_\gamma^\beta (T) \\ \frak m_\beta^\gamma (T) & \frak m_\gamma^\gamma (T) \end{bmatrix} \\&= \begin{bmatrix} \frak m_\beta^\beta (T|_U) & 0 \\ 0 & \frak m_\gamma^\gamma (T|_W) \end{bmatrix} \\&= \begin{bmatrix} \begin{array}{c | c} \frak m_\beta^\beta(T|_U) & 0 \\ \hline  0 & \frak m_\gamma^\gamma(T|_W) \end{array} \end{bmatrix} \quad\tiny\blacksquare \end{aligned} $$
+$$ \begin{aligned} \frak{m}_\alpha^\alpha(T) &= \begin{bmatrix} \frak{m}_\alpha (T(\beta_1)) & \cdots & \frak{m}_\alpha (T(\beta_k)) & \frak{m}_\alpha (T(\gamma_1)) & \cdots & \frak{m}_\alpha (T(\gamma_{n-k})) \end{bmatrix} \\&= \begin{bmatrix} \frak{m}_\beta (T(\beta_1)) & \cdots & \frak{m}_\beta (T(\beta_k)) & \frak{m}_\beta (T(\gamma_1)) & \cdots & \frak{m}_\beta (T(\gamma_{n-k})) \\ \frak{m}_\gamma (T(\beta_1)) & \cdots & \frak{m}_\gamma (T(\beta_k)) & \frak{m}_\gamma (T(\gamma_1)) & \cdots & \frak{m}_\gamma (T(\gamma_{n-k})) \end{bmatrix} \\&= \begin{bmatrix} \frak{m}_\beta^\beta (T) & \frak{m}_\gamma^\beta (T) \\ \frak{m}_\beta^\gamma (T) & \frak{m}_\gamma^\gamma (T) \end{bmatrix} \\&= \begin{bmatrix} \frak{m}_\beta^\beta (T|_U) & 0 \\ 0 & \frak{m}_\gamma^\gamma (T|_W) \end{bmatrix} \\&= \begin{bmatrix} \begin{array}{c | c} \frak{m}_\beta^\beta(T|_U) & 0 \\ \hline  0 & \frak{m}_\gamma^\gamma(T|_W) \end{array} \end{bmatrix} \quad\tiny\blacksquare \end{aligned} $$
