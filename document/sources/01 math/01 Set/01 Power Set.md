@@ -8,6 +8,13 @@ $$ P(S) := \Set{A | A \subseteq S} $$
 
 즉, $P(S)$는 $S$의 모든 부분 집합들로 구성된 집합으로 집합들의 collection이다.
 
+### 참고(Family of sets)
+일반적으로, 어떤 set들의 collection을 `familiy of sets`라고 한다.
+
+> Reference  
+> [wiki](https://en.wikipedia.org/wiki/Family_of_sets)  
+
+
 ### 명제1
 집합 $A$가 있다고 하자.
 

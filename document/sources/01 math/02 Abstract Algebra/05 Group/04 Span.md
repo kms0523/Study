@@ -102,9 +102,9 @@ $$ \exist a^{-1} \in \Set{ nx | n \in \Z} \qed $$
 [$\{ nx|n \in \Z\}$ is smallest]  
 $\Set{x}$를 포함하는 $A$의 subgroup의 family를 $H$라고 하자.
 
-$H$의 임의의 element를 $H_i$, $\Set{ nx|n \in \Z}$의 임의의 element를 $a$라고 하면 $H_i$가 subgroup이기 때문에 다음이 성립한다.
+$H$의 임의의 element를 $H_i$라고 하면 $H_i$가 subgroup이기 때문에 다음이 성립한다.
 
-$$ a \in H_i \implies \Set{ nx|n \in \Z} \subseteq H_i $$
+$$ x \in H_i \implies \Set{ nx|n \in \Z} \subseteq H_i $$
 
 $\Set{ nx|n \in \Z}$는 $G$의 subgroup임으로 다음이 성립한다.
 
@@ -144,9 +144,9 @@ $$ \exist a^{-1} \in \Set{nx + my | n,m \in \Z} \qed $$
 [$\{ nx|n \in \Z\}$ is smallest]  
 $\Set{x,y}$를 포함하는 $A$의 subgroup의 family를 $H$라고 하자.
 
-$H$의 임의의 element를 $H_i$, $\Set{nx + my | n,m \in \Z}$의 임의의 element를 $a$라고 하면 $H_i$가 subgroup이기 때문에 다음이 성립한다.
+$H$의 임의의 element를 $H_i$라고 하면 $H_i$가 subgroup이기 때문에 다음이 성립한다.
 
-$$ a \in H_i \implies \Set{nx + my | n,m \in \Z} \subseteq H_i $$
+$$ x,y \in H_i \implies \Set{nx + my | n,m \in \Z} \subseteq H_i $$
 
 $\Set{nx + my | n,m \in \Z}$는 $G$의 subgroup임으로 다음이 성립한다.
 

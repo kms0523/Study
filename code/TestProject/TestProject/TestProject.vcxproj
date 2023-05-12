@@ -129,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BucketSort.cpp" />
     <ClCompile Include="mec\MecSharedPtr.cpp" />
     <ClCompile Include="Source3.cpp" />
     <ClCompile Include="소스.cpp" />
@@ -136,6 +137,7 @@
     <ClCompile Include="소스2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BucketSort.h" />
     <ClInclude Include="Header3.h" />
     <ClInclude Include="Header4.h" />
     <ClInclude Include="mec\MecArrayIterator.h" />

@@ -39,6 +39,9 @@
     <ClCompile Include="Source3.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="BucketSort.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mec\MecArrayIterator.h">
@@ -103,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="PHS1_3.h">
       <Filter>소스 파일\PHS1</Filter>
+    </ClInclude>
+    <ClInclude Include="BucketSort.h">
+      <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
