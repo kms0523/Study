@@ -86,9 +86,6 @@
     <ClInclude Include="Header3.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Header4.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
     <ClInclude Include="PHS2_1.h">
       <Filter>소스 파일\PHS2</Filter>
     </ClInclude>

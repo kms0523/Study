@@ -1,13 +1,9 @@
 #pragma once
 
-template <typename T>
-class A;
-
-using AD = A<double>;
-
-class B
+class A
 {
 public:
-	void test(AD ad) const;
+	template <typename T>
+	void test(const T val) const;
 };
 

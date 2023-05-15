@@ -4,6 +4,9 @@ Group $G$와 $G$의 부분집합 $H$가 있다고 하자.
 
 $(H,*_G)$가 군이 되면 $H$를 $G$의 `부분군(subgroup)`이라고 하고 $H\le G$로 표기한다.  
 
+### 예시
+$$(\mathbb{Q},+) \le (\R,+) \\ (\mathbb{Q}-\{0\},\times) \le (\R-\{0\},\times)$$
+
 ### 명제1
 Group $G$와 $G$의 subgroup $H$가 있다고 하자.
 
@@ -51,6 +54,26 @@ $$ e_G \in H \qed $$
 -[inverse element]  
 두번째 전제에 의해 inverse element가 존재한다. $\qed$
 
+### 명제3
+Group $G$와 $G$의 두 subgroup $H_{1,2}$가 있다고 하자.
 
-### 예시
-$$(\mathbb{Q},+) \le (\R,+) \\ (\mathbb{Q}-\{0\},\times) \le (\R-\{0\},\times)$$
+이 때, 다음을 증명하여라.
+
+$$ H_1\cap H_2 \text{ is a subgroup of } G $$
+
+**Proof**
+
+$H_1\cap H_2$의 임의의 두 element를 $a,b$라고 하면 다음이 성립한다.
+
+$$ a,b \in H_{1,2} \implies a*b \in H_{1,2} \implies a*b \in H_1 \cap H_2 $$
+
+그리고 다음도 성립한다.
+
+$$ a^{-1} \in H_{1,2} \implies a^{-1} \in H_1 \cap H_2 $$
+
+따라서, 명제2에 의해 다음이 성립한다.
+
+$$ H_1\cap H_2 \text{ is a subgroup of } G \qed $$
+
+
+
