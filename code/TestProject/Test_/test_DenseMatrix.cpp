@@ -17,8 +17,8 @@ void print(const Mec::DenseMatrix<T>& m)
 	}
 }
 
-template <typename T>
-void expect_equal(const Mec::DenseMatrix<T>& m1, const Mec::DenseMatrix<T>& m2)
+template <typename T1, typename T2>
+void expect_equal(const Mec::DenseMatrix<T1>& m1, const Mec::DenseMatrix<T2>& m2)
 {
 	EXPECT_EQ(m1.rows(), m2.rows());
 	EXPECT_EQ(m1.columns(), m2.columns());
@@ -36,6 +36,7 @@ void expect_equal(const Mec::DenseMatrix<T>& m1, const Mec::DenseMatrix<T>& m2)
 }
 
 using Matrix = Mec::DenseMatrix<double>;
+using fMatrix = Mec::DenseMatrix<float>;
 
 
 //// Dense Matrix는 component wise mulitplication밖에 안된다.
@@ -77,7 +78,24 @@ using Matrix = Mec::DenseMatrix<double>;
 //	expect_equal(ref, matrix);
 //}
 
+// Vector = Vector 할 때 data type이 다르면 stride가 고려되지 않는 버그가 있다.
+TEST(Test, copy)
+{
+	Matrix matrix;
+	matrix.resize(2, 3);
+	matrix = 1, 2,3,4, 5, 6;
 
+	fMatrix matrix2;
+	matrix2.resize(1, 3);
+
+	const auto rall = blitz::Range::all();
+	matrix2(0, rall) = matrix(1, rall);
+
+	Matrix ref;
+	ref.resize(1, 3);
+	ref = 2,4,6;
+	
+}
 
 //TEST(Test, vector_push_back)
 //{
@@ -98,5 +116,5 @@ using Matrix = Mec::DenseMatrix<double>;
 //		print(m);
 //	}
 //}
-
-
+//
+//
