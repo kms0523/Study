@@ -78,24 +78,25 @@ using fMatrix = Mec::DenseMatrix<float>;
 //	expect_equal(ref, matrix);
 //}
 
-// Vector = Vector 할 때 data type이 다르면 stride가 고려되지 않는 버그가 있다.
-TEST(Test, copy)
-{
-	Matrix matrix;
-	matrix.resize(2, 3);
-	matrix = 1, 2,3,4, 5, 6;
-
-	fMatrix matrix2;
-	matrix2.resize(1, 3);
-
-	const auto rall = blitz::Range::all();
-	matrix2(0, rall) = matrix(1, rall);
-
-	Matrix ref;
-	ref.resize(1, 3);
-	ref = 2,4,6;
-	
-}
+//// Vector = Vector 할 때 data type이 다르면 stride가 고려되지 않는 버그가 있다.
+//TEST(Test, copy)
+//{
+//	Matrix matrix;
+//	matrix.resize(2, 3);
+//	matrix = 1, 2,3,4, 5, 6;
+//
+//	fMatrix matrix2;
+//	matrix2.resize(1, 3);
+//
+//	const auto rall = blitz::Range::all();
+//	matrix2(0, rall) = matrix(1, rall);
+//
+//	print(matrix2);
+//
+//	//Matrix ref;
+//	//ref.resize(1, 3);
+//	//ref = 2,4,6;	
+//}
 
 //TEST(Test, vector_push_back)
 //{

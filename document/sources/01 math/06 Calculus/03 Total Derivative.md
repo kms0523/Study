@@ -114,6 +114,8 @@ $a$에서 $f$의 total derivative를 $T =Df(a)$로 표기한다.
 ### 참고2
 $Df(a)$가 존재할 떄 $f$는 $a$에서 `미분가능(differentiable)`하다고 한다.
 
+따라서, 미분가능한 함수 $f$는 각 점마다 total derivative라는 linear map을 갖으며 이 linear map을 derivative라고 정의한다.
+
 ### 명제1
 $\R^n$의 open subset $U$와 함수 $f : U \rightarrow \R^m$가 있다고 하자.
 
@@ -133,7 +135,7 @@ $$ \lim_{t \rightarrow 0} \frac{1}{t}(f(a + te_i) - f(a))  = T_{1,2}(e_i), \ensp
 
 즉, $i=1,\cdots,n$에 대해서 다음이 성립한다.
 
-$$ T_1(e_i) = T_2(e_i) = \pdiff{f}{x_i} $$
+$$ T_1(e_i) = T_2(e_i) = \pdiff{f}{x_i}(a) $$
 
 $\Set{e_i}$는 $\R^n$의 basis임으로 다음이 성립한다.
 
@@ -142,48 +144,22 @@ $$ T_1 = T_2 \qed $$
 #### 따름명제
 $\epsilon_{n,m}$을 $\R^{n,m}$의 standard basis라고 할 때, 다음을 증명하여라.
 
-$$ \frak{m}_{\epsilon_n}^{\epsilon_m}(Df(a)) = \pdiff{f_i}{x_j}  $$
+$$ \frak{m}_{\epsilon_n}^{\epsilon_m}(Df(a)) = \pdiff{f_i}{x_j}(a)  $$
 
-### 명제1
-$\R^n$의 open subset $U$와 함수 $f : U \rightarrow \R^m$가 있다고 하자.
+##### 참고1
+$Df(a)$의 행렬표현을 $f$의 `Jacobian matrix`라고 부르며 $J_f(a)$로 표기한다.
 
-$\R^n$과 $\R^m$의 standard basis가 각 각 $\epsilon_n,\epsilon_m$이고 $a \in U$일 때, 다음을 증명하여라.
+$$ \begin{aligned} J_f(a) &:= \mathfrak{m}_{\epsilon_n}^{\epsilon_m}(Df(a)) \\&= \begin{bmatrix} \mathfrak{m}_{\epsilon_m}(\pdiff{f}{x_1}(a)) &\cdots& \mathfrak{m}_{\epsilon_m}(\pdiff{f}{x_n}(a)) \end{bmatrix} \\&= \begin{bmatrix} \pdiff{f_1}{x_1}(a) &\cdots& \pdiff{f_1}{x_n}(a) \\ \vdots && \vdots \\ \pdiff{f_m}{x_1}(a) &\cdots& \pdiff{f_m}{x_n}(a) \end{bmatrix} \end{aligned} $$
 
-$$ \exist Df(a) : \R^n \rightarrow \R^m \implies  \mathfrak{m}_{\epsilon_n}^{\epsilon_m}(Df(a)) = \begin{bmatrix} \mathfrak{m}_{\epsilon_m}(D_1^{f(a)}) &\cdots& \mathfrak{m}_{\epsilon_m}(D_n^{f(a)}) \end{bmatrix}$$
+##### 참고2
+모든 방향의 directional derivative가 존재해도 미분 가능하지 않을 수 있음을 알고 있다.
 
-**Proof**
+따라서, $J_f(a)$가 있다고 하더라도 $Df(a)$가 존재할 이유가 없다.
 
-$Df(a)$이 linear map 임으로 행렬표현은 다음과 같다.
+그럼으로, 
 
-$$ \mathfrak{m}_{\epsilon_n}^{\epsilon_m}(Df(a)) = \begin{bmatrix} \mathfrak{m}_{\epsilon_m}(Df(a)(e_1)) & \cdots & \mathfrak{m}_{\epsilon_m}(Df(a)(e_n)) \end{bmatrix} $$
+이 때, $Df(a)$
 
-보조명제1.1에 의해 다음이 성립한다.
-
-$$ \begin{aligned} \begin{bmatrix} \mathfrak{m}_\epsilon_m(Df(a)(\epsilon_n_1)) & \cdots & \mathfrak{m}_\epsilon_m(Df(a)(\epsilon_n_n)) \end{bmatrix} &= \begin{bmatrix} \mathfrak{m}_\epsilon_m(D_1^{f(a)}) &\cdots& \mathfrak{m}_\epsilon_m(D_n^{f(a)}) \end{bmatrix} \qed \end{aligned} $$
-
-#### 보조명제1.1
-다음을 증명하여라.
-
-$$ Df(a)(\epsilon_n_i) = D_i^{f(a)} $$
-
-**Proof**
-
-$h = t\epsilon_n_i$라 하면 total derivative의 정의에 의해 다음이 성립한다.
-
-$$ \begin{aligned} & \lim_{t \rightarrow 0} \frac{1}{\norm{t \epsilon_n_i}}(f(a+t\epsilon_n_i) - f(a) - Df(a)(t\epsilon_n_i)) = 0_n \\\implies & \lim_{t\rightarrow 0} \frac{1}{t}(f(a + t \epsilon_n_i) - f(a)) -Df(a)(\epsilon_n_i) = 0_n \\\implies & D_i^{f(a)} = Df(a)(\epsilon_n_i) \qed \end{aligned} $$
-
-
-#### 참고1
-$L$의 형태가 결정되어 있음으로 $L$이 존재한다면 유일함을 알 수 있다.
-
-즉, uniqueness가 보장된다.
-
-#### 참고2
-Total derivative $Df$의 행렬표현을 $f$의 `Jacobian matrix`라고 부르며 $J_f$로 표기한다.
-
-$$ J_f(a) := \mathfrak{m}_{\epsilon_n}^{\epsilon_m}(Df(a)) = \begin{bmatrix} \mathfrak{m}_\epsilon_m(D_1^{f(a)}) &\cdots& \mathfrak{m}_\epsilon_m(D_n^{f(a)}) \end{bmatrix}$$
-
-#### 참고3
 $\mathfrak{m}_{\epsilon_n}^{\epsilon_m}(Df(a)) =J_f(a)$이려면 $f$가 differtiable해야 한다.
 
 ### 명제2
@@ -197,24 +173,15 @@ $$ Df(a) = f $$
 
 명제1에 의해 다음이 성립한다.
 
-$$ \mathfrak{m}_{\epsilon_n}^{\epsilon_m}(Df(a)) = \begin{bmatrix} \mathfrak{m}_\epsilon_m(D_1^{f(a)}) &\cdots& \mathfrak{m}_\epsilon_m(D_n^{f(a)}) \end{bmatrix} $$
+$$ \mathfrak{m}_{\epsilon_n}^{\epsilon_m}(Df(a)) = \begin{bmatrix} \mathfrak{m}_{\epsilon_m}(\pdiff{f}{x_1}(a)) &\cdots& \mathfrak{m}_{\epsilon_m}(\pdiff{f}{x_n}(a)) \end{bmatrix} $$
 
 Partial derivative의 성질에 의해 다음이 성립한다.
 
-$$ \begin{aligned} \begin{bmatrix} \mathfrak{m}_\epsilon_m(D_1^{f(a)}) &\cdots& \mathfrak{m}_\epsilon_m(D_n^{f(a)}) \end{bmatrix} &= \begin{bmatrix} \mathfrak{m}_\epsilon_m(f(\epsilon_n_1)) &\cdots& \mathfrak{m}_\epsilon_m(f(\epsilon_n_n)) \end{bmatrix} \\&= \mathfrak{m}_{\epsilon_n}^{\epsilon_m}(f) \end{aligned} $$
+$$ \begin{aligned} \begin{bmatrix} \mathfrak{m}_{\epsilon_m}(D_1^{f(a)}) &\cdots& \mathfrak{m}_{\epsilon_m}(D_n^{f(a)}) \end{bmatrix} &= \begin{bmatrix} \mathfrak{m}_{\epsilon_m}(f(e_1)) &\cdots& \mathfrak{m}_{\epsilon_m}(f(e_n)) \end{bmatrix} \\&= \mathfrak{m}_{\epsilon_n}^{\epsilon_m}(f) \end{aligned} $$
 
 위의 결과를 종합하면 $\mathfrak{m}_{\epsilon_n}^{\epsilon_m}(Df(a)) = \mathfrak{m}_{\epsilon_n}^{\epsilon_m}(f)$임으로 linear algebra에 의해 다음이 성립한다.
 
 $$ Df(a) = f \qed $$
-
-#### 따름명제2.1
-다음을 증명하여라.
-
-$$ J_f(a) = \mathfrak{m}_{\epsilon_n}^{\epsilon_m}(f) $$
-
-**Proof**
-
-명제2와 Jacobian의 정의에 의해 자명하다.
 
 ### 명제3(Chain Rule)
 $\R^n$의 open set $U$와 $\R^m$의 open set $V$가 있다고 하자.
@@ -223,13 +190,13 @@ $f:U \rightarrow V$과 $g:V \rightarrow\R^p$가 있을 때, $a \in U$에서 $f$�
 
 이 때, 다음을 증명하여라.
 
-$$ \begin{gathered} g \circ f \text{ is diffrentiable at } a \\ D^{(g \circ f)(a)} = D^{g(f(a))} \circ Df(a) \end{gathered} $$
+$$ \begin{gathered} g \circ f \text{ is diffrentiable at } a \\ D{(g \circ f)(a)} = D{g(f(a))} \circ Df(a) \end{gathered} $$
 
 **Proof**
 
 함수 $r : \R^n \rightarrow \R^m$과 함수 $s : \R^m\rightarrow\R^p$를 다음과 같이 정의하자.
 
-$$ \begin{gathered} r(h) = f(a+h) - f(a) - Df(a)(h) \\ s(h) = g(f(a)+h) - g(f(a)) - D^{g(f(a))}(h) \end{gathered} $$
+$$ \begin{gathered} r(h) = f(a+h) - f(a) - Df(a)(h) \\ s(h) = g(f(a)+h) - g(f(a)) - Dg(f(a))(h) \end{gathered} $$
 
 따라서, $r,s$의 정의에 의해 다음이 성립한다.
 
@@ -245,7 +212,7 @@ $$ g(f(a+h)) - g(f(a)) - D^{g(f(a))}(Df(a)(h)) = D^{g(f(a))}(r(h)) + s(\Delta f)
 
 이 때, 보조명제3.1에 의해 다음이 성립한다.
 
-$$ \lim_{h\rightarrow 0_n} \frac{1}{\norm{h}} \left( g(f(a+h)) - g(f(a)) - D^{g(f(a))}(Df(a)(h)) \right) = 0_n $$
+$$ \lim_{h\rightarrow 0_n} \frac{1}{\norm{h}} \left( g(f(a+h)) - g(f(a)) - D^{g(f(a))}(Df(a)(h)) \right) = 0_p $$
 
 $D^{g(f(a))}$와 $Df(a)$ 모두 linear map임으로 다음이 성립한다.
 

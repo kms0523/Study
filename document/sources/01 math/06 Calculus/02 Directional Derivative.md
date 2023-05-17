@@ -26,20 +26,29 @@ $a \in U$에서 $v\in \R^n \st \norm{v}=1$ 방향으로의 $f$의 `방향 미분
 
 $$ D_vf(a) = \lim_{h \rightarrow 0}\frac{ f(a + h v) - f (a)}{h} $$
 
-### Partial Derivative
+### 참고1
+$D_vf(a)$는 $\R^m$의 element, 즉 vector이다.
+
+$$ D_vf(a) = \begin{bmatrix} D_vf_1(a) \\ \vdots \\ D_vf_m(a) \end{bmatrix} $$
+
+### 참고2(Partial Derivative)
 $\R^n$의 standard basis인 $e_i$방향의 directional derivative를 다음과 같이 표현한다.
 
-$$ D_{e_i}f(a) = \lim_{h \rightarrow 0} \frac{1}{h}(f(a^1, \cdots, a^i + h, \cdots, a^n) - f(a^1, \cdots, a^n)) = \pdiff{f}{x_i} $$
+$$ D_{e_i}f(a) = \lim_{h \rightarrow 0} \frac{1}{h}(f(a^1, \cdots, a^i + h, \cdots, a^n) - f(a^1, \cdots, a^n)) = \pdiff{f}{x_i}(a) $$
 
 이를 `편미분(partial derivative)`라고 한다.
 
-### 참고1
+당연하게, $\pdiff{f}{x_i}(a) \in \R^m$도 vector이다.
+
+$$ \pdiff{f}{x_i}(a) = \begin{bmatrix} \pdiff{f_1}{x_i}(a) \\ \vdots \\ \pdiff{f_m}{x_i}(a) \end{bmatrix} $$
+
+### 참고3
 편미분은 다변수 함수를 일변수 함수처럼 보고 미분하는 방식이다.
 
 다시 말해, 나머지 변수는 전부 상수로 간주하고 한 변수에 대해서 미분을 구하는 방식이다.
 
 ### 명제1
-$\R^n$의 open set $U$와 linear map $f: U \rightarrow \R$이 있다고 하자.
+$\R^n$의 open set $U$와 linear map $f: U \rightarrow \R^m$이 있다고 하자.
 
 $a \in U$에서 $f$의 partial derivatives가 존재할 때, 다음을 증명하여라.
 

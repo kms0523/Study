@@ -33,6 +33,9 @@
     <ClCompile Include="test_enum_class.cpp">
       <Filter>STD</Filter>
     </ClCompile>
+    <ClCompile Include="test_class.cpp">
+      <Filter>STD</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />
