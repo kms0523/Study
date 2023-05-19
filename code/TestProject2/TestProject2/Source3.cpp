@@ -1,6 +1,4 @@
-#include "Header3.h"
-
-void C::f2(void)
+namespace
 {
-	this->f();
+	void test(void) {};
 }

@@ -141,3 +141,31 @@ using namespace keyword를 대괄호 밖에서 사용하는 경우, 위의 예�
 
 > Reference  
 > [Blog](https://nerdooit.github.io/2020/09/08/cpp_book_2.html)
+
+
+## Anonymous Namespace
+아래 예시 코드를 보자
+``` cpp
+//cpp1
+namespace
+{
+void test(void) {};
+}
+void test2(void) {};
+
+//cpp2
+namespace
+{
+void test(void) {};
+}
+void test2(void) {};
+```
+
+anonymous namespace는 파일 내에서 고유한 namespace 이름을 갖는다.
+
+따라서 cpp1에 test2는 `[uniquecpp1]::test2()`가 되고 cpp2에 test2는 `[uniquecpp2]::test2()`가 된다.
+
+그럼으로 `test()`의 경우 ODR에 위배되지만 `test2()`는 ODR에 위반되지 않는다.
+
+> Reference  
+> [cppreference](https://en.cppreference.com/w/cpp/language/namespace)

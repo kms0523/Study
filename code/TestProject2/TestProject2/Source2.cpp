@@ -1,8 +1,5 @@
-#include "Header2.h"
 
-#include "Header.hpp"
-
-void B::f(void)
+namespace
 {
-	_a.function();
+void test(void) {};
 }

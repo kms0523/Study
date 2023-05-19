@@ -196,47 +196,43 @@ $$ \begin{gathered} g \circ f \text{ is diffrentiable at } a \\ D{(g \circ f)(a)
 
 함수 $r : \R^n \rightarrow \R^m$과 함수 $s : \R^m\rightarrow\R^p$를 다음과 같이 정의하자.
 
-$$ \begin{gathered} r(h) = f(a+h) - f(a) - Df(a)(h) \\ s(h) = g(f(a)+h) - g(f(a)) - Dg(f(a))(h) \end{gathered} $$
+$$ \begin{gathered} r(h) = f(a+h) - f(a) - Df(a)(h) \\ s(t) = g(f(a)+t) - g(f(a)) - Dg(f(a))(t) \end{gathered} $$
 
-따라서, $r,s$의 정의에 의해 다음이 성립한다.
+$T_1 = Df(a), T_2 = Dg(f(a))$로 두고 $\Delta f(h) = r(h) + T_1(h)$라고 할 떄, $r,s$의 정의에 의해 다음이 성립한다.
 
-$$ \begin{aligned} g(f(a+h)) &= g(f(a) + r(h) + Df(a)(h)) \\&= g(f(a) + \Delta f) \\&= g(f(a)) + D^{g(f(a))}(\Delta f) + s(\Delta f)  \end{aligned} $$
+$$ \begin{aligned} (g\circ f)(a+h) &= g(f(a) + r(h) + T_1(h)) \\&= g(f(a) + \Delta f) \\&= (g\circ f)(a) + T_2(\Delta f) + s(\Delta f)  \end{aligned} $$
 
-Total derivative의 정의에 의해 $D^{g(f(a))}$는 linear map임으로 다음이 성립한다.
+$T_2$는 linear map임으로 다음이 성립한다.
 
-$$ \begin{aligned} D^{g(f(a))}(\Delta f) &= D^{g(f(a))}(r(h) + Df(a)(h))) \\&= D^{g(f(a))}(r(h)) + D^{g(f(a))}(Df(a)(h)) \end{aligned} $$
+$$ \begin{aligned} T_2(\Delta f) &= T_2(r(h) + T_1(h)) \\&= (T_2 \circ r)(h) + (T_2 \circ T_1)(h) \end{aligned} $$
 
 따라서, 다음이 성립한다.
 
-$$ g(f(a+h)) - g(f(a)) - D^{g(f(a))}(Df(a)(h)) = D^{g(f(a))}(r(h)) + s(\Delta f) $$
+$$ (g \circ f)(a+h) - (g\circ f)(a) - (T_2 \circ T_1)(h) = (T_2 \circ r)(h) + s(\Delta f) $$
 
 이 때, 보조명제3.1에 의해 다음이 성립한다.
 
-$$ \lim_{h\rightarrow 0_n} \frac{1}{\norm{h}} \left( g(f(a+h)) - g(f(a)) - D^{g(f(a))}(Df(a)(h)) \right) = 0_p $$
+$$ \lim_{h\rightarrow 0_n} \frac{1}{\norm{h}} \left( (g \circ f)(a+h) - (g\circ f)(a) - (T_2 \circ T_1)(h) \right) = 0_p $$
 
-$D^{g(f(a))}$와 $Df(a)$ 모두 linear map임으로 다음이 성립한다.
+$T_2$와 $T_1$ 모두 linear map임으로 다음이 성립한다.
 
-$$ D^{g(f(a))} \circ Df(a) \text{ is an linear map} $$
+$$ T_2 \circ T_1 \text{ is an linear map} $$
 
 따라서, total derivative의 정의에 의해 다음이 성립한다.
 
-$$ \begin{gathered} f \circ g \text{ is diffrentiable at } a \\ D^{(g \circ f)(a)} = D^{g(f(a))} \circ Df(a) \end{gathered} \qed $$
+$$ \begin{gathered} f \circ g \text{ is diffrentiable at } a \\ D{(g \circ f)(a)} = T_2 \circ T_1 = D{g(f(a))} \circ Df(a) \end{gathered} \qed $$
 
 #### 보조명제3.1
 다음을 증명하여라.
 
-$$ \lim_{h\rightarrow 0_n} \frac{1}{\norm{h}} \left( g(f(a+h)) - g(f(a)) - D^{g(f(a))}(Df(a)(h)) \right) = 0_n $$
+$$ \lim_{h\rightarrow 0_n} \frac{1}{\norm{h}} \left( (T_2 \circ r)(h) + s(\Delta f) \right) = 0_p $$
 
 **Proof**
-
-$g(f(a+h)) - g(f(a)) - D^{g(f(a))}(Df(a)(h)) = D^{g(f(a))}(r(h)) + s(\Delta f)$임으로 다음을 증명하자.
-
-$$ \lim_{h\rightarrow 0_n} \frac{1}{\norm{h}} \left( D^{g(f(a))}(r(h)) + s(\Delta f) \right) = 0_n $$
 
 [첫번째 항]  
 다음이 성립한다. 
 
-$$ \lim_{h\rightarrow 0_n} \frac{1}{\norm{h}}\norm{D^{g(f(a))}(r(h))} \le \norm{D^{g(f(a))}}\lim_{h\rightarrow 0_n} \frac{1}{\norm{h}}\norm{r(h)} $$
+$$ \lim_{h\rightarrow 0_n} \frac{1}{\norm{h}}\norm{(T_2 \circ r)(h)} \le \norm{T_2}\lim_{h\rightarrow 0_n} \frac{1}{\norm{h}}\norm{r(h)} $$
 
 전제에 의해 $f$는 $a$에서 differentiable함으로 다음이 성립한다.
 
@@ -244,24 +240,20 @@ $$ \lim_{h\rightarrow 0_n} \frac{r(h)}{\norm{h}} = 0_n \iff \lim_{h\rightarrow 0
 
 따라서, 위의 결과를 종합하면 다음이 성립한다.
 
-$$ \lim_{h\rightarrow 0_n} \frac{1}{\norm{h}}D^{g(f(a))}(r(h)) = 0_n \qed $$
+$$ \lim_{h\rightarrow 0_n} \frac{1}{\norm{h}}(T_2 \circ r)(h) = 0_p \qed $$
 
 [두번째 항]  
 $\Delta f$를 풀어 쓰면 다음과 같다.
 
-$$ s(\Delta f) = s(r(h) + Df(a)(h))) $$
+$$ s(\Delta f) = s(r(h) + T_1(h))) $$
 
-전제에 의해 $\lim_{h\rightarrow 0_n} \frac{r(h)}{\norm{h}} = 0_n$임으로 보조명제3.1.1에 의해 다음이 성립한다.
+전제에 의해 $\lim_{h\rightarrow 0_n} \frac{r(h)}{\norm{h}} = 0_m$임으로 보조명제3.1.1에 의해 다음이 성립한다.
 
-$$ \exist \delta_1 \in \R^+ \st \norm{h} < \delta_1 \implies \norm{r(h)} < \norm{h} $$
+$$ \exist \delta_1 \in \R^+ \st \forall h \in U, \enspace 0 < \norm{h} < \delta_1 \implies \norm{r(h)} < \norm{h} $$
 
-따라서, $\norm{h}<\delta_1$일 떄, 다음이 성립한다.
+이 떄, 전제에 의해 $\lim_{t\rightarrow 0_n} \frac{s(h)}{\norm{h}} = 0_n$임으로 metric space의 limt의 정의에 의해 다음이 성립한다.
 
-$$ \begin{aligned} \norm{r(h) + Df(a)(h)} &\le \norm{r(h)} + \norm{Df(a)(h)} \\&\le \norm{r(h)} + \norm{Df(a)}\norm{h} \\&< \left(\norm{Df(a)}+1\right)\norm{h} \end{aligned} $$
-
-이 떄, 전제에 의해 $\lim_{h\rightarrow 0_n} \frac{s(h)}{\norm{h}} = 0_n$임으로 metric space의 limt의 정의에 의해 다음이 성립한다.
-
-$$ \forall \epsilon \in \R^+, \quad \delta \in \R^+ \st \norm{h} < \delta \implies \norm{s(h)}<\epsilon\norm{h}$$
+$$ \forall \epsilon \in \R^+, \quad \delta \in \R^+ \st \forall h \in U, \enspace 0 < \norm{h} < \delta \implies \norm{s(h)}<\epsilon\norm{h}$$
 
 그럼으로 다음도 성립한다.
 
@@ -270,6 +262,11 @@ $$ \forall \epsilon \in \R^+, \quad \delta_\epsilon \in (0, \delta_1) \st \norm{
 따라서, $\norm{h}<\delta_\epsilon$일 때, $\delta_\epsilon$의 정의에 의해 다음이 성립한다.
 
 $$ \begin{aligned} s(r(h) + Df(a)(h)) &\le \epsilon\norm{Df(a)+r(h)} \\&< \epsilon\left(\norm{Df(a)}+1\right)\norm{h} \\ \frac{s(r(h) + Df(a)(h))}{\norm{h}} &< \epsilon\left(\norm{Df(a)}+1\right) \end{aligned} $$
+
+따라서, $\norm{h}<\delta_1$일 떄, 다음이 성립한다.
+
+$$ \begin{aligned} \norm{r(h) + T_1(h)} &\le \norm{r(h)} + \norm{T_1(h)} \\&\le \norm{r(h)} + \norm{T_1}\norm{h} \\&< \left(\norm{T_1}+1\right)\norm{h} \end{aligned} $$
+
 
 $\epsilon'$을 다음과 같이 정의하자.
 
@@ -302,6 +299,26 @@ $$ \forall\epsilon \in \R^+, \quad \exist \delta \st \norm{h} < \delta \implies 
 > Reference  
 > {cite}`hubbard` Appendix4  
 > [illinois note](https://faculty.math.illinois.edu/~carty/ChainRuleNotesSlides.pdf)
+
+### 명제4
+$\R$의 open set $U$와 $f : U \rightarrow R^m$이 있다고 하자.
+
+$a \in U$가 있을 때, 다음을 증명하여라.
+
+$$ (Df(a))(1) = f'(a) $$
+
+**Proof**
+
+Total derivative의 정의에 의해 다음이 성립한다.
+
+$$ \begin{aligned} & \lim_{h\rightarrow 0}\frac{f(a+h) - f(a) - (Df(a))(h)}{|h|} = 0 \\\implies& \lim_{h\rightarrow 0}\frac{f(a+h) - f(a)}{|h|} - \frac{h}{|h|}(Df(a))(1) = 0 \\ \implies& \begin{gathered} \lim_{h\rightarrow 0^+}\frac{f(a+h) - f(a)}{h} = (Df(a))(1) \\ \lim_{h\rightarrow 0^-}\frac{f(a+h) - f(a)}{h} = (Df(a))(1) \end{gathered} \\\implies& \lim_{h\rightarrow 0}\frac{f(a+h) - f(a)}{h} = (Df(a))(1) \\\implies& f'(a) = (Df(a))(1) \qed \end{aligned} $$
+
+#### 참고1
+$Df(a) \in L(\R,\R)$인 linear map이고 $1, f'(a) \in \R$인 vector이다.
+
+#### 참고2
+$J_f = \frak{m}_\epsilon^\epsilon(Df(a)) = \begin{bmatrix} f'(a) \end{bmatrix}$이다.
+
 
 ### 명제2
 $\R^n$의 open set $U$와 $f: U \rightarrow \R$이 있다고 하자.
