@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Partial Derivative" href="03%20Partial%20Derivatives.html" />
+    <link rel="next" title="Total Derivative" href="03%20Total%20Derivative.html" />
     <link rel="prev" title="Derivatives" href="01%20Derivatives.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -347,17 +347,42 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/03%20Subgroup.html">
+      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/03%20Group%20Homomorphism.html">
+       Group Homomorphism
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/04%20Kernel.html">
+       Kernel
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/05%20Image.html">
+       Image
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/11%20Subgroup.html">
        Subgroup
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/04%20Span.html">
+      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/12%20Span.html">
        Span
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/05%20Group%20Action.html">
+      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/13%20Coset.html">
+       Coset
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/14%20Cyclic%20Group.html">
+       Cyclic Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/51%20Group%20Action.html">
        Group Action
       </a>
      </li>
@@ -895,22 +920,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03%20Partial%20Derivatives.html">
-     Partial Derivative
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04%20Total%20Derivative.html">
+    <a class="reference internal" href="03%20Total%20Derivative.html">
      Total Derivative
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="06%20Definite%20Integral.html">
+    <a class="reference internal" href="11%20Definite%20Integral.html">
      Definite Integral
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="07%20Fundamental%20Theorem%20of%20Calculus.html">
+    <a class="reference internal" href="21%20Fundamental%20Theorem%20of%20Calculus.html">
      Fundamental Theorem of Calculus
     </a>
    </li>
@@ -1937,51 +1957,18 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#alternative-form">
-     참고3(Alternative Form)
+    <a class="reference internal nav-link" href="#partial-derivative">
+     참고2(Partial Derivative)
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#altenative-form1">
-       Altenative form1
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id3">
-         예시
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#alternative-form2">
-       Alternative form2
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id4">
-         참고1
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id5">
-         참고2
-        </a>
-        <ul class="nav section-nav flex-column">
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#id6">
-           예시
-          </a>
-         </li>
-        </ul>
-       </li>
-      </ul>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     명제
+    <a class="reference internal nav-link" href="#id3">
+     참고3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     명제1
     </a>
    </li>
   </ul>
@@ -2021,51 +2008,18 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#alternative-form">
-     참고3(Alternative Form)
+    <a class="reference internal nav-link" href="#partial-derivative">
+     참고2(Partial Derivative)
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#altenative-form1">
-       Altenative form1
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id3">
-         예시
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#alternative-form2">
-       Alternative form2
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id4">
-         참고1
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id5">
-         참고2
-        </a>
-        <ul class="nav section-nav flex-column">
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#id6">
-           예시
-          </a>
-         </li>
-        </ul>
-       </li>
-      </ul>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     명제
+    <a class="reference internal nav-link" href="#id3">
+     참고3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     명제1
     </a>
    </li>
   </ul>
@@ -2106,94 +2060,41 @@ title="Print to PDF"
 \[ D_vf(a) = \lim_{h \rightarrow 0}\frac{ f(a + h v) - f (a)}{h} \]</div>
 <section id="id2">
 <h3>참고1<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<p>일변수 함수에서 미분계수가 존재하는 점에서 미분가능하다고 한다.</p>
-<p>따라서, 다변수 함수에서는 모든 방향에서 directional derivative가 존재하는 경우 미분가능하다고 정의하는것이 자연스러운 선택일 것이다.</p>
-<p>그렇다면 이렇게 정의한 다변수함수의 미분가능성이 기존의 일변수 함수의 미분가능성과 같은 성질을 가지고 있는지 확인해보자.</p>
-<p>일변수 함수에서 미분가능성에 대해 다음 두가지 성질이 성립함을 알고 있다.</p>
-<ol class="simple">
-<li><p>미분가능하면 연속이다.</p></li>
-<li><p>chain rule이 성립한다. <span class="math notranslate nohighlight">\((f\circ g)' = f'g'\)</span></p></li>
-</ol>
-<p>하지만 현재 정의는 위 성질이 만족되지 않는 반례가 존재한다.</p>
-<p>1번의 반례를 보이기 위해 함수 <span class="math notranslate nohighlight">\(f(x,y)\)</span>를 다음과 같이 정의하자.</p>
+<p><span class="math notranslate nohighlight">\(D_vf(a)\)</span>는 <span class="math notranslate nohighlight">\(\R^m\)</span>의 element, 즉 vector이다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} f(x,y) = \begin{cases} 0 &amp; y \le 0 \lor x \le \sqrt{y} \\ 1 &amp; \text{else} \end{cases} \end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(f\)</span>는 <span class="math notranslate nohighlight">\((0,0)\)</span>에서 불연속이지만 임의의 <span class="math notranslate nohighlight">\(v\)</span>에 대해서 <span class="math notranslate nohighlight">\(D_vf(0,0)\)</span>은 잘 정의된다.</p>
-<p>즉, 위의 정의대로라면 (0,0)에서 미분가능하지만 연속이 아닌 <span class="math notranslate nohighlight">\(f\)</span>가 존재하게 된다.</p>
-<p>따라서, directional derivative의 존재성으로 미분가능성을 정의하기에는 부족한 점이 있다는것을 알 수 있다.</p>
+\[\begin{split} D_vf(a) = \begin{bmatrix} D_vf_1(a) \\ \vdots \\ D_vf_m(a) \end{bmatrix} \end{split}\]</div>
 </section>
-<section id="alternative-form">
-<h3>참고3(Alternative Form)<a class="headerlink" href="#alternative-form" title="Permalink to this headline">#</a></h3>
-<p>위의 정의를 다차원으로 확장하기 위해 open set <span class="math notranslate nohighlight">\(U \subset \R^n\)</span>와 함수 <span class="math notranslate nohighlight">\(f : U \rightarrow \R^m\)</span>이 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(a \in U\)</span>에서 <span class="math notranslate nohighlight">\(f'\)</span>은 <span class="math notranslate nohighlight">\(U\)</span>의 변화량과 그에 따른 <span class="math notranslate nohighlight">\(f\)</span>의 변화량의 비율의 극한임으로 다음과 같다.</p>
+<section id="partial-derivative">
+<h3>참고2(Partial Derivative)<a class="headerlink" href="#partial-derivative" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\R^n\)</span>의 standard basis인 <span class="math notranslate nohighlight">\(e_i\)</span>방향의 directional derivative를 다음과 같이 표현한다.</p>
 <div class="math notranslate nohighlight">
-\[ f'(a) := \lim_{h \rightarrow 0_{\R^n}} \frac{1}{h}(f(a + h) - f(a)) \]</div>
-<p>이 떄, <span class="math notranslate nohighlight">\(h \in \R^n\)</span>임으로 vector로 나눈다는것은 정의되지 않은 연산이다.</p>
-<p>따라서, 다차원으로의 확장을 고려하면 기존의 정의를 다른 형태로 변형해야 한다.</p>
-<section id="altenative-form1">
-<h4>Altenative form1<a class="headerlink" href="#altenative-form1" title="Permalink to this headline">#</a></h4>
-<p>다차원 확장을 고려하여 정의를 다음과 같이 변경해보자.</p>
+\[ D_{e_i}f(a) = \lim_{h \rightarrow 0} \frac{1}{h}(f(a^1, \cdots, a^i + h, \cdots, a^n) - f(a^1, \cdots, a^n)) = \pdiff{f}{x_i}(a) \]</div>
+<p>이를 <code class="docutils literal notranslate"><span class="pre">편미분(partial</span> <span class="pre">derivative)</span></code>라고 한다.</p>
+<p>당연하게, <span class="math notranslate nohighlight">\(\pdiff{f}{x_i}(a) \in \R^m\)</span>도 vector이다.</p>
 <div class="math notranslate nohighlight">
-\[ f'(a) := \lim_{h \rightarrow 0} \frac{1}{|h|}(f(a + h) - f(a)) \]</div>
-<p>이 경우에는 다차원으로 확장하더라도 vector의 크기로 나누기 때문에 정의되지 않은 연산은 없다.</p>
-<p>하지만 이 경우에는 <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span>로 가면서 부호 문제가 발생하여 기존의 미분 가능하던 함수들이 미분 불가능하게 된다.</p>
+\[\begin{split} \pdiff{f}{x_i}(a) = \begin{bmatrix} \pdiff{f_1}{x_i}(a) \\ \vdots \\ \pdiff{f_m}{x_i}(a) \end{bmatrix} \end{split}\]</div>
+</section>
 <section id="id3">
-<h5>예시<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h5>
-<p><span class="math notranslate nohighlight">\(f(x) = x^2\)</span>라 하자.</p>
-<p><span class="math notranslate nohighlight">\(f'(a)\)</span>를 계산하면 다음과 같다.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} f'(a) = \lim_{h \rightarrow 0} \frac{1}{|h|}(2ah + h^2) = \begin{cases} 2a &amp; h&gt;0 \\ -2a &amp; h&lt;0 \end{cases} \end{split}\]</div>
-<p>따라서, 극한값이 존재하지 않아 미분불가능해지는 문제가 발생한다.</p>
+<h3>참고3<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>편미분은 다변수 함수를 일변수 함수처럼 보고 미분하는 방식이다.</p>
+<p>다시 말해, 나머지 변수는 전부 상수로 간주하고 한 변수에 대해서 미분을 구하는 방식이다.</p>
 </section>
-</section>
-<section id="alternative-form2">
-<h4>Alternative form2<a class="headerlink" href="#alternative-form2" title="Permalink to this headline">#</a></h4>
-<p>기존의 미분 정의로부터 다음 형태를 유도할 수 있다.</p>
-<div class="math notranslate nohighlight">
-\[ \lim_{h \rightarrow 0} \frac{1}{h} \Big( f(a + h) - f(a) - f'(a)h \Big) = 0 \]</div>
-<p>따라서, 위의 형태와 다차원으로 확장을 고려하여 다음과 같이 정의를 변경해보자.</p>
-<div class="math notranslate nohighlight">
-\[ \lim_{h \rightarrow 0} \frac{1}{|h|} \Big( f(a+h)-f(a)-L(h) \Big) = 0 \]</div>
-<p>이 때, 위의 식을 만족하는 함수 <span class="math notranslate nohighlight">\(L(h)\)</span>를 <span class="math notranslate nohighlight">\(hf'(a)\)</span>라고 정의하면 Alternative form1과 다르게 부호 문제가 발생하지 않는다.</p>
 <section id="id4">
-<h5>참고1<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h5>
-<p><span class="math notranslate nohighlight">\(f(a + h) - f(a)\)</span>항은 <span class="math notranslate nohighlight">\(\Delta f\)</span>를 나타내고, <span class="math notranslate nohighlight">\(L(a)h\)</span>항은 <span class="math notranslate nohighlight">\(\Delta f\)</span>를 선형근사한 값으로 볼 수 있다.</p>
-</section>
-<section id="id5">
-<h5>참고2<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h5>
-<p>위의 식이 성립하기 위해서는 <span class="math notranslate nohighlight">\(\Delta f\)</span>와 선형근사인 <span class="math notranslate nohighlight">\(L(a)h\)</span>사이의 차이가 <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span>일 때, 선형보다 작아야 한다.</p>
-<section id="id6">
-<h6>예시<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h6>
-<p>linear map <span class="math notranslate nohighlight">\(L,D\)</span>가 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(L\)</span>은 <span class="math notranslate nohighlight">\(\Delta f - L(h) = c_1h, \enspace c_1 \in \R - \{ 0 \}\)</span>로 차이가 선형이라고 하면 다음과 같다.</p>
+<h3>명제1<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\R^n\)</span>의 open set <span class="math notranslate nohighlight">\(U\)</span>와 linear map <span class="math notranslate nohighlight">\(f: U \rightarrow \R^m\)</span>이 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(a \in U\)</span>에서 <span class="math notranslate nohighlight">\(f\)</span>의 partial derivatives가 존재할 때, 다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
-\[ \lim_{h \rightarrow 0} \frac{1}{|h|} \Big( f(a+h)-f(a)-L(h) \Big) = \lim_{h \rightarrow 0}\frac{c_1h}{|h|} = \pm c_1 \neq 0 \]</div>
-<p>즉, 차이가 선형인 경우 위의 식을 만족시키지 못한다.</p>
-<p><span class="math notranslate nohighlight">\(D\)</span>는 <span class="math notranslate nohighlight">\(\Delta f - D(h) = c_2h^2, \enspace c_2 \in \R - \{ 0 \}\)</span>로 차이가 선형보다 작다고 하면 다음과 같다.</p>
-<div class="math notranslate nohighlight">
-\[ \lim_{h \rightarrow 0} \frac{1}{|h|} \Big( f(a+h)-f(a)-D(h) \Big) = \lim_{h \rightarrow 0}\frac{c_2 h^2}{|h|} = 0 \]</div>
-<p>즉, 차이가 선형보다 작은 경우 위의 식을 만족시킨다.</p>
-</section>
-</section>
-</section>
-</section>
-<section id="id7">
-<h3>명제<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
-<p>open set <span class="math notranslate nohighlight">\(U \subset \R^n\)</span>과 함수 <span class="math notranslate nohighlight">\(f : U \rightarrow \R^m\)</span>이 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(\R^m\)</span>의 basis를 <span class="math notranslate nohighlight">\(\beta\)</span>하고 <span class="math notranslate nohighlight">\(\forall a \in U\)</span>에서 <span class="math notranslate nohighlight">\(f\)</span>가 differentiable일 때, 다음을 증명하여라.</p>
-<div class="math notranslate nohighlight">
-\[ Df\text{ is well-defined} \enspace\land\enspace \mathfrak{m_\beta}(D_vf(a)) = \mathfrak{m_\beta}(J_f(a)v) \]</div>
+\[ \pdiff{f}{x_i}(a) = f(e_i) \]</div>
 <p><strong>Proof</strong></p>
-<p><span class="math notranslate nohighlight">\(f\)</span>가 differentiable 함으로 다음이 성립한다.</p>
+<p>Partial derivatve의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{aligned} &amp; \lim_{h \rightarrow 0}\frac{f(a + hv) -f (a) - L_a(hv)}{\norm{hv}} = 0 \\\implies&amp; \lim_{h \rightarrow 0}\frac{f(a + hv) -f (a) - hL_a(v)}{h\norm{v}} = 0 \\\implies&amp; \lim_{h \rightarrow 0}\frac{f(a + hv) -f (a) - hL_a(v)}{h} = 0 \\\implies&amp; \lim_{h \rightarrow 0}\frac{f(a + hv) -f (a)}{h} = L_a(v) \end{aligned} \end{split}\]</div>
-<p>이 떄, <span class="math notranslate nohighlight">\(f\)</span>가 <span class="math notranslate nohighlight">\(a\)</span>에서 differentiable 함으로, 선형변환 <span class="math notranslate nohighlight">\(L_a\)</span>은 잘 정의된다.</p>
-<p>따라서, 극한값이 <span class="math notranslate nohighlight">\(L_a(v)\)</span>로 존재함으로, 함수 <span class="math notranslate nohighlight">\(Df\)</span>는 잘 정의된다.</p>
-<p>또한, <span class="math notranslate nohighlight">\(D_vf(a) = L_a(v)\)</span>이고 Jacobian matrix의 정의에 따라 <span class="math notranslate nohighlight">\(L_a(v) = J_f(a)v\)</span></p>
-<blockquote>
-<div><p>Reference<br />
-<span id="id8">[<a class="reference internal" href="../../99%20References/references.html#id12" title="John Hamal Hubbard and Barbara Burke Hubbard. Vector calculus, linear algebra, and differential forms: A unified approach. Matrix Editions, 2015.">Hubbard and Hubbard, 2015</a>]</span> Proposition 1.7.14.</p>
-</div></blockquote>
+\[ \pdiff{f}{x_i}(a) = \lim_{h \rightarrow 0}\frac{f(a + h e_i) -f (a)}{h} \]</div>
+<p><span class="math notranslate nohighlight">\(f\)</span>가 linear map임으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \frac{f(a + h e_i) -f (a)}{h} = \frac{f(a) + hf( e_i) -f (a)}{h} =  f(e_i) \]</div>
+<p>따라서, 위의 결과를 종합하면 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \pdiff{f}{x_i}(a) = f(e_i) \qed \]</div>
 </section>
 </section>
 </section>
@@ -2232,10 +2133,10 @@ title="Print to PDF"
             <p class="prev-next-title">Derivatives</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="03%20Partial%20Derivatives.html" title="next page">
+    <a class='right-next' id="next-link" href="03%20Total%20Derivative.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Partial Derivative</p>
+        <p class="prev-next-title">Total Derivative</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

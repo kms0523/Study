@@ -345,17 +345,42 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/03%20Subgroup.html">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/03%20Group%20Homomorphism.html">
+       Group Homomorphism
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/04%20Kernel.html">
+       Kernel
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/05%20Image.html">
+       Image
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/11%20Subgroup.html">
        Subgroup
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/04%20Span.html">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/12%20Span.html">
        Span
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/05%20Group%20Action.html">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/13%20Coset.html">
+       Coset
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/14%20Cyclic%20Group.html">
+       Cyclic Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/51%20Group%20Action.html">
        Group Action
       </a>
      </li>
@@ -893,22 +918,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20math/06%20Calculus/03%20Partial%20Derivatives.html">
-     Partial Derivative
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20math/06%20Calculus/04%20Total%20Derivative.html">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/03%20Total%20Derivative.html">
      Total Derivative
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20math/06%20Calculus/06%20Definite%20Integral.html">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/11%20Definite%20Integral.html">
      Definite Integral
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20math/06%20Calculus/07%20Fundamental%20Theorem%20of%20Calculus.html">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/21%20Fundamental%20Theorem%20of%20Calculus.html">
      Fundamental Theorem of Calculus
     </a>
    </li>
@@ -1993,6 +2013,11 @@ title="Print to PDF"
      Derive 클래스의 복사
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#protected-member">
+     부모 클래스의 protected member 함수
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -2103,6 +2128,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#derive">
      Derive 클래스의 복사
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#protected-member">
+     부모 클래스의 protected member 함수
     </a>
    </li>
   </ul>
@@ -2552,6 +2582,37 @@ title="Print to PDF"
 <p>이런 문제를 해결하기 위해서 Derive 클래스의 복사생성자를 작성할 때는 initializer list를 사용해서 Parent 클래스의 복사생성자가 먼저 호출되게 해줘야 한다.</p>
 <p>또한 Derive 클래스의 복사 연산자를 구현할 때도 가장 먼저 Parent class의 복사 연산자가 먼저 호출되게 해줘야 한다.</p>
 <p>이러한 과정이 주석처리된 코드에 나타나있다.</p>
+</section>
+<section id="protected-member">
+<h3>부모 클래스의 protected member 함수<a class="headerlink" href="#protected-member" title="Permalink to this headline">#</a></h3>
+<p>다음 예제 코드를 보자</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">protected</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">test</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">B</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">A</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">test</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//a.test(); //Error!</span>
+<span class="w">        </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">test</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>protected acess는 <code class="docutils literal notranslate"><span class="pre">B</span></code> class가 가지고 있는 <code class="docutils literal notranslate"><span class="pre">A</span></code>class 객체에만 적용된다.</p>
+<p>새롭게 생성한 <code class="docutils literal notranslate"><span class="pre">a</span></code> 객체는</p>
+<p>The protected access only applies to parent members of your own current object type. You don’t get public access to the protected members of other objects of the parent type.</p>
+<blockquote>
+<div><p>Reference<br />
+<a class="reference external" href="https://stackoverflow.com/questions/24636234/access-to-protected-constructor-of-base-class">stackoverflow</a></p>
+</div></blockquote>
 </section>
 </section>
 <section id="friend-class">

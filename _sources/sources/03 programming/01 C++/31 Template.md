@@ -194,6 +194,11 @@ func1(1) // instantiation fail! because T2 = ??
 func2(1) // instantiation success! T1 = int T2 = int
 ```
 
+### 참고1
+omit-angle-brackets-when-template-has-default-parameters
+> Reference  
+> [stackoverflow](https://stackoverflow.com/questions/55028330/omit-angle-brackets-when-template-has-default-parameters)
+
 ## Sepcialization
 ```cpp
 // A.h

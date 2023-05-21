@@ -21,6 +21,13 @@ $$ \lim_{t \rightarrow x}f(t) = y $$
 
 이 떄, $y$를 $t \rightarrow x$일 때 $f(t)$의 극한값이라고 한다.
 
+#### 예시
+$\R^n$의 openset $D$와 함수 $f:D\rightarrow \R^m$이 있다고 하자.
+
+$a \in D$에서 $f$가 $b\in \R^m$에 수렴한다는 말은 다음과 같다.
+
+$$ \begin{gathered} \lim_{x \rightarrow a} f(x) = b \\  \forall\epsilon \in \R^+, \enspace \exist\delta \in \R^+ \st \forall x \in D, \enspace 0 < \norm{a-x} < \delta \implies \norm{b - f(x)} < \epsilon \end{gathered} $$
+
 ### 참고3
 open ball을 이용해서 표현하면 다음과 같다.
 

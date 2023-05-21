@@ -347,17 +347,42 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/03%20Subgroup.html">
+      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/03%20Group%20Homomorphism.html">
+       Group Homomorphism
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/04%20Kernel.html">
+       Kernel
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/05%20Image.html">
+       Image
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/11%20Subgroup.html">
        Subgroup
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/04%20Span.html">
+      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/12%20Span.html">
        Span
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/05%20Group%20Action.html">
+      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/13%20Coset.html">
+       Coset
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/14%20Cyclic%20Group.html">
+       Cyclic Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../02%20Abstract%20Algebra/05%20Group/51%20Group%20Action.html">
        Group Action
       </a>
      </li>
@@ -895,22 +920,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03%20Partial%20Derivatives.html">
-     Partial Derivative
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04%20Total%20Derivative.html">
+    <a class="reference internal" href="03%20Total%20Derivative.html">
      Total Derivative
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="06%20Definite%20Integral.html">
+    <a class="reference internal" href="11%20Definite%20Integral.html">
      Definite Integral
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="07%20Fundamental%20Theorem%20of%20Calculus.html">
+    <a class="reference internal" href="21%20Fundamental%20Theorem%20of%20Calculus.html">
      Fundamental Theorem of Calculus
     </a>
    </li>
@@ -2078,12 +2098,12 @@ $<span class="math notranslate nohighlight">\( \exist\epsilon \in \R^+ \st B(a,\
 <p><span class="math notranslate nohighlight">\(\R\)</span>의 open set <span class="math notranslate nohighlight">\(U,V\)</span>와 함수 <span class="math notranslate nohighlight">\(f : U \rightarrow V, g : V \rightarrow \R^m\)</span>이 있다고 하자.</p>
 <p><span class="math notranslate nohighlight">\(f\)</span>가 <span class="math notranslate nohighlight">\(a \in U\)</span>에서 differentiable하고 <span class="math notranslate nohighlight">\(g\)</span>가 <span class="math notranslate nohighlight">\(f(a) \in V\)</span>에서 differentiable할 때, 다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{gathered} g \circ f \text{ is diffrentiable at } a \\ (g \circ f)'(a) =g'(f(a))f'(a) \end{gathered} \end{split}\]</div>
+\[\begin{split} \begin{gathered} g \circ f \text{ is diffrentiable at } a \\ (g \circ f)'(a) =(g' \circ f)(a)f'(a) \end{gathered} \end{split}\]</div>
 <p><strong>Proof</strong></p>
 <p>함수 <span class="math notranslate nohighlight">\(r : \R \rightarrow \R, s : \R \rightarrow \R^m\)</span>를 다음과 같이 정의하자.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{gathered} r(h) = f(a+h) - f(a) - f'(a)h \\ s(h) = g(f(a)+h) - g(f(a)) - g'(f(a))h \end{gathered} \end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(r\)</span>의 정의에 의해 다음이 성립한다.</p>
+\[\begin{split} \begin{gathered} r(h) = f(a+h) - f(a) - f'(a)h \\ s(t) = g(f(a)+t) - g(f(a)) - g'(f(a))t \end{gathered} \end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\Delta f(h) = r(h) + f'(a)h\)</span>라고 하면 <span class="math notranslate nohighlight">\(r\)</span>의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} \begin{aligned} (g\circ f)(a+h) &amp;= g(f(a+h)) \\&amp;= g(f(a) + r(h) + f'(a)h) \\&amp;= g(f(a) + \Delta f) \end{aligned} \end{split}\]</div>
 <p><span class="math notranslate nohighlight">\(s\)</span>의 정의에 의해 다음이 성립한다.</p>
@@ -2091,16 +2111,16 @@ $<span class="math notranslate nohighlight">\( \exist\epsilon \in \R^+ \st B(a,\
 \[ \begin{aligned} g(f(a) + \Delta f) = g(f(a)) + g'(f(a))\Delta f + s(\Delta f)  \end{aligned} \]</div>
 <p>이를 정리하면 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \frac{(g\circ f)(a+h) - (g\circ f)(a)}{h}  = g'(f(a))\frac{\Delta f}{h} + \frac{s(\Delta f)}{h} \]</div>
+\[ \frac{(g\circ f)(a+h) - (g\circ f)(a)}{h}  = (g'\circ f)(a)\frac{\Delta f}{h} + \frac{s(\Delta f)}{h} \]</div>
 <p>이 때, 보조명제1.1,1.2에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ \lim_{h\rightarrow0}\frac{\Delta f}{h} = f'(a), \enspace \lim_{h\rightarrow0}\frac{s(\Delta f)}{h} = 0_m \]</div>
 <p>따라서, 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \lim_{h\rightarrow0}\frac{(g\circ f)(a+h) - (g\circ f)(a)}{h}  = g'(f(a))f'(a) \]</div>
+\[ \lim_{h\rightarrow0}\frac{(g\circ f)(a+h) - (g\circ f)(a)}{h}  = (g'\circ f)(a)f'(a) \]</div>
 <p>미분의 정의에 의한 극한값이 존재함으로 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} \begin{gathered} g \circ f \text{ is diffrentiable at } a \\ (g \circ f)'(a) =g'(f(a))f'(a) \end{gathered} \qed \end{split}\]</div>
+\[\begin{split} \begin{gathered} g \circ f \text{ is diffrentiable at } a \\ (g \circ f)'(a) =(g'\circ f)(a)f'(a) \end{gathered} \qed \end{split}\]</div>
 <section id="id7">
 <h4>보조명제1.1<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
 <p>다음을 증명하여라.</p>

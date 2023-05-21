@@ -345,17 +345,42 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/03%20Subgroup.html">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/03%20Group%20Homomorphism.html">
+       Group Homomorphism
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/04%20Kernel.html">
+       Kernel
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/05%20Image.html">
+       Image
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/11%20Subgroup.html">
        Subgroup
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/04%20Span.html">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/12%20Span.html">
        Span
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/05%20Group%20Action.html">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/13%20Coset.html">
+       Coset
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/14%20Cyclic%20Group.html">
+       Cyclic Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../01%20math/02%20Abstract%20Algebra/05%20Group/51%20Group%20Action.html">
        Group Action
       </a>
      </li>
@@ -893,22 +918,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20math/06%20Calculus/03%20Partial%20Derivatives.html">
-     Partial Derivative
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20math/06%20Calculus/04%20Total%20Derivative.html">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/03%20Total%20Derivative.html">
      Total Derivative
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20math/06%20Calculus/06%20Definite%20Integral.html">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/11%20Definite%20Integral.html">
      Definite Integral
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20math/06%20Calculus/07%20Fundamental%20Theorem%20of%20Calculus.html">
+    <a class="reference internal" href="../../01%20math/06%20Calculus/21%20Fundamental%20Theorem%20of%20Calculus.html">
      Fundamental Theorem of Calculus
     </a>
    </li>
@@ -1943,6 +1963,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anonymous-namespace">
+   Anonymous Namespace
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -1985,6 +2010,11 @@ title="Print to PDF"
     </ul>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anonymous-namespace">
+   Anonymous Namespace
+  </a>
  </li>
 </ul>
 
@@ -2128,6 +2158,32 @@ title="Print to PDF"
 </div></blockquote>
 </section>
 </section>
+</section>
+<section id="anonymous-namespace">
+<h2>Anonymous Namespace<a class="headerlink" href="#anonymous-namespace" title="Permalink to this headline">#</a></h2>
+<p>아래 예시 코드를 보자</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//cpp1</span>
+<span class="k">namespace</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">test</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="n">test2</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+
+<span class="c1">//cpp2</span>
+<span class="k">namespace</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">test</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="n">test2</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+</pre></div>
+</div>
+<p>anonymous namespace는 파일 내에서 고유한 namespace 이름을 갖는다.</p>
+<p>따라서 cpp1에 test2는 <code class="docutils literal notranslate"><span class="pre">[uniquecpp1]::test2()</span></code>가 되고 cpp2에 test2는 <code class="docutils literal notranslate"><span class="pre">[uniquecpp2]::test2()</span></code>가 된다.</p>
+<p>그럼으로 <code class="docutils literal notranslate"><span class="pre">test()</span></code>의 경우 ODR에 위배되지만 <code class="docutils literal notranslate"><span class="pre">test2()</span></code>는 ODR에 위반되지 않는다.</p>
+<blockquote>
+<div><p>Reference<br />
+<a class="reference external" href="https://en.cppreference.com/w/cpp/language/namespace">cppreference</a></p>
+</div></blockquote>
 </section>
 </section>
 

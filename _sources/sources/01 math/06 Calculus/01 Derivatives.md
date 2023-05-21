@@ -37,15 +37,15 @@ $\R$의 open set $U,V$와 함수 $f : U \rightarrow V, g : V \rightarrow \R^m$�
 
 $f$가 $a \in U$에서 differentiable하고 $g$가 $f(a) \in V$에서 differentiable할 때, 다음을 증명하여라.
 
-$$ \begin{gathered} g \circ f \text{ is diffrentiable at } a \\ (g \circ f)'(a) =g'(f(a))f'(a) \end{gathered} $$
+$$ \begin{gathered} g \circ f \text{ is diffrentiable at } a \\ (g \circ f)'(a) =(g' \circ f)(a)f'(a) \end{gathered} $$
 
 **Proof**
 
 함수 $r : \R \rightarrow \R, s : \R \rightarrow \R^m$를 다음과 같이 정의하자.
 
-$$ \begin{gathered} r(h) = f(a+h) - f(a) - f'(a)h \\ s(h) = g(f(a)+h) - g(f(a)) - g'(f(a))h \end{gathered} $$
+$$ \begin{gathered} r(h) = f(a+h) - f(a) - f'(a)h \\ s(t) = g(f(a)+t) - g(f(a)) - g'(f(a))t \end{gathered} $$
 
-$r$의 정의에 의해 다음이 성립한다.
+$\Delta f(h) = r(h) + f'(a)h$라고 하면 $r$의 정의에 의해 다음이 성립한다.
 
 $$ \begin{aligned} (g\circ f)(a+h) &= g(f(a+h)) \\&= g(f(a) + r(h) + f'(a)h) \\&= g(f(a) + \Delta f) \end{aligned} $$
 
@@ -55,7 +55,7 @@ $$ \begin{aligned} g(f(a) + \Delta f) = g(f(a)) + g'(f(a))\Delta f + s(\Delta f)
 
 이를 정리하면 다음이 성립한다.
 
-$$ \frac{(g\circ f)(a+h) - (g\circ f)(a)}{h}  = g'(f(a))\frac{\Delta f}{h} + \frac{s(\Delta f)}{h} $$
+$$ \frac{(g\circ f)(a+h) - (g\circ f)(a)}{h}  = (g'\circ f)(a)\frac{\Delta f}{h} + \frac{s(\Delta f)}{h} $$
 
 이 때, 보조명제1.1,1.2에 의해 다음이 성립한다.
 
@@ -63,12 +63,11 @@ $$ \lim_{h\rightarrow0}\frac{\Delta f}{h} = f'(a), \enspace \lim_{h\rightarrow0}
 
 따라서, 다음이 성립한다.
 
-$$ \lim_{h\rightarrow0}\frac{(g\circ f)(a+h) - (g\circ f)(a)}{h}  = g'(f(a))f'(a) $$
+$$ \lim_{h\rightarrow0}\frac{(g\circ f)(a+h) - (g\circ f)(a)}{h}  = (g'\circ f)(a)f'(a) $$
 
 미분의 정의에 의한 극한값이 존재함으로 다음이 성립한다.
 
-$$ \begin{gathered} g \circ f \text{ is diffrentiable at } a \\ (g \circ f)'(a) =g'(f(a))f'(a) \end{gathered} \qed $$
-
+$$ \begin{gathered} g \circ f \text{ is diffrentiable at } a \\ (g \circ f)'(a) =(g'\circ f)(a)f'(a) \end{gathered} \qed $$
 
 #### 보조명제1.1
 다음을 증명하여라.
