@@ -90,7 +90,7 @@ Group $G$와 $G$의 임의의 cyclic group $\braket{x}$가 있다고 하자.
 
 $\braket{x}$의 subgroup $H$가 있을 때, 다음을 증명하여라.
 
-$$ H \text{ is a cyclic group} $$
+$$ \exist a \in \Z \st  H = \braket{x^a} $$
 
 **Proof**
 
@@ -102,9 +102,9 @@ $$ S := \Set{n \in \N | x^n \in H} $$
 
 $$ \exist n_0 = \min(S) $$
 
-이 때, $H = \braket{n_0}$임을 보이자.
+이 때, $H = \braket{x^{n_0}}$임을 보이자.
 
-[$H \subseteq \braket{n_0}$]  
+[$H \subseteq \braket{x^{n_0}}$]  
 $H$의 임의의 element를 $x^m$이라고 하자.
 
 division algorihtm에 의해 다음이 성립한다.
@@ -127,8 +127,171 @@ $$ q= 0 $$
 
 그러면 다음이 성립한다.
 
-$$ x^m = x^{n_0p} \in \braket{n_0} \qed $$
+$$ x^m = x^{n_0p} \in \braket{x^{n_0}} \qed $$
 
+[$\braket{x^{n_0}} \subseteq H$]  
+$n_0 \in S$이고 $H$가 group 임으로 다음이 성립한다.
+
+$$ x^{n_0} \in H \implies \braket{x^{n_0}} \subseteq H \qed $$
+
+## Order
+Group $G$와 $G$의 cyclic group $\braket{x}$가 있다고 하자.
+
+이 때, set $S$를 다음과 같이 정의하자.
+
+$$ S := \Set{n \in \N | x^n = e_G} $$
+
+이 때, $x$의 order $o(x)$는  다음과 같이 정의된 자연수이다.
+
+$$ o(x) = \min(S) $$
+
+### 참고
+1. $x^n = e$를 만족하는 $n$이 없는 경우 $o(x) = \infty$이다.
+2. $o(x)=n < \infty$인 경우 $\braket{x} \cong \Z/n\Z$이다.
+3. $o(x)= \infty$인 경우 $\braket{x} \cong \Z$이다.
+
+### 명제1
+Group $G$와 $G$의 cyclic group $\braket{x}$가 있다고 하자.
+
+이 때, 다음을 증명하여라.
+
+$$ o(x) = n \implies |\braket{x}| = n  $$
+
+**Proof**
+
+$$ x^n = e_G \implies \braket{x} = \Set{e,x,x^2,\cdots,x^{n-1}} \implies |\braket{x}| = n \qed $$ 
+
+
+### 명제2
+Group $G$와 $G$의 cyclic group $\braket{x}$가 있다고 하자.
+
+$o(x) = n < \infty$이고 $\Z$의 임의의 element를 $a$라고 할 때, 다음을 증명하여라.
+
+$$ o(x^a) = \frac{n}{\gcd(n,a)} $$
+
+**Proof**
+
+집합 $S$를 다음과 같이 정의하자.
+
+$$ S := \Set{m \in \N | (x^a)^m = e_G} $$
+
+$S$의 임의의 element $m$에 대해서 $o(x) = n$이기 때문에 division algorithm에 의해 어떤 $q \in \Z$에 대해서,  $am = qn$이다.
+
+이 때, $a' = a / \gcd(n,a), n' = n / \gcd(n,a)$이라고 하면 $a'$과 $n'$은 relative prime임으로 다음이 성립한다.
+
+$$ am = qn \implies a'm = qn' \implies m = q'n' $$
+
+이 때, $m,n \in \N$임으로 $q' \in \N$이고 따라서 다음이 성립한다.
+
+$$ n' \le m \iff \frac{n}{\gcd(n,a)} \le m $$
+
+그리고 $a' \in \Z$임으로 다음이 성립한다.
+
+$$  x^{a \frac{n}{\gcd(n,a)}} = x^{n \frac{a}{\gcd(n,a)}} = e^{a'} = e \implies \frac{n}{\gcd(n,a)} \in S  $$
+
+따라서, 다음이 성립한다.
+
+$$ o(x^a) = \frac{n}{\gcd(n,a)} \qed $$
+
+#### 따름명제1
+Group $G$와 $G$의 cyclic group $\braket{x}$가 있다고 하자.
+
+이 때, 다음을 증명하여라.
+
+$$ o(x) = n \text{ is a prime number} \implies \braket{x} \text{ has no proper subgroup except } \Set{e_G} $$
+
+**Proof**
+
+$\braket{x}$의 subgroup을 $H$라고 하면, 다음이 성립한다.
+
+$$ \exist a \in \Z \st H = \braket{x^a} $$
+
+이 때, 명제2에 의해 다음이 성립한다.
+
+$$ |H| = o(x^a) = \frac{n}{\gcd(n,a)} = 1 \lor n $$
+
+$|H| = n$인 경우 $\braket{x^a}$는 proper subgroup이 아니며 $|H| = 1$인 경우 $H = \Set{e_G}$이다. $\qed$
+
+#### 따름명제2
+Group $G$와 $G$의 cyclic group $\braket{x}$가 있다고 하자.
+
+$o(x) = n < \infty$이고 $\Z$의 임의의 element를 $a$라고 할 때, 다음을 증명하여라.
+
+$$ n,a \text{ are relative prime} \implies \braket{x} = \braket{x^a} $$
+
+**Proof**
+
+전제에 의해 다음이 성립한다.
+
+$$ o(x^a) = |\braket{x^a}| = n $$
+
+이 떄, $\braket{x^a}$는 $\braket{x}$의 subgroup이고 $|\braket{x^a}| = |\braket{x}|$임으로 다음이 성립한다.
+
+$$ \braket{x} = \braket{x^a} \qed $$
+
+##### 예제1
+$G = \Z / 6\Z$로 두고 $\braket{\bar{2}}$를 생각해보자.
+
+$\braket{2\bar{2}} = \braket{\bar{4}}$이고 $o(\bar{2}) = 3$임으로 $n=3$ $a=2$인 경우이다.
+
+이 때, $\braket{\bar{2}} = \braket{\bar{4}}$이다.
+
+##### 예제2
+$G = \Z / 5\Z$로 두고 $\braket{\bar{1}}$를 생각해보자.
+
+$\braket{3\bar{1}} = \braket{\bar{3}}$이고 $o(\bar{1}) = 5$임으로 $n=5$ $a=3$인 경우이다.
+
+이 때, $\braket{\bar{1}} = \braket{\bar{3}}$이다.
+
+### 명제3
+Group $G$와 $G$의 cyclic group $\braket{x}$가 있다고 하자.
+
+$o(x) = n < \infty$ 일 때, 다음을 증명하여라.
+
+$$ \forall d |n, \enspace \exist! H \le \braket{x} \st |H| = d $$ 
+
+**Proof**
+
+[existence]  
+$d|n$임으로 $n/d \in \Z$이다.
+
+$H = \braket{x^{n/d}}$라고 두면 다음이 성립한다.
+
+$$ \begin{gathered} H \le \braket{x} \\ |H| = |x^{n/d}| = o(x^{n/d}) = \frac{n}{\gcd(n,n/d)} = d \end{gathered} \qed  $$
+
+[uniquness]  
+$H'$가 $H' \le \braket{x}$이고 $|H'| = d$라고 하자.
+
+$H' \le \braket{x}$임으로 다음이 성립한다.
+
+$$ \exist m \in \Z \st H' = \braket{x^m} $$
+
+그리고 $|H'| = d$임으로 다음이 성립한다.
+
+$$ |H'| = o(x^m) = \frac{n}{\gcd(n,m)} = d \implies \frac{n}{d} = \gcd(n,m) $$
+
+-[$\braket{x^m} \subseteq \braket{x^{n/d}}$]  
+$\gcd(n,m) = n/d$임으로 다음이 성립한다.
+
+$$ \exist m' \in \Z \st m = m'\gcd(n,m) = m'\frac{n}{d} $$
+
+따라서, 다음이 성립한다.
+
+$$ x^m = x^{m' \frac{n}{d}} \in \braket{x^{n/d}} \qed $$
+
+-[$\braket{x^{n/d}} \subseteq \braket{x^n}$]  
+$\gcd(n,m) = n/d$임으로 베주의 항등식에 의해 다음이 성립한다.
+
+$$ \exist s,t \in \Z \st \frac{n}{d} = ns + mt $$
+
+따라서, 다음이 성립한다.
+
+$$ x^{d/n} = x^{ns + mt} = x^{mt} \in \braket{x^m} \qed $$
+
+-[결론]  
+따라서, $\braket{x^m} = \braket{x^{n/d}}$임으로 다음이 성립한다.
+
+$$ H' = \braket{x^m} = \braket{x^{n/d}} = H \qed $$
 
 
 
