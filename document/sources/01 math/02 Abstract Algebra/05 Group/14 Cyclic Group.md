@@ -229,6 +229,67 @@ $$ o(x^a) = |\braket{x^a}| = n $$
 
 $$ \braket{x} = \braket{x^a} \qed $$
 
+##### 참고1
+$\braket{x} = \braket{x^a}$라는 말은 $x^a$ 또한 $\braket{x}$의 generator라는 말이다.
+
+따라서, $[0,n)$ 구간에서 relative prime의 수가 $\braket{x}$의 generator의 수가 된다.
+
+그리고 Euler's phi 함수 $\varphi$가 다음과 같이 정의된다.
+
+$$ \varphi : \Z \rightarrow \Z \st n \mapsto |\Set{k \in [0,n) | \gcd(n,k) = 1}| $$
+
+즉, Euler's phi의 값이 $\braket{x}$의 generator 수이다.
+
+##### 참고2
+Euler's phi function $\varphi$와 prime number $p$가 있다고 하자.
+
+그러면 $1$보다 큰 자연수 $i$에 대해서 다음이 성립한다.
+
+$$ \varphi(p^i) = p^i - p^{i-1} $$
+
+**Proof**
+
+$\varphi$의 정의에 의해 다음이 성립한다.
+
+$$ \varphi(p^i) = |\Set{k \in [0,p^i) | \gcd(p^i,k) = 1}| $$
+
+즉 $p^i$개의 선택지 중에서 relative prime이 아닌 수를 빼야 한다.
+
+이 때, $p^i$와 relative prime이 아닌 수들의 집합을 생각하면 $p$의 배수 형태여야 함으로 다음이 성립한다.
+
+$$ \Set{mp | m \in [0, p^{i-1})} $$
+
+즉, relative prime이 아닌 수들은 총 $p^{i-1}$개가 된다.
+
+따라서 다음이 성립한다.
+
+$$ \varphi(p^i) = p^i - p^{i-1} \qed $$
+
+> Reference  
+> [wiki](https://en.wikipedia.org/wiki/Euler%27s_totient_function#Computing_Euler's_totient_function)
+
+##### 참고3
+Euler's phi function $\varphi$와 relative prime number $n,m$이 있다고 하자.
+
+그러면 다음이 성립한다.
+
+$$ \varphi(nm) = \varphi(n)\varphi(m) $$
+
+**Proof**
+
+..?
+
+##### 참고4
+Euler's phi function $\varphi$와 임의의 자연수 $n$이 있다고 하자.
+
+prime decomposition에 의해 $n=\prod_{i=1}^mp_i^{k_i}$라고 하면 다음이 성립한다.
+
+$$ \varphi(n) = n \prod_{i=1}^m\left(1 - \frac{1}{p_i}\right)  $$
+
+**Proof**
+
+$$ \begin{aligned} \varphi(n) &= \varphi(\prod_{i=1}^mp_i^{k_i}) \\&= \prod_{i=1}^m (p_i^{k_i} - p_i^{k_i-1}) \\&= \prod_{i=1}^m p_i^{k_i} \prod_{i=1}^m \left(1 - \frac{1}{p_i}\right) \\&= n \prod_{i=1}^m\left(1 - \frac{1}{p_i}\right) \qed \end{aligned} $$
+
 ##### 예제1
 $G = \Z / 6\Z$로 두고 $\braket{\bar{2}}$를 생각해보자.
 
