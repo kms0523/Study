@@ -19,15 +19,15 @@ $$ \braket{x} \cong (\Z,+) \lor \braket{x} \cong (\Z/n\Z, +) $$
 
 $\braket{x}$는 다음 두가지 경우로 나눌 수 있다.
 
-1. $\forall i,j \in \Z, \enspace x^i = x^j \implies i = j$
-2. $\exist i,j \in \Z \st x^i = x^j \land i \neq j$
+1. $\forall i,j \in \Z, \enspace i \neq j \implies x^i \neq x^j$
+2. $\exist i,j \in \Z \st i \neq j \land x^i = x^j$
 
 [case1]  
 함수 $f$를 다음과 같이 정의하자.
 
 $$f : \braket{x} \rightarrow \Z \st x^i \mapsto i $$
 
-전제에 의해 $f$는 well-defined이다.
+전제의 대우명제에 의해 $x^i=x^j \implies i=j \iff f(x^i) = f(x^j)$임으로 $f$는 well-defined이다.
 
 [$f$ is group isomorphism]  
 -[$f$ is a group homorphism]  

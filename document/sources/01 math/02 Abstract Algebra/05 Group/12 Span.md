@@ -53,10 +53,8 @@ $$ \exist x^{-1} \in \span(H) \qed $$
 
 $$ \span(H) \le G \qed $$
 
-### 명제2
-Group $G$와 $G$의 subset $U$가 있다고 하자.
-
-이 때, 다음을 증명하여라.
+#### 따름명제
+다음을 증명하여라.
 
 $$ \span(U) \text{ is a smallest subgroup of } G \text{ which that contains } U $$
 
@@ -68,9 +66,9 @@ $U$를 포함하는 $G$의 subgroup의 family를 $H$라고 하자.
 
 $$ \span(U) \subseteq H_i $$
 
-또한 명제1에 의해 $\span(U)$는 subgroup임으로 smallest subgroup이다. $\qed$
+또한 명제1에 의해 $\span(U) \in H$임으로 smallest subgroup이다. $\qed$
 
-### 명제3
+### 명제2
 Abilian group $A$가 있다고 하자.
 
 $A$의 임의의 element를 $x$라고 할 때, 다음을 증명하여라.
@@ -110,7 +108,7 @@ Group의 operation이 곱셈의 맥락을 갖는다면 $nx$대신 $x^n$으로 �
 
 $$x^n = \begin{cases} \underbrace{x * \cdots * x}_{n} & 0 < n \\ 0_G & n= 0 \\ \underbrace{ x^{-1} * \cdots * x^{-1} } _ {|n|} & n < 0 \end{cases}$$
 
-### 명제4
+### 명제3
 Abilian group $A$가 있다고 하자.
 
 $A$의 임의의 elements를 $x,y$라고 할 때, 다음을 증명하여라.
