@@ -1,11 +1,2 @@
-#pragma once
-#include "Header.h"
-
-class B
-{	
-public:
-	void f(void);
-
-private:
-	A<int> _a;
-};
+void test_static2(void);
+void test_inline2(void);

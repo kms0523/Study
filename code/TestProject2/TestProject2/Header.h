@@ -1,8 +1,12 @@
 #pragma once
+#include <iostream>
 
-template <typename T>
-class A
+static void test_static(void)
 {
-public:
-	void function(void);
+	std::cout << test_static << "\n";
+};
+
+inline void test_inline(void)
+{
+	std::cout << test_inline << "\n";
 };

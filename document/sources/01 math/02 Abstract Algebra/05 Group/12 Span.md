@@ -69,15 +69,15 @@ $$ \span(U) \subseteq H_i $$
 또한 명제1에 의해 $\span(U) \in H$임으로 smallest subgroup이다. $\qed$
 
 ### 명제2
-Abilian group $A$가 있다고 하자.
+Group group $G$가 있다고 하자.
 
-$A$의 임의의 element를 $x$라고 할 때, 다음을 증명하여라.
+$G$의 임의의 element를 $x$라고 할 때, 다음을 증명하여라.
 
 $$ \span(\{ x \}) = \{ nx | n \in \Z \}$$
 
 이 때, $nx$는 다음과 같이 정의한다.
 
-$$nx = \begin{cases} \underbrace{x + \cdots + x}_{n} & 0 < n \\ 0_G & n= 0 \\ \underbrace{ x^{-1} + \cdots + x^{-1} } _ {|n|} & n < 0 \end{cases}$$
+$$nx = \begin{cases} \underbrace{x * \cdots * x}_{n} & 0 < n \\ 0_G & n= 0 \\ \underbrace{ x^{-1} * \cdots * x^{-1} } _ {|n|} & n < 0 \end{cases}$$
 
 **Proof**  
 
@@ -101,51 +101,69 @@ $\Set{ nx|n \in \Z}$는 $\Set{x}$를 포함한 subgroup임으로 $\Set{ nx|n \in
 
 $$ \bigcap H \subseteq \{ nx | n \in \Z \} \qed $$
 
-#### 참고
+#### 참고1
 Group의 operation이 곱셈의 맥락을 갖는다면 $nx$대신 $x^n$으로 표기하기도 한다.
 
 이 때, $x^n$는 다음과 같이 정의한다.
 
 $$x^n = \begin{cases} \underbrace{x * \cdots * x}_{n} & 0 < n \\ 0_G & n= 0 \\ \underbrace{ x^{-1} * \cdots * x^{-1} } _ {|n|} & n < 0 \end{cases}$$
 
+#### 참고2
+$G$와 무관하게 $\braket{x}$은 commutative group임이 보장된다.
+
 ### 명제3
-Abilian group $A$가 있다고 하자.
+Group $G$가 있다고 하자.
 
-$A$의 임의의 elements를 $x,y$라고 할 때, 다음을 증명하여라.
+$G$의 임의의 elements를 $x,y$라고 할 때, 다음을 증명하여라.
 
-$$ \span( \{ x,y\}) = \Set{nx + my | n,m \in \Z} $$
+$$ \span( \{ x,y\}) = \Set{s_1^{\epsilon_1}*\cdots*s_n^{\epsilon_n} | n \in \N, \enspace s_i \in \Set{x,y}, \enspace \epsilon_i \in \Set{-1,1}} $$
 
 **Proof**  
 
-[$\Set{nx + my | n,m \in \Z}$ is a group]  
--[closed]  
-$\Set{nx + my | n,m \in \Z}$의 임의의 element를 $a,b$라고 하면 다음이 성립한다.
+$S = \Set{s_1^{\epsilon_1}*\cdots*s_n^{\epsilon_n} | n \in \N, \enspace s_i \in \Set{x,y}, \enspace \epsilon_i \in \Set{-1,1}}$라고 하자.
 
-$$ a+b = n_ax + m_ay + n_bx + m_by = (n_a+n_b)x + (m_a+m_b)y \in \Set{nx + my | n,m \in \Z} \qed $$
-
--[identity]  
-$n,m=0$으로 두면 $0_G$임으로 $0_G \in \Set{nx + my | n,m \in \Z}$이다. $\qed$
-
--[inverse]  
-$\Set{nx + my | n,m \in \Z}$의 임의의 element를 $a$라고 하면 다음이 성립한다.
-
-$$ \exist n_a,m_a \in \Z \st a = n_ax + m_ay $$
-
-그러면 $-n_a,-m_a \in \Z$임으로 $-a = -n_ax-m_ay$라고 하면 다음이 성립한다.
-
-$$-a \in \Set{nx + my | n,m \in \Z}$$
-
-$a+(-a) = (-a) + a = 0_G$임으로 다음이 성립한다.
-
-$$ \exist a^{-1} \in \Set{nx + my | n,m \in \Z} \qed $$
-
-[$\{ nx|n \in \Z\}$ is smallest]  
-$\Set{x,y}$를 포함하는 $A$의 subgroup의 family를 $H$라고 하자.
-
+[$S \subseteq \bigcap H$]  
 $H$의 임의의 element를 $H_i$라고 하면 $H_i$가 subgroup이기 때문에 다음이 성립한다.
 
-$$ x,y \in H_i \implies \Set{nx + my | n,m \in \Z} \subseteq H_i $$
+$$ x,y \in H_i \implies S \subseteq H_i \qed $$
 
-$\Set{nx + my | n,m \in \Z}$는 $G$의 subgroup임으로 다음이 성립한다.
+따라서, 다음이 성립한다.
 
-$$ \{ nx|n \in \Z\} \text{ is a smallest subgroup of } G \text{ such taht contains } \Set{x,y} \qed $$
+$$ S \subseteq \bigcap H \qed $$
+
+[$\bigcap H S$]  
+$S$는 $\Set{x}$를 포함한 subgroup임으로 $S \in H$이고 따라서 다음이 성립한다.
+
+$$ \bigcap H S \qed $$
+
+> Reference  
+> [Note - A. Hulpke](https://www.math.colostate.edu/~hulpke/lectures/m366/generated.pdf)
+
+#### 따름명제
+Commutaitve group $G$가 있다고 하자.
+
+$G$의 임의의 elements를 $x,y$라고 할 때, 다음을 증명하여라.
+
+$$ \span( \{ x,y\}) = \Set{x^n*y^m | n,m \in \Z} $$
+
+**Proof**  
+
+$S = \Set{x^n*y^m | n,m \in \Z}$라고 하자.
+
+[$S \subseteq \bigcap H$]  
+$H$의 임의의 element를 $H_i$라고 하면 $H_i$가 subgroup이기 때문에 다음이 성립한다.
+
+$$ x,y \in H_i \implies S \subseteq H_i \qed $$
+
+따라서, 다음이 성립한다.
+
+$$ S \subseteq \bigcap H \qed $$
+
+[$\bigcap H S$]  
+$S$는 $\Set{x}$를 포함한 subgroup임으로 $S \in H$이고 따라서 다음이 성립한다.
+
+$$ \bigcap H S \qed $$
+
+
+#### 참고
+$G$에 의존해서 $\braket{\Set{x,y}}$의 commutative property가 결정된다.

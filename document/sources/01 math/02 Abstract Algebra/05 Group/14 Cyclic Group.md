@@ -85,6 +85,51 @@ $\Z/n_0\Z$의 임의의 element를 $[i]_{n_0}$라고 하면 다음이 성립한�
 
 $$ \exist x^i \in \braket{x} \st f(x^i) = [i]_{n_0} \qed $$
 
+#### 참고1
+$\braket{x}$를 나누는 조건을 살펴보자.
+
+$$ \begin{gathered} \forall i,j \in \Z, \enspace i \neq j \implies x^i \neq x^j \\ \exist i,j \in \Z \st \enspace i \neq j \land x^i = x^j \end{gathered} $$
+
+먼저 1번 조건의 부정이 $\exist i,j \in \Z \st \enspace i \neq j \land x^i = x^j$게 적힌다는 점이 흥미롭다.
+
+그리고 1번 조건을 보면 $i=j$인 경우에 대해서 어떤것도 보장해주지 않는다. 따라서 1번 조건만 보면 $i=j$일 때, $x^i = x^j$일 수도 있고 $x^i \neq x^j$일 수도 있다. 하지만 $*$이 함수이기 때문에 $i=j \implies x^i=x^j$가 보장된다.
+
+만약에 $\braket{x}$를 다음 조건으로 나눠보자.
+
+$$ \begin{gathered} \forall i,j \in \Z, \enspace x^i \neq x^j \implies i \neq j \\ \exist i,j \in \Z \st \enspace x^i \neq x^j \land i = j \end{gathered} $$
+
+1번 조건은 $x^i=x^j$인 경우에 대해서 어떤것도 보장해주지 않는다. 즉, $x^i=x^j$일 떄, $i=j$일수도 있고 $i \neq j$일 수도 있다.
+
+2번 조건은 연산이 함수의 성질을 만족하지 못한다는 말이된다.
+
+결국 이상하다.
+
+#### 참고2
+$\exist i,j \in \Z \st \enspace i \neq j \land x^i = x^j$인 경우를 생각해보자.
+
+일반성을 잃지 않고 $i<j \implies i - j \in \N$이라고 두면 $S:=\Set{n\in\N | x^n = e_G}$는 공집합이 아닌 $\N$의 부분집합이다.
+
+따라서, well-ordering principle에 의해 $\min(S) = n_0$라고 하면 $S = \Set{kn_0 | k\in\N}$형태이다.
+
+왜냐하면 $S$의 임의의 element를 $x^m$이라고 하자.
+
+division algorithm에 의해 $m = qn_0 + r$이고 $x^r = x^{m-qn_0} = e_G$이다.
+
+이 떄, 만약 $r \neq 0$이라면 $r \in S$이고 이는 $\min(S) = n_0$라는 사실에 모순이다.
+
+따라서, proof by contradiction에 의해 $r=0$이고 $S = \Set{kn_0 | k\in\N}$ 형태일 수 밖에 없다.
+
+#### 참고3
+$\forall i,j \in \Z, \enspace i \neq j \implies x^i \neq x^j$인 경우에 $f : \Z \rightarrow \braket{x}$로 두고 well-defined임을 보여보자.
+
+$$ i= j \implies f(i) = x^i = x^j = f(j) \qed $$
+
+이 때, $x^i = x^j$인것은 주어진 연산 $*$이 well-defined 함수임으로 동일한 연산을 취한 값은 항상 같은 값이여야 하기 때문이다.
+
+$\exist i,j \in \Z \st \enspace i \neq j \land x^i = x^j$인 경우에 $f : \Z/n\Z \rightarrow \braket{x}$로 두고 well-defined임을 보여보자.
+
+$$ [i] = [j] \implies i = kn_0 +j \implies f([i]) = x^i = x^{kn_0 + j} = x^j = f([j]) \qed $$
+
 ### 명제2
 Group $G$와 $G$의 임의의 cyclic group $\braket{x}$가 있다고 하자.
 
@@ -104,35 +149,37 @@ $$ \exist n_0 = \min(S) $$
 
 이 때, $H = \braket{x^{n_0}}$임을 보이자.
 
+[$\braket{x^{n_0}} \subseteq H$]  
+$n_0 \in S$이고 $H$가 group 임으로 다음이 성립한다.
+
+$$ x^{n_0} \in H \implies \braket{x^{n_0}} \subseteq H \qed $$
+
 [$H \subseteq \braket{x^{n_0}}$]  
 $H$의 임의의 element를 $x^m$이라고 하자.
 
 division algorihtm에 의해 다음이 성립한다.
 
-$$ m = pn_0 + q $$
+$$ m = qn_0 + r $$
 
-$q = m - pn_0$임으로 다음이 성립한다.
+이 떄, $\braket{x^{n_0}} \subseteq H$임으로 다음이 성립한다.
 
-$$ x^q = x^{m-pn_0} = x^m \in H $$
+$$ x^r = x^{m-qn_0} \implies  x^r \in H $$
 
 이 떄, 다음을 가정하자.
 
-$$ q \neq 0 $$ 
+$$ r \neq 0 $$ 
 
-그러면, $q \in S$이고 $1\le q \le n_0-1$이다.
+그러면, $r \in S$이고 $1\le r \le n_0-1$이다.
 
 하지만 이는 $n_0 = \min(S)$라는 사실에 모순임으로 proof by contradiction에 의해 다음이 성립한다.
 
-$$ q= 0 $$
+$$ r= 0 $$
 
 그러면 다음이 성립한다.
 
-$$ x^m = x^{n_0p} \in \braket{x^{n_0}} \qed $$
+$$ x^m = x^{n_0q} \in \braket{x^{n_0}} \qed $$
 
-[$\braket{x^{n_0}} \subseteq H$]  
-$n_0 \in S$이고 $H$가 group 임으로 다음이 성립한다.
 
-$$ x^{n_0} \in H \implies \braket{x^{n_0}} \subseteq H \qed $$
 
 ## Order
 Group $G$와 $G$의 cyclic group $\braket{x}$가 있다고 하자.
