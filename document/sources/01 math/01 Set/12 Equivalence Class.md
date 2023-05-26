@@ -33,17 +33,3 @@ $$ \begin{aligned} & z \in [x]_ R \\ \Rightarrow \enspace & x \sim_R z, \quad x 
 
 [ $[y]_ R \subseteq [x]_ R$ ]  
 $$ \begin{aligned} & z \in [y]_ R \\ \Rightarrow \enspace & z \sim_R y, \quad x \sim_R y \\ \Rightarrow \enspace & z \sim_R x \quad (\because R \text{ satisfy transitive}) \\ \Leftrightarrow \enspace & z \in [x]_ R \quad {_\blacksquare} \end{aligned} $$
-
-### 명제4
-
-집합 $S$와 동치 관계 $R \subseteq S \times S$가 있을 때, 에 대해 다음을 증명하여라.
-
-$$ [x]_ R \cap [y]_ R \neq \empty \Rightarrow [x]_ R = [y]_ R $$
-
-혹은
-
-$$ [x]_ R \neq [y]_ R \Rightarrow [x]_ R \cap [y]_ R = \empty $$
-
-**proof**
-
-위의 명제는 명제2와 명제3에의해 증명되며 아래 명제는 위의 명제의 대우명제이다. $\quad {_\blacksquare}$
