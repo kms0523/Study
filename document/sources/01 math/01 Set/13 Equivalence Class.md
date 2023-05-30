@@ -6,6 +6,9 @@ $s \in S$에 대해 `동치류(equivalence class)` $[ s ]_ R$는 다음과 같�
 
 $$ [s]_R := \Set{t \in S | s \sim_R t} $$
 
+### 참고
+Equivalence relation이라는 기준에 의해 동일하다고 분류된 subset을 equivalence class라고 한다.
+
 ### 명제1
 
 집합 $S$와 동치 관계 $R \subseteq S \times S$가 있을 때, $s \in S$에 대해 $[s]_ R \neq \empty$을 증명하여라.
@@ -16,15 +19,24 @@ $$ s \in [s]_ R \quad (\because R \text { satisfy reflextive}) \quad {_\blacksqu
 
 ### 명제2
 
-집합 $S$와 동치 관계 $R \subseteq S \times S$가 있을 때, $x, y \in S$ 에 대해 $[x]_ R \cap [y]_ R \neq \empty \Leftrightarrow x \sim_R y$을 증명하여라.
+집합 $S$와 동치 관계 $R \subseteq S \times S$가 있다고 하자.
+
+$x, y \in S$ 에 대해 다음을 증명하여라.
+
+$$ [x]_ R \cap [y]_ R \neq \empty \implies [x]_ R = [y]_ R$$
 
 **proof**
 
 $$ \begin{aligned} & z \in [x]_ R \cap [y]_ R \\ \Leftrightarrow \enspace & x \sim_R z \land y \sim_R z \\ \Leftrightarrow \enspace & x \sim_R z \land z \sim_R y & \quad & (\because R \text{ satisfy symmetric}) \\ \Leftrightarrow \enspace & x \sim_R y & \quad & (\because R \text{ satisfy transitive}) \quad {_\blacksquare} \end{aligned} $$
 
-### 명제3
+따라서, 보조명제에 의해 다음이 성립한다.
 
-집합 $S$와 동치 관계 $R \subseteq S \times S$가 있을 때, $x, y \in S$에 대해 $x \sim_R y \Rightarrow [x]_ R = [y]_ R$을 증명하여라.
+$$ [x]_ R \cap [y]_ R \neq \empty \implies [x]_ R = [y]_ R$$
+
+#### 보조명제
+다음을 증명하여라.
+
+$$x \sim_R y \Rightarrow [x]_ R = [y]_ R$$
 
 **proof**
 

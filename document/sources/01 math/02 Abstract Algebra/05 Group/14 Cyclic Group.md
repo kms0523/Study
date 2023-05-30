@@ -216,7 +216,15 @@ $o(x) = n < \infty$이고 $\Z$의 임의의 element를 $a$라고 할 때, 다음
 
 $$ o(x^a) = \frac{n}{\gcd(n,a)} $$
 
-**Proof**
+**Proof1**
+
+$o(x) = n$임으로, $o(x^a) = \lcm(a,n) / |a|$가 될 것이다.
+
+이 때, $\lcm$의 성질에 의해 다음이 성립한다.
+
+$$ \frac{\lcm(a,n)}{|a|} = \frac{n}{\gcd(a,n)} \qed $$
+
+**Proof2**
 
 집합 $S$를 다음과 같이 정의하자.
 
@@ -286,6 +294,8 @@ $\braket{x} = \braket{x^a}$라는 말은 $x^a$ 또한 $\braket{x}$의 generator�
 $$ \varphi : \Z \rightarrow \Z \st n \mapsto |\Set{k \in [0,n) | \gcd(n,k) = 1}| $$
 
 즉, Euler's phi의 값이 $\braket{x}$의 generator 수이다.
+
+이 때, $\braket{x}$가 finite cyclic group이 아니라면 generator의 수는 어떻게 알 수 있을까?
 
 ##### 참고2
 Euler's phi function $\varphi$와 prime number $p$가 있다고 하자.

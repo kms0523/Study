@@ -19,3 +19,4 @@ $\gdef\diff#1#2{\frac{d #1}{d #2}}$
 $\gdef\ninf{n\rightarrow\infty}$
 $\gdef\nullity{\text{nullity}}$
 $\gdef\rank{\text{rank}}$
+$\gdef\lcm{\text{lcm}}$
