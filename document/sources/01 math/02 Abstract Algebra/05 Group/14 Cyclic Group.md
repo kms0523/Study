@@ -404,7 +404,7 @@ $$ \exist s,t \in \Z \st \frac{n}{d} = ns + mt $$
 
 따라서, 다음이 성립한다.
 
-$$ x^{d/n} = x^{ns + mt} = x^{mt} \in \braket{x^m} \qed $$
+$$ x^{n/d} = x^{ns + mt} = x^{mt} \in \braket{x^m} \qed $$
 
 -[결론]  
 따라서, $\braket{x^m} = \braket{x^{n/d}}$임으로 다음이 성립한다.
