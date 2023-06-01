@@ -295,7 +295,9 @@ $$ \varphi : \Z \rightarrow \Z \st n \mapsto |\Set{k \in [0,n) | \gcd(n,k) = 1}|
 
 즉, Euler's phi의 값이 $\braket{x}$의 generator 수이다.
 
-이 때, $\braket{x}$가 finite cyclic group이 아니라면 generator의 수는 어떻게 알 수 있을까?
+그럼으로, $\Z/n\Z$의 generator의 수는 $\phi(n)$이다. 참고로 $\Z/\Z = \Set{\Z}$로 element가 $\Z$하나인 group으로 $\Z$가 identity element 역할을 하는 generator가 1개인 cyclic group이다.
+
+만약 $\braket{x}$가 finite cyclic group이 아니라면 generator의 수는 어떻게 알 수 있을까?
 
 ##### 참고2
 Euler's phi function $\varphi$와 prime number $p$가 있다고 하자.
@@ -411,6 +413,18 @@ $$ x^{n/d} = x^{ns + mt} = x^{mt} \in \braket{x^m} \qed $$
 
 $$ H' = \braket{x^m} = \braket{x^{n/d}} = H \qed $$
 
+### 명제4
+Group $G$와 $G$의 두 cyclic group $\braket{x},\braket{y}$가 있다고 하자.
 
+이 떄, 다음을 증명하여라.
 
+$$ \braket{x}\times\braket{y} \text{ is a cyclic group} \iff \gcd(o(x),o(y)) = 1 $$
 
+**Proof**
+
+$|\braket{x}\times\braket{y}| = o(x)o(y)$임으로, $\braket{x}\times\braket{y}$이 cyclic group이라는 말은 다음과 동치이다.
+
+$$ \begin{aligned} \iff& \lcm(o(x),o(y)) = o(x)o(y) \\\iff& \gcd(o(x),o(y)) = 1 \qed \end{aligned} $$
+
+> Reference  
+> [math.stackexchange](https://math.stackexchange.com/questions/5969/product-of-two-cyclic-groups-is-cyclic-iff-their-orders-are-co-prime)  
