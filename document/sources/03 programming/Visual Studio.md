@@ -70,6 +70,18 @@ custom .clang_format을 사용하고 싶은 경우 `사용자 지정 clang-forma
 `프로젝트 >> 속성 >> Debugging >> Command Arguments`에서 `-iMec2009`처럼 `-`가 하나만 나온경우에는 `i`가 option 이름이고 option 값이 Mec2009가 된다. 그리고 `--runbyopt=on`처럼 `--`인 경우에는 `runbytop`라는 단어 전체가 option 이름이 되고 option 값이 on이 된다.
 
 
+## 프로젝트 종속성
+`솔루션 탐색기 >> 프로젝트 오른쪽 마우스 >> 빌드 종속성 >> 프로젝트 종속성`에서 종속성을 선택하면 이 프로젝트를 빌드하기전에 미리 빌드할 프로젝트를 결정할 수 있다. 
+
+프로젝트 종속성이 반영된 빌드 순서를 보려면 프로젝트 종속성 대화 상자에서 빌드 순서 탭으로 전환하여 볼 수 있다.
+
+> Reference  
+> [learn.microsoft](https://learn.microsoft.com/ko-kr/visualstudio/ide/how-to-create-and-remove-project-dependencies?view=vs-2022)  
+
+## 참조
+`솔루션 탐색기 >> 프로젝트 오른쪽 마우스 >> 참조`에서 library를 만들어내는 프로젝트를 추가하면 별도의 과정없이 참조에 속한 프로젝트가 만들어낸 library를 header file 추가만으로 사용할 수 있다.
+
+
 ## VAssisX
 
 ### 문제점

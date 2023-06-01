@@ -445,6 +445,41 @@ int main(void)
 
 이러한 과정이 주석처리된 코드에 나타나있다.
 
+### 부모 클래스의 protected member 함수
+다음 예제 코드를 보자
+```cpp
+
+#include <iostream>
+
+class A
+{
+protected:
+    void test(void);
+};
+
+class B : public A
+{
+public:
+    void test(void)
+    {
+        A a;
+        //a.test(); //Error!
+        this->test();
+    }
+};
+
+```
+
+protected acess는 `B` class가 가지고 있는 `A`class 객체에만 적용된다.
+
+새롭게 생성한 `a` 객체는 
+
+
+The protected access only applies to parent members of your own current object type. You don't get public access to the protected members of other objects of the parent type.
+
+> Reference  
+> [stackoverflow](https://stackoverflow.com/questions/24636234/access-to-protected-constructor-of-base-class)  
+
 ## Friend Class
 
 ### Across namespace
