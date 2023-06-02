@@ -82,7 +82,7 @@ $$nx = \begin{cases} \underbrace{x * \cdots * x}_{n} & 0 < n \\ 0_G & n= 0 \\ \u
 
 **Proof**  
 
-$\Set{x}$를 포함하는 $A$의 subgroup의 family를 $H$라고 하자.
+$\Set{x}$를 포함하는 $G$의 subgroup의 family를 $H$라고 하자.
 
 그러면 $\span$의 정의에 의해 다음이 성립한다.
 
@@ -121,6 +121,8 @@ $$ \span( \{ x,y\}) = \Set{s_1^{\epsilon_1}*\cdots*s_n^{\epsilon_n} | n \in \N, 
 
 **Proof**  
 
+$\Set{x,y}$를 포함하는 $G$의 subgroup의 family를 $H$라고 하고
+
 $S = \Set{s_1^{\epsilon_1}*\cdots*s_n^{\epsilon_n} | n \in \N, \enspace s_i \in \Set{x,y}, \enspace \epsilon_i \in \Set{-1,1}}$라고 하자.
 
 [$S \subseteq \bigcap H$]  
@@ -133,7 +135,7 @@ $$ x,y \in H_i \implies S \subseteq H_i $$
 $$ S \subseteq \bigcap H \qed $$
 
 [$\bigcap H \subseteq S$]  
-$S$는 $\Set{x}$를 포함한 subgroup임으로 $S \in H$이고 따라서 다음이 성립한다.
+$S$는 $\Set{x,y}$를 포함한 subgroup임으로 $S \in H$이고 따라서 다음이 성립한다.
 
 $$ \bigcap H \subseteq S \qed $$
 
