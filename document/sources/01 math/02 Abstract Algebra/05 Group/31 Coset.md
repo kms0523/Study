@@ -136,7 +136,7 @@ $$ f : gH \rightarrow H \st gh \mapsto h $$
 [injective]  
 $gH$의 임의의 두 elements를 $gh_1,gh_2$라고 하면 다음이 성립한다.
 
-$$ f(gh_1)=f(gh_2) \implies h_1 = h_2 \qed $$
+$$ f(gh_1)=f(gh_2) \implies h_1 = h_2 \implies gh_1 = gh_2 \qed $$
 
 [surjective]  
 $H$의 임의의 element를 $h$라고 하면 다음이 성립한다.

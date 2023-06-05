@@ -30,3 +30,8 @@ $$\rho_{g_1} \circ \rho_{g_2} = \rho_{g_1g_2}$$
 따라서 다음이 성립한다.
 
 $$ g_1 \cdot g_2 \cdot x = \rho_{g_1}(\rho_{g_2}(x)) = (\rho_{g_1} \circ \rho_{g_2})(x) = \rho_{g_1g_2}(x) = (g_1g_2)\cdot x \qed $$
+
+### 참고
+모든 permutation representation은 homomorphism인것은 아니다.
+
+Cayley Theorem에 나오는 것과 같은 특정 permutation representation만 homomorphism이다.
