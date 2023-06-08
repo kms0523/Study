@@ -169,4 +169,8 @@ $$ \bigcap H \subseteq S \qed $$
 
 
 #### 참고
-$G$의 commutative property와 $\braket{\Set{x,y}}$의 commutative property는 같다.
+$G$가 commutative group일 경우 $\braket{\Set{x,y}}$ 또한 commutative group이다.
+
+하지만 $G$가 commutative group이 아닐 경우, $\braket{\Set{x,y}}$는 commutative group일 수도 있고 아닐수도 있다.
+
+일반적으로, commutative group이 아니지만 예를 들어 두 element중 하나가 identity element라던지 아니면 dihedral group에서 회전에 관한 두 element라면 비록 기존의 group이 commutative group은 아니지만 두 element로 span해서 만든 group은 commutative group일 수 있다.

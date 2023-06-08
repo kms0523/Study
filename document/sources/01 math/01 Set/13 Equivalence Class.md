@@ -7,7 +7,7 @@ $s \in S$에 대해 `동치류(equivalence class)` $[ s ]_ R$는 다음과 같�
 $$ [s]_R := \Set{t \in S | s \sim_R t} $$
 
 ### 참고
-Equivalence relation이라는 기준에 의해 동일하다고 분류된 subset을 equivalence class라고 한다.
+Equivalence relation이라는 기준에 의해 관계가 있는 element를 모은 subset을 equivalence class라고 한다.
 
 ### 명제1
 
