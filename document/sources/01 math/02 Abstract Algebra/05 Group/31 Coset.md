@@ -4,7 +4,7 @@ Group $G$와 $G$의 non empty subgroup $H$가 있다고 하자.
 
 $G$의 임의의 element를 $a$라고 할 때, $a$가 속하는 $H$의 `좌잉여류(left coset)` $aH$는 다음과 같이 정의된 집합이다.
 
-$$ aH = \Set{a*h \mid h \in H} $$
+$$ aH = \Set{ah \mid h \in H} $$
 
 그리고 $a$가 속하는 $H$의 `우잉여류(left coset)` $Ha$는 다음과 같이 정의된 집합이다.
 
@@ -13,26 +13,22 @@ $$ Ha = \Set{ha \mid h \in H} $$
 ### 명제1
 Group $G$와 $G$의 non empty subgroup $H$가 있다고 하자.
 
-그리고 $G$위의 relation $R$을 다음과 같이 정의하자.
+$G$의 임의의 element를 $g$, $H$의 임의의 element를 $h$라고 할 때, 다음을 증명하여라.
 
-$$ R:= \Set{(x,y) \in G^2 \mid xH = yH } $$
-
-이 때, 다음을 증명하여라.
-
-$$ R \text{ is an equivalence realation} $$
+$$ gH = (gh)H $$
 
 **Proof**
 
-[reflexive]  
+[$gH \subseteq (gh)H$]  
+$gH$의 임의의 element를 $g\bar{h}$라고 하면 다음이 성립한다.
 
-[symmetric]  
+$$ g\bar{h} = ghh^{-1}\bar{h} \in (gh)H \qed $$ 
 
-[transivity]   
+[$(gh)H \subseteq gH$]  
+$(gh)H$의 임의의 element를 $gh\bar{h}$라고 하면 다음이 성립한다.
 
-#### 참고1
-$R$의 정의를 right coset을 가지고 해도 equivalence relation임을 보일 수 있다.
+$$ gh\bar{h} \in gH \qed $$
 
-$$ R:= \Set{(x,y) \in G^2 \mid Hx = Hy } \text{ is an equivalence relation} $$
 
 ### 명제2
 Group $G$와 $G$의 non empty subgroup $H$가 있다고 하자.
@@ -90,6 +86,30 @@ $R$의 정의를 right coset을 가지고 하면 다음 결과를 얻을 수 있
 $$ \begin{gathered} &\Set{(x,y) \in G^2 \mid Hx = Hy } \\ =& \Set{(x,y) \in G^2 \mid xy^{-1} \in H } \\ =& \Set{(x,y) \in G^2 \mid yx^{-1} \in H } \end{gathered} $$
 
 ### 명제3
+Group $G$와 $G$의 non empty subgroup $H$가 있다고 하자.
+
+그리고 $G$위의 relation $R$을 다음과 같이 정의하자.
+
+$$ R:= \Set{(x,y) \in G^2 \mid xH = yH } $$
+
+이 때, 다음을 증명하여라.
+
+$$ R \text{ is an equivalence realation} $$
+
+**Proof**
+
+[reflexive]  
+
+[symmetric]  
+
+[transivity]   
+
+#### 참고1
+$R$의 정의를 right coset을 가지고 해도 equivalence relation임을 보일 수 있다.
+
+$$ R:= \Set{(x,y) \in G^2 \mid Hx = Hy } \text{ is an equivalence relation} $$
+
+### 명제4
 Group $G$와 $G$의 subgroup $H$가 있다고 하자.
 
 그리고 $G$위의 relation $R$을 다음과 같이 정의하자.
@@ -102,7 +122,44 @@ $$ [x]_R = xH $$
 
 **Proof**
 
-equivalent class의 정의에 의해 다음이 성립한다.
+[$[x]_R \subseteq xH$]  
+$[x]_R$의 임의의 element를 $y$라고 하면 다음이 성립한다.
+
+$$ \forall h \in H, \enspace \exist \bar{h} \in H \st x\bar{h} = yh $$
+
+이 때, 항상 $h,\bar{h} \in H$임으로 항상 $\bar{h}h^{-1}\in H$이고 따라서, 다음이 성립한다.
+
+$$ y = x\bar{h}h^{-1} \in xH \qed $$
+
+[$xH \subseteq [x]_R$]  
+$xH$의 임의의 element를 $xh$라고 하면 다음이 성립한다.
+
+$$ (xh)H = xH \implies xh \in [x]_R \qed $$
+
+#### 참고1
+$[x]_R = xH$를 증명하기 위해서 다음과 같이 풀어 써본다고 해보자.
+
+$$ \Set{y \in G \mid xH = yH} = \Set{y \in G \mid \forall h \in H, \exist \bar{h} \in H \st xh = y\bar{h}} $$
+
+우측 set은 $H$의 속하는 모든 $h$에 대해서 $xh = y\bar{h}$를 만족하는 어떤 $\bar{h}\in H$가 존재하는 $y\in G$의 모임이다.
+
+이렇게 조건을 풀어 씀으로써 $\Set{xh \mid h \in H}$와 같아짐을 보이는 것은 어려워 보인다.
+
+즉, 이런식으로 조건을 풀어 씀으로써 증명을 하려고 하니 증명이 어렵고 복잡해지는 것같다.
+
+그런데 궁금한점은 이렇게 조건을 풀어써서 $[x]_R = xH$를 얻어내기 어렵다면 처음에 어떻게 $[x]_R = xH$임을 알아 낼 수 있는 건지 의아하다.
+
+#### 참고2
+$R:=\Set{(x,y)\in G^2 \mid  y^{-1}x \in H}$일 때, $[x]_R = xH$를 증명하기 위해서 다음과 같이 풀어 써본다고 해보자.
+
+$$ \Set{y \in G \mid y^{-1}x \in H} = \Set{y \in G \mid \exist h \in H \st \enspace x = yh} $$
+
+우측 set은 $x = yh$를 만족하는 어떤 $h\in H$가 존재하는 $y\in G$의 모임이다.
+
+
+
+
+---
 
 $$ \begin{aligned} [x]_R &= \Set{ y \in G \mid x \sim y} \\&= \Set{y \in G \mid xH = yH} \\&= \Set{y \in G \mid y^{-1}x \in H}  \\&= \Set{y \in G \mid \forall h \in H, \enspace y = xh^{-1} } \\&= \Set{xh^{-1} \mid h \in H} \\&= \Set{x\bar{h} \mid \bar{h} \in H} \\&= xH \qed \end{aligned}  $$
 
