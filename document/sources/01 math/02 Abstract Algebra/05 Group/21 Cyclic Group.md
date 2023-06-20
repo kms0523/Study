@@ -179,7 +179,8 @@ $$ r= 0 $$
 
 $$ x^m = x^{n_0q} \in \braket{x^{n_0}} \qed $$
 
-
+#### 참고
+$\braket{x} = \Set{e,x,x^2,\cdots}$이기 때문에 $\braket{x}$의 subgroup은 반드시 $x$로만 이루어져 있어야 한다는걸 알 수 있다.
 
 ## Order
 Group $G$와 $G$의 cyclic group $\braket{x}$가 있다고 하자.
@@ -196,6 +197,36 @@ $$ o(x) = \min(S) $$
 1. $x^n = e$를 만족하는 $n$이 없는 경우 $o(x) = \infty$이다.
 2. $o(x)=n < \infty$인 경우 $\braket{x} \cong \Z/n\Z$이다.
 3. $o(x)= \infty$인 경우 $\braket{x} \cong \Z$이다.
+
+### Observation
+$\braket{x} = \Set{e,x,x^2,x^3}$이라고 해보자.
+
+$\braket{x}$의 subgroup들은 $\braket{x} = \braket{x^3}, \braket{x^2},\braket{x^4}=\braket{e_G}$이 있다.
+
+이 때, $\braket{x^3} = \braket{x}$를 만족하는데, subgroup이 $\braket{x}$가 된다는 말은 그 subgroup의 generator가 $\braket{x}$의 generator이기도 하다는 말이다.
+
+그러면 subgroup중에 $\braket{x}$가 되는 subgroup은 몇 개일까? 즉, 다시 말해 $\braket{x}$의 generator는 몇개일까?
+
+#### Abstraction
+finite cyclic group $\braket{x}=\Set{e, \cdots, x^{n-1}}$와 $\braket{x}$의 subgroup $\braket{x^a}$가 있다고 하자.
+
+이 때, $\braket{x}=\braket{x^a}$면 $|\braket{x}|=|\braket{x^a}|$이다.
+
+따라서 $\braket{x^a} = \Set{e, x^a,\cdots, x^{a(n-1)}}$임으로 $x^{ka} = e, \enspace k \in \N$를 만족하는 가장 작은 $k$는 $n$이다.
+
+즉, $\lcm(n,a) = na$라는 얘기이고 $\gcd(n,a) = 1$이라는 얘기이다.
+
+따라서, $n$과 relative prime인 $a$에 대해서 $\braket{x^a} = \braket{x}$이고 $x^a$는 $\braket{x}$의 generator가 된다.
+
+#### Abstraction2
+그러면 $\gcd(n,a) \neq 1$인 $\braket{x}$의 subset $\braket{x^a}$는 어떻게 되는지 생각해보자.
+
+$\gcd(n,a) = k \neq 1$이라고 하면 $\exist q \in \N \st n = kq$이다. 
+
+따라서, $\lcm(n,a) = \frac{n}{\gcd(n,a)} = q$임으로 $\braket{x^a} = \Set{e,x^a,\cdots,x^{(q-1)a}}$가 된다.
+
+즉, $o(x^a) = q = \frac{n}{\gcd(n,a)}$이 된다.
+
 
 ### 명제1
 Group $G$와 $G$의 cyclic group $\braket{x}$가 있다고 하자.
@@ -298,6 +329,15 @@ $$ \varphi : \Z \rightarrow \Z \st n \mapsto |\Set{k \in [0,n) | \gcd(n,k) = 1}|
 그럼으로, $\Z/n\Z$의 generator의 수는 $\phi(n)$이다. 참고로 $\Z/\Z = \Set{\Z}$로 element가 $\Z$하나인 group으로 $\Z$가 identity element 역할을 하는 generator가 1개인 cyclic group이다.
 
 만약 $\braket{x}$가 finite cyclic group이 아니라면 generator의 수는 어떻게 알 수 있을까?
+
+##### 참고2
+relative prime의 수가 generator의 수가 되어야 하는 이유를 살펴보자.
+
+Cyclic group $\braket{x}$가 있고 $o(x) = n < \infty$이라고 하자.
+
+그리고 $\braket{x}$의 임의의 subgroup을 $\braket{x^a}$라고 했을 때, 
+
+$\gcd(n,a)= \frac{na}{\lcm(n,a)}$임으로 $n,a$가 relative prime이라는 말은 $\lcm(n,a)=na$라는 말과 같다.
 
 ##### 예제1
 $G = \Z / 6\Z$로 두고 $\braket{\bar{2}}$를 생각해보자.
