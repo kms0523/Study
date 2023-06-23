@@ -88,3 +88,53 @@ public:
 
 int A::Func() { return 0; }     // inline이 아닌 함수로 취급되어 TU 전체에 정의가 딱 하나 있어야 함.
 ```
+
+### Static vs Inline
+다음 예제 코드를 보자
+```cpp
+//A.h
+#pragma once
+#include <iostream>
+
+static void test_static(void)
+{
+	std::cout << test_static << "\n";
+};
+
+inline void test_inline(void)
+{
+	std::cout << test_inline << "\n";
+};
+
+// B.h
+void test_static2(void);
+void test_inline2(void);
+
+// B.cpp
+#include "A.h"
+#include "B.h"
+void test_static2(void){test_static();};
+void test_inline2(void){test_inline();};
+
+// main.cpp
+#include "A.h"
+#include "B.h"
+
+int main(void)
+{
+	test_static();
+	test_static2();
+
+	test_inline();
+	test_inline2();
+}
+```
+
+결과를 보면 static 함수는 서로 다른 주소를 inline 함수는 서로 같은 주소를 갖는것을 알 수 있다.
+
+즉, static 함수는 각 TU에서 각각 생성됨으로 static으로 선언된 함수는 TU에서 각각 다른 주소를 갖게 된다.
+
+반면에 inline은 TU에서 각각 생성되지는 않고 B.cpp TU에서만 정의되고 main.cpp TU에서의 중복 정의만 허용함으로 inline으로 선언된 함수는 각 TU에서 같은 주소를 같는다.
+
+> Reference  
+> [stackoverflow](https://stackoverflow.com/questions/22102919/static-vs-inline-for-functions-implemented-in-header-files)

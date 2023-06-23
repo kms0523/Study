@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Distributive Property" href="../06%20Distributive%20Property.html" />
-    <link rel="prev" title="Cyclic Group" href="14%20Cyclic%20Group.html" />
+    <link rel="next" title="Symmetric Group" href="52%20Symmetric%20Group.html" />
+    <link rel="prev" title="Normal Subgroup" href="32%20Normal%20Subgroup.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -136,11 +136,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../../01%20Set/02%20Product%20Set.html">
      Product Set
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20Set/03%20Relations.html">
-     Relation
     </a>
    </li>
    <li class="toctree-l2 has-children">
@@ -263,13 +258,28 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20Set/95%20Equivalence%20Relation.html">
+    <a class="reference internal" href="../../01%20Set/10%20Partition.html">
+     Partition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/11%20Relations.html">
+     Relation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/12%20Equivalence%20Relation.html">
      Equivalence Relation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20Set/96%20Equivalence%20Class.html">
+    <a class="reference internal" href="../../01%20Set/13%20Equivalence%20Class.html">
      Equivalence Class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/14%20Quotient%20Set.html">
+     Quotient Set
     </a>
    </li>
   </ul>
@@ -372,18 +382,38 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="13%20Coset.html">
-       Coset
+      <a class="reference internal" href="21%20Cyclic%20Group.html">
+       Cyclic Group
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="14%20Cyclic%20Group.html">
-       Cyclic Group
+      <a class="reference internal" href="31%20Group%20and%20Relation.html">
+       Group and Relation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="32%20Normal%20Subgroup.html">
+       Normal Subgroup
       </a>
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
        Group Action
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="52%20Symmetric%20Group.html">
+       Symmetric Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="53%20Permutation%20Representation.html">
+       Permutation Representation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="54%20G-Orbit.html">
+       G-Orbit
       </a>
      </li>
     </ul>
@@ -1302,6 +1332,21 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../99%20Miscellaneous/Euler%27s%20Phi%20Function.html">
+     Euler’s Phi Function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../99%20Miscellaneous/GCD%20and%20LCM.html">
+     GCD and LCM
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../99%20Miscellaneous/Modulo%20operator.html">
+     Modulo operator
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../99%20Miscellaneous/Tensor%20Product.html">
      Tensor Products
     </a>
@@ -1464,6 +1509,11 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../../03%20programming/01%20C%2B%2B/20%20Type%20Casting.html">
+     Type Casting
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../../03%20programming/01%20C%2B%2B/31%20Template.html">
      Template
     </a>
@@ -1491,11 +1541,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../../../03%20programming/01%20C%2B%2B/53%20One%20Definition%20Rule.html">
      One Definition Rule
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../03%20programming/01%20C%2B%2B/54%20const_cast.html">
-     const_cast
     </a>
    </li>
    <li class="toctree-l2">
@@ -1945,6 +1990,60 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#left-group-action">
    Left Group Action
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     참고1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     참고2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     명제1
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       참고
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example1">
+     Example1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example2">
+     Example2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example3">
+     Example3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example4">
+     Example4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example5">
+     Example5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example6">
+     Example6
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#right-group-action">
@@ -1974,6 +2073,60 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#left-group-action">
    Left Group Action
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     참고1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     참고2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     명제1
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       참고
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example1">
+     Example1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example2">
+     Example2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example3">
+     Example3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example4">
+     Example4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example5">
+     Example5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example6">
+     Example6
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#right-group-action">
@@ -1992,18 +2145,77 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="group-action">
 <h1>Group Action<a class="headerlink" href="#group-action" title="Permalink to this headline">#</a></h1>
-<p>Group <span class="math notranslate nohighlight">\(G\)</span>와 set <span class="math notranslate nohighlight">\(S\)</span>가 있다고 하자.</p>
+<p>Group <span class="math notranslate nohighlight">\(G\)</span>와 set <span class="math notranslate nohighlight">\(X\)</span>가 있다고 하자.</p>
 <section id="left-group-action">
 <h2>Left Group Action<a class="headerlink" href="#left-group-action" title="Permalink to this headline">#</a></h2>
-<p><span class="math notranslate nohighlight">\(G\)</span>의 <span class="math notranslate nohighlight">\(S\)</span>위의 왼쪽 군 작용(left group action of <span class="math notranslate nohighlight">\(G\)</span> on <span class="math notranslate nohighlight">\(S\)</span>) <span class="math notranslate nohighlight">\(+\)</span>는 다음 조건들을 만족시키는 binary operation이다.</p>
+<p><span class="math notranslate nohighlight">\(G\)</span>의 <span class="math notranslate nohighlight">\(X\)</span>위의 왼쪽 군 작용(left group action of <span class="math notranslate nohighlight">\(G\)</span> on <span class="math notranslate nohighlight">\(S\)</span>) <span class="math notranslate nohighlight">\(\cdot\)</span>는 다음 조건들을 만족시키는 함수다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} + : R \times S \rightarrow S \st \begin{array}{ll} \text{associativity} &amp;  \forall g_1,g_2 \in G, \quad \forall s \in S, \quad (g_1 + g_2)+ s = g_1+ (g_2 + s) \\ \text{identity} &amp; \forall s \in S, \quad 0_R + s = s \end{array} \end{split}\]</div>
+\[\begin{split} \cdot : G \times X \rightarrow X \st \begin{array}{ll} \text{compatability} &amp;  \forall g_1,g_2 \in G, \quad \forall x \in X, \quad g_1 \cdot (g_2 \cdot x) = (g_1 g_2) \cdot x \\ \text{identity} &amp; \forall x \in X, \quad e_G \cdot x = x \end{array} \end{split}\]</div>
+<section id="id1">
+<h3>참고1<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(G\)</span>의 <span class="math notranslate nohighlight">\(X\)</span>위의 왼쪽 군 작용이 정의되어 있는 경우 “<span class="math notranslate nohighlight">\(G\)</span>가 <span class="math notranslate nohighlight">\(X\)</span>에 왼쪽에서 작용한다”라고 얘기하고 <span class="math notranslate nohighlight">\(G \curvearrowright X\)</span>로 표기한다.</p>
+</section>
+<section id="id2">
+<h3>참고2<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>작용을 받는 set <span class="math notranslate nohighlight">\(X\)</span>를 <span class="math notranslate nohighlight">\(G\)</span>-set이라고 한다.</p>
+</section>
+<section id="id3">
+<h3>명제1<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>Group <span class="math notranslate nohighlight">\(G\)</span>와 <span class="math notranslate nohighlight">\(G\)</span>-set <span class="math notranslate nohighlight">\(X\)</span>가 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(G\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(g\)</span>라고 할 때, 다음을 증명하여라.</p>
+<div class="math notranslate nohighlight">
+\[ \lambda_g : X \rightarrow X \st x \mapsto g \cdot x \text{ is bijective} \]</div>
+<p><strong>Proof</strong></p>
+<p>[injective]<br />
+<span class="math notranslate nohighlight">\(X\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(x,y\)</span>라고 하면 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{aligned} &amp; \lambda_g(x) = \lambda_g(y) \\\implies&amp; g\cdot x = g \cdot y \\\implies&amp; g^{-1} \cdot g\cdot x = g^{-1} \cdot g \cdot y \\\implies&amp; x = y \qed \end{aligned} \end{split}\]</div>
+<p>[surjective]<br />
+<span class="math notranslate nohighlight">\(X\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(x\)</span>라고 하자.</p>
+<p><span class="math notranslate nohighlight">\(g^{-1}\cdot x \in X\)</span>이고 <span class="math notranslate nohighlight">\(\lambda_g(g^{-1}x) = g \cdot g^{-1}\cdot x = x\)</span> 임으로 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \exist y \in X \st \lambda_g(y) = x \qed \]</div>
+<section id="id4">
+<h4>참고<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
+<p>임의의 group action은 Group의 element가 고정되어 있을 떄 <span class="math notranslate nohighlight">\(X\rightarrow X\)</span>인 bijective function 이다.</p>
+</section>
+</section>
+<section id="example1">
+<h3>Example1<a class="headerlink" href="#example1" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(G = \Set{\F - \Set{0_\F}, \times}, \enspace X = \F^n\)</span>라 하고 group action으로 scalar multiplication을 준다고 하자.</p>
+<p>module의 scalar multiplication은 group action의 property를 전부 만족함으로 scalar multiplication은 group action으로 볼 수 있고 <span class="math notranslate nohighlight">\(X\)</span>는 <span class="math notranslate nohighlight">\(G\)</span>-set이다.</p>
+</section>
+<section id="example2">
+<h3>Example2<a class="headerlink" href="#example2" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(G = \text{any group}, X = G\)</span>라고 하고 group action으로 <span class="math notranslate nohighlight">\(g \cdot x = gxg^{-1}\)</span>을 준다고 하자.</p>
+<p>그러면 <span class="math notranslate nohighlight">\(e_G\cdot x = x\)</span>이고 <span class="math notranslate nohighlight">\(g_1\cdot g_2 \cdot x = g_1g_2xg_2^{-1}g_1^{-1} = g_1g_2\cdot x\)</span>임으로 <span class="math notranslate nohighlight">\(X\)</span>는 <span class="math notranslate nohighlight">\(G\)</span>-set이다.</p>
+</section>
+<section id="example3">
+<h3>Example3<a class="headerlink" href="#example3" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(G = \text{any group}, X = G\)</span>라고 하고 group action으로 <span class="math notranslate nohighlight">\(g \cdot x = gx\)</span>을 준다고 하자.</p>
+<p>그러면 <span class="math notranslate nohighlight">\(e_G\cdot x = x\)</span>이고 <span class="math notranslate nohighlight">\(g_1\cdot g_2 \cdot x = g_1g_2x = g_1g_2\cdot x\)</span>임으로 <span class="math notranslate nohighlight">\(X\)</span>는 <span class="math notranslate nohighlight">\(G\)</span>-set이다.</p>
+</section>
+<section id="example4">
+<h3>Example4<a class="headerlink" href="#example4" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(G = \text{any group}, X = G\)</span>라고 하고 group action으로 <span class="math notranslate nohighlight">\(g \cdot x = x\)</span>을 준다고 하자.</p>
+<p>그러면 <span class="math notranslate nohighlight">\(e_G\cdot x = x\)</span>이고 <span class="math notranslate nohighlight">\(g_1\cdot g_2 \cdot x = x = g_1g_2\cdot x\)</span>임으로 <span class="math notranslate nohighlight">\(X\)</span>는 <span class="math notranslate nohighlight">\(G\)</span>-set이다.</p>
+</section>
+<section id="example5">
+<h3>Example5<a class="headerlink" href="#example5" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(G = \text{any group}, X = \Set{x}\)</span>라고 하고 group action으로 <span class="math notranslate nohighlight">\(g \cdot x = x\)</span>을 준다고 하자.</p>
+<p>그러면 <span class="math notranslate nohighlight">\(e_G\cdot x = x\)</span>이고 <span class="math notranslate nohighlight">\(g_1\cdot g_2 \cdot x = x = g_1g_2\cdot x\)</span>임으로 <span class="math notranslate nohighlight">\(X\)</span>는 <span class="math notranslate nohighlight">\(G\)</span>-set이다.</p>
+</section>
+<section id="example6">
+<h3>Example6<a class="headerlink" href="#example6" title="Permalink to this headline">#</a></h3>
+<p><span class="math notranslate nohighlight">\(G = \text{any group}, H \le G, X = G/H\)</span>라고 하고 group action으로 <span class="math notranslate nohighlight">\(g \cdot xH = gxH\)</span>을 준다고 하자.</p>
+<p>그러면 <span class="math notranslate nohighlight">\(e_G\cdot xH = xH\)</span>이고 <span class="math notranslate nohighlight">\(g_1\cdot g_2 \cdot x = g_1g_2xH = g_1g_2\cdot xH\)</span>임으로 <span class="math notranslate nohighlight">\(X\)</span>는 <span class="math notranslate nohighlight">\(G\)</span>-set이다.</p>
+</section>
 </section>
 <section id="right-group-action">
 <h2>Right Group Action<a class="headerlink" href="#right-group-action" title="Permalink to this headline">#</a></h2>
 <p><span class="math notranslate nohighlight">\(G\)</span>의 <span class="math notranslate nohighlight">\(S\)</span>위의 오른쪽 군 작용(right group action of <span class="math notranslate nohighlight">\(G\)</span> on <span class="math notranslate nohighlight">\(S\)</span>) <span class="math notranslate nohighlight">\(+\)</span>는 다음 조건들을 만족시키는 binary operation이다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} + : S \times R \rightarrow S \st \begin{array}{ll} \text{associativity}&amp; \forall g_1,g_2 \in G, \quad \forall s \in S, \quad s + (g_1 + g_2) = (s + g_1) + g_2 \\ \text{identity}&amp; \forall s \in S, \quad s + 0_R = s \end{array} \end{split}\]</div>
+\[\begin{split} + : S \times R \rightarrow S \st \begin{array}{ll} \text{compatability}&amp; \forall g_1,g_2 \in G, \quad \forall s \in S, \quad s + (g_1 + g_2) = (s + g_1) + g_2 \\ \text{identity}&amp; \forall s \in S, \quad s + 0_R = s \end{array} \end{split}\]</div>
 <blockquote>
 <div><p>Referemce<br />
 <a class="reference external" href="https://en.wikipedia.org/wiki/Group_action">wiki</a></p>
@@ -2038,17 +2250,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="14%20Cyclic%20Group.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="32%20Normal%20Subgroup.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Cyclic Group</p>
+            <p class="prev-next-title">Normal Subgroup</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../06%20Distributive%20Property.html" title="next page">
+    <a class='right-next' id="next-link" href="52%20Symmetric%20Group.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Distributive Property</p>
+        <p class="prev-next-title">Symmetric Group</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

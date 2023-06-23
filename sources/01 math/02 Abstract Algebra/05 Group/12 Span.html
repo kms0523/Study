@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Coset" href="13%20Coset.html" />
+    <link rel="next" title="Cyclic Group" href="21%20Cyclic%20Group.html" />
     <link rel="prev" title="Subgroup" href="11%20Subgroup.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -136,11 +136,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../../01%20Set/02%20Product%20Set.html">
      Product Set
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20Set/03%20Relations.html">
-     Relation
     </a>
    </li>
    <li class="toctree-l2 has-children">
@@ -263,13 +258,28 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20Set/95%20Equivalence%20Relation.html">
+    <a class="reference internal" href="../../01%20Set/10%20Partition.html">
+     Partition
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/11%20Relations.html">
+     Relation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/12%20Equivalence%20Relation.html">
      Equivalence Relation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../01%20Set/96%20Equivalence%20Class.html">
+    <a class="reference internal" href="../../01%20Set/13%20Equivalence%20Class.html">
      Equivalence Class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../01%20Set/14%20Quotient%20Set.html">
+     Quotient Set
     </a>
    </li>
   </ul>
@@ -372,18 +382,38 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="13%20Coset.html">
-       Coset
+      <a class="reference internal" href="21%20Cyclic%20Group.html">
+       Cyclic Group
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="14%20Cyclic%20Group.html">
-       Cyclic Group
+      <a class="reference internal" href="31%20Group%20and%20Relation.html">
+       Group and Relation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="32%20Normal%20Subgroup.html">
+       Normal Subgroup
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="51%20Group%20Action.html">
        Group Action
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="52%20Symmetric%20Group.html">
+       Symmetric Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="53%20Permutation%20Representation.html">
+       Permutation Representation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="54%20G-Orbit.html">
+       G-Orbit
       </a>
      </li>
     </ul>
@@ -1302,6 +1332,21 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../99%20Miscellaneous/Euler%27s%20Phi%20Function.html">
+     Euler’s Phi Function
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../99%20Miscellaneous/GCD%20and%20LCM.html">
+     GCD and LCM
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../99%20Miscellaneous/Modulo%20operator.html">
+     Modulo operator
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../99%20Miscellaneous/Tensor%20Product.html">
      Tensor Products
     </a>
@@ -1464,6 +1509,11 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../../03%20programming/01%20C%2B%2B/20%20Type%20Casting.html">
+     Type Casting
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../../03%20programming/01%20C%2B%2B/31%20Template.html">
      Template
     </a>
@@ -1491,11 +1541,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../../../03%20programming/01%20C%2B%2B/53%20One%20Definition%20Rule.html">
      One Definition Rule
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../03%20programming/01%20C%2B%2B/54%20const_cast.html">
-     const_cast
     </a>
    </li>
    <li class="toctree-l2">
@@ -1965,28 +2010,52 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#id5">
      명제1
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     명제2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     명제3
-    </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
-       참고
+      <a class="reference internal nav-link" href="#id6">
+       따름명제
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       참고1
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     명제4
+    <a class="reference internal nav-link" href="#id8">
+     명제2
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       참고1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       참고2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     명제3
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       따름명제
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       참고
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -2033,28 +2102,52 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#id5">
      명제1
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     명제2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     명제3
-    </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
-       참고
+      <a class="reference internal nav-link" href="#id6">
+       따름명제
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       참고1
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     명제4
+    <a class="reference internal nav-link" href="#id8">
+     명제2
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       참고1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       참고2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     명제3
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       따름명제
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       참고
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -2078,50 +2171,41 @@ title="Print to PDF"
 \[ \span(U) := \bigcap H \]</div>
 <section id="id2">
 <h3>참고1<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(\span(U)\)</span>는 <span class="math notranslate nohighlight">\(U\)</span>를 포함하는 <span class="math notranslate nohighlight">\(G\)</span>의 최소 subgroup이다.</p>
+<p><span class="math notranslate nohighlight">\(\span(U)\)</span>를 subgroup generated by <span class="math notranslate nohighlight">\(U\)</span>라고 하며, 이 때, <span class="math notranslate nohighlight">\(U\)</span>를 <span class="math notranslate nohighlight">\(\span(U)\)</span>의 generator라고 한다.</p>
 </section>
 <section id="id3">
 <h3>참고2<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(\span(U)\)</span>를 subgroup generated by <span class="math notranslate nohighlight">\(U\)</span>라고 하며, 이 때, <span class="math notranslate nohighlight">\(U\)</span>를 <span class="math notranslate nohighlight">\(\span(U)\)</span>의 generator라고 한다.</p>
+<p><span class="math notranslate nohighlight">\(\span(U)\)</span>를 <span class="math notranslate nohighlight">\(\braket{U}\)</span>라고 쓰기도 한다.</p>
 </section>
 <section id="id4">
 <h3>참고3<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
-<p><span class="math notranslate nohighlight">\(\span(U)\)</span>를 <span class="math notranslate nohighlight">\(\braket{U}\)</span>라고 쓰기도 한다.</p>
+<p>어떤 구조를 가지고 있는 set의 subset은 일반적으로 그 구조를 보존하지 않는다. 하지만 subset으로부터 span(generating)된 subset은 그 구조를 보존한다.</p>
+<p>즉, span(generating)은 subset으로부터 구조를 보존하는 subset을 만들어내는 방법을 가르쳐준다.</p>
 </section>
 <section id="id5">
 <h3>명제1<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>Group <span class="math notranslate nohighlight">\(G\)</span>와 <span class="math notranslate nohighlight">\(G\)</span>의 subset <span class="math notranslate nohighlight">\(U\)</span>가 있다고 하자.</p>
 <p>이 때, 다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
-\[ \span(U) \le G \]</div>
+\[ \braket{U} \le G \]</div>
 <p><strong>Proof</strong></p>
 <p><span class="math notranslate nohighlight">\(U\)</span>를 포함하는 <span class="math notranslate nohighlight">\(G\)</span>의 subgroup의 family를 <span class="math notranslate nohighlight">\(H\)</span>라고 하자.</p>
-<p><span class="math notranslate nohighlight">\(H\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(H_i\)</span>라고 하고 <span class="math notranslate nohighlight">\(\span(H)\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(x,y\)</span>라고 하면 다음이 성립한다.</p>
+<p>그러면 <span class="math notranslate nohighlight">\(\braket{U} = \bigcap H\)</span> 는 <span class="math notranslate nohighlight">\(G\)</span>의 subset이다.</p>
+<p>따라서, <span class="math notranslate nohighlight">\(\braket{U}\)</span>가 closed이고 inverse element가 존재함을 보이면 된다.</p>
+<p><span class="math notranslate nohighlight">\(H\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(H_i\)</span>라고 하고 <span class="math notranslate nohighlight">\(\braket{U}\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(x,y\)</span>라고 하면 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ x,y \in H_i \]</div>
 <p>[closed]<br />
-이 떄, <span class="math notranslate nohighlight">\(H_i\)</span>는 subgroup임으로 다음이 성립한다.</p>
+<span class="math notranslate nohighlight">\(H_i\)</span>는 subgroup임으로 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ x*y \in H_i \]</div>
-<p>따라서, <span class="math notranslate nohighlight">\(\span(H)\)</span>의 정의에 의해 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[ a*b \in \span(H) \qed \]</div>
+\[ x*y \in H_i \implies x*y \in \braket{U} \qed \]</div>
 <p>[inverse]<br />
 이 떄, <span class="math notranslate nohighlight">\(H_i\)</span>는 subgroup임으로 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \exist x^{-1} \in H_i \]</div>
-<p>따라서, <span class="math notranslate nohighlight">\(\span(H)\)</span>의 정의에 의해 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[ \exist x^{-1} \in \span(H) \qed \]</div>
-<p>[결론]
-따라서, subgroup의 성질에의해 다음이 성립한다.</p>
-<div class="math notranslate nohighlight">
-\[ \span(H) \le G \qed \]</div>
-</section>
+\[ \exist x^{-1} \in H_i \implies \exist x^{-1} \in \braket{U} \qed \]</div>
 <section id="id6">
-<h3>명제2<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
-<p>Group <span class="math notranslate nohighlight">\(G\)</span>와 <span class="math notranslate nohighlight">\(G\)</span>의 subset <span class="math notranslate nohighlight">\(U\)</span>가 있다고 하자.</p>
-<p>이 때, 다음을 증명하여라.</p>
+<h4>따름명제<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
+<p>다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
 \[ \span(U) \text{ is a smallest subgroup of } G \text{ which that contains } U \]</div>
 <p><strong>Proof</strong></p>
@@ -2129,19 +2213,26 @@ title="Print to PDF"
 <p>정의에 의해 <span class="math notranslate nohighlight">\(\span(U) = \bigcap H\)</span>임으로, <span class="math notranslate nohighlight">\(H\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(H_i\)</span>라고 하면 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ \span(U) \subseteq H_i \]</div>
-<p>또한 명제1에 의해 <span class="math notranslate nohighlight">\(\span(U)\)</span>는 subgroup임으로 smallest subgroup이다. <span class="math notranslate nohighlight">\(\qed\)</span></p>
+<p>또한 명제1에 의해 <span class="math notranslate nohighlight">\(\span(U) \in H\)</span>임으로 smallest subgroup이다. <span class="math notranslate nohighlight">\(\qed\)</span></p>
 </section>
 <section id="id7">
-<h3>명제3<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
-<p>Abilian group <span class="math notranslate nohighlight">\(A\)</span>가 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(A\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(x\)</span>라고 할 때, 다음을 증명하여라.</p>
+<h4>참고1<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
+<p>어떤 구조를 가지고 있는 집합의 subset은 일반적으로 그 구조를 보존하지 않는다.</p>
+<p>하지만 그 subset에 의해 generating(span) 된 subset은 그 구조를 보존한다.</p>
+<p>따라서, 구조를 보존하는 subset을 만드는 방법을 알게 되었다.</p>
+</section>
+</section>
+<section id="id8">
+<h3>명제2<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<p>Group <span class="math notranslate nohighlight">\(G\)</span>가 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(G\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(x\)</span>라고 할 때, 다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
 \[ \span(\{ x \}) = \{ nx | n \in \Z \}\]</div>
 <p>이 때, <span class="math notranslate nohighlight">\(nx\)</span>는 다음과 같이 정의한다.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}nx = \begin{cases} \underbrace{x + \cdots + x}_{n} &amp; 0 &lt; n \\ 0_G &amp; n= 0 \\ \underbrace{ x^{-1} + \cdots + x^{-1} } _ {|n|} &amp; n &lt; 0 \end{cases}\end{split}\]</div>
+\[\begin{split}nx = \begin{cases} \underbrace{x * \cdots * x}_{n} &amp; 0 &lt; n \\ 0_G &amp; n= 0 \\ \underbrace{ x^{-1} * \cdots * x^{-1} } _ {|n|} &amp; n &lt; 0 \end{cases}\end{split}\]</div>
 <p><strong>Proof</strong></p>
-<p><span class="math notranslate nohighlight">\(\Set{x}\)</span>를 포함하는 <span class="math notranslate nohighlight">\(A\)</span>의 subgroup의 family를 <span class="math notranslate nohighlight">\(H\)</span>라고 하자.</p>
+<p><span class="math notranslate nohighlight">\(\Set{x}\)</span>를 포함하는 <span class="math notranslate nohighlight">\(G\)</span>의 subgroup의 family를 <span class="math notranslate nohighlight">\(H\)</span>라고 하자.</p>
 <p>그러면 <span class="math notranslate nohighlight">\(\span\)</span>의 정의에 의해 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ \braket{x} = \bigcap H \]</div>
@@ -2156,46 +2247,68 @@ title="Print to PDF"
 <span class="math notranslate nohighlight">\(\Set{ nx|n \in \Z}\)</span>는 <span class="math notranslate nohighlight">\(\Set{x}\)</span>를 포함한 subgroup임으로 <span class="math notranslate nohighlight">\(\Set{ nx|n \in \Z} \in H\)</span>이고 따라서 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
 \[ \bigcap H \subseteq \{ nx | n \in \Z \} \qed \]</div>
-<section id="id8">
-<h4>참고<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
+<section id="id9">
+<h4>참고1<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
 <p>Group의 operation이 곱셈의 맥락을 갖는다면 <span class="math notranslate nohighlight">\(nx\)</span>대신 <span class="math notranslate nohighlight">\(x^n\)</span>으로 표기하기도 한다.</p>
 <p>이 때, <span class="math notranslate nohighlight">\(x^n\)</span>는 다음과 같이 정의한다.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}x^n = \begin{cases} \underbrace{x * \cdots * x}_{n} &amp; 0 &lt; n \\ 0_G &amp; n= 0 \\ \underbrace{ x^{-1} * \cdots * x^{-1} } _ {|n|} &amp; n &lt; 0 \end{cases}\end{split}\]</div>
 </section>
+<section id="id10">
+<h4>참고2<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
+<p><span class="math notranslate nohighlight">\(G\)</span>와 무관하게 <span class="math notranslate nohighlight">\(\braket{x}\)</span>은 commutative group임이 보장된다.</p>
 </section>
-<section id="id9">
-<h3>명제4<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
-<p>Abilian group <span class="math notranslate nohighlight">\(A\)</span>가 있다고 하자.</p>
-<p><span class="math notranslate nohighlight">\(A\)</span>의 임의의 elements를 <span class="math notranslate nohighlight">\(x,y\)</span>라고 할 때, 다음을 증명하여라.</p>
+</section>
+<section id="id11">
+<h3>명제3<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<p>Group <span class="math notranslate nohighlight">\(G\)</span>가 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(G\)</span>의 임의의 elements를 <span class="math notranslate nohighlight">\(x,y\)</span>라고 할 때, 다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
-\[ \span( \{ x,y\}) = \Set{nx + my | n,m \in \Z} \]</div>
+\[ \span( \{ x,y\}) = \Set{s_1^{\epsilon_1}*\cdots*s_n^{\epsilon_n} | n \in \N, \enspace s_i \in \Set{x,y}, \enspace \epsilon_i \in \Set{-1,1}} \]</div>
 <p><strong>Proof</strong></p>
-<p>[<span class="math notranslate nohighlight">\(\Set{nx + my | n,m \in \Z}\)</span> is a group]<br />
--[closed]<br />
-<span class="math notranslate nohighlight">\(\Set{nx + my | n,m \in \Z}\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(a,b\)</span>라고 하면 다음이 성립한다.</p>
+<p><span class="math notranslate nohighlight">\(\Set{x,y}\)</span>를 포함하는 <span class="math notranslate nohighlight">\(G\)</span>의 subgroup의 family를 <span class="math notranslate nohighlight">\(H\)</span>라고 하고</p>
+<p><span class="math notranslate nohighlight">\(S = \Set{s_1^{\epsilon_1}*\cdots*s_n^{\epsilon_n} | n \in \N, \enspace s_i \in \Set{x,y}, \enspace \epsilon_i \in \Set{-1,1}}\)</span>라고 하자.</p>
+<p>[<span class="math notranslate nohighlight">\(S \subseteq \bigcap H\)</span>]<br />
+<span class="math notranslate nohighlight">\(H\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(H_i\)</span>라고 하면 <span class="math notranslate nohighlight">\(H_i\)</span>가 subgroup이기 때문에 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ a+b = n_ax + m_ay + n_bx + m_by = (n_a+n_b)x + (m_a+m_b)y \in \Set{nx + my | n,m \in \Z} \qed \]</div>
-<p>-[identity]<br />
-<span class="math notranslate nohighlight">\(n,m=0\)</span>으로 두면 <span class="math notranslate nohighlight">\(0_G\)</span>임으로 <span class="math notranslate nohighlight">\(0_G \in \Set{nx + my | n,m \in \Z}\)</span>이다. <span class="math notranslate nohighlight">\(\qed\)</span></p>
-<p>-[inverse]<br />
-<span class="math notranslate nohighlight">\(\Set{nx + my | n,m \in \Z}\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(a\)</span>라고 하면 다음이 성립한다.</p>
+\[ x,y \in H_i \implies S \subseteq H_i \]</div>
+<p>따라서, 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \exist n_a,m_a \in \Z \st a = n_ax + m_ay \]</div>
-<p>그러면 <span class="math notranslate nohighlight">\(-n_a,-m_a \in \Z\)</span>임으로 <span class="math notranslate nohighlight">\(-a = -n_ax-m_ay\)</span>라고 하면 다음이 성립한다.</p>
+\[ S \subseteq \bigcap H \qed \]</div>
+<p>[<span class="math notranslate nohighlight">\(\bigcap H \subseteq S\)</span>]<br />
+<span class="math notranslate nohighlight">\(S\)</span>는 <span class="math notranslate nohighlight">\(\Set{x,y}\)</span>를 포함한 subgroup임으로 <span class="math notranslate nohighlight">\(S \in H\)</span>이고 따라서 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[-a \in \Set{nx + my | n,m \in \Z}\]</div>
-<p><span class="math notranslate nohighlight">\(a+(-a) = (-a) + a = 0_G\)</span>임으로 다음이 성립한다.</p>
+\[ \bigcap H \subseteq S \qed \]</div>
+<blockquote>
+<div><p>Reference<br />
+<a class="reference external" href="https://www.math.colostate.edu/~hulpke/lectures/m366/generated.pdf">Note - A. Hulpke</a></p>
+</div></blockquote>
+<section id="id12">
+<h4>따름명제<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
+<p>Commutaitve group <span class="math notranslate nohighlight">\(G\)</span>가 있다고 하자.</p>
+<p><span class="math notranslate nohighlight">\(G\)</span>의 임의의 elements를 <span class="math notranslate nohighlight">\(x,y\)</span>라고 할 때, 다음을 증명하여라.</p>
 <div class="math notranslate nohighlight">
-\[ \exist a^{-1} \in \Set{nx + my | n,m \in \Z} \qed \]</div>
-<p>[<span class="math notranslate nohighlight">\(\{ nx|n \in \Z\}\)</span> is smallest]<br />
-<span class="math notranslate nohighlight">\(\Set{x,y}\)</span>를 포함하는 <span class="math notranslate nohighlight">\(A\)</span>의 subgroup의 family를 <span class="math notranslate nohighlight">\(H\)</span>라고 하자.</p>
-<p><span class="math notranslate nohighlight">\(H\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(H_i\)</span>라고 하면 <span class="math notranslate nohighlight">\(H_i\)</span>가 subgroup이기 때문에 다음이 성립한다.</p>
+\[ \span( \{ x,y\}) = \Set{x^n*y^m | n,m \in \Z} \]</div>
+<p><strong>Proof</strong></p>
+<p><span class="math notranslate nohighlight">\(S = \Set{x^n*y^m | n,m \in \Z}\)</span>라고 하자.</p>
+<p>[<span class="math notranslate nohighlight">\(S \subseteq \bigcap H\)</span>]<br />
+<span class="math notranslate nohighlight">\(H\)</span>의 임의의 element를 <span class="math notranslate nohighlight">\(H_i\)</span>라고 하면 <span class="math notranslate nohighlight">\(H_i\)</span>가 subgroup이기 때문에 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ x,y \in H_i \implies \Set{nx + my | n,m \in \Z} \subseteq H_i \]</div>
-<p><span class="math notranslate nohighlight">\(\Set{nx + my | n,m \in \Z}\)</span>는 <span class="math notranslate nohighlight">\(G\)</span>의 subgroup임으로 다음이 성립한다.</p>
+\[ x,y \in H_i \implies S \subseteq H_i \]</div>
+<p>따라서, 다음이 성립한다.</p>
 <div class="math notranslate nohighlight">
-\[ \{ nx|n \in \Z\} \text{ is a smallest subgroup of } G \text{ such taht contains } \Set{x,y} \qed \]</div>
+\[ S \subseteq \bigcap H \qed \]</div>
+<p>[<span class="math notranslate nohighlight">\(\bigcap H \subseteq S\)</span>]<br />
+<span class="math notranslate nohighlight">\(S\)</span>는 <span class="math notranslate nohighlight">\(\Set{x}\)</span>를 포함한 subgroup임으로 <span class="math notranslate nohighlight">\(S \in H\)</span>이고 따라서 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[ \bigcap H \subseteq S \qed \]</div>
+</section>
+<section id="id13">
+<h4>참고<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
+<p><span class="math notranslate nohighlight">\(G\)</span>가 commutative group일 경우 <span class="math notranslate nohighlight">\(\braket{\Set{x,y}}\)</span> 또한 commutative group이다.</p>
+<p>하지만 <span class="math notranslate nohighlight">\(G\)</span>가 commutative group이 아닐 경우, <span class="math notranslate nohighlight">\(\braket{\Set{x,y}}\)</span>는 commutative group일 수도 있고 아닐수도 있다.</p>
+<p>일반적으로, commutative group이 아니지만 예를 들어 두 element중 하나가 identity element라던지 아니면 dihedral group에서 회전에 관한 두 element라면 비록 기존의 group이 commutative group은 아니지만 두 element로 span해서 만든 group은 commutative group일 수 있다.</p>
+</section>
 </section>
 </section>
 </section>
@@ -2234,10 +2347,10 @@ title="Print to PDF"
             <p class="prev-next-title">Subgroup</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="13%20Coset.html" title="next page">
+    <a class='right-next' id="next-link" href="21%20Cyclic%20Group.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Coset</p>
+        <p class="prev-next-title">Cyclic Group</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

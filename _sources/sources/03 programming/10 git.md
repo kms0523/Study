@@ -118,6 +118,8 @@ global config file --> 모든 git repository
 ## 브랜치
 * `git branch -u [remote-name]/[branch-name]`  
 현재 로컬 브랜치가 리모트 저장소의 특정 브랜치를 추적하게 한다.
+* `git remote show [remove-name]`
+리모트 저장소의 브랜치들을 전부 보여준다.
 
 ## Stash
 Stash는 Modified이면서 Tracked 상태인 파일과 Staging Area에 있는 파일들을 보관해두는 장소다.
@@ -159,7 +161,31 @@ stash list에 있는 stash 중 stash name과 동일한 stash를 적용한다.
 > 참고  
 > Progit >> Git 도구 >> Reset 명확히 알고 가기
 
+## Merge
+branch에서 master branch를 merge한 뒤,
 
+master에서 branch를 merge할 때에는 fast-forward 가능해도 commit 생성으로 해야 git branch 그래프가 예쁘게 유지된다.(git master branch가 계속해서 main branch로 그림에 표시된다)
+
+예를 들어 아래 그림을 보자.
+
+```{figure} _image/1002.png
+```
+
+branch1에서 작업을 다하고, master를 merge에서 conflict를 다해 결한 상황이 첫번째 그래프이다.
+
+이 떄, master에서 branch1을 merge한다고 해보자.
+
+fast forward가 가능하기 때문에 merge commit 없이 fast forward merge를 할 경우 맨 왼쪽 그래프가 master branch가 아니라 branch1이 되어버린 두번째 그래프가 된다.
+
+따라서, fast forward가 가능하더라도 commit을 생성해야 세번째 그래프와 같이 맨 왼쪽 그래프가 master branch로 유지된다.
+
+
+### 명령어
+* `git merge --no-ff [병합할 브랜치 명]`
+현재 브랜치와 병합할 브랜치의 관계가 Fast-forward이던 아니던 무조건 Merge 커밋과 같이 병합되는 옵션
+
+> Reference   
+> [blog](https://minemanemo.tistory.com/46)  
 
 ## .gitignore
 
