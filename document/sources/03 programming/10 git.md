@@ -161,7 +161,17 @@ stash list에 있는 stash 중 stash name과 동일한 stash를 적용한다.
 > 참고  
 > Progit >> Git 도구 >> Reset 명확히 알고 가기
 
+## Merge
+branch에서 master branch를 merge한 뒤,
 
+master에서 branch를 merge할 때에는 fast-forward 가능해도 commit 생성으로 해야 git branch 그림이 예쁘게 유지된다.(git master branch가 계속해서 main branch로 그림에 표시된다)
+
+### 명령어
+* `git merge --no-ff [병합할 브랜치 명]`
+현재 브랜치와 병합할 브랜치의 관계가 Fast-forward이던 아니던 무조건 Merge 커밋과 같이 병합되는 옵션
+
+> Reference   
+> [blog](https://minemanemo.tistory.com/46)  
 
 ## .gitignore
 
