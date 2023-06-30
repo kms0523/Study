@@ -164,7 +164,21 @@ stash list에 있는 stash 중 stash name과 동일한 stash를 적용한다.
 ## Merge
 branch에서 master branch를 merge한 뒤,
 
-master에서 branch를 merge할 때에는 fast-forward 가능해도 commit 생성으로 해야 git branch 그림이 예쁘게 유지된다.(git master branch가 계속해서 main branch로 그림에 표시된다)
+master에서 branch를 merge할 때에는 fast-forward 가능해도 commit 생성으로 해야 git branch 그래프가 예쁘게 유지된다.(git master branch가 계속해서 main branch로 그림에 표시된다)
+
+예를 들어 아래 그림을 보자.
+
+```{figure} _image/1002.png
+```
+
+branch1에서 작업을 다하고, master를 merge에서 conflict를 다해 결한 상황이 첫번째 그래프이다.
+
+이 떄, master에서 branch1을 merge한다고 해보자.
+
+fast forward가 가능하기 때문에 merge commit 없이 fast forward merge를 할 경우 맨 왼쪽 그래프가 master branch가 아니라 branch1이 되어버린 두번째 그래프가 된다.
+
+따라서, fast forward가 가능하더라도 commit을 생성해야 세번째 그래프와 같이 맨 왼쪽 그래프가 master branch로 유지된다.
+
 
 ### 명령어
 * `git merge --no-ff [병합할 브랜치 명]`

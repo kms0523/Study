@@ -38,6 +38,27 @@ void expect_equal(const Mec::DenseMatrix<T1>& m1, const Mec::DenseMatrix<T2>& m2
 using Matrix = Mec::DenseMatrix<double>;
 using fMatrix = Mec::DenseMatrix<float>;
 
+TEST(test, begin_end)
+{
+	Matrix mat(4, 1);
+	mat = 1, 2, 1, 1;
+
+	for (const auto val : mat)
+	{
+		std::cout << val;
+	}
+}
+TEST(test, range)
+{
+  Matrix mat(2, 2);
+  mat = 1, 2, 1, 1;
+
+	Matrix m1 = mat(blitz::Range::all(), blitz::Range(0, 0));
+	Matrix ref(2, 1);
+	ref = 1, 2;
+
+	expect_equal(m1, ref);
+}
 
 //// Dense Matrix는 component wise mulitplication밖에 안된다.
 //TEST(Test, muliplication1)
