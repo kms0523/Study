@@ -51,6 +51,7 @@ sphinx:
           "ninf": "n \\rightarrow \\infty"
           "rank": "\\text{rank}"
           "nullity": "\\text{nullity}"
+          "lcm": "\\text{lcm}"
 
     latex_elements:
         preamble: |
