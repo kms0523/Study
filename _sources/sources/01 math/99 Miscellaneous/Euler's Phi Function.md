@@ -75,9 +75,6 @@ $$ \gcd(q_ib + i,b) = \gcd(i,b) $$
 
 $$ \varphi(ab) = \varphi(a)\varphi(b) \qed $$
 
-#### 참고
-오른쪽으로 한칸 움직일 때, 나머지가 1 증가함으로 $b$와 relative prime인 숫자들만 표시하면 오른쪽 대각선 위로 올라가는 무늬를 갖는다.
-
 ### 명제3
 Euler's phi function $\varphi$와 임의의 자연수 $n$이 있다고 하자.
 

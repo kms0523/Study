@@ -41,6 +41,32 @@ Group $G_1,G_2$와 group homomorphism $f : G_1 \rightarrow G_2$가 있다고 하
 
 $f$가 surjective일 때, $f$를 `group epimorphism`이라고 한다.
 
+### 명제1
+Group $G_1,G_2$와 group epimorphsim $f : G_1 \rightarrow G_2$가 있다고 하자.
+
+$G_2$의 subgroup을 $H$라고 할 떄, 다음을 증명하여라.
+
+$$ \preimg(H) \le G_1 $$
+
+**Proof**
+
+$\preimg(H) \subseteq G_1$임으로 closed와 inverse만 보이면 된다.
+
+[closed]  
+$\preimg(H)$의 임의의 element를 $g_1,g_2$라고 하면 다음이 성립한다.
+
+$$ f(g_1*g_2) = f(g_1)*f(g_2) $$
+
+$f(g_1),f(g_2) \in H$이고 $H$ subgroup임으로 다음이 성립한다.
+
+$$ f(g_1)*f(g_2)\in H \iff f(g_1*g_2) \in H \iff g_1*g_2 \in \preimg(H) \qed $$
+
+[inverse]  
+$\preimg(H)$의 임의의 element를 $g$라고 하면 $f(g) \in H$이고, $H$가 subgroup임으로 다음이 성립한다.
+
+$$ f(g)^{-1} \in H \iff f(g^{-1}) \in H \iff g^{-1} \in \preimg(H) \qed $$
+
+
 ## Group Isomorphism
 Group $G_1,G_2$와 group homomorphism $f : G_1 \rightarrow G_2$가 있다고 하자.
 

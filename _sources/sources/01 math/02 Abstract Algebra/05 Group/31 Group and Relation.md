@@ -235,6 +235,8 @@ $$ [i]_n + [j]_n = [i+j]_n $$
 
 $$ G/\Set{e_G} = \Set{g\Set{e_G} \mid g \in G} = \Set{\Set{g} \mid g \in G} $$
 
+$G$의 임의의 element를 $g$라고 할 떄, $g$의 equivalence class는 자기 자신밖에 없게 된다.
+
 이 때, $*$을 다음과 같이 정의하자.
 
 $$ \Set{g_1} * \Set{g_2} = \Set{g_1 * g_2} $$
@@ -366,6 +368,9 @@ $$ \exist h \in H \st xy^{-1} = h \implies x=hy $$
 
 $$ Hx = Hhy = Hy \qed $$
 
+##### 참고
+$Hx=Hy \iff \text{equivalence class가 같다} \iff x\sim y \iff xy^{-1} \in H$
+
 #### 명제6
 Group $G$와 subgroup $H$가 있다고 하자.
 
@@ -415,12 +420,23 @@ $\braket{g}$는 $G$의 subgroup임으로 다음이 성립한다.
 
 $$ |\braket{g}| \mid |G| \implies |\braket{g}| = |G| \implies \braket{g} = G \qed $$
 
-###### 참고
+###### 참고1
 finite group이면서 cyclic group이 아닌 경우는 여러개의 element로 생성되는 경우이다.
 
 예를 들어 finite cyclic group $\braket{x} = \Set{e,x},\braket{y} = \Set{e,y,y^2,y^3}$가 있다고 하자. 그러면 $\braket{x}\times\braket{y}$는 finite group이지만 $\gcd(o(x),o(y)) \neq 1$임으로 cyclic group은 아니다.
 
 예를 들어 각 generator로 구성된 $(x,y)$로는 $(x,y^2)$와 같은 $\braket{x}\times\braket{y}$의 element를 generate 할 수 없다.
+
+###### 참고2
+cyclic group이 element의 수가 prime number이면 $e_G$를 제외하고 어떤 element를 뽑아주더라도 generator가 된다. 왜냐하면 cycloc group의 order와 relative prime이 되기 때문이다.
+
+###### 참고3
+역은 성립안한다.
+
+##### 참고1
+Lagrange Theorem으로 인해 개수만으로 subgroup인지 아닌지 판단할 수 있따.
+
+또한 개수만으로 cyclic group인지 알 수 있다.
 
 ### 명제1
 Group $G$와 $G$의 subgroup $H$가 있다고 하자.

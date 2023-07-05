@@ -16,3 +16,8 @@ template <typename T> void type_checker(T& val)
 ```
 instantiation of "void Mec::type_checker(T &) [with T=Mec::DataArchive]" at line 3657
 ```
+
+## Iterator
+
+> Reference   
+> [blog](https://www.internalpointers.com/post/writing-custom-iterators-modern-cpp)
