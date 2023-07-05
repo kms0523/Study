@@ -17,13 +17,15 @@ $$ X_1 \subseteq \preimg(f(X_1)) $$
 
 **proof**
 
-함수의 정의에 의해 다음이 성립한다.
+$X_1$의 임의의 element를 $x$라고 하자.
 
-$$ \forall x \in X_1, \quad f(x) \in f(X_1) $$
+그러면 함수의 정의에 의해 다음이 성립한다.
 
-또한, preimage의 정의에 의해 다음이 성립한다.
+$$ f(x) \in f(X_1) $$
 
-$$ \forall x \in X_1, \quad  x\in \preimg(f(X_1)) \qed  $$
+이 떄, $\preimg(f(X_1)) := \set{x \in X \mid f(x) \in f(X_1)}$임으로 다음이 성립한다.
+
+$$ x\in \preimg(f(X_1)) \qed  $$
 
 > Reference  
 > [kocw 충북대 집합론](http://contents.kocw.or.kr/document/lec/2011/chungbuk/teaching/08_1.pdf)
@@ -56,6 +58,11 @@ $f$에 의해 갔다가 preimage에 의해 돌아오는 길에는 커질 수 있
 명제2에 의해서 다음 명제가 거짓이 된다.
 
 $$ X_1 = \preimg(f(X_1)) $$
+
+#### 참고3
+반례를 보면 알 수 있듯이, $X-X_1$에 존재하는 element와 $X_1$에 존재하는 element가 동일한 $Y$의 element가 될 떄, 위의 명제가 거짓이 된다.
+
+그러나 $X_1$의 element들이 동일한 $Y$의 element가 되더라도 위 명제는 참이다.
 
 ### 명제3
 집합 $X,Y$와 함수 $f : X \rightarrow Y$가 있다고 하자.

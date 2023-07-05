@@ -12,6 +12,12 @@ $G$의 $X$위의 왼쪽 군 작용이 정의되어 있는 경우 "$G$가 $X$에 
 ### 참고2
 작용을 받는 set $X$를 $G$-set이라고 한다.
 
+### 참고3
+group action이 group operation과 compatible하다고 한다.
+
+### 참고4
+group action이 정의되어 있다는 얘기는 $\forall g \in G, \enspace \forall x \in X, \enspace g \circ x \in X$라는 얘기이다.
+
 ### 명제1
 Group $G$와 $G$-set $X$가 있다고 하자.
 
