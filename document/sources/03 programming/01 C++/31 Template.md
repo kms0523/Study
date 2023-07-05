@@ -1,5 +1,10 @@
 # Template
+## CRTP
+Curiously recurring template pattern(CRTP)
 
+> Reference  
+> [wiki](https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern)  
+> 
 ## Paramter & Argument
 template parameter는 아래 예시의 T와 같이 치환될 인자를 나타내는 변수들이다.
 ``` cpp
