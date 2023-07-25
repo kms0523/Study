@@ -380,8 +380,8 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../../01%20math/02%20Abstract%20Algebra/05%20Group/21%20Cyclic%20Group.html">
-       Cyclic Group
+      <a class="reference internal" href="../../../01%20math/02%20Abstract%20Algebra/05%20Group/21%20Span%20%26%20Cyclic%20Group.html">
+       Span &amp; Cyclic Group
       </a>
      </li>
      <li class="toctree-l3">
@@ -1722,11 +1722,6 @@ const thebe_selector_output = ".output, .cell_output"
    Numerical Flux
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../20%20CFD/CFD.html">
-   Computational Fluid Dynamics
-  </a>
- </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -1901,6 +1896,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../../30%20Finance/02%20Derivatives.html">
    Derivatives
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Computer VIsion
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../40%20Computer%20VIsion/01%20Homogeneous%20Representation.html">
+   Homogeneous Representation
   </a>
  </li>
 </ul>
@@ -2136,7 +2143,7 @@ title="Print to PDF"
 <h2>페이지 테이블<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>페이지 테이블에는 페이지 번호가 몇번 프레임과 연결되어 있는지가 기록되어 있으며 개별 데이터는 <code class="docutils literal notranslate"><span class="pre">page</span> <span class="pre">table</span> <span class="pre">entry</span> <span class="pre">(PTE)</span></code>라고 한다.</p>
 <figure class="align-default">
-<img alt="../../../../_images/02011.png" src="../../../../_images/02011.png" />
+<img alt="../../../../_images/02012.png" src="../../../../_images/02012.png" />
 </figure>
 <p>32bit 기준으로 PTE는 위의 구조로 이루어져 있다. P는 present bit로 해당 페이지가 물리 메모리에 존재하는지 나타낸다. R/W는 read/write bit로 해당 페이지가 read/writer가 가능한지를 나타낸다. U/S는 user/supervisor bit로 유저, 커널모드 중 어느 모드에 접근 가능한지 나타낸다. V는 valid bit로 주소 자체가 유효한지를 나타낸다. 만약에 유효하지 않은경우 segmentation fault이다. PFN은 physical frame number를 나타낸다.</p>
 <p>페이지 테이블은 프로세스마다 하나씩 존재하게 되며 주기억장치에 상주하게 된다. 즉, 많은 프로세스가 구동될 수록 페이지 테이블로 인한 주기억장치 사용이 커진다.</p>
