@@ -20,6 +20,22 @@ $$ [x],[y] \in \Z/R, \enspace [x]+[y] = [x+y] $$
 어떤 경우에는 group structure을 갖는 반면 어떤 경우에는 그렇지 않는데 이면에 어떤 구조가 숨어있어서 이렇게 되는것인지 알아보기 위해 추상화를 해보자.
 
 ### Example1
+Group $D_3$와 relation $R$을 다음과 같이 정의하자.
+
+$$ D_3:=\Set{r,s \mid r^3=s^2=e, \enspace rs = sr^{-1}}, \enspace R:=\Set{(x,y) \in G\times G \mid xy^{-1} \in \Set{e,s}} $$
+
+그러면 $G/R$은 다음과 같다.
+
+$$ \begin{gathered} G/R := \Set{[e], [r], [r^2]} \\ [e] = \Set{e,s} \\ [r] = \Set{r,rs} \\ [r^2] = \Set{ r^2, r^2s} \end{gathered} $$
+
+이 때, $G/R$에 자연스러운 binary operation이 정의되었다고 해보자. 그러면 $[e] = [s], \enspace [s] = [rs]$임으로 다음이 성립한다.
+
+$$ \begin{aligned} [e] * [r] &= [r] \\ [s] * [rs] &= [srs] = [r^{-1}] = [r^2] \end{aligned} $$
+
+하지만 $[r] \neq [r^2]$임으로 자연스러운 binary operation이 잘 정의되지 않는다.
+
+
+### Example2
 Group $(M_{2\times2}(\R),+)$와 $M$위의 relation $R$을 다음과 같이 정의하자.
 
 $$ R:= \Set{(x,y) \in M^2 \mid \exist p \in M \st x = pyp^{-1}} $$
@@ -147,8 +163,6 @@ $$ [x][x^{-1}]= [e_G], \enspace [x^{-1}][x]=[e_G] $$
 
 따라서, $G/R$의 임의의 element마다 inverse element가 존재한다. $\qed$
 
-
-
 ## Observation2
 Observation을 다시 한번 살펴보자.
 
@@ -158,9 +172,84 @@ $$ 2\Z := \Set{2x \mid x \in \Z} $$
 
 그러면 observation에 있던 $R$을 다음과 같이 표현할 수 있다.
 
-$$ R := \Set{(x,y) \in \Z^2 \mid x-y \in 2\Z} $$
+$$ R := \Set{(x,y) \in \Z^2 \mid x-y \in 2\Z} \text{ or } R := \Set{(x,y) \in \Z^2 \mid -y+x \in 2\Z}$$
 
-즉, subgroup $2\Z$에 의해 주어진 equivalence relation이라는 조금 더 구체적인 관측을 한것이다.
+즉, $R$이 단순한 equivalence relation이 아니라 subgroup $2\Z$에 의해 주어진 equivalence relation이라는 조금 더 구체적인 관측을 한것이다.
+
+### Remark
+1. $R$의 두가지 정의는 inverse element에 위치에 따라서 앞의 정의는 $R_{2\Z}$, 뒤의 정의는 $_{2\Z}R$로 표기한다.
+
+### 명제1
+Group $G$와 subgroup $H$가 있을 때, $G$위의 relation $R$을 다음과 같이 정의하자.
+
+$$ R := \Set{(x,y) \in \Z^2 \mid xy^{-1} \in H} $$
+
+이 때, 다음을 증명하여라.
+
+$$ R \text{ is an equivalence relation } $$
+
+**Proof**
+
+[reflexive]  
+$e_G \in H$임으로 다음이 성립한다.
+
+$$ \forall g \in G, \enspace gg^{-1} = e_G \in H \implies  g \sim g \qed $$
+
+[symmetric]  
+$x,y \in G$에 대해서 $x \sim y$라고 하자.
+
+이 떄, $H$가 inverse element를 갖음으로 다음이 성립한다.
+
+$$xy^{-1} \in H \implies (xy^{-1})^{-1} \in H \implies yx^{-1} \in H \implies y \sim x \qed$$
+
+[transitivity]  
+$x,y,z \in G$에 대해서 $x \sim y, \enspace y \sim z$라고 하자.
+
+그러면 $H$가 연산에 닫혀있음으로 다음이 성립한다.
+
+$$ xy^{-1}, yz^{-1} \in H \implies xy^{-1}*yz^{-1} = xz^{-1} \in H \implies x \sim z \qed $$
+
+
+### 명제2
+Group $G$와 subgroup $H$가 있을 때, $G$위의 relation $R$을 다음과 같이 정의하자.
+
+$$ R := \Set{(x,y) \in \Z^2 \mid y^{-1}x \in H} $$
+
+이 때, 다음을 증명하여라.
+
+$$ R \text{ is an equivalence relation } $$
+
+**Proof**
+
+[reflexive]  
+$e_G \in H$임으로 다음이 성립한다.
+
+$$ \forall g \in G, \enspace g^{-1}g = e_G \in H \implies  g \sim g \qed $$
+
+[symmetric]  
+$x,y \in G$에 대해서 $x \sim y$라고 하자.
+
+이 떄, $H$가 inverse element를 갖음으로 다음이 성립한다.
+
+$$y^{-1}x \in H \implies (y^{-1}x)^{-1} \in H \implies x^{-1}y \in H \implies y \sim x \qed$$
+
+[transitivity]  
+$x,y,z \in G$에 대해서 $x \sim y, \enspace y \sim z$라고 하자.
+
+그러면 $H$가 연산에 닫혀있음으로 다음이 성립한다.
+
+$$ y^{-1}x, z^{-1}y \in H \implies z^{-1}y*y^{-1}x = z^{-1}x \in H \implies x \sim z \qed $$
+
+## Definition(Coset)  
+Group $G$와 subgroup $H$ 그리고 $H$에 의해 주어진 relation $R_H, \enspace {}_HR$이 있다고 하자.
+
+$G$의 임의의 element를 $g$라고 할 떄, $R_H$에 의한 $g$의 equivalence class $[g]_{R_H} := \Set{hg \mid h \in H }$를 $g$의 right coset이라고 하며 ${}_ HR$에 의한 $g$의 equivalence class $[g]_ {{}_HR}:= \Set{gh | h \in H }$를 $g$의 left coset이라고 한다.
+
+### Remark
+1. $[g]_{R_H}$를 $Hg$로 표기하고 $[g]_ {{}_HR}$를 $gH$로 표기한다.
+
+
+---
 
 그렇다면 group과 임의의 subgroup이 주어질 때, 위와 같은 방식으로 subgroup에 의해 정의된 relation은 항상 equivalence relation일까?라는 자연스러운 질문이 떠오른다.
 

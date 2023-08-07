@@ -6,6 +6,16 @@ Vector valued function $r : U \rightarrow\R^n$이 있을 때, 다음과 같이 �
 
 $$ C:= \img(r) $$
 
+### Remark
+5. $C$가 유한하게 꼬여있으면 정의역과 공역을 적절하게 restriction 시켜서 bijective function들을 만들 수 있다.
+   1. $r|_{U_1\times r(U_1)}$과 $r|_{U_2\times r(U_2)}$의 역함수는 연속인가?
+   
+   
+> Reference  
+> [컴팩트 거리공간에서 연속인 전단사 함수의 역함수는 연속이다](https://freshrimpsushi.github.io/posts/proof-of-that-inverse-function-of-continuous-bijection-in-compact-metric-space-is-continuous/)  
+> [counter examples](https://math.stackexchange.com/questions/68800/functions-which-are-continuous-but-not-bicontinuous)  
+  
+
 ## Parametric Equations & Parameter
 $r$은 다음과 같다.
 
