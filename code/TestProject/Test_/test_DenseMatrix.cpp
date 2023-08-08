@@ -59,6 +59,21 @@ TEST(test, range)
 
 	expect_equal(m1, ref);
 }
+TEST(Matrix, comma_operator)
+{
+	Matrix mat(2, 2);
+	mat = 1, 2, 3, 4;
+
+	//column major matrix
+	Matrix ref(2, 2);
+	ref(0, 0) = 1;
+  ref(0, 1) = 3;
+  ref(1, 0) = 2;
+  ref(1, 1) = 4;
+	
+	expect_equal(mat, ref);  
+}
+
 
 //// Dense Matrix는 component wise mulitplication밖에 안된다.
 //TEST(Test, muliplication1)

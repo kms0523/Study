@@ -36,6 +36,10 @@
     <ClCompile Include="test_class.cpp">
       <Filter>STD</Filter>
     </ClCompile>
+    <ClCompile Include="test_numeric_limit.cpp">
+      <Filter>STD</Filter>
+    </ClCompile>
+    <ClCompile Include="test_MecVector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />
