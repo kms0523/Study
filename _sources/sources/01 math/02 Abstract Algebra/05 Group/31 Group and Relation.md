@@ -20,6 +20,22 @@ $$ [x],[y] \in \Z/R, \enspace [x]+[y] = [x+y] $$
 어떤 경우에는 group structure을 갖는 반면 어떤 경우에는 그렇지 않는데 이면에 어떤 구조가 숨어있어서 이렇게 되는것인지 알아보기 위해 추상화를 해보자.
 
 ### Example1
+Group $D_3$와 relation $R$을 다음과 같이 정의하자.
+
+$$ D_3:=\Set{r,s \mid r^3=s^2=e, \enspace rs = sr^{-1}}, \enspace R:=\Set{(x,y) \in G\times G \mid xy^{-1} \in \Set{e,s}} $$
+
+그러면 $G/R$은 다음과 같다.
+
+$$ \begin{gathered} G/R := \Set{[e], [r], [r^2]} \\ [e] = \Set{e,s} \\ [r] = \Set{r,rs} \\ [r^2] = \Set{ r^2, r^2s} \end{gathered} $$
+
+이 때, $G/R$에 자연스러운 binary operation이 정의되었다고 해보자. 그러면 $[e] = [s], \enspace [s] = [rs]$임으로 다음이 성립한다.
+
+$$ \begin{aligned} [e] * [r] &= [r] \\ [s] * [rs] &= [srs] = [r^{-1}] = [r^2] \end{aligned} $$
+
+하지만 $[r] \neq [r^2]$임으로 자연스러운 binary operation이 잘 정의되지 않는다.
+
+
+### Example2
 Group $(M_{2\times2}(\R),+)$와 $M$위의 relation $R$을 다음과 같이 정의하자.
 
 $$ R:= \Set{(x,y) \in M^2 \mid \exist p \in M \st x = pyp^{-1}} $$
@@ -147,8 +163,6 @@ $$ [x][x^{-1}]= [e_G], \enspace [x^{-1}][x]=[e_G] $$
 
 따라서, $G/R$의 임의의 element마다 inverse element가 존재한다. $\qed$
 
-
-
 ## Observation2
 Observation을 다시 한번 살펴보자.
 
@@ -158,15 +172,273 @@ $$ 2\Z := \Set{2x \mid x \in \Z} $$
 
 그러면 observation에 있던 $R$을 다음과 같이 표현할 수 있다.
 
-$$ R := \Set{(x,y) \in \Z^2 \mid x-y \in 2\Z} $$
+$$ R := \Set{(x,y) \in \Z^2 \mid x-y \in 2\Z} \text{ or } R := \Set{(x,y) \in \Z^2 \mid -y+x \in 2\Z}$$
 
-즉, subgroup $2\Z$에 의해 주어진 equivalence relation이라는 조금 더 구체적인 관측을 한것이다.
+즉, $R$이 단순한 equivalence relation이 아니라 subgroup $2\Z$에 의해 주어진 equivalence relation이라는 조금 더 구체적인 관측을 한것이다.
 
-그렇다면 group과 임의의 subgroup이 주어질 때, 위와 같은 방식으로 subgroup에 의해 정의된 relation은 항상 equivalence relation일까?라는 자연스러운 질문이 떠오른다.
+### 명제1
+Group $G$와 subgroup $H$가 있을 때, $G$위의 relation $R$을 다음과 같이 정의하자.
 
-그리고 이 질문의 대답은 명제1을 통해 subgroup을 통해 정의된 relation은 항상 equivalence relation임을 알 수 있다.
+$$ R := \Set{(x,y) \in R \times R \mid xy^{-1} \in H} $$
 
-구체적으로 equivalence relation이 주어졌음으로 equivalence class 또한 구체적으로 서술할 수 있으며 이를 `우 잉여류(right coset)`이라고 한다.
+이 때, 다음을 증명하여라.
+
+$$ R \text{ is an equivalence relation } $$
+
+**Proof**
+
+[reflexive]  
+$e_G \in H$임으로 다음이 성립한다.
+
+$$ \forall g \in G, \enspace gg^{-1} = e_G \in H \implies  g \sim g \qed $$
+
+[symmetric]  
+$x,y \in G$에 대해서 $x \sim y$라고 하자.
+
+이 떄, $H$가 inverse element를 갖음으로 다음이 성립한다.
+
+$$xy^{-1} \in H \implies (xy^{-1})^{-1} \in H \implies yx^{-1} \in H \implies y \sim x \qed$$
+
+[transitivity]  
+$x,y,z \in G$에 대해서 $x \sim y, \enspace y \sim z$라고 하자.
+
+그러면 $H$가 연산에 닫혀있음으로 다음이 성립한다.
+
+$$ xy^{-1}, yz^{-1} \in H \implies xy^{-1}*yz^{-1} = xz^{-1} \in H \implies x \sim z \qed $$
+
+### 명제2
+Group $G$와 subgroup $H$가 있을 때, $G$위의 relation $R$을 다음과 같이 정의하자.
+
+$$ R := \Set{(x,y) \in R \times R \mid y^{-1}x \in H} $$
+
+이 때, 다음을 증명하여라.
+
+$$ R \text{ is an equivalence relation } $$
+
+**Proof**
+
+[reflexive]  
+$e_G \in H$임으로 다음이 성립한다.
+
+$$ \forall g \in G, \enspace g^{-1}g = e_G \in H \implies  g \sim g \qed $$
+
+[symmetric]  
+$x,y \in G$에 대해서 $x \sim y$라고 하자.
+
+이 떄, $H$가 inverse element를 갖음으로 다음이 성립한다.
+
+$$y^{-1}x \in H \implies (y^{-1}x)^{-1} \in H \implies x^{-1}y \in H \implies y \sim x \qed$$
+
+[transitivity]  
+$x,y,z \in G$에 대해서 $x \sim y, \enspace y \sim z$라고 하자.
+
+그러면 $H$가 연산에 닫혀있음으로 다음이 성립한다.
+
+$$ y^{-1}x, z^{-1}y \in H \implies z^{-1}y*y^{-1}x = z^{-1}x \in H \implies x \sim z \qed $$
+
+## Definition(Coset)  
+Group $G$와 subgroup $H$ 그리고 다음과 같이 정의된 equivalence relation $R_1, R_2$가 있다고 하자.
+
+$$ \begin{aligned} R_1 := \Set{(x,y) \in G \times G \mid xy^{-1} \in H} \\ R_2 := \Set{(x,y) \in G \times G \mid y^{-1}x \in H} \end{aligned} $$
+
+
+$G$의 임의의 element를 $g$라고 할 떄, $R_1$에 의한 $g$의 equivalence class $[g]_{R_1}$를 $g$의 `right coset`이라고 하며 $R_2$에 의한 $g$의 equivalence class $[g]_{R_2}$를 $g$의 `left coset`이라고 한다.
+
+### 명제1
+다음을 증명하여라.
+
+$$ [g]_{R_1} = Hg $$
+
+**Proof**
+
+$[g]_{R_1}$은 equivalence class의 정의에 의해 다음과 같다.
+
+$$ [g]_{R_1} := \Set{g_2 \in G \mid gg_2^{-1} \in H} $$
+
+[$[g]_{R_1} \subseteq Hg$]  
+$[g]_{R_1}$의 임의의 element를 $g_2$라고 하면 다음이 성립한다.
+
+$$ \exist h \in H \st gg_2^{-1} = h \implies g_2 = h^{-1}g \implies g_2 \in Hg \qed $$
+
+[$Hg \subseteq [g]_{R_1}$]  
+$Hg$의 임의의 element를 $hg$라고 하면 다음이 성립한다.
+
+$$ g*(hg)^{-1} = h^{-1} \in H \implies hg \in [g]_{R_1} \qed $$
+
+#### Remark
+1. right coset은 inverse가 오른쪽에 있는 equivalence relation에 의해 주어진 equivalence class이다.
+2. right coset은 $g$가 오른쪽에 곱해져 있는 형태를 갖는다.
+
+### 명제2
+다음을 증명하여라.
+
+$$ [g]_{R_2} = gH $$
+
+**Proof**
+
+$[g]_{R_2}$은 equivalence class의 정의에 의해 다음과 같다.
+
+$$ [g]_{R_2} := \Set{g_2 \in G \mid gg_2^{-1} \in H} $$
+
+[$[g]_{R_2} \subseteq gH$]  
+$[g]_{R_2}$의 임의의 element를 $g_2$라고 하면 다음이 성립한다.
+
+$$ \exist h \in H \st gg_2^{-1} = h \implies g_2 = h^{-1}g \implies g_2 \in gH \qed $$
+
+[$gH \subseteq [g]_{R_2}$]  
+$gH$의 임의의 element를 $gh$라고 하면 다음이 성립한다.
+
+$$ (gh)^{-1}*g = h^{-1} \in H \implies gh \in [g]_{R_2} \qed $$
+
+#### Remark
+1. left coset은 inverse가 왼쪽에 있는 equivalence relation에 의해 주어진 equivalence class이다.
+2. left coset은 $g$가 왼쪽에 곱해져 있는 형태를 갖는다.
+
+### 명제3
+Group $G$와 $G$의 subgroup $H$가 있다고 하자.
+
+$G$의 임의의 elements를 $x,y$라고 할 떄, 다음을 증명하여라.
+
+$$H(xy)= (Hx)y$$
+
+**Proof**
+
+Right coset의 정의에 의해 다음이 성립한다.
+
+$$ H(xy) = \Set{hxy|h \in H} = \Set{ty | t \in Hx} = (Hx)y \qed $$
+
+### 명제4
+Group $G$와 $G$의 subgroup $H$가 있다고 하자.
+
+$H$의 임의의 element를 $h$라고 할 떄, 다음을 증명하여라.
+
+$$Hh = H$$
+
+**Proof**
+
+[$Hh \subseteq H$]  
+$Hh$의 임의의 element를 $h'h$라고 하면, $H$가 subgroup이기 때문에 $h'h\in H$이다. $\qed$
+
+[$H \subseteq Hh$]
+$H$의 임의의 element를 $h'$라고 하자.
+
+$h'h^{-1} \in H$임으로 $h' = h'h^{-1}h\in Hh$이다. $\qed$
+
+### 명제5
+Group $G$와 $G$의 subgroup $H$가 있다고 하자.
+
+$G$의 임의의 element를 $x$라고 할 떄, 다음을 증명하여라.
+
+$$Hx = H \iff x \in H$$
+
+**Proof**
+
+[$\implies$]  
+$Hx$의 임의의 element를 $hx$라고 하자.
+
+그러면 전제에 의해 다음이 성립한다.
+
+$$ \exist h' \in H \st hx = h' \implies x = h^{-1}h' \in H \qed $$
+
+[$\impliedby$]  
+명제4에 의해 자명하다. $\qed$
+
+### 명제6
+Group $G$와 $G$의 subgroup $H$가 있다고 하자.
+
+$G$의 임의의 elements를 $x,y$라고 할 떄, 다음을 증명하여라.
+
+$$Hx = Hy \iff xy^{-1} \in H$$
+
+**Proof**
+
+[$\implies$]  
+$Hx$의 임의의 element를 $hx$라고 하자.
+
+그러면 전제에 의해 다음이 성립한다.
+
+$$ \exist h' \in H \st hx = h'y \implies xy^{-1}=h^{-1}h' \in H \qed$$
+
+[$\impliedby$]  
+전제에 의해 다음이 성립한다.
+
+$$ \exist h \in H \st xy^{-1} = h \implies x=hy $$
+
+따라서, 다음이 성립한다.
+
+$$ Hx = Hhy = Hy \qed $$
+
+#### 참고
+$Hx=Hy \iff \text{equivalence class가 같다} \iff x\sim y \iff xy^{-1} \in H$
+
+### 명제7
+Group $G$와 subgroup $H$가 있다고 하자.
+
+$G$의 임의의 element를 $g$라고 할 때, 다음을 증명하여라.
+
+$$ |gH| = |H| $$
+
+**Proof**
+
+함수 $f$를 다음과 같이 정의하자.
+
+$$ f : gH \rightarrow H \st gh \mapsto h $$
+
+이 떄, $f$가 bijective함을 보여서 $|gH| = |H|$임을 증명하자.
+
+[injective]  
+$gH$의 임의의 두 elements를 $gh_1,gh_2$라고 하면 다음이 성립한다.
+
+$$ f(gh_1)=f(gh_2) \implies h_1 = h_2 \implies gh_1 = gh_2 \qed $$
+
+[surjective]  
+$H$의 임의의 element를 $h$라고 하면 다음이 성립한다.
+
+$$ \exist gh \in gH \st f(gh) = h \qed $$
+
+### 명제8(Lagrange's Theorem)
+Finite group $G$가 있을 떄, 다음을 증명하여라.
+
+$$ H \le G \implies |H| \mid |G| $$
+
+**Proof**
+
+$G/H$는 $G$의 partition임으로 다음이 성립한다.
+
+$$ \begin{aligned} & G = \bigcup G/H = \bigcup \Set{gH \mid g \in G} = \bigcup_{i=1}^n g_iH \\\implies& |G| = \sum_{i=1}^n |g_iH| = n|H| \\\implies& |H| \mid |G| \qed \end{aligned} $$
+
+#### 따름명제
+Finite group $G$가 있을 때, 다음을 증명하여라.
+
+$$ |G| = \text{prime number} \implies G \text{ is a cyclic group} $$
+
+**Proof**
+
+$G - \Set{e_G}$의 임의의 element를 $g$라고 하자.
+
+$\braket{g}$는 $G$의 subgroup임으로 다음이 성립한다.
+
+$$ |\braket{g}| \mid |G| \implies |\braket{g}| = |G| \implies \braket{g} = G \qed $$
+
+##### 참고1
+finite group이면서 cyclic group이 아닌 경우는 여러개의 element로 생성되는 경우이다.
+
+예를 들어 finite cyclic group $\braket{x} = \Set{e,x},\braket{y} = \Set{e,y,y^2,y^3}$가 있다고 하자. 그러면 $\braket{x}\times\braket{y}$는 finite group이지만 $\gcd(o(x),o(y)) \neq 1$임으로 cyclic group은 아니다.
+
+예를 들어 각 generator로 구성된 $(x,y)$로는 $(x,y^2)$와 같은 $\braket{x}\times\braket{y}$의 element를 generate 할 수 없다.
+
+##### 참고2
+cyclic group이 element의 수가 prime number이면 $e_G$를 제외하고 어떤 element를 뽑아주더라도 generator가 된다. 왜냐하면 cycloc group의 order와 relative prime이 되기 때문이다.
+
+###### 참고3
+역은 성립안한다.
+
+#### 참고1
+Lagrange Theorem으로 인해 개수만으로 subgroup인지 아닌지 판단할 수 있따.
+
+또한 개수만으로 cyclic group인지 알 수 있다.
+
+## Observation3
 
 이전에 관찰을 통해서 group의 quotient set이 group이 될 조건은 연산이 잘 정의되어야 된다는것을 알았다. 그렇다면 subgroup에 의해 정의된 equivalence relation이라는 셋팅에서 연산이 잘 정의 될 조건은 어떻게 표현되는지를 살펴보자.
 
@@ -193,6 +465,29 @@ $$ \forall x \in G, \enspace \forall h \in H, \enspace xhx^{-1} \in H  \iff * \t
 $$ \forall x \in G, \enspace \forall h \in H, \enspace xhx^{-1} \in H  \iff G/R \text{ is a group} $$
 
 참고로 $H$에 의해 정의된 $R$이라는 것을 명시적으로 나타내기 위해서 $G/R$대신에 $G/H$라고 표기한다.
+
+### 명제1
+Group $G$와 $G$의 subgroup $H$가 있다고 하자.
+
+그리고 $G$위의 relation $R$을 다음과 같이 정의하자.
+
+$$ R:=\Set{(x,y)\in G^2 \mid xy^{-1} \in H} $$
+
+$G/R$위의 binary operation을 다음과 같이 정의하자.
+
+$$ Hx, Hy \in G/R, \enspace Hx*Hy = Hxy $$
+
+이 떄, 다음을 증명하여라.
+
+$$ \forall x \in G, \enspace \forall h \in H, \enspace xhx^{-1} \in H  \impliedby * \text{ is well defined} $$
+
+**Proof**
+
+$G$의 임의의 element를 $x$ $H$의 임의의 element를 $y$라고 하자.
+
+그러면 $Hy = H$임으로 다음이 성립한다.
+
+$$ \begin{aligned} \begin{gathered} HxHy = Hxy \\ HxHy = HxH = Hx \end{gathered} &\implies Hxy = Hx \\&\implies Hxyx^{-1} = H \\&\implies xyx^{-1} \in H \qed \end{aligned} $$
 
 ### Example1
 정의에 의해 다음이 성립한다.
@@ -245,318 +540,8 @@ $$ \Set{g_1} * \Set{g_2} = \Set{g_1 * g_2} $$
 
 또한 함수 $f : G \rightarrow G/\set{e_G} \st g \mapsto \Set{g}$는 group isomorphism임을 알 수 있다.
 
-### Right Coset
-Group $G$와 $G$의 subgroup $H$가 있다고 하자.
 
-그리고 $G$위의 relation $R$을 다음과 같이 정의하자.
 
-$$ R:=\Set{(x,y)\in G^2 \mid xy^{-1} \in H} $$
 
-$G$의 임의의 element를 $x$라고 할 때, $[x]$는 다음과 같다.
-
-$$ \begin{aligned} [x] &= \Set{y \in G \mid x \sim y} \\&= \Set{ y \in G | xy^{-1} \in H} \end{aligned} $$
-
-이는 명제1에 의해 다음과 같다.
-
-$$ [x] = \Set{ hx | h \in H} $$
-
-이 때, $[x]$를 $Hx$로 표기하며, $H$의 element에 $x$가 오른쪽에 연산된 형태의 집합임으로 $Hx$를 `우 잉여류(right coset)`이라고 한다.
-
-#### 성질
-Group $G$와 $G$의 subgroup $H$가 있다고 하자.
-
-$G$의 임의의 elements를 $x,y$ $H$의 임의의 elements를 $h$라고 할 떄, 다음이 성립한다.
-
-1. $H(xy)= (Hx)y$ (명제2)
-2. $Hh = H$ (명제3)
-3. $Hx = H \iff x \in H$ (명제4)
-4. $Hx = Hy \iff xy^{-1} \in H$ (명제5)
-
-
-#### 명제1
-Group $G$와 $G$의 subgroup $H$가 있다고 하자.
-
-$G$의 임의의 element를 $x$라고 할 떄, 다음을 증명하여라.
-
-$$ \Set{ y \in G | xy^{-1} \in H} = \Set{ hx | h \in H} $$
-
-**Proof**
-
-$S_1 = \Set{ y \in G | xy^{-1} \in H}, \enspace S_2 = \Set{ hx | h \in H}$라고 하자.
-
-[$S_1 \subseteq S_2$]  
-$S_1$의 임의의 element를 $y$라고 하면 다음이 성립한다.
-
-$$ \exist h \in H \st xy^{-1} = h \implies y = h^{-1}x \implies y \in S_2 \qed $$
-
-[$S_2 \subseteq S_1$]  
-$S_2$의 임의의 element를 $hx$라고 하면 다음이 성립한다.
-
-$$ x(hx)^{-1} = h^{-1} \in H \implies hx \in S_1 \qed $$
-
-#### 명제2
-Group $G$와 $G$의 subgroup $H$가 있다고 하자.
-
-$G$의 임의의 elements를 $x,y$라고 할 떄, 다음을 증명하여라.
-
-$$H(xy)= (Hx)y$$
-
-**Proof**
-
-Right coset의 정의에 의해 다음이 성립한다.
-
-$$ H(xy) = \Set{hxy|h \in H} = \Set{ty | t \in Hx} = (Hx)y \qed $$
-
-#### 명제3
-Group $G$와 $G$의 subgroup $H$가 있다고 하자.
-
-$H$의 임의의 element를 $h$라고 할 떄, 다음을 증명하여라.
-
-$$Hh = H$$
-
-**Proof**
-
-[$Hh \subseteq H$]  
-$Hh$의 임의의 element를 $h'h$라고 하면, $H$가 subgroup이기 때문에 $h'h\in H$이다. $\qed$
-
-[$H \subseteq Hh$]
-$H$의 임의의 element를 $h'$라고 하자.
-
-$h'h^{-1} \in H$임으로 $h' = h'h^{-1}h\in Hh$이다. $\qed$
-
-#### 명제4
-Group $G$와 $G$의 subgroup $H$가 있다고 하자.
-
-$G$의 임의의 element를 $x$라고 할 떄, 다음을 증명하여라.
-
-$$Hx = H \iff x \in H$$
-
-**Proof**
-
-[$\implies$]  
-$Hx$의 임의의 element를 $hx$라고 하자.
-
-그러면 전제에 의해 다음이 성립한다.
-
-$$ \exist h' \in H \st hx = h' \implies x = h^{-1}h' \in H \qed $$
-
-[$\impliedby$]  
-명제2에 의해 자명하다. $\qed$
-
-#### 명제5
-Group $G$와 $G$의 subgroup $H$가 있다고 하자.
-
-$G$의 임의의 elements를 $x,y$라고 할 떄, 다음을 증명하여라.
-
-$$Hx = Hy \iff xy^{-1} \in H$$
-
-**Proof**
-
-[$\implies$]  
-$Hx$의 임의의 element를 $hx$라고 하자.
-
-그러면 전제에 의해 다음이 성립한다.
-
-$$ \exist h' \in H \st hx = h'y \implies xy^{-1}=h^{-1}h' \in H \qed$$
-
-[$\impliedby$]  
-전제에 의해 다음이 성립한다.
-
-$$ \exist h \in H \st xy^{-1} = h \implies x=hy $$
-
-따라서, 다음이 성립한다.
-
-$$ Hx = Hhy = Hy \qed $$
-
-##### 참고
-$Hx=Hy \iff \text{equivalence class가 같다} \iff x\sim y \iff xy^{-1} \in H$
-
-#### 명제6
-Group $G$와 subgroup $H$가 있다고 하자.
-
-$G$의 임의의 element를 $g$라고 할 때, 다음을 증명하여라.
-
-$$ |gH| = |H| $$
-
-**Proof**
-
-함수 $f$를 다음과 같이 정의하자.
-
-$$ f : gH \rightarrow H \st gh \mapsto h $$
-
-이 떄, $f$가 bijective함을 보여서 $|gH| = |H|$임을 증명하자.
-
-[injective]  
-$gH$의 임의의 두 elements를 $gh_1,gh_2$라고 하면 다음이 성립한다.
-
-$$ f(gh_1)=f(gh_2) \implies h_1 = h_2 \implies gh_1 = gh_2 \qed $$
-
-[surjective]  
-$H$의 임의의 element를 $h$라고 하면 다음이 성립한다.
-
-$$ \exist gh \in gH \st f(gh) = h \qed $$
-
-#### 명제7(Lagrange's Theorem)
-Finite group $G$가 있을 떄, 다음을 증명하여라.
-
-$$ H \le G \implies |H| \mid |G| $$
-
-**Proof**
-
-$G/H$는 $G$의 partition임으로 다음이 성립한다.
-
-$$ \begin{aligned} & G = \bigcup G/H = \bigcup \Set{gH \mid g \in G} = \bigcup_{i=1}^n g_iH \\\implies& |G| = \sum_{i=1}^n |g_iH| = n|H| \\\implies& |H| \mid |G| \qed \end{aligned} $$
-
-##### 따름명제
-Finite group $G$가 있을 때, 다음을 증명하여라.
-
-$$ |G| = \text{prime number} \implies G \text{ is a cyclic group} $$
-
-**Proof**
-
-$G - \Set{e_G}$의 임의의 element를 $g$라고 하자.
-
-$\braket{g}$는 $G$의 subgroup임으로 다음이 성립한다.
-
-$$ |\braket{g}| \mid |G| \implies |\braket{g}| = |G| \implies \braket{g} = G \qed $$
-
-###### 참고1
-finite group이면서 cyclic group이 아닌 경우는 여러개의 element로 생성되는 경우이다.
-
-예를 들어 finite cyclic group $\braket{x} = \Set{e,x},\braket{y} = \Set{e,y,y^2,y^3}$가 있다고 하자. 그러면 $\braket{x}\times\braket{y}$는 finite group이지만 $\gcd(o(x),o(y)) \neq 1$임으로 cyclic group은 아니다.
-
-예를 들어 각 generator로 구성된 $(x,y)$로는 $(x,y^2)$와 같은 $\braket{x}\times\braket{y}$의 element를 generate 할 수 없다.
-
-###### 참고2
-cyclic group이 element의 수가 prime number이면 $e_G$를 제외하고 어떤 element를 뽑아주더라도 generator가 된다. 왜냐하면 cycloc group의 order와 relative prime이 되기 때문이다.
-
-###### 참고3
-역은 성립안한다.
-
-##### 참고1
-Lagrange Theorem으로 인해 개수만으로 subgroup인지 아닌지 판단할 수 있따.
-
-또한 개수만으로 cyclic group인지 알 수 있다.
-
-### 명제1
-Group $G$와 $G$의 subgroup $H$가 있다고 하자.
-
-그리고 $G$위의 relation $R$을 다음과 같이 정의하자.
-
-$$ R:=\Set{(x,y)\in G^2 \mid xy^{-1} \in H} $$
-
-이 떄, 다음을 증명하여라.
-
-$$ R \text{ is an equivalence relation} $$
-
-**Proof**
-
-[reflexive]  
-$G$의 임의의 element를 $x$라고 하자.
-
-이 떄, $H$가 subgroup임으로 다음이 성립한다.
-
-$$ xx^{-1} = e_G \in H \implies x \sim x \qed $$
-
-[symmetric]  
-$x \sim y$라고 하자.
-
-이 때,  $H$가 subgroup임으로 다음이 성립한다.
-
-$$ xy^{-1} \in H \implies yx^{-1} \in H \implies y \sim x \qed $$
-
-[transitive]  
-$x \sim y, y \sim z$라고 하자.
-
-이 떄, $H$가 subgroup임으로 다음이 성립한다.
-
-$$ xy^{-1},yz^{-1} \in H \implies xy^{-1}yz^{-1} = xz^{-1} \in H \implies x \sim z \qed $$  
-
-### 명제2
-Group $G$와 $G$의 subgroup $H$가 있다고 하자.
-
-이 때, 다음을 증명하여라.
-
-$$ \forall h \in H, \enspace \exist y,y' \in G \st y(y')^{-1} =h $$
-
-**Proof**
-
-$H$의 임의의 element를 $h$ $G$의 임의의 element $y'$이라고 하자.
-
-이 떄, $y=hy'$이라고 두면 $y\in G$이고 다음이 성립한다.
-
-$$ y(y')^{-1} = hy'(y')^{-1} = h \qed $$
-
-
-### 명제3
-Group $G$와 $G$의 subgroup $H$가 있다고 하자.
-
-그리고 $G$위의 relation $R$을 다음과 같이 정의하자.
-
-$$ R:=\Set{(x,y)\in G^2 \mid xy^{-1} \in H} $$
-
-$G/R$위의 binary operation을 다음과 같이 정의하자.
-
-$$ Hx, Hy \in G/R, \enspace Hx*Hy = Hxy $$
-
-이 떄, 다음을 증명하여라.
-
-$$ \forall x \in G, \enspace \forall h \in H, \enspace xhx^{-1} \in H  \impliedby * \text{ is well defined} $$
-
-**Proof**
-
-$G$의 임의의 element를 $x$ $H$의 임의의 element를 $y$라고 하자.
-
-그러면 $Hy = H$임으로 다음이 성립한다.
-
-$$ \begin{aligned} \begin{gathered} HxHy = Hxy \\ HxHy = HxH = Hx \end{gathered} &\implies Hxy = Hx \\&\implies Hxyx^{-1} = H \\&\implies xyx^{-1} \in H \qed \end{aligned} $$
-
-## Observation3
-Observation2을 다시 한번 살펴보자.
-
-$R$을 다음과 같이 표현할 수 있다.
-
-$$ R := \Set{(x,y) \in \Z^2 \mid -x+y \in 2\Z} $$
-
-이를 바탕으로 observation2에서 한 작업들을 그대로 하면 group $G$와 subgorup $H$가 있을 떄, $G$위의 equivalence relation $R$을 다음과 같이 정의할 수 있음을 알 수 있다.
-
-$$ R := \Set{(x,y) \in G^2 \mid y^{-1}x \in H} $$
-
-그리고 $R$을 가지고 equivalence class를 따져보면 `좌 잉여류(left coset)`을 얻을 수 있다.
-
-그리고 이 setting에서 $G/R$에 연산이 잘 정의될 필요충분조건을 찾아보면 동일함을 알 수 있다.
-
-$$ \forall x \in G, \enspace \forall h \in H, \enspace xhx^{-1} \in H  \iff * \text{ is well defined} $$
-
-그리고 Observation1의 관찰의 결과로 group이 되기 위한 필요충분조건임도 알고 있다.
-
-$$ \forall x \in G, \enspace \forall h \in H, \enspace xhx^{-1} \in H  \iff G/R \text{ is a group} $$
-
-### Left Coset
-Group $G$와 $G$의 subgroup $H$가 있다고 하자.
-
-그리고 $G$위의 relation $R$을 다음과 같이 정의하자.
-
-$$ R:=\Set{(x,y)\in G^2 \mid xy^{-1} \in H} $$
-
-$G$의 임의의 element를 $x$라고 할 때, $[x]$는 다음과 같다.
-
-$$ \begin{aligned} [x] &= \Set{y \in G \mid x \sim y} \\&= \Set{ y \in G | y^{-1}x \in H} \end{aligned} $$
-
-이는 다음과 같다.
-
-$$ [x] = \Set{ xh | h \in H} $$
-
-이 때, $[x]$를 $xH$로 표기하며, $H$의 element에 $x$가 왼쪽에서 연산된 형태의 집합임으로 $xH$를 `좌 잉여류(left coset)`이라고 한다.
-
-#### 성질
-Group $G$와 $G$의 subgroup $H$가 있다고 하자.
-
-$G$의 임의의 elements를 $x,y$ $H$의 임의의 elements를 $h$라고 할 떄, 다음이 성립한다.
-
-1. $(xy)H= x(yH)$ 
-2. $hH = H$ 
-3. $xH = H \iff x \in H$ 
-4. $xH = yH \iff y^{-1}x \in H$ 
 
 

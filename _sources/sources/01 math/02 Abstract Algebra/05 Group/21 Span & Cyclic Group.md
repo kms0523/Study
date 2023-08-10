@@ -9,7 +9,7 @@ $W$를 포함한 subspace의 familiy를 $\mathcal{H}$라고 할 때, $\span(W) =
 
 따라서, vector space와는 다른 구조를 갖는 공간에서 비슷 한 방식으로 span을 정의할 수 있을 것이다.
 
-## Definition(Span)
+## Definition(Span) 
 Group $G$와 $G$의 subset $U$가 있다고 하자.
 
 $U$를 포함하는 $G$의 subgroup의 family를 $\mathcal{H}$라고 할 때, $U$에 의한 `생성(span)`은 다음과 같이 정의된 집합이다.
@@ -83,7 +83,7 @@ Group $G$와 $G$의 임의의 singletone set $\Set{g}$가 있다고 하자.
 
 ### Remark
 1. $\braket{\Set{g}}$를 $\braket{g}$로 간단하게 표기한다.
-2. cyclic group은 commutative gorup이다.
+2. cyclic group은 commutative group이다.
 3. 모든 group은 cyclic subgroup을 갖음으로 commutative subgroup을 갖는다. 따라서 commutative subgroup을 갖는다고 commutative group인 것은 아니다.
 
 ### Example
