@@ -2,7 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="test.cpp" />
-    <ClCompile Include="test_DenseMatrix.cpp" />
     <ClCompile Include="TEST_PHS2_1.cpp">
       <Filter>PHS2</Filter>
     </ClCompile>
@@ -40,6 +39,7 @@
       <Filter>STD</Filter>
     </ClCompile>
     <ClCompile Include="test_MecVector.cpp" />
+    <ClCompile Include="test_Matrix.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />

@@ -15,11 +15,28 @@ private:
 	int value = 0;
 };
 
+
+class Base
+{
+public:
+  virtual void f1(void) const { f2(); };
+  virtual void f2(void) const { std::cout << "f2 in Base\n"; };
+
+};
+
+class Derive : public Base
+{
+public:
+  void f1(void) const override { Base::f1(); };
+  void f2(void) const override { std::cout << "f2 in Derive\n"; };
+
+};
+
+
 TEST(temp,1)
 {
-	A a1(2);
-	A a2(3);
-	std::cout << A::sum(a1, a2);
+  std::unique_ptr<Base> uptr = std::make_unique<Derive>();
+  uptr->f1();
 
 	
 
